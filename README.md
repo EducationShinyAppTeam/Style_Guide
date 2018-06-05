@@ -12,3 +12,4 @@
 	9. Using header on the top for different levels game
 	10. Using bsToolTip for silderbar pop over hint, since the regular bsPopover will matach the color code of sider bar 
 	11. Frame around the question of challenges 
+	12. use "i" to open up a short pargraph for instruction; use "?" to open up a hint
