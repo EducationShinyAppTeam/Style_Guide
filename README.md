@@ -1,5 +1,5 @@
-# 5-29-Note-
-Notes from 5/29 meeting
+#Style Guide
+
 
   1. Format the page using the consistant color
   2. Check potential for mobile friendly--> narrow the window (black block at the bottom?)
