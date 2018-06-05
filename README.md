@@ -9,3 +9,6 @@ Notes from 5/29 meeting
 	6. Hint: question mark on the upper left of each page 
 	7. Feedback--> given according to the user's input 
 	8. Loading bar to show the process of large number calculation (not needed) 
+	9. Using header on the top for different levels game
+	10. Using bsToolTip for silderbar pop over hint, since the regular bsPopover will matach the color code of sider bar 
+	11. Frame around the question of challenges 
