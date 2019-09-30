@@ -1,0 +1,59 @@
+/**
+* @file
+* BOAST theme
+*/
+
+.skin-blue .main-header > .navbar {
+  background-color: #1e407c;
+}
+
+.content-wrapper,
+.right-side {
+  background-color: white;
+}
+
+.skin-blue .main-header .logo {
+  background-color: #1e407c;
+  color: white;
+}
+.skin-blue .main-header .logo:hover {
+  background-color: black;
+}
+
+aside.main-sidebar {
+  background-color: black !important;
+}
+.main-header .logo {
+  font-family: "Georgia", Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#go2,
+#check1,
+#check2,
+#check3,
+#check4,
+#check5,
+#check6 {
+  background-color: #1e7b14;
+  color: #ffffff;
+}
+
+.popover-title {
+  color: #ffffff;
+  background-color: #1e7b14;
+}
+.popover-content {
+  color: #1c2c5b;
+  font-size: 13px;
+}
+
+.btn-myClass {
+  background-color: #000000;
+  border: none;
+  color: white;
+}
+.circle:hover {
+  border-radius: 50%;
+}
