@@ -4,9 +4,7 @@
 */
 
 .psu_eberly_logo {
-  background-image: url('https://educationshinyappteam.github.io/Style_Guide/theme/PSU_SCI_RGB_2C.png');
-  max-width: 180px;
-  background-repeat: no-repeat;
+  max-width: 256px;
 }
 
 .skin-blue .main-header > .navbar {
