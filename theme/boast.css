@@ -1,0 +1,204 @@
+/*The following line imports the Open Sans font family with three weights*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+/* Penn State Colors
+Nittany Navy: #001E44
+Beaver Blue: #1E407C
+Pennsylvania Sky: #009CDE
+Pugh Blue: #96BEE6
+*/
+
+/*Core Text Display Elements*/
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+p {
+	font:100% 'Open Sans';
+	font-weight: 400;
+}
+
+h1 {
+	font:200% 'Open Sans'
+	font-weight: 400;
+}
+
+h2 {
+	font:175% 'Open Sans';
+	font-weight: 400;
+}
+
+h3 {
+	font:150% 'Open Sans';
+	font-weight: 400;
+}
+
+h4 {
+	font:125% 'Open Sans';
+	font-weight: 400;
+}
+
+h5 {
+	font: 100% 'Open Sans';
+	font-weight: 700;
+}
+
+.updated {
+	font: 75% 'Open Sans';
+	font-weight: 400;
+	text-align:center;
+}
+
+/*Non-title portion of dashboard header*/
+.skin-blue .main-header>.navbar {
+background-color: #1E407C;
+}
+
+/*Background of Main Text Area*/
+.content-wrapper,.right-side {
+background-color: white ; /*Override requires the !important tag*/
+}
+
+/*Title portion of dashboard header*/
+.skin-blue .main-header .logo {
+background-color: #1E407C;
+color: white;
+}
+
+/*Title Portion Hover Color--Why does this need a hover?*/
+.skin-blue .main-header .logo:hover {
+background-color: #1E407C;
+}
+
+/*Font Control for Dashboard Title*/
+.main-header .logo {
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+font-size: 16px;
+/*Default is White; to overide use -> color: #f39c12 !important;*/
+}
+
+/*Side bar controls
+The !important tag is to override the defaults*/
+aside.main-sidebar {
+	background-color: #1E407C !important;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: white !important;
+}
+
+.skin-blue .sidebar a {
+	color: white;
+}
+
+.sidebar-picture {
+	position: fixed;
+	bottom: 0;
+}
+
+.skin-blue .sidebar-menu li.active a, .skin-blue .sidebar-menu li:hover a {
+	background: #009CDE ;
+	color: black ;
+	border-left-color: #96BEE6 ;
+	}
+
+
+/*Button Appearance*/
+
+.btn-default {
+  background-color: #1E407C ;
+  color: white;
+}
+
+/*Hovertext/Rollover/Popover Title Controls*/
+.popover-title {
+  background-color: #009CDE;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+  text-align: center;
+}
+
+/*Hovertext/Rollover/Popover content Controls*/
+.popover-content {
+	background-color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	color: black;
+}
+
+label {
+	font: 100% 'Open Sans';
+	font-weight: 400 !important;
+}
+
+/*Slider Controls; note that .js-irs-# can be appended in front of the following to
+create customized appearances. This is NOT recommended.*/
+
+/*Ends of Slider Bar*/
+.irs-bar-edge {
+border-color: #1E407C;
+background: #009CDE;
+}
+
+/*Middle Portion of Slider Bar*/
+.irs-bar {
+border-top-color: #1E407C;
+border-bottom-color: #1E407C;
+background: #009CDE;
+color: black;
+} 
+
+/*Slider edges*/
+.irs-line {
+	border: 1px solid black;
+}
+
+/*Slider major tick marks*/
+.irs-grid-pol{
+	width: 1px;
+	height: 8px;
+	background: black;
+}
+
+/*Slider minor tick marks*/
+.irs-grid-pol.small{
+	width: 1px;
+	height: 4px;
+	background: black;
+}
+
+/*Slider Icon*/
+.irs-slider {
+	width: 8px;
+	height: 20px;
+	top: 22px;
+}
+
+/*Slider Text bubble*/
+.irs-single{
+	background: #96BEE6;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 0.875em;
+	color: black;
+}
+
+/*Slider Text controls*/
+.irs-grid-text, .irs-min, .irs-max {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 0.875em;
+	color: black;
+	background: white;
+}
+
+
+
+
+
