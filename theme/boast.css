@@ -9,75 +9,83 @@ Pugh Blue: #96BEE6
 */
 
 /*Core Text Display Elements*/
+html {
+	font-size: 1rem; /* 10px => 16px */
+}
+
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Symbol";
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 1.125rem;
 }
 
-p {
-	font:100% 'Open Sans';
-	font-weight: 400;
-}
-
-h1 {
-	font:200% 'Open Sans'
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	margin-top: 0;
+  	margin-bottom: 0.5rem;
 	font-weight: 400;
 }
 
-h2 {
-	font:175% 'Open Sans';
-	font-weight: 400;
+h1, .h1 {
+	font-size: 2.5rem;
 }
 
-h3 {
-	font:150% 'Open Sans';
-	font-weight: 400;
+h2, .h2 {
+	font-size: 2rem;
 }
 
-h4 {
-	font:125% 'Open Sans';
-	font-weight: 400;
+h3, .h3 {
+	font-size: 1.75rem;
 }
 
-h5 {
-	font: 100% 'Open Sans';
+h4, .h4 {
+	font-size: 1.5rem;
+}
+
+h5, .h5 {
+	font-size: 1.25rem;
 	font-weight: 700;
+}
+
+h6, .h6 {
+	font-size: 1rem;
+}
+
+.main-header .sidebar-toggle {
+	padding: 0.75rem 1.25rem;
 }
 
 .updated {
 	font: 75% 'Open Sans';
 	font-weight: 400;
-	text-align:center;
+	text-align: center;
 }
 
 /*Non-title portion of dashboard header*/
 .skin-blue .main-header>.navbar {
-background-color: #1E407C;
+	background-color: #1E407C;
 }
 
 /*Background of Main Text Area*/
-.content-wrapper,.right-side {
-background-color: white ; /*Override requires the !important tag*/
+.content-wrapper,
+.right-side {
+	background-color: white;
+	/*Override requires the !important tag*/
 }
 
 /*Title portion of dashboard header*/
 .skin-blue .main-header .logo {
-background-color: #1E407C;
-color: white;
+	background-color: #1E407C;
+	color: white;
 }
 
 /*Title Portion Hover Color--Why does this need a hover?*/
 .skin-blue .main-header .logo:hover {
-background-color: #1E407C;
+	background-color: #1E407C;
 }
 
 /*Font Control for Dashboard Title*/
 .main-header .logo {
-font-family: 'Open Sans', sans-serif;
-font-weight: 400;
-font-size: 16px;
-/*Default is White; to overide use -> color: #f39c12 !important;*/
+	/* Default is White; to overide use -> color: #f39c12 !important; */
 }
 
 /*Side bar controls
@@ -99,28 +107,29 @@ aside.main-sidebar {
 	bottom: 0;
 }
 
-.skin-blue .sidebar-menu li.active a, .skin-blue .sidebar-menu li:hover a {
-	background: #009CDE ;
-	color: black ;
-	border-left-color: #96BEE6 ;
-	}
+.skin-blue .sidebar-menu li.active a,
+.skin-blue .sidebar-menu li:hover a {
+	background: #009CDE;
+	color: black;
+	border-left-color: #96BEE6;
+}
 
 
 /*Button Appearance*/
 
 .btn-default {
-  background-color: #1E407C ;
-  color: white;
+	background-color: #1E407C;
+	color: white;
 }
 
 /*Hovertext/Rollover/Popover Title Controls*/
 .popover-title {
-  background-color: #009CDE;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1em;
-  color: black;
-  text-align: center;
+	background-color: #009CDE;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 1em;
+	color: black;
+	text-align: center;
 }
 
 /*Hovertext/Rollover/Popover content Controls*/
@@ -142,17 +151,17 @@ create customized appearances. This is NOT recommended.*/
 
 /*Ends of Slider Bar*/
 .irs-bar-edge {
-border-color: #1E407C;
-background: #009CDE;
+	border-color: #1E407C;
+	background: #009CDE;
 }
 
 /*Middle Portion of Slider Bar*/
 .irs-bar {
-border-top-color: #1E407C;
-border-bottom-color: #1E407C;
-background: #009CDE;
-color: black;
-} 
+	border-top-color: #1E407C;
+	border-bottom-color: #1E407C;
+	background: #009CDE;
+	color: black;
+}
 
 /*Slider edges*/
 .irs-line {
@@ -160,14 +169,14 @@ color: black;
 }
 
 /*Slider major tick marks*/
-.irs-grid-pol{
+.irs-grid-pol {
 	width: 1px;
 	height: 8px;
 	background: black;
 }
 
 /*Slider minor tick marks*/
-.irs-grid-pol.small{
+.irs-grid-pol.small {
 	width: 1px;
 	height: 4px;
 	background: black;
@@ -181,7 +190,7 @@ color: black;
 }
 
 /*Slider Text bubble*/
-.irs-single{
+.irs-single {
 	background: #96BEE6;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
@@ -190,15 +199,12 @@ color: black;
 }
 
 /*Slider Text controls*/
-.irs-grid-text, .irs-min, .irs-max {
+.irs-grid-text,
+.irs-min,
+.irs-max {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 0.875em;
 	color: black;
 	background: white;
 }
-
-
-
-
-
