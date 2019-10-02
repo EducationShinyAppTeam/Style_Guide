@@ -136,7 +136,6 @@ h6, .h6 {
 
 
 /*Button Appearance*/
-
 .btn-default {
 	background-color: var(--beaver-blue);
 	color: white;
@@ -191,14 +190,14 @@ create customized appearances. This is NOT recommended.*/
 /*Slider major tick marks*/
 .irs-grid-pol {
 	width: 1px;
-	height: 8px;
+	height: 0.5rem;
 	background: black;
 }
 
 /*Slider minor tick marks*/
 .irs-grid-pol.small {
 	width: 1px;
-	height: 4px;
+	height: 0.25rem;
 	background: black;
 }
 
@@ -213,7 +212,7 @@ create customized appearances. This is NOT recommended.*/
 .irs-single {
 	background: var(--pugh-blue);
 	font-weight: 700;
-	font-size: 0.875em;
+	font-size: 0.875rem;
 	color: black;
 	padding: 0.1rem 0.4rem;
 	margin-top: -4px;
@@ -227,8 +226,7 @@ create customized appearances. This is NOT recommended.*/
 .irs-grid-text,
 .irs-min,
 .irs-max {
-	font-weight: 400;
-	font-size: 0.875em;
+	font-size: 0.875rem;
 	color: black;
 	background: white;
 }
