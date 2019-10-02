@@ -1,13 +1,14 @@
-/*The following line imports the Open Sans font family with three weights*/
+/* Imports the Open Sans font family with two weights */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
-/* Penn State Colors
-Nittany Navy: #001E44
-Beaver Blue: #1E407C
-Pennsylvania Sky: #009CDE
-Pugh Blue: #96BEE6
-*/
-
+/* Penn State Colors */
+:root {
+	--nittany-navy: 	#001E44;
+	--beaver-blue: 		#1E407C;
+	--pennsylvania-sky:	#009CDE;
+	--pugh-blue: 		#96BEE6;
+}
+  
 /*Core Text Display Elements*/
 html {
 	font-size: 1rem; /* 10px => 16px */
@@ -16,7 +17,7 @@ html {
 body {
 	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Symbol";
 	font-weight: 400;
-	font-size: 1.05rem;
+	font-size: 1.05rem; /* 16px => 16.8px */
     line-height: 1.5rem;
 }
 
@@ -74,14 +75,14 @@ h6, .h6 {
 }
 
 .updated {
-	font: 75% 'Open Sans';
+	font-size: 75%;
 	font-weight: 400;
 	text-align: center;
 }
 
 /*Non-title portion of dashboard header*/
 .skin-blue .main-header>.navbar {
-	background-color: #1E407C;
+	background-color: var(--beaver-blue);
 }
 
 /*Background of Main Text Area*/
@@ -93,13 +94,13 @@ h6, .h6 {
 
 /*Title portion of dashboard header*/
 .skin-blue .main-header .logo {
-	background-color: #1E407C;
+	background-color: var(--beaver-blue);
 	color: white;
 }
 
 /*Title Portion Hover Color--Why does this need a hover?*/
 .skin-blue .main-header .logo:hover {
-	background-color: #1E407C;
+	background-color: var(--beaver-blue);
 }
 
 /*Font Control for Dashboard Title*/
@@ -110,7 +111,7 @@ h6, .h6 {
 /*Side bar controls
 The !important tag is to override the defaults*/
 aside.main-sidebar {
-	background-color: #1E407C !important;
+	background-color: var(--beaver-blue) !important;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 16px;
@@ -128,22 +129,22 @@ aside.main-sidebar {
 
 .skin-blue .sidebar-menu li.active a,
 .skin-blue .sidebar-menu li:hover a {
-	background: #009CDE;
+	background: var(--pennsylvania-sky);
 	color: black;
-	border-left-color: #96BEE6;
+	border-left-color: var(--pugh-blue);
 }
 
 
 /*Button Appearance*/
 
 .btn-default {
-	background-color: #1E407C;
+	background-color: var(--beaver-blue);
 	color: white;
 }
 
 /*Hovertext/Rollover/Popover Title Controls*/
 .popover-title {
-	background-color: #009CDE;
+	background-color: var(--pennsylvania-sky);
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 1em;
@@ -170,15 +171,15 @@ create customized appearances. This is NOT recommended.*/
 
 /*Ends of Slider Bar*/
 .irs-bar-edge {
-	border-color: #1E407C;
-	background: #009CDE;
+	border-color: var(--beaver-blue);
+	background: var(--pennsylvania-sky);
 }
 
 /*Middle Portion of Slider Bar*/
 .irs-bar {
-	border-top-color: #1E407C;
-	border-bottom-color: #1E407C;
-	background: #009CDE;
+	border-top-color: var(--beaver-blue);
+	border-bottom-color: var(--beaver-blue);
+	background: var(--pennsylvania-sky);
 	color: black;
 }
 
@@ -210,7 +211,7 @@ create customized appearances. This is NOT recommended.*/
 
 /*Slider Text bubble*/
 .irs-single {
-	background: #96BEE6;
+	background: var(--pugh-blue);
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 0.875em;
