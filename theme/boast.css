@@ -17,7 +17,7 @@ html {
 body {
 	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Symbol";
 	font-weight: 400;
-	font-size: 1.05rem; /* 16px => 16.8px */
+	font-size: 1rem;
     line-height: 1.5rem;
 }
 
@@ -53,15 +53,25 @@ h6, .h6 {
 }
 
 .main-header .sidebar-toggle {
-	padding: 0.85rem 1.2rem;
+	padding: 0.8rem 1.2rem;
 }
 
 .sidebar {
 	width: 100%;
 }
 
-.main-sidebar, .sidebar-menu {
+.main-sidebar, .sidebar {
 	display: flex;
+}
+
+.sidebar {
+	flex-direction: column;
+	flex: 1 0 auto;
+	justify-content: space-between;
+}
+
+.main-sidebar {
+	background-color: var(--beaver-blue) !important;
 }
 
 .sidebar-menu {
@@ -106,16 +116,6 @@ h6, .h6 {
 /*Font Control for Dashboard Title*/
 .main-header .logo {
 	/* Default is White; to overide use -> color: #f39c12 !important; */
-}
-
-/*Side bar controls
-The !important tag is to override the defaults*/
-aside.main-sidebar {
-	background-color: var(--beaver-blue) !important;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-	font-size: 16px;
-	color: white !important;
 }
 
 .skin-blue .sidebar a {
