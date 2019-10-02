@@ -204,25 +204,29 @@ create customized appearances. This is NOT recommended.*/
 
 /*Slider Icon*/
 .irs-slider {
-	width: 8px;
-	height: 20px;
-	top: 22px;
+	width: 0.5rem;
+	height: 1.25rem;
+	top: 1.1875rem;
 }
 
 /*Slider Text bubble*/
 .irs-single {
 	background: var(--pugh-blue);
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 0.875em;
 	color: black;
+	padding: 0.1rem 0.4rem;
+	margin-top: -4px;
 }
 
 /*Slider Text controls*/
+.irs-min, .irs-max {
+	padding: 0.1rem 0.4rem;
+}
+
 .irs-grid-text,
 .irs-min,
 .irs-max {
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 0.875em;
 	color: black;
