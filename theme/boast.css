@@ -141,6 +141,12 @@ h6, .h6 {
 	color: white;
 }
 
+.btn-game {
+	background-color:  white;
+	color: black;
+	font-size: 2rem;
+}
+
 /*Hovertext/Rollover/Popover Title Controls*/
 .popover-title {
 	background-color: var(--pennsylvania-sky);
