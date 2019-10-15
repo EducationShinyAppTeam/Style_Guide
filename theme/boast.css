@@ -238,6 +238,6 @@ create customized appearances. This is NOT recommended.*/
 }
 
 /*Collapsable Box Style Controls*/
-.box.box-primary {
+box, .box, box-primary, .box-primary, .box box-primary {
 	border-top-color: var(--pennsylvania-sky);
 }
