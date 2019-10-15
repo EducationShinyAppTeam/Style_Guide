@@ -134,7 +134,6 @@ h6, .h6 {
 	border-left-color: var(--pugh-blue);
 }
 
-
 /*Button Appearance*/
 .btn-default {
 	background-color: var(--beaver-blue);
@@ -236,4 +235,9 @@ create customized appearances. This is NOT recommended.*/
 	font-size: 0.875rem;
 	color: black;
 	background: white;
+}
+
+/*Collapsable Box Style Controls*/
+.box {
+	border-top-color: var(--pennsylvania-sky);
 }
