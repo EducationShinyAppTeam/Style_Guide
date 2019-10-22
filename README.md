@@ -1,6 +1,6 @@
 # Style Guide
 
-## Apps
+### Apps
 - Format the page using the consistant color
 - Check potential for mobile friendly --> narrow the window (black block at the bottom?)
 - Matching game by input the letter
@@ -15,9 +15,9 @@
 - use "i" to open up a short pargraph for instruction; use "?" to open up a hint
 - Put PennState logo on the About page, link to Stat department or school website. Use the square logo!  
 
-## Code
+### Code
 - Apps should adhere to the [tidyverse style guide](https://style.tidyverse.org/).
 
-## Development Tools
-- [lintr](https://github.com/jimhester/lintr)
-- [styler](https://www.tidyverse.org/articles/2017/12/styler-1.0.0/)
+### Development Tools
+- [lintr](https://github.com/jimhester/lintr) - Checks adherence to a given style, syntax errors, and possible semantic issues.
+- [styler](https://www.tidyverse.org/articles/2017/12/styler-1.0.0/) - Format R code according to a style guide.
