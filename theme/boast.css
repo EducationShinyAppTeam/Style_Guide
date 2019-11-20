@@ -147,6 +147,43 @@ h6, .h6 {
 	text-align: left;
 }
 
+.btn-textGame {
+	background-color:  white;
+	color: black;
+	font-size: 1.1rem;
+	text-align: left;
+	white-space: normal;
+	overflow-wrap: break-word;
+}
+
+.btn-ttt[disabled] {
+  opacity: 1;
+}
+
+.btn-ttt {
+  display: inline-block;
+  font-size: 4rem;
+  width: 80px;
+  height: 80px; 
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.btn-ttt:active {
+  background-color: var(--pennsylvania-sky);
+}
+
+.btn-ttt:hover {
+  background-color: var(--pennsylvania-sky);
+  color: black;
+}
+
+.btn-ttt[disabled]:hover {
+  background-color: var(--beaver-blue);
+  color: white;
+}
+
 /*Hovertext/Rollover/Popover Title Controls*/
 .popover-title {
 	background-color: var(--pennsylvania-sky);
@@ -235,6 +272,20 @@ create customized appearances. This is NOT recommended.*/
 	font-size: 0.875rem;
 	color: black;
 	background: white;
+}
+
+/*Sweet Alert controls*/
+.sweet-alert h2, .sweet-alert p {
+	color: black !important;
+}
+
+.sweet-alert button {
+	background-color: var(--beaver-blue) !important;
+	color: white;
+}
+
+.sweet-alert input {
+	border: 1pt solid var(--beaver-blue) !important;
 }
 
 /*Collapsable Box Style Controls*/
