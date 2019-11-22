@@ -17,8 +17,10 @@ Please check out the package's [page](https://github.com/EducationShinyAppTeam/b
 Ultimately, when you write your app's code, you should adhere to the [tidyverse style guide](https://style.tidyverse.org/). However, here are some additional practices you should follow.
 
 1. Leave Comments
+
     (a). At bare minimum, use a comment to break your code into sections. These can also provide others with potential keywords to search for when looking at your code later on.
     (b). For particularly complex sections, use comments to summarize what you're trying to do.
+    
 2. Use informative names for variables and functions 
 
 
