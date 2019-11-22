@@ -20,7 +20,7 @@ Ultimately, when you write your app's code, you should adhere to the [tidyverse 
     1. At bare minimum, use a comment to break your code into sections. These can also provide others with potential keywords to search for when looking at your code later on.
     2. For particularly complex sections, use comments to summarize what you're trying to do.
 2. Use informative names for variables and functions 
-  1. Use names that give another person a sense of what that variable represents or what the function is supposed to do
+    1. Use names that give another person a sense of what that variable represents or what the function is supposed to do
       + `scoreMatrix` is a matrix that holds a set of scores 
       + `checkGame()` is a function that checks the state of the current game
       2. Avoid using the variable names that existed in code you're making use of from another app or script. 
