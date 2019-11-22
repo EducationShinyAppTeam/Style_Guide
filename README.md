@@ -1,5 +1,16 @@
 # Style Guide
 
+This guide spells out the styling that should be used for all apps included in BOAST. Styling refers to several different aspects including:
+- How you approaching writing code
+- Visual appearance of the app
+- The wording used in the app
+- Documentation of references, including code and data sources
+
+By following this style guide you'll ensure that any app you create will meet our standards.
+
+## boastUtils Package
+By using the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils), you'll be able to automate much of the visual appearance styling. This will reduce the amount of work you'll need to do and worry about. We **strongly** recommend that you make use of this tool.
+
 ### Apps
 - Format the page using the consistant color
 - Check potential for mobile friendly --> narrow the window (black block at the bottom?)
