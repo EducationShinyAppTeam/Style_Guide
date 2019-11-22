@@ -11,6 +11,28 @@ By following this style guide you'll ensure that any app you create will meet ou
 ## boastUtils Package
 By using the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils), you'll be able to automate much of the visual appearance styling. This will reduce the amount of work you'll need to do and worry about. We **strongly** recommend that you make use of this tool.
 
+Please check out the package's [page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and using this toolkit.
+
+## Writing Code
+Ultimately, when you write your app's code, you should adhere to the [tidyverse style guide](https://style.tidyverse.org/). However, here are some additional practices you should follow.
+
+1. Leave Comments
+    a. At bare minimum, use a comment to break your code into sections. These can also provide others with potential keywords to search for when looking at your code later on.
+    b. For particularly complex sections, use comments to summarize what you're trying to do.
+2. Use informative names for variables and functions 
+
+
+
+## Visual Appearance
+
+## Wording
+
+## Documentation
+
+## Additional Tools
+- [lintr](https://github.com/jimhester/lintr) - Checks adherence to a given style, syntax errors, and possible semantic issues.
+- [styler](https://www.tidyverse.org/articles/2017/12/styler-1.0.0/) - Format R code according to a style guide.
+
 ### Apps
 - Format the page using the consistant color
 - Check potential for mobile friendly --> narrow the window (black block at the bottom?)
@@ -26,9 +48,4 @@ By using the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils), 
 - use "i" to open up a short pargraph for instruction; use "?" to open up a hint
 - Put PennState logo on the About page, link to Stat department or school website. Use the square logo!  
 
-### Code
-- Apps should adhere to the [tidyverse style guide](https://style.tidyverse.org/).
 
-### Development Tools
-- [lintr](https://github.com/jimhester/lintr) - Checks adherence to a given style, syntax errors, and possible semantic issues.
-- [styler](https://www.tidyverse.org/articles/2017/12/styler-1.0.0/) - Format R code according to a style guide.
