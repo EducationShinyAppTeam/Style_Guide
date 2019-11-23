@@ -159,7 +159,7 @@ Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong
 Again, let the `boast.CSS` file handle the styling of this type of text.
 
 #### Text in `R` Plots
-Unfortunately, text in `R` plots do not get controlled by CSS at this time. This does mean that you'll have to play around with the settings.  Using the ``ggplot2` package to make your plots (or other packages based upon the ggplot framework) will allow you to use the `theme` aspect to control text in your app. Here is an example for how to do this:
+Unfortunately, text in `R` plots do not get controlled by CSS at this time. This does mean that you'll have to play around with the settings.  Using the `ggplot2` package to make your plots (or other packages based upon the ggplot framework) will allow you to use the `theme` aspect to control text in your app. Here is an example for how to do this:
 ```r
 g1 <- ggplot2::ggplot(data=df, aes(x=x, y=y, color=grp)) #create a ggplot object
 
@@ -197,7 +197,7 @@ The ordering of the Tab Pages for your App should make logical sense and should 
    + The bottom of the sidebar should contain the Penn State Logo (see the Penn State Branding section)
 
 ### Penn State Branding
-Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire app AND making the logo be as unobtrusive as possible in the app.
+Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.
 
 There are two ways to do this:
 1. **CHECK THIS!** Use `boastApp` instead of `shinyApp` from the `boastUtils` package. You won't have to do anything else; the logo will automatically get added in the correct place.
@@ -228,6 +228,30 @@ Look for any issues that you might be able to address before you hand off your A
 ## Wording
 
 ## Documentation
+These Apps are the product of your hardwork and are part of your academic record. Thus, you need to adhere to [Penn State's Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the Apps available through a Creative Commons Attribution Share Alike (CC-BY-SA-4.0) license. If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App's Overview page.
+
+### Using Another Person's Code
+**You MAY NOT use blocks of code you've found online without giving proper attribution.**
+
+There is a difference between looking at example code online to see how to do something and copying that code directly. The former is permissible, the later is plagiarism. 
+  + If you want to use someone else's code "as is" (without any changes), you should reach out to the author for permission first.
+  + If you use someone else's code and make modifications, you need to give credit to where you got the code, and potentially ask for permission.
+  
+### Pictures
+Pictures, drawings, photographs, images, etc. are typically copyrighted. When you're selecting images, make sure that the images are Open Source/Copyright Free/Royalty Free. Additionally, include a reference to where the pictures came from in the Overview Page.
+
+### Data
+If you are using any data files, you need to attribute where those files are coming from in the References subsection of your Overview page. A suggested formats to use is:
+
+Author/Rightsholder. (Year). Title of data set (Version number) [Description of form]. Location: Name of producer.  
+Author/Rightsholder. (Year). Title of data set (Version number) [Description of form]. Retrieved from http://www.url.com
+
+If you (or someone else) had to sign some type of agreement to access the data, we must examine the agreement before you make your App publicly accessible. Just because you got access to the data does not mean you have the right to share the data.
+ 
+
+## Accessibility
+
+[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
 
 ## Additional Tools
 - [lintr](https://github.com/jimhester/lintr) - Checks adherence to a given style, syntax errors, and possible semantic issues.
