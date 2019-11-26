@@ -156,34 +156,6 @@ h6, .h6 {
 	overflow-wrap: break-word;
 }
 
-.btn-ttt[disabled] {
-  opacity: 1;
-}
-
-.btn-ttt {
-  display: inline-block;
-  font-size: 4rem;
-  width: 80px;
-  height: 80px; 
-  text-align: center;
-  line-height: 1;
-  margin-bottom: 3px;
-}
-
-.btn-ttt:active {
-  background-color: var(--pennsylvania-sky);
-}
-
-.btn-ttt:hover {
-  background-color: var(--pennsylvania-sky);
-  color: black;
-}
-
-.btn-ttt[disabled]:hover {
-  background-color: var(--beaver-blue);
-  color: white;
-}
-
 /*Hovertext/Rollover/Popover Title Controls*/
 .popover-title {
 	background-color: var(--pennsylvania-sky);
@@ -321,6 +293,23 @@ box, .box, box-primary, .box-primary, .box box-primary, .box.box-primary {
   font-size: 3.75rem;
   line-height: 1;
   text-align: center;
+}
+
+.grid-tile button:active, .grid-tile button:hover {
+  background-color: var(--pennsylvania-sky);
+}
+
+.grid-tile button:hover {
+  color: black;
+}
+
+.grid-tile button[disabled] {
+  opacity: 1;
+}
+
+.grid-tile button[disabled]:hover {
+  background-color: var(--beaver-blue);
+  color: white;
 }
 
 .grid-board {
