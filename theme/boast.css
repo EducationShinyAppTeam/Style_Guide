@@ -292,3 +292,63 @@ create customized appearances. This is NOT recommended.*/
 box, .box, box-primary, .box-primary, .box box-primary, .box.box-primary {
 	border-top-color: var(--pennsylvania-sky);
 }
+
+/* Grid-based Game Layouts */
+.game-board {
+  position: relative;
+  min-height: 425px;
+}
+
+.grid-fill {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-tile {
+  position: relative;
+  padding-top: 100%;
+}
+
+.grid-tile button {
+  border: 0.25rem solid var(--nittany-navy);
+  border-radius: 0;
+  font-size: 3.75rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.grid-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 0;
+
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+
+  background-color: var(--beaver-blue);
+  border-radius: 0.5rem;
+  border: 0.25rem solid var(--nittany-navy); 
+}
+
+.grid-1x1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-2x2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-4x4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-5x5 {
+  grid-template-columns: repeat(5, 1fr);
+}
