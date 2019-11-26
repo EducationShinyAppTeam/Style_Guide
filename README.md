@@ -197,9 +197,7 @@ The ordering of the Tab Pages for your App should make logical sense and should 
       5. A button that will take the user to the next page.
       6. "Acknowledgements" (as Heading 2)
       7. A listing of acknowledgements including, coders, content writers, etc. (as a paragraph)
-      8. "References" (as Heading 3)
-      9. A listing of any external sources of code, pictures, or data used in your app that you did not create (as a paragraph)
-      10. Last Element: `div(class = "updated", "Last Update: mm/dd/yyyy by FL.")` with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.
+      8. Last Element: `div(class = "updated", "Last Update: mm/dd/yyyy by FL.")` with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.
       
     + There is no need to use boldface or colons with the section headings when you properly use Heading tags.
     
@@ -211,7 +209,15 @@ The ordering of the Tab Pages for your App should make logical sense and should 
    + Games will use the icon gamepad
    + Explorations will use the icon wpexplorer
    
-4. Last Element: Penn State Logo
+4. Last Tab Element:  References--REQUIRED
+    + This page is where you will place a reference list for all of the following items that you used in your app:
+      - All `R` packages you used
+      - Sources of Code you used directly or drew heavily upon
+      - Pictures and/or other images
+      - Data sets
+    + Refer to the Documentation Section of this Style Guide for more information
+
+5. Last Element: Penn State Logo
    + The bottom of the sidebar should contain the Penn State Logo (see the Penn State Branding section).
 
 ### Penn State Branding
@@ -256,7 +262,7 @@ When writing the content for your App, you will want to keep in mind that these 
     + GOOD: "Probability is the long-run relative frequency for us seeing a particular data event given our assumptions.  Likelihood is the long-run relative frequency of a set of assumptions being true given our collected data."
 
 ## Documentation
-These Apps are the product of your hardwork and are part of your academic record. Thus, you need to adhere to [Penn State's Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the Apps available through a Creative Commons Attribution Share Alike (CC-BY-SA-4.0) license. If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App's Overview page.
+These Apps are the product of your hardwork and are part of your academic record. Thus, you need to adhere to [Penn State's Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the Apps available through a Creative Commons Attribution Share Alike (CC-BY-SA-4.0) license. If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App's References page.
 
 ### Using Another Person's Code
 **You MAY NOT use blocks of code you've found online without giving proper attribution.**
