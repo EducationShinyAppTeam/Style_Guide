@@ -90,7 +90,7 @@ h6, .h6 {
 	text-align: center;
 }
 
-.hangingindent {
+p.hangingindent {
 	padding-left: 48px;
 	text-indent:  -48px;
 }
