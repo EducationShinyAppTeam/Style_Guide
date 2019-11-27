@@ -11,8 +11,10 @@ By following this style guide you'll ensure that any app you create will meet ou
 ## Table of Contents
 **[`boastUtils`](#`boastUtils`-Package)** <br>
 **[Writing Code](#Writing-code)** <br>
-**[Visual Appearance](#Visual-Appearance)**: [Coloring](#Coloring), [Text Styling](#Text-Styling)
-
+**[Visual Appearance](#Visual-Appearance)**: [Coloring](#Coloring), [Text Styling](#Text-Styling), [Tab Pages](#Tab-Page-Ordering-in-the-Dashboard's-Sidepanel), [Penn State Branding](#Penn-State-Branding), [Mobile Friendly](#Mobile-Friendly), [Misc.](#Miscellaneous) <br>
+**[Wording](#Wording)** <br>
+**[Documentation](#Documentation)**: [References](#References-Tab), [Reusing Code](#Using-Another-Person's-Code), [`R` Packages](#`R`-Packages), [Pictures](#Pictures), [Data](#Data) <br>
+**[Accessibility](#Accessibility)** <br>
 **[Additional Tools](#Additional-Tools)**
 
 ## `boastUtils` Package
