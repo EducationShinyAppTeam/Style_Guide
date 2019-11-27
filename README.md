@@ -232,16 +232,15 @@ The ordering of the Tab Pages for your App should make logical sense and should 
 ### Penn State Branding
 Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.
 
-There are two ways to do this:
-1. **CHECK THIS!** Use `boastApp` instead of `shinyApp` from the `boastUtils` package. You won't have to do anything else; the logo will automatically get added in the correct place.
-2. In your `ui.R` file, at the end of your `dashboardSidebar()` section, include the following
-   ```r
+In your `ui.R` file (or your UI section of `app.R`), at the end of your `dashboardSidebar()` section, include the following
+```r
       tags$div(
         class = "sidebar-logo",
         boastUtils::psu_eberly_logo("reversed")
       )
-   ```
-These methods will ensure that the Penn State logo gets properly used. 
+ ```
+   
+This will ensure that the Penn State logo gets properly used. 
 
 ### Mobile Friendly
 We want our apps to work well with mobile devices. Thus, when you get to the point where the majority of bugs have been fixed, you need to check how mobile friendly your App is. If you have used `boastApp` and/or the `boast.CSS` file, along with the practices laid out earlier, then you should be well on your way to being mobile friendly.
@@ -262,7 +261,7 @@ Look for any issues that you might be able to address before you hand off your A
 ## Wording
 When writing the content for your App, you will want to keep in mind that these Apps have the primary audience of students. Thus, we need to make sure that we use language that is appropriate.  Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
 
-**DO NOT sacrifice clarity and precision/accuracy for conciseness/brevity** Since these Apps for for *teaching*, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language and re-enforcing problematic conceptions. For example,
+**DO NOT sacrifice clarity and precision/accuracy for conciseness/brevity.** Since these Apps are for *teaching*, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language and re-enforcing problematic conceptions. For example,
   + Discussing values of statistics
     + BAD:  "The mean is 6."
     + GOOD:  "The value of the *sample arithematic mean* for this data is 6 units/object."
@@ -293,6 +292,7 @@ tabItem(
       ),
       #repeat as needed
 ```
+
 If you need assistance with this section, please talk to Neil.
 
 ### Using Another Person's Code
@@ -302,9 +302,9 @@ There is a difference between looking at example code online to see how to do so
   + If you want to use someone else's code "as is" (without any changes), you should reach out to the author for permission first.
   + If you use someone else's code and make modifications, you need to give credit to where you got the code, and potentially ask for permission.
   
-You will need to place citations in two places: in the References subsection of the Overview page and in your code.
+You will need to place citations in *__two__* places: in the References Tab Page and in your code.
 
-#### Reference Subsection
+#### Reference Tab Page
 Use the following format:  
   
   Author. (Date). Title of program/source code (Version number, if applicable). [type of code]. Retrieved from < URL >.
@@ -324,9 +324,12 @@ Use the following format in your code to cite where you got the code from.
 #    Availability: <where it's located>
 #-----------------------------------------------------------------------------------------
 [reused code then follows]
+
+[last line of reused code]
+#End of <author>'s code-------------------------------------------------------------------
 ```
 ### `R` Packages
-If you made use of any packages in `R`, then you need to add these to the Reference subsection. Fortunately, there is a built-in tool that will help you:  the `citation` function. In R (RStudio) simply type `citation("packageName")` and you'll get the appropriate citation information for the package you used. For example, `citation("plyr")` will give the information for the citation:  
+If you made use of any packages in `R`, then you need to add these to the Reference subsection. Fortunately, there is a built-in tool that will help you:  the `citation` function. In R (RStudio) simply type `citation("packageName")` and you'll get the appropriate citation information for the package you used. For example, `citation("shinydashboard")` and `citation("plyr")` will give the information needed for the following citations:  
   
   Chang, W. and Borges Ribeio, B. (2018). shinydashboard: Create dashboards with 'Shiny'. (v0.7.1) [R Package]. Available from https://CRAN.R-project.org/package=shinydashboard  
   
