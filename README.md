@@ -8,7 +8,14 @@ This guide spells out the styling that should be used for all apps included in B
 
 By following this style guide you'll ensure that any app you create will meet our standards.
 
-## boastUtils Package
+## Table of Contents
+**[`boastUtils`](#`boastUtils`-Package)** <br>
+**[Writing Code](#Writing-code)** <br>
+**[Visual Appearance](#Visual-Appearance)**: [Coloring](#Coloring), [Text Styling](#Text-Styling)
+
+**[Additional Tools](#Additional-Tools)**
+
+## `boastUtils` Package
 By using the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) package, you'll be able to automate much of the visual appearance styling. This will reduce the amount of work you'll need to do and worry about. We **strongly** recommend that you make use of this tool.
 
 Please check out the package's [page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and using this toolkit.
