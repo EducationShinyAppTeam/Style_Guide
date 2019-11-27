@@ -209,7 +209,7 @@ The ordering of the Tab Pages for your App should make logical sense and should 
    + Games will use the icon gamepad
    + Explorations will use the icon wpexplorer
    
-4. Last Tab Element:  References--REQUIRED
+4. Last Tab Element:  References--icon: leanpub--REQUIRED
     + This page is where you will place a reference list for all of the following items that you used in your app:
       - All `R` packages you used
       - Sources of Code you used directly or drew heavily upon
@@ -264,6 +264,28 @@ When writing the content for your App, you will want to keep in mind that these 
 ## Documentation
 These Apps are the product of your hardwork and are part of your academic record. Thus, you need to adhere to [Penn State's Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the Apps available through a Creative Commons Attribution Share Alike (CC-BY-SA-4.0) license. If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App's References page.
 
+### References Tab
+All Apps will need a References Tab. This is where you'll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgements. (NOTE: listing something in the Acknowledgements DOES NOT waive this requirement.)
+
+You may use any citation style you wish, but be consistent. Recommended citation styles include APA and AmStat. Here is a starting code block for you to use:
+
+```r
+tabItem(
+      tabName = "refs",
+      withMathJax(),
+      h2("References"),
+      p(
+        class = "hangingindent",
+        "reference 1-alphabetically"
+      ),
+      p(
+        class = "hangingindent",
+        "reference 2-alphabetically"
+      ),
+      #repeat as needed
+```
+If you need assistance with this section, please talk to Neil.
+
 ### Using Another Person's Code
 **You MAY NOT use blocks of code you've found online without giving proper attribution.**
 
@@ -280,7 +302,7 @@ Use the following format:
 
 For example,  
   
-  Hatfield, N. J. (2017). First day activity (V 1). [Netlogo]. Retrieved from https://neilhatfield.github.io/statApps/Day1Activity.html.
+  Hatfield, N. J. (2017). First day activity (v1). [Netlogo]. Retrieved from https://neilhatfield.github.io/statApps/Day1Activity.html.
 
 #### In Code
 Use the following format in your code to cite where you got the code from.
@@ -297,7 +319,11 @@ Use the following format in your code to cite where you got the code from.
 ### `R` Packages
 If you made use of any packages in `R`, then you need to add these to the Reference subsection. Fortunately, there is a built-in tool that will help you:  the `citation` function. In R (RStudio) simply type `citation("packageName")` and you'll get the appropriate citation information for the package you used. For example, `citation("plyr")` will give the information for the citation:  
   
+  Chang, W. and Borges Ribeio, B. (2018). shinydashboard: Create dashboards with 'Shiny'. (v0.7.1) [R Package]. Available from https://CRAN.R-project.org/package=shinydashboard  
+  
   Wickham, H. (2011). The Split-apply-combine strategy for data analysis. Journal of Statistical Software, 40(1). pp. 1-29. Available at http://www.jstatsoft.org/v40/i01/.
+
+Notice, that the format of the R package will depend on whether there is an article published for the package. The `shinydashboard` package is not associated with an article while the `plyr` package is associated with Wickham's article.
   
 ### Pictures
 Pictures, drawings, photographs, images, etc. are typically copyrighted. When you're selecting images, make sure that the images are Open Source/Copyright Free/Royalty Free. Additionally, include a reference to where the pictures came from in the Overview Page. The basic format to use is:  
