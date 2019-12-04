@@ -113,8 +113,12 @@ h6, .h6 {
 	color: white;
 }
 
-/*Title Portion Hover Color--Why does this need a hover?*/
+/*Title Portion Hover Color*/
 .skin-blue .main-header .logo:hover {
+	background-color: var(--beaver-blue);
+}
+
+.main-header .sidebar-toggle:hover {
 	background-color: var(--beaver-blue);
 }
 
