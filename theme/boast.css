@@ -119,7 +119,7 @@ h6, .h6 {
 }
 
 .main-header .sidebar-toggle:hover {
-	background: var(--pennsylvania-sky);
+	background: var(--pennsylvania-sky) !important;
 }
 
 /*Font Control for Dashboard Title*/
