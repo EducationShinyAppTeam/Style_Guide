@@ -10,7 +10,7 @@ By following this style guide you'll ensure that any app you create will meet ou
 
 ## Table of Contents
 **[`boastUtils`](#`boastUtils`-Package)** <br>
-**[Writing Code](#Writing-code)** <br>
+**[Writing Code](#Writing-code)**: [General Style](#General-Coding-Style), [App Meta Data](#App-Meta-Data), [Code Order](#Order-of-App-Code)<br>
 **[Visual Appearance](#Visual-Appearance)**: [Coloring](#Coloring), [Text Styling](#Text-Styling), [Tab Pages](#Tab-Page-Ordering-in-the-Dashboard's-Sidepanel), [Penn State Branding](#Penn-State-Branding), [Mobile Friendly](#Mobile-Friendly), [Misc.](#Miscellaneous) <br>
 **[Wording](#Wording)** <br>
 **[Documentation](#Documentation)**: [References](#References-Tab), [Reusing Code](#Using-Another-Person's-Code), [`R` Packages](#`R`-Packages), [Pictures](#Pictures), [Data](#Data) <br>
@@ -23,6 +23,8 @@ By using the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) p
 Please check out the package's [page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and using this toolkit.
 
 ## Writing Code
+
+### General Coding Style
 You should adhere to the [tidyverse style guide](https://style.tidyverse.org/). However, here are some practices you need to follow:
 
 1. Leave Comments
@@ -103,6 +105,45 @@ You should adhere to the [tidyverse style guide](https://style.tidyverse.org/). 
    Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing App, remove any external files that are no longer necessary.
    
 8. (*Under development*) Consider using `renderCachePlot` instead of `renderPlot`
+
+### App Meta Data
+Each app will need the following meta data in either the `app.R` or `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing.
+
+Use the following format
+```r
+## App Meta Data----------------------------------------------------------------
+APP_TITLE <<- "title of the app"
+APP_DESCP <<- paste(
+    "description of the app",
+    "use multiple lines to keep the description legible.",
+)
+## End App Meta Data------------------------------------------------------------
+```
+Notice that both `APP_TITLE` and `APP_DESCP` do not follow CamelCase. This is by intent.
+
+### Order of App Code
+There is a fixed order in which you will need to write your code. This will depend on if you are using a singular `app.R` file or the pair `ui.r` and `server.r`.
+
+#### Using `app.R`
+The order for your code will be as follows:
+1. Packages to be loaded
+2. App Meta Data
+3. Any additional source files
+4. UI definition
+5. Server definition
+6. `boastApp` call
+
+#### Using `ui.R` and `server.R`
+The order for your code in the `ui.R` file:
+1. Packages to be loaded
+2. App Meta Data
+3. Any additional source files
+4. UI definition
+
+The order for your code in the `server.R` file:
+1. Packages to be loaded
+2. Any additional source files
+3. Server definition
 
 ## Visual Appearance
 The visual appearance of each App consists of 6 major areas (plus one catchall). The benefit of using the `boastApp` function from the `boastUtils` package is that this will automatically take care of much of this section for you.
