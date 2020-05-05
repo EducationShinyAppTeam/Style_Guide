@@ -3,25 +3,25 @@ Style Guide
 Neil Hatfield (<njh5464@psu.edu>), Robert Carey (<rpc5102@psu.edu>)
 05 May 2020
 
-  - [`boastUtils` Package](#boastutils-package)
   - [Writing Code](#writing-code)
+      - [Getting Started](#getting-started)
+      - [`boastUtils` Package](#boastutils-package)
       - [General Coding Style](#general-coding-style)
-      - [App Meta Data](#app-meta-data)
-      - [Order of App Code](#order-of-app-code)
+      - [Organizing Code](#organizing-code)
+      - [Meta Data](#meta-data)
   - [Visual Appearance](#visual-appearance)
-      - [Coloring](#coloring)
+      - [Branding](#branding)
+      - [Colors](#colors)
       - [Text Styling](#text-styling)
-      - [Tab Page Ordering in the Dashboard’s
-        Sidepanel](#tab-page-ordering-in-the-dashboards-sidepanel)
-      - [Penn State Branding](#penn-state-branding)
-      - [Mobile Friendly](#mobile-friendly)
+      - [Dashboard](#dashboard)
+      - [Mobile Friendliness](#mobile-friendliness)
       - [Miscellaneous](#miscellaneous)
   - [Wording](#wording)
   - [Documentation](#documentation)
-      - [References Tab](#references-tab)
-      - [Using Another Person’s Code](#using-another-persons-code)
+      - [References](#references)
+      - [Plagiarism](#plagiarism)
       - [`R` Packages](#r-packages)
-      - [Pictures](#pictures)
+      - [Graphics](#graphics)
       - [Data](#data)
   - [Accessibility](#accessibility)
   - [Additional Tools](#additional-tools)
@@ -38,25 +38,42 @@ Styling refers to several different aspects including:
 By following this style guide you’ll ensure that any app you create will
 meet our standards.
 
-## `boastUtils` Package
+## Writing Code
 
-By using the
-[boastUtils](https://github.com/EducationShinyAppTeam/boastUtils)
-package, you’ll be able to automate much of the visual appearance
-styling. This will reduce the amount of work you’ll need to do and worry
-about. We **strongly** recommend that you make use of this tool.
+### Getting Started
+
+To get started, clone the
+[Sample\_App](https://github.com/EducationShinyAppTeam/Sample_App)
+template repo found on GitHub. This will provide you with a skeleton for
+how to organize your files as well as your code.
+
+**Command Line:**
+
+``` bash
+git clone git@github.com:EducationShinyAppTeam/Sample_App.git
+```
+
+**Direct Download:**
+
+  - <https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip>
+
+### `boastUtils` Package
+
+The [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils)
+package was created to automate much of the design and development
+process. This will not only reduce the amount of work you’ll need to do,
+it’ll also make apps more consistent. We **strongly** recommend that you
+make use of this tool.
 
 Please check out the package’s
 [page](https://github.com/EducationShinyAppTeam/boastUtils) for
-instructions on installing and using this toolkit.
-
-## Writing Code
+instructions on installing and usage.
 
 ### General Coding Style
 
 You should adhere to the [tidyverse style
-guide](https://style.tidyverse.org/). However, here are some practices
-you need to follow:
+guide](https://style.tidyverse.org/), however, there are some additional
+practices you need to follow:
 
 1.  Leave Comments
     
@@ -230,7 +247,39 @@ you need to follow:
 8.  (*Under development*) Consider using `renderCachePlot` instead of
     `renderPlot`
 
-### App Meta Data
+### Organizing Code
+
+There is a fixed order in which you should write your code. This will
+depend on if you are using a singular `app.R` file or the pair `ui.r`
+and `server.r`.
+
+#### Using `app.R`
+
+The order for your code will be as follows:
+
+1.  Packages to be loaded
+2.  App Meta Data
+3.  Any additional source files
+4.  UI definition
+5.  Server definition
+6.  `boastApp` call
+
+#### Using `ui.R` and `server.R`
+
+The order for your code in the `ui.R` file:
+
+1.  Packages to be loaded
+2.  App Meta Data
+3.  Any additional source files
+4.  UI definition
+
+The order for your code in the `server.R` file:
+
+1.  Packages to be loaded
+2.  Any additional source files
+3.  Server definition
+
+### Meta Data
 
 Each app will need the following meta data in either the `app.R` or
 `ui.R` file. For long lines, use the `paste` function to allow you to
@@ -254,26 +303,6 @@ APP_DESCP  <<- paste(
 Notice that both `APP_TITLE` and `APP_DESCP` do not follow camelCase.
 This is by intent to denote global `constants`.
 
-### Order of App Code
-
-There is a fixed order in which you will need to write your code. This
-will depend on if you are using a singular `app.R` file or the pair
-`ui.r` and `server.r`.
-
-#### Using `app.R`
-
-The order for your code will be as follows: 1. Packages to be loaded 2.
-App Meta Data 3. Any additional source files 4. UI definition 5. Server
-definition 6. `boastApp` call
-
-#### Using `ui.R` and `server.R`
-
-The order for your code in the `ui.R` file: 1. Packages to be loaded 2.
-App Meta Data 3. Any additional source files 4. UI definition
-
-The order for your code in the `server.R` file: 1. Packages to be loaded
-2. Any additional source files 3. Server definition
-
 ## Visual Appearance
 
 The visual appearance of each App consists of 6 major areas (plus one
@@ -281,11 +310,33 @@ catchall). The benefit of using the `boastApp` function from the
 `boastUtils` package is that this will automatically take care of much
 of this section for you.
 
-### Coloring
+### Branding
+
+Given that we are all associated with Pennsylvania State University, we
+need to include the Penn State logo in each App. Rather than sticking
+the logo at the top of the Overview page, we are going to place the logo
+at the bottom of the sidebar. This has the benefit of having the logo
+appear throughout the entire App AND making the logo be as unobtrusive
+as possible.
+
+In your `ui.R` file (or your UI section of `app.R`), at the end of your
+`dashboardSidebar()` section, include the following
+
+``` r
+tags$div(
+  class = "sidebar-logo",
+  boastUtils::psu_eberly_logo("reversed")
+)
+```
+
+This will ensure that the Penn State logo gets properly used.
+
+### Colors
 
 The App needs to have a consistent color scheme throughout. The color
-scheme should be checked against colorblindness. You can do so at the
-[Coloring for
+scheme should be checked against colorblindness to meet
+[WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/) Level AA. You can do
+so at the [Coloring for
 Colorblindness](https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7)
 website.
 
@@ -300,12 +351,13 @@ with `ggplot2`:
 ``` r
 # boastPalette is based on the Wong color blind set found at the above website.
 boastPalette <- c("#0072B2","#D55E00","#009E73","#ce77a8","#000000","#E69F00","#999999","#56B4E9","#CC79A7")
+
 # psuPalette is based on Penn State's three official color palettes and checked at the above webite.
 psuPalette <- c("#1E407C","#BC204B","#3EA39E","#E98300","#999999","#AC8DCE","#F2665E","#99CC00")
 
 # Both palettes get used in the order of what is listed.
 
-g1 <- ggplot2::ggplot(data=df, aes(x=x, y=y, color=grp)) #create a ggplot object
+g1 <- ggplot2::ggplot(data = df, aes(x = x, y = y, color = grp)) # Create a ggplot object
 
 g1 + scale_color_manual(values=boastPalette)  # If you use "color" in aes
 g1 + scale_fill_manual(values=boastPalette)  # If you use "fill" in aes
@@ -314,9 +366,12 @@ g1 + scale_fill_manual(values=boastPalette)  # If you use "fill" in aes
 #### User Interface
 
 All aspects of color in the User Interface should be controlled through
-the CSS file(s). This includes all of the following: + Dashboard
-coloring (header, sidepanel, main page) + Text coloring + Coloring of
-Controls (including, buttons, sliders, and other input fields)
+the CSS file(s). This includes all of the following:
+
+  - Dashboard coloring (header, sidepanel, main page)
+  - Text coloring
+  - Coloring of Controls (including, buttons, sliders, and other input
+    fields)
 
 By using CSS, especially through `boastApp`, you’ll be able to ensure
 that there is consistent coloring throughout your App.
@@ -351,38 +406,47 @@ the text dynamically for mobile devices and screen sizes. Again, using
 
 If you want to make a certain word or phrase italic, you will need to
 wrap that text in `tags$em()`. Similarly, if you want do the same with
-boldface, you’ll use `tags$strong()`. For example, this code
+boldface, you’ll use `tags$strong()`.
+
+For example, this code:
 
 ``` r
 p(
   "When dealing with the ",
   tags$em("t"),
-  "-distribution, we only have one parameter, the "
+  "-distribution, we only have one parameter, the ",
   tags$strong("degrees of freedom"),
   "that we need to input."
 )
 ```
 
-turns into –\> When dealing with the *t*-distribution, we only have one
-parameter, the **degrees of freedom** that we need to input.
+Becomes:
+
+When dealing with the *t*-distribution, we only have one parameter, the
+**degrees of freedom** that we need to input.
 
 Use italics/emphasis, and boldface/strong sparingly.
 
 #### Mathematics
 
 For the most part, any mathematics you need displayed should be done
-using MathJax. Default to using inline typesetting with the `\\(` and
-`\\)` delimiters. If you need to use display style, you can use `\\[`
-and `\\]` or double dollar signs. For the vast majority of mathematics,
-you’ll wrap both inline and display style mathematics inside of a
-paragraph environment.
+using [MathJax](https://www.mathjax.org/). Default to using inline
+typesetting with the `\\(` and `\\)` delimiters. If you need to use
+display style, you can use `\\[` and `\\]` or double dollar signs. For
+the vast majority of mathematics, you’ll wrap both inline and display
+style mathematics inside of a paragraph environment.
 
 If you’re writing mathematics directly in your app, remember you’ll need
-to escape the LaTeX commands by putting an extra  in front; e.g.,
+to escape the LaTeX commands by putting an extra \\ in front; e.g.,
 `\frac{3}{4}` would need to be `\\frac{3}{4}`.
 
 If you’re reading in mathematical text from an external CSV file, you do
 not need the extra backslash in the CSV file.
+
+**Note:** Double dollar sign delimiters are generally not recommended
+for displaying math as they can lead to unintended results. See:
+[Writing Mathematics for
+MathJax](https://docs.mathjax.org/en/latest/basic/mathematics.html).
 
 #### \[Game\] Question Text
 
@@ -394,7 +458,7 @@ tag; wrap the text in a paragraph tag.
 If you are using the `boast.CSS` file, the text that is included in/on
 buttons, dropdown menus, sliders, radio buttons, choices, and other
 inputs as well as alert messages and popups/rollovers, will
-automatically be styled corrected.
+automatically be styled correctly.
 
 Do not use heading tags, the paragraph tag, italics/emphasis, or
 boldface/strong with input labels.
@@ -411,7 +475,9 @@ Unfortunately, text in `R` plots do not get controlled by CSS. This
 means that you’ll have to play around with the settings. Using the
 `ggplot2` package to make your plots (or other packages based upon the
 ggplot framework) will allow you to use the `theme` aspect to control
-text in your App. Here is an example for how to do this:
+text in your App.
+
+Here is an example for how to do this:
 
 ``` r
 g1 <- ggplot2::ggplot(data=df, aes(x=x, y=y, color=grp)) #create a ggplot object
@@ -419,19 +485,19 @@ g1 <- ggplot2::ggplot(data=df, aes(x=x, y=y, color=grp)) #create a ggplot object
 g1 + theme(
   plot.caption = element_text(size = 18),
   text = element_text(size = 18)
-  )
+)
 ```
 
 You will need to play around with the settings to find the appropriate
-value; 18 does appear to work out well.
+value; text size 18 does appear to work out well.
 
-### Tab Page Ordering in the Dashboard’s Sidepanel
+### Dashboard
 
 The ordering of the Tab Pages for your App should make logical sense and
 should structure how you want users to use your App. Additionally, we
 have specific icons that should be used with particular Tab Pages.
 
-1.  Overview–icon: dashboard–REQUIRED
+1.  Overview–icon: Dashboard–**REQUIRED**
       - This tab page is required for all Apps. This is the main landing
         page of your App and should appear at the top of the sidepanel.
     
@@ -474,28 +540,7 @@ have specific icons that should be used with particular Tab Pages.
       - The bottom of the sidebar should contain the Penn State Logo
         (see the Penn State Branding section).
 
-### Penn State Branding
-
-Given that we are all associated with Pennsylvania State University, we
-need to include the Penn State logo in each App. Rather than sticking
-the logo at the top of the Overview page, we are going to place the logo
-at the bottom of the sidebar. This has the benefit of having the logo
-appear throughout the entire App AND making the logo be as unobtrusive
-as possible.
-
-In your `ui.R` file (or your UI section of `app.R`), at the end of your
-`dashboardSidebar()` section, include the following
-
-``` r
-      tags$div(
-        class = "sidebar-logo",
-        boastUtils::psu_eberly_logo("reversed")
-      )
-```
-
-This will ensure that the Penn State logo gets properly used.
-
-### Mobile Friendly
+### Mobile Friendliness
 
 We want our apps to work well with mobile devices. Thus, when you get to
 the point where the majority of bugs have been fixed, you need to check
@@ -505,20 +550,32 @@ should be well on your way to being mobile friendly.
 
 You can check your App in two ways:
 
-1.  Test your App out on a variety of mobile devices
-2.  Make use of a browser’s ability to mimic mobile devices. To do this,
-    launch your App in a browser, then
-      - Firefox: Tools –\> Web Developer –\> Responsive Design Mode
-      - Chrome: ???
-      - Safari: ???
+1.  Test your App out on a variety of mobile devices.
+2.  Make use of a browser’s ability to mimic devices. To do this, launch
+    your App in a browser, then enable one of the following:
+      - [Chrome: Device
+        Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/#viewport)
+      - [Firefox: Responsive Design
+        Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode)
+      - [Microsoft Edge: Device
+        Emulation](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/emulation)
+      - [Safari: Responsive Design
+        Mode](https://support.apple.com/en-gb/guide/safari-developer/dev84bd42758/mac)
 
 Look for any issues that you might be able to address before you hand
-off your App for others to play around with.
+off your App for others to play around with. Assign a **Mobile
+Friendliness Rating** to your app on a scale from 1 to 5.
+
+1.  Not functional
+2.  Functional – Very awkward
+3.  Functional – Okay if no big screen available (multiple issues)
+4.  Usable in a small class setting (single issue)
+5.  Readily usable
 
 ### Miscellaneous
 
-  - Loading bar to show the process of large number calculation (not
-    needed)
+  - Consider adding a loading bar to show the process of large number
+    calculations.
 
 ## Wording
 
@@ -531,17 +588,24 @@ If what they say is consistent with what you intended, great. If not,
 then you need to revise your text.
 
 **DO NOT sacrifice clarity and precision/accuracy for
-conciseness/brevity.** Since these Apps are for *teaching*, we need to
-use language that is accurate and supports students in constructing
-productive meanings. This means that we need to avoid sloppy language
-and re-enforcing problematic conceptions. For example, + Discussing
-values of statistics + BAD: “The mean is 6.” + GOOD: “The value of the
-*sample arithematic mean* for this data is 6 units/object.” +
-Problematic conceptions + BAD: “Probability is the likelihood of an
-event in relation to all possible events.” + GOOD: “Probability is the
-long-run relative frequency for us seeing a particular data event given
-our assumptions. Likelihood is the long-run relative frequency of a set
-of assumptions being true given our collected data.”
+conciseness/brevity.**
+
+Since these Apps are for *teaching*, we need to use language that is
+accurate and supports students in constructing productive meanings. This
+means that we need to avoid sloppy language and re-enforcing problematic
+conceptions. For example,
+
+  - Discussing values of statistics
+      - BAD: “The mean is 6.”
+      - GOOD: “The value of the *sample arithematic mean* for this data
+        is 6 units/object.”
+  - Problematic conceptions
+      - BAD: “Probability is the likelihood of an event in relation to
+        all possible events.”
+      - GOOD: “Probability is the long-run relative frequency for us
+        seeing a particular data event given our assumptions. Likelihood
+        is the long-run relative frequency of a set of assumptions being
+        true given our collected data.”
 
 ## Documentation
 
@@ -550,12 +614,13 @@ academic record. Thus, you need to adhere to [Penn State’s Academic
 Integrity
 Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html).
 This is especially important as we are making the Apps available through
-a Creative Commons Attribution Share Alike (CC-BY-SA-4.0) license. If
-you have used code, pictures, data, or other materials from outside of
-the BOAST team, you **MUST** give proper credit. These references will
-then be included on the App’s References page.
+a Creative Commons Attribution-ShareAlike 4.0 International license ([CC
+BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)). If you
+have used code, pictures, data, or other materials from outside of the
+BOAST team, you **MUST** give proper credit. These references will then
+be included on the App’s References page.
 
-### References Tab
+### References
 
 All Apps will need a References Tab. This is where you’ll place all
 references for your App, including R packages, borrowed code, data
@@ -569,23 +634,20 @@ for you to use:
 
 ``` r
 tabItem(
-      tabName = "refs",
-      withMathJax(),
-      h2("References"),
-      p(
-        class = "hangingindent",
-        "reference 1-alphabetically"
-      ),
-      p(
-        class = "hangingindent",
-        "reference 2-alphabetically"
-      ),
-      #repeat as needed
+  tabName = "refs",
+  withMathJax(),
+  h2("References"),
+  p(class = "hangingindent",
+    "reference 1-alphabetically"),
+  p(class = "hangingindent",
+    "reference 2-alphabetically"),
+  # Repeat as needed
+)
 ```
 
 If you need assistance with this section, please talk to Neil.
 
-### Using Another Person’s Code
+### Plagiarism
 
 **You MAY NOT use blocks of code you’ve found online without giving
 proper attribution.**
@@ -626,16 +688,16 @@ from.
 #    Code version: <code version>
 #    Availability: <where it's located>
 #-----------------------------------------------------------------------------------------
-[reused code then follows]
-
-[last line of reused code]
+# [reused code then follows]
+# ...
+# [last line of reused code]
 #End of <author>'s code-------------------------------------------------------------------
 ```
 
 ### `R` Packages
 
-If you made use of any packages in `R`, then you need to add these to
-the Reference subsection. Fortunately, there is a built-in tool that
+If you made use of any packages in `R`, then you will need to add these
+to the Reference subsection. Fortunately, there is a built-in tool that
 will help you: the `citation` function. In R (RStudio) simply type
 `citation("packageName")` and you’ll get the appropriate citation
 information for the package you used. For example,
@@ -655,13 +717,13 @@ an article published for the package. The `shinydashboard` package is
 not associated with an article while the `plyr` package is associated
 with Wickham’s article.
 
-### Pictures
+### Graphics
 
 Pictures, drawings, photographs, images, etc. are typically copyrighted.
 When you’re selecting images, make sure that the images are Open
-Source/Copyright Free/Royalty Free. Additionally, include a reference to
-where the pictures came from in the Overview Page. The basic format to
-use is:
+Source/Copyright Free/Royalty Free/Public Domain. Additionally, include
+a reference to where the pictures came from in the Overview Page. The
+basic format to use is:
 
 LastName, First Initial. (Year). Title of artwork. \[Format\]. Retrieved
 from \< URL \>.
@@ -687,10 +749,16 @@ mean you have the right to share the data.
 We need to make sure that our Apps are accessible. If you have been
 adhering to the style guide, your App should be in a decent position.
 When you’re ready to test the accessibility of your App, you’ll need to
-upload the App to a sever and then use the [WAVE Web Accessibility
+deploy the App to a sever and then use the [WAVE Web Accessibility
 Evaluation Tool](https://wave.webaim.org/). Enter the URL of your App in
 the noted box to run an evaluation. See what accessibility issues your
 App has and then address them.
+
+**See:** + [Accessibility and Usability at Penn
+State](https://accessibility.psu.edu/) + [Accessibility
+Statement](https://www.psu.edu/accessibilitystatement) + [How to Meet
+Web Content Accessibility
+Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## Additional Tools
 
