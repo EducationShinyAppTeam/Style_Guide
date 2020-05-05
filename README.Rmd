@@ -27,7 +27,7 @@ By following this style guide you'll ensure that any app you create will meet ou
 
 ### Getting Started
 
-To get started, clone the [Sample_App](https://github.com/EducationShinyAppTeam/Sample_App) template repo found on GitHub. This will provide you with a skeleton for how to organize your files as well as your code.
+To get started, clone the [Sample_App](https://github.com/EducationShinyAppTeam/Sample_App) template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.
 
 __Command Line:__
 

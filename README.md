@@ -45,7 +45,7 @@ meet our standards.
 To get started, clone the
 [Sample\_App](https://github.com/EducationShinyAppTeam/Sample_App)
 template repo found on GitHub. This will provide you with a skeleton for
-how to organize your files as well as your code.
+organizing your files as well as your code.
 
 **Command Line:**
 
