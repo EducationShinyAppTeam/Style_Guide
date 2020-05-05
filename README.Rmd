@@ -477,7 +477,8 @@ If you (or someone else) had to sign some type of agreement to access the data, 
 
 We need to make sure that our Apps are accessible. If you have been adhering to the style guide, your App should be in a decent position. When you're ready to test the accessibility of your App, you'll need to deploy the App to a sever and then use the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). Enter the URL of your App in the noted box to run an evaluation. See what accessibility issues your App has and then address them.
 
-__See:__
+__See also:__
+
   + [Accessibility and Usability at Penn State](https://accessibility.psu.edu/) 
   + [Accessibility Statement](https://www.psu.edu/accessibilitystatement)
   + [How to Meet Web Content Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)

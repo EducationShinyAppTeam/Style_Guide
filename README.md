@@ -754,11 +754,14 @@ Evaluation Tool](https://wave.webaim.org/). Enter the URL of your App in
 the noted box to run an evaluation. See what accessibility issues your
 App has and then address them.
 
-**See:** + [Accessibility and Usability at Penn
-State](https://accessibility.psu.edu/) + [Accessibility
-Statement](https://www.psu.edu/accessibilitystatement) + [How to Meet
-Web Content Accessibility
-Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+**See also:**
+
+  - [Accessibility and Usability at Penn
+    State](https://accessibility.psu.edu/)
+  - [Accessibility
+    Statement](https://www.psu.edu/accessibilitystatement)
+  - [How to Meet Web Content Accessibility
+    Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## Additional Tools
 
