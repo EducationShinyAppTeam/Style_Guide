@@ -27,10 +27,13 @@ Neil Hatfield (<njh5464@psu.edu>), Robert Carey (<rpc5102@psu.edu>)
   - [Additional Tools](#additional-tools)
 
 This guide spells out the styling that should be used for all apps
-included in BOAST. Styling refers to several different aspects
-including: - How you approaching writing code - Visual appearance of the
-app - The wording used in the app - Documentation of references,
-including code and data sources
+included in [BOAST](https://github.com/EducationShinyAppTeam/BOAST).
+Styling refers to several different aspects including:
+
+  - How you approaching writing code
+  - Visual appearance of the app
+  - The wording used in the app
+  - Documentation of references, including code and data sources
 
 By following this style guide you’ll ensure that any app you create will
 meet our standards.
@@ -56,83 +59,80 @@ guide](https://style.tidyverse.org/). However, here are some practices
 you need to follow:
 
 1.  Leave Comments
-
-<!-- end list -->
-
-  - At bare minimum, use a comment to break your code into sections.
-    These can also provide others with potential keywords to search for
-    when looking at your code later on.
-  - For particularly complex sections, use comments to summarize what
-    you’re trying to do.
-
-<!-- end list -->
+    
+      - At bare minimum, use a comment to break your code into sections.
+        These can also provide others with potential keywords to search
+        for when looking at your code later on.
+      - For particularly complex sections, use comments to summarize
+        what you’re trying to do.
 
 2.  Use informative names for variables and functions
-
-<!-- end list -->
-
-  - Use names that give another person a sense of what that variable
-    represents or what the function is supposed to do. For example,
-      - `scoreMatrix` is a matrix that holds a set of scores
-      - `checkGame` is a function that checks the state of the current
-        game
-  - Avoid using the variable names that existed in code you’re making
-    use of from another app or script.
-      - Don’t use `waitTimes` to hold your data on the number of correct
-        answers a user has given.
-
-<!-- end list -->
+    
+      - Use names that give another person a sense of what that variable
+        represents or what the function is supposed to do. For example,
+          - `scoreMatrix` is a matrix that holds a set of scores
+          - `checkGame` is a function that checks the state of the
+            current game
+      - Avoid using the variable names that existed in code you’re
+        making use of from another app or script.
+          - Don’t use `waitTimes` to hold your data on the number of
+            correct answers a user has given.
 
 3.  Format your code
+    
+      - Use indentation spacing to help make your code readable. RStudio
+        has a built-in tool that can help with this.
+        
+          - Select all of the code you want to reformat. To select all
+            code in a file, use Command-A (Mac) or Control-A (Windows).
+          - Press Command-Shift-A (Mac), Control-Shift-A (Windows), or
+            click on the Code menu and select Reformat Code.
+          - NOTE: this tool is imperfect and can result in left
+            parenthesis or curly braces moving up a line to where you
+            might have an end-of-line comment, resulting in errors.
+    
+      - Make use of the `styler` and `lintr` packages to help you
+        perform formatting checks and to quickly reformat code.
+    
+      - Be Explicit  
+        When passing values to parameters in a function, be explicit and
+        include the parameter name in your code. For example,
+        
+        ``` r
+        actionButton(
+          inputId = "submit",
+          label = "Submit",
+          color = "primary",
+          style = "bordered",
+          class = "btn-ttt"
+        )
+        ```
 
-<!-- end list -->
-
-  - Use indentation spacing to help make your code readable. RStudio has
-    a built-in tool that can help with this.
-      - Select all of the code you want to reformat. To select all code
-        in a file, use Command-A (Mac) or Control-A (Windows).
-      - Press Command-Shift-A (Mac), Control-Shift-A (Windows), or click
-        on the Code menu and select Reformat Code.
-      - NOTE: this tool is imperfect and can result in left parenthesis
-        or curly braces moving up a line to where you might have an
-        end-of-line comment, resulting in errors.
-  - Make use of the `styler` and `lintr` packages to help you perform
-    formatting checks and to quickly reformat code.
-  - Be Explicit  
-    When passing values to parameters in a function, be explicit and
-    include the parameter name in your code. For example, `r
-    actionButton( inputId = "submit", label = "Submit", color =
-    "primary", style = "bordered", class = "btn-ttt" )`
-
-<!-- end list -->
-
-4.  Be aware of HTML Tags and use them correctly– **Accessibility
-    Issue**
+4.  Be aware of HTML Tags and how to use them correctly –
+    **Accessibility Issue**
     
     HTML Tags should not be used without some basic understanding of
     what that tag is for. Using the tags without such an understanding
     can not only lead to problems with your code running properly or
     looking like what you intended, but can interfere with how
     accessible your app is to wider audience.
-
-<!-- end list -->
-
-  - List Items–`tags$li()`
     
-      - All list items need to be enclosed in a larger list environment:
-          - Use `tags$ol( )` around your items if a user must work
-            through the steps in a particular order. This is the Ordered
-            List environment.
-          - Use `tags$ul( )` around your items if a user can jump around
-            the list in any order they wish. This is the Unordered List
-            environment.
-      - You do NOT need to use Header or Paragraph tags when you’ve used
-        a list item tag.
-      - Exception to List Environment: the Dashboard Header has a
-        built-in listing environment where you do not need to use
-        `tags$ol()` or `tags$ul()`.
-
-  - Heading Tags–`h1()`, `h2()`, `h3()`, `h4()`, `h5()`, and `h6()`
+      - List Items – `tags$li()`
+          - All list items need to be enclosed in a larger list
+            environment:
+              - Use `tags$ol( )` around your items if a user must work
+                through the steps in a particular order. This is the
+                Ordered List environment.
+              - Use `tags$ul( )` around your items if a user can jump
+                around the list in any order they wish. This is the
+                Unordered List environment.
+          - You do NOT need to use Header or Paragraph tags when you’ve
+            used a list item tag.
+          - Exception to List Environment: the Dashboard Header has a
+            built-in listing environment where you do not need to use
+            `tags$ol()` or `tags$ul()`.
+      - Heading Tags – `h1()`, `h2()`, `h3()`, `h4()`, `h5()`, and
+        `h6()`
     
     Heading tags provide a navigational structure to your app. Think of
     them as being the different levels of titles in a book. They are
@@ -140,8 +140,9 @@ you need to follow:
     Think about the headings as laying out a Table of Contents for your
     app, rather than containing content.
     
-      - Hierarchy–there is a specific ordering to the header tags. For
-        our apps, this would be
+      - Hierarchy – there is a specific ordering to the header tags. For
+        our apps, this would be:
+        
           - `h1()` is for the Title of your App and should be ONCE at
             the top of the first page that appears when you load the app
             (i.e., the Overview).
@@ -156,17 +157,22 @@ you need to follow:
             section.
           - `h5()` and `h6()` should be used sparingly. These might be
             used for different levels of a game.
+    
       - Avoid skipping heading levels
+    
       - DO NOT USE headings to style text
+    
       - Do not wrap a header tag around a list element (i.e.,
         `h3(tags$li("here is my list item"))`) nor the reverse (i.e.,
         `tags$li(h3("here is my list item"))`)
+    
       - Do not mix header tags together in the same line or with the
         paragraph tag.
+    
       - For more information check out the [W3C’s
         Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
-
-  - Paragraph Tag–`p()`
+    
+      - Paragraph Tag – `p()`
     
     Enclose all content text–even if a single sentence–as well as
     equations in a paragraph environment. This tells screen readers what
@@ -174,60 +180,46 @@ you need to follow:
     paragraph tag is what actually gives the structure you defined with
     header tags a body.
 
-<!-- end list -->
-
 5.  Styling Text
-
-<!-- end list -->
-
-  - The styling of text (including font size, weight, type, colors,
-    etc.) is to be controlled using an **external** CSS (Cascading Style
-    Sheet) file.
-      - If you are using the `ui.R` and `server.R` format, place the
-        following code in the `tags$head( )` portion at the top of the
-        `dashboardBody` section of your App:
-        
+    
+      - The styling of text (including font size, weight, type, colors,
+        etc.) is to be controlled using an **external** CSS (Cascading
+        Style Sheet) file.
+          - If you are using the `ui.R` and `server.R` format, place the
+            following code in the `tags$head( )` portion at the top of
+            the `dashboardBody` section of your App:
+        <!-- end list -->
         ``` r
         tags$link(rel = "stylesheet", type = "text/css", 
         href = "https://educationshinyappteam.github.io/Style_Guide/theme/boast.css")
         ```
-    
-      - If you’re using the `boastApp` function from `boastUtils`, you
-        do not need to worry about this; it will automatically be done
-        for you.
-    
-      - If you need to add additional styling that is *unique* to one
-        App, then you will need to create a specific CCS file for the
-        App (to be named `[appName].CSS`) and include that file in the
-        App’s `www` folder.
-        
-          - You will still need to include the above code in your `ui.R`
-            file. You will need to duplicate this code but alter the
-            `href` to be `[appName].CSS`.
-    
-      - If you need additional styling that will impact multiple apps,
-        you need to speak with Neil or Bob to see about adding to the
-        main CSS file.
-
-<!-- end list -->
+          - If you’re using the `boastApp` function from `boastUtils`,
+            you do not need to worry about this; it will automatically
+            be done for you.
+          - If you need to add additional styling that is *unique* to
+            one App, then you will need to create a specific CCS file
+            for the App (to be named `[appName].CSS`) and include that
+            file in the App’s `www` folder.
+              - You will still need to include the above code in your
+                `ui.R` file. You will need to duplicate this code but
+                alter the `href` to be `[appName].CSS`.
+          - If you need additional styling that will impact multiple
+            apps, you need to speak with Neil or Bob to see about adding
+            to the main CSS file.
 
 6.  Minimize Package Usage
-
-<!-- end list -->
-
-  - Make sure that you absolutely have to use a particular package
-    before you do. Check to see if what you’re trying to do can be done
-    in a package you’re already using or in base R.
-  - To help you avoid name masking, ensure that you are actually using a
-    package, and to help future readers follow your code, explicitly
-    call packages with their functions.
-      - For example, use `dplyr::filter([arguments])` instead of just
-        `filter([argumens])`.
-  - Run a `funchir::stale_package_check` on your `app.R`, `ui.R`, and
-    `sever.R` files to see which packages you’re loading might not
-    actualy use.
-
-<!-- end list -->
+    
+      - Make sure that you absolutely have to use a particular package
+        before you do. Check to see if what you’re trying to do can be
+        done in a package you’re already using or in base R.
+      - To help you avoid name masking, ensure that you are actually
+        using a package, and to help future readers follow your code,
+        explicitly call packages with their functions.
+          - For example, use `dplyr::filter([arguments])` instead of
+            just `filter([argumens])`.
+      - Run a `funchir::stale_package_check` on your `app.R`, `ui.R`,
+        and `sever.R` files to see which packages you’re loading might
+        not actualy use.
 
 7.  Minimize External Files
     
@@ -243,21 +235,24 @@ you need to follow:
 Each app will need the following meta data in either the `app.R` or
 `ui.R` file. For long lines, use the `paste` function to allow you to
 break code lines apart but end up with a cohesive string for printing.
+This data is used to teach Learning Management Systems (LMS) and
+Learning Record Stores (LRS) what your app does. More formats will be
+supported in the future.
 
-Use the following format
+For now, use the following format:
 
 ``` r
 ## App Meta Data----------------------------------------------------------------
-APP_TITLE <<- "title of the app"
-APP_DESCP <<- paste(
-    "description of the app",
+APP_TITLE  <<- "Title of the app"
+APP_DESCP  <<- paste(
+    "Description of the app",
     "use multiple lines to keep the description legible.",
 )
 ## End App Meta Data------------------------------------------------------------
 ```
 
-Notice that both `APP_TITLE` and `APP_DESCP` do not follow CamelCase.
-This is by intent.
+Notice that both `APP_TITLE` and `APP_DESCP` do not follow camelCase.
+This is by intent to denote global `constants`.
 
 ### Order of App Code
 
