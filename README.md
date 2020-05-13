@@ -527,9 +527,9 @@ To force `ggplot2` to place (0, 0) in the lower-left corner and to control the s
     
       # Control axes and scale
       ## Multplicative Scaling of the Horizontal Axis
-      g1 + ggplot2::scale_x_continuous(expand = expand_scale(mult = c(1,2), add = 0)) +
+      g1 + ggplot2::scale_x_continuous(expand = expansion(mult = c(1,2), add = 0)) +
       ## Additive Scaling of the Vertical Axis
-      scale_y_continuous(expand = expand_scale(mult = 0, add = c(0,0.05))) 
+      scale_y_continuous(expand = expansion(mult = 0, add = c(0,0.05))) 
       ```
 #### Tables
 Use tables as infrequently as possible. If you absolutely must include a table, you will need to decide what the role of your table is. This is an Accessibility issue that you __MUST__ pre-plan for. Screen readers will poorly communicate tables if you fail to set the role appropriately. __Talk to Neil and Bob__ before using a table. 
