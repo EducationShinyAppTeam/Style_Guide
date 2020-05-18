@@ -2,7 +2,7 @@ Style Guide
 ================
 Neil Hatfield (<njh5464@psu.edu>), Robert Carey (<rpc5102@psu.edu>)
 
-Last Updated: 08 May 2020
+Last Updated: 18 May 2020
 
 ---
 This guide spells out the styling that should be used for all apps
@@ -79,7 +79,7 @@ Please check out the package’s
 instructions on installing and usage.
 
 ### Sample App  
-Bob has created a Sample App repository that you can use as a template for your own apps. To get started, clone the
+Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the
 [Sample\_App](https://github.com/EducationShinyAppTeam/Sample_App)
 template repo found on GitHub. This will provide you with a skeleton for
 organizing your files as well as your code. There are several methods you can use:
@@ -99,7 +99,7 @@ You can download the repository directly:
 #### GitHub Desktop
 If you are using GitHub Desktop and have linked your account that has access to the EducationShinyAppTeam repository, you can do the following from inside GitHub Desktop:  
 
-1. Bring up the Clone Repository Menu (File->Clone Repository...)  
+1. Bring up the Clone Repository Menu (File -> Clone Repository...)  
 2. Enter Sample\_App in the search bar and select the option that says Sample\_App (not sampleapp)
 3. Click the Choose... button for the local path (this is where you want to the clone to live on your computer)
 4. Click the Clone button.
@@ -153,7 +153,8 @@ Our general practice is to make use of the [tidyverse style guide](https://style
           class = "btn-ttt"
         )
         ```  
-        - Two exceptions to this would be formula arguments (e.g., `response ~ factor1 + block`) and data vectors/frames (e.g., `dataFrame$response`). These function arguments are generally easy for a person to parse.  
+        - Two exceptions to this would be formula arguments (e.g., `response ~ factor1 + block`) and data vectors/frames (e.g., `dataFrame$response`). These function arguments are generally easy for a person to parse.
+        - An additional exception would be functions that stem from the `shiny` and `shinydashboard` packages (e.g., use `dashboardHeader` rather than `shinydashboard::dashboardHeader`). 
     - Remember the following: the more proactive you are from the get go in commenting and organizing your code, the easier time you will have for debugging and improving your code down the road.
 
 4.  Be aware of HTML Tags and how to use them correctly – **Accessibility Issue**
@@ -350,6 +351,7 @@ To ensure a consistent experience across all apps, you need to make sure that yo
       - The icon you use depends on the type of activity:
         - Games will use the icon "gamepad".
         - Explorations will use the icon "wpexplorer".
+        - Challenges will use the icon "gears".
         
 4.  The Last Tab: References–icon: leanpub–REQUIRED
       - This Tab is __REQUIRED__ and is where you will place a reference list for all of the following items that you used in your app:
@@ -436,7 +438,7 @@ If you want to make a certain word or phrase italic, you will need to wrap that 
 
 For example, this code:
 
-      ``` r
+      ```r
       p(
         "When dealing with the ",
         tags$em("t"),
