@@ -54,7 +54,7 @@ Before you get too far into the Style Guide, we would like for you to take a mom
     a. DataCamp  
     b. GitHub  
     c. EducationShinyAppTeam on GitHub  
-    d. RStudio Server  
+    d. RStudio Server (don't worry about this for the moment)  
     e. BOAST in Teams (tied to your PSU ID)
 2. Ensure that you have all of the proper software.  
     a. `R` (version 3.5.* minimum, version 4.0.0 preferred)  
