@@ -2,7 +2,7 @@ Style Guide
 ================
 Neil Hatfield (<njh5464@psu.edu>), Robert Carey (<rpc5102@psu.edu>)
 
-Last Updated: 18 May 2020
+Last Updated: 20 May 2020
 
 ---
 This guide spells out the styling that should be used for all apps
@@ -26,9 +26,11 @@ meet our standards.
       - [General Coding Style](#general-coding-style)
       - [Organizing Code](#organizing-code)
       - [Metadata](#metadata)
+      - [CSS](#css)
   - [Visual Appearance](#visual-appearance)
       - [PSU Branding](#psu-branding)
-      - [Dashboard](#dashboard)
+      - [Dashboard (Overarching App Structure and Tabs)](#dashboard)
+      - [Common Elements (Input Ordering, Buttons, Hover Text, etc.)](#common-elements)
       - [Colors](#colors)
       - [Text Styling](#text-styling)
       - [Graphics](#graphics)
@@ -54,7 +56,8 @@ Before you get too far into the Style Guide, we would like for you to take a mom
     a. DataCamp  
     b. GitHub  
     c. EducationShinyAppTeam on GitHub  
-    d. RStudio Server (don't worry about this for the moment)  
+    d. ~~RStudio Server~~  
+          + Upon investigation the TLT and the Eberly RStudio Servers will not be useful for us to do testing. An alternate testing process will be explored.  
     e. BOAST in Teams (tied to your PSU ID)
 2. Ensure that you have all of the proper software.  
     a. `R` (version 3.5.* minimum, version 4.0.0 preferred)  
@@ -105,6 +108,8 @@ If you are using GitHub Desktop and have linked your account that has access to 
 4. Click the Clone button.
 
 [Back to ToC](#table-of-contents)
+
+---
 
 ## Coding Style
 Now that you've gone through the Getting Started section, we can turn our attention to the first part of the Style Guide: Coding. There are many aspects that fall under the heading of Coding Style. 
@@ -283,6 +288,26 @@ Notice that both `APP_TITLE` and `APP_DESCP` do not follow camelCase. This is by
 
 [Back to ToC](#table-of-contents)
 
+### CSS
+Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.
+
+There are three key elements at play for CSS:  
+
+1. All apps need to have the appropriate reference to the CSS file (See #5 of [General Coding Style](#genderal-coding-style)).  
+    a. Please register any issues, bugs, enhancements, new stylings to the Style Guide repository of GitHub. 
+2. Any app specific styling needs to as be in a CSS file and approved
+3. There should not be any styling code in the app.R, ui.R, or server.R files (a.k.a. in-line CSS). Styling code would look like this:  
+    + `tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: orange}"))`  
+    + `style="color: #fff; background-color: #337ab7; border-color: #2e6da4"`
+
+There is an exception: setting up alignment for a div section: `div(style = "text-align: center"...)` These are allowed in the R files.
+
+If you come across an app that has in-line CSS OR calls to a CSS file that isn't `boast.css`, please log an issue and mention/assign Neil. (Most common external CSS files are `style.css` and `Feature(s).css`.)
+
+
+[Back to ToC](#table-of-contents)
+
+---
 ## Visual Appearance
 The second portion of this Style Guide deals with the Visual Appearance of each App. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each App, there are 5 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Color, Text Styling, and Plots. 
 
@@ -313,6 +338,8 @@ The Dashboard Header contains only a couple of elements. The most important of t
 
 Additional icons might be included to the left of the Home icon. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab specific information.
 
+There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
+
 #### Sidebar and Body
 
 The Sidebar (responsible for App navigation) and the Body are intimately related to one another. The Sidebar provides structure to the App as well as being the primary way that a user can move around the App. The Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with.
@@ -336,8 +363,8 @@ To ensure a consistent experience across all apps, you need to make sure that yo
     
       - There is no need to use boldface or colons with the section headings when you properly use Heading tags.
       
-2.  A Pre-requisites Tab
-      - If your App needs to ensure that the user has the base understandings necessary to interact with your App, you’ll need to create a pre-requisites Tab. Otherwise, skip this Tab.
+2.  A Prerequisites Tab
+      - If your App needs to ensure that the user has the base understandings necessary to interact with your App, you’ll need to create a prerequisites Tab. Otherwise, skip this Tab.
       
       - The icon for this Tab must be "book".
       
@@ -366,6 +393,111 @@ To ensure a consistent experience across all apps, you need to make sure that yo
 5.  Last Element: Penn State Logo
       - The bottom of the Sidebar should contain the Penn State Logo
         (see the [PSU Branding section](#psu-branding)).
+
+[Back to ToC](#table-of-contents)
+
+#### Tabs Inside the Body
+There are two types of tabs in a Shiny app: there are the `tabItem` (i.e., the pages within an app and should appear in the Sidebar) and `tabPanel` (i.e., creating sub-pages or independent sections). In this section, we will discuss this later case.
+
+Deciding on whether to use `tabPanel` is going to depend on several things:
+
+1. Do you have two or more aspects that are related enough that they shouldn't be their own separate tabs/pages of your App?  
+    a. If NO, then you shouldn't use `tabPanel`.  
+    b. If YES, then continue.
+2. Are any of your aspects something that would be better suited as a Challenge or Game tab?  
+    a. If YES, move that aspect to a separate page. If you still have 2+ aspects, continue.  
+    b. If NO, continue.  
+3. Are the aspects independent enough that a person can skip a couple and still use the App successfully?  
+    a. If NO, then you should re-consider your design.  
+    b. If YES, then proceed with using `tabPanel` in you design.
+
+When you go to make a set of tab panels you will need to first create a `tabsetPanel` which will wrap around all of the individual panels. Use `type = "tabs"`.
+
+The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
+
+[Back to ToC](#table-of-contents)
+
+### Common Elements
+In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, and hover text.
+
+#### Ordering Inputs
+One of the most powerful aspects of Shiny apps is that the user interacts with them. Thus, we do need to consider not only the ways in which user interact (e.g., buttons, sliders, text entry, etc.) but also the order in which you want the user to manipulate the inputs. Coming up with a single declaration for how to order inputs in all cases is not necessarily feasible. However, we can set up a general guideline for how to make decisions on ordering your inputs.
+
+Please use the following guidelines for determining the order of inputs in the User Interface (UI):
+
+1.  In general, if you want your user to do things in certain order, make your inputs appear in that order.  For example, If you want them to pick a data set, then an unusualness threshold/significance level, what attribute to test, and then set a parameter value, then your inputs should appear in that order.
+2. Make use of how we read the English language, i.e., Top-to-Bottom and Left-to-Right to provide an implicit ordering for your user.
+3. If a user needs to carry out steps in particular sequence for your App to run properly, then place your inputs inside of an Ordered List environment with explicit text on what they should do. For example,  
+    1. Choose your data set: [dropdown]  
+    2. Set your unusualness threshold/significance level  
+       [slider]  
+    3. Which attribute do you want to test: [dropdown]  
+    4. What parameter value do you want to use: [numeric input]
+4. If an input is going to reset other inputs you should either:  
+    a. Warn the user before hand  
+    b. Move the input to the top of the list  
+    c. Program the input to not reset other inputs  
+    d. Some combination of the above  
+5. If the inputs are not dynamically linked to the output (e.g., plots automatically update with a change in the input's value), then you should include a button that says "Make Plot" at the end of the inputs.
+   
+[Back to ToC](#table-of-contents)
+
+#### Buttons
+Buttons are one way in which users interact with the apps. The two most common functions that are used are `shiny::actionButton` and `shinyBS::bsButton`. Both functions share many of the same features. Two ways in which they are different is that `shinyBS::bsButton` has an additional `style` argument while `shiny::actionButton` has a `width` argument that gives you fine grain size control.  There are three key styling aspects: shape/animation, color, and text & icon.
+
+##### Shape/Animation
+All shape aspects of buttons will be controlled by CSS. The standard shape will be rectangular (the default). Sizing will be controlled by CSS although setting `size = "large"` for the `bsButton` call may be done.
+
+We have a number of apps where a button will change shape/size when a person hovers their cursor over it. This "animation" is to be discontinued. This is to say that buttons which change shape/size should be flagged as issues and resolved at the first opportunity.
+
+At most, the button's color might change (e.g., lighten or darken), depending on the context.
+
+##### Color
+
+The coloring of the button will also be controlled by CSS in one of two ways.
+
+The default way will be through the BOAST CSS. This will ensure that the selected color scheme for your App will be consistent.
+
+The second way only applies to `bsButton` and the `style` argument. Here, this option references an external CSS file beyond BOAST. We see these most often in games. Use the following list to guide you in choosing which style:
+
++ `warning`: Good for when you want the user to proceed with caution; for example a submit button in a game.
++ `danger`: Good for when you want the user to think twice before clicking; for example, a reset game button.
++ `success`: Good for when you want to convey that the user can proceed safely; for example, a button that advances the user through the game
++ `info`: Good for when you want to give some additional information; for example, a button that triggers game instructions popping up, a button that gives a hint, or a button that might filter a question pool.
+
+When in doubt, use the the `default` style option (or even omit this argument) for `bsButton` or use `actionButton`.
+
+##### Text & Icon
+The last styling element of a button is two-fold: the text that is in the button and the icon. 
+
+Here are some guidelines for text of a button:
+
++ All buttons must have some text. 
++ Generally speaking, the text should be relatively brief and clear. 
+  - Don't use "Go to the next page" when you could use "Next"
++ The text should make sense with the action of the button; for example,
+  - "Reset" if the button resets something (a game, a plot, inputs)
+  - "Submit" if the button triggers the app to grab and process input values
+  - "Make Graph" if button causes a graph to be generated
+  - "Show/Hide Graph" if a button makes a graph object appear/disappear
+  - "Next" if a button moves the user along some path.
++ If the button references something like a particular tab (prerequisites, exploration, etc.), the text should reflect this.
+  - "Explore!" for a button that takes a user to an Exploration tab.
+  - "Prerequisites" for a button that takes a user to a Prerequisites tab.
+  - "Challenge Yourself!" for a button takes a user to a Challenge tab.
+  - "Play!" for a button that takes a user to Game tab.
++ If a button references an object like an activity packet or a download prompt the text should refer to that
+  - "Activity Packet" for a button that would open up and/or download a packet for the user
+  - "Download Data" for a button that would download a data file.
++ Clarity is essential. If there are multiple buttons on the page, make sure that you use clear text for what button does and/or references.
+
+Here are guidelines for the inclusion of icons in a button:
+
++ Game buttons will NOT have any icons.
++ "Next" buttons will NOT have any icons.
++ A "Prerequisites" button will use the "book" icon
++ All other tab buttons (labels ending with "!") will use the "bolt" icon.
++ A download button will use the "cloud-download" icon.
 
 [Back to ToC](#table-of-contents)
 
@@ -515,6 +647,15 @@ We've already discussed both issues of color and text size in plots. For additio
   - [Tufte-Chartjunk](https://www.dropbox.com/s/z8yrf4eqph6c2h4/Tufte%20-%202001%20-%20Chartjunk%20Vibrations%2C%20grids%2C%20and%20ducks.pdf?dl=0)  
   - [Kosslyn-Looking with the Eye and Mind](https://www.dropbox.com/s/62uegsribwdjtze/Kosslyn%20-%202006%20-%20Looking%20with%20the%20eye%20and%20mind.pdf?dl=0)
 
+Remember, we always want to be modeling excellent graphing behaviors.
+
+> All photographs can be fortified with words. --Dorothea Lange
+
+> A picture is worth a thousand words...but which ones. --Unknown
+
+Both of these quotations highlight that you need to include some text with your plots to help the user construct their understanding of what you're trying to show them.
+
+
 #### Axes and Scales
 `R`'s default axes are terrible. They often do not fully cover the data and the have gaps between the axes. All this impedes the user's construction of meaning. Thus, you'll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.
 
@@ -547,6 +688,7 @@ Consider adding a loading bar to show the process for intense computations; this
 
 [Back to ToC](#table-of-contents)
 
+---
 ## Wording
 
 When writing the content for your App, you will want to keep in mind that these app have the primary audience of students. Thus, we need to make sure that we use language that is appropriate. Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
@@ -573,6 +715,7 @@ Since these apps are for *teaching*, we need to use language that is accurate an
 
 [Back to ToC](#table-of-contents)
 
+---
 ## Documentation
 
 These apps are the product of your hardwork and are part of your academic record. Thus, you need to adhere to [Penn State’s Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the apps available through a Creative Commons Attribution-ShareAlike 4.0 International license ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)). If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App’s References Tab.
@@ -671,6 +814,7 @@ If you (or someone else) had to sign some type of agreement to access the data, 
 
 [Back to ToC](#table-of-contents)
 
+---
 ## Accessibility
 
 We need to make sure that our Apps are accessible. If you have been adhering to the style guide, your App should be in a decent position. When you’re ready to test the accessibility of your App, you’ll need to deploy the App to a sever and then use the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). Enter the URL of your App in the noted box to run an evaluation. See what accessibility issues your App has and then address them.
@@ -686,6 +830,7 @@ __See also:__
 
 [Back to ToC](#table-of-contents)
 
+---
 ## Mobile Friendliness
 
 We want our apps to work well with mobile devices. Thus, when you get to the point where the majority of bugs have been fixed, you need to check how mobile friendly your App is. If you have used `boastApp` and/or the `boast.CSS` file, along with the practices laid out earlier, then you should be well on your way to being mobile friendly.
@@ -707,6 +852,9 @@ Look for any issues that you might be able to address before you hand off your A
 4.  Usable in a small class setting (single issue)
 5.  Readily usable
 
+[Back to ToC](#table-of-contents)
+
+---
 ## Additional Tools
 
 Here are a few additional tools that can help you with App development.
@@ -717,3 +865,5 @@ Here are a few additional tools that can help you with App development.
     Format R code according to a style guide.
   - [funchir](https://github.com/MichaelChirico/funchir) - stale package
     check
+
+[Back to ToC](#table-of-contents)
