@@ -2,7 +2,7 @@
 title: "BOAST Color Themes"
 author: "Neil J. Hatfield"
 date: "5/21/2020"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
