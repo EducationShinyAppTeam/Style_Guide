@@ -2,7 +2,7 @@ Style Guide
 ================
 Neil Hatfield (<njh5464@psu.edu>), Robert Carey (<rpc5102@psu.edu>)
 
-Last Updated: 20 May 2020
+Last Updated: 21 May 2020
 
 ---
 This guide spells out the styling that should be used for all apps
