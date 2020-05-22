@@ -7,3 +7,4 @@ bookdown::gitbook:
   toc_depth: 3
   header-includes:
     - \usepackage{subfig}
+output_dir: "docs"

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>The BOAST Style Guide</title>
+  <title>Chapter 2 Getting Started | The BOAST Style Guide</title>
   <meta name="description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="The BOAST Style Guide" />
+  <meta property="og:title" content="Chapter 2 Getting Started | The BOAST Style Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="The BOAST Style Guide" />
+  <meta name="twitter:title" content="Chapter 2 Getting Started | The BOAST Style Guide" />
   
   <meta name="twitter:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="getStarted.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="coding.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -228,31 +228,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">The BOAST Style Guide</h1>
-<p class="author"><em>Neil Hatfield (<a href="mailto:njh5464@psu.edu" class="email">njh5464@psu.edu</a>) and Robert Carey (<a href="mailto:rpc5102@psu.edu" class="email">rpc5102@psu.edu</a>)</em></p>
-<p class="date"><em>22 May 2020</em></p>
-</div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>This guide spells out the styling that should be used for all apps included in <a href="https://github.com/EducationShinyAppTeam/BOAST">BOAST</a>. Keep in mind that there are several different aspects to what makes up Style including:</p>
+<div id="getStarted" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Getting Started</h1>
+<p>Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.</p>
+<div id="checklist" class="section level2">
+<h2><span class="header-section-number">2.1</span> Getting Started Checklist</h2>
+<ol style="list-style-type: decimal">
+<li>Ensure that you have all of necessary accounts and if not, put in a request to Robert (Bob).
+<ol style="list-style-type: lower-alpha">
+<li>DataCamp<br />
+</li>
+<li>GitHub<br />
+</li>
+<li>EducationShinyAppTeam on GitHub<br />
+</li>
+<li><del>RStudio Server</del>
 <ul>
-<li>Coding (how you write, organize, and comment the code that makes the app)</li>
-<li>Visual Appearance (how you make the app look including tabs, fonts, colors, icons, etc.)</li>
-<li>Wording (how you write information, instructions, and other messages to the users)</li>
-<li>Documentation (how you provide references, including code and data sources, and give credit)</li>
-</ul>
-<p>By following this style guide you’ll ensure that any app you create will
-meet our standards.</p>
+<li>Upon investigation the TLT and the Eberly RStudio Servers will not be useful for us to do testing. An alternate testing process will be explored.<br />
+</li>
+</ul></li>
+<li>BOAST in Teams (tied to your PSU ID)</li>
+</ol></li>
+<li>Ensure that you have all of the proper software.
+<ol style="list-style-type: lower-alpha">
+<li><code>R</code> (version 3.5.* minimum, version 4.0.0 preferred)<br />
+</li>
+<li>RStudio (most current version preferred)<br />
+</li>
+</ol></li>
+<li>Additional Software that we recommend
+<ol style="list-style-type: lower-alpha">
+<li>GitHub Desktop<br />
+</li>
+</ol></li>
+<li><code>R</code> Packages–here are some basic packages that everyone will need; be sure to install their dependencies too<br />
+</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><code>tidyverse</code><br />
+</li>
+<li><code>ggplot2</code><br />
+</li>
+<li><code>shiny</code><br />
+</li>
+<li><code>shinyBS</code><br />
+</li>
+<li><code>boastUtils</code> (see below)<br />
+</li>
+</ol>
+<ol start="5" style="list-style-type: decimal">
+<li>A copy of the Sample App (see below)</li>
+</ol>
+</div>
+<div id="boastutils-package" class="section level2">
+<h2><span class="header-section-number">2.2</span> <code>boastUtils</code> Package</h2>
+<p>Bob created the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent.</p>
+<p><strong>Starting Summer 2020, you will be required to you make use of this tool.</strong></p>
+<p>Please check out the package’s <a href="https://github.com/EducationShinyAppTeam/boastUtils">page</a> for instructions on installing and usage.</p>
+</div>
+<div id="sample-app" class="section level2">
+<h2><span class="header-section-number">2.3</span> Sample App</h2>
+<p>Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the <a href="https://github.com/EducationShinyAppTeam/Sample_App">Sample_App</a> template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code. There are several methods you can use:</p>
+<div id="command-line" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Command Line</h3>
+<p>Enter the following in your terminal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/Sample_App.git</a></code></pre></div>
+</div>
+<div id="direct-download" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Direct Download</h3>
+<p>You can download the repository directly:</p>
+<blockquote>
+<p><a href="https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip" class="uri">https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip</a></p>
+</blockquote>
+</div>
+<div id="github-desktop" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> GitHub Desktop</h3>
+<p>If you are using GitHub Desktop and have linked your account that has access to the EducationShinyAppTeam repository, you can do the following from inside GitHub Desktop:</p>
+<ol style="list-style-type: decimal">
+<li>Bring up the Clone Repository Menu (File -&gt; Clone Repository…)<br />
+</li>
+<li>Enter Sample_App in the search bar and select the option that says Sample_App (not sampleapp)</li>
+<li>Click the Choose… button for the local path (this is where you want to the clone to live on your computer)</li>
+<li>Click the Clone button.</li>
+</ol>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="getStarted.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="coding.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -299,20 +368,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
