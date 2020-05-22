@@ -303,6 +303,21 @@ ggplot2::ggplot() +
 
 ```
 
+Here is what the Blue Palette looks like in action:
+
+```{r blueAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Blue Palette"}
+knitr::include_graphics("images/blueOverview.png")
+```
+
+```{r blueAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Blue Palette"}
+knitr::include_graphics("images/blueCollapse.png")
+```
+
+```{r blueAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Blue Palette"}
+
+knitr::include_graphics("images/blueSliders.png", dpi=NA)
+```
+
 ##### Green
 The Green Palette looks like the following:
 ```{r greenPalette, fig.cap="The Green Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
@@ -345,6 +360,21 @@ ggplot2::ggplot() +
                     color = "white") +
   ggplot2::theme_void()
 
+```
+
+Here is what the Green Palette looks like in action:
+
+```{r greenAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Green Palette"}
+knitr::include_graphics("images/greenOverview.png")
+```
+
+```{r greenAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Green Palette"}
+knitr::include_graphics("images/greenCollapse.png")
+```
+
+```{r greenAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Green Palette"}
+
+knitr::include_graphics("images/greenSliders.png", dpi= NA)
 ```
 
 ##### Purple
@@ -391,6 +421,21 @@ ggplot2::ggplot() +
 
 ```
 
+Here is what the Purple Palette looks like in action:
+
+```{r purpleAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Purple Palette"}
+knitr::include_graphics("images/purpleOverview.png")
+```
+
+```{r purpleAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Purple Palette"}
+knitr::include_graphics("images/purpleCollapse.png")
+```
+
+```{r purpleAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Purple Palette"}
+
+knitr::include_graphics("images/purpleSliders.png", dpi= NA)
+```
+
 ##### Black
 The "Black" Palette is not pegged to the color black, but rather teal/aqua colors. However, to call the theme in the Shiny dashboard, the user must use the value `black` for the the `skin` argument. Here's what the "Black" Palette looks like:
 ```{r blackPalette, fig.cap="The 'Black' Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
@@ -433,6 +478,21 @@ ggplot2::ggplot() +
                     color = "white") +
   ggplot2::theme_void()
 
+```
+
+Here is what the "Black" Palette looks like in action:
+
+```{r blackAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the 'Black' Palette"}
+knitr::include_graphics("images/blackOverview.png")
+```
+
+```{r blackAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the 'Black' Palette"}
+knitr::include_graphics("images/blackCollapse.png")
+```
+
+```{r blackAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the 'Black' Palette"}
+
+knitr::include_graphics("images/blackSliders.png", dpi= NA)
 ```
 
 ##### Yellow
@@ -479,6 +539,21 @@ ggplot2::ggplot() +
 
 ```
 
+Here is what the Yellow Palette looks like in action:
+
+```{r yellowAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Yellow Palette"}
+knitr::include_graphics("images/yellowOverview.png")
+```
+
+```{r yellowAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Yellow Palette"}
+knitr::include_graphics("images/yellowCollapse.png")
+```
+
+```{r yellowAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Yellow Palette"}
+
+knitr::include_graphics("images/yellowSliders.png", dpi= NA)
+```
+
 ##### Red
 The Red Palette is still under construction. Here's the current set:
 ```{r redPalette, fig.cap="The Red Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
@@ -523,6 +598,20 @@ ggplot2::ggplot() +
 
 ```
 
+Here is what the Red Palette looks like in action:
+
+```{r redAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Red Palette"}
+knitr::include_graphics("images/redOverview.png")
+```
+
+```{r redAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Red Palette"}
+knitr::include_graphics("images/redCollapse.png")
+```
+
+```{r redAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Red Palette"}
+
+knitr::include_graphics("images/redSliders.png", dpi= NA)
+```
 
 ### Color and Plots in `R`
 
@@ -543,7 +632,7 @@ psuPalette <- c("#1E407C","#BC204B","#3EA39E","#E98300",
 
 To use these palettes (or ones from `viridis`) with a `ggplot2` object, you'll need to doe the following
 
-```{r exmplePalette, echo=TRUE, eval=FALSE}
+```{r examplePalette, echo=TRUE, eval=FALSE}
 # You will need to first add whichever palette line from above to your code
 boastPalette <- c("#0072B2","#D55E00","#009E73","#CE77A8",
     "#000000","#E69F00","#999999","#56B4E9","#CC79A7")

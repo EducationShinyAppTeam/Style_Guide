@@ -5,3 +5,5 @@ language:
 delete_merged_file: true
 bookdown::gitbook:
   toc_depth: 3
+  header-includes:
+    - \usepackage{subfig}

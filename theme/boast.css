@@ -3,10 +3,31 @@
 
 /* Penn State Colors */
 :root {
+	/*Blue Theme*/
 	--nittany-navy: 	#001E44;
 	--beaver-blue: 		#1E407C;
 	--pennsylvania-sky:	#009CDE;
 	--pugh-blue: 		#96BEE6;
+	/*Green Theme*/
+	--penn-forest:		#4A7729;
+	--green-opportunity: #008755;
+	--future-calling:	#99CC00;
+	/*Purple Theme*/
+	--stately-atherton:	#AC8DCE;
+	--perpetual-wonder:	#491D70;
+	--endless-potential: #000321;
+	/*Yellow Theme*/
+	--bright-keystone:	#FFD100;
+	--invent-orange:	#E98300;
+	--lion-roar:		#BF8226;
+	/*"Black" Theme*/
+	--creek:			#3EA39E;
+	--teal:				#69C9CB;
+	--slate:			#314D64;
+	/*Red Theme*/
+	--original-1887:	#BC204B;
+	--dawn-discovery:	#F2665E;
+	--land-grant:		#6A3028;
 }
   
 /*Core Text Display Elements*/
@@ -70,8 +91,28 @@ h6, .h6 {
 	justify-content: space-between;
 }
 
-.main-sidebar {
+.skin-blue .main-sidebar {
 	background-color: var(--beaver-blue) !important;
+}
+
+.skin-green .main-sidebar {
+	background-color: var(--green-opportunity) !important;
+}
+
+.skin-purple .main-sidebar {
+	background-color: var(--perpetual-wonder) !important;
+}
+
+.skin-yellow .main-sidebar {
+	background-color: var(--invent-orange) !important;
+}
+
+.skin-black .main-sidebar {
+	background-color: var(--creek) !important;
+}
+
+.skin-red .main-sidebar {
+	background-color: var(--original-1887) !important;
 }
 
 .sidebar-menu {
@@ -98,6 +139,27 @@ h6, .h6 {
 /*Non-title portion of dashboard header*/
 .skin-blue .main-header>.navbar {
 	background-color: var(--beaver-blue);
+	color: black;
+}
+
+.skin-green .main-header>.navbar {
+	background-color: var(--green-opportunity) !important;
+}
+
+.skin-purple .main-header>.navbar {
+	background-color: var(--perpetual-wonder) !important;
+}
+
+.skin-yellow .main-header>.navbar {
+	background-color: var(--invent-orange) !important;
+}
+
+.skin-black .main-header>.navbar {
+	background-color: var(--creek) !important;
+}
+
+.skin-red .main-header>.navbar {
+	background-color: var(--original-1887) !important;
 }
 
 /*Background of Main Text Area*/
@@ -113,14 +175,80 @@ h6, .h6 {
 	color: white;
 }
 
+.skin-green .main-header .logo {
+	background-color: var(--green-opportunity);
+	color: white;
+}
+
+.skin-purple .main-header .logo {
+	background-color: var(--perpetual-wonder);
+	color: white;
+}
+
+.skin-yellow .main-header .logo {
+	background-color: var(--invent-orange);
+	color: white;
+}
+
+.skin-black .main-header .logo {
+	background-color: var(--creek);
+	color: black;
+}
+
+.skin-red .main-header .logo {
+	background-color: var(--original-1887);
+	color: white;
+}
+
 /*Title Portion Hover Color*/
 .skin-blue .main-header .logo:hover {
 	background-color: var(--beaver-blue);
 }
 
-.main-header .sidebar-toggle:hover {
+.skin-green .main-header .logo:hover {
+	background-color: var(--green-opportunity);
+}
+
+.skin-purple .main-header .logo:hover {
+	background-color: var(--perpetual-wonder);
+}
+
+.skin-yellow .main-header .logo:hover {
+	background-color: var(--invent-orange);
+}
+
+.skin-black .main-header .logo:hover {
+	background-color: var(--creek);
+}
+
+.skin-red .main-header .logo:hover {
+	background-color: var(--original-1887);
+}
+
+.skin-blue .main-header .sidebar-toggle:hover {
 	background: var(--pennsylvania-sky) !important;
 }
+
+.skin-green .main-header .sidebar-toggle:hover {
+	background: var(--future-calling) !important;
+}
+
+.skin-purple .main-header .sidebar-toggle:hover {
+	background: var(--stately-atherton) !important;
+}
+
+.skin-yellow .main-header .sidebar-toggle:hover {
+	background: var(--bright-keystone) !important;
+}
+
+.skin-black .main-header .sidebar-toggle:hover {
+	background: var(--teal) !important;
+}
+
+.skin-red .main-header .sidebar-toggle:hover {
+	background: var(--original-1887) !important;
+}
+
 
 /*Font Control for Dashboard Title*/
 .main-header .logo {
@@ -128,6 +256,26 @@ h6, .h6 {
 }
 
 .skin-blue .sidebar a {
+	color: white;
+}
+
+.skin-green .sidebar a {
+	color: white;
+}
+
+.skin-purple .sidebar a {
+	color: white;
+}
+
+.skin-yellow .sidebar a {
+	color: white;
+}
+
+.skin-black .sidebar a {
+	color: black;
+}
+
+.skin-red .sidebar a {
 	color: white;
 }
 
@@ -143,9 +291,69 @@ h6, .h6 {
 	border-left-color: var(--pugh-blue);
 }
 
+.skin-green .sidebar-menu li.active a,
+.skin-green .sidebar-menu li:hover a {
+	background: var(--future-calling);
+	color: black;
+	border-left-color: var(--penn-forest);
+}
+
+.skin-purple .sidebar-menu li.active a,
+.skin-purple .sidebar-menu li:hover a {
+	background: var(--stately-atherton);
+	color: black;
+	border-left-color: var(--endless-potential);
+}
+
+.skin-yellow .sidebar-menu li.active a,
+.skin-yellow .sidebar-menu li:hover a {
+	background: var(--bright-keystone);
+	color: black;
+	border-left-color: var(--lion-roar);
+}
+
+.skin-black .sidebar-menu li.active a,
+.skin-black .sidebar-menu li:hover a {
+	background: var(--teal);
+	color: black;
+	border-left-color: var(--slate);
+}
+
+.skin-red .sidebar-menu li.active a,
+.skin-red .sidebar-menu li:hover a {
+	background: var(--dawn-discovery);
+	color: black;
+	border-left-color: var(--land-grant);
+}
+
 /*Button Appearance*/
-.btn-default {
+.skin-blue .btn-default {
 	background-color: var(--beaver-blue);
+	color: white;
+}
+
+.skin-green .btn-default {
+	background-color: var(--green-opportunity);
+	color: white;
+}
+
+.skin-purple .btn-default {
+	background-color: var(--perpetual-wonder);
+	color: white;
+}
+
+.skin-yellow .btn-default {
+	background-color: var(--invent-orange);
+	color: white;
+}
+
+.skin-black .btn-default {
+	background-color: var(--creek);
+	color: black;
+}
+
+.skin-red .btn-default {
+	background-color: var(--original-1887);
 	color: white;
 }
 
@@ -166,13 +374,41 @@ h6, .h6 {
 }
 
 /*Hovertext/Rollover/Popover Title Controls*/
-.popover-title {
-	background-color: var(--pennsylvania-sky);
+/*.popover-title {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 1em;
 	color: black;
 	text-align: center;
+} */
+
+.skin-blue .popover-title {
+	background-color: var(--pennsylvania-sky);
+}
+
+.skin-green .popover-title {
+	background-color: var(--future-calling);
+}
+
+.skin-purple .popover-title {
+	background-color: var(--stately-atherton);
+}
+
+.skin-yellow .popover-title {
+	background-color: var(--bright-keystone);
+}
+
+.skin-black .popover-title {
+	background-color: var(--teal);
+}
+
+.skin-red .popover-title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 1em;
+	color: black;
+	text-align: center;
+	background-color: var(--original-1887);
 }
 
 /*Hovertext/Rollover/Popover content Controls*/
@@ -193,16 +429,76 @@ label {
 create customized appearances. This is NOT recommended.*/
 
 /*Ends of Slider Bar*/
-.irs-bar-edge {
+.skin-blue .irs-bar-edge {
 	border-color: var(--beaver-blue);
 	background: var(--pennsylvania-sky);
 }
 
+.skin-green .irs-bar-edge {
+	border-color: var(--green-opportunity);
+	background: var(--future-calling);
+}
+
+.skin-purple .irs-bar-edge {
+	border-color: var(--perpetual-wonder);
+	background: var(--stately-atherton);
+}
+
+.skin-yellow .irs-bar-edge {
+	border-color: var(--invent-orange);
+	background: var(--bright-keystone);
+}
+
+.skin-black .irs-bar-edge {
+	border-color: var(--creek);
+	background: var(--teal);
+}
+
+.skin-red .irs-bar-edge {
+	border-color: var(--original-1887);
+	background: var(--dawn-discovery);
+}
+
 /*Middle Portion of Slider Bar*/
-.irs-bar {
+.skin-blue .irs-bar {
 	border-top-color: var(--beaver-blue);
 	border-bottom-color: var(--beaver-blue);
 	background: var(--pennsylvania-sky);
+	color: black;
+}
+
+.skin-green .irs-bar {
+	border-top-color: var(--green-opportunity);
+	border-bottom-color: var(--green-opportunity);
+	background: var(--future-calling);
+	color: black;
+}
+
+.skin-purple .irs-bar {
+	border-top-color: var(--perpetual-wonder);
+	border-bottom-color: var(--perpetual-wonder);
+	background: var(--stately-atherton);
+	color: black;
+}
+
+.skin-yellow .irs-bar {
+	border-top-color: var(--invent-orange);
+	border-bottom-color: var(--invent-orange);
+	background: var(--bright-keystone);
+	color: black;
+}
+
+.skin-black .irs-bar {
+	border-top-color: var(--creek);
+	border-bottom-color: var(--creek);
+	background: var(--teal);
+	color: black;
+}
+
+.skin-red .irs-bar {
+	border-top-color: var(--original-1887);
+	border-bottom-color: var(--original-1887);
+	background: var(--dawn-discovery);
 	color: black;
 }
 
@@ -234,12 +530,35 @@ create customized appearances. This is NOT recommended.*/
 
 /*Slider Text bubble*/
 .irs-single {
-	background: var(--pugh-blue);
 	font-weight: 700;
 	font-size: 0.875rem;
 	color: black;
 	padding: 0.1rem 0.4rem;
 	margin-top: -4px;
+}
+
+.skin-blue .irs-single {
+	background: var(--pugh-blue);
+}
+
+.sking-green .irs-single {
+	background: var(--future-calling);
+}
+
+.skin-purple .irs-single {
+	background: var(--stately-atherton);
+}
+
+.skin-yellow .irs-single {
+	background: var(--bright-keystone);
+}
+
+.skin-black .irs-single {
+	background: var(--teal);
+}
+
+.skin-red .irs-single {
+	background: var(--dawn-discovery);
 }
 
 /*Slider Text controls*/
@@ -260,18 +579,96 @@ create customized appearances. This is NOT recommended.*/
 	color: black !important;
 }
 
-.sweet-alert button {
+.skin-blue .sweet-alert button {
 	background-color: var(--beaver-blue) !important;
 	color: white;
 }
 
-.sweet-alert input {
+.skin-green .sweet-alert button {
+	background-color: var(--green-opportunity) !important;
+	color: white;
+}
+
+.skin-purple .sweet-alert button {
+	background-color: var(--perpetual-wonder) !important;
+	color: white;
+}
+
+.skin-yellow .sweet-alert button {
+	background-color: var(--invent-orange) !important;
+	color: white;
+}
+
+.skin-black .sweet-alert button {
+	background-color: var(--creek) !important;
+	color: white;
+}
+
+.skin-red .sweet-alert button {
+	background-color: var(--original-1887) !important;
+	color: white;
+}
+
+.skin-blue .sweet-alert input {
 	border: 1pt solid var(--beaver-blue) !important;
 }
 
+.skin-green .sweet-alert input {
+	border: 1pt solid var(--green-opportunity) !important;
+}
+
+.skin-purple .sweet-alert input {
+	border: 1pt solid var(--perpetual-wonder) !important;
+}
+
+.skin-yellow .sweet-alert input {
+	border: 1pt solid var(--invent-orange) !important;
+}
+
+.skin-black .sweet-alert input {
+	border: 1pt solid var(--teal) !important;
+}
+
+.skin-red .sweet-alert input {
+	border: 1pt solid var(--dawn-discovery) !important;
+}
+
 /*Collapsable Box Style Controls*/
-box, .box, box-primary, .box-primary, .box box-primary, .box.box-primary {
+/*This needs updating for color schemes*/
+.skin-blue box, .skin-blue .box,
+.skin-blue box-primary, .skin-blue .box-primary,
+.skin-blue .box box-primary, .skin-blue .box.box-primary {
 	border-top-color: var(--pennsylvania-sky);
+}
+
+.skin-green box, .skin-green .box,
+.skin-green box-primary, .skin-green .box-primary,
+.skin-green .box box-primary, .skin-green .box.box-primary {
+	border-top-color: var(--future-calling);
+}
+
+.skin-purple box, .skin-purple .box,
+.skin-purple box-primary, .skin-purple .box-primary,
+.skin-purple .box box-primary, .skin-purple .box.box-primary {
+	border-top-color: var(--stately-atherton);
+}
+
+.skin-yellow box, .skin-yellow .box,
+.skin-yellow box-primary, .skin-yellow .box-primary,
+.skin-yellow .box box-primary, .skin-yellow .box.box-primary {
+	border-top-color: var(--bright-keystone);
+}
+
+.skin-black box, .skin-black .box,
+.skin-black box-primary, .skin-black .box-primary,
+.skin-black .box box-primary, .skin-black .box.box-primary {
+	border-top-color: var(--teal);
+}
+
+.skin-red box, .skin-red .box,
+.skin-red box-primary, .skin-red .box-primary,
+.skin-red .box box-primary, .skin-red .box.box-primary {
+	border-top-color: var(--dawn-discovery);
 }
 
 /* Grid-based Game Layouts */
@@ -297,15 +694,60 @@ box, .box, box-primary, .box-primary, .box box-primary, .box.box-primary {
 }
 
 .grid-tile button {
-  border: 0.25rem solid var(--nittany-navy);
   border-radius: 0;
   font-size: 3.75rem;
   line-height: 1;
   text-align: center;
 }
 
-.grid-tile button:active, .grid-tile button:hover {
+.skin-blue .grid-tile button {
+  border: 0.25rem solid var(--nittany-navy);
+}
+
+.skin-green .grid-tile button {
+  border: 0.25rem solid var(--penn-forest);
+}
+
+.skin-purple .grid-tile button {
+  border: 0.25rem solid var(--endless-potential);
+}
+
+.skin-yellow .grid-tile button {
+  border: 0.25rem solid var(--lion-roar);
+}
+
+.skin-black .grid-tile button {
+  border: 0.25rem solid var(--slate);
+}
+
+.skin-blue .grid-tile button:active, 
+.skin-blue .grid-tile button:hover {
   background-color: var(--pennsylvania-sky);
+}
+
+.skin-green .grid-tile button:active,
+.skin-green .grid-tile button:hover {
+  background-color: var(--future-calling);
+}
+
+.skin-purple .grid-tile button:active,
+.skin-purple .grid-tile button:hover {
+  background-color: var(--stately-atherton);
+}
+
+.skin-yellow .grid-tile button:active,
+.skin-yellow .grid-tile button:hover {
+  background-color: var(--bright-keystone);
+}
+
+.skin-black .grid-tile button:active,
+.skin-black .grid-tile button:hover {
+  background-color: var(--teal);
+}
+
+.skin-red .grid-tile button:active,
+.skin-red .grid-tile button:hover {
+  background-color: var(--dawn-discovery);
 }
 
 .grid-tile button:hover {
@@ -316,8 +758,33 @@ box, .box, box-primary, .box-primary, .box box-primary, .box.box-primary {
   opacity: 1;
 }
 
-.grid-tile button[disabled]:hover {
+.skin-blue .grid-tile button[disabled]:hover {
   background-color: var(--beaver-blue);
+  color: white;
+}
+
+.skin-green .grid-tile button[disabled]:hover {
+  background-color: var(--green-opportunity);
+  color: white;
+}
+
+.skin-purple .grid-tile button[disabled]:hover {
+  background-color: var(--perpetual-wonder);
+  color: white;
+}
+
+.skin-yellow .grid-tile button[disabled]:hover {
+  background-color: var(--invent-orange);
+  color: white;
+}
+
+.skin-black .grid-tile button[disabled]:hover {
+  background-color: var(--creek);
+  color: white;
+}
+
+.skin-red .grid-tile button[disabled]:hover {
+  background-color: var(--original-1887);
   color: white;
 }
 
@@ -330,9 +797,37 @@ box, .box, box-primary, .box-primary, .box box-primary, .box.box-primary {
   width: 100%;
   height: auto;
 
-  background-color: var(--beaver-blue);
   border-radius: 0.5rem;
+}
+
+.skin-blue .grid-board {
+  background-color: var(--beaver-blue);
   border: 0.25rem solid var(--nittany-navy); 
+}
+
+.skin-green .grid-board {
+  background-color: var(--green-opportunity);
+  border: 0.25rem solid var(--penn-forest); 
+}
+
+.skin-purple .grid-board {
+  background-color: var(--perpetual-wonder);
+  border: 0.25rem solid var(--endless-potential); 
+}
+
+.skin-yellow .grid-board {
+  background-color: var(--invent-orange);
+  border: 0.25rem solid var(--lion-roar); 
+}
+
+.skin-black .grid-board {
+  background-color: var(--creek);
+  border: 0.25rem solid var(--slate); 
+}
+
+.skin-red .grid-board {
+  background-color: var(--original-1887);
+  border: 0.25rem solid var(--land-grant); 
 }
 
 .grid-1x1 {
