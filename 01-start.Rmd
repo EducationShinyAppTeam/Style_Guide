@@ -1,3 +1,5 @@
+\setcounter{chapter}{0}
+
 # Getting Started {#getStarted}
 
 Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.
@@ -16,11 +18,11 @@ Before you get too far into the Style Guide, we would like for you to take a mom
 3. Additional Software that we recommend  
     a. GitHub Desktop  
 4. `R` Packages--here are some basic packages that everyone will need; be sure to install their dependencies too  
-  a. `tidyverse`  
-  b. `ggplot2`  
-  c. `shiny`  
-  d. `shinyBS`  
-  e. `boastUtils` (see below)  
+    a. `tidyverse`  
+    b. `ggplot2`  
+    c. `shiny`  
+    d. `shinyBS`  
+    e. `boastUtils` (see below)  
 5. A copy of the Sample App (see below)
 
 ## `boastUtils` Package

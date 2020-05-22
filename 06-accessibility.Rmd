@@ -11,3 +11,20 @@ __See also:__
   - [How to Meet Web Content Accessibility
     Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
   - [7 Things Every Designer Needs to Know about Accessibility](https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b)
+
+## Testing Accessibility
+We highly recommend using the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). 
+
+```{r waveDescStat, fig.align='center', echo=FALSE, fig.cap="WAVE Report for Descriptive Statistics App"}
+knitr::include_graphics("images/descStatOverview.png")
+```
+
+Figure \@ref(fig:waveDescStat) shows the WAVE report for the Descriptive Statistics App. There are 54 errors including missing alternative text, empty headings. There are also 8 contrast errors, 14 alerts (skipping heading levels),
+
+```{r waveOverfit, fig.align='center', echo=FALSE, fig.cap="WAVE Report for Overfitting App"}
+knitr::include_graphics("images/overfitPrereq.png")
+```
+
+While there are fewer errors for the Overfitting App (Figure \@ref(fig:waveOverfit)), there are a lot of alerts on this app including skipping heading levels and small text.
+
+By using the `boastApp` function and adhering to this Style Guide, your App should be in a good initial position. After running your App through WAVE, we can work with you address any changes that might be necessary.

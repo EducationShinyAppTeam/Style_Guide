@@ -227,7 +227,7 @@ Notice that both `APP_TITLE` and `APP_DESCP` do not follow camelCase. This is by
 ## CSS {#css}
 Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.
 
-There are three key elements at play for CSS:  
+There are a few key elements at play for CSS:  
 
 1. All apps need to have the appropriate reference to the CSS file (See \@ref(textStyle)).  
     a. Please register any issues, bugs, enhancements, new styling to the Style Guide repository of GitHub. 
@@ -235,10 +235,35 @@ There are three key elements at play for CSS:
 3. There should not be any styling code in the `app.R`, `ui.R`, or `server.R` files (a.k.a. in-line CSS). Styling code would look like this:  
     + `tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: orange}"))`  
     + `style="color: #fff; background-color: #337ab7; border-color: #2e6da4"`
+4. For objects that need to have a particular styling invoked, we will make use of the `class` attribute. These will invoked through the HTML tags or through the function calls.  
 
-There is an exception to the last one: setting up alignment for a div section. This would look like `div(style = "text-align: center"...)` This type of styling is allowed in the R files (generally in the UI portions only).
+```{r classTag1, echo=TRUE, eval=FALSE}
+# HTML Tag Example 1
+p(
+  class = "hangingindent",
+  "Attali, D. and Edwards, T. (2018). shinyalert: Easily create
+  pretty popup messages (modals) in 'Shiny'. (v1.0). [R package].
+  Available from https://CRAN.R-project.org/package=shinyalert"
+)
+
+# HTML Tag Example 2
+div(class = "updated", "Last Update: 12/2/2019 by NJH.")
+
+# Function Call Example
+actionButton(
+  inputId = paste0("grid-", row, "-", column),
+  label = "?",
+  color = "primary",
+  style = "bordered",
+  class = "grid-fill"
+)
+```
+
+There is an exception to #3: setting up alignment for a div section. This would look like `div(style = "text-align: center"...)` This type of styling is allowed in the R files (generally in the UI portions only).
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't `boast.css`, please log an issue and mention/assign Neil. (Most common external CSS files are `style.css` and `Feature(s).css`.)
+
+
 
 ## GitHub Repo Names
 Each shiny app has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
@@ -251,3 +276,6 @@ Each shiny app has its own repository (repo) on GitHub. As you begin to create n
 While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your respository. 
 
 If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
+
+## Using RLocker
+[*This section is under development.*]

@@ -1,9 +1,11 @@
 # Documentation {#documentation}
 
-These apps are the product of your hardwork and are part of your academic record. Thus, you need to adhere to [Penn State’s Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the apps available through a Creative Commons Attribution-ShareAlike 4.0 International license ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)). If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App’s References Tab.
+These apps are the product of your hard work and are part of your academic record. Thus, you need to adhere to [Penn State’s Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the apps available through a Creative Commons Attribution-ShareAlike 4.0 International license ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)). If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App’s References Tab.
 
 ## References
-All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgements. (NOTE: listing something in the Acknowledgements DOES NOT waive this requirement.)
+All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgements.
+
+__NOTE:__ listing something in the Acknowledgements DOES NOT waive this requirement.
 
 You may use any citation style you wish, but be consistent. Recommended citation styles include APA and AmStat. Here is a starting code block for you to use:
 
@@ -21,6 +23,8 @@ tabItem(
 )
 ```
 
+Notice the use of `class = "hangingindent"`. You must include this with each reference as this will ensure the proper styling of your references.
+
 If you need assistance with this section, please talk to Neil.
 
 ## Plagiarism
@@ -32,7 +36,7 @@ There is a difference between looking at example code online to see how to do so
 + If you want to use someone else’s code “as is” (without any changes), you should reach out to the author for permission first.
 + If you use someone else’s code and make modifications, you need to give credit to where you got the code, and potentially ask for permission.
 
-You will need to place citations in *__two__* places: in the References Tab and in your code.
+You will need to place citations in *__two__* places: in the References Tab and in your code. You might want to also consider adding an acknowledgement to the Overview tab.
 
 ### Reference Tab
 
@@ -59,11 +63,11 @@ Use the following format in your code to cite where you got the code from.
 # [borrowed code then follows]
 # ...
 # [last line of borrowed code]      
-#End of <author>'s code-------------------------------------------------------------------
+#End of <author>'s code----------------------------------------------------------
 ```
 
 ## `R` Packages
-If you made use of any packages in `R`, then you will need to add these to the Reference subsection. Fortunately, there is a built-in tool that will help you: the `citation` function. In R (RStudio) simply type `citation("packageName")` and you’ll get the appropriate citation information for the package you used. For example, `citation("shinydashboard")` and `citation("plyr")` will give the information needed for the following citations:
+If you made use of any packages in `R`, then you will need to add these to the Reference tab. Fortunately, there is a built-in tool that will help you: the `citation` function. In R (RStudio) simply type `citation("packageName")` and you’ll get the appropriate citation information for the package you used. For example, `citation("shinydashboard")` and `citation("plyr")` will give the information needed for the following citations:
 
 > Chang, W. and Borges Ribeio, B. (2018). shinydashboard: Create dashboards with ‘Shiny’. (v0.7.1) [R Package]. Available from <https://CRAN.R-project.org/package=shinydashboard>
 
@@ -78,7 +82,7 @@ Pictures, drawings, photographs, images, etc. are typically copyrighted. When yo
 > LastName, First Initial. (Year). Title of artwork. [Format]. Retrieved from \< URL \>.
 
 ## Data
-If you are using any data files, you need to attribute where those files are coming from in the References subsection of your Overview page. A suggested format to use is:
+If you are using any data files, you need to attribute where those files are coming from in the References tab. You might also want to add an acknowledgement on the Overview tab. A suggested format to use is:
 
 >Author/Rightsholder. (Year). Title of data set (Version number) [Description of form]. Location: Name of producer.  
 

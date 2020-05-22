@@ -131,7 +131,8 @@
 \tableofcontents
 }
 \hypertarget{welcome}{%
-\chapter{Welcome}\label{welcome}}
+\chapter*{Welcome}\label{welcome}}
+\addcontentsline{toc}{chapter}{Welcome}
 
 This guide spells out the styling that should be used for all apps included in \href{https://github.com/EducationShinyAppTeam/BOAST}{BOAST}. Keep in mind that there are several different aspects to what makes up Style including:
 
@@ -147,8 +148,11 @@ This guide spells out the styling that should be used for all apps included in \
   Documentation (how you provide references, including code and data sources, and give credit)
 \end{itemize}
 
-By following this style guide you'll ensure that any app you create will
-meet our standards.
+By following this style guide you'll ensure that any app you create will meet our standards.
+
+Additionally, we've included some information on Acessibility for our apps, checking how your App works on mobile devices, and some additoinal tools that can help you develop your App.
+
+\setcounter{chapter}{0}
 
 \hypertarget{getStarted}{%
 \chapter{Getting Started}\label{getStarted}}
@@ -205,28 +209,22 @@ Before you get too far into the Style Guide, we would like for you to take a mom
     GitHub Desktop\\
   \end{enumerate}
 \item
-  \texttt{R} Packages--here are some basic packages that everyone will need; be sure to install their dependencies too\\
-\end{enumerate}
+  \texttt{R} Packages--here are some basic packages that everyone will need; be sure to install their dependencies too
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  \texttt{tidyverse}~\\
-\item
-  \texttt{ggplot2}~\\
-\item
-  \texttt{shiny}~\\
-\item
-  \texttt{shinyBS}~\\
-\item
-  \texttt{boastUtils} (see below)\\
-\end{enumerate}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    \texttt{tidyverse}~\\
+  \item
+    \texttt{ggplot2}~\\
+  \item
+    \texttt{shiny}~\\
+  \item
+    \texttt{shinyBS}~\\
+  \item
+    \texttt{boastUtils} (see below)\\
+  \end{enumerate}
 \item
   A copy of the Sample App (see below)
 \end{enumerate}
@@ -645,7 +643,7 @@ Notice that both \texttt{APP\_TITLE} and \texttt{APP\_DESCP} do not follow camel
 
 Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.
 
-There are three key elements at play for CSS:
+There are a few key elements at play for CSS:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -671,9 +669,35 @@ There are three key elements at play for CSS:
   \item
     \texttt{style="color:\ \#fff;\ background-color:\ \#337ab7;\ border-color:\ \#2e6da4"}
   \end{itemize}
+\item
+  For objects that need to have a particular styling invoked, we will make use of the \texttt{class} attribute. These will invoked through the HTML tags or through the function calls.
 \end{enumerate}
 
-There is an exception to the last one: setting up alignment for a div section. This would look like \texttt{div(style\ =\ "text-align:\ center"...)} This type of styling is allowed in the R files (generally in the UI portions only).
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# HTML Tag Example 1}
+\KeywordTok{p}\NormalTok{(}
+  \DataTypeTok{class =} \StringTok{"hangingindent"}\NormalTok{,}
+  \StringTok{"Attali, D. and Edwards, T. (2018). shinyalert: Easily create}
+\StringTok{  pretty popup messages (modals) in 'Shiny'. (v1.0). [R package].}
+\StringTok{  Available from https://CRAN.R-project.org/package=shinyalert"}
+\NormalTok{)}
+
+\CommentTok{# HTML Tag Example 2}
+\KeywordTok{div}\NormalTok{(}\DataTypeTok{class =} \StringTok{"updated"}\NormalTok{, }\StringTok{"Last Update: 12/2/2019 by NJH."}\NormalTok{)}
+
+\CommentTok{# Function Call Example}
+\KeywordTok{actionButton}\NormalTok{(}
+  \DataTypeTok{inputId =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"grid-"}\NormalTok{, row, }\StringTok{"-"}\NormalTok{, column),}
+  \DataTypeTok{label =} \StringTok{"?"}\NormalTok{,}
+  \DataTypeTok{color =} \StringTok{"primary"}\NormalTok{,}
+  \DataTypeTok{style =} \StringTok{"bordered"}\NormalTok{,}
+  \DataTypeTok{class =} \StringTok{"grid-fill"}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+There is an exception to \#3: setting up alignment for a div section. This would look like \texttt{div(style\ =\ "text-align:\ center"...)} This type of styling is allowed in the R files (generally in the UI portions only).
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't \texttt{boast.css}, please log an issue and mention/assign Neil. (Most common external CSS files are \texttt{style.css} and \texttt{Feature(s).css}.)
 
@@ -698,10 +722,15 @@ While we can change repo names, doing so results in a large number of edits that
 
 If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
 
+\hypertarget{using-rlocker}{%
+\section{Using RLocker}\label{using-rlocker}}
+
+{[}\emph{This section is under development.}{]}
+
 \hypertarget{visualAppearance}{%
 \chapter{Visual Appearance}\label{visualAppearance}}
 
-The second portion of this Style Guide deals with the Visual Appearance of each App. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each App, there are 5 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Color, Text Styling, and Plots.
+This chapter of the BOAST Style Guide deals with the Visual Appearance of each app. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each app, there are 6 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Common Elements, Color, Text Styling, and Graphics.
 
 One of the most important benefits of using the \texttt{boastApp} function from the \texttt{boastUtils} package is that is that much of the Visual Appearance will be automatically handled for you. However, you should still familiarize yourself with the Visual Appearance Style for our apps.
 
@@ -710,7 +739,7 @@ One of the most important benefits of using the \texttt{boastApp} function from 
 
 Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.
 
-In your \texttt{ui.R} file (or your UI section of \texttt{app.R}), at the end of your \texttt{dashboardSidebar()} section, include the following:
+In your UI section of \texttt{app.R} (or the \texttt{ui.R} file), at the end of the \texttt{dashboardSidebar()} section, you will need to include the following:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -761,7 +790,7 @@ All apps will make use of a Dashboard structure. This divides the visual appeara
 \item
   Across the top of the App will be the Header
 \item
-  along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed
+  Along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed
 \item
   The last area is the Body; this is where all content will appear
 \end{itemize}
@@ -775,10 +804,14 @@ Additional icons might be included to the left of the Home icon. However, these 
 
 There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
 
+The width of the Title component of the Header should be 300; \texttt{titleWidth\ =\ 300}.
+
 \hypertarget{sidebar-and-body}{%
 \subsection{Sidebar and Body}\label{sidebar-and-body}}
 
 The Sidebar (responsible for App navigation) and the Body are intimately related to one another. The Sidebar provides structure to your App as well as being the primary way that a user can move around the App. The Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with.
+
+The Sidebar should have a width of 300, (\texttt{width\ =\ 300}).
 
 To ensure a consistent experience across all apps, you need to make sure that your App has the following tabs/page, in the following order:
 
@@ -812,7 +845,7 @@ The Overview Tab must contain \textbf{ALL} of the following elements:
   Last Element: \texttt{div(class\ =\ "updated",\ "Last\ Update:\ mm/dd/yyyy\ by\ FL.")} with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.
 \end{enumerate}
 
-\emph{Note}: There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, ``Instructions:'' does not follow this Style Guide. Additionally, there should not be an ``About'' heading.
+There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, ``Instructions:'' does not follow this Style Guide. Additionally, there should not be an ``About'' heading.
 
 \hypertarget{a-prerequisites-tab}{%
 \subsubsection{A Prerequisites Tab}\label{a-prerequisites-tab}}
@@ -868,7 +901,7 @@ The icon for this Tab must be ``leanpub''.
 \hypertarget{last-element}{%
 \subsubsection{Last Element}\label{last-element}}
 
-The last element of the Sidebar will be the Penn State Logo. Please refer to the Section \ref{logo}.
+The last element of the Sidebar will be the Penn State Logo. Please refer to Section \ref{logo}.
 
 \hypertarget{tabs-inside-the-body}{%
 \subsection{Tabs Inside the Body}\label{tabs-inside-the-body}}
@@ -917,12 +950,14 @@ Deciding on whether to use \texttt{tabPanel} is going to depend on several thing
 
 When you go to make a set of tab panels you will need to first create a \texttt{tabsetPanel} which will wrap around all of the individual panels. Use \texttt{type\ =\ "tabs"}.
 
-The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
+The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed at the global level.
 
 \hypertarget{common-elements}{%
 \section{Common Elements}\label{common-elements}}
 
-In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, and hover text.
+In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered and buttons.
+
+For information about popovers, rollovers, hover text, or tooltips, please see Section \ref{popovers}.
 
 \hypertarget{ordering-inputs}{%
 \subsection{Ordering Inputs}\label{ordering-inputs}}
@@ -976,7 +1011,7 @@ Please use the following guidelines for determining the order of inputs in the U
 \hypertarget{buttons}{%
 \subsection{Buttons}\label{buttons}}
 
-Buttons are one way in which users interact with the apps. The two most common functions that are used are \texttt{shiny::actionButton} and \texttt{shinyBS::bsButton}. Both functions share many of the same features. Two ways in which they are different is that \texttt{shinyBS::bsButton} has an additional \texttt{style} argument while \texttt{shiny::actionButton} has a \texttt{width} argument that gives you fine grain size control. There are three key styling aspects: shape/animation, color, and text \& icon.
+Buttons are one way in which users interact with the apps. The two most common functions used here are \texttt{shiny::actionButton} and \texttt{shinyBS::bsButton}. Both functions share many of the same features. Two ways in which they are different is that \texttt{shinyBS::bsButton} has an additional \texttt{style} argument while \texttt{shiny::actionButton} has a \texttt{width} argument that gives you fine grain size control (\texttt{bsButton} has a size option). There are three key styling aspects: shape/animation, color, and text \& icon.
 
 \hypertarget{shapeanimation}{%
 \subsubsection{Shape/Animation}\label{shapeanimation}}
@@ -1015,7 +1050,7 @@ When in doubt, use the the \texttt{default} style option (or even omit this argu
 
 The last styling element of a button is two-fold: the text that is in the button and the icon.
 
-Here are some guidelines for text of a button:
+Here are some guidelines for a button's text:
 
 \begin{itemize}
 \tightlist
@@ -1080,7 +1115,7 @@ Here are guidelines for the inclusion of icons in a button:
 \item
   Game buttons will NOT have any icons.
 \item
-  ``Next'' buttons will NOT have any icons.
+  Direction Buttons (e.g., ``Next'' or ``Previous'') will NOT have any icons. Rather make the button text ``\textless{}\textless{} Previous'' or ``Next \textgreater{}\textgreater{}''.
 \item
   A ``Prerequisites'' button will use the ``book'' icon
 \item
@@ -1092,14 +1127,14 @@ Here are guidelines for the inclusion of icons in a button:
 \hypertarget{colors}{%
 \section{Colors}\label{colors}}
 
-Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet \href{https://www.w3.org/WAI/WCAG21/quickref/}{WCAG 2.1} Level AA. You can do so at the \href{https://davidmathlogic.com/colorblind/\#\%23000000-\%23E69F00-\%2356B4E9-\%23009E73-\%23F0E442-\%230072B2-\%23D55E00-\%23CC79A7}{Coloring for Colorblindness} website.
+Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet \href{https://www.w3.org/WAI/WCAG21/quickref/}{WCAG 2.1} Level AA. You can do so at the \href{https://davidmathlogic.com/colorblind/\#\%23000000-\%23E69F00-\%2356B4E9-\%23009E73-\%23F0E442-\%230072B2-\%23D55E00-\%23CC79A7}{Coloring for Colorblindness} website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.
 
 There are two major places where coloring comes into play: the user interface and plots you generate in \texttt{R}.
 
 \hypertarget{colorUI}{%
 \subsection{Color in the User Interface}\label{colorUI}}
 
-Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process with the Style Guide seeks to bring this many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden from the students, who should focus on the R side of the programming, not the CSS side.
+Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process with the Style Guide seeks to bring the many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden from the students, who should focus on the R side of the programming, not the CSS side.
 
 All aspects of color in the User Interface should be controlled through the CSS file(s). This includes all of the following:
 
@@ -1131,7 +1166,7 @@ If you are unsure what color to put, use \texttt{blue} as the default.
 
 There are six color themes that we've currently made. The names of the themes are a general indication of coloring, with one exception. The \texttt{black} theme is not black but rather an aqua/teal set. The themes are typically three colors (four for \texttt{blue}) and based upon the Penn State Palettes. Non-Penn State colors will be denoted with asterisks.
 
-All of the themes have been checked against 8 different form of color blindness.
+All of the themes have been checked against 8 different forms of color blindness.
 
 \hypertarget{blue}{%
 \paragraph{Blue}\label{blue}}
@@ -1430,7 +1465,9 @@ To use these palettes (or ones from \texttt{viridis}) with a \texttt{ggplot2} ob
 \end{Highlighting}
 \end{Shaded}
 
-If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)
+If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors (see Section \ref{graphics}). This admonishment also applies to line styles and point shapes.
+
+With any eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
 
 \hypertarget{styleText}{%
 \section{Text Styling}\label{styleText}}
@@ -1484,6 +1521,8 @@ If you're writing mathematics directly in your app, remember you'll need to esca
 
 If you're reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.
 
+If you need assistance in figuring out how to type up mathematics, please talk to Neil, Matt, or Dennis.
+
 \textbf{Note:} Double dollar sign delimiters are generally not recommended for displaying math as they can lead to unintended results. See: \href{https://docs.mathjax.org/en/latest/basic/mathematics.html}{Writing Mathematics for MathJax}.
 
 \hypertarget{game-question-text}{%
@@ -1503,7 +1542,7 @@ You may use these tags with popups/rollovers.
 \hypertarget{feedback-and-hint-text}{%
 \subsection{Feedback and Hint Text}\label{feedback-and-hint-text}}
 
-Again, let the central CSS file handle the styling of this type of text.
+Again, let the central CSS file handle the styling of this type of text by wrapping the text in the appropriate tags (typically \texttt{p()}).
 
 \hypertarget{text-in-r-plots}{%
 \subsection{\texorpdfstring{Text in \texttt{R} Plots}{Text in R Plots}}\label{text-in-r-plots}}
@@ -1590,6 +1629,16 @@ Use tables as infrequently as possible. If you absolutely must include a table, 
 
 Any graphical element you include in your App \textbf{MUST} have an alternative (assistive) text description (``alt text''). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formated will handle this automatically.)
 
+\hypertarget{adding-alt-text-to-static-images}{%
+\subsubsection{Adding Alt Text to Static Images}\label{adding-alt-text-to-static-images}}
+
+\emph{This section is under construction.}
+
+\hypertarget{adding-alt-text-graphs}{%
+\subsubsection{Adding Alt Text Graphs}\label{adding-alt-text-graphs}}
+
+\emph{This section is under construction.}
+
 \hypertarget{miscellaneous}{%
 \section{Miscellaneous}\label{miscellaneous}}
 
@@ -1601,12 +1650,12 @@ Consider adding a loading bar to show the process for intense computations; this
 \hypertarget{general-guidelines}{%
 \section{General Guidelines}\label{general-guidelines}}
 
-When writing the content for your App, you will want to keep in mind that these app have the primary audience of students. Thus, we need to make sure that we use language that is appropriate. Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
+When writing the content for your App, you will want to keep in mind that our apps have students as the primary audience. Thus, we need to make sure that we use language that is appropriate. Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
 
 \textbf{DO NOT sacrifice clarity and precision/accuracy for
-conciseness/brevity.}
+conciseness/brevity.} While we don't necessarily want a wall of text, there should still be some text to assist the user.
 
-Since these apps are for \emph{teaching}, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language, re-enforcing problematic conceptions, and supporting fallacies. For example,
+Since these apps are for \emph{teaching and learning}, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language, re-enforcing problematic conceptions, and supporting fallacies. For example,
 
 \begin{itemize}
 \tightlist
@@ -1645,9 +1694,9 @@ Since these apps are for \emph{teaching}, we need to use language that is accura
 \hypertarget{popovers}{%
 \section{Popovers}\label{popovers}}
 
-Popovers refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object. The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is \texttt{shinyBS::bsPopover}. While these can be powerful, they are often misused which leads to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear.
+The term ``Popovers'' refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object. The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is \texttt{shinyBS::bsPopover}. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear.
 
-Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical to your user successfully using your App in a popover, you are using popovers \textbf{INCORRECTLY}.
+Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical for a person to successfully use your App in a popover, you are using popovers \textbf{INCORRECTLY}.
 
 Here are few additional sources for reading about Popovers/Tooltips:
 
@@ -1673,15 +1722,19 @@ Restrict any usage of a popover to something short and non-vital for your App's 
   \texttt{placement}: this will control where the popover appears. Choose the option (top, bottom, left, right) that works best for your space. Ensure that the placement does not cover any controls or other vital information.
 \end{itemize}
 
+The visual appearance of the popover will be control by the central BOAST CSS file.
+
 \hypertarget{documentation}{%
 \chapter{Documentation}\label{documentation}}
 
-These apps are the product of your hardwork and are part of your academic record. Thus, you need to adhere to \href{https://undergrad.psu.edu/aappm/G-9-academic-integrity.html}{Penn State's Academic Integrity Policy}. This is especially important as we are making the apps available through a Creative Commons Attribution-ShareAlike 4.0 International license (\href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}). If you have used code, pictures, data, or other materials from outside of the BOAST team, you \textbf{MUST} give proper credit. These references will then be included on the App's References Tab.
+These apps are the product of your hard work and are part of your academic record. Thus, you need to adhere to \href{https://undergrad.psu.edu/aappm/G-9-academic-integrity.html}{Penn State's Academic Integrity Policy}. This is especially important as we are making the apps available through a Creative Commons Attribution-ShareAlike 4.0 International license (\href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}). If you have used code, pictures, data, or other materials from outside of the BOAST team, you \textbf{MUST} give proper credit. These references will then be included on the App's References Tab.
 
 \hypertarget{references-1}{%
 \section{References}\label{references-1}}
 
-All apps will need a References Tab. This is where you'll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgements. (NOTE: listing something in the Acknowledgements DOES NOT waive this requirement.)
+All apps will need a References Tab. This is where you'll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgements.
+
+\textbf{NOTE:} listing something in the Acknowledgements DOES NOT waive this requirement.
 
 You may use any citation style you wish, but be consistent. Recommended citation styles include APA and AmStat. Here is a starting code block for you to use:
 
@@ -1701,6 +1754,8 @@ You may use any citation style you wish, but be consistent. Recommended citation
 \end{Highlighting}
 \end{Shaded}
 
+Notice the use of \texttt{class\ =\ "hangingindent"}. You must include this with each reference as this will ensure the proper styling of your references.
+
 If you need assistance with this section, please talk to Neil.
 
 \hypertarget{plagiarism}{%
@@ -1718,7 +1773,7 @@ There is a difference between looking at example code online to see how to do so
   If you use someone else's code and make modifications, you need to give credit to where you got the code, and potentially ask for permission.
 \end{itemize}
 
-You will need to place citations in \emph{\textbf{two}} places: in the References Tab and in your code.
+You will need to place citations in \emph{\textbf{two}} places: in the References Tab and in your code. You might want to also consider adding an acknowledgement to the Overview tab.
 
 \hypertarget{reference-tab}{%
 \subsection{Reference Tab}\label{reference-tab}}
@@ -1752,14 +1807,14 @@ Use the following format in your code to cite where you got the code from.
 \CommentTok{# [borrowed code then follows]}
 \CommentTok{# ...}
 \CommentTok{# [last line of borrowed code]      }
-\CommentTok{#End of <author>'s code-------------------------------------------------------------------}
+\CommentTok{#End of <author>'s code----------------------------------------------------------}
 \end{Highlighting}
 \end{Shaded}
 
 \hypertarget{r-packages}{%
 \section{\texorpdfstring{\texttt{R} Packages}{R Packages}}\label{r-packages}}
 
-If you made use of any packages in \texttt{R}, then you will need to add these to the Reference subsection. Fortunately, there is a built-in tool that will help you: the \texttt{citation} function. In R (RStudio) simply type \texttt{citation("packageName")} and you'll get the appropriate citation information for the package you used. For example, \texttt{citation("shinydashboard")} and \texttt{citation("plyr")} will give the information needed for the following citations:
+If you made use of any packages in \texttt{R}, then you will need to add these to the Reference tab. Fortunately, there is a built-in tool that will help you: the \texttt{citation} function. In R (RStudio) simply type \texttt{citation("packageName")} and you'll get the appropriate citation information for the package you used. For example, \texttt{citation("shinydashboard")} and \texttt{citation("plyr")} will give the information needed for the following citations:
 
 \begin{quote}
 Chang, W. and Borges Ribeio, B. (2018). shinydashboard: Create dashboards with `Shiny'. (v0.7.1) {[}R Package{]}. Available from \url{https://CRAN.R-project.org/package=shinydashboard}
@@ -1783,7 +1838,7 @@ LastName, First Initial. (Year). Title of artwork. {[}Format{]}. Retrieved from 
 \hypertarget{data}{%
 \section{Data}\label{data}}
 
-If you are using any data files, you need to attribute where those files are coming from in the References subsection of your Overview page. A suggested format to use is:
+If you are using any data files, you need to attribute where those files are coming from in the References tab. You might also want to add an acknowledgement on the Overview tab. A suggested format to use is:
 
 \begin{quote}
 Author/Rightsholder. (Year). Title of data set (Version number) {[}Description of form{]}. Location: Name of producer.
@@ -1816,6 +1871,35 @@ We need to make sure that our Apps are accessible. If you have been adhering to 
 \item
   \href{https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b}{7 Things Every Designer Needs to Know about Accessibility}
 \end{itemize}
+
+\hypertarget{testing-accessibility}{%
+\section{Testing Accessibility}\label{testing-accessibility}}
+
+We highly recommend using the \href{https://wave.webaim.org/}{WAVE Web Accessibility Evaluation Tool}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=22.85in]{images/descStatOverview} 
+
+}
+
+\caption{WAVE Report for Descriptive Statistics App}\label{fig:waveDescStat}
+\end{figure}
+
+Figure \ref{fig:waveDescStat} shows the WAVE report for the Descriptive Statistics App. There are 54 errors including missing alternative text, empty headings. There are also 8 contrast errors, 14 alerts (skipping heading levels),
+
+\begin{figure}
+
+{\centering \includegraphics[width=19.69in]{images/overfitPrereq} 
+
+}
+
+\caption{WAVE Report for Overfitting App}\label{fig:waveOverfit}
+\end{figure}
+
+While there are fewer errors for the Overfitting App (Figure \ref{fig:waveOverfit}), there are a lot of alerts on this app including skipping heading levels and small text.
+
+By using the \texttt{boastApp} function and adhering to this Style Guide, your App should be in a good initial position. After running your App through WAVE, we can work with you address any changes that might be necessary.
 
 \hypertarget{mobile}{%
 \chapter{Mobile Friendliness}\label{mobile}}

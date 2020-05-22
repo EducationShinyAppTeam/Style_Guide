@@ -1,12 +1,12 @@
 # Wording {#wording}
 
 ## General Guidelines
-When writing the content for your App, you will want to keep in mind that these app have the primary audience of students. Thus, we need to make sure that we use language that is appropriate. Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
+When writing the content for your App, you will want to keep in mind that our apps have students as the primary audience. Thus, we need to make sure that we use language that is appropriate. Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
 
 __DO NOT sacrifice clarity and precision/accuracy for
-conciseness/brevity.__
+conciseness/brevity.__ While we don't necessarily want a wall of text, there should still be some text to assist the user.
 
-Since these apps are for *teaching*, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language, re-enforcing problematic conceptions, and supporting fallacies. For example,
+Since these apps are for *teaching and learning*, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language, re-enforcing problematic conceptions, and supporting fallacies. For example,
 
 + Discussing values of statistics
     - BAD: “The mean is 6.”
@@ -18,10 +18,10 @@ Since these apps are for *teaching*, we need to use language that is accurate an
     - BAD: "We're 95% confident that the true population proportion is between 0.35 and 0.45."
     - GOOD: "If we were to repeat the entire study infinitely many times, then 95% of the time we will make an interval that captures the true population proportion."
 
-## Popovers
-Popovers refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object. The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is `shinyBS::bsPopover`. While these can be powerful, they are often misused which leads to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear. 
+## Popovers {#popovers}
+The term "Popovers" refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object. The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is `shinyBS::bsPopover`. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear. 
 
-Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical to your user successfully using your App in a popover, you are using popovers __INCORRECTLY__.
+Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical for a person to successfully use your App in a popover, you are using popovers __INCORRECTLY__.
 
 Here are few additional sources for reading about Popovers/Tooltips:
 
@@ -35,3 +35,4 @@ Restrict any usage of a popover to something short and non-vital for your App's 
 + `content`: this will be the string that you want displayed; shorter is better.
 + `placement`: this will control where the popover appears. Choose the option (top, bottom, left, right) that works best for your space. Ensure that the placement does not cover any controls or other vital information.
 
+The visual appearance of the popover will be control by the central BOAST CSS file.
