@@ -1,0 +1,20 @@
+# Mobile Friendliness {#mobile}
+
+We want our apps to work well with mobile devices. Thus, when you get to the point where the majority of bugs have been fixed, you need to check how mobile friendly your App is. If you have used `boastApp` and/or the `boast.CSS` file, along with the practices laid out earlier, then you should be well on your way to being mobile friendly.
+
+You can check your App in two ways:
+
+1.  Test your App out on a variety of mobile devices.
+2.  Make use of a browser’s ability to mimic devices. To do this, launch your App in a browser, then enable one of the following:
+      - [Chrome: Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/#viewport)
+      - [Firefox: Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode)
+      - [Microsoft Edge: Device Emulation](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/emulation)
+      - [Safari: Responsive Design Mode](https://support.apple.com/en-gb/guide/safari-developer/dev84bd42758/mac)
+
+Look for any issues that you might be able to address before you hand off your App for others to play around with. Assign a __Mobile Friendliness Rating__ to your App on a scale from 1 to 5.
+
+1.  Not functional
+2.  Functional – Very awkward
+3.  Functional – Okay if no big screen available (multiple issues)
+4.  Usable in a small class setting (single issue)
+5.  Readily usable

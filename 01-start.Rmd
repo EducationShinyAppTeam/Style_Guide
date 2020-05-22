@@ -1,0 +1,55 @@
+# Getting Started {#getStarted}
+
+Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.
+
+## Getting Started Checklist {#checklist}
+1. Ensure that you have all of necessary accounts and if not, put in a request to Robert (Bob).  
+    a. DataCamp  
+    b. GitHub  
+    c. EducationShinyAppTeam on GitHub  
+    d. ~~RStudio Server~~  
+          + Upon investigation the TLT and the Eberly RStudio Servers will not be useful for us to do testing. An alternate testing process will be explored.  
+    e. BOAST in Teams (tied to your PSU ID)
+2. Ensure that you have all of the proper software.  
+    a. `R` (version 3.5.* minimum, version 4.0.0 preferred)  
+    b. RStudio (most current version preferred)  
+3. Additional Software that we recommend  
+    a. GitHub Desktop  
+4. `R` Packages--here are some basic packages that everyone will need; be sure to install their dependencies too  
+  a. `tidyverse`  
+  b. `ggplot2`  
+  c. `shiny`  
+  d. `shinyBS`  
+  e. `boastUtils` (see below)  
+5. A copy of the Sample App (see below)
+
+## `boastUtils` Package
+Bob created the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent. 
+ 
+__Starting Summer 2020, you will be required to you make use of this tool.__
+
+Please check out the package’s [page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and usage.
+
+## Sample App  
+Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the [Sample\_App](https://github.com/EducationShinyAppTeam/Sample_App) template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code. There are several methods you can use:
+
+### Command Line
+Enter the following in your terminal:
+
+``` bash
+git clone git@github.com:EducationShinyAppTeam/Sample_App.git
+```
+
+### Direct Download
+You can download the repository directly:
+
+  > <https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip>
+
+### GitHub Desktop
+If you are using GitHub Desktop and have linked your account that has access to the EducationShinyAppTeam repository, you can do the following from inside GitHub Desktop:  
+
+1. Bring up the Clone Repository Menu (File -> Clone Repository...)  
+2. Enter Sample\_App in the search bar and select the option that says Sample\_App (not sampleapp)
+3. Click the Choose... button for the local path (this is where you want to the clone to live on your computer)
+4. Click the Clone button.
+

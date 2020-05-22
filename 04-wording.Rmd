@@ -1,0 +1,37 @@
+# Wording {#wording}
+
+## General Guidelines
+When writing the content for your App, you will want to keep in mind that these app have the primary audience of students. Thus, we need to make sure that we use language that is appropriate. Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
+
+__DO NOT sacrifice clarity and precision/accuracy for
+conciseness/brevity.__
+
+Since these apps are for *teaching*, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language, re-enforcing problematic conceptions, and supporting fallacies. For example,
+
++ Discussing values of statistics
+    - BAD: “The mean is 6.”
+    - GOOD: “The value of the *sample arithematic mean* for this data is 6 units/object.”
++ Problematic conceptions
+    - BAD: “Probability is the likelihood of an event in relation to all possible events.”
+    - GOOD: “Probability is the long-run relative frequency for us seeing a particular data event given our assumptions. Likelihood is the long-run relative frequency of a set of assumptions being true given our collected data.”
++ Fallacies
+    - BAD: "We're 95% confident that the true population proportion is between 0.35 and 0.45."
+    - GOOD: "If we were to repeat the entire study infinitely many times, then 95% of the time we will make an interval that captures the true population proportion."
+
+## Popovers
+Popovers refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object. The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is `shinyBS::bsPopover`. While these can be powerful, they are often misused which leads to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear. 
+
+Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical to your user successfully using your App in a popover, you are using popovers __INCORRECTLY__.
+
+Here are few additional sources for reading about Popovers/Tooltips:
+
++ [Tooltips in UI Design](https://uxplanet.org/tooltips-in-ui-design-f63e117aa3d1)
++ [Tooltips: How to use this small but mighty UI pattern correctly](https://www.appcues.com/blog/tooltips)
+
+Restrict any usage of a popover to something short and non-vital for your App's user. If you do choose to use a popover, you will need to format the popover correctly. Be sure that your function call includes values for the following arguments:
+
++ `id`: this needs to be the name of the object which will act as the trigger
++ `title`: this will be a string that appears across the top of your popover; use verbs with an understood "you" (e.g., "Investigate!", "Remember", etc.)
++ `content`: this will be the string that you want displayed; shorter is better.
++ `placement`: this will control where the popover appears. Choose the option (top, bottom, left, right) that works best for your space. Ensure that the placement does not cover any controls or other vital information.
+

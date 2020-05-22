@@ -1,0 +1,26 @@
+--- 
+title: "The BOAST Style Guide"
+author: 
+  - Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)
+date: "`r format(Sys.time(), '%d %B %Y')`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: educationshinyappteam/Style_Guide
+description: "This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)."
+---
+
+# Welcome
+
+This guide spells out the styling that should be used for all apps included in [BOAST](https://github.com/EducationShinyAppTeam/BOAST). Keep in mind that there are several different aspects to what makes up Style including:
+
+  - Coding (how you write, organize, and comment the code that makes the app)
+  - Visual Appearance (how you make the app look including tabs, fonts, colors, icons, etc.)
+  - Wording (how you write information, instructions, and other messages to the users)
+  - Documentation (how you provide references, including code and data sources, and give credit)
+
+By following this style guide you’ll ensure that any app you create will
+meet our standards.
