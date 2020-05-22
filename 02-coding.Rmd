@@ -34,7 +34,7 @@ NOTE: this tool is imperfect and can result in left parenthesis or curly braces 
 Additionally, you can make use of the `styler` and `lintr` packages to help you perform formatting checks and to quickly reformat code.
 
 ### Be Explicit {#explicit}
-One of the best practices a coder can do is to be explicit. This links back to Informative Naming (\@ref(naming)) but goes a step beyond. `R` is a functional programming language. One of the important aspects of this is that functions in `R` obey the same rules as mathematical functions, especially multivariate functions. 
+One of the best practices a coder can do is to be explicit. This links back to Informative Naming  but goes a step beyond. `R` is a functional programming language. One of the important aspects of this is that functions in `R` obey the same rules as mathematical functions, especially multivariate functions. 
 
 One implicit fact about functions that most students don't realize is that the order of a function's arguments are a matter of convention and are actually arbitrary. While we might define *f* as \(f(x,y) = x^2+3y\), we could call \(f(y=2,x=1)\) and get the same output as \(f(1,2)\) when we use the convention set up in the definition. This issue is exacerbated with functions in `R`.
 
