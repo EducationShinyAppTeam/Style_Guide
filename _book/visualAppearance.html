@@ -207,18 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>7</b> Accessibility</a></li>
 <li class="chapter" data-level="8" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>8</b> Mobile Friendliness</a></li>
-<li class="chapter" data-level="9" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>9</b> Additional Tools</a><ul>
-<li class="chapter" data-level="9.1" data-path="addTools.html"><a href="addTools.html#background"><i class="fa fa-check"></i><b>9.1</b> Background</a></li>
-<li class="chapter" data-level="9.2" data-path="addTools.html"><a href="addTools.html#implementing-a-color-theme-1"><i class="fa fa-check"></i><b>9.2</b> Implementing a Color Theme</a></li>
-<li class="chapter" data-level="9.3" data-path="addTools.html"><a href="addTools.html#the-themes-1"><i class="fa fa-check"></i><b>9.3</b> The Themes</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="addTools.html"><a href="addTools.html#blue-1"><i class="fa fa-check"></i><b>9.3.1</b> Blue</a></li>
-<li class="chapter" data-level="9.3.2" data-path="addTools.html"><a href="addTools.html#green-1"><i class="fa fa-check"></i><b>9.3.2</b> Green</a></li>
-<li class="chapter" data-level="9.3.3" data-path="addTools.html"><a href="addTools.html#purple-1"><i class="fa fa-check"></i><b>9.3.3</b> Purple</a></li>
-<li class="chapter" data-level="9.3.4" data-path="addTools.html"><a href="addTools.html#black-1"><i class="fa fa-check"></i><b>9.3.4</b> Black</a></li>
-<li class="chapter" data-level="9.3.5" data-path="addTools.html"><a href="addTools.html#yellow-1"><i class="fa fa-check"></i><b>9.3.5</b> Yellow</a></li>
-<li class="chapter" data-level="9.3.6" data-path="addTools.html"><a href="addTools.html#red-1"><i class="fa fa-check"></i><b>9.3.6</b> Red</a></li>
-</ul></li>
-</ul></li>
+<li class="chapter" data-level="9" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>9</b> Additional Tools</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -247,32 +236,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> PSU Branding</h2>
 <p>Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.</p>
 <p>In your <code>ui.R</code> file (or your UI section of <code>app.R</code>), at the end of your <code>dashboardSidebar()</code> section, include the following:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">         boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">         boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</a></code></pre></div>
 <p>Here’s how this code would look in context:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">    <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">  ),</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">  <span class="kw">dashboardSidebar</span>(</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">    <span class="dt">width =</span> <span class="dv">300</span>,</a>
-<a class="sourceLine" id="cb2-9" data-line-number="9">    <span class="kw">sidebarMenu</span>(</a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">      <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">      <span class="co"># [omitted code],</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12">      tags<span class="op">$</span><span class="kw">div</span>(</a>
-<a class="sourceLine" id="cb2-13" data-line-number="13">        <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
-<a class="sourceLine" id="cb2-14" data-line-number="14">        boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">        )</a>
-<a class="sourceLine" id="cb2-16" data-line-number="16">      ),</a>
-<a class="sourceLine" id="cb2-17" data-line-number="17">    <span class="kw">dashboardBody</span>(</a>
-<a class="sourceLine" id="cb2-18" data-line-number="18">    tags<span class="op">$</span><span class="kw">head</span>(</a>
-<a class="sourceLine" id="cb2-19" data-line-number="19">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
-<a class="sourceLine" id="cb2-20" data-line-number="20">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
-<a class="sourceLine" id="cb2-21" data-line-number="21">      <span class="kw">tabItems</span>(</a>
-<a class="sourceLine" id="cb2-22" data-line-number="22">       <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb2-23" data-line-number="23">      )  )  )  )  )</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">  ),</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">  <span class="kw">dashboardSidebar</span>(</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    <span class="dt">width =</span> <span class="dv">300</span>,</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">    <span class="kw">sidebarMenu</span>(</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">      <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</a>
+<a class="sourceLine" id="cb7-11" data-line-number="11">      <span class="co"># [omitted code],</span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">      tags<span class="op">$</span><span class="kw">div</span>(</a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">        <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
+<a class="sourceLine" id="cb7-14" data-line-number="14">        boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</a>
+<a class="sourceLine" id="cb7-15" data-line-number="15">        )</a>
+<a class="sourceLine" id="cb7-16" data-line-number="16">      ),</a>
+<a class="sourceLine" id="cb7-17" data-line-number="17">    <span class="kw">dashboardBody</span>(</a>
+<a class="sourceLine" id="cb7-18" data-line-number="18">    tags<span class="op">$</span><span class="kw">head</span>(</a>
+<a class="sourceLine" id="cb7-19" data-line-number="19">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
+<a class="sourceLine" id="cb7-20" data-line-number="20">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
+<a class="sourceLine" id="cb7-21" data-line-number="21">      <span class="kw">tabItems</span>(</a>
+<a class="sourceLine" id="cb7-22" data-line-number="22">       <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb7-23" data-line-number="23">      )  )  )  )  )</a></code></pre></div>
 <p>This will ensure that the Penn State logo gets properly used.</p>
 </div>
 <div id="dashboard" class="section level2">
@@ -678,29 +667,29 @@ Figure 4.24: Sliders Using the Red Palette
 <div id="color-and-plots-in-r" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Color and Plots in <code>R</code></h3>
 <p>In <code>R</code> you can set color theme which you use in <code>ggplot2</code>. Here are two custom color palettes that you can use in your App. Additionally, the package <code>viridis</code> provides several additional color palettes which are improvements upon the default color scheme.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co"># and checked at the above webite.</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">psuPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co"># Both palettes get used in the order of what is listed.</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co"># and checked at the above webite.</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">psuPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co"># Both palettes get used in the order of what is listed.</span></a></code></pre></div>
 <p>To use these palettes (or ones from <code>viridis</code>) with a <code>ggplot2</code> object, you’ll need to doe the following</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># You will need to first add whichever palette line from above to your code</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># Create ggplot2 object</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data =</span> df, </a>
-<a class="sourceLine" id="cb4-7" data-line-number="7">                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">color =</span> grp, <span class="dt">fill =</span> grp))</a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co"># Add your layers</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_points</span>()</a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co"># Tell R to use your chosen palette</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># You will need to first add whichever palette line from above to your code</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co"># Create ggplot2 object</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data =</span> df, </a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">color =</span> grp, <span class="dt">fill =</span> grp))</a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co"># Add your layers</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_points</span>()</a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co"># Tell R to use your chosen palette</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></a></code></pre></div>
 <p>If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)</p>
 </div>
 </div>
@@ -718,13 +707,13 @@ Figure 4.24: Sliders Using the Red Palette
 <p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
 <p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
 <p>For example, this code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">p</span>(</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="st">&quot;When dealing with the &quot;</span>,</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;t&quot;</span>),</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">  tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="st">&quot;that we need to input.&quot;</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">p</span>(</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="st">&quot;When dealing with the &quot;</span>,</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;t&quot;</span>),</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">  <span class="st">&quot;that we need to input.&quot;</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">)</a></code></pre></div>
 <p>Becomes:</p>
 <blockquote>
 <p>When dealing with the <em>t</em>-distribution, we only have one parameter, the <strong>degrees of freedom</strong> that we need to input.</p>
@@ -756,15 +745,15 @@ Figure 4.24: Sliders Using the Red Palette
 <h3><span class="header-section-number">4.5.7</span> Text in <code>R</code> Plots</h3>
 <p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the ggplot framework) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
 <p>Here is an example for how to do this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Create a ggplot2 object</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data=</span>df, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>grp)) </a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co"># Add your layers, for example</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co"># Use theme to control text size</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">  <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>),</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">  <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>)</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9">  )</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># Create a ggplot2 object</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data=</span>df, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>grp)) </a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co"># Add your layers, for example</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co"># Use theme to control text size</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb11-7" data-line-number="7">  <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>),</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8">  <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>)</a>
+<a class="sourceLine" id="cb11-9" data-line-number="9">  )</a></code></pre></div>
 <p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
 <p><strong>Note:</strong> The text in your plot might not behave well for dynamic resizing on different mobile devices.</p>
 </div>
@@ -791,15 +780,15 @@ Figure 4.24: Sliders Using the Red Palette
 <h3><span class="header-section-number">4.6.1</span> Axes and Scales</h3>
 <p><code>R</code>’s default axes are terrible. They often do not fully cover the data and the have gaps between the axes. All this impedes the user’s construction of meaning. Thus, you’ll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.</p>
 <p>To force <code>ggplot2</code> to place (0, 0) in the lower-left corner and to control the scales, you will need to include the following:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Create the ggplot2 object</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(...)</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co"># Add your layer</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co"># Control axes and scale</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">## Multplicative Scaling of the Horizontal (x) Axis</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">## Additive Scaling of the Vertical (y) Axis</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">add =</span> <span class="dv">0</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="dv">0</span>, <span class="dt">add =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># Create the ggplot2 object</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(...)</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co"># Add your layer</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co"># Control axes and scale</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">## Multplicative Scaling of the Horizontal (x) Axis</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">## Additive Scaling of the Vertical (y) Axis</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">add =</span> <span class="dv">0</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="dv">0</span>, <span class="dt">add =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </a></code></pre></div>
 </div>
 <div id="tables" class="section level3">
 <h3><span class="header-section-number">4.6.2</span> Tables</h3>
@@ -869,6 +858,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
