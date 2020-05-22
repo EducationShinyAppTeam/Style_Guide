@@ -430,74 +430,74 @@ create customized appearances. This is NOT recommended.*/
 
 /*Ends of Slider Bar*/
 .skin-blue .irs-bar-edge {
-	border-color: var(--beaver-blue);
+	border-color: var(--nittany-navy);
 	background: var(--pennsylvania-sky);
 }
 
 .skin-green .irs-bar-edge {
-	border-color: var(--green-opportunity);
+	border-color: var(--penn-forest);
 	background: var(--future-calling);
 }
 
 .skin-purple .irs-bar-edge {
-	border-color: var(--perpetual-wonder);
+	border-color: var(--endless-potential);
 	background: var(--stately-atherton);
 }
 
 .skin-yellow .irs-bar-edge {
-	border-color: var(--invent-orange);
+	border-color: var(--lion-roar);
 	background: var(--bright-keystone);
 }
 
 .skin-black .irs-bar-edge {
-	border-color: var(--creek);
+	border-color: var(--slate);
 	background: var(--teal);
 }
 
 .skin-red .irs-bar-edge {
-	border-color: var(--original-1887);
+	border-color: var(--land-grant);
 	background: var(--dawn-discovery);
 }
 
 /*Middle Portion of Slider Bar*/
 .skin-blue .irs-bar {
-	border-top-color: var(--beaver-blue);
-	border-bottom-color: var(--beaver-blue);
+	border-top-color: var(--nittany-navy);
+	border-bottom-color: var(--nittany-navy);
 	background: var(--pennsylvania-sky);
 	color: black;
 }
 
 .skin-green .irs-bar {
-	border-top-color: var(--green-opportunity);
-	border-bottom-color: var(--green-opportunity);
+	border-top-color: var(--penn-forest);
+	border-bottom-color: var(--penn-forest);
 	background: var(--future-calling);
 	color: black;
 }
 
 .skin-purple .irs-bar {
-	border-top-color: var(--perpetual-wonder);
-	border-bottom-color: var(--perpetual-wonder);
+	border-top-color: var(--endless-potential);
+	border-bottom-color: var(--endless-potential);
 	background: var(--stately-atherton);
 	color: black;
 }
 
 .skin-yellow .irs-bar {
-	border-top-color: var(--invent-orange);
-	border-bottom-color: var(--invent-orange);
+	border-top-color: var(--lion-roar);
+	border-bottom-color: var(--lion-roar);
 	background: var(--bright-keystone);
 	color: black;
 }
 
 .skin-black .irs-bar {
-	border-top-color: var(--creek);
-	border-bottom-color: var(--creek);
+	border-top-color: var(--slate);
+	border-bottom-color: var(--slate);
 	background: var(--teal);
 	color: black;
 }
 
 .skin-red .irs-bar {
-	border-top-color: var(--original-1887);
-	border-bottom-color: var(--original-1887);
+	border-top-color: var(--land-grant);
+	border-bottom-color: var(--land-grant);
 	background: var(--dawn-discovery);
 	color: black;
 }
