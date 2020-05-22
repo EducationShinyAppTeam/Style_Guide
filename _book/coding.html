@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Coding Style | The BOAST Style Guide</title>
+  <meta name="description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Coding Style | The BOAST Style Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Coding Style | The BOAST Style Guide" />
+  
+  <meta name="twitter:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  
+
+<meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
+
+
+<meta name="date" content="2020-05-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getStarted.html"/>
+<link rel="next" href="visualAppearance.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BOAST Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="getStarted.html"><a href="getStarted.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a><ul>
+<li class="chapter" data-level="2.1" data-path="getStarted.html"><a href="getStarted.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="2.2" data-path="getStarted.html"><a href="getStarted.html#boastutils-package"><i class="fa fa-check"></i><b>2.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="2.3" data-path="getStarted.html"><a href="getStarted.html#sample-app"><i class="fa fa-check"></i><b>2.3</b> Sample App</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="getStarted.html"><a href="getStarted.html#command-line"><i class="fa fa-check"></i><b>2.3.1</b> Command Line</a></li>
+<li class="chapter" data-level="2.3.2" data-path="getStarted.html"><a href="getStarted.html#direct-download"><i class="fa fa-check"></i><b>2.3.2</b> Direct Download</a></li>
+<li class="chapter" data-level="2.3.3" data-path="getStarted.html"><a href="getStarted.html#github-desktop"><i class="fa fa-check"></i><b>2.3.3</b> GitHub Desktop</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>3</b> Coding Style</a><ul>
+<li class="chapter" data-level="3.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>3.1</b> General Coding Style</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>3.1.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="3.1.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>3.1.2</b> Informative Names</a></li>
+<li class="chapter" data-level="3.1.3" data-path="coding.html"><a href="coding.html#formatCode"><i class="fa fa-check"></i><b>3.1.3</b> Format Your Code</a></li>
+<li class="chapter" data-level="3.1.4" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>3.1.4</b> Be Explicit</a></li>
+<li class="chapter" data-level="3.1.5" data-path="coding.html"><a href="coding.html#html"><i class="fa fa-check"></i><b>3.1.5</b> HTML</a></li>
+<li class="chapter" data-level="3.1.6" data-path="coding.html"><a href="coding.html#textStyle"><i class="fa fa-check"></i><b>3.1.6</b> Styling Text</a></li>
+<li class="chapter" data-level="3.1.7" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>3.1.7</b> Minimize Package Usage</a></li>
+<li class="chapter" data-level="3.1.8" data-path="coding.html"><a href="coding.html#exFiles"><i class="fa fa-check"></i><b>3.1.8</b> Minimize External Files</a></li>
+<li class="chapter" data-level="3.1.9" data-path="coding.html"><a href="coding.html#plotCache"><i class="fa fa-check"></i><b>3.1.9</b> Plot Caching</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="coding.html"><a href="coding.html#orgCode"><i class="fa fa-check"></i><b>3.2</b> Organizing Code</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="coding.html"><a href="coding.html#using-app.r"><i class="fa fa-check"></i><b>3.2.1</b> Using <code>app.R</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="coding.html"><a href="coding.html#using-ui.r-and-server.r"><i class="fa fa-check"></i><b>3.2.2</b> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.3</b> Metadata</a></li>
+<li class="chapter" data-level="3.4" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.4</b> CSS</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualAppearance.html"><a href="visualAppearance.html"><i class="fa fa-check"></i><b>4</b> Visual Appearance</a><ul>
+<li class="chapter" data-level="4.1" data-path="visualAppearance.html"><a href="visualAppearance.html#logo"><i class="fa fa-check"></i><b>4.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="4.2" data-path="visualAppearance.html"><a href="visualAppearance.html#dashboard"><i class="fa fa-check"></i><b>4.2</b> Dashboard</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="visualAppearance.html"><a href="visualAppearance.html#dashboard-header"><i class="fa fa-check"></i><b>4.2.1</b> Dashboard Header</a></li>
+<li class="chapter" data-level="4.2.2" data-path="visualAppearance.html"><a href="visualAppearance.html#sidebar-and-body"><i class="fa fa-check"></i><b>4.2.2</b> Sidebar and Body</a></li>
+<li class="chapter" data-level="4.2.3" data-path="visualAppearance.html"><a href="visualAppearance.html#tabs-inside-the-body"><i class="fa fa-check"></i><b>4.2.3</b> Tabs Inside the Body</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="visualAppearance.html"><a href="visualAppearance.html#common-elements"><i class="fa fa-check"></i><b>4.3</b> Common Elements</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="visualAppearance.html"><a href="visualAppearance.html#ordering-inputs"><i class="fa fa-check"></i><b>4.3.1</b> Ordering Inputs</a></li>
+<li class="chapter" data-level="4.3.2" data-path="visualAppearance.html"><a href="visualAppearance.html#buttons"><i class="fa fa-check"></i><b>4.3.2</b> Buttons</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="visualAppearance.html"><a href="visualAppearance.html#colors"><i class="fa fa-check"></i><b>4.4</b> Colors</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="visualAppearance.html"><a href="visualAppearance.html#colorUI"><i class="fa fa-check"></i><b>4.4.1</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="4.4.2" data-path="visualAppearance.html"><a href="visualAppearance.html#color-and-plots-in-r"><i class="fa fa-check"></i><b>4.4.2</b> Color and Plots in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="visualAppearance.html"><a href="visualAppearance.html#styleText"><i class="fa fa-check"></i><b>4.5</b> Text Styling</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="visualAppearance.html"><a href="visualAppearance.html#headings"><i class="fa fa-check"></i><b>4.5.1</b> Headings</a></li>
+<li class="chapter" data-level="4.5.2" data-path="visualAppearance.html"><a href="visualAppearance.html#paragraph-text"><i class="fa fa-check"></i><b>4.5.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="4.5.3" data-path="visualAppearance.html"><a href="visualAppearance.html#mathematics"><i class="fa fa-check"></i><b>4.5.3</b> Mathematics</a></li>
+<li class="chapter" data-level="4.5.4" data-path="visualAppearance.html"><a href="visualAppearance.html#game-question-text"><i class="fa fa-check"></i><b>4.5.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="4.5.5" data-path="visualAppearance.html"><a href="visualAppearance.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>4.5.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="4.5.6" data-path="visualAppearance.html"><a href="visualAppearance.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>4.5.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="4.5.7" data-path="visualAppearance.html"><a href="visualAppearance.html#text-in-r-plots"><i class="fa fa-check"></i><b>4.5.7</b> Text in <code>R</code> Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="visualAppearance.html"><a href="visualAppearance.html#graphics"><i class="fa fa-check"></i><b>4.6</b> Graphics</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="visualAppearance.html"><a href="visualAppearance.html#axes-and-scales"><i class="fa fa-check"></i><b>4.6.1</b> Axes and Scales</a></li>
+<li class="chapter" data-level="4.6.2" data-path="visualAppearance.html"><a href="visualAppearance.html#tables"><i class="fa fa-check"></i><b>4.6.2</b> Tables</a></li>
+<li class="chapter" data-level="4.6.3" data-path="visualAppearance.html"><a href="visualAppearance.html#alt-text"><i class="fa fa-check"></i><b>4.6.3</b> Alt Text</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="visualAppearance.html"><a href="visualAppearance.html#miscellaneous"><i class="fa fa-check"></i><b>4.7</b> Miscellaneous</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>5</b> Wording</a><ul>
+<li class="chapter" data-level="5.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>5.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="5.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>5.2</b> Popovers</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>6</b> Documentation</a><ul>
+<li class="chapter" data-level="6.1" data-path="documentation.html"><a href="documentation.html#references-1"><i class="fa fa-check"></i><b>6.1</b> References</a></li>
+<li class="chapter" data-level="6.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>6.2</b> Plagiarism</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>6.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="6.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>6.2.2</b> In Code</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>6.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="6.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>6.4</b> Graphics</a></li>
+<li class="chapter" data-level="6.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>6.5</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>7</b> Accessibility</a></li>
+<li class="chapter" data-level="8" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>8</b> Mobile Friendliness</a></li>
+<li class="chapter" data-level="9" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>9</b> Additional Tools</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The BOAST Style Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="coding" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Coding Style</h1>
+<p>Now that you’ve gone through the Getting Started section, we can turn our attention to the first part of the Style Guide: Coding. There are many aspects that fall under the heading of Coding Style.</p>
+<div id="genCode" class="section level2">
+<h2><span class="header-section-number">3.1</span> General Coding Style</h2>
+<p>Our general practice is to make use of the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. However, we do have some important departures and additional practices you need to follow:</p>
+<div id="comments" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Leave Comments</h3>
+<p>At bare minimum, use a comment to break your code into sections. This helps you and others conceptualize the code into more manageable chunks. Your comments can provide others with potential keywords to search for when looking at your code later on.</p>
+<p>For particularly complex sections, use comments to summarize what you’re trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.</p>
+</div>
+<div id="naming" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Informative Names</h3>
+<p>Use Informative Names for Variables and Functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,</p>
+<ul>
+<li><code>scoreMatrix</code> is a matrix that holds a set of scores<br />
+</li>
+<li><code>checkGame</code> is a function that checks the state of the current game</li>
+</ul>
+<p>Use <strong>camelCase</strong> for variables and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no space or underscore ( _ ) between them. (This is a departure from the tidyverse style.)</p>
+<p>Avoid using the variable names that existed in code you’re making use of from another app or script. For example, don’t use <code>waitTimes</code> to hold your data on the number of correct answers a user has given.</p>
+</div>
+<div id="formatCode" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Format Your Code</h3>
+<p>See also <a href="coding.html#orgCode">3.2</a> Organizing Code</p>
+<p>Use indentation spacing to help make your code readable. RStudio has a built-in tool that can help with this.</p>
+<ol style="list-style-type: decimal">
+<li>Select all of the code you want to reformat.
+<ul>
+<li>To select all code in a file, use Command-A (Mac) or Control-A (Windows).</li>
+</ul></li>
+<li>Press Command-Shift-A (Mac), Control-Shift-A (Windows), or click on the Code menu and select Reformat Code.</li>
+</ol>
+<p>NOTE: this tool is imperfect and can result in left parenthesis or curly braces moving up a line to where you might have an end-of-line comment, resulting in errors.</p>
+<p>Additionally, you can make use of the <code>styler</code> and <code>lintr</code> packages to help you perform formatting checks and to quickly reformat code.</p>
+</div>
+<div id="explicit" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Be Explicit</h3>
+<p>One of the best practices a coder can do is to be explicit. This links back to Informative Naming (<a href="coding.html#naming">3.1.2</a>) but goes a step beyond. <code>R</code> is a functional programming language. One of the important aspects of this is that functions in <code>R</code> obey the same rules as mathematical functions, especially multivariate functions.</p>
+<p>One implicit fact about functions that most students don’t realize is that the order of a function’s arguments are a matter of convention and are actually arbitrary. While we might define <em>f</em> as <span class="math inline">\(f(x,y) = x^2+3y\)</span>, we could call <span class="math inline">\(f(y=2,x=1)\)</span> and get the same output as <span class="math inline">\(f(1,2)\)</span> when we use the convention set up in the definition. This issue is exacerbated with functions in <code>R</code>.</p>
+<p>Therefore, when you pass values to the arguments of a function in <code>R</code>, you should be explicit and include the argument name in your code. For example,</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">actionButton</span>(</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="dt">inputId =</span> <span class="st">&quot;submit&quot;</span>,</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="dt">label =</span> <span class="st">&quot;Submit&quot;</span>,</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="dt">class =</span> <span class="st">&quot;btn-ttt&quot;</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">)</a></code></pre></div>
+<p>There are a few exceptions to this:</p>
+<ul>
+<li>Formula Arguments (e.g., <code>response ~ factor1 + block</code>)</li>
+<li>Data Vectors/Frames (e.g., <code>dataFrame$response</code>)</li>
+<li>Functions from <code>shiny</code>, <code>shinydashboard</code>, <code>shinyBS</code>, etc.
+<ul>
+<li>E.g., you can call <code>dashboardHeader</code> rather than <code>shinydashboard::dashboardHeader</code></li>
+</ul></li>
+</ul>
+<p>General Advice:</p>
+<ul>
+<li>If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call</li>
+<li>If you are using a common/central function (i.e., those from <code>shiny</code>, <code>ggplot2</code>), you can omit the package in the function call.</li>
+</ul>
+<p>Remember the following: the more proactive you are from the get go in commenting and organizing your code, the easier time you will have for debugging and improving your code down the road.</p>
+</div>
+<div id="html" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> HTML</h3>
+<p>Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in <code>R</code>. When you run a Shiny app, <code>R</code> and the <code>shiny</code> packages actually convert all of the <code>R</code> code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an <strong>Accessibility Issue</strong>.</p>
+<p>HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to wider audience. Here are the most common HTML tags that you’ll encounter when making a Shiny App.</p>
+<div id="lists" class="section level4">
+<h4><span class="header-section-number">3.1.5.1</span> Lists</h4>
+<p>There are two aspects to lists: the items in the list and the environment those items live in.</p>
+<p>The two list environment are Ordered Lists and Unordered Lists.</p>
+<ul>
+<li>The Ordered List environment is for when you want require that user works through the items in a particular order. You call this environment in your App by using <code>tags$ol( [your list] )</code>. These lists are sequentially numbered/lettered.</li>
+<li>The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using <code>tags$li( [your list] )</code>. These lists will appear with bullets.</li>
+</ul>
+<p>Once you’ve created the list environment, you create items for your list in the same way: <code>tags$li([content])</code>. You do not need to and should <strong>NOT</strong> use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.</p>
+<p>Here is an example of how you might create a list:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">tags<span class="op">$</span><span class="kw">ul</span>(</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item with a&quot;</span>, tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;boldface&quot;</span>), <span class="st">&quot;word.&quot;</span>)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">)</a></code></pre></div>
+<p>which turns into</p>
+<ul>
+<li>This is my first item.</li>
+<li>A second item with a <strong>boldface</strong> word.</li>
+</ul>
+<p>There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to <code>tags$li()</code> when in that section.</p>
+</div>
+<div id="headers" class="section level4">
+<h4><span class="header-section-number">3.1.5.2</span> Headers</h4>
+<p>Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. They are <strong>NOT</strong> for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content.</p>
+<p>There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.</p>
+<ol style="list-style-type: decimal">
+<li><code>h1()</code> is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).</li>
+<li><code>h2()</code> is for Page titles within the App. These would correspond with the tab links you place in the dashboard’s left side panel.</li>
+<li><code>h3()</code> is for titling Sections within a Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.</li>
+<li><code>h4()</code> is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.</li>
+<li><code>h5()</code> and <code>h6()</code> should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., <code>h1()</code>, <code>h2()</code>, etc.</li>
+</ol>
+<p><strong>Avoid skipping heading levels</strong> as this will get your App flagged for an Accessibility Violation. That is to say don’t start at <code>h2</code> with no <code>h1</code> and don’t go from <code>h1</code> to <code>h3</code> without an <code>h2</code>. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn’t skip whole sections in either of those.</p>
+<p>Here are few more things to NOT do with the heading tags:</p>
+<ul>
+<li>DO NOT USE headings to style text (We cannot stress this enough.)</li>
+<li>Do not wrap a header tag around a list element (e.g., <code>h3(tags$li(&quot;here is my list item&quot;))</code>) nor the reverse (e.g., <code>tags$li(h3(&quot;here is my list item&quot;))</code>)</li>
+<li>Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(“Introduction to”, p(“my game”)))</li>
+</ul>
+<p>For more information check out the <a href="https://www.w3.org/WAI/tutorials/page-structure/headings/">W3C’s Tutorial</a></p>
+</div>
+<div id="paragraphs" class="section level4">
+<h4><span class="header-section-number">3.1.5.3</span> Paragraphs</h4>
+<p>Your content should be enclosed in the paragraph tag, <code>p()</code>. Even if your content is relative brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is.</p>
+</div>
+</div>
+<div id="textStyle" class="section level3">
+<h3><span class="header-section-number">3.1.6</span> Styling Text</h3>
+<p>The styling of text (including font size, font weight (i.e., boldface), font family, color, etc.) is something that we began standardizing in Fall 2019. This is centrally managed by Neil and Bob to ensure 1) consistency across apps, 2) to cut down on the extraneous coding you need to do (this way you can focus on the apps), and 3) ensures that our apps are accessible and mobile friendly. To this end:</p>
+<p>The styling of text will be controlled using an <strong>external</strong> CSS (Cascading Style Sheet) file. You will implement this depending on what approach you use:</p>
+<ul>
+<li>If you’re using the <code>boastApp</code> function from <code>boastUtils</code> (<strong>recommended for all new apps</strong>), you don’t need to do anything as the appropriate calls will automatically be done for you.</li>
+<li>If you are using the <code>ui.R</code> and <code>server.R</code> format (i.e., apps from prior years), place the following code in the <code>tags$head( )</code> portion at the top of the <code>dashboardBody</code> section of the <code>ui.R</code> file :
+<!-- end list --></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">    <span class="dt">titleWidth =</span> <span class="dv">300</span>,</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">    <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">  ),</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">  <span class="co"># [omitted code],</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">  <span class="kw">dashboardBody</span>(</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    tags<span class="op">$</span><span class="kw">head</span>(</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13">      <span class="kw">tabItems</span>(</a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">       <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15">      )  )  )  )</a></code></pre></div>
+<p>There times when you might need some additional text styling that is not already defined. In these cases, <strong>you’ll need to talk to Neil or Bob to determine what is the best course of action</strong>. This could entail an addition to the central CSS file or the inclusion of an additional CSS file unique to your App.</p>
+<p>The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.</p>
+<p>See also the CSS section (<a href="coding.html#css">3.4</a>).</p>
+</div>
+<div id="minPackages" class="section level3">
+<h3><span class="header-section-number">3.1.7</span> Minimize Package Usage</h3>
+<p>Make sure that you absolutely have to use a particular package before you do. Check to see if what you’re trying to do can be done in a package you’re already using or in base R.</p>
+<p>This is not to say that you can’t make use of a new package. This guideline’s purpose is to help to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.</p>
+<p>To help you avoid name masking (i.e., Be Explicit-<a href="coding.html#explicit">3.1.4</a>), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use <code>dplyr::filter([arguments])</code> instead of just <code>filter([arguments])</code>.</p>
+<p>You can also run a <code>funchir::stale_package_check</code> on your <code>app.R</code>, <code>ui.R</code>, and <code>sever.R</code> files to see which packages you’re loading but might not actually use in your code. These stale packages may then be deleted out from your library call.</p>
+</div>
+<div id="exFiles" class="section level3">
+<h3><span class="header-section-number">3.1.8</span> Minimize External Files</h3>
+<p>Try to minimize the number and size of external files you’re attaching to your App. If you’re working on an existing app, remove any external files that are no longer necessary.</p>
+<p>Wherever possible try to place external files into the <code>www</code> directory/folder that is at the same level as your <code>app.R</code> or <code>ui.R</code>/<code>server.R</code> files.</p>
+</div>
+<div id="plotCache" class="section level3">
+<h3><span class="header-section-number">3.1.9</span> Plot Caching</h3>
+<p>There are cases when your app will include a plot that falls into any of the following categories:</p>
+<ol style="list-style-type: decimal">
+<li>a plot that all users will see (i.e., static data set),</li>
+<li>is a computationally intense plot (i.e., lots of data and/or layers),</li>
+<li>might be a dynamic graph that the user explores and needs to move back and forth between various states.</li>
+</ol>
+<p>Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the <code>renderCachePlot</code> function rather than <code>renderPlot</code>. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).</p>
+</div>
+</div>
+<div id="orgCode" class="section level2">
+<h2><span class="header-section-number">3.2</span> Organizing Code</h2>
+<p>There is a fixed order in which you should write your code. This will depend on if you are using a singular <code>app.R</code> file or the pair <code>ui.r</code> and <code>server.r</code>.</p>
+<div id="using-app.r" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Using <code>app.R</code></h3>
+<p>The order for your code will be as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Packages to be loaded</li>
+<li>App Metadata (see below)</li>
+<li>Any additional source files</li>
+<li>UI definition</li>
+<li>Server definition</li>
+<li><code>boastApp</code> call</li>
+</ol>
+</div>
+<div id="using-ui.r-and-server.r" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Using <code>ui.R</code> and <code>server.R</code></h3>
+<p>The order for your code in the <code>ui.R</code> file:</p>
+<ol style="list-style-type: decimal">
+<li>Packages to be loaded</li>
+<li>App Metadata (see below)</li>
+<li>Any additional source files</li>
+<li>UI definition</li>
+</ol>
+<p>The order for your code in the <code>server.R</code> file:</p>
+<ol style="list-style-type: decimal">
+<li>Packages to be loaded</li>
+<li>Any additional source files</li>
+<li>Server definition</li>
+</ol>
+</div>
+</div>
+<div id="metadata" class="section level2">
+<h2><span class="header-section-number">3.3</span> Metadata</h2>
+<p>Each app will need the following metadata in either the <code>app.R</code> or the <code>ui.R</code> file. For long lines, use the <code>paste</code> function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.</p>
+<p>For now, use the following format:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">## App Meta Data----------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">APP_TITLE  &lt;&lt;-<span class="st"> &quot;Title of the app&quot;</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">APP_DESCP  &lt;&lt;-<span class="st"> </span><span class="kw">paste</span>(</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="st">&quot;Description of the app&quot;</span>,</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="st">&quot;use multiple lines to keep the description legible.&quot;</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">## End App Meta Data------------------------------------------------------------</span></a></code></pre></div>
+<p>Notice that both <code>APP_TITLE</code> and <code>APP_DESCP</code> do not follow camelCase. This is by intent to denote global <code>constants</code>.</p>
+</div>
+<div id="css" class="section level2">
+<h2><span class="header-section-number">3.4</span> CSS</h2>
+<p>Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.</p>
+<p>There are three key elements at play for CSS:</p>
+<ol style="list-style-type: decimal">
+<li>All apps need to have the appropriate reference to the CSS file (See <a href="coding.html#textStyle">3.1.6</a>).
+<ol style="list-style-type: lower-alpha">
+<li>Please register any issues, bugs, enhancements, new styling to the Style Guide repository of GitHub.</li>
+</ol></li>
+<li>Any App specific styling needs to as be in a CSS file and approved.</li>
+<li>There should not be any styling code in the <code>app.R</code>, <code>ui.R</code>, or <code>server.R</code> files (a.k.a. in-line CSS). Styling code would look like this:
+<ul>
+<li><code>tags$style(HTML(&quot;.js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: orange}&quot;))</code><br />
+</li>
+<li><code>style=&quot;color: #fff; background-color: #337ab7; border-color: #2e6da4&quot;</code></li>
+</ul></li>
+</ol>
+<p>There is an exception to the last one: setting up alignment for a div section. This would look like <code>div(style = &quot;text-align: center&quot;...)</code> This type of styling is allowed in the R files (generally in the UI portions only).</p>
+<p>If you come across an app that has in-line CSS OR calls to a CSS file that isn’t <code>boast.css</code>, please log an issue and mention/assign Neil. (Most common external CSS files are <code>style.css</code> and <code>Feature(s).css</code>.)</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getStarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualAppearance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["BOAST_style_guide.pdf", "BOAST_style_guide.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

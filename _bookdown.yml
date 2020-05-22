@@ -1,0 +1,7 @@
+book_filename: "BOAST_style_guide"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+bookdown::gitbook:
+  toc_depth: 3
