@@ -159,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.3</b> Metadata</a></li>
 <li class="chapter" data-level="3.4" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.4</b> CSS</a></li>
+<li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#github-repo-names"><i class="fa fa-check"></i><b>3.5</b> GitHub Repo Names</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualAppearance.html"><a href="visualAppearance.html"><i class="fa fa-check"></i><b>4</b> Visual Appearance</a><ul>
 <li class="chapter" data-level="4.1" data-path="visualAppearance.html"><a href="visualAppearance.html#logo"><i class="fa fa-check"></i><b>4.1</b> PSU Branding</a></li>
@@ -235,17 +236,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> References</h2>
 <p>All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgements. (NOTE: listing something in the Acknowledgements DOES NOT waive this requirement.)</p>
 <p>You may use any citation style you wish, but be consistent. Recommended citation styles include APA and AmStat. Here is a starting code block for you to use:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">#[omitted code]</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">tabItem</span>(</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="dt">tabName =</span> <span class="st">&quot;refs&quot;</span>,</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">  <span class="kw">withMathJax</span>(),</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">  <span class="co"># Repeat as needed</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">#[omitted code]</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">tabItem</span>(</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">  <span class="dt">tabName =</span> <span class="st">&quot;refs&quot;</span>,</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">  <span class="kw">withMathJax</span>(),</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6">  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8">  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9">    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</a>
+<a class="sourceLine" id="cb13-10" data-line-number="10">  <span class="co"># Repeat as needed</span></a>
+<a class="sourceLine" id="cb13-11" data-line-number="11">)</a></code></pre></div>
 <p>If you need assistance with this section, please talk to Neil.</p>
 </div>
 <div id="plagiarism" class="section level2">
@@ -271,17 +272,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="in-code" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> In Code</h3>
 <p>Use the following format in your code to cite where you got the code from.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#-------------------------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#  Title: &lt;title of program/source code&gt;</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#  Author: &lt;author(s) names&gt;</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#  Date: &lt;date&gt;</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#  Code version: &lt;code version&gt;</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#-------------------------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co"># [borrowed code then follows]</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co"># ...</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co"># [last line of borrowed code]      </span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#End of &lt;author&gt;&#39;s code-------------------------------------------------------------------</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co">#-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="co">#  Title: &lt;title of program/source code&gt;</span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="co">#  Author: &lt;author(s) names&gt;</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="co">#  Date: &lt;date&gt;</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">#  Code version: &lt;code version&gt;</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="co">#-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co"># [borrowed code then follows]</span></a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># ...</span></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co"># [last line of borrowed code]      </span></a>
+<a class="sourceLine" id="cb14-11" data-line-number="11"><span class="co">#End of &lt;author&gt;&#39;s code-------------------------------------------------------------------</span></a></code></pre></div>
 </div>
 </div>
 <div id="r-packages" class="section level2">
@@ -368,6 +369,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -239,3 +239,15 @@ There are three key elements at play for CSS:
 There is an exception to the last one: setting up alignment for a div section. This would look like `div(style = "text-align: center"...)` This type of styling is allowed in the R files (generally in the UI portions only).
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't `boast.css`, please log an issue and mention/assign Neil. (Most common external CSS files are `style.css` and `Feature(s).css`.)
+
+## GitHub Repo Names
+Each shiny app has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
+
++ Use Title Case (no camelCase)
++ Use underscores ( _ ) instead of spaces
++ Match the App name as closely as possible
++ You have a 100 character limit
+
+While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your respository. 
+
+If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.

@@ -159,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.3</b> Metadata</a></li>
 <li class="chapter" data-level="3.4" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.4</b> CSS</a></li>
+<li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#github-repo-names"><i class="fa fa-check"></i><b>3.5</b> GitHub Repo Names</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualAppearance.html"><a href="visualAppearance.html"><i class="fa fa-check"></i><b>4</b> Visual Appearance</a><ul>
 <li class="chapter" data-level="4.1" data-path="visualAppearance.html"><a href="visualAppearance.html#logo"><i class="fa fa-check"></i><b>4.1</b> PSU Branding</a></li>
@@ -269,13 +270,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>One of the best practices a coder can do is to be explicit. This links back to Informative Naming but goes a step beyond. <code>R</code> is a functional programming language. One of the important aspects of this is that functions in <code>R</code> obey the same rules as mathematical functions, especially multivariate functions.</p>
 <p>One implicit fact about functions that most students don’t realize is that the order of a function’s arguments are a matter of convention and are actually arbitrary. While we might define <em>f</em> as <span class="math inline">\(f(x,y) = x^2+3y\)</span>, we could call <span class="math inline">\(f(y=2,x=1)\)</span> and get the same output as <span class="math inline">\(f(1,2)\)</span> when we use the convention set up in the definition. This issue is exacerbated with functions in <code>R</code>.</p>
 <p>Therefore, when you pass values to the arguments of a function in <code>R</code>, you should be explicit and include the argument name in your code. For example,</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">actionButton</span>(</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="dt">inputId =</span> <span class="st">&quot;submit&quot;</span>,</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="dt">label =</span> <span class="st">&quot;Submit&quot;</span>,</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">  <span class="dt">class =</span> <span class="st">&quot;btn-ttt&quot;</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">actionButton</span>(</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="dt">inputId =</span> <span class="st">&quot;submit&quot;</span>,</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="dt">label =</span> <span class="st">&quot;Submit&quot;</span>,</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="dt">class =</span> <span class="st">&quot;btn-ttt&quot;</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">)</a></code></pre></div>
 <p>There are a few exceptions to this:</p>
 <ul>
 <li>Formula Arguments (e.g., <code>response ~ factor1 + block</code>)</li>
@@ -306,10 +307,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Once you’ve created the list environment, you create items for your list in the same way: <code>tags$li([content])</code>. You do not need to and should <strong>NOT</strong> use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.</p>
 <p>Here is an example of how you might create a list:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">tags<span class="op">$</span><span class="kw">ul</span>(</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item with a&quot;</span>, tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;boldface&quot;</span>), <span class="st">&quot;word.&quot;</span>)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">tags<span class="op">$</span><span class="kw">ul</span>(</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item with a&quot;</span>, tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;boldface&quot;</span>), <span class="st">&quot;word.&quot;</span>)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">)</a></code></pre></div>
 <p>which turns into</p>
 <ul>
 <li>This is my first item.</li>
@@ -351,21 +352,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you are using the <code>ui.R</code> and <code>server.R</code> format (i.e., apps from prior years), place the following code in the <code>tags$head( )</code> portion at the top of the <code>dashboardBody</code> section of the <code>ui.R</code> file :
 <!-- end list --></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">    <span class="dt">titleWidth =</span> <span class="dv">300</span>,</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">    <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">  ),</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">  <span class="co"># [omitted code],</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">  <span class="kw">dashboardBody</span>(</a>
-<a class="sourceLine" id="cb3-10" data-line-number="10">    tags<span class="op">$</span><span class="kw">head</span>(</a>
-<a class="sourceLine" id="cb3-11" data-line-number="11">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
-<a class="sourceLine" id="cb3-12" data-line-number="12">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
-<a class="sourceLine" id="cb3-13" data-line-number="13">      <span class="kw">tabItems</span>(</a>
-<a class="sourceLine" id="cb3-14" data-line-number="14">       <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15">      )  )  )  )</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">    <span class="dt">titleWidth =</span> <span class="dv">300</span>,</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">    <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">  ),</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">  <span class="co"># [omitted code],</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">  <span class="kw">dashboardBody</span>(</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    tags<span class="op">$</span><span class="kw">head</span>(</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13">      <span class="kw">tabItems</span>(</a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">       <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15">      )  )  )  )</a></code></pre></div>
 <p>There times when you might need some additional text styling that is not already defined. In these cases, <strong>you’ll need to talk to Neil or Bob to determine what is the best course of action</strong>. This could entail an addition to the central CSS file or the inclusion of an additional CSS file unique to your App.</p>
 <p>The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.</p>
 <p>See also the CSS section (<a href="coding.html#css">3.4</a>).</p>
@@ -429,13 +430,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.3</span> Metadata</h2>
 <p>Each app will need the following metadata in either the <code>app.R</code> or the <code>ui.R</code> file. For long lines, use the <code>paste</code> function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.</p>
 <p>For now, use the following format:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">## App Meta Data----------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">APP_TITLE  &lt;&lt;-<span class="st"> &quot;Title of the app&quot;</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">APP_DESCP  &lt;&lt;-<span class="st"> </span><span class="kw">paste</span>(</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="st">&quot;Description of the app&quot;</span>,</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="st">&quot;use multiple lines to keep the description legible.&quot;</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">)</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">## End App Meta Data------------------------------------------------------------</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">## App Meta Data----------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">APP_TITLE  &lt;&lt;-<span class="st"> &quot;Title of the app&quot;</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">APP_DESCP  &lt;&lt;-<span class="st"> </span><span class="kw">paste</span>(</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="st">&quot;Description of the app&quot;</span>,</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="st">&quot;use multiple lines to keep the description legible.&quot;</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">## End App Meta Data------------------------------------------------------------</span></a></code></pre></div>
 <p>Notice that both <code>APP_TITLE</code> and <code>APP_DESCP</code> do not follow camelCase. This is by intent to denote global <code>constants</code>.</p>
 </div>
 <div id="css" class="section level2">
@@ -457,6 +458,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>There is an exception to the last one: setting up alignment for a div section. This would look like <code>div(style = &quot;text-align: center&quot;...)</code> This type of styling is allowed in the R files (generally in the UI portions only).</p>
 <p>If you come across an app that has in-line CSS OR calls to a CSS file that isn’t <code>boast.css</code>, please log an issue and mention/assign Neil. (Most common external CSS files are <code>style.css</code> and <code>Feature(s).css</code>.)</p>
+</div>
+<div id="github-repo-names" class="section level2">
+<h2><span class="header-section-number">3.5</span> GitHub Repo Names</h2>
+<p>Each shiny app has its own repository (repo) on GitHub. As you begin to create new apps, you’ll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:</p>
+<ul>
+<li>Use Title Case (no camelCase)</li>
+<li>Use underscores ( _ ) instead of spaces</li>
+<li>Match the App name as closely as possible</li>
+<li>You have a 100 character limit</li>
+</ul>
+<p>While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your respository.</p>
+<p>If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.</p>
 
 </div>
 </div>

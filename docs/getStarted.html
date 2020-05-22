@@ -159,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.3</b> Metadata</a></li>
 <li class="chapter" data-level="3.4" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.4</b> CSS</a></li>
+<li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#github-repo-names"><i class="fa fa-check"></i><b>3.5</b> GitHub Repo Names</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualAppearance.html"><a href="visualAppearance.html"><i class="fa fa-check"></i><b>4</b> Visual Appearance</a><ul>
 <li class="chapter" data-level="4.1" data-path="visualAppearance.html"><a href="visualAppearance.html#logo"><i class="fa fa-check"></i><b>4.1</b> PSU Branding</a></li>
@@ -368,6 +369,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
