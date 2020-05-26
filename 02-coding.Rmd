@@ -3,24 +3,33 @@
 Now that you've gone through the Getting Started section, we can turn our attention to the first part of the Style Guide: Coding. There are many aspects that fall under the heading of Coding Style. 
 
 ## General Coding Style {#genCode}
+
 Our general practice is to make use of the [tidyverse style guide](https://style.tidyverse.org/). However, we do have some important departures and additional practices you need to follow:
 
+- [Leave comments](#comments)
+- [Use informative names](#naming)
+- [Format your code](#formatCode)
+- [Be explicit](#explicit)
+
 ### Leave Comments {#comments}
+
 At bare minimum, use a comment to break your code into sections. This helps you and others conceptualize the code into more manageable chunks. Your comments can provide others with potential keywords to search for when looking at your code later on.
 
-For particularly complex sections, use comments to summarize what you’re trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.
+For particularly complex sections, use comments to summarize what you're trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.
 
 ### Informative Names {#naming}
-Use Informative Names for Variables and Functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,
+
+Use informative names for variables and functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,
 
 - `scoreMatrix` is a matrix that holds a set of scores  
 - `checkGame` is a function that checks the state of the current game
 
-Use __camelCase__ for variables and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no space or underscore ( \_ ) between them. (This is a departure from the tidyverse style.)  
+Use [camelCase](https://en.wikipedia.org/wiki/Camel_case) for variable names and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no spaces or underscores ( \_ ) between them. (This is a departure from the tidyverse style.)  
 
-Avoid using the variable names that existed in code you’re making use of from another app or script. For example, don’t use `waitTimes` to hold your data on the number of correct answers a user has given.
+Avoid using the variable names from code that you're making use of from another app or script. For example, don't use `waitTimes` to hold your data on the number of correct answers a user has given. It is also good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid [namespace collision](https://en.wikipedia.org/wiki/Naming_collision).
 
 ### Format Your Code {#formatCode}
+
 See also \@ref(orgCode) Organizing Code
 
 Use indentation spacing to help make your code readable. RStudio has a built-in tool that can help with this.
@@ -34,13 +43,14 @@ NOTE: this tool is imperfect and can result in left parenthesis or curly braces 
 Additionally, you can make use of the `styler` and `lintr` packages to help you perform formatting checks and to quickly reformat code.
 
 ### Be Explicit {#explicit}
-One of the best practices a coder can do is to be explicit. This links back to Informative Naming  but goes a step beyond. `R` is a functional programming language. One of the important aspects of this is that functions in `R` obey the same rules as mathematical functions, especially multivariate functions. 
+
+One of the best practices a coder can do is to be explicit. And no, we don't mean that type of explicit. This links back to [Informative Naming](#naming) but goes a step beyond. `R` is a functional programming language. One of the important aspects of this is that functions in `R` obey the same rules as mathematical functions, especially multivariate functions. 
 
 One implicit fact about functions that most students don't realize is that the order of a function's arguments are a matter of convention and are actually arbitrary. While we might define *f* as \(f(x,y) = x^2+3y\), we could call \(f(y=2,x=1)\) and get the same output as \(f(1,2)\) when we use the convention set up in the definition. This issue is exacerbated with functions in `R`.
 
 Therefore, when you pass values to the arguments of a function in `R`, you should be explicit and include the argument name in your code. For example,
 
-```{r explicit1, echo=TRUE, eval=FALSE}
+```{r explicit1, eval = FALSE}
 actionButton(
   inputId = "submit",
   label = "Submit",
@@ -59,7 +69,7 @@ There are a few exceptions to this:
 
 General Advice:
 
-+ If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call
++ If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call.
 + If you are using a common/central function (i.e., those from `shiny`, `ggplot2`), you can omit the package in the function call.
 
 Remember the following: the more proactive you are from the get go in commenting and organizing your code, the easier time you will have for debugging and improving your code down the road.
@@ -71,6 +81,7 @@ Our Shiny apps live on the internet and are thus going to be wrapped in HTML eve
 HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to wider audience. Here are the most common HTML tags that you'll encounter when making a Shiny App.
 
 #### Lists
+
 There are two aspects to lists: the items in the list and the environment those items live in. 
 
 The two list environment are Ordered Lists and Unordered Lists.
@@ -95,12 +106,13 @@ which turns into
 There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to `tags$li()` when in that section.
 
 #### Headers {#headers}
+
 Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. They are __NOT__ for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content.
 
 There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.
 
 1. `h1()` is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).
-2. `h2()` is for Page titles within the App. These would correspond with the tab links you place in the dashboard’s left side panel.
+2. `h2()` is for Page titles within the App. These would correspond with the tab links you place in the dashboard's left side panel.
 3. `h3()` is for titling Sections within a Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.
 4. `h4()` is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.
 5. `h5()` and `h6()` should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., `h1()`, `h2()`, etc.
@@ -113,17 +125,19 @@ Here are few more things to NOT do with the heading tags:
 + Do not wrap a header tag around a list element (e.g., `h3(tags$li("here is my list item"))`) nor the reverse (e.g., `tags$li(h3("here is my list item"))`)
 + Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2("Introduction to", p("my game")))
 
-For more information check out the [W3C’s Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
+For more information check out the [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
 
 #### Paragraphs {#paragraphs}
+
 Your content should be enclosed in the paragraph tag, `p()`. Even if your content is relative brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is. 
 
 ### Styling Text {#textStyle}
+
 The styling of text (including font size, font weight (i.e., boldface), font family, color, etc.) is something that we began standardizing in Fall 2019. This is centrally managed by Neil and Bob to ensure 1) consistency across apps, 2) to cut down on the extraneous coding you need to do (this way you can focus on the apps), and 3) ensures that our apps are accessible and mobile friendly. To this end:
 
 The styling of text will be controlled using an __external__ CSS (Cascading Style Sheet) file. You will implement this depending on what approach you use:
 
-+ If you’re using the `boastApp` function from `boastUtils` (__recommended for all new apps__), you don't need to do anything as the appropriate calls will automatically be done for you.
++ If you're using the `boastApp` function from `boastUtils` (__recommended for all new apps__), you don't need to do anything as the appropriate calls will automatically be done for you.
 + If you are using the `ui.R` and `server.R` format (i.e., apps from prior years), place the following code in the `tags$head( )` portion at the top of the `dashboardBody` section of the `ui.R` file :
 <!-- end list -->
 ``` {r cssCall1, echo = TRUE, eval = FALSE}
@@ -152,20 +166,22 @@ See also the CSS section (\@ref(css)).
 
 ### Minimize Package Usage {#minPackages}
 
-Make sure that you absolutely have to use a particular package before you do. Check to see if what you’re trying to do can be done in a package you’re already using or in base R.
+Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R.
 
 This is not to say that you can't make use of a new package. This guideline's purpose is to help to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.
 
 To help you avoid name masking (i.e., Be Explicit-\@ref(explicit)), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use `dplyr::filter([arguments])` instead of just `filter([arguments])`.
 
-You can also run a `funchir::stale_package_check` on your `app.R`, `ui.R`, and `sever.R` files to see which packages you’re loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
+You can also run a `funchir::stale_package_check` on your `app.R`, `ui.R`, and `sever.R` files to see which packages you're loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
 
 ### Minimize External Files {#exFiles}
-Try to minimize the number and size of external files you’re attaching to your App. If you’re working on an existing app, remove any external files that are no longer necessary.
+
+Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
 
 Wherever possible try to place external files into the `www` directory/folder that is at the same level as your `app.R` or `ui.R`/`server.R` files.
 
-### Plot Caching {#plotCache} 
+### Plot Caching {#plotCache}
+
 There are cases when your app will include a plot that falls into any of the following categories:
 
 1) a plot that all users will see (i.e., static data set),
@@ -206,7 +222,7 @@ The order for your code in the `server.R` file:
 
 ## Metadata {#metadata}
 
-Each app will need the following metadata in either the `app.R` or the `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
+Each App will need the following metadata in either the `app.R` or the `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
 
 For now, use the following format:
 
@@ -222,9 +238,8 @@ APP_DESCP  <<- paste(
 
 Notice that both `APP_TITLE` and `APP_DESCP` do not follow camelCase. This is by intent to denote global `constants`.
 
-
-
 ## CSS {#css}
+
 Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.
 
 There are a few key elements at play for CSS:  
@@ -263,12 +278,11 @@ There is an exception to #3: setting up alignment for a div section. This would 
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't `boast.css`, please log an issue and mention/assign Neil. (Most common external CSS files are `style.css` and `Feature(s).css`.)
 
+## GitHub Repo Names {#repo-naming}
 
+Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
 
-## GitHub Repo Names
-Each shiny app has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
-
-+ Use Title Case (no camelCase)
++ Use [Title Case](https://en.wikipedia.org/wiki/Letter_case#Title_case) (no camelCase)
 + Use underscores ( _ ) instead of spaces
 + Match the App name as closely as possible
 + You have a 100 character limit
@@ -277,5 +291,89 @@ While we can change repo names, doing so results in a large number of edits that
 
 If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
 
-## Using RLocker
-[*This section is under development.*]
+## Using rlocker {#rlocker}
+
+Because these Apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The [rlocker](https://github.com/rpc5102/rlocker) package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
+
+### Installing
+
+```{r, eval = FALSE}
+library(devtools)
+devtools::install_github("rpc5102/rlocker")
+```
+[View Documentation](https://github.com/rpc5102/rlocker#Installation)
+
+### Setup
+
+Core configuration is included in the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) package. Simply use the boastApp wrapper function instead of shinyApp and you're done!
+
+### Usage
+
+The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the "Who did what, where did they do it, and when did they do it?" in your App. Statements are often structured as Actor, Verb, and Object that sometimes also have a Result. For more on xAPI, check out [What is the Experience API?](https://xapi.com/overview/) or experiment with Statements in the [xAPI Lab](https://adlnet.github.io/xapi-lab/).
+
+**For example:**
+
+> **Bob** (Actor) **clicked** (Verb) **submit** (Object).
+
+**In assessments:**
+
+> **Neil** (Actor) **answered** (Verb) **Question 1** (Object) **correctly** with the answer **true** (Result).
+
+This is a good way to frame it in your mind when beginning write collection statements. Which brings us to our next part, writing collection functions.
+
+Out of the box, `rlocker` does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like [Learning Locker](https://www.ht2labs.com/learning-locker-community/overview/), it is important to transform it in a way that makes sense.
+
+**Sample generator function**
+
+```{r, eval = FALSE}
+.generateStatement <- function(session, verb = NA, object = NA, description = NA, interactionType = NA, response = NA, success = NA, completion = FALSE) {
+  statement <- rlocker::createStatement(list(
+    verb = verb,
+    object = list(
+      id = paste0(getCurrentAddress(session), "#", object),
+      name = paste0(APP_TITLE),
+      description = paste0("Question ", activeQuestion, ": ", description),
+      interactionType = interactionType
+    ),
+    result = list(
+      success = success,
+      response = response,
+      completion = completion
+    )
+  ))
+  return(rlocker::store(session, statement))   
+}
+```
+
+**Sample event observer**
+
+```{r, eval = FALSE}
+observeEvent(session$input[[id]], {
+  
+  # # #
+  # Check app state + validation data; yours will be different!
+  answer <- gameSet[id, "answer"]
+  description <- gameSet[id,]$question
+  interactionType <- ifelse(gameSet[id,]$format == "numeric", "numeric", "choice")
+  success <- input$ans == answer
+  completion <- ifelse(.appState == "continue", FALSE, TRUE)
+  # # #
+  
+  .generateStatement(
+    session,
+    object = id,
+    verb = "answered",
+    description = description,
+    response = input$ans,
+    interactionType = interactionType,
+    success = success,
+    completion = completion
+  )
+}
+```
+
+Additional code can be found in the [examples](https://github.com/rpc5102/rlocker/tree/master/inst/examples) folder as well as the main [README](https://github.com/rpc5102/rlocker/blob/master/README.md) of the project; apps such as the [Hypothesis_Testing_Game](https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game) have been outfitted with rlocker. The statement generator above will eventually make its way into `boastUtils` once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob ([rpc5102](mailto:rpc5102@psu.edu)).
+
+**Did you know?**
+
+You can run `help(package = "rlocker")` to view the help files for this package or press `F1` while typing a function name to see the documentation for that specific function.

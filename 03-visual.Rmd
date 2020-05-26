@@ -1,13 +1,13 @@
 # Visual Appearance {#visualAppearance}
 
-This chapter of the BOAST Style Guide deals with the Visual Appearance of each app. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each app, there are 6 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Common Elements, Color, Text Styling, and Graphics. 
+The second portion of this Style Guide deals with the Visual Appearance of each App. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each App, there are 5 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Color, Text Styling, and Plots. 
 
 One of the most important benefits of using the `boastApp` function from the `boastUtils` package is that is that much of the Visual Appearance will be automatically handled for you. However, you should still familiarize yourself with the Visual Appearance Style for our apps.
 
 ## PSU Branding {#logo}
 Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.
 
-In your UI section of `app.R` (or the `ui.R` file), at the end of the `dashboardSidebar()` section, you will need to include the following:
+In your `ui.R` file (or your UI section of `app.R`), at the end of your `dashboardSidebar()` section, include the following:
 
 ```{r logoCode, echo=TRUE, eval=FALSE}
 tags$div(class = "sidebar-logo",
@@ -49,23 +49,19 @@ This will ensure that the Penn State logo gets properly used.
 All apps will make use of a Dashboard structure. This divides the visual appearance of each App into three main areas. 
 
 + Across the top of the App will be the Header 
-+ Along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed
++ along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed
 + The last area is the Body; this is where all content will appear
 
 ### Dashboard Header
-Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon. 
+Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon.  
 
 Additional icons might be included to the left of the Home icon. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.
 
 There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
 
-The width of the Title component of the Header should be 300; `titleWidth = 300`.
-
 ### Sidebar and Body
 
 The Sidebar (responsible for App navigation) and the Body are intimately related to one another. The Sidebar provides structure to your App as well as being the primary way that a user can move around the App. The Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with.
-
-The Sidebar should have a width of 300, (`width = 300`).
 
 To ensure a consistent experience across all apps, you need to make sure that your App has the following tabs/page, in the following order:
 
@@ -85,7 +81,7 @@ The Overview Tab must contain __ALL__ of the following elements:
 7.  A listing of acknowledgements including, coders, content writers, etc. (as a paragraph)
 8.  Last Element: `div(class = "updated", "Last Update: mm/dd/yyyy by FL.")` with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.
 
-There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, "Instructions:" does not follow this Style Guide. Additionally, there should not be an "About" heading.
+*Note*: There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, "Instructions:" does not follow this Style Guide. Additionally, there should not be an "About" heading.
       
 #### A Prerequisites Tab
 If your App needs to ensure that the user has the base understandings necessary to interact with your App, you’ll need to create a prerequisites Tab. Otherwise, skip this Tab.
@@ -119,7 +115,7 @@ The last Tab will be for your references. This Tab is __REQUIRED__ and is where 
 The icon for this Tab must be "leanpub".
 
 #### Last Element
-The last element of the Sidebar will be the Penn State Logo. Please refer to Section \@ref(logo).
+The last element of the Sidebar will be the Penn State Logo. Please refer to the Section \@ref(logo).
 
 ### Tabs Inside the Body
 There are two types of tabs in a Shiny app: there are the `tabItem` (i.e., the pages within an app and should appear in the Sidebar) and `tabPanel` (i.e., creating sub-pages or independent sections). In this section, we will discuss this later case.
@@ -138,12 +134,10 @@ Deciding on whether to use `tabPanel` is going to depend on several things:
 
 When you go to make a set of tab panels you will need to first create a `tabsetPanel` which will wrap around all of the individual panels. Use `type = "tabs"`.
 
-The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed at the global level.
+The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
 
 ## Common Elements
-In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered and buttons.
-
-For information about popovers, rollovers, hover text, or tooltips, please see Section \@ref(popovers).
+In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, and hover text.
 
 ### Ordering Inputs
 One of the most powerful aspects of Shiny apps is that the user interacts with them. Thus, we do need to consider not only the ways in which user interact (e.g., buttons, sliders, text entry, etc.) but also the order in which you want the user to manipulate the inputs. Coming up with a single declaration for how to order inputs in all cases is not necessarily feasible. However, we can set up a general guideline for how to make decisions on ordering your inputs.
@@ -166,7 +160,7 @@ Please use the following guidelines for determining the order of inputs in the U
 5. If the inputs are not dynamically linked to the output (e.g., plots automatically update with a change in the input's value), then you should include a button that says "Make Plot" at the end of the inputs.
    
 ### Buttons {#buttons}
-Buttons are one way in which users interact with the apps. The two most common functions used here are `shiny::actionButton` and `shinyBS::bsButton`. Both functions share many of the same features. Two ways in which they are different is that `shinyBS::bsButton` has an additional `style` argument while `shiny::actionButton` has a `width` argument that gives you fine grain size control (`bsButton` has a size option).  There are three key styling aspects: shape/animation, color, and text & icon.
+Buttons are one way in which users interact with the apps. The two most common functions that are used are `shiny::actionButton` and `shinyBS::bsButton`. Both functions share many of the same features. Two ways in which they are different is that `shinyBS::bsButton` has an additional `style` argument while `shiny::actionButton` has a `width` argument that gives you fine grain size control.  There are three key styling aspects: shape/animation, color, and text & icon.
 
 #### Shape/Animation
 All shape aspects of buttons will be controlled by CSS. The standard shape will be rectangular (the default). Sizing will be controlled by CSS although setting `size = "large"` for the `bsButton` call may be done.
@@ -193,7 +187,7 @@ When in doubt, use the the `default` style option (or even omit this argument) f
 #### Text & Icon
 The last styling element of a button is two-fold: the text that is in the button and the icon. 
 
-Here are some guidelines for a button's text:
+Here are some guidelines for text of a button:
 
 + All buttons must have some text. 
 + Generally speaking, the text should be relatively brief and clear. 
@@ -217,19 +211,19 @@ Here are some guidelines for a button's text:
 Here are guidelines for the inclusion of icons in a button:
 
 + Game buttons will NOT have any icons.
-+ Direction Buttons (e.g., "Next" or "Previous") will NOT have any icons. Rather make the button text "<< Previous" or "Next >>".
++ "Next" buttons will NOT have any icons.
 + A "Prerequisites" button will use the "book" icon
 + All other tab buttons (labels ending with "!") will use the "bolt" icon.
 + A download button will use the "cloud-download" icon.
 
 ## Colors
 
-Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet [WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/) Level AA. You can do so at the [Coloring for Colorblindness](https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7) website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.
+Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet [WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/) Level AA. You can do so at the [Coloring for Colorblindness](https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7) website.
 
 There are two major places where coloring comes into play: the user interface and plots you generate in `R`.
 
 ### Color in the User Interface {#colorUI}
-Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process with the Style Guide seeks to bring the many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden from the students, who should focus on the R side of the programming, not the CSS side.
+Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process with the Style Guide seeks to bring this many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden from the students, who should focus on the R side of the programming, not the CSS side.
 
 All aspects of color in the User Interface should be controlled through the CSS file(s). This includes all of the following:
 
@@ -251,7 +245,7 @@ If you are unsure what color to put, use `blue` as the default.
 #### The Themes
 There are six color themes that we've currently made. The names of the themes are a general indication of coloring, with one exception. The `black` theme is not black but rather an aqua/teal set. The themes are typically three colors (four for `blue`) and based upon the Penn State Palettes. Non-Penn State colors will be denoted with asterisks. 
 
-All of the themes have been checked against 8 different forms of color blindness.
+All of the themes have been checked against 8 different form of color blindness.
 
 ##### Blue
 The Blue Palette is our central palette and should be used by default. The Blue Palette looks like the following:
@@ -653,9 +647,7 @@ g1 + ggplot2::scale_color_manual(values=boastPalette)  # If you use "color" in a
 g1 + ggplot2::scale_fill_manual(values=boastPalette)  # If you use "fill" in aes
 ```
 
-If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors (see Section \@ref(graphics)). This admonishment also applies to line styles and point shapes.
-
-With any eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
+If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)
 
 ## Text Styling {#styleText}
 
@@ -699,8 +691,6 @@ If you’re writing mathematics directly in your app, remember you’ll need to 
 
 If you’re reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.
 
-If you need assistance in figuring out how to type up mathematics, please talk to Neil, Matt, or Dennis.
-
 __Note:__ Double dollar sign delimiters are generally not recommended for displaying math as they can lead to unintended results. See: [Writing Mathematics for MathJax](https://docs.mathjax.org/en/latest/basic/mathematics.html).
 
 ### [Game] Question Text
@@ -717,7 +707,7 @@ You may use these tags with popups/rollovers.
 
 ### Feedback and Hint Text
 
-Again, let the central CSS file handle the styling of this type of text by wrapping the text in the appropriate tags (typically `p()`).
+Again, let the central CSS file handle the styling of this type of text.
 
 ### Text in `R` Plots
 
@@ -742,7 +732,7 @@ You will need to play around with the settings to find the appropriate value; te
 __Note:__ The text in your plot might not behave well for dynamic resizing on different mobile devices.
 
 
-## Graphics {#graphics}
+## Graphics
 One of the most powerful tools we have in Statistics and Data Science is graphics. This includes images/pictures, graphs/plots, and tables. You will want to make sure that all graphical elements are appropriately sized in the Body. If there is text in a static image/picture, you'll need to make sure that the text is legible on a variety of screen sizes.
 
 We've already discussed both issues of color and text size in plots. For additional considerations, please refer to the following readings (ordered from most important to least):  
@@ -781,12 +771,6 @@ Use tables as infrequently as possible. If you absolutely must include a table, 
 
 ### Alt Text
 Any graphical element you include in your App __MUST__ have an alternative (assistive) text description ("alt text"). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formated will handle this automatically.)
-
-#### Adding Alt Text to Static Images
-*This section is under construction.*
-
-#### Adding Alt Text Graphs
-*This section is under construction.*
 
 ## Miscellaneous
 

@@ -13,15 +13,20 @@ github-repo: educationshinyappteam/Style_Guide
 description: "This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)."
 ---
 
+```{r, echo = FALSE, eval = FALSE}
+# Rebuild book
+bookdown::render_book("index.Rmd", "bookdown::gitbook")
+```
+
 # Welcome {-}
 
-This guide spells out the styling that should be used for all apps included in [BOAST](https://github.com/EducationShinyAppTeam/BOAST). Keep in mind that there are several different aspects to what makes up Style including:
+This guide spells out the styling that should be used for all apps included in the Book of Apps for Statistics Teaching ([BOAST](https://github.com/EducationShinyAppTeam/BOAST)). Keep in mind that there are several different aspects to what makes up Style including:
 
   - Coding (how you write, organize, and comment the code that makes the app)
   - Visual Appearance (how you make the app look including tabs, fonts, colors, icons, etc.)
   - Wording (how you write information, instructions, and other messages to the users)
   - Documentation (how you provide references, including code and data sources, and give credit)
 
-By following this style guide you’ll ensure that any app you create will meet our standards.
+By following this style guide you'll ensure that any app you create will meet our standards.
 
 Additionally, we've included some information on Acessibility for our apps, checking how your App works on mobile devices, and some additoinal tools that can help you develop your App.

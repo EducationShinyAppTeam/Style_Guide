@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-05-22" />
+<meta name="date" content="2020-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,9 +136,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="getStarted.html"><a href="getStarted.html#checklist"><i class="fa fa-check"></i><b>1.1</b> Getting Started Checklist</a></li>
 <li class="chapter" data-level="1.2" data-path="getStarted.html"><a href="getStarted.html#boastutils-package"><i class="fa fa-check"></i><b>1.2</b> <code>boastUtils</code> Package</a></li>
 <li class="chapter" data-level="1.3" data-path="getStarted.html"><a href="getStarted.html#sample-app"><i class="fa fa-check"></i><b>1.3</b> Sample App</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="getStarted.html"><a href="getStarted.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command Line</a></li>
-<li class="chapter" data-level="1.3.2" data-path="getStarted.html"><a href="getStarted.html#direct-download"><i class="fa fa-check"></i><b>1.3.2</b> Direct Download</a></li>
-<li class="chapter" data-level="1.3.3" data-path="getStarted.html"><a href="getStarted.html#github-desktop"><i class="fa fa-check"></i><b>1.3.3</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="1.3.1" data-path="getStarted.html"><a href="getStarted.html#direct-download"><i class="fa fa-check"></i><b>1.3.1</b> Direct Download</a></li>
+<li class="chapter" data-level="1.3.2" data-path="getStarted.html"><a href="getStarted.html#github-desktop"><i class="fa fa-check"></i><b>1.3.2</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="1.3.3" data-path="getStarted.html"><a href="getStarted.html#command-line"><i class="fa fa-check"></i><b>1.3.3</b> Command Line</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>2</b> Coding Style</a><ul>
@@ -159,8 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>2.3</b> Metadata</a></li>
 <li class="chapter" data-level="2.4" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>2.4</b> CSS</a></li>
-<li class="chapter" data-level="2.5" data-path="coding.html"><a href="coding.html#github-repo-names"><i class="fa fa-check"></i><b>2.5</b> GitHub Repo Names</a></li>
-<li class="chapter" data-level="2.6" data-path="coding.html"><a href="coding.html#using-rlocker"><i class="fa fa-check"></i><b>2.6</b> Using RLocker</a></li>
+<li class="chapter" data-level="2.5" data-path="coding.html"><a href="coding.html#repo-naming"><i class="fa fa-check"></i><b>2.5</b> GitHub Repo Names</a></li>
+<li class="chapter" data-level="2.6" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>2.6</b> Using rlocker</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>2.6.1</b> Installing</a></li>
+<li class="chapter" data-level="2.6.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>2.6.2</b> Setup</a></li>
+<li class="chapter" data-level="2.6.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>2.6.3</b> Usage</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="visualAppearance.html"><a href="visualAppearance.html"><i class="fa fa-check"></i><b>3</b> Visual Appearance</a><ul>
 <li class="chapter" data-level="3.1" data-path="visualAppearance.html"><a href="visualAppearance.html#logo"><i class="fa fa-check"></i><b>3.1</b> PSU Branding</a></li>
@@ -234,38 +238,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="visualAppearance" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Visual Appearance</h1>
-<p>This chapter of the BOAST Style Guide deals with the Visual Appearance of each app. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each app, there are 6 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Common Elements, Color, Text Styling, and Graphics.</p>
+<p>The second portion of this Style Guide deals with the Visual Appearance of each App. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each App, there are 5 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Color, Text Styling, and Plots.</p>
 <p>One of the most important benefits of using the <code>boastApp</code> function from the <code>boastUtils</code> package is that is that much of the Visual Appearance will be automatically handled for you. However, you should still familiarize yourself with the Visual Appearance Style for our apps.</p>
 <div id="logo" class="section level2">
 <h2><span class="header-section-number">3.1</span> PSU Branding</h2>
 <p>Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.</p>
-<p>In your UI section of <code>app.R</code> (or the <code>ui.R</code> file), at the end of the <code>dashboardSidebar()</code> section, you will need to include the following:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">         boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</a></code></pre></div>
+<p>In your <code>ui.R</code> file (or your UI section of <code>app.R</code>), at the end of your <code>dashboardSidebar()</code> section, include the following:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">         boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</a></code></pre></div>
 <p>Here’s how this code would look in context:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">    <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6">  ),</a>
-<a class="sourceLine" id="cb8-7" data-line-number="7">  <span class="kw">dashboardSidebar</span>(</a>
-<a class="sourceLine" id="cb8-8" data-line-number="8">    <span class="dt">width =</span> <span class="dv">300</span>,</a>
-<a class="sourceLine" id="cb8-9" data-line-number="9">    <span class="kw">sidebarMenu</span>(</a>
-<a class="sourceLine" id="cb8-10" data-line-number="10">      <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">      <span class="co"># [omitted code],</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12">      tags<span class="op">$</span><span class="kw">div</span>(</a>
-<a class="sourceLine" id="cb8-13" data-line-number="13">        <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
-<a class="sourceLine" id="cb8-14" data-line-number="14">        boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</a>
-<a class="sourceLine" id="cb8-15" data-line-number="15">        )</a>
-<a class="sourceLine" id="cb8-16" data-line-number="16">      ),</a>
-<a class="sourceLine" id="cb8-17" data-line-number="17">    <span class="kw">dashboardBody</span>(</a>
-<a class="sourceLine" id="cb8-18" data-line-number="18">    tags<span class="op">$</span><span class="kw">head</span>(</a>
-<a class="sourceLine" id="cb8-19" data-line-number="19">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
-<a class="sourceLine" id="cb8-20" data-line-number="20">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
-<a class="sourceLine" id="cb8-21" data-line-number="21">      <span class="kw">tabItems</span>(</a>
-<a class="sourceLine" id="cb8-22" data-line-number="22">       <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb8-23" data-line-number="23">      )  )  )  )  )</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">    <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6">  ),</a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">  <span class="kw">dashboardSidebar</span>(</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8">    <span class="dt">width =</span> <span class="dv">300</span>,</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9">    <span class="kw">sidebarMenu</span>(</a>
+<a class="sourceLine" id="cb13-10" data-line-number="10">      <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</a>
+<a class="sourceLine" id="cb13-11" data-line-number="11">      <span class="co"># [omitted code],</span></a>
+<a class="sourceLine" id="cb13-12" data-line-number="12">      tags<span class="op">$</span><span class="kw">div</span>(</a>
+<a class="sourceLine" id="cb13-13" data-line-number="13">        <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</a>
+<a class="sourceLine" id="cb13-14" data-line-number="14">        boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</a>
+<a class="sourceLine" id="cb13-15" data-line-number="15">        )</a>
+<a class="sourceLine" id="cb13-16" data-line-number="16">      ),</a>
+<a class="sourceLine" id="cb13-17" data-line-number="17">    <span class="kw">dashboardBody</span>(</a>
+<a class="sourceLine" id="cb13-18" data-line-number="18">    tags<span class="op">$</span><span class="kw">head</span>(</a>
+<a class="sourceLine" id="cb13-19" data-line-number="19">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
+<a class="sourceLine" id="cb13-20" data-line-number="20">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
+<a class="sourceLine" id="cb13-21" data-line-number="21">      <span class="kw">tabItems</span>(</a>
+<a class="sourceLine" id="cb13-22" data-line-number="22">       <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb13-23" data-line-number="23">      )  )  )  )  )</a></code></pre></div>
 <p>This will ensure that the Penn State logo gets properly used.</p>
 </div>
 <div id="dashboard" class="section level2">
@@ -273,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>All apps will make use of a Dashboard structure. This divides the visual appearance of each App into three main areas.</p>
 <ul>
 <li>Across the top of the App will be the Header</li>
-<li>Along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed</li>
+<li>along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed</li>
 <li>The last area is the Body; this is where all content will appear</li>
 </ul>
 <div id="dashboard-header" class="section level3">
@@ -281,12 +285,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon.</p>
 <p>Additional icons might be included to the left of the Home icon. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.</p>
 <p>There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.</p>
-<p>The width of the Title component of the Header should be 300; <code>titleWidth = 300</code>.</p>
 </div>
 <div id="sidebar-and-body" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Sidebar and Body</h3>
 <p>The Sidebar (responsible for App navigation) and the Body are intimately related to one another. The Sidebar provides structure to your App as well as being the primary way that a user can move around the App. The Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with.</p>
-<p>The Sidebar should have a width of 300, (<code>width = 300</code>).</p>
 <p>To ensure a consistent experience across all apps, you need to make sure that your App has the following tabs/page, in the following order:</p>
 <div id="the-overview-tab" class="section level4">
 <h4><span class="header-section-number">3.2.2.1</span> The Overview Tab</h4>
@@ -303,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>A listing of acknowledgements including, coders, content writers, etc. (as a paragraph)</li>
 <li>Last Element: <code>div(class = &quot;updated&quot;, &quot;Last Update: mm/dd/yyyy by FL.&quot;)</code> with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.</li>
 </ol>
-<p>There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, “Instructions:” does not follow this Style Guide. Additionally, there should not be an “About” heading.</p>
+<p><em>Note</em>: There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, “Instructions:” does not follow this Style Guide. Additionally, there should not be an “About” heading.</p>
 </div>
 <div id="a-prerequisites-tab" class="section level4">
 <h4><span class="header-section-number">3.2.2.2</span> A Prerequisites Tab</h4>
@@ -337,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="last-element" class="section level4">
 <h4><span class="header-section-number">3.2.2.5</span> Last Element</h4>
-<p>The last element of the Sidebar will be the Penn State Logo. Please refer to Section <a href="visualAppearance.html#logo">3.1</a>.</p>
+<p>The last element of the Sidebar will be the Penn State Logo. Please refer to the Section <a href="visualAppearance.html#logo">3.1</a>.</p>
 </div>
 </div>
 <div id="tabs-inside-the-body" class="section level3">
@@ -366,13 +368,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol></li>
 </ol>
 <p>When you go to make a set of tab panels you will need to first create a <code>tabsetPanel</code> which will wrap around all of the individual panels. Use <code>type = &quot;tabs&quot;</code>.</p>
-<p>The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed at the global level.</p>
+<p>The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.</p>
 </div>
 </div>
 <div id="common-elements" class="section level2">
 <h2><span class="header-section-number">3.3</span> Common Elements</h2>
-<p>In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered and buttons.</p>
-<p>For information about popovers, rollovers, hover text, or tooltips, please see Section <a href="wording.html#popovers">4.2</a>.</p>
+<p>In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, and hover text.</p>
 <div id="ordering-inputs" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Ordering Inputs</h3>
 <p>One of the most powerful aspects of Shiny apps is that the user interacts with them. Thus, we do need to consider not only the ways in which user interact (e.g., buttons, sliders, text entry, etc.) but also the order in which you want the user to manipulate the inputs. Coming up with a single declaration for how to order inputs in all cases is not necessarily feasible. However, we can set up a general guideline for how to make decisions on ordering your inputs.</p>
@@ -407,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="buttons" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Buttons</h3>
-<p>Buttons are one way in which users interact with the apps. The two most common functions used here are <code>shiny::actionButton</code> and <code>shinyBS::bsButton</code>. Both functions share many of the same features. Two ways in which they are different is that <code>shinyBS::bsButton</code> has an additional <code>style</code> argument while <code>shiny::actionButton</code> has a <code>width</code> argument that gives you fine grain size control (<code>bsButton</code> has a size option). There are three key styling aspects: shape/animation, color, and text &amp; icon.</p>
+<p>Buttons are one way in which users interact with the apps. The two most common functions that are used are <code>shiny::actionButton</code> and <code>shinyBS::bsButton</code>. Both functions share many of the same features. Two ways in which they are different is that <code>shinyBS::bsButton</code> has an additional <code>style</code> argument while <code>shiny::actionButton</code> has a <code>width</code> argument that gives you fine grain size control. There are three key styling aspects: shape/animation, color, and text &amp; icon.</p>
 <div id="shapeanimation" class="section level4">
 <h4><span class="header-section-number">3.3.2.1</span> Shape/Animation</h4>
 <p>All shape aspects of buttons will be controlled by CSS. The standard shape will be rectangular (the default). Sizing will be controlled by CSS although setting <code>size = &quot;large&quot;</code> for the <code>bsButton</code> call may be done.</p>
@@ -430,7 +431,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="text-icon" class="section level4">
 <h4><span class="header-section-number">3.3.2.3</span> Text &amp; Icon</h4>
 <p>The last styling element of a button is two-fold: the text that is in the button and the icon.</p>
-<p>Here are some guidelines for a button’s text:</p>
+<p>Here are some guidelines for text of a button:</p>
 <ul>
 <li>All buttons must have some text.</li>
 <li>Generally speaking, the text should be relatively brief and clear.
@@ -462,7 +463,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Here are guidelines for the inclusion of icons in a button:</p>
 <ul>
 <li>Game buttons will NOT have any icons.</li>
-<li>Direction Buttons (e.g., “Next” or “Previous”) will NOT have any icons. Rather make the button text “&lt;&lt; Previous” or “Next &gt;&gt;”.</li>
+<li>“Next” buttons will NOT have any icons.</li>
 <li>A “Prerequisites” button will use the “book” icon</li>
 <li>All other tab buttons (labels ending with “!”) will use the “bolt” icon.</li>
 <li>A download button will use the “cloud-download” icon.</li>
@@ -472,11 +473,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="colors" class="section level2">
 <h2><span class="header-section-number">3.4</span> Colors</h2>
-<p>Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a> Level AA. You can do so at the <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7">Coloring for Colorblindness</a> website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.</p>
+<p>Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a> Level AA. You can do so at the <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7">Coloring for Colorblindness</a> website.</p>
 <p>There are two major places where coloring comes into play: the user interface and plots you generate in <code>R</code>.</p>
 <div id="colorUI" class="section level3">
 <h3><span class="header-section-number">3.4.1</span> Color in the User Interface</h3>
-<p>Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process with the Style Guide seeks to bring the many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden from the students, who should focus on the R side of the programming, not the CSS side.</p>
+<p>Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process with the Style Guide seeks to bring this many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden from the students, who should focus on the R side of the programming, not the CSS side.</p>
 <p>All aspects of color in the User Interface should be controlled through the CSS file(s). This includes all of the following:</p>
 <ul>
 <li>Dashboard coloring (Header, Sidepanel, Body)</li>
@@ -494,7 +495,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-themes" class="section level4">
 <h4><span class="header-section-number">3.4.1.2</span> The Themes</h4>
 <p>There are six color themes that we’ve currently made. The names of the themes are a general indication of coloring, with one exception. The <code>black</code> theme is not black but rather an aqua/teal set. The themes are typically three colors (four for <code>blue</code>) and based upon the Penn State Palettes. Non-Penn State colors will be denoted with asterisks.</p>
-<p>All of the themes have been checked against 8 different forms of color blindness.</p>
+<p>All of the themes have been checked against 8 different form of color blindness.</p>
 <div id="blue" class="section level5">
 <h5><span class="header-section-number">3.4.1.2.1</span> Blue</h5>
 The Blue Palette is our central palette and should be used by default. The Blue Palette looks like the following:
@@ -506,13 +507,13 @@ Figure 3.1: The Blue Palette
 </div>
 <p>Here is what the Blue Palette looks like in action:</p>
 <div class="figure" style="text-align: center"><span id="fig:blueAction1"></span>
-<img src="images/blueOverview.png" alt="Overview Page Using the Blue Palette" width="478" />
+<img src="images/blueOverview.png" alt="Overview Page Using the Blue Palette"  />
 <p class="caption">
 Figure 3.2: Overview Page Using the Blue Palette
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:blueAction2"></span>
-<img src="images/blueCollapse.png" alt="Collapsible Boxes Using the Blue Palette" width="478" />
+<img src="images/blueCollapse.png" alt="Collapsible Boxes Using the Blue Palette"  />
 <p class="caption">
 Figure 3.3: Collapsible Boxes Using the Blue Palette
 </p>
@@ -535,13 +536,13 @@ Figure 3.5: The Green Palette
 </div>
 <p>Here is what the Green Palette looks like in action:</p>
 <div class="figure" style="text-align: center"><span id="fig:greenAction1"></span>
-<img src="images/greenOverview.png" alt="Overview Page Using the Green Palette" width="504" />
+<img src="images/greenOverview.png" alt="Overview Page Using the Green Palette"  />
 <p class="caption">
 Figure 3.6: Overview Page Using the Green Palette
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:greenAction2"></span>
-<img src="images/greenCollapse.png" alt="Collapsible Boxes Using the Green Palette" width="504" />
+<img src="images/greenCollapse.png" alt="Collapsible Boxes Using the Green Palette"  />
 <p class="caption">
 Figure 3.7: Collapsible Boxes Using the Green Palette
 </p>
@@ -564,13 +565,13 @@ Figure 3.9: The Purple Palette
 </div>
 <p>Here is what the Purple Palette looks like in action:</p>
 <div class="figure" style="text-align: center"><span id="fig:purpleAction1"></span>
-<img src="images/purpleOverview.png" alt="Overview Page Using the Purple Palette" width="504" />
+<img src="images/purpleOverview.png" alt="Overview Page Using the Purple Palette"  />
 <p class="caption">
 Figure 3.10: Overview Page Using the Purple Palette
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:purpleAction2"></span>
-<img src="images/purpleCollapse.png" alt="Collapsible Boxes Using the Purple Palette" width="504" />
+<img src="images/purpleCollapse.png" alt="Collapsible Boxes Using the Purple Palette"  />
 <p class="caption">
 Figure 3.11: Collapsible Boxes Using the Purple Palette
 </p>
@@ -593,13 +594,13 @@ Figure 3.13: The ‘Black’ Palette
 </div>
 <p>Here is what the “Black” Palette looks like in action:</p>
 <div class="figure" style="text-align: center"><span id="fig:blackAction1"></span>
-<img src="images/blackOverview.png" alt="Overview Page Using the 'Black' Palette" width="504" />
+<img src="images/blackOverview.png" alt="Overview Page Using the 'Black' Palette"  />
 <p class="caption">
 Figure 3.14: Overview Page Using the ‘Black’ Palette
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:blackAction2"></span>
-<img src="images/blackCollapse.png" alt="Collapsible Boxes Using the 'Black' Palette" width="504" />
+<img src="images/blackCollapse.png" alt="Collapsible Boxes Using the 'Black' Palette"  />
 <p class="caption">
 Figure 3.15: Collapsible Boxes Using the ‘Black’ Palette
 </p>
@@ -622,13 +623,13 @@ Figure 3.17: The Yellow Palette
 </div>
 <p>Here is what the Yellow Palette looks like in action:</p>
 <div class="figure" style="text-align: center"><span id="fig:yellowAction1"></span>
-<img src="images/yellowOverview.png" alt="Overview Page Using the Yellow Palette" width="504" />
+<img src="images/yellowOverview.png" alt="Overview Page Using the Yellow Palette"  />
 <p class="caption">
 Figure 3.18: Overview Page Using the Yellow Palette
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:yellowAction2"></span>
-<img src="images/yellowCollapse.png" alt="Collapsible Boxes Using the Yellow Palette" width="504" />
+<img src="images/yellowCollapse.png" alt="Collapsible Boxes Using the Yellow Palette"  />
 <p class="caption">
 Figure 3.19: Collapsible Boxes Using the Yellow Palette
 </p>
@@ -651,13 +652,13 @@ Figure 3.21: The Red Palette
 </div>
 <p>Here is what the Red Palette looks like in action:</p>
 <div class="figure" style="text-align: center"><span id="fig:redAction1"></span>
-<img src="images/redOverview.png" alt="Overview Page Using the Red Palette" width="504" />
+<img src="images/redOverview.png" alt="Overview Page Using the Red Palette"  />
 <p class="caption">
 Figure 3.22: Overview Page Using the Red Palette
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:redAction2"></span>
-<img src="images/redCollapse.png" alt="Collapsible Boxes Using the Red Palette" width="504" />
+<img src="images/redCollapse.png" alt="Collapsible Boxes Using the Red Palette"  />
 <p class="caption">
 Figure 3.23: Collapsible Boxes Using the Red Palette
 </p>
@@ -674,31 +675,30 @@ Figure 3.24: Sliders Using the Red Palette
 <div id="color-and-plots-in-r" class="section level3">
 <h3><span class="header-section-number">3.4.2</span> Color and Plots in <code>R</code></h3>
 <p>In <code>R</code> you can set color theme which you use in <code>ggplot2</code>. Here are two custom color palettes that you can use in your App. Additionally, the package <code>viridis</code> provides several additional color palettes which are improvements upon the default color scheme.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co"># and checked at the above webite.</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7">psuPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</a>
-<a class="sourceLine" id="cb9-8" data-line-number="8">    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co"># Both palettes get used in the order of what is listed.</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co"># and checked at the above webite.</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7">psuPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</a>
+<a class="sourceLine" id="cb14-8" data-line-number="8">    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co"># Both palettes get used in the order of what is listed.</span></a></code></pre></div>
 <p>To use these palettes (or ones from <code>viridis</code>) with a <code>ggplot2</code> object, you’ll need to doe the following</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># You will need to first add whichever palette line from above to your code</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co"># Create ggplot2 object</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data =</span> df, </a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">color =</span> grp, <span class="dt">fill =</span> grp))</a>
-<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co"># Add your layers</span></a>
-<a class="sourceLine" id="cb10-9" data-line-number="9">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_points</span>()</a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co"># Tell R to use your chosen palette</span></a>
-<a class="sourceLine" id="cb10-11" data-line-number="11">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></a>
-<a class="sourceLine" id="cb10-12" data-line-number="12">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></a></code></pre></div>
-<p>If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors (see Section <a href="visualAppearance.html#graphics">3.6</a>). This admonishment also applies to line styles and point shapes.</p>
-<p>With any eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># You will need to first add whichever palette line from above to your code</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co"># Create ggplot2 object</span></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data =</span> df, </a>
+<a class="sourceLine" id="cb15-7" data-line-number="7">                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">color =</span> grp, <span class="dt">fill =</span> grp))</a>
+<a class="sourceLine" id="cb15-8" data-line-number="8"><span class="co"># Add your layers</span></a>
+<a class="sourceLine" id="cb15-9" data-line-number="9">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_points</span>()</a>
+<a class="sourceLine" id="cb15-10" data-line-number="10"><span class="co"># Tell R to use your chosen palette</span></a>
+<a class="sourceLine" id="cb15-11" data-line-number="11">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></a>
+<a class="sourceLine" id="cb15-12" data-line-number="12">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></a></code></pre></div>
+<p>If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)</p>
 </div>
 </div>
 <div id="styleText" class="section level2">
@@ -715,13 +715,13 @@ Figure 3.24: Sliders Using the Red Palette
 <p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
 <p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
 <p>For example, this code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">p</span>(</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="st">&quot;When dealing with the &quot;</span>,</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;t&quot;</span>),</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">  tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">  <span class="st">&quot;that we need to input.&quot;</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7">)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">p</span>(</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">  <span class="st">&quot;When dealing with the &quot;</span>,</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;t&quot;</span>),</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</a>
+<a class="sourceLine" id="cb16-5" data-line-number="5">  tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6">  <span class="st">&quot;that we need to input.&quot;</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7">)</a></code></pre></div>
 <p>Becomes:</p>
 <blockquote>
 <p>When dealing with the <em>t</em>-distribution, we only have one parameter, the <strong>degrees of freedom</strong> that we need to input.</p>
@@ -733,7 +733,6 @@ Figure 3.24: Sliders Using the Red Palette
 <p>For the most part, any mathematics you need displayed should be done using <a href="https://www.mathjax.org/">MathJax</a>. Default to using inline typesetting with the <code>\\(</code> and <code>\\)</code> delimiters. If you need to use display style, you can use <code>\\[</code> and <code>\\]</code>. For the vast majority of mathematics, you’ll wrap both inline and display style mathematics inside of a paragraph environment (<code>p()</code>).</p>
 <p>If you’re writing mathematics directly in your app, remember you’ll need to escape the LaTeX commands by putting an extra backslash (\) in front; e.g., <code>\frac{3}{4}</code> would need to be <code>\\frac{3}{4}</code>.</p>
 <p>If you’re reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.</p>
-<p>If you need assistance in figuring out how to type up mathematics, please talk to Neil, Matt, or Dennis.</p>
 <p><strong>Note:</strong> Double dollar sign delimiters are generally not recommended for displaying math as they can lead to unintended results. See: <a href="https://docs.mathjax.org/en/latest/basic/mathematics.html">Writing Mathematics for MathJax</a>.</p>
 </div>
 <div id="game-question-text" class="section level3">
@@ -748,21 +747,21 @@ Figure 3.24: Sliders Using the Red Palette
 </div>
 <div id="feedback-and-hint-text" class="section level3">
 <h3><span class="header-section-number">3.5.6</span> Feedback and Hint Text</h3>
-<p>Again, let the central CSS file handle the styling of this type of text by wrapping the text in the appropriate tags (typically <code>p()</code>).</p>
+<p>Again, let the central CSS file handle the styling of this type of text.</p>
 </div>
 <div id="text-in-r-plots" class="section level3">
 <h3><span class="header-section-number">3.5.7</span> Text in <code>R</code> Plots</h3>
 <p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the ggplot framework) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
 <p>Here is an example for how to do this:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># Create a ggplot2 object</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data=</span>df, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>grp)) </a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co"># Add your layers, for example</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co"># Use theme to control text size</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7">  <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>),</a>
-<a class="sourceLine" id="cb12-8" data-line-number="8">  <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>)</a>
-<a class="sourceLine" id="cb12-9" data-line-number="9">  )</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># Create a ggplot2 object</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data=</span>df, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>grp)) </a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="co"># Add your layers, for example</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co"># Use theme to control text size</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb17-7" data-line-number="7">  <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>),</a>
+<a class="sourceLine" id="cb17-8" data-line-number="8">  <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>)</a>
+<a class="sourceLine" id="cb17-9" data-line-number="9">  )</a></code></pre></div>
 <p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
 <p><strong>Note:</strong> The text in your plot might not behave well for dynamic resizing on different mobile devices.</p>
 </div>
@@ -789,15 +788,15 @@ Figure 3.24: Sliders Using the Red Palette
 <h3><span class="header-section-number">3.6.1</span> Axes and Scales</h3>
 <p><code>R</code>’s default axes are terrible. They often do not fully cover the data and the have gaps between the axes. All this impedes the user’s construction of meaning. Thus, you’ll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.</p>
 <p>To force <code>ggplot2</code> to place (0, 0) in the lower-left corner and to control the scales, you will need to include the following:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Create the ggplot2 object</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(...)</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="co"># Add your layer</span></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co"># Control axes and scale</span></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">## Multplicative Scaling of the Horizontal (x) Axis</span></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">## Additive Scaling of the Vertical (y) Axis</span></a>
-<a class="sourceLine" id="cb13-8" data-line-number="8">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">add =</span> <span class="dv">0</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="dv">0</span>, <span class="dt">add =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="co"># Create the ggplot2 object</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(...)</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="co"># Add your layer</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co"># Control axes and scale</span></a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="co">## Multplicative Scaling of the Horizontal (x) Axis</span></a>
+<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="co">## Additive Scaling of the Vertical (y) Axis</span></a>
+<a class="sourceLine" id="cb18-8" data-line-number="8">g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">add =</span> <span class="dv">0</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="dv">0</span>, <span class="dt">add =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </a></code></pre></div>
 </div>
 <div id="tables" class="section level3">
 <h3><span class="header-section-number">3.6.2</span> Tables</h3>
@@ -806,14 +805,6 @@ Figure 3.24: Sliders Using the Red Palette
 <div id="alt-text" class="section level3">
 <h3><span class="header-section-number">3.6.3</span> Alt Text</h3>
 <p>Any graphical element you include in your App <strong>MUST</strong> have an alternative (assistive) text description (“alt text”). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formated will handle this automatically.)</p>
-<div id="adding-alt-text-to-static-images" class="section level4">
-<h4><span class="header-section-number">3.6.3.1</span> Adding Alt Text to Static Images</h4>
-<p><em>This section is under construction.</em></p>
-</div>
-<div id="adding-alt-text-graphs" class="section level4">
-<h4><span class="header-section-number">3.6.3.2</span> Adding Alt Text Graphs</h4>
-<p><em>This section is under construction.</em></p>
-</div>
 </div>
 </div>
 <div id="miscellaneous" class="section level2">

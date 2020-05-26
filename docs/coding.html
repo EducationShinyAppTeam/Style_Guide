@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-05-22" />
+<meta name="date" content="2020-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,9 +136,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="getStarted.html"><a href="getStarted.html#checklist"><i class="fa fa-check"></i><b>1.1</b> Getting Started Checklist</a></li>
 <li class="chapter" data-level="1.2" data-path="getStarted.html"><a href="getStarted.html#boastutils-package"><i class="fa fa-check"></i><b>1.2</b> <code>boastUtils</code> Package</a></li>
 <li class="chapter" data-level="1.3" data-path="getStarted.html"><a href="getStarted.html#sample-app"><i class="fa fa-check"></i><b>1.3</b> Sample App</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="getStarted.html"><a href="getStarted.html#command-line"><i class="fa fa-check"></i><b>1.3.1</b> Command Line</a></li>
-<li class="chapter" data-level="1.3.2" data-path="getStarted.html"><a href="getStarted.html#direct-download"><i class="fa fa-check"></i><b>1.3.2</b> Direct Download</a></li>
-<li class="chapter" data-level="1.3.3" data-path="getStarted.html"><a href="getStarted.html#github-desktop"><i class="fa fa-check"></i><b>1.3.3</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="1.3.1" data-path="getStarted.html"><a href="getStarted.html#direct-download"><i class="fa fa-check"></i><b>1.3.1</b> Direct Download</a></li>
+<li class="chapter" data-level="1.3.2" data-path="getStarted.html"><a href="getStarted.html#github-desktop"><i class="fa fa-check"></i><b>1.3.2</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="1.3.3" data-path="getStarted.html"><a href="getStarted.html#command-line"><i class="fa fa-check"></i><b>1.3.3</b> Command Line</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>2</b> Coding Style</a><ul>
@@ -159,8 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>2.3</b> Metadata</a></li>
 <li class="chapter" data-level="2.4" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>2.4</b> CSS</a></li>
-<li class="chapter" data-level="2.5" data-path="coding.html"><a href="coding.html#github-repo-names"><i class="fa fa-check"></i><b>2.5</b> GitHub Repo Names</a></li>
-<li class="chapter" data-level="2.6" data-path="coding.html"><a href="coding.html#using-rlocker"><i class="fa fa-check"></i><b>2.6</b> Using RLocker</a></li>
+<li class="chapter" data-level="2.5" data-path="coding.html"><a href="coding.html#repo-naming"><i class="fa fa-check"></i><b>2.5</b> GitHub Repo Names</a></li>
+<li class="chapter" data-level="2.6" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>2.6</b> Using rlocker</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>2.6.1</b> Installing</a></li>
+<li class="chapter" data-level="2.6.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>2.6.2</b> Setup</a></li>
+<li class="chapter" data-level="2.6.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>2.6.3</b> Usage</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="visualAppearance.html"><a href="visualAppearance.html"><i class="fa fa-check"></i><b>3</b> Visual Appearance</a><ul>
 <li class="chapter" data-level="3.1" data-path="visualAppearance.html"><a href="visualAppearance.html#logo"><i class="fa fa-check"></i><b>3.1</b> PSU Branding</a></li>
@@ -238,6 +242,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="genCode" class="section level2">
 <h2><span class="header-section-number">2.1</span> General Coding Style</h2>
 <p>Our general practice is to make use of the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. However, we do have some important departures and additional practices you need to follow:</p>
+<ul>
+<li><a href="coding.html#comments">Leave comments</a></li>
+<li><a href="coding.html#naming">Use informative names</a></li>
+<li><a href="coding.html#formatCode">Format your code</a></li>
+<li><a href="coding.html#explicit">Be explicit</a></li>
+</ul>
 <div id="comments" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Leave Comments</h3>
 <p>At bare minimum, use a comment to break your code into sections. This helps you and others conceptualize the code into more manageable chunks. Your comments can provide others with potential keywords to search for when looking at your code later on.</p>
@@ -245,14 +255,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="naming" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Informative Names</h3>
-<p>Use Informative Names for Variables and Functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,</p>
+<p>Use informative names for variables and functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,</p>
 <ul>
 <li><code>scoreMatrix</code> is a matrix that holds a set of scores<br />
 </li>
 <li><code>checkGame</code> is a function that checks the state of the current game</li>
 </ul>
-<p>Use <strong>camelCase</strong> for variables and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no space or underscore ( _ ) between them. (This is a departure from the tidyverse style.)</p>
-<p>Avoid using the variable names that existed in code you’re making use of from another app or script. For example, don’t use <code>waitTimes</code> to hold your data on the number of correct answers a user has given.</p>
+<p>Use <a href="https://en.wikipedia.org/wiki/Camel_case">camelCase</a> for variable names and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no spaces or underscores ( _ ) between them. (This is a departure from the tidyverse style.)</p>
+<p>Avoid using the variable names from code that you’re making use of from another app or script. For example, don’t use <code>waitTimes</code> to hold your data on the number of correct answers a user has given. It is also good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid <a href="https://en.wikipedia.org/wiki/Naming_collision">namespace collision</a>.</p>
 </div>
 <div id="formatCode" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> Format Your Code</h3>
@@ -270,16 +280,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="explicit" class="section level3">
 <h3><span class="header-section-number">2.1.4</span> Be Explicit</h3>
-<p>One of the best practices a coder can do is to be explicit. This links back to Informative Naming but goes a step beyond. <code>R</code> is a functional programming language. One of the important aspects of this is that functions in <code>R</code> obey the same rules as mathematical functions, especially multivariate functions.</p>
+<p>One of the best practices a coder can do is to be explicit. And no, we don’t mean that type of explicit. This links back to <a href="coding.html#naming">Informative Naming</a> but goes a step beyond. <code>R</code> is a functional programming language. One of the important aspects of this is that functions in <code>R</code> obey the same rules as mathematical functions, especially multivariate functions.</p>
 <p>One implicit fact about functions that most students don’t realize is that the order of a function’s arguments are a matter of convention and are actually arbitrary. While we might define <em>f</em> as <span class="math inline">\(f(x,y) = x^2+3y\)</span>, we could call <span class="math inline">\(f(y=2,x=1)\)</span> and get the same output as <span class="math inline">\(f(1,2)\)</span> when we use the convention set up in the definition. This issue is exacerbated with functions in <code>R</code>.</p>
 <p>Therefore, when you pass values to the arguments of a function in <code>R</code>, you should be explicit and include the argument name in your code. For example,</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">actionButton</span>(</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="dt">inputId =</span> <span class="st">&quot;submit&quot;</span>,</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="dt">label =</span> <span class="st">&quot;Submit&quot;</span>,</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="dt">class =</span> <span class="st">&quot;btn-ttt&quot;</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">actionButton</span>(</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="dt">inputId =</span> <span class="st">&quot;submit&quot;</span>,</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="dt">label =</span> <span class="st">&quot;Submit&quot;</span>,</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">  <span class="dt">class =</span> <span class="st">&quot;btn-ttt&quot;</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">)</a></code></pre></div>
 <p>There are a few exceptions to this:</p>
 <ul>
 <li>Formula Arguments (e.g., <code>response ~ factor1 + block</code>)</li>
@@ -291,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>General Advice:</p>
 <ul>
-<li>If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call</li>
+<li>If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call.</li>
 <li>If you are using a common/central function (i.e., those from <code>shiny</code>, <code>ggplot2</code>), you can omit the package in the function call.</li>
 </ul>
 <p>Remember the following: the more proactive you are from the get go in commenting and organizing your code, the easier time you will have for debugging and improving your code down the road.</p>
@@ -310,10 +320,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Once you’ve created the list environment, you create items for your list in the same way: <code>tags$li([content])</code>. You do not need to and should <strong>NOT</strong> use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.</p>
 <p>Here is an example of how you might create a list:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">tags<span class="op">$</span><span class="kw">ul</span>(</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item with a&quot;</span>, tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;boldface&quot;</span>), <span class="st">&quot;word.&quot;</span>)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">tags<span class="op">$</span><span class="kw">ul</span>(</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item with a&quot;</span>, tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;boldface&quot;</span>), <span class="st">&quot;word.&quot;</span>)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">)</a></code></pre></div>
 <p>which turns into</p>
 <ul>
 <li>This is my first item.</li>
@@ -355,21 +365,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you are using the <code>ui.R</code> and <code>server.R</code> format (i.e., apps from prior years), place the following code in the <code>tags$head( )</code> portion at the top of the <code>dashboardBody</code> section of the <code>ui.R</code> file :
 <!-- end list --></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">    <span class="dt">titleWidth =</span> <span class="dv">300</span>,</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">    <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7">  ),</a>
-<a class="sourceLine" id="cb4-8" data-line-number="8">  <span class="co"># [omitted code],</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">  <span class="kw">dashboardBody</span>(</a>
-<a class="sourceLine" id="cb4-10" data-line-number="10">    tags<span class="op">$</span><span class="kw">head</span>(</a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
-<a class="sourceLine" id="cb4-12" data-line-number="12">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
-<a class="sourceLine" id="cb4-13" data-line-number="13">      <span class="kw">tabItems</span>(</a>
-<a class="sourceLine" id="cb4-14" data-line-number="14">       <span class="co"># [omitted code]</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15">      )  )  )  )</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">dashboardPage</span>(</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="kw">dashboardHeader</span>(</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">    <span class="dt">titleWidth =</span> <span class="dv">300</span>,</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">    <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">  ),</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">  <span class="co"># [omitted code],</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">  <span class="kw">dashboardBody</span>(</a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">    tags<span class="op">$</span><span class="kw">head</span>(</a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</a>
+<a class="sourceLine" id="cb6-12" data-line-number="12">        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</a>
+<a class="sourceLine" id="cb6-13" data-line-number="13">      <span class="kw">tabItems</span>(</a>
+<a class="sourceLine" id="cb6-14" data-line-number="14">       <span class="co"># [omitted code]</span></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">      )  )  )  )</a></code></pre></div>
 <p>There times when you might need some additional text styling that is not already defined. In these cases, <strong>you’ll need to talk to Neil or Bob to determine what is the best course of action</strong>. This could entail an addition to the central CSS file or the inclusion of an additional CSS file unique to your App.</p>
 <p>The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.</p>
 <p>See also the CSS section (<a href="coding.html#css">2.4</a>).</p>
@@ -431,15 +441,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="metadata" class="section level2">
 <h2><span class="header-section-number">2.3</span> Metadata</h2>
-<p>Each app will need the following metadata in either the <code>app.R</code> or the <code>ui.R</code> file. For long lines, use the <code>paste</code> function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.</p>
+<p>Each App will need the following metadata in either the <code>app.R</code> or the <code>ui.R</code> file. For long lines, use the <code>paste</code> function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.</p>
 <p>For now, use the following format:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">## App Meta Data----------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">APP_TITLE  &lt;&lt;-<span class="st"> &quot;Title of the app&quot;</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">APP_DESCP  &lt;&lt;-<span class="st"> </span><span class="kw">paste</span>(</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="st">&quot;Description of the app&quot;</span>,</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="st">&quot;use multiple lines to keep the description legible.&quot;</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">)</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">## End App Meta Data------------------------------------------------------------</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">## App Meta Data----------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">APP_TITLE  &lt;&lt;-<span class="st"> &quot;Title of the app&quot;</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">APP_DESCP  &lt;&lt;-<span class="st"> </span><span class="kw">paste</span>(</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">  <span class="st">&quot;Description of the app&quot;</span>,</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">  <span class="st">&quot;use multiple lines to keep the description legible.&quot;</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">## End App Meta Data------------------------------------------------------------</span></a></code></pre></div>
 <p>Notice that both <code>APP_TITLE</code> and <code>APP_DESCP</code> do not follow camelCase. This is by intent to denote global <code>constants</code>.</p>
 </div>
 <div id="css" class="section level2">
@@ -460,33 +470,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>For objects that need to have a particular styling invoked, we will make use of the <code>class</code> attribute. These will invoked through the HTML tags or through the function calls.</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># HTML Tag Example 1</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">p</span>(</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="st">&quot;Attali, D. and Edwards, T. (2018). shinyalert: Easily create</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="st">  pretty popup messages (modals) in &#39;Shiny&#39;. (v1.0). [R package].</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="st">  Available from https://CRAN.R-project.org/package=shinyalert&quot;</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">)</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co"># HTML Tag Example 2</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 12/2/2019 by NJH.&quot;</span>)</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co"># Function Call Example</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="kw">actionButton</span>(</a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">  <span class="dt">inputId =</span> <span class="kw">paste0</span>(<span class="st">&quot;grid-&quot;</span>, row, <span class="st">&quot;-&quot;</span>, column),</a>
-<a class="sourceLine" id="cb6-15" data-line-number="15">  <span class="dt">label =</span> <span class="st">&quot;?&quot;</span>,</a>
-<a class="sourceLine" id="cb6-16" data-line-number="16">  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18">  <span class="dt">class =</span> <span class="st">&quot;grid-fill&quot;</span></a>
-<a class="sourceLine" id="cb6-19" data-line-number="19">)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># HTML Tag Example 1</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">p</span>(</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">  <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">  <span class="st">&quot;Attali, D. and Edwards, T. (2018). shinyalert: Easily create</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  pretty popup messages (modals) in &#39;Shiny&#39;. (v1.0). [R package].</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="st">  Available from https://CRAN.R-project.org/package=shinyalert&quot;</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">)</a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co"># HTML Tag Example 2</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 12/2/2019 by NJH.&quot;</span>)</a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co"># Function Call Example</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="kw">actionButton</span>(</a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">  <span class="dt">inputId =</span> <span class="kw">paste0</span>(<span class="st">&quot;grid-&quot;</span>, row, <span class="st">&quot;-&quot;</span>, column),</a>
+<a class="sourceLine" id="cb8-15" data-line-number="15">  <span class="dt">label =</span> <span class="st">&quot;?&quot;</span>,</a>
+<a class="sourceLine" id="cb8-16" data-line-number="16">  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</a>
+<a class="sourceLine" id="cb8-17" data-line-number="17">  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</a>
+<a class="sourceLine" id="cb8-18" data-line-number="18">  <span class="dt">class =</span> <span class="st">&quot;grid-fill&quot;</span></a>
+<a class="sourceLine" id="cb8-19" data-line-number="19">)</a></code></pre></div>
 <p>There is an exception to #3: setting up alignment for a div section. This would look like <code>div(style = &quot;text-align: center&quot;...)</code> This type of styling is allowed in the R files (generally in the UI portions only).</p>
 <p>If you come across an app that has in-line CSS OR calls to a CSS file that isn’t <code>boast.css</code>, please log an issue and mention/assign Neil. (Most common external CSS files are <code>style.css</code> and <code>Feature(s).css</code>.)</p>
 </div>
-<div id="github-repo-names" class="section level2">
+<div id="repo-naming" class="section level2">
 <h2><span class="header-section-number">2.5</span> GitHub Repo Names</h2>
-<p>Each shiny app has its own repository (repo) on GitHub. As you begin to create new apps, you’ll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:</p>
+<p>Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you’ll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:</p>
 <ul>
-<li>Use Title Case (no camelCase)</li>
+<li>Use <a href="https://en.wikipedia.org/wiki/Letter_case#Title_case">Title Case</a> (no camelCase)</li>
 <li>Use underscores ( _ ) instead of spaces</li>
 <li>Match the App name as closely as possible</li>
 <li>You have a 100 character limit</li>
@@ -494,10 +504,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your respository.</p>
 <p>If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.</p>
 </div>
-<div id="using-rlocker" class="section level2">
-<h2><span class="header-section-number">2.6</span> Using RLocker</h2>
-<p>[<em>This section is under development.</em>]</p>
+<div id="rlocker" class="section level2">
+<h2><span class="header-section-number">2.6</span> Using rlocker</h2>
+<p>Because these Apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The <a href="https://github.com/rpc5102/rlocker">rlocker</a> package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.</p>
+<div id="installing" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Installing</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">library</span>(devtools)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;rpc5102/rlocker&quot;</span>)</a></code></pre></div>
+<p><a href="https://github.com/rpc5102/rlocker#Installation">View Documentation</a></p>
+</div>
+<div id="setup" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Setup</h3>
+<p>Core configuration is included in the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package. Simply use the boastApp wrapper function instead of shinyApp and you’re done!</p>
+</div>
+<div id="usage" class="section level3">
+<h3><span class="header-section-number">2.6.3</span> Usage</h3>
+<p>The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the “Who did what, where did they do it, and when did they do it?” in your App. Statements are often structured as Actor, Verb, and Object that sometimes also have a Result. For more on xAPI, check out <a href="https://xapi.com/overview/">What is the Experience API?</a> or experiment with Statements in the <a href="https://adlnet.github.io/xapi-lab/">xAPI Lab</a>.</p>
+<p><strong>For example:</strong></p>
+<blockquote>
+<p><strong>Bob</strong> (Actor) <strong>clicked</strong> (Verb) <strong>submit</strong> (Object).</p>
+</blockquote>
+<p><strong>In assessments:</strong></p>
+<blockquote>
+<p><strong>Neil</strong> (Actor) <strong>answered</strong> (Verb) <strong>Question 1</strong> (Object) <strong>correctly</strong> with the answer <strong>true</strong> (Result).</p>
+</blockquote>
+<p>This is a good way to frame it in your mind when beginning write collection statements. Which brings us to our next part, writing collection functions.</p>
+<p>Out of the box, <code>rlocker</code> does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like <a href="https://www.ht2labs.com/learning-locker-community/overview/">Learning Locker</a>, it is important to transform it in a way that makes sense.</p>
+<p><strong>Sample generator function</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">.generateStatement &lt;-<span class="st"> </span><span class="cf">function</span>(session, <span class="dt">verb =</span> <span class="ot">NA</span>, <span class="dt">object =</span> <span class="ot">NA</span>, <span class="dt">description =</span> <span class="ot">NA</span>, <span class="dt">interactionType =</span> <span class="ot">NA</span>, <span class="dt">response =</span> <span class="ot">NA</span>, <span class="dt">success =</span> <span class="ot">NA</span>, <span class="dt">completion =</span> <span class="ot">FALSE</span>) {</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">  statement &lt;-<span class="st"> </span>rlocker<span class="op">::</span><span class="kw">createStatement</span>(<span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">    <span class="dt">verb =</span> verb,</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">    <span class="dt">object =</span> <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">      <span class="dt">id =</span> <span class="kw">paste0</span>(<span class="kw">getCurrentAddress</span>(session), <span class="st">&quot;#&quot;</span>, object),</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">      <span class="dt">name =</span> <span class="kw">paste0</span>(APP_TITLE),</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">      <span class="dt">description =</span> <span class="kw">paste0</span>(<span class="st">&quot;Question &quot;</span>, activeQuestion, <span class="st">&quot;: &quot;</span>, description),</a>
+<a class="sourceLine" id="cb10-8" data-line-number="8">      <span class="dt">interactionType =</span> interactionType</a>
+<a class="sourceLine" id="cb10-9" data-line-number="9">    ),</a>
+<a class="sourceLine" id="cb10-10" data-line-number="10">    <span class="dt">result =</span> <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb10-11" data-line-number="11">      <span class="dt">success =</span> success,</a>
+<a class="sourceLine" id="cb10-12" data-line-number="12">      <span class="dt">response =</span> response,</a>
+<a class="sourceLine" id="cb10-13" data-line-number="13">      <span class="dt">completion =</span> completion</a>
+<a class="sourceLine" id="cb10-14" data-line-number="14">    )</a>
+<a class="sourceLine" id="cb10-15" data-line-number="15">  ))</a>
+<a class="sourceLine" id="cb10-16" data-line-number="16">  <span class="kw">return</span>(rlocker<span class="op">::</span><span class="kw">store</span>(session, statement))   </a>
+<a class="sourceLine" id="cb10-17" data-line-number="17">}</a></code></pre></div>
+<p><strong>Sample event observer</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">observeEvent</span>(session<span class="op">$</span>input[[id]], {</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="co"># # #</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">  <span class="co"># Check app state + validation data; yours will be different!</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">  answer &lt;-<span class="st"> </span>gameSet[id, <span class="st">&quot;answer&quot;</span>]</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6">  description &lt;-<span class="st"> </span>gameSet[id,]<span class="op">$</span>question</a>
+<a class="sourceLine" id="cb11-7" data-line-number="7">  interactionType &lt;-<span class="st"> </span><span class="kw">ifelse</span>(gameSet[id,]<span class="op">$</span>format <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span>)</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8">  success &lt;-<span class="st"> </span>input<span class="op">$</span>ans <span class="op">==</span><span class="st"> </span>answer</a>
+<a class="sourceLine" id="cb11-9" data-line-number="9">  completion &lt;-<span class="st"> </span><span class="kw">ifelse</span>(.appState <span class="op">==</span><span class="st"> &quot;continue&quot;</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb11-10" data-line-number="10">  <span class="co"># # #</span></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11">  </a>
+<a class="sourceLine" id="cb11-12" data-line-number="12">  <span class="kw">.generateStatement</span>(</a>
+<a class="sourceLine" id="cb11-13" data-line-number="13">    session,</a>
+<a class="sourceLine" id="cb11-14" data-line-number="14">    <span class="dt">object =</span> id,</a>
+<a class="sourceLine" id="cb11-15" data-line-number="15">    <span class="dt">verb =</span> <span class="st">&quot;answered&quot;</span>,</a>
+<a class="sourceLine" id="cb11-16" data-line-number="16">    <span class="dt">description =</span> description,</a>
+<a class="sourceLine" id="cb11-17" data-line-number="17">    <span class="dt">response =</span> input<span class="op">$</span>ans,</a>
+<a class="sourceLine" id="cb11-18" data-line-number="18">    <span class="dt">interactionType =</span> interactionType,</a>
+<a class="sourceLine" id="cb11-19" data-line-number="19">    <span class="dt">success =</span> success,</a>
+<a class="sourceLine" id="cb11-20" data-line-number="20">    <span class="dt">completion =</span> completion</a>
+<a class="sourceLine" id="cb11-21" data-line-number="21">  )</a>
+<a class="sourceLine" id="cb11-22" data-line-number="22">}</a></code></pre></div>
+<p>Additional code can be found in the <a href="https://github.com/rpc5102/rlocker/tree/master/inst/examples">examples</a> folder as well as the main <a href="https://github.com/rpc5102/rlocker/blob/master/README.md">README</a> of the project; apps such as the <a href="https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game">Hypothesis_Testing_Game</a> have been outfitted with rlocker. The statement generator above will eventually make its way into <code>boastUtils</code> once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
+<p><strong>Did you know?</strong></p>
+<p>You can run <code>help(package = &quot;rlocker&quot;)</code> to view the help files for this package or press <code>F1</code> while typing a function name to see the documentation for that specific function.</p>
 
+</div>
 </div>
 </div>
             </section>

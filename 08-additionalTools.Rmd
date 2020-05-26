@@ -1,6 +1,6 @@
 # Additional Tools {#addTools}
 
-Here are a few additional tools that can help you with App development.
+Here are a few additional tools that can help you with App development:
 
   - [lintr](https://github.com/jimhester/lintr) - Checks adherence to a
     given style, syntax errors, and possible semantic issues.
@@ -8,3 +8,8 @@ Here are a few additional tools that can help you with App development.
     Format R code according to a style guide.
   - [funchir](https://github.com/MichaelChirico/funchir) - stale package
     check
+    
+**R Code**
+```{r, eval = FALSE}
+install.packages(c("funchir", "lintr", "styler"))
+```
