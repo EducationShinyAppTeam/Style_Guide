@@ -319,7 +319,7 @@ The main purpose of this package is to help create meaningful- structured- xAPI 
 
 > **Neil** (Actor) **answered** (Verb) **Question 1** (Object) **correctly** with the answer **true** (Result).
 
-This is a good way to frame it in your mind when beginning write collection statements. Which brings us to our next part, writing collection functions.
+This is a good way to frame it in your mind when beginning to write collection functions. Which brings us to our next part, writing collection functions.
 
 Out of the box, `rlocker` does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like [Learning Locker](https://www.ht2labs.com/learning-locker-community/overview/), it is important to transform it in a way that makes sense.
 
