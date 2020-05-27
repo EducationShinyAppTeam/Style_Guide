@@ -1,39 +1,46 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[
+]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={The BOAST Style Guide},
-            pdfauthor={Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={The BOAST Style Guide},
+  pdfauthor={Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -75,8 +82,14 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -86,28 +99,17 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\usepackage[normalem]{ulem}
-% avoid problems with \sout in headers with hyperref:
-\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\usepackage[normalem]{ulem}
+% Avoid problems with \sout in headers with hyperref
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -121,7 +123,7 @@
 
 \title{The BOAST Style Guide}
 \author{Neil Hatfield (\href{mailto:njh5464@psu.edu}{\nolinkurl{njh5464@psu.edu}}) and Robert Carey (\href{mailto:rpc5102@psu.edu}{\nolinkurl{rpc5102@psu.edu}})}
-\date{22 May 2020}
+\date{27 May 2020}
 
 \begin{document}
 \maketitle
@@ -134,7 +136,7 @@
 \chapter*{Welcome}\label{welcome}}
 \addcontentsline{toc}{chapter}{Welcome}
 
-This guide spells out the styling that should be used for all apps included in \href{https://github.com/EducationShinyAppTeam/BOAST}{BOAST}. Keep in mind that there are several different aspects to what makes up Style including:
+This guide spells out the styling that should be used for all apps included in the Book of Apps for Statistics Teaching (\href{https://github.com/EducationShinyAppTeam/BOAST}{BOAST}). Keep in mind that there are several different aspects to what makes up Style including:
 
 \begin{itemize}
 \tightlist
@@ -164,19 +166,18 @@ Before you get too far into the Style Guide, we would like for you to take a mom
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Ensure that you have all of necessary accounts and if not, put in a request to Robert (Bob).
+  Ensure that you have all of necessary accounts and if not, put in a request to Bob (\href{mailto:rpc5102@psu.edu}{rpc5102}).
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    DataCamp\\
+    \href{https://www.datacamp.com/}{DataCamp}\\
   \item
-    GitHub\\
+    \href{https://github.com/}{GitHub}\\
   \item
-    EducationShinyAppTeam on GitHub\\
+    \href{https://github.com/EducationShinyAppTeam}{EducationShinyAppTeam}
   \item
     \sout{RStudio Server}
 
@@ -186,7 +187,7 @@ Before you get too far into the Style Guide, we would like for you to take a mom
       Upon investigation the TLT and the Eberly RStudio Servers will not be useful for us to do testing. An alternate testing process will be explored.\\
     \end{itemize}
   \item
-    BOAST in Teams (tied to your PSU ID)
+    \href{https://teams.microsoft.com/l/team/19\%3a8423bc25992a4451952d8312b497324d\%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec\&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e}{BOAST} in Microsoft Teams (tied to your PSU AccessID)
   \end{enumerate}
 \item
   Ensure that you have all of the proper software.
@@ -195,9 +196,9 @@ Before you get too far into the Style Guide, we would like for you to take a mom
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    \texttt{R} (version 3.5.* minimum, version 4.0.0 preferred)\\
+    \texttt{R} (version 3.5.* minimum, version 4.0.0 preferred) {[}\href{https://cloud.r-project.org/}{Download}{]}
   \item
-    RStudio (most current version preferred)\\
+    RStudio Desktop(most current version preferred) {[}\href{https://rstudio.com/products/rstudio/download/\#download}{Download}{]}
   \end{enumerate}
 \item
   Additional Software that we recommend
@@ -206,27 +207,18 @@ Before you get too far into the Style Guide, we would like for you to take a mom
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    GitHub Desktop\\
+    GitHub Desktop {[}\href{https://desktop.github.com/}{Download}{]}
   \end{enumerate}
 \item
-  \texttt{R} Packages--here are some basic packages that everyone will need; be sure to install their dependencies too
+  \texttt{R} Packages--here are some basic packages that everyone will need; be sure to install their dependencies too:
 
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \tightlist
-  \item
-    \texttt{tidyverse}~\\
-  \item
-    \texttt{ggplot2}~\\
-  \item
-    \texttt{shiny}~\\
-  \item
-    \texttt{shinyBS}~\\
-  \item
-    \texttt{boastUtils} (see below)\\
-  \end{enumerate}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"shiny"}\NormalTok{, }\StringTok{"shinyBS"}\NormalTok{, }\StringTok{"tidyverse"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 \item
-  A copy of the Sample App (see below)
+  A copy of the Sample App (\protect\hyperlink{sample-app}{see below})
 \end{enumerate}
 
 \hypertarget{boastutils-package}{%
@@ -238,26 +230,34 @@ Bob created the \href{https://github.com/EducationShinyAppTeam/boastUtils}{boast
 
 Please check out the package's \href{https://github.com/EducationShinyAppTeam/boastUtils}{page} for instructions on installing and usage.
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(devtools)}
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"EducationShinyAppTeam/boastUtils"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{sample-app}{%
 \section{Sample App}\label{sample-app}}
 
-Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the \href{https://github.com/EducationShinyAppTeam/Sample_App}{Sample\_App} template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code. There are several methods you can use:
+Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the \href{https://github.com/EducationShinyAppTeam/Sample_App}{Sample\_App} template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.
 
-\hypertarget{command-line}{%
-\subsection{Command Line}\label{command-line}}
+There are several methods you can use:
 
-Enter the following in your terminal:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{git}\NormalTok{ clone git@github.com:EducationShinyAppTeam/Sample_App.git}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{direct-download}{Direct Download (Basic)}
+\item
+  \protect\hyperlink{github-desktop}{GitHub Desktop (Recommended)}
+\item
+  \protect\hyperlink{command-line}{Command Line (Advanced)}
+\end{itemize}
 
 \hypertarget{direct-download}{%
 \subsection{Direct Download}\label{direct-download}}
 
-You can download the repository directly:
+You can download this repository directly by visiting:
 
 \begin{quote}
 \url{https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip}
@@ -266,13 +266,13 @@ You can download the repository directly:
 \hypertarget{github-desktop}{%
 \subsection{GitHub Desktop}\label{github-desktop}}
 
-If you are using GitHub Desktop and have linked your account that has access to the EducationShinyAppTeam repository, you can do the following from inside GitHub Desktop:
+If you are using \href{https://desktop.github.com/}{GitHub Desktop} and have \href{https://help.github.com/en/desktop/getting-started-with-github-desktop/authenticating-to-github}{linked your account} that has access to the \href{https://github.com/EducationShinyAppTeam}{EducationShinyAppTeam} repository, you can do the following from inside GitHub Desktop:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Bring up the Clone Repository Menu (File -\textgreater{} Clone Repository\ldots{})\\
+  Bring up the Clone Repository Menu (File -\textgreater{} Clone Repository\ldots)\\
 \item
   Enter Sample\_App in the search bar and select the option that says Sample\_App (not sampleapp)
 \item
@@ -280,6 +280,37 @@ If you are using GitHub Desktop and have linked your account that has access to 
 \item
   Click the Clone button.
 \end{enumerate}
+
+\textbf{See also:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://help.github.com/en/desktop}{GitHub Desktop Help}
+\end{itemize}
+
+\hypertarget{command-line}{%
+\subsection{Command Line}\label{command-line}}
+
+Enter the following command in your terminal:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{git}\NormalTok{ clone git@github.com:EducationShinyAppTeam/Sample_App.git}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{See also:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://guides.github.com/introduction/git-handbook/}{Git Handbook}
+\item
+  \href{https://try.github.io/}{Resources to learn Git}
+\item
+  \href{https://happygitwithr.com/}{Happy Git and GitHub for the userR}
+\end{itemize}
 
 \hypertarget{coding}{%
 \chapter{Coding Style}\label{coding}}
@@ -291,6 +322,18 @@ Now that you've gone through the Getting Started section, we can turn our attent
 
 Our general practice is to make use of the \href{https://style.tidyverse.org/}{tidyverse style guide}. However, we do have some important departures and additional practices you need to follow:
 
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{comments}{Leave comments}
+\item
+  \protect\hyperlink{naming}{Use informative names}
+\item
+  \protect\hyperlink{formatCode}{Format your code}
+\item
+  \protect\hyperlink{explicit}{Be explicit}
+\end{itemize}
+
 \hypertarget{comments}{%
 \subsection{Leave Comments}\label{comments}}
 
@@ -301,7 +344,7 @@ For particularly complex sections, use comments to summarize what you're trying 
 \hypertarget{naming}{%
 \subsection{Informative Names}\label{naming}}
 
-Use Informative Names for Variables and Functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,
+Use informative names for variables and functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,
 
 \begin{itemize}
 \tightlist
@@ -311,9 +354,9 @@ Use Informative Names for Variables and Functions in your code. Use names that g
   \texttt{checkGame} is a function that checks the state of the current game
 \end{itemize}
 
-Use \textbf{camelCase} for variables and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no space or underscore ( \_ ) between them. (This is a departure from the tidyverse style.)
+Use \href{https://en.wikipedia.org/wiki/Camel_case}{camelCase} for variable names and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no spaces or underscores ( \_ ) between them. (This is a departure from the tidyverse style.)
 
-Avoid using the variable names that existed in code you're making use of from another app or script. For example, don't use \texttt{waitTimes} to hold your data on the number of correct answers a user has given.
+Avoid using the variable names from code that you're making use of from another app or script. For example, don't use \texttt{waitTimes} to hold your data on the number of correct answers a user has given. It is also good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid \href{https://en.wikipedia.org/wiki/Naming_collision}{namespace collision}.
 
 \hypertarget{formatCode}{%
 \subsection{Format Your Code}\label{formatCode}}
@@ -344,7 +387,7 @@ Additionally, you can make use of the \texttt{styler} and \texttt{lintr} package
 \hypertarget{explicit}{%
 \subsection{Be Explicit}\label{explicit}}
 
-One of the best practices a coder can do is to be explicit. This links back to Informative Naming but goes a step beyond. \texttt{R} is a functional programming language. One of the important aspects of this is that functions in \texttt{R} obey the same rules as mathematical functions, especially multivariate functions.
+One of the best practices a coder can do is to be explicit. And no, we don't mean that type of explicit. This links back to \protect\hyperlink{naming}{Informative Naming} but goes a step beyond. \texttt{R} is a functional programming language. One of the important aspects of this is that functions in \texttt{R} obey the same rules as mathematical functions, especially multivariate functions.
 
 One implicit fact about functions that most students don't realize is that the order of a function's arguments are a matter of convention and are actually arbitrary. While we might define \emph{f} as \(f(x,y) = x^2+3y\), we could call \(f(y=2,x=1)\) and get the same output as \(f(1,2)\) when we use the convention set up in the definition. This issue is exacerbated with functions in \texttt{R}.
 
@@ -385,7 +428,7 @@ General Advice:
 \begin{itemize}
 \tightlist
 \item
-  If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call
+  If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call.
 \item
   If you are using a common/central function (i.e., those from \texttt{shiny}, \texttt{ggplot2}), you can omit the package in the function call.
 \end{itemize}
@@ -620,7 +663,7 @@ The order for your code in the \texttt{server.R} file:
 \hypertarget{metadata}{%
 \section{Metadata}\label{metadata}}
 
-Each app will need the following metadata in either the \texttt{app.R} or the \texttt{ui.R} file. For long lines, use the \texttt{paste} function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
+Your App will need the following metadata in either the \texttt{app.R} or the \texttt{ui.R} file. For long lines, use the \texttt{paste} function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
 
 For now, use the following format:
 
@@ -701,15 +744,15 @@ There is an exception to \#3: setting up alignment for a div section. This would
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't \texttt{boast.css}, please log an issue and mention/assign Neil. (Most common external CSS files are \texttt{style.css} and \texttt{Feature(s).css}.)
 
-\hypertarget{github-repo-names}{%
-\section{GitHub Repo Names}\label{github-repo-names}}
+\hypertarget{repo-naming}{%
+\section{GitHub Repo Names}\label{repo-naming}}
 
-Each shiny app has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
+Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
 
 \begin{itemize}
 \tightlist
 \item
-  Use Title Case (no camelCase)
+  Use \href{https://en.wikipedia.org/wiki/Letter_case\#Title_case}{Title Case} (not camelCase)
 \item
   Use underscores ( \_ ) instead of spaces
 \item
@@ -718,14 +761,111 @@ Each shiny app has its own repository (repo) on GitHub. As you begin to create n
   You have a 100 character limit
 \end{itemize}
 
-While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your respository.
+While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository.
 
 If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
 
-\hypertarget{using-rlocker}{%
-\section{Using RLocker}\label{using-rlocker}}
+\hypertarget{rlocker}{%
+\section{Using rlocker}\label{rlocker}}
 
-{[}\emph{This section is under development.}{]}
+Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The \href{https://github.com/rpc5102/rlocker}{rlocker} package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
+
+\hypertarget{installing}{%
+\subsection{Installing}\label{installing}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(devtools)}
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"rpc5102/rlocker"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\href{https://github.com/rpc5102/rlocker\#Installation}{View Documentation}
+
+\hypertarget{setup}{%
+\subsection{Setup}\label{setup}}
+
+Core configuration is included in the \href{https://github.com/EducationShinyAppTeam/boastUtils}{boastUtils} package. Simply use the boastApp wrapper function instead of shinyApp and you're done!
+
+\hypertarget{usage}{%
+\subsection{Usage}\label{usage}}
+
+The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the ``Who did what, where did they do it, and when did they do it?'' in your App. Statements are often structured as Actor, Verb, and Object that sometimes also have a Result. For more on xAPI, check out \href{https://xapi.com/overview/}{What is the Experience API?} or experiment with Statements in the \href{https://adlnet.github.io/xapi-lab/}{xAPI Lab}.
+
+\textbf{For example:}
+
+\begin{quote}
+\textbf{Bob} (Actor) \textbf{clicked} (Verb) \textbf{submit} (Object).
+\end{quote}
+
+\textbf{In assessments:}
+
+\begin{quote}
+\textbf{Neil} (Actor) \textbf{answered} (Verb) \textbf{Question 1} (Object) \textbf{correctly} with the answer \textbf{true} (Result).
+\end{quote}
+
+This is a good way to frame it in your mind when beginning write collection statements. Which brings us to our next part, writing collection functions.
+
+Out of the box, \texttt{rlocker} does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like \href{https://www.ht2labs.com/learning-locker-community/overview/}{Learning Locker}, it is important to transform it in a way that makes sense.
+
+\textbf{Sample generator function}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{.generateStatement <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(session, }\DataTypeTok{verb =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{object =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{description =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{interactionType =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{response =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{success =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{completion =} \OtherTok{FALSE}\NormalTok{) \{}
+\NormalTok{  statement <-}\StringTok{ }\NormalTok{rlocker}\OperatorTok{::}\KeywordTok{createStatement}\NormalTok{(}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{verb =}\NormalTok{ verb,}
+    \DataTypeTok{object =} \KeywordTok{list}\NormalTok{(}
+      \DataTypeTok{id =} \KeywordTok{paste0}\NormalTok{(}\KeywordTok{getCurrentAddress}\NormalTok{(session), }\StringTok{"#"}\NormalTok{, object),}
+      \DataTypeTok{name =} \KeywordTok{paste0}\NormalTok{(APP_TITLE),}
+      \DataTypeTok{description =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"Question "}\NormalTok{, activeQuestion, }\StringTok{": "}\NormalTok{, description),}
+      \DataTypeTok{interactionType =}\NormalTok{ interactionType}
+\NormalTok{    ),}
+    \DataTypeTok{result =} \KeywordTok{list}\NormalTok{(}
+      \DataTypeTok{success =}\NormalTok{ success,}
+      \DataTypeTok{response =}\NormalTok{ response,}
+      \DataTypeTok{completion =}\NormalTok{ completion}
+\NormalTok{    )}
+\NormalTok{  ))}
+  \KeywordTok{return}\NormalTok{(rlocker}\OperatorTok{::}\KeywordTok{store}\NormalTok{(session, statement))   }
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Sample event observer}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{observeEvent}\NormalTok{(session}\OperatorTok{$}\NormalTok{input[[id]], \{}
+  
+  \CommentTok{# # #}
+  \CommentTok{# Check app state + validation data; yours will be different!}
+\NormalTok{  answer <-}\StringTok{ }\NormalTok{gameSet[id, }\StringTok{"answer"}\NormalTok{]}
+\NormalTok{  description <-}\StringTok{ }\NormalTok{gameSet[id,]}\OperatorTok{$}\NormalTok{question}
+\NormalTok{  interactionType <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(gameSet[id,]}\OperatorTok{$}\NormalTok{format }\OperatorTok{==}\StringTok{ "numeric"}\NormalTok{, }\StringTok{"numeric"}\NormalTok{, }\StringTok{"choice"}\NormalTok{)}
+\NormalTok{  success <-}\StringTok{ }\NormalTok{input}\OperatorTok{$}\NormalTok{ans }\OperatorTok{==}\StringTok{ }\NormalTok{answer}
+\NormalTok{  completion <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(.appState }\OperatorTok{==}\StringTok{ "continue"}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{)}
+  \CommentTok{# # #}
+  
+  \KeywordTok{.generateStatement}\NormalTok{(}
+\NormalTok{    session,}
+    \DataTypeTok{object =}\NormalTok{ id,}
+    \DataTypeTok{verb =} \StringTok{"answered"}\NormalTok{,}
+    \DataTypeTok{description =}\NormalTok{ description,}
+    \DataTypeTok{response =}\NormalTok{ input}\OperatorTok{$}\NormalTok{ans,}
+    \DataTypeTok{interactionType =}\NormalTok{ interactionType,}
+    \DataTypeTok{success =}\NormalTok{ success,}
+    \DataTypeTok{completion =}\NormalTok{ completion}
+\NormalTok{  )}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Additional code can be found in the \href{https://github.com/rpc5102/rlocker/tree/master/inst/examples}{examples} folder as well as the main \href{https://github.com/rpc5102/rlocker/blob/master/README.md}{README} of the project; apps such as the \href{https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game}{Hypothesis\_Testing\_Game} have been outfitted with rlocker. The statement generator above will eventually make its way into \texttt{boastUtils} once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (\href{mailto:rpc5102@psu.edu}{rpc5102}).
+
+\textbf{Did you know?}
+
+You can run \texttt{help(package\ =\ "rlocker")} to view the help files for this package or press \texttt{F1} while typing a function name to see the documentation for that specific function.
 
 \hypertarget{visualAppearance}{%
 \chapter{Visual Appearance}\label{visualAppearance}}
@@ -877,6 +1017,23 @@ The icon you use depends on the type of activity:
   Challenges will use the icon ``gears''.
 \end{itemize}
 
+\hypertarget{general-layout-for-activity-tabs}{%
+\paragraph{General Layout for Activity Tabs}\label{general-layout-for-activity-tabs}}
+
+For the vast majority of Activity Tabs, we will adopt a 3-part layout:
+
+\begin{itemize}
+\tightlist
+\item
+  Across the top will be any general information the user needs to interact with your App as well as an context information.
+\item
+  To the left and wrapped in a well panel will be the inputs/controls that the user will need to manipulate.
+\item
+  To the right and NOT in a well panel will be the outputs (graphs, images, R output)
+\end{itemize}
+
+There will be some cases where this general layout does not necessarily work. For instance, Tic-Tac-Toe games will not follow this layout.
+
 \hypertarget{references}{%
 \subsubsection{References}\label{references}}
 
@@ -901,7 +1058,7 @@ The icon for this Tab must be ``leanpub''.
 \hypertarget{last-element}{%
 \subsubsection{Last Element}\label{last-element}}
 
-The last element of the Sidebar will be the Penn State Logo. Please refer to Section \ref{logo}.
+The last element of the Sidebar will be the Penn State Logo. Please refer to the Section \ref{logo}.
 
 \hypertarget{tabs-inside-the-body}{%
 \subsection{Tabs Inside the Body}\label{tabs-inside-the-body}}
@@ -950,7 +1107,7 @@ Deciding on whether to use \texttt{tabPanel} is going to depend on several thing
 
 When you go to make a set of tab panels you will need to first create a \texttt{tabsetPanel} which will wrap around all of the individual panels. Use \texttt{type\ =\ "tabs"}.
 
-The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed at the global level.
+The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
 
 \hypertarget{common-elements}{%
 \section{Common Elements}\label{common-elements}}
@@ -1011,7 +1168,7 @@ Please use the following guidelines for determining the order of inputs in the U
 \hypertarget{buttons}{%
 \subsection{Buttons}\label{buttons}}
 
-Buttons are one way in which users interact with the apps. The two most common functions used here are \texttt{shiny::actionButton} and \texttt{shinyBS::bsButton}. Both functions share many of the same features. Two ways in which they are different is that \texttt{shinyBS::bsButton} has an additional \texttt{style} argument while \texttt{shiny::actionButton} has a \texttt{width} argument that gives you fine grain size control (\texttt{bsButton} has a size option). There are three key styling aspects: shape/animation, color, and text \& icon.
+Buttons are one way in which users interact with the apps. The two most common functions that are used are \texttt{shiny::actionButton} and \texttt{shinyBS::bsButton}. Both functions share many of the same features. Two ways in which they are different is that \texttt{shinyBS::bsButton} has an additional \texttt{style} argument while \texttt{shiny::actionButton} has a \texttt{width} argument that gives you fine grain size control (\texttt{bsButton} just has a qualitative size option). There are three key styling aspects: shape/animation, color, and text \& icon.
 
 \hypertarget{shapeanimation}{%
 \subsubsection{Shape/Animation}\label{shapeanimation}}
@@ -1050,7 +1207,7 @@ When in doubt, use the the \texttt{default} style option (or even omit this argu
 
 The last styling element of a button is two-fold: the text that is in the button and the icon.
 
-Here are some guidelines for a button's text:
+Here are some guidelines for text of a button:
 
 \begin{itemize}
 \tightlist
@@ -1115,7 +1272,7 @@ Here are guidelines for the inclusion of icons in a button:
 \item
   Game buttons will NOT have any icons.
 \item
-  Direction Buttons (e.g., ``Next'' or ``Previous'') will NOT have any icons. Rather make the button text ``\textless{}\textless{} Previous'' or ``Next \textgreater{}\textgreater{}''.
+  Direction Buttons (e.g., ``Next'' or ``Previous'') will NOT have any icons. Rather make the button text ``\textless\textless{} Previous'' or ``Next \textgreater\textgreater{}''
 \item
   A ``Prerequisites'' button will use the ``book'' icon
 \item
@@ -1123,6 +1280,24 @@ Here are guidelines for the inclusion of icons in a button:
 \item
   A download button will use the ``cloud-download'' icon.
 \end{itemize}
+
+\hypertarget{correctincorrect-marks}{%
+\subsection{Correct/Incorrect Marks}\label{correctincorrect-marks}}
+
+In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of two images:
+
+\begin{figure}
+
+{\centering \includegraphics[width=3.75in]{images/check} \includegraphics[width=3.75in]{images/cross} 
+
+}
+
+\caption{Correct/Incorrect Marks}\label{fig:marks}
+\end{figure}
+
+You can save these two images by right-clicking on them and selecting ``Save Image As\ldots{}''. You will need to put them in the \texttt{www} folder/directory of your App.
+
+Their placement in your App will depend upon what makes the most sense.
 
 \hypertarget{colors}{%
 \section{Colors}\label{colors}}
@@ -1426,6 +1601,41 @@ Here is what the Red Palette looks like in action:
 \caption{Sliders Using the Red Palette}\label{fig:redAction3}
 \end{figure}
 
+\hypertarget{chapterColor}{%
+\subsubsection{Current Chapter Color Assignments}\label{chapterColor}}
+
+Here are the current (05/27/2020) color theme assignments for chapters:
+
+\begin{itemize}
+\tightlist
+\item
+  Chapter 1: Data Gathering RED
+\item
+  Chapter 2: Data Description YELLOW
+\item
+  Chapter 3: Basic Probability BLUE
+\item
+  Chapter 4: Statistical Inference PURPLE
+\item
+  Chapter 5: Probability BLUE
+\item
+  Chapter 6: Regression ``BLACK''
+\item
+  Chapter 7: ANOVA ``BLACK''
+\item
+  Chapter 8: Time Series PURPLE
+\item
+  Chapter 9: Sampling RED
+\item
+  Chapter 10: Categorical Data YELLOW
+\item
+  Chapter 11: Data Science GREEN
+\item
+  Chapter 12: Stochastic Processes BLUE
+\item
+  Chapter 13: Biology GREEN
+\end{itemize}
+
 \hypertarget{color-and-plots-in-r}{%
 \subsection{\texorpdfstring{Color and Plots in \texttt{R}}{Color and Plots in R}}\label{color-and-plots-in-r}}
 
@@ -1465,7 +1675,7 @@ To use these palettes (or ones from \texttt{viridis}) with a \texttt{ggplot2} ob
 \end{Highlighting}
 \end{Shaded}
 
-If you have more groups than eight/nine colors listed in two palettes, consider reworking your examples as you could overwhelm the user with too many colors (see Section \ref{graphics}). This admonishment also applies to line styles and point shapes.
+If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)
 
 With any eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
 
@@ -1517,7 +1727,7 @@ Use italics (emphasis), and boldface (strong) sparingly.
 
 For the most part, any mathematics you need displayed should be done using \href{https://www.mathjax.org/}{MathJax}. Default to using inline typesetting with the \texttt{\textbackslash{}\textbackslash{}(} and \texttt{\textbackslash{}\textbackslash{})} delimiters. If you need to use display style, you can use \texttt{\textbackslash{}\textbackslash{}{[}} and \texttt{\textbackslash{}\textbackslash{}{]}}. For the vast majority of mathematics, you'll wrap both inline and display style mathematics inside of a paragraph environment (\texttt{p()}).
 
-If you're writing mathematics directly in your app, remember you'll need to escape the LaTeX commands by putting an extra backslash (\textbackslash{}) in front; e.g., \texttt{\textbackslash{}frac\{3\}\{4\}} would need to be \texttt{\textbackslash{}\textbackslash{}frac\{3\}\{4\}}.
+If you're writing mathematics directly in your app, remember you'll need to escape the LaTeX commands by putting an extra backslash (\textbackslash) in front; e.g., \texttt{\textbackslash{}frac\{3\}\{4\}} would need to be \texttt{\textbackslash{}\textbackslash{}frac\{3\}\{4\}}.
 
 If you're reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.
 
@@ -1542,7 +1752,7 @@ You may use these tags with popups/rollovers.
 \hypertarget{feedback-and-hint-text}{%
 \subsection{Feedback and Hint Text}\label{feedback-and-hint-text}}
 
-Again, let the central CSS file handle the styling of this type of text by wrapping the text in the appropriate tags (typically \texttt{p()}).
+Again, let the central CSS file handle the styling of this type of text.
 
 \hypertarget{text-in-r-plots}{%
 \subsection{\texorpdfstring{Text in \texttt{R} Plots}{Text in R Plots}}\label{text-in-r-plots}}
@@ -1593,7 +1803,7 @@ All photographs can be fortified with words. --Dorothea Lange
 \end{quote}
 
 \begin{quote}
-A picture is worth a thousand words\ldots{}but which ones. --Unknown
+A picture is worth a thousand words\ldots but which ones. --Unknown
 \end{quote}
 
 Both of these quotations highlight that you need to include some text with your plots to help the user construct their understanding of what you're trying to show them.
@@ -1627,7 +1837,7 @@ Use tables as infrequently as possible. If you absolutely must include a table, 
 \hypertarget{alt-text}{%
 \subsection{Alt Text}\label{alt-text}}
 
-Any graphical element you include in your App \textbf{MUST} have an alternative (assistive) text description (``alt text''). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formated will handle this automatically.)
+Any graphical element you include in your App \textbf{MUST} have an alternative (assistive) text description (``alt text''). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
 
 \hypertarget{adding-alt-text-to-static-images}{%
 \subsubsection{Adding Alt Text to Static Images}\label{adding-alt-text-to-static-images}}
@@ -1647,6 +1857,8 @@ Consider adding a loading bar to show the process for intense computations; this
 \hypertarget{wording}{%
 \chapter{Wording}\label{wording}}
 
+This chapter focuses on the wording that we use within the BOAST Apps.
+
 \hypertarget{general-guidelines}{%
 \section{General Guidelines}\label{general-guidelines}}
 
@@ -1660,7 +1872,18 @@ Since these apps are for \emph{teaching and learning}, we need to use language t
 \begin{itemize}
 \tightlist
 \item
-  Discussing values of statistics
+  Sloppy Language: Vagueness
+
+  \begin{itemize}
+  \tightlist
+  \item
+    BAD: ``We want to explore how these averages differ.''
+  \item
+    NEUTRAL/FAIR: ``We want to explore how these means differ.''
+    \_ GOOD: ``We want to explore how the values of the \emph{sample arithmetic mean} (\emph{SAM}) varies between these groups.''
+  \end{itemize}
+\item
+  Sloppy Language: Discussing values of statistics
 
   \begin{itemize}
   \tightlist
@@ -1694,7 +1917,7 @@ Since these apps are for \emph{teaching and learning}, we need to use language t
 \hypertarget{popovers}{%
 \section{Popovers}\label{popovers}}
 
-The term ``Popovers'' refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object. The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is \texttt{shinyBS::bsPopover}. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear.
+The term ``Popovers'' refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object (typically user inputs or graphs). The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is \texttt{shinyBS::bsPopover}. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear.
 
 Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical for a person to successfully use your App in a popover, you are using popovers \textbf{INCORRECTLY}.
 
@@ -1724,6 +1947,149 @@ Restrict any usage of a popover to something short and non-vital for your App's 
 
 The visual appearance of the popover will be control by the central BOAST CSS file.
 
+\hypertarget{dealing-with-differing-vocabularies}{%
+\section{Dealing with Differing Vocabularies}\label{dealing-with-differing-vocabularies}}
+
+One of the most challenging aspects of Wording is the fact that we have to deal with the Jingle/Jangle problem.
+
+\hypertarget{jingleJangle}{%
+\subsection{The Jingle/Jangle Problem}\label{jingleJangle}}
+
+A term ``jingles'' when people use that term to refer to two (or more) different concepts. This is also know as a term having lexical ambiguity. For instance, \emph{random} jingles when people use the term to convey haphazardness, arbitrariness, and/or an attribute of process. (Note: the only the third option is statistically valid.)
+
+On the other hand, a set of 2+ different terms ``jangle'' when they refer to the same concept. A good/classical example of this is skewness. Some people talk about left/right skewness, others negative/positive skewness, and others will talk about long left/long right tails. Each of these pairs refer to the same core concept, but evoke different mental images.
+
+\hypertarget{option-0-dictionarythesaurus}{%
+\subsection{Option 0: Dictionary/Thesaurus}\label{option-0-dictionarythesaurus}}
+
+There are a variety of ways in which we could handle this approach. One thought is to build a Dictionary/Thesaurus for BOAST. While we could go down this route, this represents a considerable undertaking and might become a long term goal.
+
+\hypertarget{hovertext}{%
+\subsection{Option 1: Hover Text}\label{hovertext}}
+
+The more immediate solution to differing vocabularies is for us to make use of hover text. This approach is appealing in that the user doesn't have to leave your App (like going to a dictionary/thesaurus) and the content of these tips is not critical to using your App. That is to say, the information is available for those who might need a quick reminder but does not take up permanent screen space.
+
+To use this tool you'll need to make sure that you install and load the \texttt{tippy} package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tippy"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Suppose that we want to add the hover text to the the word ``positive'' in the following sentence:
+
+\begin{quote}
+A positively skewed histogram will hoave potential outliers that are larger than the main modal clump(s).
+\end{quote}
+
+We would need to do the following in our \texttt{app.R} (or \texttt{ui.R}) file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tippy)}
+\CommentTok{#[code omitted]}
+\KeywordTok{dashboardPage}\NormalTok{(}
+    \DataTypeTok{skin =} \StringTok{"blue"}\NormalTok{,}
+    \KeywordTok{dashboardHeader}\NormalTok{(}
+        \CommentTok{#[code omitted]}
+\NormalTok{    ),}
+    \KeywordTok{dashboardBody}\NormalTok{(}
+        \CommentTok{#[code omitted]}
+        \KeywordTok{tabItem}\NormalTok{(}
+            \DataTypeTok{tabName =} \StringTok{"Overview"}\NormalTok{,}
+            \KeywordTok{h1}\NormalTok{(}\StringTok{"Exploring Skewness"}\NormalTok{),}
+            \KeywordTok{p}\NormalTok{(}\StringTok{"A "}\NormalTok{,}
+\NormalTok{              tippy}\OperatorTok{::}\KeywordTok{tippy}\NormalTok{(}\DataTypeTok{text =} \StringTok{"positively skewed"}\NormalTok{,}
+                           \DataTypeTok{tooltip =} \StringTok{"Sometimes called 'long right tail' or 'right skewed'"}\NormalTok{,}
+                           \DataTypeTok{arrow =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{placement =} \StringTok{"auto"}\NormalTok{),}
+            \StringTok{" histogram will have potential outliers that are larger than}
+\StringTok{            the main modal clump(s)."}\NormalTok{),}
+    \CommentTok{#[code omitted]}
+\NormalTok{        ))) }
+\end{Highlighting}
+\end{Shaded}
+
+There are several things to notice in the example:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The \texttt{tippy} call is part of the paragraph environment. If the text is going to be part of a list, then the \texttt{tippy} call should be part of a list item.
+\item
+  There are four (4) required arguments:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    \texttt{text}---the words that will be part of the page\\
+  \item
+    \texttt{tooltip}---the words that will appear/disappear when the user hovers/focuses on the \texttt{text}
+  \item
+    \texttt{arrow\ =\ TRUE}---this creates an arrow from the \texttt{tooltip} to the \texttt{text}. Make sure to set this as \texttt{TRUE}
+  \item
+    \texttt{placement}---controls where the the \texttt{tooltip} appears in relation to the \texttt{text}. While there are multiple values you could use here, we recommend using \texttt{auto} to allow the App to determine the best position. If you want to override this, then you should use values of \texttt{top}(shows above) or\texttt{bottom} (shows below).
+  \end{enumerate}
+\item
+  Be sure to include spaces around text that appears before and after the \texttt{tippy} element.
+\item
+  Don't forget to put commas between the text and the \texttt{tippy} element. These won't appear in your App but allow R to see that there are multiple elements.
+\end{enumerate}
+
+\hypertarget{choosing-terms-jangle}{%
+\subsubsection{Choosing Terms-Jangle}\label{choosing-terms-jangle}}
+
+If you are going to make use of hover text to combat a jangle problem, you are going to have to make a decision about what words/phrase will be part of the app (i.e., the \texttt{text}) and which words/phrases will be part of the hover text (i.e., the \texttt{tooltip}).
+
+You should make this decision in conjunction with a faculty member. Our recommendations are to use the word or phrase which:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Best supports students in building productive meanings
+\item
+  Best supports students in seeing coherence between a variety of concepts
+\end{enumerate}
+
+\textbf{Appealing to ``tradition'' or ``this what most people do'' IS NOT a valid justification.} Again, these apps are to support students in building their understandings, we must do better.
+
+In the \texttt{tippy} example above, the ordering of terms is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  positively skewed
+\item
+  long right tail
+\item
+  right skewed
+\end{enumerate}
+
+This ordering reflects the ordering of most productive and coherent. ``Positively skewed'' works regardless of the orientation of the histogram (see Figure \ref{fig:skewEx1}) as well as directly connecting to the statistic \emph{sample skewness}. The later two only make sense in one orientation and do not connect to \emph{sample skewness}. ``Long right tail'' is preferable to ``right skewed'' as this phrasing helps students avoid the common belief that the position term (right/left) is about where the bulk of the observations are.
+
+\includegraphics{BOAST_style_guide_files/figure-latex/skewEx1-1.pdf} \includegraphics{BOAST_style_guide_files/figure-latex/skewEx1-2.pdf}
+
+\hypertarget{choosing-terms-jingle}{%
+\subsubsection{Choosing Terms-Jingle}\label{choosing-terms-jingle}}
+
+We will always use the statistical/probabilistic meaning for a term, never the colloquial/everyday/non-technical meaning(s).
+
+\hypertarget{option-2-entry-on-the-prerequisites-tabpage}{%
+\subsection{Option 2: Entry on the Prerequisites Tab/Page}\label{option-2-entry-on-the-prerequisites-tabpage}}
+
+Another option that you could do for both the jingle and jangle problems is to add an entry on the Prerequisites page. If you only have a jangle problem, you can use the \protect\hyperlink{hovertext}{Hover Text} option.
+
+Option 2 can be combined with Option 1.
+
+\hypertarget{footnotes}{%
+\section{Footnotes}\label{footnotes}}
+
+We recommend avoiding footnotes in favor of \protect\hyperlink{hovertext}{Hover Text}.
+
 \hypertarget{documentation}{%
 \chapter{Documentation}\label{documentation}}
 
@@ -1732,9 +2098,9 @@ These apps are the product of your hard work and are part of your academic recor
 \hypertarget{references-1}{%
 \section{References}\label{references-1}}
 
-All apps will need a References Tab. This is where you'll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgements.
+All apps will need a References Tab. This is where you'll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgments.
 
-\textbf{NOTE:} listing something in the Acknowledgements DOES NOT waive this requirement.
+\textbf{NOTE:} listing something in the Acknowledgments DOES NOT waive this requirement.
 
 You may use any citation style you wish, but be consistent. Recommended citation styles include APA and AmStat. Here is a starting code block for you to use:
 
@@ -1781,7 +2147,7 @@ You will need to place citations in \emph{\textbf{two}} places: in the Reference
 Use the following format:
 
 \begin{quote}
-Author. (Date). Title of program/source code (Version number, if applicable). {[}type of code{]}. Retrieved from \textless{} URL \textgreater{}.
+Author. (Date). Title of program/source code (Version number, if applicable). {[}type of code{]}. Retrieved from \textless{} URL \textgreater.
 \end{quote}
 
 For example,
@@ -1832,7 +2198,7 @@ Notice, that the format of the R package will depend on whether there is an arti
 Pictures, drawings, photographs, images, etc. are typically copyrighted. When you're selecting images, make sure that the images are Open Source/Copyright Free/Royalty Free/Public Domain. Additionally, include a reference to where the pictures came from in the Overview Page. The basic format to use is:
 
 \begin{quote}
-LastName, First Initial. (Year). Title of artwork. {[}Format{]}. Retrieved from \textless{} URL \textgreater{}.
+LastName, First Initial. (Year). Title of artwork. {[}Format{]}. Retrieved from \textless{} URL \textgreater.
 \end{quote}
 
 \hypertarget{data}{%
@@ -1949,7 +2315,7 @@ Look for any issues that you might be able to address before you hand off your A
 \hypertarget{addTools}{%
 \chapter{Additional Tools}\label{addTools}}
 
-Here are a few additional tools that can help you with App development.
+Here are a few additional tools that can help you with App development:
 
 \begin{itemize}
 \tightlist
@@ -1964,6 +2330,14 @@ Here are a few additional tools that can help you with App development.
   check
 \end{itemize}
 
-\bibliography{book.bib,packages.bib}
+\textbf{R Code}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"funchir"}\NormalTok{, }\StringTok{"lintr"}\NormalTok{, }\StringTok{"styler"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+  \bibliography{book.bib,packages.bib}
 
 \end{document}

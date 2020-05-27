@@ -1,5 +1,7 @@
 # Wording {#wording}
 
+This chapter focuses on the wording that we use within the BOAST Apps.
+
 ## General Guidelines
 When writing the content for your App, you will want to keep in mind that our apps have students as the primary audience. Thus, we need to make sure that we use language that is appropriate. Seek to use complete sentences that convey what you intend. Have someone else take a look at your content and then tell you what they believe the text to be saying. If what they say is consistent with what you intended, great. If not, then you need to revise your text.
 
@@ -8,7 +10,11 @@ conciseness/brevity.__ While we don't necessarily want a wall of text, there sho
 
 Since these apps are for *teaching and learning*, we need to use language that is accurate and supports students in constructing productive meanings. This means that we need to avoid sloppy language, re-enforcing problematic conceptions, and supporting fallacies. For example,
 
-+ Discussing values of statistics
++ Sloppy Language: Vagueness
+    - BAD: "We want to explore how these averages differ."
+    - NEUTRAL/FAIR: "We want to explore how these means differ."
+    _ GOOD: "We want to explore how the values of the *sample arithmetic mean* (*SAM*) varies between these groups."
++ Sloppy Language: Discussing values of statistics
     - BAD: “The mean is 6.”
     - GOOD: “The value of the *sample arithematic mean* for this data is 6 units/object.”
 + Problematic conceptions
@@ -19,7 +25,7 @@ Since these apps are for *teaching and learning*, we need to use language that i
     - GOOD: "If we were to repeat the entire study infinitely many times, then 95% of the time we will make an interval that captures the true population proportion."
 
 ## Popovers {#popovers}
-The term "Popovers" refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object. The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is `shinyBS::bsPopover`. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear. 
+The term "Popovers" refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object (typically user inputs or graphs). The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is `shinyBS::bsPopover`. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear. 
 
 Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical for a person to successfully use your App in a popover, you are using popovers __INCORRECTLY__.
 
@@ -36,3 +42,110 @@ Restrict any usage of a popover to something short and non-vital for your App's 
 + `placement`: this will control where the popover appears. Choose the option (top, bottom, left, right) that works best for your space. Ensure that the placement does not cover any controls or other vital information.
 
 The visual appearance of the popover will be control by the central BOAST CSS file.
+
+
+## Dealing with Differing Vocabularies
+
+One of the most challenging aspects of Wording is the fact that we have to deal with the Jingle/Jangle problem.
+
+### The Jingle/Jangle Problem {#jingleJangle}
+A term "jingles" when people use that term to refer to two (or more) different concepts. This is also know as a term having lexical ambiguity. For instance, *random* jingles when people use the term to convey haphazardness, arbitrariness, and/or an attribute of process. (Note: the only the third option is statistically valid.)
+
+On the other hand, a set of 2+ different terms "jangle" when they refer to the same concept. A good/classical example of this is skewness. Some people talk about left/right skewness, others negative/positive skewness, and others will talk about long left/long right tails. Each of these pairs refer to the same core concept, but evoke different mental images.
+
+### Option 0: Dictionary/Thesaurus
+There are a variety of ways in which we could handle this approach. One thought is to build a Dictionary/Thesaurus for BOAST. While we could go down this route, this represents a considerable undertaking and might become a long term goal.
+
+### Option 1: Hover Text {#hovertext}
+The more immediate solution to differing vocabularies is for us to make use of hover text. This approach is appealing in that the user doesn't have to leave your App (like going to a dictionary/thesaurus) and the content of these tips is not critical to using your App. That is to say, the information is available for those who might need a quick reminder but does not take up permanent screen space.
+
+To use this tool you'll need to make sure that you install and load the `tippy` package.
+
+```{r, eval = FALSE}
+install.packages("tippy")
+```
+
+Suppose that we want to add the hover text to the the word "positive" in the following sentence: 
+
+> A positively skewed histogram will hoave potential outliers that are larger than the main modal clump(s).
+
+We would need to do the following in our `app.R` (or `ui.R`) file:
+
+```{r tippyEx1, echo=TRUE, eval=FALSE}
+library(tippy)
+#[code omitted]
+dashboardPage(
+    skin = "blue",
+    dashboardHeader(
+        #[code omitted]
+    ),
+    dashboardBody(
+        #[code omitted]
+        tabItem(
+            tabName = "Overview",
+            h1("Exploring Skewness"),
+            p("A ",
+              tippy::tippy(text = "positively skewed",
+                           tooltip = "Sometimes called 'long right tail' or 'right skewed'",
+                           arrow = TRUE, placement = "auto"),
+            " histogram will have potential outliers that are larger than
+            the main modal clump(s)."),
+    #[code omitted]
+        ))) 
+```
+
+There are several things to notice in the example:
+
+1. The `tippy` call is part of the paragraph environment. If the text is going to be part of a list, then the `tippy` call should be part of a list item.
+2. There are four (4) required arguments:
+    a. `text`---the words that will be part of the page  
+    b. `tooltip`---the words that will appear/disappear when the user hovers/focuses on the `text`
+    c. `arrow = TRUE`---this creates an arrow from the `tooltip` to the `text`. Make sure to set this as `TRUE`
+    d. `placement`---controls where the  the `tooltip` appears in relation to the `text`. While there are multiple values you could use here, we recommend using `auto` to allow the App to determine the best position. If you want to override this, then you should use values of `top`(shows above) or`bottom` (shows below).
+3. Be sure to include spaces around text that appears before and after the `tippy` element.
+4. Don't forget to put commas between the text and the `tippy` element. These won't appear in your App but allow R to see that there are multiple elements.
+
+#### Choosing Terms-Jangle
+If you are going to make use of hover text to combat a jangle problem, you are going to have to make a decision about what words/phrase will be part of the app (i.e., the `text`) and which words/phrases will be part of the hover text (i.e., the `tooltip`).
+
+You should make this decision in conjunction with a faculty member. Our recommendations are to use the word or phrase which:
+
+1. Best supports students in building productive meanings
+2. Best supports students in seeing coherence between a variety of concepts
+
+__Appealing to "tradition" or "this what most people do" IS NOT a valid justification.__ Again, these apps are to support students in building their understandings, we must do better.
+
+In the `tippy` example above, the ordering of terms is:
+
+1. positively skewed
+2. long right tail
+3. right skewed
+
+This ordering reflects the ordering of most productive and coherent. "Positively skewed" works regardless of the orientation of the histogram (see Figure \@ref(fig:skewEx1)) as well as directly connecting to the statistic *sample skewness*. The later two only make sense in one orientation and do not connect to *sample skewness*. "Long right tail" is preferable to "right skewed" as this phrasing helps students avoid the common belief that the position term (right/left) is about where the bulk of the observations are.
+
+```{r skewEx1, echo=FALSE, fig.width=3, fig.height=4, fig.cap="Same Data, Two Orientations", fig.show='hold'}
+par(mar = c(4, 4, 0.1, 0.1))
+df1 <- data.frame(
+    data = rexp(150, rate = 3)
+)
+
+ggplot2::ggplot(df1) +
+    ggplot2::geom_histogram(mapping= ggplot2::aes(y = data), fill="red", binwidth = 0.5, col = "black", closed="left", boundary=0) +
+    ggplot2::theme_bw() 
+
+ggplot2::ggplot(df1) +
+    ggplot2::geom_histogram(mapping = ggplot2::aes(x = data), fill = "blue", col="black", binwidth = 0.5, closed="left", boundary=0) +
+    ggplot2::theme_bw()
+
+```
+
+#### Choosing Terms-Jingle
+We will always use the statistical/probabilistic meaning for a term, never the colloquial/everyday/non-technical meaning(s).
+
+### Option 2: Entry on the Prerequisites Tab/Page
+Another option that you could do for both the jingle and jangle problems is to add an entry on the Prerequisites page. If you only have a jangle problem, you can use the [Hover Text](#hovertext) option.
+
+Option 2 can be combined with Option 1.
+
+## Footnotes
+We recommend avoiding footnotes in favor of [Hover Text](#hovertext).

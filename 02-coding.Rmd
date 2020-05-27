@@ -222,7 +222,7 @@ The order for your code in the `server.R` file:
 
 ## Metadata {#metadata}
 
-Each App will need the following metadata in either the `app.R` or the `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
+Your App will need the following metadata in either the `app.R` or the `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
 
 For now, use the following format:
 
@@ -282,18 +282,18 @@ If you come across an app that has in-line CSS OR calls to a CSS file that isn't
 
 Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
 
-+ Use [Title Case](https://en.wikipedia.org/wiki/Letter_case#Title_case) (no camelCase)
++ Use [Title Case](https://en.wikipedia.org/wiki/Letter_case#Title_case) (not camelCase)
 + Use underscores ( _ ) instead of spaces
 + Match the App name as closely as possible
 + You have a 100 character limit
 
-While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your respository. 
+While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository. 
 
 If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
 
 ## Using rlocker {#rlocker}
 
-Because these Apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The [rlocker](https://github.com/rpc5102/rlocker) package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
+Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The [rlocker](https://github.com/rpc5102/rlocker) package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
 
 ### Installing
 

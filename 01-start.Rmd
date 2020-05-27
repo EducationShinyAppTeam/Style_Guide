@@ -75,3 +75,5 @@ git clone git@github.com:EducationShinyAppTeam/Sample_App.git
 
 - [Git Handbook](https://guides.github.com/introduction/git-handbook/)
 - [Resources to learn Git](https://try.github.io/)
+- [Happy Git and GitHub for the userR](https://happygitwithr.com/)
+

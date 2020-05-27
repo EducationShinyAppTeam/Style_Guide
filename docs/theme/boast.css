@@ -845,3 +845,8 @@ create customized appearances. This is NOT recommended.*/
 .grid-5x5 {
   grid-template-columns: repeat(5, 1fr);
 }
+
+/*Tippy Controls*/
+.tippy {
+  text-decoration: underline;
+}
