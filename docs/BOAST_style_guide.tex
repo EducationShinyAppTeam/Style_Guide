@@ -103,9 +103,6 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\usepackage[normalem]{ulem}
-% Avoid problems with \sout in headers with hyperref
-\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -123,7 +120,7 @@
 
 \title{The BOAST Style Guide}
 \author{Neil Hatfield (\href{mailto:njh5464@psu.edu}{\nolinkurl{njh5464@psu.edu}}) and Robert Carey (\href{mailto:rpc5102@psu.edu}{\nolinkurl{rpc5102@psu.edu}})}
-\date{27 May 2020}
+\date{28 May 2020}
 
 \begin{document}
 \maketitle
@@ -178,14 +175,6 @@ Before you get too far into the Style Guide, we would like for you to take a mom
     \href{https://github.com/}{GitHub}\\
   \item
     \href{https://github.com/EducationShinyAppTeam}{EducationShinyAppTeam}
-  \item
-    \sout{RStudio Server}
-
-    \begin{itemize}
-    \tightlist
-    \item
-      Upon investigation the TLT and the Eberly RStudio Servers will not be useful for us to do testing. An alternate testing process will be explored.\\
-    \end{itemize}
   \item
     \href{https://teams.microsoft.com/l/team/19\%3a8423bc25992a4451952d8312b497324d\%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec\&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e}{BOAST} in Microsoft Teams (tied to your PSU AccessID)
   \end{enumerate}
@@ -311,6 +300,200 @@ Enter the following command in your terminal:
 \item
   \href{https://happygitwithr.com/}{Happy Git and GitHub for the userR}
 \end{itemize}
+
+\hypertarget{workflow}{%
+\section{Workflow}\label{workflow}}
+
+As you work on apps, both updating existing and developing new ones, moving through a workflow can help you organize yourself.
+
+\hypertarget{revisingupdating-existing-apps}{%
+\subsection{Revising/Updating Existing Apps}\label{revisingupdating-existing-apps}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read the Style Guide
+\item
+  Explore the existing apps in the \href{https://sites.psu.edu/shinyapps/}{book}
+\item
+  When you identify an app you wish to work on,
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Go to that app's repository in \href{https://github.com/EducationShinyAppTeam}{GitHub}
+  \item
+    Create new issues on GitHub to log both bugs and suggestions for improvements
+  \item
+    Create an issue specifically if the App currently does not abide by this Style Guide
+  \item
+    Optional--assign yourself to the issue
+  \end{enumerate}
+\item
+  Download the current version of the app by using either RStudio or GitHub Desktop.
+\item
+  Create a new branch for your developments.
+\item
+  Begin editing the code
+\item
+  As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
+\item
+  Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
+\item
+  When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (See Section \ref{testing}).
+\item
+  When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
+\item
+  Make any requested changes and re-push to your development branch. Update the Pull Request with a new comment.
+\end{enumerate}
+
+If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
+
+\hypertarget{creating-new-apps}{%
+\subsection{Creating New Apps}\label{creating-new-apps}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read the Style Guide
+\item
+  Identify a topic for your new App
+\item
+  Sketch out your plans for the App. \textbf{This should occur BEFORE you start coding.} Be sure that you include:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Suggested Title
+  \item
+    Goal of the app
+  \item
+    What will the user be doing (i.e., potential inputs)
+  \item
+    What will the user be experiencing (i.e., potential outputs)
+  \item
+    Relationships between various elements.
+  \end{enumerate}
+\item
+  When your plan \textbf{gets approval}, create a new repository on GitHub (See Section \ref{repo-naming}); you can initially load the Sample App template to this repository, if you wish.
+\item
+  Begin writing the code
+\item
+  As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
+\item
+  When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.
+\item
+  Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
+\item
+  When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (See Section \ref{testing}).
+\item
+  When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
+\item
+  Make any requested changes and re-push to your development branch. Update the Pull Request with a new comment.
+\end{enumerate}
+
+If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
+
+\hypertarget{testing}{%
+\section{Testing Your App}\label{testing}}
+
+To test your App beyond your local machine, we will be making use of TLT's RStudio Connect platform. You will need to following these directions.
+
+\hypertarget{set-uplogin-to-the-vpn}{%
+\subsection{Set Up/Login to the VPN}\label{set-uplogin-to-the-vpn}}
+
+Please refer to the following PSU Knowledge Basis Articles:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://pennstate.service-now.com/sp?id=kb_article\&sys_id=c628298bdb1d6f44a318fb671d961971}{VPN for Mac OS}
+\item
+  \href{https://pennstate.service-now.com/sp?id=kb_article_view\&sys_kb_id=c151310cdb85abc84222778ebf961957}{VPN for Windows}
+\item
+  \href{https://pennstate.service-now.com/sp?id=kb_article_view\&sys_kb_id=1de84eb6dbd5ab44a318fb671d9619a5}{VPN for Apple iOS}
+\item
+  \href{https://pennstate.service-now.com/sp?id=kb_article_view\&sys_kb_id=a35e0a7edb59ab44a318fb671d961964}{VPN for Android}
+\end{itemize}
+
+You MUST be logged into the PSU VPN to both upload and test your App on each device.
+
+\hypertarget{connecting-your-rstudio-to-tlts-rstudio-connect}{%
+\subsection{Connecting Your RStudio to TLT's RStudio Connect}\label{connecting-your-rstudio-to-tlts-rstudio-connect}}
+
+You only need to do this step once.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  After you've logged into the PSU VPN, go to \href{https://rstudio-connect.tlt.psu.edu:3939/connect}{TLT's RStudio Connect} and log in using your PSU ID.
+\item
+  Once logged in, click on the Publish button
+
+  \begin{figure}
+  \includegraphics[width=12.26in]{images/publish1} \caption{Click the Publish Button}\label{fig:testing1}
+  \end{figure}
+\item
+  Select Shiny App and a pop up window will appear.
+\item
+  Follow the steps in this window (especially Step 4) to set up the connection.
+\end{enumerate}
+
+\hypertarget{checking-youve-connected}{%
+\subsubsection{Checking You've Connected}\label{checking-youve-connected}}
+
+You can check to see if you've connected by going into RStudio's Options and looking at the Publishing tab. You should see a similar entry as what is in the green box below:
+
+\begin{figure}
+
+{\centering \includegraphics[width=17.78in]{images/publish2} 
+
+}
+
+\caption{Check Your Publishing Profile}\label{fig:testing2}
+\end{figure}
+
+\hypertarget{publishing-your-app-for-testing}{%
+\subsection{Publishing Your App for Testing}\label{publishing-your-app-for-testing}}
+
+Make sure that you are connected to PSU's VPN and that you've already connected your RStudio to TLT's server.
+
+Click on the Publishing Icon, located just to the right of the Run App button. Be sure to select the TLT Server.
+
+\hypertarget{configuring-for-testing}{%
+\subsection{Configuring for Testing}\label{configuring-for-testing}}
+
+Once your App has been published, a new window should open in your browser that shows your App plus the optional controls.
+
+\begin{figure}
+
+{\centering \includegraphics[width=18.67in]{images/publish3} 
+
+}
+
+\caption{Successful Publish and Settings}\label{fig:testing3}
+\end{figure}
+
+In Figure \ref{fig:testing3}, you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
+
+If you want, you can add collaborators as I did in the example (orange box). This is not required.
+
+The most important piece is the Content URL (marked with the blue star). You'll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device they are using.
+
+\hypertarget{check-the-logs}{%
+\subsection{Check the Logs}\label{check-the-logs}}
+
+As you test your App, you'll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in Figure \ref{fig:testing3}) to view.
+
+\hypertarget{problems}{%
+\subsection{Problems?}\label{problems}}
+
+If you run into problem either publishing your App or getting the App to launch on the TLT, please reach out to Neil and Bob.
 
 \hypertarget{coding}{%
 \chapter{Coding Style}\label{coding}}
@@ -804,7 +987,7 @@ The main purpose of this package is to help create meaningful- structured- xAPI 
 \textbf{Neil} (Actor) \textbf{answered} (Verb) \textbf{Question 1} (Object) \textbf{correctly} with the answer \textbf{true} (Result).
 \end{quote}
 
-This is a good way to frame it in your mind when beginning write collection statements. Which brings us to our next part, writing collection functions.
+This is a good way to frame it in your mind when beginning to write collection functions. Which brings us to our next part, writing collection functions.
 
 Out of the box, \texttt{rlocker} does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like \href{https://www.ht2labs.com/learning-locker-community/overview/}{Learning Locker}, it is important to transform it in a way that makes sense.
 
@@ -996,6 +1179,14 @@ The icon for this Tab must be ``book''.
 
 Use the word ``Prerequisites'' rather than ``Pre-reqs'', ``Prereqs'', or ``Pre-requisites''.
 
+Keep in mind that there are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites tab.
+
+Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App's statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.
+
+Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you're using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus.
+
+Keep in mind that Contextual Prerequisites are different than context which should be part of the Activity Tab. If the information is necessary to interpret sliders/graphs and is \emph{specific}, then you should include this information in the Activity Tab. If the information helps the user say ``Oh, that's what they mean by {[}blank{]}'', that is good sign of something to put in the Prerequisites Tab.
+
 \hypertarget{activity-tabs}{%
 \subsubsection{Activity Tab(s)}\label{activity-tabs}}
 
@@ -1112,7 +1303,7 @@ The tabs inside the body should automatically appear horizontally and along the 
 \hypertarget{common-elements}{%
 \section{Common Elements}\label{common-elements}}
 
-In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered and buttons.
+In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, correct/incorrect indicators, and animation buttons.
 
 For information about popovers, rollovers, hover text, or tooltips, please see Section \ref{popovers}.
 
@@ -1298,6 +1489,38 @@ In games, you can give the user a visual cue as to whether they are correct or i
 You can save these two images by right-clicking on them and selecting ``Save Image As\ldots{}''. You will need to put them in the \texttt{www} folder/directory of your App.
 
 Their placement in your App will depend upon what makes the most sense.
+
+\hypertarget{animation-buttons}{%
+\subsection{Animation Buttons}\label{animation-buttons}}
+
+One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable.
+
+To enable this, you'll need to make use of the \texttt{animate} argument:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#[code omitted]}
+\KeywordTok{sliderInput}\NormalTok{(}
+  \DataTypeTok{inputId =} \StringTok{"mtcAlpha"}\NormalTok{,}
+  \DataTypeTok{label =} \StringTok{"Set your threshold level, }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{(}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{alpha_\{UT\}}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{):"}\NormalTok{,}
+  \DataTypeTok{min =} \FloatTok{0.01}\NormalTok{,}
+  \DataTypeTok{max =} \FloatTok{0.25}\NormalTok{,}
+  \DataTypeTok{value =} \FloatTok{0.1}\NormalTok{,}
+  \DataTypeTok{step =} \FloatTok{0.01}\NormalTok{,}
+  \DataTypeTok{animate =} \KeywordTok{animationOptions}\NormalTok{(}
+    \DataTypeTok{interval =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{loop =} \OtherTok{TRUE}\NormalTok{))}
+
+\CommentTok{#[code omitted]}
+\end{Highlighting}
+\end{Shaded}
+
+You can set \texttt{animate=TRUE}, \texttt{animate=FALSE} or invoke the \texttt{animationOptions} function as we've done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (\texttt{interval}, in milliseconds) and should the animation start over once the slider reaches the maximum (\texttt{loop}).
+
+The \texttt{interval} is going to the most challenging value to figure out. This timer \emph{\textbf{ignores}} everything else; that is, it doesn't wait to see whether your plot has updated. Remember, the more complicated the process is that generates your plot, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While \texttt{renderCachePlot} can help speed things up, keep in mind that you still might need to play around with the \texttt{interval} value to ensure smooth functionality.
+
+Make sure when you're testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.
+
+The styling of the play/pause button will be controlled by the BOAST CSS file.
 
 \hypertarget{colors}{%
 \section{Colors}\label{colors}}
@@ -1834,15 +2057,71 @@ To force \texttt{ggplot2} to place (0, 0) in the lower-left corner and to contro
 
 Use tables as infrequently as possible. If you absolutely must include a table, you will need to decide what the role of your table is. This is an Accessibility issue that you \textbf{MUST} pre-plan for. Screen readers will poorly communicate tables if you fail to set the role appropriately. \textbf{Talk to Neil and Bob} before using a table.
 
+\hypertarget{static-images}{%
+\subsection{Static Images}\label{static-images}}
+
+Static image refers to any image you're using in your App which is not produced by \texttt{R}. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.
+
+Within your App's folder/directory, there needs to be a sub-folder/directory called \texttt{www}. This is the place where you'll need to place ALL static image files.
+
+\hypertarget{adding-an-image}{%
+\subsubsection{Adding an Image}\label{adding-an-image}}
+
+To include the image in your App, you'll need to make use of the image tag, \texttt{img}. When you run your App, Shiny automatically knows to check the \texttt{www} folder any time the \texttt{img} tag gets called. Here is an example supposing that the check mark image for correct answers is in the app's \texttt{www} folder:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#[code omitted]}
+\KeywordTok{div}\NormalTok{(}\DataTypeTok{align =} \StringTok{"right"}\NormalTok{,}
+    \KeywordTok{img}\NormalTok{(}\DataTypeTok{src =} \StringTok{"check.PNG"}\NormalTok{,}
+        \DataTypeTok{alt =} \StringTok{"Success, you are correct"}\NormalTok{,}
+        \DataTypeTok{width =} \DecValTok{25}\NormalTok{, }\CommentTok{#these are in pixels}
+        \DataTypeTok{height =} \DecValTok{25}\NormalTok{,}
+\NormalTok{        ))}
+\CommentTok{#[code omitted]}
+\end{Highlighting}
+\end{Shaded}
+
+You'll notice that we've wrapped the \texttt{img} call in a \texttt{div} call. The \texttt{div} call allows us to specify that we want the image to be right aligned; you could also do left or center. You can replace the \texttt{div} call with the paragraph environment and include text on either side, effectively making your image part of the text.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#[code omitted]}
+\KeywordTok{p}\NormalTok{(}\StringTok{"Check your answer here -->"}\NormalTok{,}
+  \KeywordTok{img}\NormalTok{(}\DataTypeTok{src =} \StringTok{"check.PNG"}\NormalTok{,}
+      \DataTypeTok{alt =} \StringTok{"Success, you are correct"}\NormalTok{,}
+      \DataTypeTok{width =} \DecValTok{25}\NormalTok{, }\DataTypeTok{height =} \DecValTok{25}\NormalTok{),}
+  \StringTok{"<-- Check your answer here"}\NormalTok{),}
+\CommentTok{#[code omitted]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{sizing-and-positioning-your-image}{%
+\subsubsection{Sizing and Positioning Your Image}\label{sizing-and-positioning-your-image}}
+
+All image files have a native size that is part of that file. For instance, the check mark image is 270 x 250 pixels. However, we overrode that that sizing with the \texttt{width} and \texttt{height} arguments. How did we decide on 25 x 25? Honestly, through guess and checking. You'll need to think about how you're using the image and let that guide your decision making. There is no one size fits all solution. While finding an optimal size and position for your image can take some time, seeing bad settings is pretty obvious. Feel free to reach out to Neil and Bob for assistance.
+
 \hypertarget{alt-text}{%
 \subsection{Alt Text}\label{alt-text}}
 
 Any graphical element you include in your App \textbf{MUST} have an alternative (assistive) text description (``alt text''). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
 
+A good resource to check out is the \href{https://webaim.org/techniques/alttext/\#basics}{WebAIM Alternative Text} page.
+
 \hypertarget{adding-alt-text-to-static-images}{%
 \subsubsection{Adding Alt Text to Static Images}\label{adding-alt-text-to-static-images}}
 
-\emph{This section is under construction.}
+In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#[code omitted]}
+\KeywordTok{img}\NormalTok{(}\DataTypeTok{src =} \StringTok{"yourImage.PNG"}\NormalTok{,}
+    \DataTypeTok{alt =} \StringTok{"Short description of what's in the pic"}\NormalTok{,}
+    \DataTypeTok{width =} \DecValTok{25}\NormalTok{, }\DataTypeTok{height =} \DecValTok{25}\NormalTok{)}
+\CommentTok{#[code omitted]}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{adding-alt-text-graphs}{%
 \subsubsection{Adding Alt Text Graphs}\label{adding-alt-text-graphs}}

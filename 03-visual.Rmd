@@ -93,7 +93,15 @@ If your App needs to ensure that the user has the base understandings necessary 
 The icon for this Tab must be "book".
 
 Use the word "Prerequisites" rather than "Pre-reqs", "Prereqs", or "Pre-requisites". 
-      
+
+Keep in mind that there are two different types of prerequisites: technical/conceptual and contextual. Both of these  go into the Prerequisites tab.
+
+Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App's statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.
+
+Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you're using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus. 
+
+Keep in mind that Contextual Prerequisites are different than context which should be part of the Activity Tab. If the information is necessary to interpret sliders/graphs and is *specific*, then you should include this information in the Activity Tab. If the information helps the user say "Oh, that's what they mean by [blank]", that is good sign of something to put in the Prerequisites Tab.
+
 ####  Activity Tab(s)
 This is the heart of your App and you are required to have at least one.
 
@@ -151,7 +159,7 @@ When you go to make a set of tab panels you will need to first create a `tabsetP
 The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
 
 ## Common Elements
-In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered and buttons.
+In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, correct/incorrect indicators, and animation buttons.
 
 For information about popovers, rollovers, hover text, or tooltips, please see Section \@ref(popovers).
 
@@ -244,6 +252,35 @@ knitr::include_graphics("images/cross.png")
 You can save these two images by right-clicking on them and selecting "Save Image As...". You will need to put them in the `www` folder/directory of your App.
 
 Their placement in your App will depend upon what makes the most sense.
+
+### Animation Buttons
+One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable. 
+
+To enable this, you'll need to make use of the `animate` argument:
+
+```{r animateEx1, echo=TRUE, eval=FALSE}
+#[code omitted]
+sliderInput(
+  inputId = "mtcAlpha",
+  label = "Set your threshold level, \\(\\alpha_{UT}\\):",
+  min = 0.01,
+  max = 0.25,
+  value = 0.1,
+  step = 0.01,
+  animate = animationOptions(
+    interval = 1000, loop = TRUE))
+
+#[code omitted]
+
+```
+
+You can set `animate=TRUE`, `animate=FALSE` or invoke the `animationOptions` function as we've done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (`interval`, in milliseconds) and should the animation start over once the slider reaches the maximum (`loop`). 
+
+The `interval` is going to the most challenging value to figure out. This timer *__ignores__* everything else; that is, it doesn't wait to see whether your plot has updated. Remember, the more complicated the process is that generates your plot, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While `renderCachePlot` can help speed things up, keep in mind that you still might need to play around with the `interval` value to ensure smooth functionality.  
+
+Make sure when you're testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.
+
+The styling of the play/pause button will be controlled by the BOAST CSS file.
 
 ## Colors
 
@@ -786,7 +823,7 @@ __Note:__ The text in your plot might not behave well for dynamic resizing on di
 ## Graphics {#graphics}
 One of the most powerful tools we have in Statistics and Data Science is graphics. This includes images/pictures, graphs/plots, and tables. You will want to make sure that all graphical elements are appropriately sized in the Body. If there is text in a static image/picture, you'll need to make sure that the text is legible on a variety of screen sizes.
 
-We've already discussed both issues of color and text size in plots. For additional considerations, please refer to the following readings (ordered from most important to least):  
+We've already discussed both issues of color and text size in plots. For additional considerations, please refer to the following readings (ordered from most important to least):
 
   - [Tufte-Fundamental Principles of Analytical Design](https://www.dropbox.com/s/hb52991v09p8q91/Tufte%20-%202006%20-%20The%20Fundamental%20principles%20of%20analytical%20design.pdf?dl=0)
   - [Tufte-Chartjunk](https://www.dropbox.com/s/z8yrf4eqph6c2h4/Tufte%20-%202001%20-%20Chartjunk%20Vibrations%2C%20grids%2C%20and%20ducks.pdf?dl=0)  
@@ -820,11 +857,60 @@ g1 + ggplot2::scale_x_continuous(expand = expansion(mult = c(1,2), add = 0)) +
 ### Tables
 Use tables as infrequently as possible. If you absolutely must include a table, you will need to decide what the role of your table is. This is an Accessibility issue that you __MUST__ pre-plan for. Screen readers will poorly communicate tables if you fail to set the role appropriately. __Talk to Neil and Bob__ before using a table. 
 
+### Static Images
+Static image refers to any image you're using in your App which is not produced by `R`. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.
+
+Within your App's folder/directory, there needs to be a sub-folder/directory called `www`. This is the place where you'll need to place ALL static image files.
+
+#### Adding an Image
+
+To include the image in your App, you'll need to make use of the image tag, `img`. When you run your App, Shiny automatically knows to check the `www` folder any time the `img` tag gets called. Here is an example supposing that the check mark image for correct answers is in the app's `www` folder:
+
+```{r imageEx1, echo=TRUE, eval=FALSE}
+#[code omitted]
+div(align = "right",
+    img(src = "check.PNG",
+        alt = "Success, you are correct",
+        width = 25, #these are in pixels
+        height = 25,
+        ))
+#[code omitted]
+
+```
+
+You'll notice that we've wrapped the `img` call in a `div` call. The `div` call allows us to specify that we want the image to be right aligned; you could also do left or center. You can replace the `div` call with the paragraph environment and include text on either side, effectively making your image part of the text.
+
+```{r imageEx2, echo=TRUE, eval=FALSE}
+#[code omitted]
+p("Check your answer here -->",
+  img(src = "check.PNG",
+      alt = "Success, you are correct",
+      width = 25, height = 25),
+  "<-- Check your answer here"),
+#[code omitted]
+
+```
+
+#### Sizing and Positioning Your Image
+All image files have a native size that is part of that file. For instance, the check mark image is 270 x 250 pixels. However, we overrode that that sizing with the `width` and `height` arguments. How did we decide on 25 x 25? Honestly, through guess and checking. You'll need to think about how you're using the image and let that guide your decision making. There is no one size fits all solution. While finding an optimal size and position for your image can take some time, seeing bad settings is pretty obvious. Feel free to reach out to Neil and Bob for assistance.
+
 ### Alt Text
 Any graphical element you include in your App __MUST__ have an alternative (assistive) text description ("alt text"). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
 
+A good resource to check out is the [WebAIM Alternative Text](https://webaim.org/techniques/alttext/#basics) page.
+
 #### Adding Alt Text to Static Images
-*This section is under construction.*
+
+In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:
+
+```{r altText1, echo=TRUE, eval=FALSE}
+#[code omitted]
+img(src = "yourImage.PNG",
+    alt = "Short description of what's in the pic",
+    width = 25, height = 25)
+#[code omitted]
+
+```
 
 #### Adding Alt Text Graphs
 *This section is under construction.*

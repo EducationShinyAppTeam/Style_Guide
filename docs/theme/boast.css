@@ -850,3 +850,13 @@ create customized appearances. This is NOT recommended.*/
 .tippy {
   text-decoration: underline;
 }
+
+/*Play/Pause Animation Controls*/
+.slider-animate-button {
+	opacity: 0.75;
+	color: black !important;
+}
+
+.slider-animate-container {
+	padding-top: 5px;
+}
