@@ -658,6 +658,26 @@ create customized appearances. This is NOT recommended.*/
 	border-color: var(--nittany-navy) !important;
 }
 
+.swal2-icon.swal2-error {
+	color: var(--original-1887) !important;
+	border-color: var(--original-1887) !important;
+}
+
+.swal2-icon.swal2-question {
+	color: var(--stately-atherton) !important;
+	border-color: var(--stately-atherton) !important;
+}
+
+.swal2-icon.swal2-warning {
+	color: var(--invent-orange) !important;
+	border-color: var(--invent-orange) !important;
+}
+
+.swal2-icon.swal2-success {
+	color: var(--green-opportunity) !important;
+	border-color: var(--green-opportunity) !important;
+}
+
 /*Collapsable Box Style Controls*/
 /*This needs updating for color schemes*/
 .skin-blue box, .skin-blue .box,
