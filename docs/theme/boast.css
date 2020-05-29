@@ -575,6 +575,7 @@ create customized appearances. This is NOT recommended.*/
 }
 
 /*Sweet Alert controls*/
+/* From using shinyalert */
 .sweet-alert h2, .sweet-alert p {
 	color: black !important;
 }
@@ -631,6 +632,19 @@ create customized appearances. This is NOT recommended.*/
 
 .skin-red .sweet-alert input {
 	border: 1pt solid var(--dawn-discovery) !important;
+}
+
+/*Sweet Alert 2 Controls*/
+/*From Using shinyWidgets*/
+.swal2-title {
+	color: black;
+	font-size: 2rem;
+}
+
+.swal2-content {
+	color: black;
+	font-size: 1rem;
+	text-align: left;
 }
 
 /*Collapsable Box Style Controls*/
