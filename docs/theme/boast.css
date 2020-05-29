@@ -637,14 +637,25 @@ create customized appearances. This is NOT recommended.*/
 /*Sweet Alert 2 Controls*/
 /*From Using shinyWidgets*/
 .swal2-title {
-	color: black;
-	font-size: 2rem;
+	color: black !important;
+	font-size: 2rem !important;
 }
 
 .swal2-content {
-	color: black;
-	font-size: 1rem;
-	text-align: left;
+	color: black !important;
+	font-size: 1.5rem !important;
+	text-align: left !important;
+}
+
+.swal2-icon {
+	width: 3em !important;
+	height: 3em !important;
+	line-height: 3em !important;
+}
+
+.swal2-icon.swal2-info {
+	color: var(--nittany-navy) !important;
+	border-color: var(--nittany-navy) !important;
 }
 
 /*Collapsable Box Style Controls*/
