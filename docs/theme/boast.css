@@ -374,13 +374,13 @@ h6, .h6 {
 }
 
 /*Hovertext/Rollover/Popover Title Controls*/
-/*.popover-title {
+.popover-title {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 1em;
 	color: black;
 	text-align: center;
-} */
+} 
 
 .skin-blue .popover-title {
 	background-color: var(--pennsylvania-sky);
