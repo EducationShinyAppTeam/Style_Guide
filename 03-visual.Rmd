@@ -899,6 +899,7 @@ Any graphical element you include in your App __MUST__ have an alternative (assi
 
 
 Here are several resources worth checking out:
+
 + [WebAIM Alternative Text Guide](https://webaim.org/techniques/alttext/#basics)
 + [Penn State's Image ALT Text Page](https://accessibility.psu.edu/images/alttext/)
 + [W3C's ALT Text Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
