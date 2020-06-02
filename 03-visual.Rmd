@@ -897,7 +897,11 @@ All image files have a native size that is part of that file. For instance, the 
 ### Alt Text
 Any graphical element you include in your App __MUST__ have an alternative (assistive) text description ("alt text"). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
 
-A good resource to check out is the [WebAIM Alternative Text](https://webaim.org/techniques/alttext/#basics) page.
+
+Here are several resources worth checking out:
++ [WebAIM Alternative Text Guide](https://webaim.org/techniques/alttext/#basics)
++ [Penn State's Image ALT Text Page](https://accessibility.psu.edu/images/alttext/)
++ [W3C's ALT Text Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
 
 #### Adding Alt Text to Static Images
 
