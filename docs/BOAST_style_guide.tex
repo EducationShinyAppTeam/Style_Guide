@@ -120,7 +120,7 @@
 
 \title{The BOAST Style Guide}
 \author{Neil Hatfield (\href{mailto:njh5464@psu.edu}{\nolinkurl{njh5464@psu.edu}}) and Robert Carey (\href{mailto:rpc5102@psu.edu}{\nolinkurl{rpc5102@psu.edu}})}
-\date{28 May 2020}
+\date{03 June 2020}
 
 \begin{document}
 \maketitle
@@ -701,7 +701,7 @@ Here are few more things to NOT do with the heading tags:
   Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(``Introduction to'', p(``my game'')))
 \end{itemize}
 
-For more information check out the \href{https://www.w3.org/WAI/tutorials/page-structure/headings/}{W3C's Tutorial}
+For more information check out the \href{https://www.w3.org/WAI/tutorials/page-structure/headings/}{W3C's Tutorial}.
 
 \hypertarget{paragraphs}{%
 \subsubsection{Paragraphs}\label{paragraphs}}
@@ -1179,13 +1179,68 @@ The icon for this Tab must be ``book''.
 
 Use the word ``Prerequisites'' rather than ``Pre-reqs'', ``Prereqs'', or ``Pre-requisites''.
 
-Keep in mind that there are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites tab.
+\hypertarget{types-of-prerequisites}{%
+\paragraph{Types of Prerequisites}\label{types-of-prerequisites}}
+
+There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites tab.
 
 Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App's statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.
 
 Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you're using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus.
 
 Keep in mind that Contextual Prerequisites are different than context which should be part of the Activity Tab. If the information is necessary to interpret sliders/graphs and is \emph{specific}, then you should include this information in the Activity Tab. If the information helps the user say ``Oh, that's what they mean by {[}blank{]}'', that is good sign of something to put in the Prerequisites Tab.
+
+\hypertarget{text-links-in-prerequisites-and-beyond}{%
+\paragraph{Text Links in Prerequisites (and Beyond)}\label{text-links-in-prerequisites-and-beyond}}
+
+In as many instances as possible, we would like to provide the user with a link to Online Notes of a World Campus Statistics course.
+
+\emph{Note: what appears here is applicable any time you want to link to an webpage that is beyond BOAST.}
+
+The link that you provide must take the user to the appropriate location. Do not send the user to the home page for a course; rather, take them to the relevant page. To do this, you'll need to explore the \href{https://online.stat.psu.edu/statprogram/}{Department of Statistics STAT ONLINE} page and look through the courses.
+
+You will create these links in-line, not as a button. Thus, they must be part of a paragraph block (i.e., inside a \texttt{p()} with other text) or as part of list item (i.e., inside a \texttt{li()}).
+
+Your link must include descriptive text. Using ``Click Here'' is \textbf{not} descriptive. Rather say where the link will take the user. If you look through the links that we've included in this Style Guide, we've been modeling this. This descriptive text not only helps all users anticipate where they are going but also improves the accessibility of the links. (Plus, have you ever tried to click a small link on your phone?)
+
+Once you find the appropriate page, you'll need to copy the URL for your link. There are some instances where we might be able to find an existing anchor (look for two inter-locking rings to appear when you place your cursor over a title) or make a request for adding an anchor. These are especially useful if what you want to link to is only part of the page.
+
+*Note: not all requests for anchors may be fulfilled and not all course notes have anchors.
+
+The styling of the link will be managed by the BOAST CSS file.
+
+Here's are two examples of how you would code a text link:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# [omitted code]}
+\CommentTok{# Working in the UI section}
+
+\CommentTok{# Example 1: in a paragraph}
+\KeywordTok{p}\NormalTok{(}\StringTok{"While not critical, you might wish to refresh your understanding on some of the basic shapes}
+\StringTok{  of graphs in statistics. A good resource for this would be the "}\NormalTok{, }\CommentTok{# Notice the ending space}
+\NormalTok{  tags}\OperatorTok{$}\KeywordTok{a}\NormalTok{(}
+    \DataTypeTok{herf =} \StringTok{"https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes"}\NormalTok{, }\CommentTok{#the URL}
+    \StringTok{"STAT 100 Table of Graph Shapes"} \CommentTok{# the descriptive text for the link}
+\NormalTok{    ),}
+  \StringTok{". Feel free to check that resource out."} 
+  \CommentTok{# Notice the ending punctuation for the prior sentence is not part of the link.}
+\NormalTok{)}
+
+\CommentTok{# Example 2: in a list item}
+\NormalTok{tags}\OperatorTok{$}\KeywordTok{ul}\NormalTok{(}
+\NormalTok{  tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\StringTok{"Review the "}\NormalTok{, }\CommentTok{# Notice the ending space}
+\NormalTok{    tags}\OperatorTok{$}\KeywordTok{a}\NormalTok{(}
+      \DataTypeTok{herf =} \StringTok{"https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes"}\NormalTok{, }\CommentTok{#the URL}
+      \StringTok{"STAT 100 Table of Graph Shapes"} \CommentTok{# the descriptive text for the link}
+\NormalTok{      )}
+    \CommentTok{# List items don't necessarily need ending punctuation. }
+    \CommentTok{#Be consistent; either all items do or none.}
+\NormalTok{  ) }
+\NormalTok{)}
+\CommentTok{# [omitted code]}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{activity-tabs}{%
 \subsubsection{Activity Tab(s)}\label{activity-tabs}}
@@ -1968,7 +2023,7 @@ The text used as a question in a game should NOT be wrapped in a Heading tag; wr
 
 By using the central CSS file, any text you included in/on buttons, dropdown menus, sliders, radio buttons, choices, and other inputs as well as alert messages and popups/rollovers, will automatically be styled correctly.
 
-Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong with input labels.
+Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong with input labels. Input labels should be written in sentence case (i.e., capitalize only the first word and any proper nouns).
 
 You may use these tags with popups/rollovers.
 
@@ -2031,6 +2086,11 @@ A picture is worth a thousand words\ldots but which ones. --Unknown
 
 Both of these quotations highlight that you need to include some text with your plots to help the user construct their understanding of what you're trying to show them.
 
+\hypertarget{titles-and-labels}{%
+\subsection{Titles and Labels}\label{titles-and-labels}}
+
+Graph and Table titles should follow Title Case. Capitalize each word unless the word is ``small'' (e.g., of, an, etc.). The \href{https://titlecase.com/}{Title Case website} can help you if you aren't sure. (This website also does other types of case such as camel case.)
+
 \hypertarget{axes-and-scales}{%
 \subsection{Axes and Scales}\label{axes-and-scales}}
 
@@ -2045,7 +2105,7 @@ To force \texttt{ggplot2} to place (0, 0) in the lower-left corner and to contro
 \CommentTok{# Add your layer}
 \NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{geom_point}\NormalTok{()}
 \CommentTok{# Control axes and scale}
-\CommentTok{## Multplicative Scaling of the Horizontal (x) Axis}
+\CommentTok{## Multiplicative Scaling of the Horizontal (x) Axis}
 \CommentTok{## Additive Scaling of the Vertical (y) Axis}
 \NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{expand =} \KeywordTok{expansion}\NormalTok{(}\DataTypeTok{mult =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DataTypeTok{add =} \DecValTok{0}\NormalTok{)) }\OperatorTok{+}\StringTok{ }
 \StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{expand =} \KeywordTok{expansion}\NormalTok{(}\DataTypeTok{mult =} \DecValTok{0}\NormalTok{, }\DataTypeTok{add =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.05}\NormalTok{))) }
@@ -2055,7 +2115,111 @@ To force \texttt{ggplot2} to place (0, 0) in the lower-left corner and to contro
 \hypertarget{tables}{%
 \subsection{Tables}\label{tables}}
 
-Use tables as infrequently as possible. If you absolutely must include a table, you will need to decide what the role of your table is. This is an Accessibility issue that you \textbf{MUST} pre-plan for. Screen readers will poorly communicate tables if you fail to set the role appropriately. \textbf{Talk to Neil and Bob} before using a table.
+Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn't conducive to helping a person understand what's going on, neither is a wall of data values. Thus, we need to be extreme judicious about incorporating data tables into any of our apps.
+
+In web development there are two main types of tables: layout tables and data tables.
+
+\begin{itemize}
+\tightlist
+\item
+  Layout tables help to control where different elements appear on the page.
+\item
+  We need an additional distinction for data tables:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary Data Tables are tables that have summary information; typified by two-way tables (a.k.a. contingency tables or crosstabs) but might also include other things such as values of descriptive statistics stratified by groups.
+  \item
+    Data Set are an entire data object, presented in tabular format
+  \end{itemize}
+\end{itemize}
+
+\textbf{Layout Tables should never be used in a BOAST App.}
+
+Data Sets should be displayed \textbf{as sparingly as possible}. In order to include a Data Set display, you will need to have identified an explicit learning goal/objective that necessitates the user digging through a data frame. If you can't identify such a learning goal, you should NOT include a data frame.
+
+If the goal is to allow the user to look through the data set OR to have access to the data, then \textbf{give a link} to either the original source of the data (\textbf{preferred}) or for them to download the file.
+
+Summary Data Tables can be used more often and can enrich the user's experience with your app. However, these must still be constructed in an appropriate manner.
+
+Neither Data Sets nor Summary Data Tables should be inserted into your App as a picture. This is an big Accessibility violation. Use the directions below to create the appropriate type of data table.
+
+\hypertarget{displaying-data-tables}{%
+\subsubsection{Displaying Data Tables}\label{displaying-data-tables}}
+
+Your first step is to create a data frame object in your \texttt{R} code.
+
+\begin{itemize}
+\tightlist
+\item
+  If you are displaying a data set (rare), then you will either need to read in the data or call that data frame. For this example, I'll be using the \texttt{mtcars} data frame that is part of \texttt{R}.
+\item
+  If you are making a Summary Data Table, you'll need to either use \texttt{R} to calculate the values and store in a data frame or create a data frame yourself.
+\end{itemize}
+
+In either case, be sure you identify what columns you're going to use. If your original data file has 50 columns, but your App only makes use of 5, drop the the other 45. Only display the columns that you actually use.
+
+Your next step is to decide on where to put this display (e.g., inside an Exploration Tab or as a separate page). This will help you identify where in your App's UI section you need to put the appropriate code.
+
+To ensure that your data table is accessible and responsive (i.e., mobile friendly), you will need to use the \texttt{DT} package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"DT"}\NormalTok{)}
+\CommentTok{# Be sure to include this in your library call}
+\KeywordTok{library}\NormalTok{(DT)}
+\end{Highlighting}
+\end{Shaded}
+
+In your UI section, you'll need to use the following code, placed in the appropriate area:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# [code omitted]}
+\NormalTok{DT}\OperatorTok{::}\KeywordTok{DTOutput}\NormalTok{(}\DataTypeTok{outputId =} \StringTok{"mtCars"}\NormalTok{)}
+\CommentTok{# [code omitted]}
+\end{Highlighting}
+\end{Shaded}
+
+Then, in your Server section, you'll need to use the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# [code omitted]}
+\CommentTok{# Prepare your data set with only the columns needed}
+\NormalTok{carData <-}\StringTok{ }\NormalTok{mtcars[,}\KeywordTok{c}\NormalTok{(}\StringTok{"mpg"}\NormalTok{, }\StringTok{"cyl"}\NormalTok{, }\StringTok{"hp"}\NormalTok{, }\StringTok{"gear"}\NormalTok{, }\StringTok{"wt"}\NormalTok{)]}
+
+\CommentTok{## Use Short but Meaningful Column Names}
+\KeywordTok{names}\NormalTok{(carData) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"MPG"}\NormalTok{, }\StringTok{"# of Cylinders"}\NormalTok{, }\StringTok{"Horsepower"}\NormalTok{, }\StringTok{"# of Gears"}\NormalTok{, }\StringTok{"Weight"}\NormalTok{)}
+
+\CommentTok{# Create the output data table}
+\CommentTok{# Be sure to use the same name as you did in the UI}
+\NormalTok{output}\OperatorTok{$}\NormalTok{mtCars <-}\StringTok{ }\NormalTok{DT}\OperatorTok{::}\KeywordTok{renderDT}\NormalTok{(}
+  \DataTypeTok{expr =}\NormalTok{ carData,}
+  \DataTypeTok{caption =} \StringTok{"Motor Trend US Data, 1973-1974 Models"}\NormalTok{, }\CommentTok{# Add a caption to your table}
+  \DataTypeTok{style =} \StringTok{"bootstrap4"}\NormalTok{, }\CommentTok{# You must use this style}
+  \DataTypeTok{rownames =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{options =} \KeywordTok{list}\NormalTok{( }\CommentTok{# You must use these options}
+    \DataTypeTok{responsive =} \OtherTok{TRUE}\NormalTok{, }\CommentTok{# allows the data table to be mobile friendly}
+    \DataTypeTok{scrollX =} \OtherTok{TRUE}\NormalTok{, }\CommentTok{# allows the user to scroll through a wide table}
+    \DataTypeTok{columnDefs =} \KeywordTok{list}\NormalTok{(  }\CommentTok{# These will set alignment of data values}
+      \CommentTok{# Notice the use of ncol on your data frame; leave the 1 as is.}
+      \KeywordTok{list}\NormalTok{(}\DataTypeTok{className =} \StringTok{'dt-center'}\NormalTok{, }\DataTypeTok{targets =} \DecValTok{1}\OperatorTok{:}\KeywordTok{ncol}\NormalTok{(carData))}
+\NormalTok{    )}
+\NormalTok{  )}
+\NormalTok{)}
+\CommentTok{# [code omitted]}
+\end{Highlighting}
+\end{Shaded}
+
+If you are making a Summary Data Table, you will need to follow the same process. If your data frame does not have row names, but instead a column with values acting as row names, you may replace the \texttt{rownames\ =\ TRUE} with \texttt{rownames\ =\ FALSE}; there should not be a column of sequential numbers on the left.
+
+Column names \textbf{MUST} be simple and \emph{meaningful} to the user. To this end, you should rename any columns that might have poor choices for names, just as we have done with the \texttt{mtcars} data. This includes using Greek characters in isolation. You should not have any columns labeled \(\mu\) or \(\sigma\). Rather you need to use English words.
+
+\emph{Note: getting mathematical expressions to render properly in graphical environments in \texttt{R} is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.}
+
+Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, \textbf{talk to Neil and Bob}.
 
 \hypertarget{static-images}{%
 \subsection{Static Images}\label{static-images}}
@@ -2106,7 +2270,17 @@ All image files have a native size that is part of that file. For instance, the 
 
 Any graphical element you include in your App \textbf{MUST} have an alternative (assistive) text description (``alt text''). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
 
-A good resource to check out is the \href{https://webaim.org/techniques/alttext/\#basics}{WebAIM Alternative Text} page.
+Here are several resources worth checking out:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://webaim.org/techniques/alttext/\#basics}{WebAIM Alternative Text Guide}
+\item
+  \href{https://accessibility.psu.edu/images/alttext/}{Penn State's Image ALT Text Page}
+\item
+  \href{https://www.w3.org/WAI/tutorials/images/decision-tree/}{W3C's ALT Text Decision Tree}
+\end{itemize}
 
 \hypertarget{adding-alt-text-to-static-images}{%
 \subsubsection{Adding Alt Text to Static Images}\label{adding-alt-text-to-static-images}}
@@ -2616,6 +2790,302 @@ Here are a few additional tools that can help you with App development:
 \KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"funchir"}\NormalTok{, }\StringTok{"lintr"}\NormalTok{, }\StringTok{"styler"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
+
+\hypertarget{makingApp}{%
+\chapter{Making an App}\label{makingApp}}
+
+Sooner or later, you'll reach the point where it is time to make your own Shiny App for BOAST. Approaching your App's construction in a systematic way will help you tremendously. The following suggested workflow is an abbreviated version of the one in Section \ref{workflow}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read the Style Guide
+\item
+  Identify a topic
+\item
+  Sketch out your plans
+\item
+  Create a new repository on GitHub
+\item
+  Begin writing the code
+\item
+  Edit and locally Test your code
+\item
+  Push your code to GitHub/Create a dev branch
+\item
+  Push your edits
+\item
+  Larger scale testing
+\item
+  Pull Request
+\item
+  Additional tweaks
+\end{enumerate}
+
+This workflow (both in the more expanded state and in the abbreviated one) leaves out a lot of the going-ons and decision making that goes into making an app. Our goal with this section is to walk you through this process as Neil makes an app from scratch.
+
+\hypertarget{step1}{%
+\section{Step 1: Read the Style Guide}\label{step1}}
+
+This is step is critical to making an app that is easy to debug (vital when programming) and is in-alignment with the Standards that we have set for BOAST. Please take your time going through the Style Guide and keep an eye on it for updates. You can access the published Bookdown version by clicking on the address link located at the top of the Guide's GitHub Repository.
+
+As you build your App, we recommend periodically checking the Style Guide to 1) ensure that you're still adhering to it, 2) to stay up-to-date with the Guide, and 3) to see (and then use) any useful code chunks that are listed. Even as the authors of this Guide, we're constantly looking things up. Thus, there is no shame in constantly referring to the Style Guide; after all, it is meant to be a Go-To Reference.
+
+\hypertarget{step2}{%
+\section{Step 2: Identify a Topic}\label{step2}}
+
+This is one of the more challenging tasks for anyone: deciding what to make an app about. The notion of ``picking a topic'' is a bit misleading as not only should you pick a topic, but you also need to pick the purpose of the app, and the goals. While all three go hand-in-hand with each other, the easiest decision of the three is purpose.
+
+\hypertarget{step2a}{%
+\subsection{Your App's Purpose}\label{step2a}}
+
+When we look across BOAST, we can categorize the apps into two major classes: apps whose purpose is to help students \textbf{learn} an idea/concept and apps whose purpose is to help students \textbf{review} an idea/concept. The \href{https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/}{NHST Caveats App} stands as a good example of an app whose purpose is to help students learn something. On the other hand, the \href{https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/}{{[}Null{]} Hypothesis Testing Game (Tic-tac-toe)} and the \href{https://psu-eberly.shinyapps.io/Matching_Distributions/}{Matching Distributions} are examples where the student is reviewing their understandings. There are some apps such as \href{https://psu-eberly.shinyapps.io/ANCOVA/}{ANCOVA} that are dual purpose, having both learning elements and reviewing elements.
+
+Generally speaking, apps whose purpose is \textbf{learning} are going have Explorations and possibly Challenges for Activity Tabs. Apps whose purpose is \textbf{reviewing} will have just Games for Activity Tab(s).
+
+By identifying early on the purpose of your App, you'll be able to better plan your app.
+
+\hypertarget{step2b}{%
+\subsection{The Topic}\label{step2b}}
+
+Here is where you'll decide what statistical idea/concept your App is going to be centered around. While you should be as specific as possible here, \textbf{apps for learning} need to have much more specificity than \textbf{apps for reviewing}. Saying that you want your App ``to deal with probability'' is not going to be as useful as saying that you want your App ``to help students recognize when probability is and is not appropriate for different contexts''.
+
+Don't feel like you have to details to the nanoscale. As you continue developing and talking with people, you'll start adding in more details.
+
+You can identify potential topics through any of the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Think of a concept in a Stat class that you (or your peers) struggled with (or still do)
+\item
+  Think of a concept where you thought to yourself ``I wish there was a way to visualize this''
+\item
+  Think of a concept where you went ``How does this work?''
+\item
+  Did you see/hear about a new study and thought to yourself ``what's going on?''
+\item
+  Did a media report make you do a double take?
+\item
+  Ever think to yourself ``I wish I had more practice with {[}topic{]}.''
+\item
+  And more
+\end{itemize}
+
+Again, this list is just a starting place to identify potential topics. Draw inspiration from your experiences, your curiosity. Bounce ideas off of each other and the faculty.
+
+\emph{\textbf{Word of Caution \#1}}: While it is okay to get ideas from other websites, please keep track of this. We need to give credit where credit is due. If you come across an app (whether in Shiny or some other program) somewhere and you think that it would be good to translate that into Shiny app for BOAST, we need to know.
+
+\emph{\textbf{Word of Caution \#2}}: An unproductive place to begin is to say ``Hey, I want to make a memory game'' or ``I saw this really cool animation and I want to make an app that does that.'' Both of these (especially the second) place the educational aspect of the app as a secondary focus. \textbf{This is not consistent with BOAST.} All apps should place educational purposes and goals before anything else. Forcing a topic to make use of certain tool because that tool would be ``cool'' or ``fun'' does not further our goals. We should strive for synergy between topics and the tools within Shiny.
+
+\hypertarget{step2c}{%
+\subsection{Goals}\label{step2c}}
+
+Now, we're sure that some people have already thought to themselves ``hey, you've already had us identify purpose so isn't this the same?'' To which we reply ``No.'' We've used \textbf{purpose} to refer an overarching aim of your App. Here, \textbf{goal} refers to a much more contextualized aspect. While these goals will be less important for reviewing apps, you will need to identify specific learning goals for learning apps.
+
+For this step, you're going to need to work with the faculty to identify the learning goals for your app. If you're drawing from a past experience in a course, look to see if there were learning objectives listed. Those can be extremely useful starting places.
+
+\hypertarget{example}{%
+\subsection{Example}\label{example}}
+
+\emph{The following is a somewhat stream-of-consciousness narrative of how Neil tackled this step. We'll place flags in parentheses.}
+
+I would like to make an app that would help introductory students (\emph{identifies an intended audience}) wrestling with some of the concepts of descriptive/incisive statistics (\emph{Purpose: learning}). Some ideas that I have are:
+
+\begin{itemize}
+\tightlist
+\item
+  Conceptualizing the two distinct uses of the \emph{sample arithmetic mean}--mitigation of measurement errors of a single object vs.~measuring how well a group of objects/beings performs
+\item
+  Conceptualizing statistics as functions that measure attributes of collections
+\item
+  Conceptualizing the relationship between the values of the \emph{sample median} and \emph{sample arithmetic mean} is not a competition (i.e., one is not ``better than'' the other)
+\item
+  Avoid falling into the skewness trap for the ordering of the values of the \emph{sample median} and \emph{sample arithmetic mean}.
+\end{itemize}
+
+This last option feels like a fairly straightforward (and simple) app to create. Additionally, there's an \href{http://jse.amstat.org/v13n2/vonhippel.html}{article by von Hippel on this issue} I can reference. (\emph{Topic: relationship between the values of }sample median \emph{and} sample arithmetic mean \emph{in the presence of skewness})
+
+After using the app, a student should recognize that while for a many data collections that have skewness, the value of the \emph{sample arithmetic mean} will be either greater (for positive skew) or less (for negative skew) than the value of the \emph{sample median}, this is not an absolute rule. (\emph{Learning Goal})
+
+\hypertarget{step3}{%
+\section{Step 3: Sketch out plans}\label{step3}}
+
+Something to keep in mind with this workflow is that it is not strictly linear. That is, just because you have moved into Step 3, doesn't mean that you can't go back to Step 2 and make revisions. Additionally, as you get into Steps 5-8, you might find yourself coming back to Step 3 (and possibly Step 2) and making changes. This said, sketching out your plans will help you as you move forward with developing.
+
+There are several things that you'll want to be sure that you include in your sketch:
+
+\begin{itemize}
+\tightlist
+\item
+  A Suggested Title
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This might not be what you settle on, but you'll need to have this firmed up by the time you get to Step 4.
+  \item
+    You'll want to have both a {[}Long/Formal{]} Name and a shortened name ready
+  \end{itemize}
+\item
+  Goal(s) of the App
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Carry this forward from Step 2 as a tangible reminder
+  \item
+    If you have several goals, you might consider denoting which tabs go with which goals
+  \end{itemize}
+\item
+  What will the user be doing
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Thinking about what you want the user to do
+  \item
+    Identify anything the user might click on, drag, or otherwise manipulate.
+  \item
+    If there are going to be options, identify what those options should be.
+  \item
+    Will there be different levels?
+  \item
+    Will there be a Challenge tab?
+  \end{itemize}
+\item
+  What will the user experience
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Think about the general layout (explore, game, etc.)
+  \item
+    What outputs should the user be examining
+  \end{itemize}
+\item
+  What are the relationships between elements
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Think about how each input impacts the outputs
+  \item
+    If you want the user to have a certain experience, does the coding allow for that experience to happen?
+  \end{itemize}
+\item
+  Other Elements
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Are you going to reference any external images?
+  \item
+    Are you going to import any data files? If so, which ones? Do you have them?
+  \item
+    Is there an activity packet?
+  \end{itemize}
+\end{itemize}
+
+The format of your sketches is up to you.
+
+\hypertarget{example-1}{%
+\subsection{Example}\label{example-1}}
+
+As I start thinking about what this app might look like, I'm going to use a sheet of paper in quarters to organize some thoughts. Figure \ref{fig:planSketchFull} shows the entire sheet of paper. The quadrants move left to right, top to bottom.
+
+\begin{figure}
+
+{\centering \includegraphics[width=22.22in]{images/planSketch1} 
+
+}
+
+\caption{Picture of My Plan}\label{fig:planSketchFull}
+\end{figure}
+
+In the first quadrant (Figure \ref{fig:planSketchInfo}), I've listed a title (``Skewness's Impact on the Values of the \emph{Sample Median} and \emph{Sample Arithmetic Mean}''), a possible short title (``Skew, Med, SAM'') as well as a restatement of my goal. I've then listed general aspects about the layout of my app, including what skin/theme color (yellow) I would need to use.
+
+I've additionally identified that I need to include the von Hippel article in my Reference Tab as well as locating a version of the General Social Survey (GSS).
+
+\begin{figure}
+
+{\centering \includegraphics[width=22.22in]{images/planSketch2-Info} 
+
+}
+
+\caption{First Quadrant: General Information}\label{fig:planSketchInfo}
+\end{figure}
+
+The second quadrant of my paper is the Overview Tab sketch (Figure \ref{fig:planSketchOverview}. I don't have much information here.
+
+\begin{figure}
+
+{\centering \includegraphics[width=22.22in]{images/planSketch3-Overview} 
+
+}
+
+\caption{Second Quadrant: Overview Tab}\label{fig:planSketchOverview}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=22.22in]{images/planSketch4-Explore} 
+
+}
+
+\caption{Third Quadrant: Exploration Tab}\label{fig:planSketchExplore}
+\end{figure}
+
+The next quadrant (Figure \ref{fig:planSketchExplore}) is where I started detailing the first Activity Tab of my app: the first Exploration. I'm imagining that in this exploration that the user would look through a variety of cases where the ``rule'' does and does not work. What I want the user to walk away from this tab is that just because a histogram looks positively skewed does not imply that the value of the \emph{sample arithmetic mean} is greater than the value of the \emph{sample median}.
+
+I'm imagining a drop-down menu that would allow the user to move through a variety of data sets. Ideally, these data sets would be real data. The General Social Survey, has a variety of attributes that we could use, include several that demonstrate what I want. For example, the number of adults (18+ y.o.) living in a household is positively skewed but the value of the \emph{sample median} is larger than than the value of the \emph{sample arithmetic mean}. Which each choice of the user makes, the histogram on the right will update to show the appropriate data, plus reference lines for the values of the two statistics. I might want to add a numerical display as well. I also want there to be some context helping the user to understand each choice.
+
+I've left as an open question whether to enable a user to import/create their own data set on this tab. I'm currently leaning towards not allowing this. Additionally, I've marked something for a punchline but this will need more thought.
+
+\begin{figure}
+
+{\centering \includegraphics[width=22.22in]{images/planSketch5-Challenge} 
+
+}
+
+\caption{Fourth Quadrant: Challenge Tab}\label{fig:planSketchChallenge}
+\end{figure}
+
+The fourth and final quadrant (Figure \ref{fig:planSketchChallenge}) is an idea I'm still kicking around. This would depend on the specific audience and course goals for which users would go here. My idea is to extend the goal for the app to allow students to construct an understanding for what conditions might lead to \(Sample\;Median\left(\mathcal{X}\right)<SAM\left(\mathcal{X}\right)\), \(Sample\;Median\left(\mathcal{X}\right)=SAM\left(\mathcal{X}\right)\), and \(Sample\;Median\left(\mathcal{X}\right)>SAM\left(\mathcal{X}\right)\).
+
+At this moment, I'm leaning towards marking the Challenge Tab as being a future improvement/addition rather than being part of the initial version of the app.
+
+\hypertarget{share-your-plan}{%
+\subsection{Share Your Plan}\label{share-your-plan}}
+
+Once you have a sketch, you'll want to share this plan with others to get ideas for suggestions, modifications, etc. Different people might be able to point you to code snippets you can reuse from other apps. More importantly, they might be able to help you think about things that you glossed over/missed and/or thought about but didn't articulate. By sharing these plans, we'll make better apps.
+
+This is also the point in time in which the faculty will say whether you can go ahead and move to Step 4.
+
+\hypertarget{step4}{%
+\section{Step 4: Create Repository}\label{step4}}
+
+Here you'll want to reference Section @ref(\#repo-naming) on GitHub Repo Naming. Most app {[}full{]} titles don't make good Repo Names. This is where the potential short title comes into play. You'll need to make sure that there isn't already a repository that has that name. When you get a name figured out for the repository, you can go ahead and create the repo.
+
+Make sure to set Git Ignore to \texttt{R}.
+
+\hypertarget{steps5-8}{%
+\section{Steps 5-8: Write, Edit, Test, Debug}\label{steps5-8}}
+
+We recommend starting with a copy of the Sample App as the basis. This will give you a good skeleton to use for your new app.
+
+(\emph{Still under construction})
+
+\hypertarget{step9}{%
+\section{Step 9: Larger Scale Testing}\label{step9}}
+
+(\emph{Still under construction})
+
+\hypertarget{steps10-11}{%
+\section{Steps 10-11: Pull Requestion and Tweaks}\label{steps10-11}}
+
+(\emph{Still under construction})
 
   \bibliography{book.bib,packages.bib}
 

@@ -249,7 +249,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>9.2.3</b> Goals</a></li>
 <li class="chapter" data-level="9.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>9.2.4</b> Example</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>9.3</b> Step 3: Sketch out plans</a></li>
+<li class="chapter" data-level="9.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>9.3</b> Step 3: Sketch out plans</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="makingApp.html"><a href="makingApp.html#example-1"><i class="fa fa-check"></i><b>9.3.1</b> Example</a></li>
+<li class="chapter" data-level="9.3.2" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>9.3.2</b> Share Your Plan</a></li>
+</ul></li>
 <li class="chapter" data-level="9.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>9.4</b> Step 4: Create Repository</a></li>
 <li class="chapter" data-level="9.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>9.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
 <li class="chapter" data-level="9.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>9.6</b> Step 9: Larger Scale Testing</a></li>
@@ -528,6 +531,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

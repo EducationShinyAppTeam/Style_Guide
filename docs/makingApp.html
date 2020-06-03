@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>The BOAST Style Guide</title>
+  <title>Chapter 9 Making an App | The BOAST Style Guide</title>
   <meta name="description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="The BOAST Style Guide" />
+  <meta property="og:title" content="Chapter 9 Making an App | The BOAST Style Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="The BOAST Style Guide" />
+  <meta name="twitter:title" content="Chapter 9 Making an App | The BOAST Style Guide" />
   
   <meta name="twitter:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="addTools.html"/>
 
-<link rel="next" href="getStarted.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -278,32 +278,190 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">The BOAST Style Guide</h1>
-<p class="author"><em>Neil Hatfield (<a href="mailto:njh5464@psu.edu" class="email">njh5464@psu.edu</a>) and Robert Carey (<a href="mailto:rpc5102@psu.edu" class="email">rpc5102@psu.edu</a>)</em></p>
-<p class="date"><em>03 June 2020</em></p>
+<div id="makingApp" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Making an App</h1>
+<p>Sooner or later, you’ll reach the point where it is time to make your own Shiny App for BOAST. Approaching your App’s construction in a systematic way will help you tremendously. The following suggested workflow is an abbreviated version of the one in Section <a href="getStarted.html#workflow">1.4</a>:</p>
+<ol style="list-style-type: decimal">
+<li>Read the Style Guide</li>
+<li>Identify a topic</li>
+<li>Sketch out your plans</li>
+<li>Create a new repository on GitHub</li>
+<li>Begin writing the code</li>
+<li>Edit and locally Test your code</li>
+<li>Push your code to GitHub/Create a dev branch</li>
+<li>Push your edits</li>
+<li>Larger scale testing</li>
+<li>Pull Request</li>
+<li>Additional tweaks</li>
+</ol>
+<p>This workflow (both in the more expanded state and in the abbreviated one) leaves out a lot of the going-ons and decision making that goes into making an app. Our goal with this section is to walk you through this process as Neil makes an app from scratch.</p>
+<div id="step1" class="section level2">
+<h2><span class="header-section-number">9.1</span> Step 1: Read the Style Guide</h2>
+<p>This is step is critical to making an app that is easy to debug (vital when programming) and is in-alignment with the Standards that we have set for BOAST. Please take your time going through the Style Guide and keep an eye on it for updates. You can access the published Bookdown version by clicking on the address link located at the top of the Guide’s GitHub Repository.</p>
+<p>As you build your App, we recommend periodically checking the Style Guide to 1) ensure that you’re still adhering to it, 2) to stay up-to-date with the Guide, and 3) to see (and then use) any useful code chunks that are listed. Even as the authors of this Guide, we’re constantly looking things up. Thus, there is no shame in constantly referring to the Style Guide; after all, it is meant to be a Go-To Reference.</p>
 </div>
-<div id="welcome" class="section level1 unnumbered">
-<h1>Welcome</h1>
-<p>This guide spells out the styling that should be used for all apps included in the Book of Apps for Statistics Teaching (<a href="https://github.com/EducationShinyAppTeam/BOAST">BOAST</a>). Keep in mind that there are several different aspects to what makes up Style including:</p>
+<div id="step2" class="section level2">
+<h2><span class="header-section-number">9.2</span> Step 2: Identify a Topic</h2>
+<p>This is one of the more challenging tasks for anyone: deciding what to make an app about. The notion of “picking a topic” is a bit misleading as not only should you pick a topic, but you also need to pick the purpose of the app, and the goals. While all three go hand-in-hand with each other, the easiest decision of the three is purpose.</p>
+<div id="step2a" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Your App’s Purpose</h3>
+<p>When we look across BOAST, we can categorize the apps into two major classes: apps whose purpose is to help students <strong>learn</strong> an idea/concept and apps whose purpose is to help students <strong>review</strong> an idea/concept. The <a href="https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/">NHST Caveats App</a> stands as a good example of an app whose purpose is to help students learn something. On the other hand, the <a href="https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/">[Null] Hypothesis Testing Game (Tic-tac-toe)</a> and the <a href="https://psu-eberly.shinyapps.io/Matching_Distributions/">Matching Distributions</a> are examples where the student is reviewing their understandings. There are some apps such as <a href="https://psu-eberly.shinyapps.io/ANCOVA/">ANCOVA</a> that are dual purpose, having both learning elements and reviewing elements.</p>
+<p>Generally speaking, apps whose purpose is <strong>learning</strong> are going have Explorations and possibly Challenges for Activity Tabs. Apps whose purpose is <strong>reviewing</strong> will have just Games for Activity Tab(s).</p>
+<p>By identifying early on the purpose of your App, you’ll be able to better plan your app.</p>
+</div>
+<div id="step2b" class="section level3">
+<h3><span class="header-section-number">9.2.2</span> The Topic</h3>
+<p>Here is where you’ll decide what statistical idea/concept your App is going to be centered around. While you should be as specific as possible here, <strong>apps for learning</strong> need to have much more specificity than <strong>apps for reviewing</strong>. Saying that you want your App “to deal with probability” is not going to be as useful as saying that you want your App “to help students recognize when probability is and is not appropriate for different contexts”.</p>
+<p>Don’t feel like you have to details to the nanoscale. As you continue developing and talking with people, you’ll start adding in more details.</p>
+<p>You can identify potential topics through any of the following:</p>
 <ul>
-<li>Coding (how you write, organize, and comment the code that makes the app)</li>
-<li>Visual Appearance (how you make the app look including tabs, fonts, colors, icons, etc.)</li>
-<li>Wording (how you write information, instructions, and other messages to the users)</li>
-<li>Documentation (how you provide references, including code and data sources, and give credit)</li>
+<li>Think of a concept in a Stat class that you (or your peers) struggled with (or still do)</li>
+<li>Think of a concept where you thought to yourself “I wish there was a way to visualize this”</li>
+<li>Think of a concept where you went “How does this work?”</li>
+<li>Did you see/hear about a new study and thought to yourself “what’s going on?”</li>
+<li>Did a media report make you do a double take?</li>
+<li>Ever think to yourself “I wish I had more practice with [topic].”</li>
+<li>And more</li>
 </ul>
-<p>By following this style guide you’ll ensure that any app you create will meet our standards.</p>
-<p>Additionally, we’ve included some information on Acessibility for our apps, checking how your App works on mobile devices, and some additoinal tools that can help you develop your App.</p>
+<p>Again, this list is just a starting place to identify potential topics. Draw inspiration from your experiences, your curiosity. Bounce ideas off of each other and the faculty.</p>
+<p><em><strong>Word of Caution #1</strong></em>: While it is okay to get ideas from other websites, please keep track of this. We need to give credit where credit is due. If you come across an app (whether in Shiny or some other program) somewhere and you think that it would be good to translate that into Shiny app for BOAST, we need to know.</p>
+<p><em><strong>Word of Caution #2</strong></em>: An unproductive place to begin is to say “Hey, I want to make a memory game” or “I saw this really cool animation and I want to make an app that does that.” Both of these (especially the second) place the educational aspect of the app as a secondary focus. <strong>This is not consistent with BOAST.</strong> All apps should place educational purposes and goals before anything else. Forcing a topic to make use of certain tool because that tool would be “cool” or “fun” does not further our goals. We should strive for synergy between topics and the tools within Shiny.</p>
+</div>
+<div id="step2c" class="section level3">
+<h3><span class="header-section-number">9.2.3</span> Goals</h3>
+<p>Now, we’re sure that some people have already thought to themselves “hey, you’ve already had us identify purpose so isn’t this the same?” To which we reply “No.” We’ve used <strong>purpose</strong> to refer an overarching aim of your App. Here, <strong>goal</strong> refers to a much more contextualized aspect. While these goals will be less important for reviewing apps, you will need to identify specific learning goals for learning apps.</p>
+<p>For this step, you’re going to need to work with the faculty to identify the learning goals for your app. If you’re drawing from a past experience in a course, look to see if there were learning objectives listed. Those can be extremely useful starting places.</p>
+</div>
+<div id="example" class="section level3">
+<h3><span class="header-section-number">9.2.4</span> Example</h3>
+<p><em>The following is a somewhat stream-of-consciousness narrative of how Neil tackled this step. We’ll place flags in parentheses.</em></p>
+<p>I would like to make an app that would help introductory students (<em>identifies an intended audience</em>) wrestling with some of the concepts of descriptive/incisive statistics (<em>Purpose: learning</em>). Some ideas that I have are:</p>
+<ul>
+<li>Conceptualizing the two distinct uses of the <em>sample arithmetic mean</em>–mitigation of measurement errors of a single object vs. measuring how well a group of objects/beings performs</li>
+<li>Conceptualizing statistics as functions that measure attributes of collections</li>
+<li>Conceptualizing the relationship between the values of the <em>sample median</em> and <em>sample arithmetic mean</em> is not a competition (i.e., one is not “better than” the other)</li>
+<li>Avoid falling into the skewness trap for the ordering of the values of the <em>sample median</em> and <em>sample arithmetic mean</em>.</li>
+</ul>
+<p>This last option feels like a fairly straightforward (and simple) app to create. Additionally, there’s an <a href="http://jse.amstat.org/v13n2/vonhippel.html">article by von Hippel on this issue</a> I can reference. (<em>Topic: relationship between the values of </em>sample median <em>and</em> sample arithmetic mean <em>in the presence of skewness</em>)</p>
+<p>After using the app, a student should recognize that while for a many data collections that have skewness, the value of the <em>sample arithmetic mean</em> will be either greater (for positive skew) or less (for negative skew) than the value of the <em>sample median</em>, this is not an absolute rule. (<em>Learning Goal</em>)</p>
+</div>
+</div>
+<div id="step3" class="section level2">
+<h2><span class="header-section-number">9.3</span> Step 3: Sketch out plans</h2>
+<p>Something to keep in mind with this workflow is that it is not strictly linear. That is, just because you have moved into Step 3, doesn’t mean that you can’t go back to Step 2 and make revisions. Additionally, as you get into Steps 5-8, you might find yourself coming back to Step 3 (and possibly Step 2) and making changes. This said, sketching out your plans will help you as you move forward with developing.</p>
+<p>There are several things that you’ll want to be sure that you include in your sketch:</p>
+<ul>
+<li>A Suggested Title
+<ul>
+<li>This might not be what you settle on, but you’ll need to have this firmed up by the time you get to Step 4.</li>
+<li>You’ll want to have both a [Long/Formal] Name and a shortened name ready</li>
+</ul></li>
+<li>Goal(s) of the App
+<ul>
+<li>Carry this forward from Step 2 as a tangible reminder</li>
+<li>If you have several goals, you might consider denoting which tabs go with which goals</li>
+</ul></li>
+<li>What will the user be doing
+<ul>
+<li>Thinking about what you want the user to do</li>
+<li>Identify anything the user might click on, drag, or otherwise manipulate.</li>
+<li>If there are going to be options, identify what those options should be.</li>
+<li>Will there be different levels?</li>
+<li>Will there be a Challenge tab?</li>
+</ul></li>
+<li>What will the user experience
+<ul>
+<li>Think about the general layout (explore, game, etc.)</li>
+<li>What outputs should the user be examining</li>
+</ul></li>
+<li>What are the relationships between elements
+<ul>
+<li>Think about how each input impacts the outputs</li>
+<li>If you want the user to have a certain experience, does the coding allow for that experience to happen?</li>
+</ul></li>
+<li>Other Elements
+<ul>
+<li>Are you going to reference any external images?</li>
+<li>Are you going to import any data files? If so, which ones? Do you have them?</li>
+<li>Is there an activity packet?</li>
+</ul></li>
+</ul>
+<p>The format of your sketches is up to you.</p>
+<div id="example-1" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> Example</h3>
+<p>As I start thinking about what this app might look like, I’m going to use a sheet of paper in quarters to organize some thoughts. Figure <a href="makingApp.html#fig:planSketchFull">9.1</a> shows the entire sheet of paper. The quadrants move left to right, top to bottom.</p>
+<div class="figure" style="text-align: center"><span id="fig:planSketchFull"></span>
+<img src="images/planSketch1.jpg" alt="Picture of My Plan" width="800" />
+<p class="caption">
+Figure 9.1: Picture of My Plan
+</p>
+</div>
+<p>In the first quadrant (Figure <a href="makingApp.html#fig:planSketchInfo">9.2</a>), I’ve listed a title (“Skewness’s Impact on the Values of the <em>Sample Median</em> and <em>Sample Arithmetic Mean</em>”), a possible short title (“Skew, Med, SAM”) as well as a restatement of my goal. I’ve then listed general aspects about the layout of my app, including what skin/theme color (yellow) I would need to use.</p>
+<p>I’ve additionally identified that I need to include the von Hippel article in my Reference Tab as well as locating a version of the General Social Survey (GSS).</p>
+<div class="figure" style="text-align: center"><span id="fig:planSketchInfo"></span>
+<img src="images/planSketch2-Info.jpg" alt="First Quadrant: General Information" width="800" />
+<p class="caption">
+Figure 9.2: First Quadrant: General Information
+</p>
+</div>
+<p>The second quadrant of my paper is the Overview Tab sketch (Figure <a href="makingApp.html#fig:planSketchOverview">9.3</a>. I don’t have much information here.</p>
+<div class="figure" style="text-align: center"><span id="fig:planSketchOverview"></span>
+<img src="images/planSketch3-Overview.jpg" alt="Second Quadrant: Overview Tab" width="800" />
+<p class="caption">
+Figure 9.3: Second Quadrant: Overview Tab
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:planSketchExplore"></span>
+<img src="images/planSketch4-Explore.jpg" alt="Third Quadrant: Exploration Tab" width="800" />
+<p class="caption">
+Figure 9.4: Third Quadrant: Exploration Tab
+</p>
+</div>
+<p>The next quadrant (Figure <a href="makingApp.html#fig:planSketchExplore">9.4</a>) is where I started detailing the first Activity Tab of my app: the first Exploration. I’m imagining that in this exploration that the user would look through a variety of cases where the “rule” does and does not work. What I want the user to walk away from this tab is that just because a histogram looks positively skewed does not imply that the value of the <em>sample arithmetic mean</em> is greater than the value of the <em>sample median</em>.</p>
+<p>I’m imagining a drop-down menu that would allow the user to move through a variety of data sets. Ideally, these data sets would be real data. The General Social Survey, has a variety of attributes that we could use, include several that demonstrate what I want. For example, the number of adults (18+ y.o.) living in a household is positively skewed but the value of the <em>sample median</em> is larger than than the value of the <em>sample arithmetic mean</em>. Which each choice of the user makes, the histogram on the right will update to show the appropriate data, plus reference lines for the values of the two statistics. I might want to add a numerical display as well. I also want there to be some context helping the user to understand each choice.</p>
+<p>I’ve left as an open question whether to enable a user to import/create their own data set on this tab. I’m currently leaning towards not allowing this. Additionally, I’ve marked something for a punchline but this will need more thought.</p>
+<div class="figure" style="text-align: center"><span id="fig:planSketchChallenge"></span>
+<img src="images/planSketch5-Challenge.jpg" alt="Fourth Quadrant: Challenge Tab" width="800" />
+<p class="caption">
+Figure 9.5: Fourth Quadrant: Challenge Tab
+</p>
+</div>
+<p>The fourth and final quadrant (Figure <a href="makingApp.html#fig:planSketchChallenge">9.5</a>) is an idea I’m still kicking around. This would depend on the specific audience and course goals for which users would go here. My idea is to extend the goal for the app to allow students to construct an understanding for what conditions might lead to <span class="math inline">\(Sample\;Median\left(\mathcal{X}\right)&lt;SAM\left(\mathcal{X}\right)\)</span>, <span class="math inline">\(Sample\;Median\left(\mathcal{X}\right)=SAM\left(\mathcal{X}\right)\)</span>, and <span class="math inline">\(Sample\;Median\left(\mathcal{X}\right)&gt;SAM\left(\mathcal{X}\right)\)</span>.</p>
+<p>At this moment, I’m leaning towards marking the Challenge Tab as being a future improvement/addition rather than being part of the initial version of the app.</p>
+</div>
+<div id="share-your-plan" class="section level3">
+<h3><span class="header-section-number">9.3.2</span> Share Your Plan</h3>
+<p>Once you have a sketch, you’ll want to share this plan with others to get ideas for suggestions, modifications, etc. Different people might be able to point you to code snippets you can reuse from other apps. More importantly, they might be able to help you think about things that you glossed over/missed and/or thought about but didn’t articulate. By sharing these plans, we’ll make better apps.</p>
+<p>This is also the point in time in which the faculty will say whether you can go ahead and move to Step 4.</p>
+</div>
+</div>
+<div id="step4" class="section level2">
+<h2><span class="header-section-number">9.4</span> Step 4: Create Repository</h2>
+<p>Here you’ll want to reference Section @ref(#repo-naming) on GitHub Repo Naming. Most app [full] titles don’t make good Repo Names. This is where the potential short title comes into play. You’ll need to make sure that there isn’t already a repository that has that name. When you get a name figured out for the repository, you can go ahead and create the repo.</p>
+<p>Make sure to set Git Ignore to <code>R</code>.</p>
+</div>
+<div id="steps5-8" class="section level2">
+<h2><span class="header-section-number">9.5</span> Steps 5-8: Write, Edit, Test, Debug</h2>
+<p>We recommend starting with a copy of the Sample App as the basis. This will give you a good skeleton to use for your new app.</p>
+<p>(<em>Still under construction</em>)</p>
+</div>
+<div id="step9" class="section level2">
+<h2><span class="header-section-number">9.6</span> Step 9: Larger Scale Testing</h2>
+<p>(<em>Still under construction</em>)</p>
+</div>
+<div id="steps10-11" class="section level2">
+<h2><span class="header-section-number">9.7</span> Steps 10-11: Pull Requestion and Tweaks</h2>
+<p>(<em>Still under construction</em>)</p>
 
-
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="addTools.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="getStarted.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
