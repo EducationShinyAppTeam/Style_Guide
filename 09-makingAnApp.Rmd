@@ -147,7 +147,7 @@ This is also the point in time in which the faculty will say whether you can go 
 
 ## Step 4: Create Repository {#step4}
 
-Here you'll want to reference Section \@ref(#repo-naming) on GitHub Repo Naming. Most app [full] titles don't make good Repo Names. This is where the potential short title comes into play. You'll need to make sure that there isn't already a repository that has that name. When you get a name figured out for the repository, you can go ahead and create the repo.
+Here you'll want to reference Section \@ref(repo-naming) on GitHub Repo Naming. Most app [full] titles don't make good Repo Names. This is where the potential short title comes into play. You'll need to make sure that there isn't already a repository that has that name. When you get a name figured out for the repository, you can go ahead and create the repo.
 
 Make sure to set Git Ignore to `R`.
 
