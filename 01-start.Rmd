@@ -75,7 +75,7 @@ git clone git@github.com:EducationShinyAppTeam/Sample_App.git
 - [Resources to learn Git](https://try.github.io/)
 - [Happy Git and GitHub for the userR](https://happygitwithr.com/)
 
-## Workflow
+## Workflow {#workflow}
 As you work on apps, both updating existing and developing new ones, moving through a workflow can help you organize yourself.
 
 ### Revising/Updating Existing Apps
