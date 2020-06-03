@@ -855,7 +855,84 @@ g1 + ggplot2::scale_x_continuous(expand = expansion(mult = c(1,2), add = 0)) +
 ```
 
 ### Tables
-Use tables as infrequently as possible. If you absolutely must include a table, you will need to decide what the role of your table is. This is an Accessibility issue that you __MUST__ pre-plan for. Screen readers will poorly communicate tables if you fail to set the role appropriately. __Talk to Neil and Bob__ before using a table. 
+Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn't conducive to helping a person understand what's going on, neither is a wall of data values. Thus, we need to be extreme judicious about incorporating data tables into any of our apps.
+
+In web development there are two main types of tables: layout tables and data tables. 
+
++ Layout tables help to control where different elements appear on the page. 
++ We need an additional distinction for data tables:
+    - Summary Data Tables are tables that have summary information; typified by two-way tables (a.k.a. contingency tables or crosstabs) but might also include other things such as values of descriptive statistics stratified by groups. 
+    - Data Set are an entire data object, presented in tabular format
+
+__Layout Tables should never be used in a BOAST App.__
+
+Data Sets should be displayed __as sparingly as possible__. In order to include a Data Set display, you will need to have identified an explicit learning goal/objective that necessitates the user digging through a data frame. If you can't identify such a learning goal, you should NOT include a data frame.
+
+If the goal is to allow the user to look through the data set OR to have access to the data, then __give a link__ to either the original source of the data (__preferred__) or for them to download the file.
+
+Summary Data Tables can be used more often and can enrich the user's experience with your app. However, these must still be constructed in an appropriate manner.
+
+Neither Data Sets nor Summary Data Tables should be inserted into your App as a picture. This is an big Accessibility violation. Use the directions below to create the appropriate type of data table.
+
+#### Displaying Data Tables
+Your first step is to create a data frame object in your `R` code. 
+
++ If you are displaying a data set (rare), then you will either need to read in the data or call that data frame. For this example, I'll be using the `mtcars` data frame that is part of `R`. 
++ If you are making a Summary Data Table, you'll need to either use `R` to calculate the values and store in a data frame or create a data frame yourself.
+
+In either case, be sure you identify what columns you're going to use. If your original data file has 50 columns, but your App only makes use of 5, drop the the other 45. Only display the columns that you actually use.
+
+Your next step is to decide on where to put this display (e.g., inside an Exploration Tab or as a separate page). This will help you identify where in your App's UI section you need to put the appropriate code. 
+
+To ensure that your data table is accessible and responsive (i.e., mobile friendly), you will need to use the `DT` package.
+```{r installDT, echo=TRUE, eval=FALSE}
+install.packages("DT")
+# Be sure to include this in your library call
+library(DT)
+```
+
+In your UI section, you'll need to use the following code, placed in the appropriate area:
+```{r dtUICode1, echo=TRUE, eval=FALSE}
+# [code omitted]
+DT::DTOutput(outputId = "mtCars")
+# [code omitted]
+```
+
+Then, in your Server section, you'll need to use the following code:
+```{r dtServerCode1, echo=TRUE, eval=FALSE}
+# [code omitted]
+# Prepare your data set with only the columns needed
+carData <- mtcars[,c("mpg", "cyl", "hp", "gear", "wt")]
+
+## Use Short but Meaningful Column Names
+names(carData) <- c("MPG", "# of Cylinders", "Horsepower", "# of Gears", "Weight")
+
+# Create the output data table
+# Be sure to use the same name as you did in the UI
+output$mtCars <- DT::renderDT(
+  expr = carData,
+  caption = "Motor Trend US Data, 1973-1974 Models", # Add a caption to your table
+  style = "bootstrap4", # You must use this style
+  rownames = TRUE,
+  options = list( # You must use these options
+    responsive = TRUE, # allows the data table to be mobile friendly
+    scrollX = TRUE, # allows the user to scroll through a wide table
+    columnDefs = list(  # These will set alignment of data values
+      # Notice the use of ncol on your data frame; leave the 1 as is.
+      list(className = 'dt-center', targets = 1:ncol(carData))
+    )
+  )
+)
+# [code omitted]
+```
+
+If you are making a Summary Data Table, you will need to follow the same process. If your data frame does not have row names, but instead a column with values acting as row names, you may replace the `rownames = TRUE` with `rownames = FALSE`; there should not be a column of sequential numbers on the left.
+
+Column names __MUST__ be simple and *meaningful* to the user. To this end, you should rename any columns that might have poor choices for names, just as we have done with the `mtcars` data. This includes using Greek characters in isolation. You should not have any columns labeled \(\mu\) or \(\sigma\). Rather you need to use English words.
+
+*Note: getting mathematical expressions to render properly in graphical environments in `R` is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.* 
+
+Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, __talk to Neil and Bob__. 
 
 ### Static Images
 Static image refers to any image you're using in your App which is not produced by `R`. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.

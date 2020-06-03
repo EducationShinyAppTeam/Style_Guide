@@ -909,7 +909,68 @@ Figure 3.25: Sliders Using the Red Palette
 </div>
 <div id="tables" class="section level3">
 <h3><span class="header-section-number">3.6.2</span> Tables</h3>
-<p>Use tables as infrequently as possible. If you absolutely must include a table, you will need to decide what the role of your table is. This is an Accessibility issue that you <strong>MUST</strong> pre-plan for. Screen readers will poorly communicate tables if you fail to set the role appropriately. <strong>Talk to Neil and Bob</strong> before using a table.</p>
+<p>Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn’t conducive to helping a person understand what’s going on, neither is a wall of data values. Thus, we need to be extreme judicious about incorporating data tables into any of our apps.</p>
+<p>In web development there are two main types of tables: layout tables and data tables.</p>
+<ul>
+<li>Layout tables help to control where different elements appear on the page.</li>
+<li>We need an additional distinction for data tables:
+<ul>
+<li>Summary Data Tables are tables that have summary information; typified by two-way tables (a.k.a. contingency tables or crosstabs) but might also include other things such as values of descriptive statistics stratified by groups.</li>
+<li>Data Set are an entire data object, presented in tabular format</li>
+</ul></li>
+</ul>
+<p><strong>Layout Tables should never be used in a BOAST App.</strong></p>
+<p>Data Sets should be displayed <strong>as sparingly as possible</strong>. In order to include a Data Set display, you will need to have identified an explicit learning goal/objective that necessitates the user digging through a data frame. If you can’t identify such a learning goal, you should NOT include a data frame.</p>
+<p>If the goal is to allow the user to look through the data set OR to have access to the data, then <strong>give a link</strong> to either the original source of the data (<strong>preferred</strong>) or for them to download the file.</p>
+<p>Summary Data Tables can be used more often and can enrich the user’s experience with your app. However, these must still be constructed in an appropriate manner.</p>
+<p>Neither Data Sets nor Summary Data Tables should be inserted into your App as a picture. This is an big Accessibility violation. Use the directions below to create the appropriate type of data table.</p>
+<div id="displaying-data-tables" class="section level4">
+<h4><span class="header-section-number">3.6.2.1</span> Displaying Data Tables</h4>
+<p>Your first step is to create a data frame object in your <code>R</code> code.</p>
+<ul>
+<li>If you are displaying a data set (rare), then you will either need to read in the data or call that data frame. For this example, I’ll be using the <code>mtcars</code> data frame that is part of <code>R</code>.</li>
+<li>If you are making a Summary Data Table, you’ll need to either use <code>R</code> to calculate the values and store in a data frame or create a data frame yourself.</li>
+</ul>
+<p>In either case, be sure you identify what columns you’re going to use. If your original data file has 50 columns, but your App only makes use of 5, drop the the other 45. Only display the columns that you actually use.</p>
+<p>Your next step is to decide on where to put this display (e.g., inside an Exploration Tab or as a separate page). This will help you identify where in your App’s UI section you need to put the appropriate code.</p>
+<p>To ensure that your data table is accessible and responsive (i.e., mobile friendly), you will need to use the <code>DT</code> package.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visualAppearance.html#cb9-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
+<span id="cb9-2"><a href="visualAppearance.html#cb9-2"></a><span class="co"># Be sure to include this in your library call</span></span>
+<span id="cb9-3"><a href="visualAppearance.html#cb9-3"></a><span class="kw">library</span>(DT)</span></code></pre></div>
+<p>In your UI section, you’ll need to use the following code, placed in the appropriate area:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="visualAppearance.html#cb10-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb10-2"><a href="visualAppearance.html#cb10-2"></a>DT<span class="op">::</span><span class="kw">DTOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;mtCars&quot;</span>)</span>
+<span id="cb10-3"><a href="visualAppearance.html#cb10-3"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>Then, in your Server section, you’ll need to use the following code:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visualAppearance.html#cb11-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb11-2"><a href="visualAppearance.html#cb11-2"></a><span class="co"># Prepare your data set with only the columns needed</span></span>
+<span id="cb11-3"><a href="visualAppearance.html#cb11-3"></a>carData &lt;-<span class="st"> </span>mtcars[,<span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;gear&quot;</span>, <span class="st">&quot;wt&quot;</span>)]</span>
+<span id="cb11-4"><a href="visualAppearance.html#cb11-4"></a></span>
+<span id="cb11-5"><a href="visualAppearance.html#cb11-5"></a><span class="co">## Use Short but Meaningful Column Names</span></span>
+<span id="cb11-6"><a href="visualAppearance.html#cb11-6"></a><span class="kw">names</span>(carData) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;MPG&quot;</span>, <span class="st">&quot;# of Cylinders&quot;</span>, <span class="st">&quot;Horsepower&quot;</span>, <span class="st">&quot;# of Gears&quot;</span>, <span class="st">&quot;Weight&quot;</span>)</span>
+<span id="cb11-7"><a href="visualAppearance.html#cb11-7"></a></span>
+<span id="cb11-8"><a href="visualAppearance.html#cb11-8"></a><span class="co"># Create the output data table</span></span>
+<span id="cb11-9"><a href="visualAppearance.html#cb11-9"></a><span class="co"># Be sure to use the same name as you did in the UI</span></span>
+<span id="cb11-10"><a href="visualAppearance.html#cb11-10"></a>output<span class="op">$</span>mtCars &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
+<span id="cb11-11"><a href="visualAppearance.html#cb11-11"></a>  <span class="dt">expr =</span> carData,</span>
+<span id="cb11-12"><a href="visualAppearance.html#cb11-12"></a>  <span class="dt">caption =</span> <span class="st">&quot;Motor Trend US Data, 1973-1974 Models&quot;</span>, <span class="co"># Add a caption to your table</span></span>
+<span id="cb11-13"><a href="visualAppearance.html#cb11-13"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, <span class="co"># You must use this style</span></span>
+<span id="cb11-14"><a href="visualAppearance.html#cb11-14"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb11-15"><a href="visualAppearance.html#cb11-15"></a>  <span class="dt">options =</span> <span class="kw">list</span>( <span class="co"># You must use these options</span></span>
+<span id="cb11-16"><a href="visualAppearance.html#cb11-16"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, <span class="co"># allows the data table to be mobile friendly</span></span>
+<span id="cb11-17"><a href="visualAppearance.html#cb11-17"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>, <span class="co"># allows the user to scroll through a wide table</span></span>
+<span id="cb11-18"><a href="visualAppearance.html#cb11-18"></a>    <span class="dt">columnDefs =</span> <span class="kw">list</span>(  <span class="co"># These will set alignment of data values</span></span>
+<span id="cb11-19"><a href="visualAppearance.html#cb11-19"></a>      <span class="co"># Notice the use of ncol on your data frame; leave the 1 as is.</span></span>
+<span id="cb11-20"><a href="visualAppearance.html#cb11-20"></a>      <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>, <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(carData))</span>
+<span id="cb11-21"><a href="visualAppearance.html#cb11-21"></a>    )</span>
+<span id="cb11-22"><a href="visualAppearance.html#cb11-22"></a>  )</span>
+<span id="cb11-23"><a href="visualAppearance.html#cb11-23"></a>)</span>
+<span id="cb11-24"><a href="visualAppearance.html#cb11-24"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>If you are making a Summary Data Table, you will need to follow the same process. If your data frame does not have row names, but instead a column with values acting as row names, you may replace the <code>rownames = TRUE</code> with <code>rownames = FALSE</code>; there should not be a column of sequential numbers on the left.</p>
+<p>Column names <strong>MUST</strong> be simple and <em>meaningful</em> to the user. To this end, you should rename any columns that might have poor choices for names, just as we have done with the <code>mtcars</code> data. This includes using Greek characters in isolation. You should not have any columns labeled <span class="math inline">\(\mu\)</span> or <span class="math inline">\(\sigma\)</span>. Rather you need to use English words.</p>
+<p><em>Note: getting mathematical expressions to render properly in graphical environments in <code>R</code> is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.</em></p>
+<p>Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, <strong>talk to Neil and Bob</strong>.</p>
+</div>
 </div>
 <div id="static-images" class="section level3">
 <h3><span class="header-section-number">3.6.3</span> Static Images</h3>
@@ -918,22 +979,22 @@ Figure 3.25: Sliders Using the Red Palette
 <div id="adding-an-image" class="section level4">
 <h4><span class="header-section-number">3.6.3.1</span> Adding an Image</h4>
 <p>To include the image in your App, you’ll need to make use of the image tag, <code>img</code>. When you run your App, Shiny automatically knows to check the <code>www</code> folder any time the <code>img</code> tag gets called. Here is an example supposing that the check mark image for correct answers is in the app’s <code>www</code> folder:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visualAppearance.html#cb9-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb9-2"><a href="visualAppearance.html#cb9-2"></a><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;right&quot;</span>,</span>
-<span id="cb9-3"><a href="visualAppearance.html#cb9-3"></a>    <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb9-4"><a href="visualAppearance.html#cb9-4"></a>        <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb9-5"><a href="visualAppearance.html#cb9-5"></a>        <span class="dt">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
-<span id="cb9-6"><a href="visualAppearance.html#cb9-6"></a>        <span class="dt">height =</span> <span class="dv">25</span>,</span>
-<span id="cb9-7"><a href="visualAppearance.html#cb9-7"></a>        ))</span>
-<span id="cb9-8"><a href="visualAppearance.html#cb9-8"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="visualAppearance.html#cb12-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb12-2"><a href="visualAppearance.html#cb12-2"></a><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb12-3"><a href="visualAppearance.html#cb12-3"></a>    <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb12-4"><a href="visualAppearance.html#cb12-4"></a>        <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb12-5"><a href="visualAppearance.html#cb12-5"></a>        <span class="dt">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
+<span id="cb12-6"><a href="visualAppearance.html#cb12-6"></a>        <span class="dt">height =</span> <span class="dv">25</span>,</span>
+<span id="cb12-7"><a href="visualAppearance.html#cb12-7"></a>        ))</span>
+<span id="cb12-8"><a href="visualAppearance.html#cb12-8"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>You’ll notice that we’ve wrapped the <code>img</code> call in a <code>div</code> call. The <code>div</code> call allows us to specify that we want the image to be right aligned; you could also do left or center. You can replace the <code>div</code> call with the paragraph environment and include text on either side, effectively making your image part of the text.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="visualAppearance.html#cb10-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb10-2"><a href="visualAppearance.html#cb10-2"></a><span class="kw">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
-<span id="cb10-3"><a href="visualAppearance.html#cb10-3"></a>  <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb10-4"><a href="visualAppearance.html#cb10-4"></a>      <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb10-5"><a href="visualAppearance.html#cb10-5"></a>      <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>),</span>
-<span id="cb10-6"><a href="visualAppearance.html#cb10-6"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
-<span id="cb10-7"><a href="visualAppearance.html#cb10-7"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="visualAppearance.html#cb13-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb13-2"><a href="visualAppearance.html#cb13-2"></a><span class="kw">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb13-3"><a href="visualAppearance.html#cb13-3"></a>  <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb13-4"><a href="visualAppearance.html#cb13-4"></a>      <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb13-5"><a href="visualAppearance.html#cb13-5"></a>      <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>),</span>
+<span id="cb13-6"><a href="visualAppearance.html#cb13-6"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
+<span id="cb13-7"><a href="visualAppearance.html#cb13-7"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 </div>
 <div id="sizing-and-positioning-your-image" class="section level4">
 <h4><span class="header-section-number">3.6.3.2</span> Sizing and Positioning Your Image</h4>
@@ -952,11 +1013,11 @@ Figure 3.25: Sliders Using the Red Palette
 <div id="adding-alt-text-to-static-images" class="section level4">
 <h4><span class="header-section-number">3.6.4.1</span> Adding Alt Text to Static Images</h4>
 <p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visualAppearance.html#cb11-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb11-2"><a href="visualAppearance.html#cb11-2"></a><span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
-<span id="cb11-3"><a href="visualAppearance.html#cb11-3"></a>    <span class="dt">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
-<span id="cb11-4"><a href="visualAppearance.html#cb11-4"></a>    <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>)</span>
-<span id="cb11-5"><a href="visualAppearance.html#cb11-5"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="visualAppearance.html#cb14-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb14-2"><a href="visualAppearance.html#cb14-2"></a><span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb14-3"><a href="visualAppearance.html#cb14-3"></a>    <span class="dt">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb14-4"><a href="visualAppearance.html#cb14-4"></a>    <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>)</span>
+<span id="cb14-5"><a href="visualAppearance.html#cb14-5"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 </div>
 <div id="adding-alt-text-graphs" class="section level4">
 <h4><span class="header-section-number">3.6.4.2</span> Adding Alt Text Graphs</h4>
@@ -1023,6 +1084,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
