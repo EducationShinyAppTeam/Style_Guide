@@ -94,13 +94,62 @@ The icon for this Tab must be "book".
 
 Use the word "Prerequisites" rather than "Pre-reqs", "Prereqs", or "Pre-requisites". 
 
-Keep in mind that there are two different types of prerequisites: technical/conceptual and contextual. Both of these  go into the Prerequisites tab.
+##### Types of Prerequisites
+There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites tab.
 
 Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App's statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.
 
 Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you're using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus. 
 
 Keep in mind that Contextual Prerequisites are different than context which should be part of the Activity Tab. If the information is necessary to interpret sliders/graphs and is *specific*, then you should include this information in the Activity Tab. If the information helps the user say "Oh, that's what they mean by [blank]", that is good sign of something to put in the Prerequisites Tab.
+
+##### Text Links in Prerequisites (and Beyond)
+In as many instances as possible, we would like to provide the user with a link to Online Notes of a World Campus Statistics course. 
+
+*Note: what appears here is applicable any time you want to link to an webpage that is beyond BOAST.*
+
+The link that you provide must take the user to the appropriate location. Do not send the user to the home page for a course; rather, take them to the relevant page. To do this, you'll need to explore the [Department of Statistics STAT ONLINE](https://online.stat.psu.edu/statprogram/) page and look through the courses. 
+
+You will create these links in-line, not as a button. Thus, they must be part of a paragraph block (i.e., inside a `p()` with other text) or as part of list item (i.e., inside a `li()`).
+
+Your link must include descriptive text. Using "Click Here" is __not__ descriptive. Rather say where the link will take the user. If you look through the links that we've included in this Style Guide, we've been modeling this. This descriptive text not only helps all users anticipate where they are going but also improves the accessibility of the links. (Plus, have you ever tried to click a small link on your phone?)
+
+Once you find the appropriate page, you'll need to copy the URL for your link. There are some instances where we might be able to find an existing anchor (look for two inter-locking rings to appear when you place your cursor over a title) or make a request for adding an anchor. These are especially useful if what you want to link to is only part of the page.
+
+*Note: not all requests for anchors may be fulfilled and not all course notes have anchors.
+
+The styling of the link will be managed by the BOAST CSS file.
+
+Here's are two examples of how you would code a text link:
+```{r textLinkEx1, echo=TRUE, eval=FALSE}
+# [omitted code]
+# Working in the UI section
+
+# Example 1: in a paragraph
+p("While not critical, you might wish to refresh your understanding on some of the basic shapes
+  of graphs in statistics. A good resource for this would be the ", # Notice the ending space
+  tags$a(
+    herf = "https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes", #the URL
+    "STAT 100 Table of Graph Shapes" # the descriptive text for the link
+    ),
+  ". Feel free to check that resource out." 
+  # Notice the ending punctuation for the prior sentence is not part of the link.
+)
+
+# Example 2: in a list item
+tags$ul(
+  tags$li("Review the ", # Notice the ending space
+    tags$a(
+      herf = "https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes", #the URL
+      "STAT 100 Table of Graph Shapes" # the descriptive text for the link
+      )
+    # List items don't necessarily need ending punctuation. 
+    #Be consistent; either all items do or none.
+  ) 
+)
+# [omitted code]
+```
+
 
 ####  Activity Tab(s)
 This is the heart of your App and you are required to have at least one.
@@ -789,7 +838,7 @@ The text used as a question in a game should NOT be wrapped in a Heading tag; wr
 
 By using the central CSS file, any text you included in/on buttons, dropdown menus, sliders, radio buttons, choices, and other inputs as well as alert messages and popups/rollovers, will automatically be styled correctly.
 
-Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong with input labels.
+Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong with input labels. Input labels should be written in sentence case (i.e., capitalize only the first word and any proper nouns).
 
 You may use these tags with popups/rollovers.
 
@@ -837,6 +886,9 @@ Remember, we always want to be modeling excellent graphing behaviors.
 
 Both of these quotations highlight that you need to include some text with your plots to help the user construct their understanding of what you're trying to show them.
 
+### Titles and Labels
+Graph and Table titles should follow Title Case. Capitalize each word unless the word is "small" (e.g., of, an, etc.). The [Title Case website](https://titlecase.com/) can help you if you aren't sure. (This website also does other types of case such as camel case.)
+
 ### Axes and Scales
 `R`'s default axes are terrible. They often do not fully cover the data and the have gaps between the axes. All this impedes the user's construction of meaning. Thus, you'll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.
 
@@ -848,7 +900,7 @@ g1 <- ggplot2::ggplot(...)
 # Add your layer
 g1 + ggplot2::geom_point()
 # Control axes and scale
-## Multplicative Scaling of the Horizontal (x) Axis
+## Multiplicative Scaling of the Horizontal (x) Axis
 ## Additive Scaling of the Vertical (y) Axis
 g1 + ggplot2::scale_x_continuous(expand = expansion(mult = c(1,2), add = 0)) + 
   scale_y_continuous(expand = expansion(mult = 0, add = c(0,0.05))) 

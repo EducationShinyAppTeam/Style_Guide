@@ -125,7 +125,7 @@ Here are few more things to NOT do with the heading tags:
 + Do not wrap a header tag around a list element (e.g., `h3(tags$li("here is my list item"))`) nor the reverse (e.g., `tags$li(h3("here is my list item"))`)
 + Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2("Introduction to", p("my game")))
 
-For more information check out the [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
+For more information check out the [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/).
 
 #### Paragraphs {#paragraphs}
 
