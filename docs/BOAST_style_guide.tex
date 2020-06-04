@@ -120,7 +120,7 @@
 
 \title{The BOAST Style Guide}
 \author{Neil Hatfield (\href{mailto:njh5464@psu.edu}{\nolinkurl{njh5464@psu.edu}}) and Robert Carey (\href{mailto:rpc5102@psu.edu}{\nolinkurl{rpc5102@psu.edu}})}
-\date{03 June 2020}
+\date{04 June 2020}
 
 \begin{document}
 \maketitle
@@ -133,7 +133,9 @@
 \chapter*{Welcome}\label{welcome}}
 \addcontentsline{toc}{chapter}{Welcome}
 
-This guide spells out the styling that should be used for all apps included in the Book of Apps for Statistics Teaching (\href{https://github.com/EducationShinyAppTeam/BOAST}{BOAST}). Keep in mind that there are several different aspects to what makes up Style including:
+This guide spells out the styling that should be used for all apps included in the \href{https://github.com/EducationShinyAppTeam/BOAST}{Book of Apps for Statistics Teaching (BOAST)}.
+
+There are several different aspects to what makes up styling including:
 
 \begin{itemize}
 \tightlist
@@ -147,14 +149,39 @@ This guide spells out the styling that should be used for all apps included in t
   Documentation (how you provide references, including code and data sources, and give credit)
 \end{itemize}
 
-By following this style guide you'll ensure that any app you create will meet our standards.
+In addition to these elements, we've provide information on ensuring that your App is accessible to all users and works well on mobile devices such as smart phones and tablets.
 
-Additionally, we've included some information on Acessibility for our apps, checking how your App works on mobile devices, and some additoinal tools that can help you develop your App.
+Whenever possible, we've attempted to provide you with examples to help you see our standards in action as well as code that you can use as templates. For each code block, you should be able to place your cursor over the block and see a copy icon in the upper-right hand corner. This will allow you to copy the code. We've also included links to additional resources so that you can learn more about key topics.
+
+You will need to follow this Style Guide to ensure that any app you create meets (or exceeds) our standards is worth of inclusion in BOAST.
+
+This Style Guide is laid out in several parts:
+
+\begin{itemize}
+\tightlist
+\item
+  Part 1 covers the basics for getting started
+\item
+  Part 2 focuses on Coding Style
+\item
+  Part 3 deals with the many aspects of Visual Styling
+\item
+  Part 4 centers on Linguistic Styling
+\item
+  Part 5 conveys important information on Accessibility and Mobile Friendliness
+\item
+  Part 6 is where you can see an example of building an app from scratch
+\item
+  The final part is where you can find some additional tools and information.
+\end{itemize}
+
+\hypertarget{part-getting-started}{%
+\part{Getting Started}\label{part-getting-started}}
 
 \setcounter{chapter}{0}
 
-\hypertarget{getStarted}{%
-\chapter{Getting Started}\label{getStarted}}
+\hypertarget{basics}{%
+\chapter{The Basics}\label{basics}}
 
 Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.
 
@@ -179,31 +206,32 @@ Before you get too far into the Style Guide, we would like for you to take a mom
     \href{https://teams.microsoft.com/l/team/19\%3a8423bc25992a4451952d8312b497324d\%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec\&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e}{BOAST} in Microsoft Teams (tied to your PSU AccessID)
   \end{enumerate}
 \item
-  Ensure that you have all of the proper software.
+  Ensure that you have all of the required software
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    \texttt{R} (version 3.5.* minimum, version 4.0.0 preferred) {[}\href{https://cloud.r-project.org/}{Download}{]}
+    \href{https://cloud.r-project.org/}{\texttt{R} (version 3.5.* minimum, version 4.0.0 preferred)}
   \item
-    RStudio Desktop(most current version preferred) {[}\href{https://rstudio.com/products/rstudio/download/\#download}{Download}{]}
+    \href{https://rstudio.com/products/rstudio/download/\#download}{RStudio Desktop (most current version preferred)}
   \end{enumerate}
 \item
-  Additional Software that we recommend
+  Additional Software that we strongly recommend
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    GitHub Desktop {[}\href{https://desktop.github.com/}{Download}{]}
+    \href{https://desktop.github.com/}{GitHub Desktop}{]}
   \end{enumerate}
 \item
-  \texttt{R} Packages--here are some basic packages that everyone will need; be sure to install their dependencies too:
+  \texttt{R} Packages--here are some basic packages that everyone will need; be sure to install their dependencies
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"shiny"}\NormalTok{, }\StringTok{"shinyBS"}\NormalTok{, }\StringTok{"tidyverse"}\NormalTok{))}
+\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\StringTok{"DT"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"shiny"}\NormalTok{, }\StringTok{"shinyBS"}\NormalTok{, }
+                   \StringTok{"shinyWidgets"}\NormalTok{, }\StringTok{"tidyverse"}\NormalTok{, }\StringTok{"tippy"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 \item
@@ -217,7 +245,7 @@ Bob created the \href{https://github.com/EducationShinyAppTeam/boastUtils}{boast
 
 \textbf{Starting Summer 2020, you will be required to you make use of this tool.}
 
-Please check out the package's \href{https://github.com/EducationShinyAppTeam/boastUtils}{page} for instructions on installing and usage.
+Please check out the \href{https://github.com/EducationShinyAppTeam/boastUtils}{package's GitHub page} for instructions on installing and usage.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -241,6 +269,8 @@ There are several methods you can use:
   \protect\hyperlink{github-desktop}{GitHub Desktop (Recommended)}
 \item
   \protect\hyperlink{command-line}{Command Line (Advanced)}
+\item
+  \protect\hyperlink{rstudio-project}{RStudio Project}
 \end{itemize}
 
 \hypertarget{direct-download}{%
@@ -301,13 +331,39 @@ Enter the following command in your terminal:
   \href{https://happygitwithr.com/}{Happy Git and GitHub for the userR}
 \end{itemize}
 
+\hypertarget{rstudio-project}{%
+\subsection{RStudio Project}\label{rstudio-project}}
+
+You can also use RStudio to connect to and copy repositories from GitHub. There are a few extra steps that you'll need to go through compared to other methods. We recommend that you use GitHub Desktop.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In your browser, navigate to the repository you want to copy; in this case the \href{https://github.com/EducationShinyAppTeam/Sample_App}{Sample\_App repo}.
+\item
+  Launch RStudio and create a new project.
+\item
+  Select the Version Control option and then Git.
+\item
+  Switch back to your browser and click on the Clone or Download button. There should be a line of text starting with \texttt{git@github} that you can copy. Do so.
+\item
+  Returning to RStudio, paste the get you just copied into the Repository URL field.
+\item
+  Adjust the directory name and the subdirectory (where this project will live on your machine) as you see fit.
+\item
+  Click the Create Project button.
+\end{enumerate}
+
+This method will ensure that you will be able to successfully push and pull changes to GitHub. For additional help, Neil has created a video ``\href{https://youtu.be/IK0SiEz5vjs}{Using RStudio to Connect to GitHub}'' which walks you through the process.
+
 \hypertarget{workflow}{%
-\section{Workflow}\label{workflow}}
+\chapter{Workflow}\label{workflow}}
 
 As you work on apps, both updating existing and developing new ones, moving through a workflow can help you organize yourself.
 
-\hypertarget{revisingupdating-existing-apps}{%
-\subsection{Revising/Updating Existing Apps}\label{revisingupdating-existing-apps}}
+\hypertarget{revising-existing-apps}{%
+\section{Revising Existing Apps}\label{revising-existing-apps}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -342,7 +398,7 @@ As you work on apps, both updating existing and developing new ones, moving thro
 \item
   Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
 \item
-  When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (See Section \ref{testing}).
+  When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see \protect\hyperlink{testing}{Section \ref{testing}}).
 \item
   When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
 \item
@@ -352,7 +408,9 @@ As you work on apps, both updating existing and developing new ones, moving thro
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
 
 \hypertarget{creating-new-apps}{%
-\subsection{Creating New Apps}\label{creating-new-apps}}
+\section{Creating New Apps}\label{creating-new-apps}}
+
+To see this workflow in action, check out \protect\hyperlink{makingApp}{Chapter \ref{makingApp}}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -379,7 +437,7 @@ If everything checks out, then we'll merge your development branch with the mast
     Relationships between various elements.
   \end{enumerate}
 \item
-  When your plan \textbf{gets approval}, create a new repository on GitHub (See Section \ref{repo-naming}); you can initially load the Sample App template to this repository, if you wish.
+  When your plan \textbf{gets approval}, create a new repository on GitHub (see \protect\hyperlink{repo-naming}{Section \ref{repo-naming}}); you can initially load the Sample App template to this repository, if you wish.
 \item
   Begin writing the code
 \item
@@ -389,7 +447,7 @@ If everything checks out, then we'll merge your development branch with the mast
 \item
   Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
 \item
-  When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (See Section \ref{testing}).
+  When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see \protect\hyperlink{testing}{Section \ref{testing}}).
 \item
   When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
 \item
@@ -397,6 +455,27 @@ If everything checks out, then we'll merge your development branch with the mast
 \end{enumerate}
 
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
+
+\hypertarget{repo-naming}{%
+\subsection{GitHub Repo Names}\label{repo-naming}}
+
+Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
+
+\begin{itemize}
+\tightlist
+\item
+  Use \href{https://en.wikipedia.org/wiki/Letter_case\#Title_case}{Title Case} (not camelCase)
+\item
+  Use underscores ( \_ ) instead of spaces
+\item
+  Match the App name as closely as possible
+\item
+  You have a 100 character limit
+\end{itemize}
+
+While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository.
+
+If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
 
 \hypertarget{testing}{%
 \section{Testing Your App}\label{testing}}
@@ -433,7 +512,7 @@ You only need to do this step once.
 \item
   After you've logged into the PSU VPN, go to \href{https://rstudio-connect.tlt.psu.edu:3939/connect}{TLT's RStudio Connect} and log in using your PSU ID.
 \item
-  Once logged in, click on the Publish button
+  Once logged in, click on the Publish button as shown in the green box of \protect\hyperlink{fig:testing1}{Figure \ref{fig:testing1}}
 
   \begin{figure}
   \includegraphics[width=12.26in]{images/publish1} \caption{Click the Publish Button}\label{fig:testing1}
@@ -447,7 +526,7 @@ You only need to do this step once.
 \hypertarget{checking-youve-connected}{%
 \subsubsection{Checking You've Connected}\label{checking-youve-connected}}
 
-You can check to see if you've connected by going into RStudio's Options and looking at the Publishing tab. You should see a similar entry as what is in the green box below:
+You can check to see if you've connected by going into RStudio's Options and looking at the Publishing tab. You should see a similar entry as what is in the green box of \protect\hyperlink{fig:testing2}{Figure \ref{fig:testing2}}:
 
 \begin{figure}
 
@@ -479,7 +558,7 @@ Once your App has been published, a new window should open in your browser that 
 \caption{Successful Publish and Settings}\label{fig:testing3}
 \end{figure}
 
-In Figure \ref{fig:testing3}, you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
+In \protect\hyperlink{fig:testing3}{Figure \ref{fig:testing3}}, you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
 
 If you want, you can add collaborators as I did in the example (orange box). This is not required.
 
@@ -488,12 +567,15 @@ The most important piece is the Content URL (marked with the blue star). You'll 
 \hypertarget{check-the-logs}{%
 \subsection{Check the Logs}\label{check-the-logs}}
 
-As you test your App, you'll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in Figure \ref{fig:testing3}) to view.
+As you test your App, you'll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in \protect\hyperlink{fig:testing3}{Figure \ref{fig:testing3}}) to view.
 
 \hypertarget{problems}{%
 \subsection{Problems?}\label{problems}}
 
 If you run into problem either publishing your App or getting the App to launch on the TLT, please reach out to Neil and Bob.
+
+\hypertarget{part-writing-code}{%
+\part{Writing Code}\label{part-writing-code}}
 
 \hypertarget{coding}{%
 \chapter{Coding Style}\label{coding}}
@@ -544,7 +626,7 @@ Avoid using the variable names from code that you're making use of from another 
 \hypertarget{formatCode}{%
 \subsection{Format Your Code}\label{formatCode}}
 
-See also \ref{orgCode} Organizing Code
+See also \protect\hyperlink{orgCode}{Section \ref{orgCode}}
 
 Use indentation spacing to help make your code readable. RStudio has a built-in tool that can help with this.
 
@@ -618,95 +700,67 @@ General Advice:
 
 Remember the following: the more proactive you are from the get go in commenting and organizing your code, the easier time you will have for debugging and improving your code down the road.
 
-\hypertarget{html}{%
-\subsection{HTML}\label{html}}
+\hypertarget{additional-coding-style}{%
+\section{Additional Coding Style}\label{additional-coding-style}}
 
-Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in \texttt{R}. When you run a Shiny app, \texttt{R} and the \texttt{shiny} packages actually convert all of the \texttt{R} code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an \textbf{Accessibility Issue}.
+In addition, we use the following coding practices.
 
-HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to wider audience. Here are the most common HTML tags that you'll encounter when making a Shiny App.
+\hypertarget{minPackages}{%
+\subsection{Minimize Package Usage}\label{minPackages}}
 
-\hypertarget{lists}{%
-\subsubsection{Lists}\label{lists}}
+Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R.
 
-There are two aspects to lists: the items in the list and the environment those items live in.
+This is not to say that you can't make use of a new package. This guideline's purpose is to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.
 
-The two list environment are Ordered Lists and Unordered Lists.
+To help you avoid name masking (i.e., \protect\hyperlink{explicit}{Section \ref{explicit}}), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use \texttt{dplyr::filter({[}arguments{]})} instead of just \texttt{filter({[}arguments{]})}.
 
-\begin{itemize}
-\tightlist
-\item
-  The Ordered List environment is for when you want require that user works through the items in a particular order. You call this environment in your App by using \texttt{tags\$ol(\ {[}your\ list{]}\ )}. These lists are sequentially numbered/lettered.
-\item
-  The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using \texttt{tags\$li(\ {[}your\ list{]}\ )}. These lists will appear with bullets.
-\end{itemize}
-
-Once you've created the list environment, you create items for your list in the same way: \texttt{tags\$li({[}content{]})}. You do not need to and should \textbf{NOT} use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.
-
-Here is an example of how you might create a list:
+You can also run a \texttt{funchir::stale\_package\_check} on your \texttt{app.R}, \texttt{ui.R}, and \texttt{sever.R} files to see which packages you're loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tags}\OperatorTok{$}\KeywordTok{ul}\NormalTok{(}
-\NormalTok{  tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\StringTok{"This is my first item."}\NormalTok{),}
-\NormalTok{  tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\StringTok{"A second item with a"}\NormalTok{, tags}\OperatorTok{$}\KeywordTok{strong}\NormalTok{(}\StringTok{"boldface"}\NormalTok{), }\StringTok{"word."}\NormalTok{)}
-\NormalTok{)}
+\CommentTok{# Check working directory}
+\KeywordTok{getwd}\NormalTok{()}
+\CommentTok{# Does the output match the folder path to where you app lives?}
+\CommentTok{# If not, then you need to set that. For example,}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"~/Documents/GitHub/shiny-apps/Sample_App"}\NormalTok{)}
+
+\CommentTok{# Run a stale package check on app.R, ui.R, and server.R}
+\NormalTok{funchir}\OperatorTok{::}\KeywordTok{stale_package_check}\NormalTok{(}\StringTok{"app.R"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-which turns into
+Be aware that while \texttt{stale\_package\_check} is useful, it doesn't always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from \texttt{ggplot2} or \texttt{tippy}. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might some more misses.
 
-\begin{itemize}
-\tightlist
-\item
-  This is my first item.
-\item
-  A second item with a \textbf{boldface} word.
-\end{itemize}
+Once you're sure that a package isn't being used, remove the \texttt{library} call.
 
-There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to \texttt{tags\$li()} when in that section.
+If you are dealing with a \texttt{ui.R}/\texttt{server.R} pair, make sure that the appropriate packages are loaded in the right file. For example, \texttt{ggplot2} only needs to be loaded in the \texttt{server.R} file.
 
-\hypertarget{headers}{%
-\subsubsection{Headers}\label{headers}}
+\hypertarget{exFiles}{%
+\subsection{Minimize External Files}\label{exFiles}}
 
-Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. They are \textbf{NOT} for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content.
+Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
 
-There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.
+Wherever possible try to place external files into the \texttt{www} directory/folder that is at the same level as your \texttt{app.R} or \texttt{ui.R}/\texttt{server.R} files.
+
+If there are any external files (e.g., \texttt{*.csv}, \texttt{*.txt}, \texttt{*.dat}, \texttt{*.jpg}) that are not being used, delete them from the repository.
+
+\hypertarget{plotCache}{%
+\subsection{Plot Caching}\label{plotCache}}
+
+There are cases when your app will include a plot that falls into any of the following categories:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\arabic{enumi})}
 \tightlist
 \item
-  \texttt{h1()} is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).
+  a plot that all users will see (i.e., static data set),
 \item
-  \texttt{h2()} is for Page titles within the App. These would correspond with the tab links you place in the dashboard's left side panel.
+  is a computationally intense plot (i.e., lots of data and/or layers),
 \item
-  \texttt{h3()} is for titling Sections within a Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.
-\item
-  \texttt{h4()} is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.
-\item
-  \texttt{h5()} and \texttt{h6()} should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., \texttt{h1()}, \texttt{h2()}, etc.
+  might be a dynamic graph that the user explores and needs to move back and forth between various states.
 \end{enumerate}
 
-\textbf{Avoid skipping heading levels} as this will get your App flagged for an Accessibility Violation. That is to say don't start at \texttt{h2} with no \texttt{h1} and don't go from \texttt{h1} to \texttt{h3} without an \texttt{h2}. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn't skip whole sections in either of those.
-
-Here are few more things to NOT do with the heading tags:
-
-\begin{itemize}
-\tightlist
-\item
-  DO NOT USE headings to style text (We cannot stress this enough.)
-\item
-  Do not wrap a header tag around a list element (e.g., \texttt{h3(tags\$li("here\ is\ my\ list\ item"))}) nor the reverse (e.g., \texttt{tags\$li(h3("here\ is\ my\ list\ item"))})
-\item
-  Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(``Introduction to'', p(``my game'')))
-\end{itemize}
-
-For more information check out the \href{https://www.w3.org/WAI/tutorials/page-structure/headings/}{W3C's Tutorial}.
-
-\hypertarget{paragraphs}{%
-\subsubsection{Paragraphs}\label{paragraphs}}
-
-Your content should be enclosed in the paragraph tag, \texttt{p()}. Even if your content is relative brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is.
+Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the \texttt{renderCachePlot} function rather than \texttt{renderPlot}. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).
 
 \hypertarget{textStyle}{%
 \subsection{Styling Text}\label{textStyle}}
@@ -747,43 +801,7 @@ There times when you might need some additional text styling that is not already
 
 The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.
 
-See also the CSS section (\ref{css}).
-
-\hypertarget{minPackages}{%
-\subsection{Minimize Package Usage}\label{minPackages}}
-
-Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R.
-
-This is not to say that you can't make use of a new package. This guideline's purpose is to help to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.
-
-To help you avoid name masking (i.e., Be Explicit-\ref{explicit}), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use \texttt{dplyr::filter({[}arguments{]})} instead of just \texttt{filter({[}arguments{]})}.
-
-You can also run a \texttt{funchir::stale\_package\_check} on your \texttt{app.R}, \texttt{ui.R}, and \texttt{sever.R} files to see which packages you're loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
-
-\hypertarget{exFiles}{%
-\subsection{Minimize External Files}\label{exFiles}}
-
-Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
-
-Wherever possible try to place external files into the \texttt{www} directory/folder that is at the same level as your \texttt{app.R} or \texttt{ui.R}/\texttt{server.R} files.
-
-\hypertarget{plotCache}{%
-\subsection{Plot Caching}\label{plotCache}}
-
-There are cases when your app will include a plot that falls into any of the following categories:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi})}
-\tightlist
-\item
-  a plot that all users will see (i.e., static data set),
-\item
-  is a computationally intense plot (i.e., lots of data and/or layers),
-\item
-  might be a dynamic graph that the user explores and needs to move back and forth between various states.
-\end{enumerate}
-
-Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the \texttt{renderCachePlot} function rather than \texttt{renderPlot}. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).
+See also \protect\hyperlink{css}{Section \ref{css}}.
 
 \hypertarget{orgCode}{%
 \section{Organizing Code}\label{orgCode}}
@@ -803,7 +821,7 @@ The order for your code will be as follows:
 \item
   App Metadata (see below)
 \item
-  Any additional source files
+  Any additional source files and custom functions
 \item
   UI definition
 \item
@@ -825,7 +843,7 @@ The order for your code in the \texttt{ui.R} file:
 \item
   App Metadata (see below)
 \item
-  Any additional source files
+  Any additional source files and custom functions
 \item
   UI definition
 \end{enumerate}
@@ -838,31 +856,108 @@ The order for your code in the \texttt{server.R} file:
 \item
   Packages to be loaded
 \item
-  Any additional source files
+  Any additional source files and custom functions
 \item
   Server definition
 \end{enumerate}
 
-\hypertarget{metadata}{%
-\section{Metadata}\label{metadata}}
+\hypertarget{html}{%
+\section{HTML}\label{html}}
 
-Your App will need the following metadata in either the \texttt{app.R} or the \texttt{ui.R} file. For long lines, use the \texttt{paste} function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
+Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in \texttt{R}. When you run a Shiny app, \texttt{R} and the \texttt{shiny} packages actually convert all of the \texttt{R} code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an \textbf{Accessibility Issue}.
 
-For now, use the following format:
+HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to wider audience. Here are the most common HTML tags that you'll encounter when making a Shiny App.
+
+\hypertarget{lists}{%
+\subsection{Lists}\label{lists}}
+
+There are two aspects to lists: the items in the list and the environment those items live in.
+
+The two list environment are Ordered Lists and Unordered Lists.
+
+\begin{itemize}
+\tightlist
+\item
+  The Ordered List environment is for when you want require that user works through the items in a particular order. You call this environment in your App by using \texttt{tags\$ol(\ {[}your\ list{]}\ )}. These lists are sequentially numbered/lettered.
+\item
+  The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using \texttt{tags\$li(\ {[}your\ list{]}\ )}. These lists will appear with bullets.
+\end{itemize}
+
+Once you've created the list environment, you create items for your list in the same way: \texttt{tags\$li({[}content{]})}. You do not need to and should \textbf{NOT} use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.
+
+Here is an example of how you might create a list:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{## App Meta Data----------------------------------------------------------------}
-\NormalTok{APP_TITLE  <<-}\StringTok{ "Title of the app"}
-\NormalTok{APP_DESCP  <<-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}
-  \StringTok{"Description of the app"}\NormalTok{,}
-  \StringTok{"use multiple lines to keep the description legible."}
+\NormalTok{tags}\OperatorTok{$}\KeywordTok{ul}\NormalTok{(}
+\NormalTok{  tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\StringTok{"This is my first item."}\NormalTok{),}
+\NormalTok{  tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\StringTok{"A second item with a"}\NormalTok{, tags}\OperatorTok{$}\KeywordTok{strong}\NormalTok{(}\StringTok{"boldface"}\NormalTok{), }\StringTok{"word."}\NormalTok{)}
 \NormalTok{)}
-\CommentTok{## End App Meta Data------------------------------------------------------------}
 \end{Highlighting}
 \end{Shaded}
 
-Notice that both \texttt{APP\_TITLE} and \texttt{APP\_DESCP} do not follow camelCase. This is by intent to denote global \texttt{constants}.
+which turns into
+
+\begin{itemize}
+\tightlist
+\item
+  This is my first item.
+\item
+  A second item with a \textbf{boldface} word.
+\end{itemize}
+
+There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to \texttt{tags\$li()} when in that section.
+
+\hypertarget{headers}{%
+\subsection{Headers}\label{headers}}
+
+Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. They are \textbf{NOT} for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content.
+
+There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{h1()} is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).
+\item
+  \texttt{h2()} is for Page titles within the App. These would correspond with the tab links you place in the dashboard's left side panel.
+\item
+  \texttt{h3()} is for titling Sections within a Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.
+\item
+  \texttt{h4()} is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.
+\item
+  \texttt{h5()} and \texttt{h6()} should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., \texttt{h1()}, \texttt{h2()}, etc.
+\end{enumerate}
+
+\textbf{Avoid skipping heading levels} as this will get your App flagged for an Accessibility Violation. That is to say don't start at \texttt{h2} with no \texttt{h1} and don't go from \texttt{h1} to \texttt{h3} without an \texttt{h2}. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn't skip whole sections in either of those.
+
+Here are few more things to NOT do with the heading tags:
+
+\begin{itemize}
+\tightlist
+\item
+  DO NOT USE headings to style text (We cannot stress this enough.)
+\item
+  Do not wrap a header tag around a list element (e.g., \texttt{h3(tags\$li("here\ is\ my\ list\ item"))}) nor the reverse (e.g., \texttt{tags\$li(h3("here\ is\ my\ list\ item"))})
+\item
+  Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(``Introduction to'', p(``my game'')))
+\end{itemize}
+
+For more information check out
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.w3.org/WAI/tutorials/page-structure/headings/}{W3C's Tutorial}
+\item
+  \href{https://accessibility.psu.edu/headings/}{Penn State's Headings and Subheadings Accessibility}
+\end{itemize}
+
+\hypertarget{paragraphs}{%
+\subsection{Paragraphs}\label{paragraphs}}
+
+Your content should be enclosed in the paragraph tag, \texttt{p()}. Even if your content is relative brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is.
 
 \hypertarget{css}{%
 \section{CSS}\label{css}}
@@ -875,7 +970,7 @@ There are a few key elements at play for CSS:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  All apps need to have the appropriate reference to the CSS file (See \ref{textStyle}).
+  All apps need to have the appropriate reference to the CSS file (See \protect\hyperlink{textStyle}{Section \ref{textStyle}}).
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
@@ -927,26 +1022,26 @@ There is an exception to \#3: setting up alignment for a div section. This would
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't \texttt{boast.css}, please log an issue and mention/assign Neil. (Most common external CSS files are \texttt{style.css} and \texttt{Feature(s).css}.)
 
-\hypertarget{repo-naming}{%
-\section{GitHub Repo Names}\label{repo-naming}}
+\hypertarget{metadata}{%
+\section{Metadata}\label{metadata}}
 
-Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
+Your App will need the following metadata in either the \texttt{app.R} or the \texttt{ui.R} file. For long lines, use the \texttt{paste} function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
 
-\begin{itemize}
-\tightlist
-\item
-  Use \href{https://en.wikipedia.org/wiki/Letter_case\#Title_case}{Title Case} (not camelCase)
-\item
-  Use underscores ( \_ ) instead of spaces
-\item
-  Match the App name as closely as possible
-\item
-  You have a 100 character limit
-\end{itemize}
+For now, use the following format:
 
-While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository.
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{## App Meta Data----------------------------------------------------------------}
+\NormalTok{APP_TITLE  <<-}\StringTok{ "Title of the app"}
+\NormalTok{APP_DESCP  <<-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}
+  \StringTok{"Description of the app"}\NormalTok{,}
+  \StringTok{"use multiple lines to keep the description legible."}
+\NormalTok{)}
+\CommentTok{## End App Meta Data------------------------------------------------------------}
+\end{Highlighting}
+\end{Shaded}
 
-If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
+Notice that both \texttt{APP\_TITLE} and \texttt{APP\_DESCP} do not follow camelCase. This is by intent to denote global \texttt{constants}.
 
 \hypertarget{rlocker}{%
 \section{Using rlocker}\label{rlocker}}
@@ -995,7 +1090,9 @@ Out of the box, \texttt{rlocker} does not provide any collection functions for a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{.generateStatement <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(session, }\DataTypeTok{verb =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{object =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{description =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{interactionType =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{response =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{success =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{completion =} \OtherTok{FALSE}\NormalTok{) \{}
+\NormalTok{.generateStatement <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(session, }\DataTypeTok{verb =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{object =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{description =} \OtherTok{NA}\NormalTok{,}
+                               \DataTypeTok{interactionType =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{response =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{success =} \OtherTok{NA}\NormalTok{,}
+                               \DataTypeTok{completion =} \OtherTok{FALSE}\NormalTok{) \{}
 \NormalTok{  statement <-}\StringTok{ }\NormalTok{rlocker}\OperatorTok{::}\KeywordTok{createStatement}\NormalTok{(}\KeywordTok{list}\NormalTok{(}
     \DataTypeTok{verb =}\NormalTok{ verb,}
     \DataTypeTok{object =} \KeywordTok{list}\NormalTok{(}
@@ -1050,58 +1147,15 @@ Additional code can be found in the \href{https://github.com/rpc5102/rlocker/tre
 
 You can run \texttt{help(package\ =\ "rlocker")} to view the help files for this package or press \texttt{F1} while typing a function name to see the documentation for that specific function.
 
-\hypertarget{visualAppearance}{%
-\chapter{Visual Appearance}\label{visualAppearance}}
+\hypertarget{part-visual-appearance}{%
+\part{Visual Appearance}\label{part-visual-appearance}}
+
+\hypertarget{layot}{%
+\chapter{App Layout}\label{layot}}
 
 This chapter of the BOAST Style Guide deals with the Visual Appearance of each app. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each app, there are 6 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Common Elements, Color, Text Styling, and Graphics.
 
 One of the most important benefits of using the \texttt{boastApp} function from the \texttt{boastUtils} package is that is that much of the Visual Appearance will be automatically handled for you. However, you should still familiarize yourself with the Visual Appearance Style for our apps.
-
-\hypertarget{logo}{%
-\section{PSU Branding}\label{logo}}
-
-Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.
-
-In your UI section of \texttt{app.R} (or the \texttt{ui.R} file), at the end of the \texttt{dashboardSidebar()} section, you will need to include the following:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{tags}\OperatorTok{$}\KeywordTok{div}\NormalTok{(}\DataTypeTok{class =} \StringTok{"sidebar-logo"}\NormalTok{,}
-\NormalTok{         boastUtils}\OperatorTok{::}\KeywordTok{psu_eberly_logo}\NormalTok{(}\StringTok{"reversed"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-Here's how this code would look in context:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{dashboardPage}\NormalTok{(}
-  \DataTypeTok{skin =} \StringTok{"blue"}\NormalTok{,}
-  \KeywordTok{dashboardHeader}\NormalTok{(}
-    \DataTypeTok{title =} \StringTok{"title"}\NormalTok{,}
-    \CommentTok{# [omitted code]}
-\NormalTok{  ),}
-  \KeywordTok{dashboardSidebar}\NormalTok{(}
-    \DataTypeTok{width =} \DecValTok{300}\NormalTok{,}
-    \KeywordTok{sidebarMenu}\NormalTok{(}
-      \DataTypeTok{id =} \StringTok{"tabs"}\NormalTok{,}
-      \CommentTok{# [omitted code],}
-\NormalTok{      tags}\OperatorTok{$}\KeywordTok{div}\NormalTok{(}
-        \DataTypeTok{class =} \StringTok{"sidebar-logo"}\NormalTok{,}
-\NormalTok{        boastUtils}\OperatorTok{::}\KeywordTok{psu_eberly_logo}\NormalTok{(}\StringTok{"reversed"}\NormalTok{)}
-\NormalTok{        )}
-\NormalTok{      ),}
-    \KeywordTok{dashboardBody}\NormalTok{(}
-\NormalTok{    tags}\OperatorTok{$}\KeywordTok{head}\NormalTok{(}
-\NormalTok{      tags}\OperatorTok{$}\KeywordTok{link}\NormalTok{(}\DataTypeTok{rel =} \StringTok{"stylesheet"}\NormalTok{, }\DataTypeTok{type =} \StringTok{"text/css"}\NormalTok{,}
-        \DataTypeTok{href =} \StringTok{"https://educationshinyappteam.github.io/Style_Guide/theme/boast.css"}\NormalTok{),}
-      \KeywordTok{tabItems}\NormalTok{(}
-       \CommentTok{# [omitted code]}
-\NormalTok{      )  )  )  )  )}
-\end{Highlighting}
-\end{Shaded}
-
-This will ensure that the Penn State logo gets properly used.
 
 \hypertarget{dashboard}{%
 \section{Dashboard}\label{dashboard}}
@@ -1115,474 +1169,8 @@ All apps will make use of a Dashboard structure. This divides the visual appeara
 \item
   Along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed
 \item
-  The last area is the Body; this is where all content will appear
+  The last area is the Body; this is where all content will appear.
 \end{itemize}
-
-\hypertarget{dashboard-header}{%
-\subsection{Dashboard Header}\label{dashboard-header}}
-
-Each Dashboard Header contains only a couple of elements. The most important of these will be a {[}shortened{]} Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon.
-
-Additional icons might be included to the left of the Home icon. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.
-
-There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
-
-The width of the Title component of the Header should be 300; \texttt{titleWidth\ =\ 300}.
-
-\hypertarget{sidebar-and-body}{%
-\subsection{Sidebar and Body}\label{sidebar-and-body}}
-
-The Sidebar (responsible for App navigation) and the Body are intimately related to one another. The Sidebar provides structure to your App as well as being the primary way that a user can move around the App. The Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with.
-
-The Sidebar should have a width of 300, (\texttt{width\ =\ 300}).
-
-To ensure a consistent experience across all apps, you need to make sure that your App has the following tabs/page, in the following order:
-
-\hypertarget{the-overview-tab}{%
-\subsubsection{The Overview Tab}\label{the-overview-tab}}
-
-This Tab is \textbf{REQUIRED} for all Apps. This is the main landing page of your App and should appear at the top of the sidepanel.
-
-The icon for this Tab must be ``dashboard''.
-
-The Overview Tab must contain \textbf{ALL} of the following elements:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  ``Title'' (as Heading 1)
-\item
-  A description of the app (as paragraph text under the title)
-\item
-  ``Instructions'' (as Heading 2)
-\item
-  General instructions for using the App (using an Ordered List environment)
-\item
-  A button that will take the user to the next Tab/page.
-\item
-  ``Acknowledgements'' (as Heading 2)
-\item
-  A listing of acknowledgements including, coders, content writers, etc. (as a paragraph)
-\item
-  Last Element: \texttt{div(class\ =\ "updated",\ "Last\ Update:\ mm/dd/yyyy\ by\ FL.")} with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.
-\end{enumerate}
-
-There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, ``Instructions:'' does not follow this Style Guide. Additionally, there should not be an ``About'' heading.
-
-\hypertarget{a-prerequisites-tab}{%
-\subsubsection{A Prerequisites Tab}\label{a-prerequisites-tab}}
-
-If your App needs to ensure that the user has the base understandings necessary to interact with your App, you'll need to create a prerequisites Tab. Otherwise, skip this Tab.
-
-The icon for this Tab must be ``book''.
-
-Use the word ``Prerequisites'' rather than ``Pre-reqs'', ``Prereqs'', or ``Pre-requisites''.
-
-\hypertarget{types-of-prerequisites}{%
-\paragraph{Types of Prerequisites}\label{types-of-prerequisites}}
-
-There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites tab.
-
-Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App's statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.
-
-Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you're using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus.
-
-Keep in mind that Contextual Prerequisites are different than context which should be part of the Activity Tab. If the information is necessary to interpret sliders/graphs and is \emph{specific}, then you should include this information in the Activity Tab. If the information helps the user say ``Oh, that's what they mean by {[}blank{]}'', that is good sign of something to put in the Prerequisites Tab.
-
-\hypertarget{text-links-in-prerequisites-and-beyond}{%
-\paragraph{Text Links in Prerequisites (and Beyond)}\label{text-links-in-prerequisites-and-beyond}}
-
-In as many instances as possible, we would like to provide the user with a link to Online Notes of a World Campus Statistics course.
-
-\emph{Note: what appears here is applicable any time you want to link to an webpage that is beyond BOAST.}
-
-The link that you provide must take the user to the appropriate location. Do not send the user to the home page for a course; rather, take them to the relevant page. To do this, you'll need to explore the \href{https://online.stat.psu.edu/statprogram/}{Department of Statistics STAT ONLINE} page and look through the courses.
-
-You will create these links in-line, not as a button. Thus, they must be part of a paragraph block (i.e., inside a \texttt{p()} with other text) or as part of list item (i.e., inside a \texttt{li()}).
-
-Your link must include descriptive text. Using ``Click Here'' is \textbf{not} descriptive. Rather say where the link will take the user. If you look through the links that we've included in this Style Guide, we've been modeling this. This descriptive text not only helps all users anticipate where they are going but also improves the accessibility of the links. (Plus, have you ever tried to click a small link on your phone?)
-
-Once you find the appropriate page, you'll need to copy the URL for your link. There are some instances where we might be able to find an existing anchor (look for two inter-locking rings to appear when you place your cursor over a title) or make a request for adding an anchor. These are especially useful if what you want to link to is only part of the page.
-
-*Note: not all requests for anchors may be fulfilled and not all course notes have anchors.
-
-The styling of the link will be managed by the BOAST CSS file.
-
-Here's are two examples of how you would code a text link:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# [omitted code]}
-\CommentTok{# Working in the UI section}
-
-\CommentTok{# Example 1: in a paragraph}
-\KeywordTok{p}\NormalTok{(}\StringTok{"While not critical, you might wish to refresh your understanding on some of the basic shapes}
-\StringTok{  of graphs in statistics. A good resource for this would be the "}\NormalTok{, }\CommentTok{# Notice the ending space}
-\NormalTok{  tags}\OperatorTok{$}\KeywordTok{a}\NormalTok{(}
-    \DataTypeTok{herf =} \StringTok{"https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes"}\NormalTok{, }\CommentTok{#the URL}
-    \StringTok{"STAT 100 Table of Graph Shapes"} \CommentTok{# the descriptive text for the link}
-\NormalTok{    ),}
-  \StringTok{". Feel free to check that resource out."} 
-  \CommentTok{# Notice the ending punctuation for the prior sentence is not part of the link.}
-\NormalTok{)}
-
-\CommentTok{# Example 2: in a list item}
-\NormalTok{tags}\OperatorTok{$}\KeywordTok{ul}\NormalTok{(}
-\NormalTok{  tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\StringTok{"Review the "}\NormalTok{, }\CommentTok{# Notice the ending space}
-\NormalTok{    tags}\OperatorTok{$}\KeywordTok{a}\NormalTok{(}
-      \DataTypeTok{herf =} \StringTok{"https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes"}\NormalTok{, }\CommentTok{#the URL}
-      \StringTok{"STAT 100 Table of Graph Shapes"} \CommentTok{# the descriptive text for the link}
-\NormalTok{      )}
-    \CommentTok{# List items don't necessarily need ending punctuation. }
-    \CommentTok{#Be consistent; either all items do or none.}
-\NormalTok{  ) }
-\NormalTok{)}
-\CommentTok{# [omitted code]}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{activity-tabs}{%
-\subsubsection{Activity Tab(s)}\label{activity-tabs}}
-
-This is the heart of your App and you are required to have at least one.
-
-In the event you have multiple activities, each one will need a separate Tab. The order of these Tabs will depend upon the your goals for the App.
-
-Each Tab should contain all information/instructions for the user to be able to interact with the activity without having to switch to other Tabs.
-
-The icon you use depends on the type of activity:
-
-\begin{itemize}
-\tightlist
-\item
-  Games will use the icon ``gamepad''.
-\item
-  Explorations will use the icon ``wpexplorer''.
-\item
-  Challenges will use the icon ``gears''.
-\end{itemize}
-
-\hypertarget{general-layout-for-activity-tabs}{%
-\paragraph{General Layout for Activity Tabs}\label{general-layout-for-activity-tabs}}
-
-For the vast majority of Activity Tabs, we will adopt a 3-part layout:
-
-\begin{itemize}
-\tightlist
-\item
-  Across the top will be any general information the user needs to interact with your App as well as an context information.
-\item
-  To the left and wrapped in a well panel will be the inputs/controls that the user will need to manipulate.
-\item
-  To the right and NOT in a well panel will be the outputs (graphs, images, R output)
-\end{itemize}
-
-There will be some cases where this general layout does not necessarily work. For instance, Tic-Tac-Toe games will not follow this layout.
-
-\hypertarget{references}{%
-\subsubsection{References}\label{references}}
-
-The last Tab will be for your references. This Tab is \textbf{REQUIRED} and is where you will place a reference list for all of the following items that you used in your app:
-
-\begin{itemize}
-\tightlist
-\item
-  All \texttt{R} packages you used
-\item
-  Sources of any Code you used directly or drew heavily upon from other people
-\item
-  Pictures and/or other images
-\item
-  Data sets
-\item
-  Refer to the Documentation Section (\ref{documentation}) of this Style Guide for more information.
-\end{itemize}
-
-The icon for this Tab must be ``leanpub''.
-
-\hypertarget{last-element}{%
-\subsubsection{Last Element}\label{last-element}}
-
-The last element of the Sidebar will be the Penn State Logo. Please refer to the Section \ref{logo}.
-
-\hypertarget{tabs-inside-the-body}{%
-\subsection{Tabs Inside the Body}\label{tabs-inside-the-body}}
-
-There are two types of tabs in a Shiny app: there are the \texttt{tabItem} (i.e., the pages within an app and should appear in the Sidebar) and \texttt{tabPanel} (i.e., creating sub-pages or independent sections). In this section, we will discuss this later case.
-
-Deciding on whether to use \texttt{tabPanel} is going to depend on several things:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Do you have two or more aspects that are related enough that they shouldn't be their own separate tabs/pages of your App?
-
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \tightlist
-  \item
-    If NO, then you shouldn't use \texttt{tabPanel}.\\
-  \item
-    If YES, then continue.
-  \end{enumerate}
-\item
-  Are any of your aspects something that would be better suited as a Challenge or Game tab?
-
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \tightlist
-  \item
-    If YES, move that aspect to a separate page. If you still have 2+ aspects, continue.\\
-  \item
-    If NO, continue.\\
-  \end{enumerate}
-\item
-  Are the aspects independent enough that a person can skip a couple and still use the App successfully?
-
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \tightlist
-  \item
-    If NO, then you should re-consider your design.\\
-  \item
-    If YES, then proceed with using \texttt{tabPanel} in you design.
-  \end{enumerate}
-\end{enumerate}
-
-When you go to make a set of tab panels you will need to first create a \texttt{tabsetPanel} which will wrap around all of the individual panels. Use \texttt{type\ =\ "tabs"}.
-
-The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
-
-\hypertarget{common-elements}{%
-\section{Common Elements}\label{common-elements}}
-
-In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, correct/incorrect indicators, and animation buttons.
-
-For information about popovers, rollovers, hover text, or tooltips, please see Section \ref{popovers}.
-
-\hypertarget{ordering-inputs}{%
-\subsection{Ordering Inputs}\label{ordering-inputs}}
-
-One of the most powerful aspects of Shiny apps is that the user interacts with them. Thus, we do need to consider not only the ways in which user interact (e.g., buttons, sliders, text entry, etc.) but also the order in which you want the user to manipulate the inputs. Coming up with a single declaration for how to order inputs in all cases is not necessarily feasible. However, we can set up a general guideline for how to make decisions on ordering your inputs.
-
-Please use the following guidelines for determining the order of inputs in the User Interface (UI):
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  In general, if you want your user to do things in certain order, make your inputs appear in that order. For example, If you want them to pick a data set, then an unusualness threshold/significance level, what attribute to test, and then set a parameter value, then your inputs should appear in that order.
-\item
-  Make use of how we read the English language, i.e., Top-to-Bottom and Left-to-Right to provide an implicit ordering for your user.
-\item
-  If a user needs to carry out steps in particular sequence for your App to run properly, then place your inputs inside of an Ordered List environment with explicit text on what they should do. For example,
-
-  \begin{enumerate}
-  \def\labelenumii{\arabic{enumii}.}
-  \tightlist
-  \item
-    Choose your data set: {[}dropdown{]}\\
-  \item
-    Set your unusualness threshold/significance level\\
-    {[}slider{]}\\
-  \item
-    Which attribute do you want to test: {[}dropdown{]}\\
-  \item
-    What parameter value do you want to use: {[}numeric input{]}
-  \end{enumerate}
-\item
-  If an input is going to reset other inputs you should either:
-
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \tightlist
-  \item
-    Warn the user before hand\\
-  \item
-    Move the input to the top of the list\\
-  \item
-    Program the input to not reset other inputs\\
-  \item
-    Some combination of the above\\
-  \end{enumerate}
-\item
-  If the inputs are not dynamically linked to the output (e.g., plots automatically update with a change in the input's value), then you should include a button that says ``Make Plot'' at the end of the inputs.
-\end{enumerate}
-
-\hypertarget{buttons}{%
-\subsection{Buttons}\label{buttons}}
-
-Buttons are one way in which users interact with the apps. The two most common functions that are used are \texttt{shiny::actionButton} and \texttt{shinyBS::bsButton}. Both functions share many of the same features. Two ways in which they are different is that \texttt{shinyBS::bsButton} has an additional \texttt{style} argument while \texttt{shiny::actionButton} has a \texttt{width} argument that gives you fine grain size control (\texttt{bsButton} just has a qualitative size option). There are three key styling aspects: shape/animation, color, and text \& icon.
-
-\hypertarget{shapeanimation}{%
-\subsubsection{Shape/Animation}\label{shapeanimation}}
-
-All shape aspects of buttons will be controlled by CSS. The standard shape will be rectangular (the default). Sizing will be controlled by CSS although setting \texttt{size\ =\ "large"} for the \texttt{bsButton} call may be done.
-
-We have a number of apps where a button will change shape/size when a person hovers their cursor over it. This ``animation'' is to be discontinued. This is to say that buttons which change shape/size should be flagged as issues and resolved at the first opportunity.
-
-At most, the button's color might change (e.g., lighten or darken), depending on the context.
-
-\hypertarget{color}{%
-\subsubsection{Color}\label{color}}
-
-The coloring of the button will also be controlled by CSS in one of two ways.
-
-The default way will be through the BOAST CSS. This will ensure that the selected color scheme for your App will be consistent.
-
-The second way only applies to \texttt{bsButton} and the \texttt{style} argument. Here, this option references an external CSS file beyond BOAST. We see these most often in games. Use the following list to guide you in choosing which style:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{warning}: Good for when you want the user to proceed with caution; for example a submit button in a game.
-\item
-  \texttt{danger}: Good for when you want the user to think twice before clicking; for example, a reset game button.
-\item
-  \texttt{success}: Good for when you want to convey that the user can proceed safely; for example, a button that advances the user through the game
-\item
-  \texttt{info}: Good for when you want to give some additional information; for example, a button that triggers game instructions popping up, a button that gives a hint, or a button that might filter a question pool.
-\end{itemize}
-
-When in doubt, use the the \texttt{default} style option (or even omit this argument) for \texttt{bsButton} or use \texttt{actionButton}.
-
-\hypertarget{text-icon}{%
-\subsubsection{Text \& Icon}\label{text-icon}}
-
-The last styling element of a button is two-fold: the text that is in the button and the icon.
-
-Here are some guidelines for text of a button:
-
-\begin{itemize}
-\tightlist
-\item
-  All buttons must have some text.
-\item
-  Generally speaking, the text should be relatively brief and clear.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Don't use ``Go to the next page'' when you could use ``Next''
-  \end{itemize}
-\item
-  The text should make sense with the action of the button; for example,
-
-  \begin{itemize}
-  \tightlist
-  \item
-    ``Reset'' if the button resets something (a game, a plot, inputs)
-  \item
-    ``Submit'' if the button triggers the app to grab and process input values
-  \item
-    ``Make Graph'' if button causes a graph to be generated
-  \item
-    ``Show/Hide Graph'' if a button makes a graph object appear/disappear
-  \item
-    ``Next'' if a button moves the user along some path.
-  \end{itemize}
-\item
-  If the button references something like a particular tab (prerequisites, exploration, etc.), the text should reflect this.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    ``Explore!'' for a button that takes a user to an Exploration tab.
-  \item
-    ``Prerequisites'' for a button that takes a user to a Prerequisites tab.
-  \item
-    ``Challenge Yourself!'' for a button takes a user to a Challenge tab.
-  \item
-    ``Play!'' for a button that takes a user to Game tab.
-  \end{itemize}
-\item
-  If a button references an object like an activity packet or a download prompt the text should refer to that
-
-  \begin{itemize}
-  \tightlist
-  \item
-    ``Activity Packet'' for a button that would open up and/or download a packet for the user
-  \item
-    ``Download Data'' for a button that would download a data file.
-  \end{itemize}
-\item
-  Clarity is essential. If there are multiple buttons on the page, make sure that you use clear text for what button does and/or references.
-\end{itemize}
-
-Here are guidelines for the inclusion of icons in a button:
-
-\begin{itemize}
-\tightlist
-\item
-  Game buttons will NOT have any icons.
-\item
-  Direction Buttons (e.g., ``Next'' or ``Previous'') will NOT have any icons. Rather make the button text ``\textless\textless{} Previous'' or ``Next \textgreater\textgreater{}''
-\item
-  A ``Prerequisites'' button will use the ``book'' icon
-\item
-  All other tab buttons (labels ending with ``!'') will use the ``bolt'' icon.
-\item
-  A download button will use the ``cloud-download'' icon.
-\end{itemize}
-
-\hypertarget{correctincorrect-marks}{%
-\subsection{Correct/Incorrect Marks}\label{correctincorrect-marks}}
-
-In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of two images:
-
-\begin{figure}
-
-{\centering \includegraphics[width=3.75in]{images/check} \includegraphics[width=3.75in]{images/cross} 
-
-}
-
-\caption{Correct/Incorrect Marks}\label{fig:marks}
-\end{figure}
-
-You can save these two images by right-clicking on them and selecting ``Save Image As\ldots{}''. You will need to put them in the \texttt{www} folder/directory of your App.
-
-Their placement in your App will depend upon what makes the most sense.
-
-\hypertarget{animation-buttons}{%
-\subsection{Animation Buttons}\label{animation-buttons}}
-
-One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable.
-
-To enable this, you'll need to make use of the \texttt{animate} argument:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{#[code omitted]}
-\KeywordTok{sliderInput}\NormalTok{(}
-  \DataTypeTok{inputId =} \StringTok{"mtcAlpha"}\NormalTok{,}
-  \DataTypeTok{label =} \StringTok{"Set your threshold level, }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{(}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{alpha_\{UT\}}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{):"}\NormalTok{,}
-  \DataTypeTok{min =} \FloatTok{0.01}\NormalTok{,}
-  \DataTypeTok{max =} \FloatTok{0.25}\NormalTok{,}
-  \DataTypeTok{value =} \FloatTok{0.1}\NormalTok{,}
-  \DataTypeTok{step =} \FloatTok{0.01}\NormalTok{,}
-  \DataTypeTok{animate =} \KeywordTok{animationOptions}\NormalTok{(}
-    \DataTypeTok{interval =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{loop =} \OtherTok{TRUE}\NormalTok{))}
-
-\CommentTok{#[code omitted]}
-\end{Highlighting}
-\end{Shaded}
-
-You can set \texttt{animate=TRUE}, \texttt{animate=FALSE} or invoke the \texttt{animationOptions} function as we've done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (\texttt{interval}, in milliseconds) and should the animation start over once the slider reaches the maximum (\texttt{loop}).
-
-The \texttt{interval} is going to the most challenging value to figure out. This timer \emph{\textbf{ignores}} everything else; that is, it doesn't wait to see whether your plot has updated. Remember, the more complicated the process is that generates your plot, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While \texttt{renderCachePlot} can help speed things up, keep in mind that you still might need to play around with the \texttt{interval} value to ensure smooth functionality.
-
-Make sure when you're testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.
-
-The styling of the play/pause button will be controlled by the BOAST CSS file.
-
-\hypertarget{colors}{%
-\section{Colors}\label{colors}}
-
-Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet \href{https://www.w3.org/WAI/WCAG21/quickref/}{WCAG 2.1} Level AA. You can do so at the \href{https://davidmathlogic.com/colorblind/\#\%23000000-\%23E69F00-\%2356B4E9-\%23009E73-\%23F0E442-\%230072B2-\%23D55E00-\%23CC79A7}{Coloring for Colorblindness} website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.
-
-There are two major places where coloring comes into play: the user interface and plots you generate in \texttt{R}.
 
 \hypertarget{colorUI}{%
 \subsection{Color in the User Interface}\label{colorUI}}
@@ -1880,7 +1468,7 @@ Here is what the Red Palette looks like in action:
 \end{figure}
 
 \hypertarget{chapterColor}{%
-\subsubsection{Current Chapter Color Assignments}\label{chapterColor}}
+\subsection{Current Chapter Color Assignments}\label{chapterColor}}
 
 Here are the current (05/27/2020) color theme assignments for chapters:
 
@@ -1914,48 +1502,532 @@ Here are the current (05/27/2020) color theme assignments for chapters:
   Chapter 13: Biology GREEN
 \end{itemize}
 
-\hypertarget{color-and-plots-in-r}{%
-\subsection{\texorpdfstring{Color and Plots in \texttt{R}}{Color and Plots in R}}\label{color-and-plots-in-r}}
+\hypertarget{dashboard-header}{%
+\section{Dashboard Header}\label{dashboard-header}}
 
-In \texttt{R} you can set color theme which you use in \texttt{ggplot2}. Here are two custom color palettes that you can use in your App. Additionally, the package \texttt{viridis} provides several additional color palettes which are improvements upon the default color scheme.
+Each Dashboard Header contains only a couple of elements. The most important of these will be a {[}shortened{]} Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon.
+
+Additional icons might be included to the left of the Home icon. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.
+
+There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
+
+The width of the Title component of the Header should be 300; \texttt{titleWidth\ =\ 300}.
+
+\hypertarget{dashboard-sidebar}{%
+\section{Dashboard Sidebar}\label{dashboard-sidebar}}
+
+\hypertarget{last-element}{%
+\subsection{Last Element}\label{last-element}}
+
+The last element of the Sidebar will be the Penn State Logo. Please refer to the Section \ref{logo}.
+
+\hypertarget{dashboard-body}{%
+\section{Dashboard Body}\label{dashboard-body}}
+
+The Sidebar (responsible for App navigation) and the Body are intimately related to one another. The Sidebar provides structure to your App as well as being the primary way that a user can move around the App. The Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with.
+
+The Sidebar should have a width of 300, (\texttt{width\ =\ 300}).
+
+To ensure a consistent experience across all apps, you need to make sure that your App has the following tabs/page, in the following order:
+
+\hypertarget{the-overview-tab}{%
+\subsection{The Overview Tab}\label{the-overview-tab}}
+
+This Tab is \textbf{REQUIRED} for all Apps. This is the main landing page of your App and should appear at the top of the sidepanel.
+
+The icon for this Tab must be ``dashboard''.
+
+The Overview Tab must contain \textbf{ALL} of the following elements:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``Title'' (as Heading 1)
+\item
+  A description of the app (as paragraph text under the title)
+\item
+  ``Instructions'' (as Heading 2)
+\item
+  General instructions for using the App (using an Ordered List environment)
+\item
+  A button that will take the user to the next Tab/page.
+\item
+  ``Acknowledgements'' (as Heading 2)
+\item
+  A listing of acknowledgements including, coders, content writers, etc. (as a paragraph)
+\item
+  Last Element: \texttt{div(class\ =\ "updated",\ "Last\ Update:\ mm/dd/yyyy\ by\ FL.")} with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.
+\end{enumerate}
+
+There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, ``Instructions:'' does not follow this Style Guide. Additionally, there should not be an ``About'' heading.
+
+\hypertarget{a-prerequisites-tab}{%
+\subsection{A Prerequisites Tab}\label{a-prerequisites-tab}}
+
+If your App needs to ensure that the user has the base understandings necessary to interact with your App, you'll need to create a prerequisites Tab. Otherwise, skip this Tab.
+
+The icon for this Tab must be ``book''.
+
+Use the word ``Prerequisites'' rather than ``Pre-reqs'', ``Prereqs'', or ``Pre-requisites''.
+
+\hypertarget{types-of-prerequisites}{%
+\subsubsection{Types of Prerequisites}\label{types-of-prerequisites}}
+
+There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites tab.
+
+Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App's statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.
+
+Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you're using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus.
+
+Keep in mind that Contextual Prerequisites are different than context which should be part of the Activity Tab. If the information is necessary to interpret sliders/graphs and is \emph{specific}, then you should include this information in the Activity Tab. If the information helps the user say ``Oh, that's what they mean by {[}blank{]}'', that is good sign of something to put in the Prerequisites Tab.
+
+\hypertarget{text-links-in-prerequisites-and-beyond}{%
+\subsubsection{Text Links in Prerequisites (and Beyond)}\label{text-links-in-prerequisites-and-beyond}}
+
+In as many instances as possible, we would like to provide the user with a link to Online Notes of a World Campus Statistics course.
+
+\emph{Note: what appears here is applicable any time you want to link to an webpage that is beyond BOAST.}
+
+The link that you provide must take the user to the appropriate location. Do not send the user to the home page for a course; rather, take them to the relevant page. To do this, you'll need to explore the \href{https://online.stat.psu.edu/statprogram/}{Department of Statistics STAT ONLINE} page and look through the courses.
+
+You will create these links in-line, not as a button. Thus, they must be part of a paragraph block (i.e., inside a \texttt{p()} with other text) or as part of list item (i.e., inside a \texttt{li()}).
+
+Your link must include descriptive text. Using ``Click Here'' is \textbf{not} descriptive. Rather say where the link will take the user. If you look through the links that we've included in this Style Guide, we've been modeling this. This descriptive text not only helps all users anticipate where they are going but also improves the accessibility of the links. (Plus, have you ever tried to click a small link on your phone?)
+
+Once you find the appropriate page, you'll need to copy the URL for your link. There are some instances where we might be able to find an existing anchor (look for two inter-locking rings to appear when you place your cursor over a title) or make a request for adding an anchor. These are especially useful if what you want to link to is only part of the page.
+
+*Note: not all requests for anchors may be fulfilled and not all course notes have anchors.
+
+The styling of the link will be managed by the BOAST CSS file.
+
+Here's are two examples of how you would code a text link:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# boastPalette is based on the Wong color blind set found at the above website.}
-\NormalTok{boastPalette <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#0072B2"}\NormalTok{,}\StringTok{"#D55E00"}\NormalTok{,}\StringTok{"#009E73"}\NormalTok{,}\StringTok{"#CE77A8"}\NormalTok{,}
-    \StringTok{"#000000"}\NormalTok{,}\StringTok{"#E69F00"}\NormalTok{,}\StringTok{"#999999"}\NormalTok{,}\StringTok{"#56B4E9"}\NormalTok{,}\StringTok{"#CC79A7"}\NormalTok{)}
+\CommentTok{# [omitted code]}
+\CommentTok{# Working in the UI section}
 
-\CommentTok{# psuPalette is based on Penn State's three official color palettes}
-\CommentTok{# and checked at the above webite.}
-\NormalTok{psuPalette <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#1E407C"}\NormalTok{,}\StringTok{"#BC204B"}\NormalTok{,}\StringTok{"#3EA39E"}\NormalTok{,}\StringTok{"#E98300"}\NormalTok{,}
-    \StringTok{"#999999"}\NormalTok{,}\StringTok{"#AC8DCE"}\NormalTok{,}\StringTok{"#F2665E"}\NormalTok{,}\StringTok{"#99CC00"}\NormalTok{)}
+\CommentTok{# Example 1: in a paragraph}
+\KeywordTok{p}\NormalTok{(}\StringTok{"While not critical, you might wish to refresh your understanding on some of the basic shapes}
+\StringTok{  of graphs in statistics. A good resource for this would be the "}\NormalTok{, }\CommentTok{# Notice the ending space}
+\NormalTok{  tags}\OperatorTok{$}\KeywordTok{a}\NormalTok{(}
+    \DataTypeTok{herf =} \StringTok{"https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes"}\NormalTok{, }\CommentTok{#the URL}
+    \StringTok{"STAT 100 Table of Graph Shapes"} \CommentTok{# the descriptive text for the link}
+\NormalTok{    ),}
+  \StringTok{". Feel free to check that resource out."} 
+  \CommentTok{# Notice the ending punctuation for the prior sentence is not part of the link.}
+\NormalTok{)}
 
-\CommentTok{# Both palettes get used in the order of what is listed.}
+\CommentTok{# Example 2: in a list item}
+\NormalTok{tags}\OperatorTok{$}\KeywordTok{ul}\NormalTok{(}
+\NormalTok{  tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\StringTok{"Review the "}\NormalTok{, }\CommentTok{# Notice the ending space}
+\NormalTok{    tags}\OperatorTok{$}\KeywordTok{a}\NormalTok{(}
+      \DataTypeTok{herf =} \StringTok{"https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes"}\NormalTok{, }\CommentTok{#the URL}
+      \StringTok{"STAT 100 Table of Graph Shapes"} \CommentTok{# the descriptive text for the link}
+\NormalTok{      )}
+    \CommentTok{# List items don't necessarily need ending punctuation. }
+    \CommentTok{#Be consistent; either all items do or none.}
+\NormalTok{  ) }
+\NormalTok{)}
+\CommentTok{# [omitted code]}
 \end{Highlighting}
 \end{Shaded}
 
-To use these palettes (or ones from \texttt{viridis}) with a \texttt{ggplot2} object, you'll need to doe the following
+\hypertarget{activity-tabs}{%
+\subsection{Activity Tab(s)}\label{activity-tabs}}
+
+This is the heart of your App and you are required to have at least one.
+
+In the event you have multiple activities, each one will need a separate Tab. The order of these Tabs will depend upon the your goals for the App.
+
+Each Tab should contain all information/instructions for the user to be able to interact with the activity without having to switch to other Tabs.
+
+The icon you use depends on the type of activity:
+
+\begin{itemize}
+\tightlist
+\item
+  Games will use the icon ``gamepad''.
+\item
+  Explorations will use the icon ``wpexplorer''.
+\item
+  Challenges will use the icon ``gears''.
+\end{itemize}
+
+\hypertarget{general-layout-for-activity-tabs}{%
+\subsubsection{General Layout for Activity Tabs}\label{general-layout-for-activity-tabs}}
+
+For the vast majority of Activity Tabs, we will adopt a 3-part layout:
+
+\begin{itemize}
+\tightlist
+\item
+  Across the top will be any general information the user needs to interact with your App as well as an context information.
+\item
+  To the left and wrapped in a well panel will be the inputs/controls that the user will need to manipulate.
+\item
+  To the right and NOT in a well panel will be the outputs (graphs, images, R output)
+\end{itemize}
+
+There will be some cases where this general layout does not necessarily work. For instance, Tic-Tac-Toe games will not follow this layout.
+
+\hypertarget{references}{%
+\subsection{References}\label{references}}
+
+The last Tab will be for your references. This Tab is \textbf{REQUIRED} and is where you will place a reference list for all of the following items that you used in your app:
+
+\begin{itemize}
+\tightlist
+\item
+  All \texttt{R} packages you used
+\item
+  Sources of any Code you used directly or drew heavily upon from other people
+\item
+  Pictures and/or other images
+\item
+  Data sets
+\item
+  Refer to the Documentation Section (\ref{documentation}) of this Style Guide for more information.
+\end{itemize}
+
+The icon for this Tab must be ``leanpub''.
+
+\hypertarget{tabs-inside-the-body}{%
+\subsection{Tabs Inside the Body}\label{tabs-inside-the-body}}
+
+There are two types of tabs in a Shiny app: there are the \texttt{tabItem} (i.e., the pages within an app and should appear in the Sidebar) and \texttt{tabPanel} (i.e., creating sub-pages or independent sections). In this section, we will discuss this later case.
+
+Deciding on whether to use \texttt{tabPanel} is going to depend on several things:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Do you have two or more aspects that are related enough that they shouldn't be their own separate tabs/pages of your App?
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    If NO, then you shouldn't use \texttt{tabPanel}.\\
+  \item
+    If YES, then continue.
+  \end{enumerate}
+\item
+  Are any of your aspects something that would be better suited as a Challenge or Game tab?
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    If YES, move that aspect to a separate page. If you still have 2+ aspects, continue.\\
+  \item
+    If NO, continue.\\
+  \end{enumerate}
+\item
+  Are the aspects independent enough that a person can skip a couple and still use the App successfully?
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    If NO, then you should re-consider your design.\\
+  \item
+    If YES, then proceed with using \texttt{tabPanel} in you design.
+  \end{enumerate}
+\end{enumerate}
+
+When you go to make a set of tab panels you will need to first create a \texttt{tabsetPanel} which will wrap around all of the individual panels. Use \texttt{type\ =\ "tabs"}.
+
+The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
+
+\hypertarget{common-elements}{%
+\section{Common Elements}\label{common-elements}}
+
+In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, correct/incorrect indicators, and animation buttons.
+
+For information about popovers, rollovers, hover text, or tooltips, please see Section \ref{popovers}.
+
+\hypertarget{ordering-inputs}{%
+\subsection{Ordering Inputs}\label{ordering-inputs}}
+
+One of the most powerful aspects of Shiny apps is that the user interacts with them. Thus, we do need to consider not only the ways in which user interact (e.g., buttons, sliders, text entry, etc.) but also the order in which you want the user to manipulate the inputs. Coming up with a single declaration for how to order inputs in all cases is not necessarily feasible. However, we can set up a general guideline for how to make decisions on ordering your inputs.
+
+Please use the following guidelines for determining the order of inputs in the User Interface (UI):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In general, if you want your user to do things in certain order, make your inputs appear in that order. For example, If you want them to pick a data set, then an unusualness threshold/significance level, what attribute to test, and then set a parameter value, then your inputs should appear in that order.
+\item
+  Make use of how we read the English language, i.e., Top-to-Bottom and Left-to-Right to provide an implicit ordering for your user.
+\item
+  If a user needs to carry out steps in particular sequence for your App to run properly, then place your inputs inside of an Ordered List environment with explicit text on what they should do. For example,
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Choose your data set: {[}dropdown{]}\\
+  \item
+    Set your unusualness threshold/significance level\\
+    {[}slider{]}\\
+  \item
+    Which attribute do you want to test: {[}dropdown{]}\\
+  \item
+    What parameter value do you want to use: {[}numeric input{]}
+  \end{enumerate}
+\item
+  If an input is going to reset other inputs you should either:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Warn the user before hand\\
+  \item
+    Move the input to the top of the list\\
+  \item
+    Program the input to not reset other inputs\\
+  \item
+    Some combination of the above\\
+  \end{enumerate}
+\item
+  If the inputs are not dynamically linked to the output (e.g., plots automatically update with a change in the input's value), then you should include a button that says ``Make Plot'' at the end of the inputs.
+\end{enumerate}
+
+\hypertarget{buttons}{%
+\subsection{Buttons}\label{buttons}}
+
+Buttons are one way in which users interact with the apps. The two most common functions that are used are \texttt{shiny::actionButton} and \texttt{shinyBS::bsButton}. Both functions share many of the same features. Two ways in which they are different is that \texttt{shinyBS::bsButton} has an additional \texttt{style} argument while \texttt{shiny::actionButton} has a \texttt{width} argument that gives you fine grain size control (\texttt{bsButton} just has a qualitative size option). There are three key styling aspects: shape/animation, color, and text \& icon.
+
+\hypertarget{shapeanimation}{%
+\subsubsection{Shape/Animation}\label{shapeanimation}}
+
+All shape aspects of buttons will be controlled by CSS. The standard shape will be rectangular (the default). Sizing will be controlled by CSS although setting \texttt{size\ =\ "large"} for the \texttt{bsButton} call may be done.
+
+We have a number of apps where a button will change shape/size when a person hovers their cursor over it. This ``animation'' is to be discontinued. This is to say that buttons which change shape/size should be flagged as issues and resolved at the first opportunity.
+
+At most, the button's color might change (e.g., lighten or darken), depending on the context.
+
+\hypertarget{color}{%
+\subsubsection{Color}\label{color}}
+
+The coloring of the button will also be controlled by CSS in one of two ways.
+
+The default way will be through the BOAST CSS. This will ensure that the selected color scheme for your App will be consistent.
+
+The second way only applies to \texttt{bsButton} and the \texttt{style} argument. Here, this option references an external CSS file beyond BOAST. We see these most often in games. Use the following list to guide you in choosing which style:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{warning}: Good for when you want the user to proceed with caution; for example a submit button in a game.
+\item
+  \texttt{danger}: Good for when you want the user to think twice before clicking; for example, a reset game button.
+\item
+  \texttt{success}: Good for when you want to convey that the user can proceed safely; for example, a button that advances the user through the game
+\item
+  \texttt{info}: Good for when you want to give some additional information; for example, a button that triggers game instructions popping up, a button that gives a hint, or a button that might filter a question pool.
+\end{itemize}
+
+When in doubt, use the the \texttt{default} style option (or even omit this argument) for \texttt{bsButton} or use \texttt{actionButton}.
+
+\hypertarget{text-icon}{%
+\subsubsection{Text \& Icon}\label{text-icon}}
+
+The last styling element of a button is two-fold: the text that is in the button and the icon.
+
+Here are some guidelines for text of a button:
+
+\begin{itemize}
+\tightlist
+\item
+  All buttons must have some text.
+\item
+  Generally speaking, the text should be relatively brief and clear.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Don't use ``Go to the next page'' when you could use ``Next''
+  \end{itemize}
+\item
+  The text should make sense with the action of the button; for example,
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``Reset'' if the button resets something (a game, a plot, inputs)
+  \item
+    ``Submit'' if the button triggers the app to grab and process input values
+  \item
+    ``Make Graph'' if button causes a graph to be generated
+  \item
+    ``Show/Hide Graph'' if a button makes a graph object appear/disappear
+  \item
+    ``Next'' if a button moves the user along some path.
+  \end{itemize}
+\item
+  If the button references something like a particular tab (prerequisites, exploration, etc.), the text should reflect this.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``Explore!'' for a button that takes a user to an Exploration tab.
+  \item
+    ``Prerequisites'' for a button that takes a user to a Prerequisites tab.
+  \item
+    ``Challenge Yourself!'' for a button takes a user to a Challenge tab.
+  \item
+    ``Play!'' for a button that takes a user to Game tab.
+  \end{itemize}
+\item
+  If a button references an object like an activity packet or a download prompt the text should refer to that
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``Activity Packet'' for a button that would open up and/or download a packet for the user
+  \item
+    ``Download Data'' for a button that would download a data file.
+  \end{itemize}
+\item
+  Clarity is essential. If there are multiple buttons on the page, make sure that you use clear text for what button does and/or references.
+\end{itemize}
+
+Here are guidelines for the inclusion of icons in a button:
+
+\begin{itemize}
+\tightlist
+\item
+  Game buttons will NOT have any icons.
+\item
+  Direction Buttons (e.g., ``Next'' or ``Previous'') will NOT have any icons. Rather make the button text ``\textless\textless{} Previous'' or ``Next \textgreater\textgreater{}''
+\item
+  A ``Prerequisites'' button will use the ``book'' icon
+\item
+  All other tab buttons (labels ending with ``!'') will use the ``bolt'' icon.
+\item
+  A download button will use the ``cloud-download'' icon.
+\end{itemize}
+
+\hypertarget{correctincorrect-marks}{%
+\subsection{Correct/Incorrect Marks}\label{correctincorrect-marks}}
+
+In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of two images:
+
+\begin{figure}
+
+{\centering \includegraphics[width=3.75in]{images/check} \includegraphics[width=3.75in]{images/cross} 
+
+}
+
+\caption{Correct/Incorrect Marks}\label{fig:marks}
+\end{figure}
+
+You can save these two images by right-clicking on them and selecting ``Save Image As\ldots{}''. You will need to put them in the \texttt{www} folder/directory of your App.
+
+Their placement in your App will depend upon what makes the most sense.
+
+\hypertarget{animation-buttons}{%
+\subsection{Animation Buttons}\label{animation-buttons}}
+
+One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable.
+
+To enable this, you'll need to make use of the \texttt{animate} argument:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# You will need to first add whichever palette line from above to your code}
-\NormalTok{boastPalette <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#0072B2"}\NormalTok{,}\StringTok{"#D55E00"}\NormalTok{,}\StringTok{"#009E73"}\NormalTok{,}\StringTok{"#CE77A8"}\NormalTok{,}
-    \StringTok{"#000000"}\NormalTok{,}\StringTok{"#E69F00"}\NormalTok{,}\StringTok{"#999999"}\NormalTok{,}\StringTok{"#56B4E9"}\NormalTok{,}\StringTok{"#CC79A7"}\NormalTok{)}
+\CommentTok{#[code omitted]}
+\KeywordTok{sliderInput}\NormalTok{(}
+  \DataTypeTok{inputId =} \StringTok{"mtcAlpha"}\NormalTok{,}
+  \DataTypeTok{label =} \StringTok{"Set your threshold level, }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{(}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{alpha_\{UT\}}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{):"}\NormalTok{,}
+  \DataTypeTok{min =} \FloatTok{0.01}\NormalTok{,}
+  \DataTypeTok{max =} \FloatTok{0.25}\NormalTok{,}
+  \DataTypeTok{value =} \FloatTok{0.1}\NormalTok{,}
+  \DataTypeTok{step =} \FloatTok{0.01}\NormalTok{,}
+  \DataTypeTok{animate =} \KeywordTok{animationOptions}\NormalTok{(}
+    \DataTypeTok{interval =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{loop =} \OtherTok{TRUE}\NormalTok{))}
 
-\CommentTok{# Create ggplot2 object}
-\NormalTok{g1 <-}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ df, }
-                \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{y =}\NormalTok{ y, }\DataTypeTok{color =}\NormalTok{ grp, }\DataTypeTok{fill =}\NormalTok{ grp))}
-\CommentTok{# Add your layers}
-\NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{geom_points}\NormalTok{()}
-\CommentTok{# Tell R to use your chosen palette}
-\NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{scale_color_manual}\NormalTok{(}\DataTypeTok{values=}\NormalTok{boastPalette)  }\CommentTok{# If you use "color" in aes}
-\NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{scale_fill_manual}\NormalTok{(}\DataTypeTok{values=}\NormalTok{boastPalette)  }\CommentTok{# If you use "fill" in aes}
+\CommentTok{#[code omitted]}
 \end{Highlighting}
 \end{Shaded}
 
-If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)
+You can set \texttt{animate=TRUE}, \texttt{animate=FALSE} or invoke the \texttt{animationOptions} function as we've done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (\texttt{interval}, in milliseconds) and should the animation start over once the slider reaches the maximum (\texttt{loop}).
 
-With any eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
+The \texttt{interval} is going to the most challenging value to figure out. This timer \emph{\textbf{ignores}} everything else; that is, it doesn't wait to see whether your plot has updated. Remember, the more complicated the process is that generates your plot, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While \texttt{renderCachePlot} can help speed things up, keep in mind that you still might need to play around with the \texttt{interval} value to ensure smooth functionality.
+
+Make sure when you're testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.
+
+The styling of the play/pause button will be controlled by the BOAST CSS file.
+
+\hypertarget{progress-bar}{%
+\subsection{Progress Bar}\label{progress-bar}}
+
+Consider adding a loading bar to show the process for intense computations; this will help the user understand that your App is processing and not frozen/broken.
+
+\hypertarget{designStyle}{%
+\chapter{Design Style}\label{designStyle}}
+
+This chapter of the BOAST Style Guide deals with the Visual Appearance of each app. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each app, there are 6 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Common Elements, Color, Text Styling, and Graphics.
+
+One of the most important benefits of using the \texttt{boastApp} function from the \texttt{boastUtils} package is that is that much of the Visual Appearance will be automatically handled for you. However, you should still familiarize yourself with the Visual Appearance Style for our apps.
+
+\hypertarget{logo}{%
+\section{PSU Branding}\label{logo}}
+
+Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.
+
+In your UI section of \texttt{app.R} (or the \texttt{ui.R} file), at the end of the \texttt{dashboardSidebar()} section, you will need to include the following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tags}\OperatorTok{$}\KeywordTok{div}\NormalTok{(}\DataTypeTok{class =} \StringTok{"sidebar-logo"}\NormalTok{,}
+\NormalTok{         boastUtils}\OperatorTok{::}\KeywordTok{psu_eberly_logo}\NormalTok{(}\StringTok{"reversed"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Here's how this code would look in context:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dashboardPage}\NormalTok{(}
+  \DataTypeTok{skin =} \StringTok{"blue"}\NormalTok{,}
+  \KeywordTok{dashboardHeader}\NormalTok{(}
+    \DataTypeTok{title =} \StringTok{"title"}\NormalTok{,}
+    \CommentTok{# [omitted code]}
+\NormalTok{  ),}
+  \KeywordTok{dashboardSidebar}\NormalTok{(}
+    \DataTypeTok{width =} \DecValTok{300}\NormalTok{,}
+    \KeywordTok{sidebarMenu}\NormalTok{(}
+      \DataTypeTok{id =} \StringTok{"tabs"}\NormalTok{,}
+      \CommentTok{# [omitted code],}
+\NormalTok{      tags}\OperatorTok{$}\KeywordTok{div}\NormalTok{(}
+        \DataTypeTok{class =} \StringTok{"sidebar-logo"}\NormalTok{,}
+\NormalTok{        boastUtils}\OperatorTok{::}\KeywordTok{psu_eberly_logo}\NormalTok{(}\StringTok{"reversed"}\NormalTok{)}
+\NormalTok{        )}
+\NormalTok{      ),}
+    \KeywordTok{dashboardBody}\NormalTok{(}
+\NormalTok{    tags}\OperatorTok{$}\KeywordTok{head}\NormalTok{(}
+\NormalTok{      tags}\OperatorTok{$}\KeywordTok{link}\NormalTok{(}\DataTypeTok{rel =} \StringTok{"stylesheet"}\NormalTok{, }\DataTypeTok{type =} \StringTok{"text/css"}\NormalTok{,}
+        \DataTypeTok{href =} \StringTok{"https://educationshinyappteam.github.io/Style_Guide/theme/boast.css"}\NormalTok{),}
+      \KeywordTok{tabItems}\NormalTok{(}
+       \CommentTok{# [omitted code]}
+\NormalTok{      )  )  )  )  )}
+\end{Highlighting}
+\end{Shaded}
+
+This will ensure that the Penn State logo gets properly used.
+
+\hypertarget{colors}{%
+\section{Colors}\label{colors}}
+
+Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet \href{https://www.w3.org/WAI/WCAG21/quickref/}{WCAG 2.1} Level AA. You can do so at the \href{https://davidmathlogic.com/colorblind/\#\%23000000-\%23E69F00-\%2356B4E9-\%23009E73-\%23F0E442-\%230072B2-\%23D55E00-\%23CC79A7}{Coloring for Colorblindness} website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.
+
+There are two major places where coloring comes into play: the user interface and plots you generate in \texttt{R}.
 
 \hypertarget{styleText}{%
 \section{Text Styling}\label{styleText}}
@@ -2111,6 +2183,49 @@ To force \texttt{ggplot2} to place (0, 0) in the lower-left corner and to contro
 \StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{expand =} \KeywordTok{expansion}\NormalTok{(}\DataTypeTok{mult =} \DecValTok{0}\NormalTok{, }\DataTypeTok{add =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.05}\NormalTok{))) }
 \end{Highlighting}
 \end{Shaded}
+
+\hypertarget{color-and-plots-in-r}{%
+\subsection{\texorpdfstring{Color and Plots in \texttt{R}}{Color and Plots in R}}\label{color-and-plots-in-r}}
+
+In \texttt{R} you can set color theme which you use in \texttt{ggplot2}. Here are two custom color palettes that you can use in your App. Additionally, the package \texttt{viridis} provides several additional color palettes which are improvements upon the default color scheme.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# boastPalette is based on the Wong color blind set found at the above website.}
+\NormalTok{boastPalette <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#0072B2"}\NormalTok{,}\StringTok{"#D55E00"}\NormalTok{,}\StringTok{"#009E73"}\NormalTok{,}\StringTok{"#CE77A8"}\NormalTok{,}
+    \StringTok{"#000000"}\NormalTok{,}\StringTok{"#E69F00"}\NormalTok{,}\StringTok{"#999999"}\NormalTok{,}\StringTok{"#56B4E9"}\NormalTok{,}\StringTok{"#CC79A7"}\NormalTok{)}
+
+\CommentTok{# psuPalette is based on Penn State's three official color palettes}
+\CommentTok{# and checked at the above webite.}
+\NormalTok{psuPalette <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#1E407C"}\NormalTok{,}\StringTok{"#BC204B"}\NormalTok{,}\StringTok{"#3EA39E"}\NormalTok{,}\StringTok{"#E98300"}\NormalTok{,}
+    \StringTok{"#999999"}\NormalTok{,}\StringTok{"#AC8DCE"}\NormalTok{,}\StringTok{"#F2665E"}\NormalTok{,}\StringTok{"#99CC00"}\NormalTok{)}
+
+\CommentTok{# Both palettes get used in the order of what is listed.}
+\end{Highlighting}
+\end{Shaded}
+
+To use these palettes (or ones from \texttt{viridis}) with a \texttt{ggplot2} object, you'll need to doe the following
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# You will need to first add whichever palette line from above to your code}
+\NormalTok{boastPalette <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#0072B2"}\NormalTok{,}\StringTok{"#D55E00"}\NormalTok{,}\StringTok{"#009E73"}\NormalTok{,}\StringTok{"#CE77A8"}\NormalTok{,}
+    \StringTok{"#000000"}\NormalTok{,}\StringTok{"#E69F00"}\NormalTok{,}\StringTok{"#999999"}\NormalTok{,}\StringTok{"#56B4E9"}\NormalTok{,}\StringTok{"#CC79A7"}\NormalTok{)}
+
+\CommentTok{# Create ggplot2 object}
+\NormalTok{g1 <-}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ df, }
+                \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{y =}\NormalTok{ y, }\DataTypeTok{color =}\NormalTok{ grp, }\DataTypeTok{fill =}\NormalTok{ grp))}
+\CommentTok{# Add your layers}
+\NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{geom_points}\NormalTok{()}
+\CommentTok{# Tell R to use your chosen palette}
+\NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{scale_color_manual}\NormalTok{(}\DataTypeTok{values=}\NormalTok{boastPalette)  }\CommentTok{# If you use "color" in aes}
+\NormalTok{g1 }\OperatorTok{+}\StringTok{ }\NormalTok{ggplot2}\OperatorTok{::}\KeywordTok{scale_fill_manual}\NormalTok{(}\DataTypeTok{values=}\NormalTok{boastPalette)  }\CommentTok{# If you use "fill" in aes}
+\end{Highlighting}
+\end{Shaded}
+
+If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)
+
+With any eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
 
 \hypertarget{tables}{%
 \subsection{Tables}\label{tables}}
@@ -2302,10 +2417,8 @@ In the prior section on static images, you saw exactly how to set the alt text; 
 
 \emph{This section is under construction.}
 
-\hypertarget{miscellaneous}{%
-\section{Miscellaneous}\label{miscellaneous}}
-
-Consider adding a loading bar to show the process for intense computations; this will help the user understand that your App is processing and not frozen/broken.
+\hypertarget{part-linguistics}{%
+\part{Linguistics}\label{part-linguistics}}
 
 \hypertarget{wording}{%
 \chapter{Wording}\label{wording}}
@@ -2669,6 +2782,9 @@ Author/Rightsholder. (Year). Title of data set (Version number) {[}Description o
 
 If you (or someone else) had to sign some type of agreement to access the data, we must examine the agreement before you make your App publicly accessible. Just because you got access to the data does not mean you have the right to share the data.
 
+\hypertarget{part-accessibility-and-mobile-devices}{%
+\part{Accessibility and Mobile Devices}\label{part-accessibility-and-mobile-devices}}
+
 \hypertarget{accessibility}{%
 \chapter{Accessibility}\label{accessibility}}
 
@@ -2765,31 +2881,8 @@ Look for any issues that you might be able to address before you hand off your A
   Readily usable
 \end{enumerate}
 
-\hypertarget{addTools}{%
-\chapter{Additional Tools}\label{addTools}}
-
-Here are a few additional tools that can help you with App development:
-
-\begin{itemize}
-\tightlist
-\item
-  \href{https://github.com/jimhester/lintr}{lintr} - Checks adherence to a
-  given style, syntax errors, and possible semantic issues.
-\item
-  \href{https://www.tidyverse.org/articles/2017/12/styler-1.0.0/}{styler} -
-  Format R code according to a style guide.
-\item
-  \href{https://github.com/MichaelChirico/funchir}{funchir} - stale package
-  check
-\end{itemize}
-
-\textbf{R Code}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"funchir"}\NormalTok{, }\StringTok{"lintr"}\NormalTok{, }\StringTok{"styler"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
+\hypertarget{part-examples}{%
+\part{Examples}\label{part-examples}}
 
 \hypertarget{makingApp}{%
 \chapter{Making an App}\label{makingApp}}
@@ -3066,7 +3159,7 @@ This is also the point in time in which the faculty will say whether you can go 
 \hypertarget{step4}{%
 \section{Step 4: Create Repository}\label{step4}}
 
-Here you'll want to reference Section @ref(\#repo-naming) on GitHub Repo Naming. Most app {[}full{]} titles don't make good Repo Names. This is where the potential short title comes into play. You'll need to make sure that there isn't already a repository that has that name. When you get a name figured out for the repository, you can go ahead and create the repo.
+Here you'll want to reference Section \ref{repo-naming} on GitHub Repo Naming. Most app {[}full{]} titles don't make good Repo Names. This is where the potential short title comes into play. You'll need to make sure that there isn't already a repository that has that name. When you get a name figured out for the repository, you can go ahead and create the repo.
 
 Make sure to set Git Ignore to \texttt{R}.
 
@@ -3086,6 +3179,35 @@ We recommend starting with a copy of the Sample App as the basis. This will give
 \section{Steps 10-11: Pull Requestion and Tweaks}\label{steps10-11}}
 
 (\emph{Still under construction})
+
+\hypertarget{part-final-thoughts}{%
+\part{Final Thoughts}\label{part-final-thoughts}}
+
+\hypertarget{addTools}{%
+\chapter{Additional Tools}\label{addTools}}
+
+Here are a few additional tools that can help you with App development:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://github.com/jimhester/lintr}{lintr} - Checks adherence to a
+  given style, syntax errors, and possible semantic issues.
+\item
+  \href{https://www.tidyverse.org/articles/2017/12/styler-1.0.0/}{styler} -
+  Format R code according to a style guide.
+\item
+  \href{https://github.com/MichaelChirico/funchir}{funchir} - stale package
+  check
+\end{itemize}
+
+\textbf{R Code}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"funchir"}\NormalTok{, }\StringTok{"lintr"}\NormalTok{, }\StringTok{"styler"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
   \bibliography{book.bib,packages.bib}
 

@@ -20,13 +20,27 @@ bookdown::render_book("index.Rmd", "bookdown::gitbook")
 
 # Welcome {-}
 
-This guide spells out the styling that should be used for all apps included in the Book of Apps for Statistics Teaching ([BOAST](https://github.com/EducationShinyAppTeam/BOAST)). Keep in mind that there are several different aspects to what makes up Style including:
+This guide spells out the styling that should be used for all apps included in the [Book of Apps for Statistics Teaching (BOAST)](https://github.com/EducationShinyAppTeam/BOAST). 
+
+There are several different aspects to what makes up styling including:
 
   - Coding (how you write, organize, and comment the code that makes the app)
   - Visual Appearance (how you make the app look including tabs, fonts, colors, icons, etc.)
   - Wording (how you write information, instructions, and other messages to the users)
   - Documentation (how you provide references, including code and data sources, and give credit)
 
-By following this style guide you'll ensure that any app you create will meet our standards.
+In addition to these elements, we've provide information on ensuring that your App is accessible to all users and works well on mobile devices such as smart phones and tablets. 
 
-Additionally, we've included some information on Acessibility for our apps, checking how your App works on mobile devices, and some additoinal tools that can help you develop your App.
+Whenever possible, we've attempted to provide you with examples to help you see our standards in action as well as code that you can use as templates. For each code block, you should be able to place your cursor over the block and see a copy icon in the upper-right hand corner. This will allow you to copy the code. We've also included links to additional resources so that you can learn more about key topics.
+
+You will need to follow this Style Guide to ensure that any app you create meets (or exceeds) our standards is worth of inclusion in BOAST. 
+
+This Style Guide is laid out in several parts:
+
++ Part 1 covers the basics for getting started
++ Part 2 focuses on Coding Style
++ Part 3 deals with the many aspects of Visual Styling
++ Part 4 centers on Linguistic Styling
++ Part 5 conveys important information on Accessibility and Mobile Friendliness
++ Part 6 is where you can see an example of building an app from scratch
++ The final part is where you can find some additional tools and information.

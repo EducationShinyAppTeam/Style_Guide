@@ -1,3 +1,5 @@
+# (PART) Final Thoughts {-}
+
 # Additional Tools {#addTools}
 
 Here are a few additional tools that can help you with App development:

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Design Style | The BOAST Style Guide</title>
+  <meta name="description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Design Style | The BOAST Style Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Design Style | The BOAST Style Guide" />
+  
+  <meta name="twitter:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  
+
+<meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
+
+
+<meta name="date" content="2020-06-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="layot.html"/>
+<link rel="next" href="wording.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BOAST Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Getting Started</b></span></li>
+<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> The Basics</a><ul>
+<li class="chapter" data-level="1.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>1.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="1.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>1.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="1.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>1.3</b> Sample App</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>1.3.1</b> Direct Download</a></li>
+<li class="chapter" data-level="1.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>1.3.2</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="1.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>1.3.3</b> Command Line</a></li>
+<li class="chapter" data-level="1.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>1.3.4</b> RStudio Project</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>2</b> Workflow</a><ul>
+<li class="chapter" data-level="2.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps"><i class="fa fa-check"></i><b>2.1</b> Revising Existing Apps</a></li>
+<li class="chapter" data-level="2.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps"><i class="fa fa-check"></i><b>2.2</b> Creating New Apps</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>2.2.1</b> GitHub Repo Names</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>2.3</b> Testing Your App</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>2.3.1</b> Set Up/Login to the VPN</a></li>
+<li class="chapter" data-level="2.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>2.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
+<li class="chapter" data-level="2.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>2.3.3</b> Publishing Your App for Testing</a></li>
+<li class="chapter" data-level="2.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>2.3.4</b> Configuring for Testing</a></li>
+<li class="chapter" data-level="2.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>2.3.5</b> Check the Logs</a></li>
+<li class="chapter" data-level="2.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>2.3.6</b> Problems?</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Writing Code</b></span></li>
+<li class="chapter" data-level="3" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>3</b> Coding Style</a><ul>
+<li class="chapter" data-level="3.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>3.1</b> General Coding Style</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>3.1.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="3.1.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>3.1.2</b> Informative Names</a></li>
+<li class="chapter" data-level="3.1.3" data-path="coding.html"><a href="coding.html#formatCode"><i class="fa fa-check"></i><b>3.1.3</b> Format Your Code</a></li>
+<li class="chapter" data-level="3.1.4" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>3.1.4</b> Be Explicit</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="coding.html"><a href="coding.html#additional-coding-style"><i class="fa fa-check"></i><b>3.2</b> Additional Coding Style</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>3.2.1</b> Minimize Package Usage</a></li>
+<li class="chapter" data-level="3.2.2" data-path="coding.html"><a href="coding.html#exFiles"><i class="fa fa-check"></i><b>3.2.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="3.2.3" data-path="coding.html"><a href="coding.html#plotCache"><i class="fa fa-check"></i><b>3.2.3</b> Plot Caching</a></li>
+<li class="chapter" data-level="3.2.4" data-path="coding.html"><a href="coding.html#textStyle"><i class="fa fa-check"></i><b>3.2.4</b> Styling Text</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="coding.html"><a href="coding.html#orgCode"><i class="fa fa-check"></i><b>3.3</b> Organizing Code</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="coding.html"><a href="coding.html#using-app.r"><i class="fa fa-check"></i><b>3.3.1</b> Using <code>app.R</code></a></li>
+<li class="chapter" data-level="3.3.2" data-path="coding.html"><a href="coding.html#using-ui.r-and-server.r"><i class="fa fa-check"></i><b>3.3.2</b> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="coding.html"><a href="coding.html#html"><i class="fa fa-check"></i><b>3.4</b> HTML</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="coding.html"><a href="coding.html#lists"><i class="fa fa-check"></i><b>3.4.1</b> Lists</a></li>
+<li class="chapter" data-level="3.4.2" data-path="coding.html"><a href="coding.html#headers"><i class="fa fa-check"></i><b>3.4.2</b> Headers</a></li>
+<li class="chapter" data-level="3.4.3" data-path="coding.html"><a href="coding.html#paragraphs"><i class="fa fa-check"></i><b>3.4.3</b> Paragraphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.5</b> CSS</a></li>
+<li class="chapter" data-level="3.6" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.6</b> Metadata</a></li>
+<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rlocker</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>3.7.1</b> Installing</a></li>
+<li class="chapter" data-level="3.7.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>3.7.2</b> Setup</a></li>
+<li class="chapter" data-level="3.7.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>3.7.3</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Visual Appearance</b></span></li>
+<li class="chapter" data-level="4" data-path="layot.html"><a href="layot.html"><i class="fa fa-check"></i><b>4</b> App Layout</a><ul>
+<li class="chapter" data-level="4.1" data-path="layot.html"><a href="layot.html#dashboard"><i class="fa fa-check"></i><b>4.1</b> Dashboard</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="layot.html"><a href="layot.html#colorUI"><i class="fa fa-check"></i><b>4.1.1</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="4.1.2" data-path="layot.html"><a href="layot.html#chapterColor"><i class="fa fa-check"></i><b>4.1.2</b> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="layot.html"><a href="layot.html#dashboard-header"><i class="fa fa-check"></i><b>4.2</b> Dashboard Header</a></li>
+<li class="chapter" data-level="4.3" data-path="layot.html"><a href="layot.html#dashboard-sidebar"><i class="fa fa-check"></i><b>4.3</b> Dashboard Sidebar</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="layot.html"><a href="layot.html#last-element"><i class="fa fa-check"></i><b>4.3.1</b> Last Element</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="layot.html"><a href="layot.html#dashboard-body"><i class="fa fa-check"></i><b>4.4</b> Dashboard Body</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="layot.html"><a href="layot.html#the-overview-tab"><i class="fa fa-check"></i><b>4.4.1</b> The Overview Tab</a></li>
+<li class="chapter" data-level="4.4.2" data-path="layot.html"><a href="layot.html#a-prerequisites-tab"><i class="fa fa-check"></i><b>4.4.2</b> A Prerequisites Tab</a></li>
+<li class="chapter" data-level="4.4.3" data-path="layot.html"><a href="layot.html#activity-tabs"><i class="fa fa-check"></i><b>4.4.3</b> Activity Tab(s)</a></li>
+<li class="chapter" data-level="4.4.4" data-path="layot.html"><a href="layot.html#references"><i class="fa fa-check"></i><b>4.4.4</b> References</a></li>
+<li class="chapter" data-level="4.4.5" data-path="layot.html"><a href="layot.html#tabs-inside-the-body"><i class="fa fa-check"></i><b>4.4.5</b> Tabs Inside the Body</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="layot.html"><a href="layot.html#common-elements"><i class="fa fa-check"></i><b>4.5</b> Common Elements</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="layot.html"><a href="layot.html#ordering-inputs"><i class="fa fa-check"></i><b>4.5.1</b> Ordering Inputs</a></li>
+<li class="chapter" data-level="4.5.2" data-path="layot.html"><a href="layot.html#buttons"><i class="fa fa-check"></i><b>4.5.2</b> Buttons</a></li>
+<li class="chapter" data-level="4.5.3" data-path="layot.html"><a href="layot.html#correctincorrect-marks"><i class="fa fa-check"></i><b>4.5.3</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="4.5.4" data-path="layot.html"><a href="layot.html#animation-buttons"><i class="fa fa-check"></i><b>4.5.4</b> Animation Buttons</a></li>
+<li class="chapter" data-level="4.5.5" data-path="layot.html"><a href="layot.html#progress-bar"><i class="fa fa-check"></i><b>4.5.5</b> Progress Bar</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i><b>5</b> Design Style</a><ul>
+<li class="chapter" data-level="5.1" data-path="designStyle.html"><a href="designStyle.html#logo"><i class="fa fa-check"></i><b>5.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="5.2" data-path="designStyle.html"><a href="designStyle.html#colors"><i class="fa fa-check"></i><b>5.2</b> Colors</a></li>
+<li class="chapter" data-level="5.3" data-path="designStyle.html"><a href="designStyle.html#styleText"><i class="fa fa-check"></i><b>5.3</b> Text Styling</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="designStyle.html"><a href="designStyle.html#headings"><i class="fa fa-check"></i><b>5.3.1</b> Headings</a></li>
+<li class="chapter" data-level="5.3.2" data-path="designStyle.html"><a href="designStyle.html#paragraph-text"><i class="fa fa-check"></i><b>5.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="5.3.3" data-path="designStyle.html"><a href="designStyle.html#mathematics"><i class="fa fa-check"></i><b>5.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="5.3.4" data-path="designStyle.html"><a href="designStyle.html#game-question-text"><i class="fa fa-check"></i><b>5.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="5.3.5" data-path="designStyle.html"><a href="designStyle.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>5.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="designStyle.html"><a href="designStyle.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>5.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="5.3.7" data-path="designStyle.html"><a href="designStyle.html#text-in-r-plots"><i class="fa fa-check"></i><b>5.3.7</b> Text in <code>R</code> Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="designStyle.html"><a href="designStyle.html#graphics"><i class="fa fa-check"></i><b>5.4</b> Graphics</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="designStyle.html"><a href="designStyle.html#titles-and-labels"><i class="fa fa-check"></i><b>5.4.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="5.4.2" data-path="designStyle.html"><a href="designStyle.html#axes-and-scales"><i class="fa fa-check"></i><b>5.4.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="5.4.3" data-path="designStyle.html"><a href="designStyle.html#color-and-plots-in-r"><i class="fa fa-check"></i><b>5.4.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="5.4.4" data-path="designStyle.html"><a href="designStyle.html#tables"><i class="fa fa-check"></i><b>5.4.4</b> Tables</a></li>
+<li class="chapter" data-level="5.4.5" data-path="designStyle.html"><a href="designStyle.html#static-images"><i class="fa fa-check"></i><b>5.4.5</b> Static Images</a></li>
+<li class="chapter" data-level="5.4.6" data-path="designStyle.html"><a href="designStyle.html#alt-text"><i class="fa fa-check"></i><b>5.4.6</b> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Linguistics</b></span></li>
+<li class="chapter" data-level="6" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>6</b> Wording</a><ul>
+<li class="chapter" data-level="6.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>6.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="6.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>6.2</b> Popovers</a></li>
+<li class="chapter" data-level="6.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>6.3</b> Dealing with Differing Vocabularies</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>6.3.1</b> The Jingle/Jangle Problem</a></li>
+<li class="chapter" data-level="6.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>6.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
+<li class="chapter" data-level="6.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>6.3.3</b> Option 1: Hover Text</a></li>
+<li class="chapter" data-level="6.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>6.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>6.4</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>7</b> Documentation</a><ul>
+<li class="chapter" data-level="7.1" data-path="documentation.html"><a href="documentation.html#references-1"><i class="fa fa-check"></i><b>7.1</b> References</a></li>
+<li class="chapter" data-level="7.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>7.2</b> Plagiarism</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>7.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="7.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>7.2.2</b> In Code</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>7.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="7.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>7.4</b> Graphics</a></li>
+<li class="chapter" data-level="7.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>7.5</b> Data</a></li>
+</ul></li>
+<li class="part"><span><b>V Accessibility and Mobile Devices</b></span></li>
+<li class="chapter" data-level="8" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>8</b> Accessibility</a><ul>
+<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.1</b> Testing Accessibility</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>9</b> Mobile Friendliness</a></li>
+<li class="part"><span><b>VI Examples</b></span></li>
+<li class="chapter" data-level="10" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>10</b> Making an App</a><ul>
+<li class="chapter" data-level="10.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>10.1</b> Step 1: Read the Style Guide</a></li>
+<li class="chapter" data-level="10.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>10.2</b> Step 2: Identify a Topic</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>10.2.1</b> Your App’s Purpose</a></li>
+<li class="chapter" data-level="10.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>10.2.2</b> The Topic</a></li>
+<li class="chapter" data-level="10.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>10.2.3</b> Goals</a></li>
+<li class="chapter" data-level="10.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>10.2.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>10.3</b> Step 3: Sketch out plans</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="makingApp.html"><a href="makingApp.html#example-1"><i class="fa fa-check"></i><b>10.3.1</b> Example</a></li>
+<li class="chapter" data-level="10.3.2" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>10.3.2</b> Share Your Plan</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>10.4</b> Step 4: Create Repository</a></li>
+<li class="chapter" data-level="10.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>10.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
+<li class="chapter" data-level="10.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>10.6</b> Step 9: Larger Scale Testing</a></li>
+<li class="chapter" data-level="10.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>10.7</b> Steps 10-11: Pull Requestion and Tweaks</a></li>
+</ul></li>
+<li class="part"><span><b>VII Final Thoughts</b></span></li>
+<li class="chapter" data-level="11" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>11</b> Additional Tools</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The BOAST Style Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="designStyle" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Design Style</h1>
+<p>This chapter of the BOAST Style Guide deals with the Visual Appearance of each app. Visual Styling encompasses not only text styling but also color scheme usage, graphics (images, plots, tables), and the dashboard layout. For each app, there are 6 major components to the Visual Appearance that you will need to consider: PSU Branding, the Dashboard, Common Elements, Color, Text Styling, and Graphics.</p>
+<p>One of the most important benefits of using the <code>boastApp</code> function from the <code>boastUtils</code> package is that is that much of the Visual Appearance will be automatically handled for you. However, you should still familiarize yourself with the Visual Appearance Style for our apps.</p>
+<div id="logo" class="section level2">
+<h2><span class="header-section-number">5.1</span> PSU Branding</h2>
+<p>Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.</p>
+<p>In your UI section of <code>app.R</code> (or the <code>ui.R</code> file), at the end of the <code>dashboardSidebar()</code> section, you will need to include the following:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="designStyle.html#cb15-1"></a>tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb15-2"><a href="designStyle.html#cb15-2"></a>         boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</span></code></pre></div>
+<p>Here’s how this code would look in context:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="designStyle.html#cb16-1"></a><span class="kw">dashboardPage</span>(</span>
+<span id="cb16-2"><a href="designStyle.html#cb16-2"></a>  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb16-3"><a href="designStyle.html#cb16-3"></a>  <span class="kw">dashboardHeader</span>(</span>
+<span id="cb16-4"><a href="designStyle.html#cb16-4"></a>    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</span>
+<span id="cb16-5"><a href="designStyle.html#cb16-5"></a>    <span class="co"># [omitted code]</span></span>
+<span id="cb16-6"><a href="designStyle.html#cb16-6"></a>  ),</span>
+<span id="cb16-7"><a href="designStyle.html#cb16-7"></a>  <span class="kw">dashboardSidebar</span>(</span>
+<span id="cb16-8"><a href="designStyle.html#cb16-8"></a>    <span class="dt">width =</span> <span class="dv">300</span>,</span>
+<span id="cb16-9"><a href="designStyle.html#cb16-9"></a>    <span class="kw">sidebarMenu</span>(</span>
+<span id="cb16-10"><a href="designStyle.html#cb16-10"></a>      <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</span>
+<span id="cb16-11"><a href="designStyle.html#cb16-11"></a>      <span class="co"># [omitted code],</span></span>
+<span id="cb16-12"><a href="designStyle.html#cb16-12"></a>      tags<span class="op">$</span><span class="kw">div</span>(</span>
+<span id="cb16-13"><a href="designStyle.html#cb16-13"></a>        <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb16-14"><a href="designStyle.html#cb16-14"></a>        boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</span>
+<span id="cb16-15"><a href="designStyle.html#cb16-15"></a>        )</span>
+<span id="cb16-16"><a href="designStyle.html#cb16-16"></a>      ),</span>
+<span id="cb16-17"><a href="designStyle.html#cb16-17"></a>    <span class="kw">dashboardBody</span>(</span>
+<span id="cb16-18"><a href="designStyle.html#cb16-18"></a>    tags<span class="op">$</span><span class="kw">head</span>(</span>
+<span id="cb16-19"><a href="designStyle.html#cb16-19"></a>      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</span>
+<span id="cb16-20"><a href="designStyle.html#cb16-20"></a>        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</span>
+<span id="cb16-21"><a href="designStyle.html#cb16-21"></a>      <span class="kw">tabItems</span>(</span>
+<span id="cb16-22"><a href="designStyle.html#cb16-22"></a>       <span class="co"># [omitted code]</span></span>
+<span id="cb16-23"><a href="designStyle.html#cb16-23"></a>      )  )  )  )  )</span></code></pre></div>
+<p>This will ensure that the Penn State logo gets properly used.</p>
+</div>
+<div id="colors" class="section level2">
+<h2><span class="header-section-number">5.2</span> Colors</h2>
+<p>Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a> Level AA. You can do so at the <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7">Coloring for Colorblindness</a> website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.</p>
+<p>There are two major places where coloring comes into play: the user interface and plots you generate in <code>R</code>.</p>
+</div>
+<div id="styleText" class="section level2">
+<h2><span class="header-section-number">5.3</span> Text Styling</h2>
+<p>Text styling refers the non-content aspects of the text on the page. This means things such as the use of italics, boldface, alignment, as well as font size and color.</p>
+<p>You should let the centralized CSS file do the heavy lifting for text styling. (Again, using <code>boastApp</code> will help you.) However, for this to work properly, you will need to tag content appropriately. (See the HTML section: <a href="coding.html#html">3.4</a>)</p>
+<p>If you run into a situation where some element needs additionl styling, <strong>talk to Neil or Bob for help</strong>. You might have come across an element that needs to get added the central CSS file or a bug.</p>
+<div id="headings" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Headings</h3>
+<p>Use the Heading Tags for the short fragments that define the structure of your App. If you find yourself enclosing a complete sentence in Heading tag, you ARE NOT using headings correctly. Notice how the headings in this Style Guide aren’t complete sentences; your App should mimic this. Full sentences appear as regular paragraph text (i.e., enclosed in <code>p()</code>) and not be a Heading.</p>
+</div>
+<div id="paragraph-text" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Paragraph Text</h3>
+<p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
+<p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
+<p>For example, this code:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="designStyle.html#cb17-1"></a><span class="kw">p</span>(</span>
+<span id="cb17-2"><a href="designStyle.html#cb17-2"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
+<span id="cb17-3"><a href="designStyle.html#cb17-3"></a>  tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;t&quot;</span>),</span>
+<span id="cb17-4"><a href="designStyle.html#cb17-4"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
+<span id="cb17-5"><a href="designStyle.html#cb17-5"></a>  tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
+<span id="cb17-6"><a href="designStyle.html#cb17-6"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
+<span id="cb17-7"><a href="designStyle.html#cb17-7"></a>)</span></code></pre></div>
+<p>Becomes:</p>
+<blockquote>
+<p>When dealing with the <em>t</em>-distribution, we only have one parameter, the <strong>degrees of freedom</strong> that we need to input.</p>
+</blockquote>
+<p>Use italics (emphasis), and boldface (strong) sparingly.</p>
+</div>
+<div id="mathematics" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Mathematics</h3>
+<p>For the most part, any mathematics you need displayed should be done using <a href="https://www.mathjax.org/">MathJax</a>. Default to using inline typesetting with the <code>\\(</code> and <code>\\)</code> delimiters. If you need to use display style, you can use <code>\\[</code> and <code>\\]</code>. For the vast majority of mathematics, you’ll wrap both inline and display style mathematics inside of a paragraph environment (<code>p()</code>).</p>
+<p>If you’re writing mathematics directly in your app, remember you’ll need to escape the LaTeX commands by putting an extra backslash (\) in front; e.g., <code>\frac{3}{4}</code> would need to be <code>\\frac{3}{4}</code>.</p>
+<p>If you’re reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.</p>
+<p>If you need assistance in figuring out how to type up mathematics, please talk to Neil, Matt, or Dennis.</p>
+<p><strong>Note:</strong> Double dollar sign delimiters are generally not recommended for displaying math as they can lead to unintended results. See: <a href="https://docs.mathjax.org/en/latest/basic/mathematics.html">Writing Mathematics for MathJax</a>.</p>
+</div>
+<div id="game-question-text" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> [Game] Question Text</h3>
+<p>The text used as a question in a game should NOT be wrapped in a Heading tag; wrap the text in a paragraph tag.</p>
+</div>
+<div id="label-text-buttons-sliders-other-inputs-and-alerts" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> Label Text (Buttons, Sliders, Other Inputs and Alerts)</h3>
+<p>By using the central CSS file, any text you included in/on buttons, dropdown menus, sliders, radio buttons, choices, and other inputs as well as alert messages and popups/rollovers, will automatically be styled correctly.</p>
+<p>Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong with input labels. Input labels should be written in sentence case (i.e., capitalize only the first word and any proper nouns).</p>
+<p>You may use these tags with popups/rollovers.</p>
+</div>
+<div id="feedback-and-hint-text" class="section level3">
+<h3><span class="header-section-number">5.3.6</span> Feedback and Hint Text</h3>
+<p>Again, let the central CSS file handle the styling of this type of text.</p>
+</div>
+<div id="text-in-r-plots" class="section level3">
+<h3><span class="header-section-number">5.3.7</span> Text in <code>R</code> Plots</h3>
+<p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the ggplot framework) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
+<p>Here is an example for how to do this:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="designStyle.html#cb18-1"></a><span class="co"># Create a ggplot2 object</span></span>
+<span id="cb18-2"><a href="designStyle.html#cb18-2"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data=</span>df, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>grp)) </span>
+<span id="cb18-3"><a href="designStyle.html#cb18-3"></a><span class="co"># Add your layers, for example</span></span>
+<span id="cb18-4"><a href="designStyle.html#cb18-4"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</span>
+<span id="cb18-5"><a href="designStyle.html#cb18-5"></a><span class="co"># Use theme to control text size</span></span>
+<span id="cb18-6"><a href="designStyle.html#cb18-6"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(</span>
+<span id="cb18-7"><a href="designStyle.html#cb18-7"></a>  <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>),</span>
+<span id="cb18-8"><a href="designStyle.html#cb18-8"></a>  <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>)</span>
+<span id="cb18-9"><a href="designStyle.html#cb18-9"></a>  )</span></code></pre></div>
+<p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
+<p><strong>Note:</strong> The text in your plot might not behave well for dynamic resizing on different mobile devices.</p>
+</div>
+</div>
+<div id="graphics" class="section level2">
+<h2><span class="header-section-number">5.4</span> Graphics</h2>
+<p>One of the most powerful tools we have in Statistics and Data Science is graphics. This includes images/pictures, graphs/plots, and tables. You will want to make sure that all graphical elements are appropriately sized in the Body. If there is text in a static image/picture, you’ll need to make sure that the text is legible on a variety of screen sizes.</p>
+<p>We’ve already discussed both issues of color and text size in plots. For additional considerations, please refer to the following readings (ordered from most important to least):</p>
+<ul>
+<li><a href="https://www.dropbox.com/s/hb52991v09p8q91/Tufte%20-%202006%20-%20The%20Fundamental%20principles%20of%20analytical%20design.pdf?dl=0">Tufte-Fundamental Principles of Analytical Design</a></li>
+<li><a href="https://www.dropbox.com/s/z8yrf4eqph6c2h4/Tufte%20-%202001%20-%20Chartjunk%20Vibrations%2C%20grids%2C%20and%20ducks.pdf?dl=0">Tufte-Chartjunk</a><br />
+</li>
+<li><a href="https://www.dropbox.com/s/62uegsribwdjtze/Kosslyn%20-%202006%20-%20Looking%20with%20the%20eye%20and%20mind.pdf?dl=0">Kosslyn-Looking with the Eye and Mind</a></li>
+</ul>
+<p>Remember, we always want to be modeling excellent graphing behaviors.</p>
+<blockquote>
+<p>All photographs can be fortified with words. –Dorothea Lange</p>
+</blockquote>
+<blockquote>
+<p>A picture is worth a thousand words…but which ones. –Unknown</p>
+</blockquote>
+<p>Both of these quotations highlight that you need to include some text with your plots to help the user construct their understanding of what you’re trying to show them.</p>
+<div id="titles-and-labels" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Titles and Labels</h3>
+<p>Graph and Table titles should follow Title Case. Capitalize each word unless the word is “small” (e.g., of, an, etc.). The <a href="https://titlecase.com/">Title Case website</a> can help you if you aren’t sure. (This website also does other types of case such as camel case.)</p>
+</div>
+<div id="axes-and-scales" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Axes and Scales</h3>
+<p><code>R</code>’s default axes are terrible. They often do not fully cover the data and the have gaps between the axes. All this impedes the user’s construction of meaning. Thus, you’ll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.</p>
+<p>To force <code>ggplot2</code> to place (0, 0) in the lower-left corner and to control the scales, you will need to include the following:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="designStyle.html#cb19-1"></a><span class="co"># Create the ggplot2 object</span></span>
+<span id="cb19-2"><a href="designStyle.html#cb19-2"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(...)</span>
+<span id="cb19-3"><a href="designStyle.html#cb19-3"></a><span class="co"># Add your layer</span></span>
+<span id="cb19-4"><a href="designStyle.html#cb19-4"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</span>
+<span id="cb19-5"><a href="designStyle.html#cb19-5"></a><span class="co"># Control axes and scale</span></span>
+<span id="cb19-6"><a href="designStyle.html#cb19-6"></a><span class="co">## Multiplicative Scaling of the Horizontal (x) Axis</span></span>
+<span id="cb19-7"><a href="designStyle.html#cb19-7"></a><span class="co">## Additive Scaling of the Vertical (y) Axis</span></span>
+<span id="cb19-8"><a href="designStyle.html#cb19-8"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">add =</span> <span class="dv">0</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb19-9"><a href="designStyle.html#cb19-9"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="dv">0</span>, <span class="dt">add =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </span></code></pre></div>
+</div>
+<div id="color-and-plots-in-r" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Color and Plots in <code>R</code></h3>
+<p>In <code>R</code> you can set color theme which you use in <code>ggplot2</code>. Here are two custom color palettes that you can use in your App. Additionally, the package <code>viridis</code> provides several additional color palettes which are improvements upon the default color scheme.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="designStyle.html#cb20-1"></a><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></span>
+<span id="cb20-2"><a href="designStyle.html#cb20-2"></a>boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
+<span id="cb20-3"><a href="designStyle.html#cb20-3"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb20-4"><a href="designStyle.html#cb20-4"></a></span>
+<span id="cb20-5"><a href="designStyle.html#cb20-5"></a><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></span>
+<span id="cb20-6"><a href="designStyle.html#cb20-6"></a><span class="co"># and checked at the above webite.</span></span>
+<span id="cb20-7"><a href="designStyle.html#cb20-7"></a>psuPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</span>
+<span id="cb20-8"><a href="designStyle.html#cb20-8"></a>    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</span>
+<span id="cb20-9"><a href="designStyle.html#cb20-9"></a></span>
+<span id="cb20-10"><a href="designStyle.html#cb20-10"></a><span class="co"># Both palettes get used in the order of what is listed.</span></span></code></pre></div>
+<p>To use these palettes (or ones from <code>viridis</code>) with a <code>ggplot2</code> object, you’ll need to doe the following</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="designStyle.html#cb21-1"></a><span class="co"># You will need to first add whichever palette line from above to your code</span></span>
+<span id="cb21-2"><a href="designStyle.html#cb21-2"></a>boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
+<span id="cb21-3"><a href="designStyle.html#cb21-3"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb21-4"><a href="designStyle.html#cb21-4"></a></span>
+<span id="cb21-5"><a href="designStyle.html#cb21-5"></a><span class="co"># Create ggplot2 object</span></span>
+<span id="cb21-6"><a href="designStyle.html#cb21-6"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data =</span> df, </span>
+<span id="cb21-7"><a href="designStyle.html#cb21-7"></a>                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">color =</span> grp, <span class="dt">fill =</span> grp))</span>
+<span id="cb21-8"><a href="designStyle.html#cb21-8"></a><span class="co"># Add your layers</span></span>
+<span id="cb21-9"><a href="designStyle.html#cb21-9"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_points</span>()</span>
+<span id="cb21-10"><a href="designStyle.html#cb21-10"></a><span class="co"># Tell R to use your chosen palette</span></span>
+<span id="cb21-11"><a href="designStyle.html#cb21-11"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></span>
+<span id="cb21-12"><a href="designStyle.html#cb21-12"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></span></code></pre></div>
+<p>If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)</p>
+<p>With any eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.</p>
+</div>
+<div id="tables" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Tables</h3>
+<p>Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn’t conducive to helping a person understand what’s going on, neither is a wall of data values. Thus, we need to be extreme judicious about incorporating data tables into any of our apps.</p>
+<p>In web development there are two main types of tables: layout tables and data tables.</p>
+<ul>
+<li>Layout tables help to control where different elements appear on the page.</li>
+<li>We need an additional distinction for data tables:
+<ul>
+<li>Summary Data Tables are tables that have summary information; typified by two-way tables (a.k.a. contingency tables or crosstabs) but might also include other things such as values of descriptive statistics stratified by groups.</li>
+<li>Data Set are an entire data object, presented in tabular format</li>
+</ul></li>
+</ul>
+<p><strong>Layout Tables should never be used in a BOAST App.</strong></p>
+<p>Data Sets should be displayed <strong>as sparingly as possible</strong>. In order to include a Data Set display, you will need to have identified an explicit learning goal/objective that necessitates the user digging through a data frame. If you can’t identify such a learning goal, you should NOT include a data frame.</p>
+<p>If the goal is to allow the user to look through the data set OR to have access to the data, then <strong>give a link</strong> to either the original source of the data (<strong>preferred</strong>) or for them to download the file.</p>
+<p>Summary Data Tables can be used more often and can enrich the user’s experience with your app. However, these must still be constructed in an appropriate manner.</p>
+<p>Neither Data Sets nor Summary Data Tables should be inserted into your App as a picture. This is an big Accessibility violation. Use the directions below to create the appropriate type of data table.</p>
+<div id="displaying-data-tables" class="section level4">
+<h4><span class="header-section-number">5.4.4.1</span> Displaying Data Tables</h4>
+<p>Your first step is to create a data frame object in your <code>R</code> code.</p>
+<ul>
+<li>If you are displaying a data set (rare), then you will either need to read in the data or call that data frame. For this example, I’ll be using the <code>mtcars</code> data frame that is part of <code>R</code>.</li>
+<li>If you are making a Summary Data Table, you’ll need to either use <code>R</code> to calculate the values and store in a data frame or create a data frame yourself.</li>
+</ul>
+<p>In either case, be sure you identify what columns you’re going to use. If your original data file has 50 columns, but your App only makes use of 5, drop the the other 45. Only display the columns that you actually use.</p>
+<p>Your next step is to decide on where to put this display (e.g., inside an Exploration Tab or as a separate page). This will help you identify where in your App’s UI section you need to put the appropriate code.</p>
+<p>To ensure that your data table is accessible and responsive (i.e., mobile friendly), you will need to use the <code>DT</code> package.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="designStyle.html#cb22-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
+<span id="cb22-2"><a href="designStyle.html#cb22-2"></a><span class="co"># Be sure to include this in your library call</span></span>
+<span id="cb22-3"><a href="designStyle.html#cb22-3"></a><span class="kw">library</span>(DT)</span></code></pre></div>
+<p>In your UI section, you’ll need to use the following code, placed in the appropriate area:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="designStyle.html#cb23-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb23-2"><a href="designStyle.html#cb23-2"></a>DT<span class="op">::</span><span class="kw">DTOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;mtCars&quot;</span>)</span>
+<span id="cb23-3"><a href="designStyle.html#cb23-3"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>Then, in your Server section, you’ll need to use the following code:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="designStyle.html#cb24-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb24-2"><a href="designStyle.html#cb24-2"></a><span class="co"># Prepare your data set with only the columns needed</span></span>
+<span id="cb24-3"><a href="designStyle.html#cb24-3"></a>carData &lt;-<span class="st"> </span>mtcars[,<span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;gear&quot;</span>, <span class="st">&quot;wt&quot;</span>)]</span>
+<span id="cb24-4"><a href="designStyle.html#cb24-4"></a></span>
+<span id="cb24-5"><a href="designStyle.html#cb24-5"></a><span class="co">## Use Short but Meaningful Column Names</span></span>
+<span id="cb24-6"><a href="designStyle.html#cb24-6"></a><span class="kw">names</span>(carData) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;MPG&quot;</span>, <span class="st">&quot;# of Cylinders&quot;</span>, <span class="st">&quot;Horsepower&quot;</span>, <span class="st">&quot;# of Gears&quot;</span>, <span class="st">&quot;Weight&quot;</span>)</span>
+<span id="cb24-7"><a href="designStyle.html#cb24-7"></a></span>
+<span id="cb24-8"><a href="designStyle.html#cb24-8"></a><span class="co"># Create the output data table</span></span>
+<span id="cb24-9"><a href="designStyle.html#cb24-9"></a><span class="co"># Be sure to use the same name as you did in the UI</span></span>
+<span id="cb24-10"><a href="designStyle.html#cb24-10"></a>output<span class="op">$</span>mtCars &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
+<span id="cb24-11"><a href="designStyle.html#cb24-11"></a>  <span class="dt">expr =</span> carData,</span>
+<span id="cb24-12"><a href="designStyle.html#cb24-12"></a>  <span class="dt">caption =</span> <span class="st">&quot;Motor Trend US Data, 1973-1974 Models&quot;</span>, <span class="co"># Add a caption to your table</span></span>
+<span id="cb24-13"><a href="designStyle.html#cb24-13"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, <span class="co"># You must use this style</span></span>
+<span id="cb24-14"><a href="designStyle.html#cb24-14"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb24-15"><a href="designStyle.html#cb24-15"></a>  <span class="dt">options =</span> <span class="kw">list</span>( <span class="co"># You must use these options</span></span>
+<span id="cb24-16"><a href="designStyle.html#cb24-16"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, <span class="co"># allows the data table to be mobile friendly</span></span>
+<span id="cb24-17"><a href="designStyle.html#cb24-17"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>, <span class="co"># allows the user to scroll through a wide table</span></span>
+<span id="cb24-18"><a href="designStyle.html#cb24-18"></a>    <span class="dt">columnDefs =</span> <span class="kw">list</span>(  <span class="co"># These will set alignment of data values</span></span>
+<span id="cb24-19"><a href="designStyle.html#cb24-19"></a>      <span class="co"># Notice the use of ncol on your data frame; leave the 1 as is.</span></span>
+<span id="cb24-20"><a href="designStyle.html#cb24-20"></a>      <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>, <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(carData))</span>
+<span id="cb24-21"><a href="designStyle.html#cb24-21"></a>    )</span>
+<span id="cb24-22"><a href="designStyle.html#cb24-22"></a>  )</span>
+<span id="cb24-23"><a href="designStyle.html#cb24-23"></a>)</span>
+<span id="cb24-24"><a href="designStyle.html#cb24-24"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>If you are making a Summary Data Table, you will need to follow the same process. If your data frame does not have row names, but instead a column with values acting as row names, you may replace the <code>rownames = TRUE</code> with <code>rownames = FALSE</code>; there should not be a column of sequential numbers on the left.</p>
+<p>Column names <strong>MUST</strong> be simple and <em>meaningful</em> to the user. To this end, you should rename any columns that might have poor choices for names, just as we have done with the <code>mtcars</code> data. This includes using Greek characters in isolation. You should not have any columns labeled <span class="math inline">\(\mu\)</span> or <span class="math inline">\(\sigma\)</span>. Rather you need to use English words.</p>
+<p><em>Note: getting mathematical expressions to render properly in graphical environments in <code>R</code> is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.</em></p>
+<p>Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, <strong>talk to Neil and Bob</strong>.</p>
+</div>
+</div>
+<div id="static-images" class="section level3">
+<h3><span class="header-section-number">5.4.5</span> Static Images</h3>
+<p>Static image refers to any image you’re using in your App which is not produced by <code>R</code>. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.</p>
+<p>Within your App’s folder/directory, there needs to be a sub-folder/directory called <code>www</code>. This is the place where you’ll need to place ALL static image files.</p>
+<div id="adding-an-image" class="section level4">
+<h4><span class="header-section-number">5.4.5.1</span> Adding an Image</h4>
+<p>To include the image in your App, you’ll need to make use of the image tag, <code>img</code>. When you run your App, Shiny automatically knows to check the <code>www</code> folder any time the <code>img</code> tag gets called. Here is an example supposing that the check mark image for correct answers is in the app’s <code>www</code> folder:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="designStyle.html#cb25-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb25-2"><a href="designStyle.html#cb25-2"></a><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb25-3"><a href="designStyle.html#cb25-3"></a>    <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb25-4"><a href="designStyle.html#cb25-4"></a>        <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb25-5"><a href="designStyle.html#cb25-5"></a>        <span class="dt">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
+<span id="cb25-6"><a href="designStyle.html#cb25-6"></a>        <span class="dt">height =</span> <span class="dv">25</span>,</span>
+<span id="cb25-7"><a href="designStyle.html#cb25-7"></a>        ))</span>
+<span id="cb25-8"><a href="designStyle.html#cb25-8"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>You’ll notice that we’ve wrapped the <code>img</code> call in a <code>div</code> call. The <code>div</code> call allows us to specify that we want the image to be right aligned; you could also do left or center. You can replace the <code>div</code> call with the paragraph environment and include text on either side, effectively making your image part of the text.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="designStyle.html#cb26-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb26-2"><a href="designStyle.html#cb26-2"></a><span class="kw">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb26-3"><a href="designStyle.html#cb26-3"></a>  <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb26-4"><a href="designStyle.html#cb26-4"></a>      <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb26-5"><a href="designStyle.html#cb26-5"></a>      <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>),</span>
+<span id="cb26-6"><a href="designStyle.html#cb26-6"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
+<span id="cb26-7"><a href="designStyle.html#cb26-7"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+</div>
+<div id="sizing-and-positioning-your-image" class="section level4">
+<h4><span class="header-section-number">5.4.5.2</span> Sizing and Positioning Your Image</h4>
+<p>All image files have a native size that is part of that file. For instance, the check mark image is 270 x 250 pixels. However, we overrode that that sizing with the <code>width</code> and <code>height</code> arguments. How did we decide on 25 x 25? Honestly, through guess and checking. You’ll need to think about how you’re using the image and let that guide your decision making. There is no one size fits all solution. While finding an optimal size and position for your image can take some time, seeing bad settings is pretty obvious. Feel free to reach out to Neil and Bob for assistance.</p>
+</div>
+</div>
+<div id="alt-text" class="section level3">
+<h3><span class="header-section-number">5.4.6</span> Alt Text</h3>
+<p>Any graphical element you include in your App <strong>MUST</strong> have an alternative (assistive) text description (“alt text”). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)</p>
+<p>Here are several resources worth checking out:</p>
+<ul>
+<li><a href="https://webaim.org/techniques/alttext/#basics">WebAIM Alternative Text Guide</a></li>
+<li><a href="https://accessibility.psu.edu/images/alttext/">Penn State’s Image ALT Text Page</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">W3C’s ALT Text Decision Tree</a></li>
+</ul>
+<div id="adding-alt-text-to-static-images" class="section level4">
+<h4><span class="header-section-number">5.4.6.1</span> Adding Alt Text to Static Images</h4>
+<p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="designStyle.html#cb27-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb27-2"><a href="designStyle.html#cb27-2"></a><span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb27-3"><a href="designStyle.html#cb27-3"></a>    <span class="dt">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb27-4"><a href="designStyle.html#cb27-4"></a>    <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>)</span>
+<span id="cb27-5"><a href="designStyle.html#cb27-5"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+</div>
+<div id="adding-alt-text-graphs" class="section level4">
+<h4><span class="header-section-number">5.4.6.2</span> Adding Alt Text Graphs</h4>
+<p><em>This section is under construction.</em></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="layot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wording.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["BOAST_style_guide.pdf", "BOAST_style_guide.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

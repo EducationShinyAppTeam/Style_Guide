@@ -1,3 +1,5 @@
+# (PART) Linguistics {-}
+
 # Wording {#wording}
 
 This chapter focuses on the wording that we use within the BOAST Apps.

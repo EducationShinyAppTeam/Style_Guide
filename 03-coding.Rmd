@@ -1,3 +1,5 @@
+# (PART) Writing Code {-}
+
 # Coding Style {#coding}
 
 Now that you've gone through the Getting Started section, we can turn our attention to the first part of the Style Guide: Coding. There are many aspects that fall under the heading of Coding Style. 
@@ -30,7 +32,7 @@ Avoid using the variable names from code that you're making use of from another 
 
 ### Format Your Code {#formatCode}
 
-See also \@ref(orgCode) Organizing Code
+See also [Section \@ref(orgCode)](#orgCode)
 
 Use indentation spacing to help make your code readable. RStudio has a built-in tool that can help with this.
 
@@ -74,62 +76,53 @@ General Advice:
 
 Remember the following: the more proactive you are from the get go in commenting and organizing your code, the easier time you will have for debugging and improving your code down the road.
 
-### HTML {#html}
+## Additional Coding Style
+In addition, we use the following coding practices.
 
-Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in `R`. When you run a Shiny app, `R` and the `shiny` packages actually convert all of the `R` code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an __Accessibility Issue__.
+### Minimize Package Usage {#minPackages}
 
-HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to wider audience. Here are the most common HTML tags that you'll encounter when making a Shiny App.
+Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R.
 
-#### Lists
+This is not to say that you can't make use of a new package. This guideline's purpose is to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.
 
-There are two aspects to lists: the items in the list and the environment those items live in. 
+To help you avoid name masking (i.e., [Section \@ref(explicit)](#explicit)), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use `dplyr::filter([arguments])` instead of just `filter([arguments])`.
 
-The two list environment are Ordered Lists and Unordered Lists.
+You can also run a `funchir::stale_package_check` on your `app.R`, `ui.R`, and `sever.R` files to see which packages you're loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
 
-+ The Ordered List environment is for when you want require that user works through the items in a particular order. You call this environment in your App by using `tags$ol( [your list] )`. These lists are sequentially numbered/lettered.
-+ The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using `tags$li( [your list] )`. These lists will appear with bullets.
+```{r staleCheck, echo=TRUE, eval=FALSE}
+# Check working directory
+getwd()
+# Does the output match the folder path to where you app lives?
+# If not, then you need to set that. For example,
+setwd("~/Documents/GitHub/shiny-apps/Sample_App")
 
-Once you've created the list environment, you create items for your list in the same way: `tags$li([content])`. You do not need to and should __NOT__ use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.
-
-Here is an example of how you might create a list:
-```{r listExample1, echo=TRUE, eval=FALSE}
-tags$ul(
-  tags$li("This is my first item."),
-  tags$li("A second item with a", tags$strong("boldface"), "word.")
-)
+# Run a stale package check on app.R, ui.R, and server.R
+funchir::stale_package_check("app.R")
 ```
-which turns into
 
-+ This is my first item.
-+ A second item with a __boldface__ word.
+Be aware that while `stale_package_check` is useful, it doesn't always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from `ggplot2` or `tippy`. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might some more misses.
 
-There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to `tags$li()` when in that section.
+Once you're sure that a package isn't being used, remove the `library` call.
 
-#### Headers {#headers}
+If you are dealing with a `ui.R`/`server.R` pair, make sure that the appropriate packages are loaded in the right file. For example, `ggplot2` only needs to be loaded in the `server.R` file.
 
-Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. They are __NOT__ for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content.
+### Minimize External Files {#exFiles}
 
-There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.
+Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
 
-1. `h1()` is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).
-2. `h2()` is for Page titles within the App. These would correspond with the tab links you place in the dashboard's left side panel.
-3. `h3()` is for titling Sections within a Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.
-4. `h4()` is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.
-5. `h5()` and `h6()` should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., `h1()`, `h2()`, etc.
+Wherever possible try to place external files into the `www` directory/folder that is at the same level as your `app.R` or `ui.R`/`server.R` files.
 
-__Avoid skipping heading levels__ as this will get your App flagged for an Accessibility Violation. That is to say don't start at `h2` with no `h1` and don't go from `h1` to `h3` without an `h2`. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn't skip whole sections in either of those.
+If there are any external files (e.g., `*.csv`, `*.txt`, `*.dat`, `*.jpg`) that are not being used, delete them from the repository.
 
-Here are few more things to NOT do with the heading tags:
+### Plot Caching {#plotCache}
 
-+ DO NOT USE headings to style text (We cannot stress this enough.)
-+ Do not wrap a header tag around a list element (e.g., `h3(tags$li("here is my list item"))`) nor the reverse (e.g., `tags$li(h3("here is my list item"))`)
-+ Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2("Introduction to", p("my game")))
+There are cases when your app will include a plot that falls into any of the following categories:
 
-For more information check out the [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/).
+1) a plot that all users will see (i.e., static data set),
+2) is a computationally intense plot (i.e., lots of data and/or layers),
+3) might be a dynamic graph that the user explores and needs to move back and forth between various states.
 
-#### Paragraphs {#paragraphs}
-
-Your content should be enclosed in the paragraph tag, `p()`. Even if your content is relative brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is. 
+Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the `renderCachePlot` function rather than `renderPlot`. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).
 
 ### Styling Text {#textStyle}
 
@@ -162,33 +155,8 @@ There times when you might need some additional text styling that is not already
 
 The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.
 
-See also the CSS section (\@ref(css)).
+See also [Section \@ref(css)](#css).
 
-### Minimize Package Usage {#minPackages}
-
-Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R.
-
-This is not to say that you can't make use of a new package. This guideline's purpose is to help to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.
-
-To help you avoid name masking (i.e., Be Explicit-\@ref(explicit)), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use `dplyr::filter([arguments])` instead of just `filter([arguments])`.
-
-You can also run a `funchir::stale_package_check` on your `app.R`, `ui.R`, and `sever.R` files to see which packages you're loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
-
-### Minimize External Files {#exFiles}
-
-Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
-
-Wherever possible try to place external files into the `www` directory/folder that is at the same level as your `app.R` or `ui.R`/`server.R` files.
-
-### Plot Caching {#plotCache}
-
-There are cases when your app will include a plot that falls into any of the following categories:
-
-1) a plot that all users will see (i.e., static data set),
-2) is a computationally intense plot (i.e., lots of data and/or layers),
-3) might be a dynamic graph that the user explores and needs to move back and forth between various states.
-
-Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the `renderCachePlot` function rather than `renderPlot`. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).
 
 ## Organizing Code {#orgCode}
 
@@ -200,7 +168,7 @@ The order for your code will be as follows:
 
 1.  Packages to be loaded
 2.  App Metadata (see below)
-3.  Any additional source files
+3.  Any additional source files and custom functions
 4.  UI definition
 5.  Server definition
 6.  `boastApp` call
@@ -211,32 +179,74 @@ The order for your code in the `ui.R` file:
 
 1.  Packages to be loaded
 2.  App Metadata (see below)
-3.  Any additional source files
+3.  Any additional source files and custom functions
 4.  UI definition
 
 The order for your code in the `server.R` file:
 
 1.  Packages to be loaded
-2.  Any additional source files
+2.  Any additional source files and custom functions
 3.  Server definition
 
-## Metadata {#metadata}
+## HTML {#html}
 
-Your App will need the following metadata in either the `app.R` or the `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
+Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in `R`. When you run a Shiny app, `R` and the `shiny` packages actually convert all of the `R` code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an __Accessibility Issue__.
 
-For now, use the following format:
+HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to wider audience. Here are the most common HTML tags that you'll encounter when making a Shiny App.
 
-```{r metadata, echo=TRUE, eval=FALSE}
-## App Meta Data----------------------------------------------------------------
-APP_TITLE  <<- "Title of the app"
-APP_DESCP  <<- paste(
-  "Description of the app",
-  "use multiple lines to keep the description legible."
+### Lists
+
+There are two aspects to lists: the items in the list and the environment those items live in. 
+
+The two list environment are Ordered Lists and Unordered Lists.
+
++ The Ordered List environment is for when you want require that user works through the items in a particular order. You call this environment in your App by using `tags$ol( [your list] )`. These lists are sequentially numbered/lettered.
++ The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using `tags$li( [your list] )`. These lists will appear with bullets.
+
+Once you've created the list environment, you create items for your list in the same way: `tags$li([content])`. You do not need to and should __NOT__ use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.
+
+Here is an example of how you might create a list:
+```{r listExample1, echo=TRUE, eval=FALSE}
+tags$ul(
+  tags$li("This is my first item."),
+  tags$li("A second item with a", tags$strong("boldface"), "word.")
 )
-## End App Meta Data------------------------------------------------------------
 ```
+which turns into
 
-Notice that both `APP_TITLE` and `APP_DESCP` do not follow camelCase. This is by intent to denote global `constants`.
++ This is my first item.
++ A second item with a __boldface__ word.
+
+There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to `tags$li()` when in that section.
+
+### Headers {#headers}
+
+Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. They are __NOT__ for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content.
+
+There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.
+
+1. `h1()` is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).
+2. `h2()` is for Page titles within the App. These would correspond with the tab links you place in the dashboard's left side panel.
+3. `h3()` is for titling Sections within a Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.
+4. `h4()` is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.
+5. `h5()` and `h6()` should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., `h1()`, `h2()`, etc.
+
+__Avoid skipping heading levels__ as this will get your App flagged for an Accessibility Violation. That is to say don't start at `h2` with no `h1` and don't go from `h1` to `h3` without an `h2`. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn't skip whole sections in either of those.
+
+Here are few more things to NOT do with the heading tags:
+
++ DO NOT USE headings to style text (We cannot stress this enough.)
++ Do not wrap a header tag around a list element (e.g., `h3(tags$li("here is my list item"))`) nor the reverse (e.g., `tags$li(h3("here is my list item"))`)
++ Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2("Introduction to", p("my game")))
+
+For more information check out
+
++ [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
++ [Penn State's Headings and Subheadings Accessibility](https://accessibility.psu.edu/headings/)
+
+### Paragraphs {#paragraphs}
+
+Your content should be enclosed in the paragraph tag, `p()`. Even if your content is relative brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is. 
 
 ## CSS {#css}
 
@@ -244,7 +254,7 @@ Cascading Style Sheets (CSS) will be the way to control the visual appearance of
 
 There are a few key elements at play for CSS:  
 
-1. All apps need to have the appropriate reference to the CSS file (See \@ref(textStyle)).  
+1. All apps need to have the appropriate reference to the CSS file (See [Section \@ref(textStyle)](#textStyle)).  
     a. Please register any issues, bugs, enhancements, new styling to the Style Guide repository of GitHub. 
 2. Any App specific styling needs to as be in a CSS file and approved.
 3. There should not be any styling code in the `app.R`, `ui.R`, or `server.R` files (a.k.a. in-line CSS). Styling code would look like this:  
@@ -278,18 +288,24 @@ There is an exception to #3: setting up alignment for a div section. This would 
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't `boast.css`, please log an issue and mention/assign Neil. (Most common external CSS files are `style.css` and `Feature(s).css`.)
 
-## GitHub Repo Names {#repo-naming}
+## Metadata {#metadata}
 
-Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
+Your App will need the following metadata in either the `app.R` or the `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
 
-+ Use [Title Case](https://en.wikipedia.org/wiki/Letter_case#Title_case) (not camelCase)
-+ Use underscores ( _ ) instead of spaces
-+ Match the App name as closely as possible
-+ You have a 100 character limit
+For now, use the following format:
 
-While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository. 
+```{r metadata, echo=TRUE, eval=FALSE}
+## App Meta Data----------------------------------------------------------------
+APP_TITLE  <<- "Title of the app"
+APP_DESCP  <<- paste(
+  "Description of the app",
+  "use multiple lines to keep the description legible."
+)
+## End App Meta Data------------------------------------------------------------
+```
 
-If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
+Notice that both `APP_TITLE` and `APP_DESCP` do not follow camelCase. This is by intent to denote global `constants`.
+
 
 ## Using rlocker {#rlocker}
 
@@ -326,7 +342,9 @@ Out of the box, `rlocker` does not provide any collection functions for apps, on
 **Sample generator function**
 
 ```{r, eval = FALSE}
-.generateStatement <- function(session, verb = NA, object = NA, description = NA, interactionType = NA, response = NA, success = NA, completion = FALSE) {
+.generateStatement <- function(session, verb = NA, object = NA, description = NA,
+                               interactionType = NA, response = NA, success = NA,
+                               completion = FALSE) {
   statement <- rlocker::createStatement(list(
     verb = verb,
     object = list(
