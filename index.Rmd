@@ -44,3 +44,5 @@ This Style Guide is laid out in several parts:
 + Part 5 conveys important information on Accessibility and Mobile Friendliness
 + Part 6 is where you can see an example of building an app from scratch
 + The final part is where you can find some additional tools and information.
+
+Please keep in mind that this Style Guide is a living document. As issues arise, we will update this guide to address those issues. Additionally, as we think of potential issues, we'll also update the guide to provide guidance before they occur. We also welcome any suggestions for improvements.

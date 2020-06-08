@@ -12,22 +12,22 @@ As you work on apps, both updating existing and developing new ones, moving thro
     b. Create new issues on GitHub to log both bugs and suggestions for improvements
     c. Create an issue specifically if the App currently does not abide by this Style Guide
     d. Optional--assign yourself to the issue
-4. Download the current version of the app by using either RStudio or GitHub Desktop.
-5. Create a new branch for your developments.
+4. Download the current version of the app by using either RStudio or GitHub Desktop
+5. Create a new branch for your developments
 6. Begin editing the code
-7. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
-8. Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
-9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing)).
-10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
-11. Make any requested changes and re-push to your development branch. Update the Pull Request with a new comment.
+7. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio
+8. Periodically push your edits to your development branch; don't forget to add commit messages and reference any issues
+9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing))
+10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request; assign Neil as a reviewer
+11. Make any requested changes and re-push to your development branch; update the Pull Request with a new comment
 
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
 
 ## Creating New Apps
 To see this workflow in action, check out [Chapter \@ref(makingApp)](#makingApp).
 
-1. Read the Style Guide
-2. Identify a topic for your new App
+1. Read the Style Guide.
+2. Identify a topic for your new App.
 3. Sketch out your plans for the App. __This should occur BEFORE you start coding.__ Be sure that you include:
     a. Suggested Title
     b. Goal of the app
@@ -35,7 +35,7 @@ To see this workflow in action, check out [Chapter \@ref(makingApp)](#makingApp)
     d. What will the user be experiencing (i.e., potential outputs)
     e. Relationships between various elements.
 4. When your plan __gets approval__, create a new repository on GitHub (see [Section \@ref(repo-naming)](#repo-naming)); you can initially load the Sample App template to this repository, if you wish.
-5. Begin writing the code
+5. Begin writing the code.
 6. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
 7. When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.
 8. Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
@@ -60,7 +60,7 @@ If you come across a repo that is poorly named, please make an issue and provide
 
 ## Testing Your App {#testing}
 
-To test your App beyond your local machine, we will be making use of TLT's RStudio Connect platform. You will need to following these directions.
+To test your App beyond your local machine, we will be making use of TLT's RStudio Connect platform. You will need to follow these directions.
 
 ### Set Up/Login to the VPN
 Please refer to the following PSU Knowledge Basis Articles:

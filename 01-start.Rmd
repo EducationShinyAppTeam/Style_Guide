@@ -16,7 +16,7 @@ Before you get too far into the Style Guide, we would like for you to take a mom
     a. [`R` (version 3.5.* minimum, version 4.0.0 preferred)](https://cloud.r-project.org/) 
     b. [RStudio Desktop (most current version preferred)](https://rstudio.com/products/rstudio/download/#download)
 3. Additional Software that we strongly recommend 
-    a. [GitHub Desktop](https://desktop.github.com/)]
+    a. [GitHub Desktop](https://desktop.github.com/)
 4. `R` Packages--here are some basic packages that everyone will need; be sure to install their dependencies
 
     ```{r packageInstall, echo = TRUE, eval = FALSE}
