@@ -1,3 +1,5 @@
+# (PART) Linguistics {-}
+
 # Wording {#wording}
 
 This chapter focuses on the wording that we use within the BOAST Apps.
@@ -13,7 +15,7 @@ Since these apps are for *teaching and learning*, we need to use language that i
 + Sloppy Language: Vagueness
     - BAD: "We want to explore how these averages differ."
     - NEUTRAL/FAIR: "We want to explore how these means differ."
-    _ GOOD: "We want to explore how the values of the *sample arithmetic mean* (*SAM*) varies between these groups."
+    - GOOD: "We want to explore how the values of the *sample arithmetic mean* (*SAM*) varies between these groups."
 + Sloppy Language: Discussing values of statistics
     - BAD: “The mean is 6.”
     - GOOD: “The value of the *sample arithematic mean* for this data is 6 units/object.”
@@ -25,7 +27,7 @@ Since these apps are for *teaching and learning*, we need to use language that i
     - GOOD: "If we were to repeat the entire study infinitely many times, then 95% of the time we will make an interval that captures the true population proportion."
 
 ## Popovers {#popovers}
-The term "Popovers" refers to any number of different tools on websites that go by other names such as tooltips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object (typically user inputs or graphs). The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is `shinyBS::bsPopover`. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear. 
+The term "Popovers" refers to any number of different tools on websites that go by other names such as tool tips, rollovers, and hover text. In essence, this tool appears when the user places their cursor over (i.e., hover) or shifts the focus to a trigger object (typically user inputs or graphs). The text then pops up on the screen for the user to view. The function to create one of these in a Shiny app is `shinyBS::bsPopover`. While these can be powerful, they are often misused, leading to problems. For example, they can prevent the user from actually interacting with portions of your app when they appear. 
 
 Popovers are meant to provide short, simple clarifications; quick annotations which enrich the content that is already present. This type of text is meant to be temporary, only appearing for as long as the user is hovering/focusing on the trigger object. Thus, if you are putting information that is critical for a person to successfully use your App in a popover, you are using popovers __INCORRECTLY__.
 
@@ -72,26 +74,22 @@ Suppose that we want to add the hover text to the the word "positive" in the fol
 We would need to do the following in our `app.R` (or `ui.R`) file:
 
 ```{r tippyEx1, echo=TRUE, eval=FALSE}
+# Required Library
 library(tippy)
+# In UI Section
 #[code omitted]
-dashboardPage(
-    skin = "blue",
-    dashboardHeader(
-        #[code omitted]
-    ),
-    dashboardBody(
-        #[code omitted]
-        tabItem(
-            tabName = "Overview",
-            h1("Exploring Skewness"),
-            p("A ",
-              tippy::tippy(text = "positively skewed",
-                           tooltip = "Sometimes called 'long right tail' or 'right skewed'",
-                           arrow = TRUE, placement = "auto"),
-            " histogram will have potential outliers that are larger than
-            the main modal clump(s)."),
-    #[code omitted]
-        ))) 
+dashboardBody(
+  #[code omitted]
+  tabItem(
+    tabName = "Overview",
+    h1("Exploring Skewness"),
+    p("A ",
+      tippy::tippy(text = "positively skewed",
+                   tooltip = "Sometimes called 'long right tail' or 'right skewed'",
+                   arrow = TRUE, placement = "auto"),
+      " histogram will have potential outliers that are larger than the main modal clump(s)."),
+  #[code omitted]
+)) 
 ```
 
 There are several things to notice in the example:
@@ -121,9 +119,9 @@ In the `tippy` example above, the ordering of terms is:
 2. long right tail
 3. right skewed
 
-This ordering reflects the ordering of most productive and coherent. "Positively skewed" works regardless of the orientation of the histogram (see Figure \@ref(fig:skewEx1)) as well as directly connecting to the statistic *sample skewness*. The later two only make sense in one orientation and do not connect to *sample skewness*. "Long right tail" is preferable to "right skewed" as this phrasing helps students avoid the common belief that the position term (right/left) is about where the bulk of the observations are.
+This ordering reflects the ordering from most productive and coherent to least. "Positively skewed" works regardless of the orientation of the histogram (see [Figure \@ref(fig:skewEx1)](#fig:skewEx1)) as well as directly connecting to the statistic *sample skewness*. The later two only make sense in one orientation and do not connect to *sample skewness*. "Long right tail" is preferable to "right skewed" as this phrasing helps students avoid the common belief that the position term (right/left) is about where the bulk of the observations are.
 
-```{r skewEx1, echo=FALSE, fig.width=3, fig.height=4, fig.cap="Same Data, Two Orientations", fig.show='hold'}
+```{r skewEx1, echo=FALSE, fig.width=3, fig.height=4, fig.cap="Same Data, Two Orientations", fig.show='hold', fig.align='center'}
 par(mar = c(4, 4, 0.1, 0.1))
 df1 <- data.frame(
     data = rexp(150, rate = 3)

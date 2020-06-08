@@ -1,0 +1,112 @@
+# Workflow {#workflow}
+
+As you work on apps, both updating existing and developing new ones, moving through a workflow can help you organize yourself.
+
+
+## Revising Existing Apps
+
+1. Read the Style Guide
+2. Explore the existing apps in the [book](https://sites.psu.edu/shinyapps/)
+3. When you identify an app you wish to work on,
+    a. Go to that app's repository in [GitHub](https://github.com/EducationShinyAppTeam)
+    b. Create new issues on GitHub to log both bugs and suggestions for improvements
+    c. Create an issue specifically if the App currently does not abide by this Style Guide
+    d. Optional--assign yourself to the issue
+4. Download the current version of the app by using either RStudio or GitHub Desktop
+5. Create a new branch for your developments
+6. Begin editing the code
+7. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio
+8. Periodically push your edits to your development branch; don't forget to add commit messages and reference any issues
+9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing))
+10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request; assign Neil as a reviewer
+11. Make any requested changes and re-push to your development branch; update the Pull Request with a new comment
+
+If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
+
+## Creating New Apps
+To see this workflow in action, check out [Chapter \@ref(makingApp)](#makingApp).
+
+1. Read the Style Guide.
+2. Identify a topic for your new App.
+3. Sketch out your plans for the App. __This should occur BEFORE you start coding.__ Be sure that you include:
+    a. Suggested Title
+    b. Goal of the app
+    c. What will the user be doing (i.e., potential inputs)
+    d. What will the user be experiencing (i.e., potential outputs)
+    e. Relationships between various elements.
+4. When your plan __gets approval__, create a new repository on GitHub (see [Section \@ref(repo-naming)](#repo-naming)); you can initially load the Sample App template to this repository, if you wish.
+5. Begin writing the code.
+6. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
+7. When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.
+8. Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
+9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing)).
+10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
+11. Make any requested changes and re-push to your development branch. Update the Pull Request with a new comment.
+
+If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
+
+### GitHub Repo Names {#repo-naming}
+
+Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you'll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:
+
++ Use [Title Case](https://en.wikipedia.org/wiki/Letter_case#Title_case) (not camelCase)
++ Use underscores ( _ ) instead of spaces
++ Match the App name as closely as possible
++ You have a 100 character limit
+
+While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository. 
+
+If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
+
+## Testing Your App {#testing}
+
+To test your App beyond your local machine, we will be making use of TLT's RStudio Connect platform. You will need to follow these directions.
+
+### Set Up/Login to the VPN
+Please refer to the following PSU Knowledge Basis Articles:
+
++ [VPN for Mac OS](https://pennstate.service-now.com/sp?id=kb_article&sys_id=c628298bdb1d6f44a318fb671d961971)
++ [VPN for Windows](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=c151310cdb85abc84222778ebf961957)
++ [VPN for Apple iOS](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=1de84eb6dbd5ab44a318fb671d9619a5)
++ [VPN for Android](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=a35e0a7edb59ab44a318fb671d961964)
+
+You MUST be logged into the PSU VPN to both upload and test your App on each device.
+
+### Connecting Your RStudio to TLT's RStudio Connect
+You only need to do this step once.
+
+1. After you've logged into the PSU VPN, go to [TLT's RStudio Connect](https://rstudio-connect.tlt.psu.edu:3939/connect) and log in using your PSU ID.
+2. Once logged in, click on the Publish button as shown in the green box of [Figure \@ref(fig:testing1)](#fig:testing1)
+```{r testing1, fig.cap="Click the Publish Button", fig.width=6, fig.height=4, echo=FALSE}
+knitr::include_graphics("images/publish1.png")
+```
+3. Select Shiny App and a pop up window will appear.
+4. Follow the steps in this window (especially Step 4) to set up the connection.
+
+#### Checking You've Connected
+You can check to see if you've connected by going into RStudio's Options and looking at the Publishing tab. You should see a similar entry as what is in the green box of [Figure \@ref(fig:testing2)](#fig:testing2):
+```{r testing2, fig.cap="Check Your Publishing Profile", fig.align='center', fig.width=6, fig.height=4, echo=FALSE}
+knitr::include_graphics("images/publish2.png")
+```
+
+### Publishing Your App for Testing
+Make sure that you are connected to PSU's VPN and that you've already connected your RStudio to TLT's server. 
+
+Click on the Publishing Icon, located just to the right of the Run App button. Be sure to select the TLT Server.
+
+### Configuring for Testing
+Once your App has been published, a new window should open in your browser that shows your App plus the optional controls. 
+```{r testing3, fig.cap="Successful Publish and Settings", fig.align='center', fig.width=6, fig.height=4, echo=FALSE}
+knitr::include_graphics("images/publish3.png")
+```
+In [Figure \@ref(fig:testing3)](#fig:testing3), you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
+
+If you want, you can add collaborators as I did in the example (orange box). This is not required.
+
+The most important piece is the Content URL (marked with the blue star). You'll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device they are using.
+
+### Check the Logs
+As you test your App, you'll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in [Figure \@ref(fig:testing3)](#fig:testing3)) to view.
+
+### Problems?
+If you run into problem either publishing your App or getting the App to launch on the TLT, please reach out to Neil and Bob. 

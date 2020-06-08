@@ -1,3 +1,5 @@
+# (PART) Examples {-}
+
 # Making an App {#makingApp}
 
 Sooner or later, you'll reach the point where it is time to make your own Shiny App for BOAST. Approaching your App's construction in a systematic way will help you tremendously. The following suggested workflow is an abbreviated version of the one in Section \@ref(workflow):

@@ -1,3 +1,5 @@
+# (PART) Accessibility and Mobile Devices {-}
+
 # Accessibility {#accessibility}
 
 We need to make sure that our Apps are accessible. If you have been adhering to the style guide, your App should be in a decent position. When you're ready to test the accessibility of your App, you'll need to deploy the App to a sever and then use the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). Enter the URL of your App in the noted box to run an evaluation. See what accessibility issues your App has and then address them.
@@ -13,7 +15,7 @@ __See also:__
   - [7 Things Every Designer Needs to Know about Accessibility](https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b)
 
 ## Testing Accessibility
-We highly recommend using the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). 
+We highly recommend using the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). If you use Firefox or Chrome, we recommend that you install the [WAVE Browser Extension](https://wave.webaim.org/extension/) as this will give you a quick way to test your App's accessbility.
 
 ```{r waveDescStat, fig.align='center', echo=FALSE, fig.cap="WAVE Report for Descriptive Statistics App"}
 knitr::include_graphics("images/descStatOverview.png")

@@ -1,6 +1,8 @@
+# (PART) Getting Started {-}
+
 \setcounter{chapter}{0}
 
-# Getting Started {#getStarted}
+# The Basics {#basics}
 
 Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.
 
@@ -10,15 +12,16 @@ Before you get too far into the Style Guide, we would like for you to take a mom
     b. [GitHub](https://github.com/)  
     c. [EducationShinyAppTeam](https://github.com/EducationShinyAppTeam) 
     d. [BOAST](https://teams.microsoft.com/l/team/19%3a8423bc25992a4451952d8312b497324d%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e) in Microsoft Teams (tied to your PSU AccessID)
-2. Ensure that you have all of the proper software.  
-    a. `R` (version 3.5.* minimum, version 4.0.0 preferred) [[Download](https://cloud.r-project.org/)] 
-    b. RStudio Desktop(most current version preferred) [[Download](https://rstudio.com/products/rstudio/download/#download)]
-3. Additional Software that we recommend  
-    a. GitHub Desktop [[Download](https://desktop.github.com/)]
-4. `R` Packages--here are some basic packages that everyone will need; be sure to install their dependencies too:
+2. Ensure that you have all of the required software  
+    a. [`R` (version 3.5.* minimum, version 4.0.0 preferred)](https://cloud.r-project.org/) 
+    b. [RStudio Desktop (most current version preferred)](https://rstudio.com/products/rstudio/download/#download)
+3. Additional Software that we strongly recommend 
+    a. [GitHub Desktop](https://desktop.github.com/)
+4. `R` Packages--here are some basic packages that everyone will need; be sure to install their dependencies
 
-    ```{r, eval = FALSE}
-    install.packages(c("devtools", "ggplot2", "shiny", "shinyBS", "tidyverse"))
+    ```{r packageInstall, echo = TRUE, eval = FALSE}
+    install.packages(c("devtools", "DT", "ggplot2", "shiny", "shinyBS", 
+                       "shinyWidgets", "tidyverse", "tippy"))
     ```
 
 5. A copy of the Sample App ([see below](#sample-app))
@@ -28,9 +31,9 @@ Bob created the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils
  
 __Starting Summer 2020, you will be required to you make use of this tool.__
 
-Please check out the package's [page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and usage.
+Please check out the [package's GitHub page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and usage.
 
-```{r, eval = FALSE}
+```{r utilInstall, echo = TRUE, eval = FALSE}
 library(devtools)
 devtools::install_github("EducationShinyAppTeam/boastUtils")
 ```
@@ -43,6 +46,7 @@ There are several methods you can use:
 - [Direct Download (Basic)](#direct-download)
 - [GitHub Desktop (Recommended)](#github-desktop)
 - [Command Line (Advanced)](#command-line)
+- [RStudio Project](#rstudio-project)
 
 ### Direct Download
 You can download this repository directly by visiting:
@@ -75,99 +79,15 @@ git clone git@github.com:EducationShinyAppTeam/Sample_App.git
 - [Resources to learn Git](https://try.github.io/)
 - [Happy Git and GitHub for the userR](https://happygitwithr.com/)
 
-## Workflow {#workflow}
-As you work on apps, both updating existing and developing new ones, moving through a workflow can help you organize yourself.
+### RStudio Project {#rstudio-project}
+You can also use RStudio to connect to and copy repositories from GitHub. There are a few extra steps that you'll need to go through compared to other methods. We recommend that you use GitHub Desktop.
 
-### Revising/Updating Existing Apps
+1. In your browser, navigate to the repository you want to copy; in this case the [Sample\_App repo](https://github.com/EducationShinyAppTeam/Sample_App).
+2. Launch RStudio and create a new project.
+3. Select the Version Control option and then Git.
+4. Switch back to your browser and click on the Clone or Download button. There should be a line of text starting with `git@github` that you can copy. Do so.
+5. Returning to RStudio, paste the get you just copied into the Repository URL field.
+6. Adjust the directory name and the subdirectory (where this project will live on your machine) as you see fit.
+7. Click the Create Project button.
 
-1. Read the Style Guide
-2. Explore the existing apps in the [book](https://sites.psu.edu/shinyapps/)
-3. When you identify an app you wish to work on,
-    a. Go to that app's repository in [GitHub](https://github.com/EducationShinyAppTeam)
-    b. Create new issues on GitHub to log both bugs and suggestions for improvements
-    c. Create an issue specifically if the App currently does not abide by this Style Guide
-    d. Optional--assign yourself to the issue
-4. Download the current version of the app by using either RStudio or GitHub Desktop.
-5. Create a new branch for your developments.
-6. Begin editing the code
-7. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
-8. Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
-9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (See Section \@ref(testing)).
-10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
-11. Make any requested changes and re-push to your development branch. Update the Pull Request with a new comment.
-
-If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
-
-### Creating New Apps
-
-1. Read the Style Guide
-2. Identify a topic for your new App
-3. Sketch out your plans for the App. __This should occur BEFORE you start coding.__ Be sure that you include:
-    a. Suggested Title
-    b. Goal of the app
-    c. What will the user be doing (i.e., potential inputs)
-    d. What will the user be experiencing (i.e., potential outputs)
-    e. Relationships between various elements.
-4. When your plan __gets approval__, create a new repository on GitHub (See Section \@ref(repo-naming)); you can initially load the Sample App template to this repository, if you wish.
-5. Begin writing the code
-6. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
-7. When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.
-8. Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
-9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (See Section \@ref(testing)).
-10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
-11. Make any requested changes and re-push to your development branch. Update the Pull Request with a new comment.
-
-If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
-
-## Testing Your App {#testing}
-
-To test your App beyond your local machine, we will be making use of TLT's RStudio Connect platform. You will need to following these directions.
-
-### Set Up/Login to the VPN
-Please refer to the following PSU Knowledge Basis Articles:
-
-+ [VPN for Mac OS](https://pennstate.service-now.com/sp?id=kb_article&sys_id=c628298bdb1d6f44a318fb671d961971)
-+ [VPN for Windows](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=c151310cdb85abc84222778ebf961957)
-+ [VPN for Apple iOS](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=1de84eb6dbd5ab44a318fb671d9619a5)
-+ [VPN for Android](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=a35e0a7edb59ab44a318fb671d961964)
-
-You MUST be logged into the PSU VPN to both upload and test your App on each device.
-
-### Connecting Your RStudio to TLT's RStudio Connect
-You only need to do this step once.
-
-1. After you've logged into the PSU VPN, go to [TLT's RStudio Connect](https://rstudio-connect.tlt.psu.edu:3939/connect) and log in using your PSU ID.
-2. Once logged in, click on the Publish button
-```{r testing1, fig.cap="Click the Publish Button", fig.width=6, fig.height=4, echo=FALSE}
-knitr::include_graphics("images/publish1.png")
-```
-3. Select Shiny App and a pop up window will appear.
-4. Follow the steps in this window (especially Step 4) to set up the connection.
-
-#### Checking You've Connected
-You can check to see if you've connected by going into RStudio's Options and looking at the Publishing tab. You should see a similar entry as what is in the green box below:
-```{r testing2, fig.cap="Check Your Publishing Profile", fig.align='center', fig.width=6, fig.height=4, echo=FALSE}
-knitr::include_graphics("images/publish2.png")
-```
-
-### Publishing Your App for Testing
-Make sure that you are connected to PSU's VPN and that you've already connected your RStudio to TLT's server. 
-
-Click on the Publishing Icon, located just to the right of the Run App button. Be sure to select the TLT Server.
-
-### Configuring for Testing
-Once your App has been published, a new window should open in your browser that shows your App plus the optional controls. 
-```{r testing3, fig.cap="Successful Publish and Settings", fig.align='center', fig.width=6, fig.height=4, echo=FALSE}
-knitr::include_graphics("images/publish3.png")
-```
-In Figure \@ref(fig:testing3), you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
-
-If you want, you can add collaborators as I did in the example (orange box). This is not required.
-
-The most important piece is the Content URL (marked with the blue star). You'll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device they are using.
-
-### Check the Logs
-As you test your App, you'll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in Figure \@ref(fig:testing3)) to view.
-
-### Problems?
-If you run into problem either publishing your App or getting the App to launch on the TLT, please reach out to Neil and Bob. 
+This method will ensure that you will be able to successfully push and pull changes to GitHub. For additional help, Neil has created a video "[Using RStudio to Connect to GitHub](https://youtu.be/IK0SiEz5vjs)" which walks you through the process.

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Mobile Friendliness | The BOAST Style Guide</title>
+  <title>Chapter 1 The Basics | The BOAST Style Guide</title>
   <meta name="description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Mobile Friendliness | The BOAST Style Guide" />
+  <meta property="og:title" content="Chapter 1 The Basics | The BOAST Style Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Mobile Friendliness | The BOAST Style Guide" />
+  <meta name="twitter:title" content="Chapter 1 The Basics | The BOAST Style Guide" />
   
   <meta name="twitter:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="accessibility.html"/>
-<link rel="next" href="makingApp.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="workflow.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -315,40 +315,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mobile" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Mobile Friendliness</h1>
-<p>We want our apps to work well with mobile devices. Thus, when you get to the point where the majority of bugs have been fixed, you need to check how mobile friendly your App is. If you have used <code>boastApp</code> and/or the <code>boast.CSS</code> file, along with the practices laid out earlier, then you should be well on your way to being mobile friendly.</p>
-<p>You can check your App in two ways:</p>
+<div id="basics" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> The Basics</h1>
+<p>Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.</p>
+<div id="checklist" class="section level2">
+<h2><span class="header-section-number">1.1</span> Getting Started Checklist</h2>
 <ol style="list-style-type: decimal">
-<li>Test your App out on a variety of mobile devices.</li>
-<li>Make use of a browser’s ability to mimic devices. To do this, launch your App in a browser, then enable one of the following:
+<li><p>Ensure that you have all of necessary accounts and if not, put in a request to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
+<ol style="list-style-type: lower-alpha">
+<li><a href="https://www.datacamp.com/">DataCamp</a><br />
+</li>
+<li><a href="https://github.com/">GitHub</a><br />
+</li>
+<li><a href="https://github.com/EducationShinyAppTeam">EducationShinyAppTeam</a></li>
+<li><a href="https://teams.microsoft.com/l/team/19%3a8423bc25992a4451952d8312b497324d%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&amp;tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e">BOAST</a> in Microsoft Teams (tied to your PSU AccessID)</li>
+</ol></li>
+<li><p>Ensure that you have all of the required software</p>
+<ol style="list-style-type: lower-alpha">
+<li><a href="https://cloud.r-project.org/"><code>R</code> (version 3.5.* minimum, version 4.0.0 preferred)</a></li>
+<li><a href="https://rstudio.com/products/rstudio/download/#download">RStudio Desktop (most current version preferred)</a></li>
+</ol></li>
+<li><p>Additional Software that we strongly recommend</p>
+<ol style="list-style-type: lower-alpha">
+<li><a href="https://desktop.github.com/">GitHub Desktop</a></li>
+</ol></li>
+<li><p><code>R</code> Packages–here are some basic packages that everyone will need; be sure to install their dependencies</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="basics.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;DT&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;shiny&quot;</span>, <span class="st">&quot;shinyBS&quot;</span>, </span>
+<span id="cb1-2"><a href="basics.html#cb1-2"></a>                   <span class="st">&quot;shinyWidgets&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;tippy&quot;</span>))</span></code></pre></div></li>
+<li><p>A copy of the Sample App (<a href="basics.html#sample-app">see below</a>)</p></li>
+</ol>
+</div>
+<div id="boastutils-package" class="section level2">
+<h2><span class="header-section-number">1.2</span> <code>boastUtils</code> Package</h2>
+<p>Bob created the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent.</p>
+<p><strong>Starting Summer 2020, you will be required to you make use of this tool.</strong></p>
+<p>Please check out the <a href="https://github.com/EducationShinyAppTeam/boastUtils">package’s GitHub page</a> for instructions on installing and usage.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="basics.html#cb2-1"></a><span class="kw">library</span>(devtools)</span>
+<span id="cb2-2"><a href="basics.html#cb2-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/boastUtils&quot;</span>)</span></code></pre></div>
+</div>
+<div id="sample-app" class="section level2">
+<h2><span class="header-section-number">1.3</span> Sample App</h2>
+<p>Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the <a href="https://github.com/EducationShinyAppTeam/Sample_App">Sample_App</a> template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.</p>
+<p>There are several methods you can use:</p>
 <ul>
-<li><a href="https://developers.google.com/web/tools/chrome-devtools/device-mode/#viewport">Chrome: Device Mode</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode">Firefox: Responsive Design Mode</a></li>
-<li><a href="https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/emulation">Microsoft Edge: Device Emulation</a></li>
-<li><a href="https://support.apple.com/en-gb/guide/safari-developer/dev84bd42758/mac">Safari: Responsive Design Mode</a></li>
-</ul></li>
-</ol>
-<p>Look for any issues that you might be able to address before you hand off your App for others to play around with. Assign a <strong>Mobile Friendliness Rating</strong> to your App on a scale from 1 to 5.</p>
+<li><a href="basics.html#direct-download">Direct Download (Basic)</a></li>
+<li><a href="basics.html#github-desktop">GitHub Desktop (Recommended)</a></li>
+<li><a href="basics.html#command-line">Command Line (Advanced)</a></li>
+<li><a href="basics.html#rstudio-project">RStudio Project</a></li>
+</ul>
+<div id="direct-download" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Direct Download</h3>
+<p>You can download this repository directly by visiting:</p>
+<blockquote>
+<p><a href="https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip" class="uri">https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip</a></p>
+</blockquote>
+</div>
+<div id="github-desktop" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> GitHub Desktop</h3>
+<p>If you are using <a href="https://desktop.github.com/">GitHub Desktop</a> and have <a href="https://help.github.com/en/desktop/getting-started-with-github-desktop/authenticating-to-github">linked your account</a> that has access to the <a href="https://github.com/EducationShinyAppTeam">EducationShinyAppTeam</a> repository, you can do the following from inside GitHub Desktop:</p>
 <ol style="list-style-type: decimal">
-<li>Not functional</li>
-<li>Functional – Very awkward</li>
-<li>Functional – Okay if no big screen available (multiple issues)</li>
-<li>Usable in a small class setting (single issue)</li>
-<li>Readily usable</li>
+<li>Bring up the Clone Repository Menu (File -&gt; Clone Repository…)<br />
+</li>
+<li>Enter Sample_App in the search bar and select the option that says Sample_App (not sampleapp)</li>
+<li>Click the Choose… button for the local path (this is where you want to the clone to live on your computer)</li>
+<li>Click the Clone button.</li>
 </ol>
+<p><strong>See also:</strong></p>
+<ul>
+<li><a href="https://help.github.com/en/desktop">GitHub Desktop Help</a></li>
+</ul>
+</div>
+<div id="command-line" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Command Line</h3>
+<p>Enter the following command in your terminal:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="basics.html#cb3-1"></a><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/Sample_App.git</span></code></pre></div>
+<p><strong>See also:</strong></p>
+<ul>
+<li><a href="https://guides.github.com/introduction/git-handbook/">Git Handbook</a></li>
+<li><a href="https://try.github.io/">Resources to learn Git</a></li>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the userR</a></li>
+</ul>
+</div>
+<div id="rstudio-project" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> RStudio Project</h3>
+<p>You can also use RStudio to connect to and copy repositories from GitHub. There are a few extra steps that you’ll need to go through compared to other methods. We recommend that you use GitHub Desktop.</p>
+<ol style="list-style-type: decimal">
+<li>In your browser, navigate to the repository you want to copy; in this case the <a href="https://github.com/EducationShinyAppTeam/Sample_App">Sample_App repo</a>.</li>
+<li>Launch RStudio and create a new project.</li>
+<li>Select the Version Control option and then Git.</li>
+<li>Switch back to your browser and click on the Clone or Download button. There should be a line of text starting with <code>git@github</code> that you can copy. Do so.</li>
+<li>Returning to RStudio, paste the get you just copied into the Repository URL field.</li>
+<li>Adjust the directory name and the subdirectory (where this project will live on your machine) as you see fit.</li>
+<li>Click the Create Project button.</li>
+</ol>
+<p>This method will ensure that you will be able to successfully push and pull changes to GitHub. For additional help, Neil has created a video “<a href="https://youtu.be/IK0SiEz5vjs">Using RStudio to Connect to GitHub</a>” which walks you through the process.</p>
 
 </div>
-
-
-
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="accessibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="makingApp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="workflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
