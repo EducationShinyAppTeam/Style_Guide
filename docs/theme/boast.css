@@ -73,6 +73,12 @@ h6, .h6 {
 	font-size: 1rem;
 }
 
+hr {
+	border-top: 1px solid black;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 .main-header .sidebar-toggle {
 	padding: 0.8rem 1.2rem;
 }
@@ -288,7 +294,7 @@ h6, .h6 {
 .skin-blue .sidebar-menu li:hover a {
 	background: var(--pennsylvania-sky);
 	color: black;
-	border-left-color: var(--pugh-blue);
+	border-left-color: var(--nittany-navy);
 }
 
 .skin-green .sidebar-menu li.active a,
