@@ -538,5 +538,30 @@ img(src = "yourImage.PNG",
 ```
 
 #### Adding Alt Text Graphs
-*This section is under construction.*
+
+At this point in time (6/10/2020), adding alt text to plots generated in `R` is not as easy as for static pictures. While there are some potential changes coming down the pipe, there is not a firm time line for the addition of appropriate arguments to the existing `render*` functions. Therefore we will need to put in some (hopefully) temporary measures.
+
+In particular, we will use [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:
+
+```{r plotsAltText, echo=TRUE, eval=FALSE}
+# [code omitted]
+# In the UI section, in the appropriate tabItem
+plotOutput(outputId = plotID) # Look for lines like this 
+# Code for adding the aria label
+tags$script(HTML(
+  "#(document).ready(function() {
+  document.getElementById('plotId').setAttribute('aria-label',
+  'General description of the plot')
+  })"
+))
+# [code omitted]
+```
+
+Important things to note:
+
+1. Place the `tags$script(HTML(...))` code right after each instance of `plotOutput`.
+2. Copy the above code as formatted
+3. Change the two (2) pieces for each particular plot
+    a. Replace `plotId` (keep the single quotation marks in the code)
+    b. Replace `General description of the plot` (keep the single quotation marks in the code)
 

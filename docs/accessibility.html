@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-08" />
+<meta name="date" content="2020-06-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -272,7 +272,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Accessibility and Mobile Devices</b></span></li>
 <li class="chapter" data-level="8" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>8</b> Accessibility</a><ul>
-<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>8.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="8.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>8.2</b> Checking Accessibility</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>8.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="8.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>8.2.3</b> Addressing Issues</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>9</b> Mobile Friendliness</a></li>
 <li class="part"><span><b>VI Examples</b></span></li>
@@ -320,33 +325,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We need to make sure that our Apps are accessible. If you have been adhering to the style guide, your App should be in a decent position. When you’re ready to test the accessibility of your App, you’ll need to deploy the App to a sever and then use the <a href="https://wave.webaim.org/">WAVE Web Accessibility Evaluation Tool</a>. Enter the URL of your App in the noted box to run an evaluation. See what accessibility issues your App has and then address them.</p>
 <p><strong>See also:</strong></p>
 <ul>
-<li><a href="https://accessibility.psu.edu/">Accessibility and Usability at Penn
-State</a></li>
-<li><a href="https://www.psu.edu/accessibilitystatement">Accessibility
-Statement</a></li>
-<li><a href="https://www.w3.org/WAI/WCAG21/quickref/">How to Meet Web Content Accessibility
-Guidelines</a></li>
+<li><a href="https://accessibility.psu.edu/">Accessibility and Usability at Penn State</a></li>
+<li><a href="https://www.psu.edu/accessibilitystatement">Accessibility Statement</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/quickref/">How to Meet Web Content Accessibility Guidelines</a></li>
 <li><a href="https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b">7 Things Every Designer Needs to Know about Accessibility</a></li>
 </ul>
-<div id="testing-accessibility" class="section level2">
-<h2><span class="header-section-number">8.1</span> Testing Accessibility</h2>
-<p>We highly recommend using the <a href="https://wave.webaim.org/">WAVE Web Accessibility Evaluation Tool</a>. If you use Firefox or Chrome, we recommend that you install the <a href="https://wave.webaim.org/extension/">WAVE Browser Extension</a> as this will give you a quick way to test your App’s accessbility.</p>
+<div id="making-your-app-accessible" class="section level2">
+<h2><span class="header-section-number">8.1</span> Making Your App Accessible</h2>
+<p>The best way that you can make your App accessible is to adhere to this Style Guide as closely as possible. Sadly, the Shiny framework is woefully behind the times for making truly accessible apps. We have tried to strike a balance so that you won’t be inundated with significant burdens for accessibility. By following this Style Guide, you’ll place your App in the best position possible.</p>
+<p>As we figure out and develop new tools to help you improve the accessibility of your App, we might ask you to return to your App and make updates.</p>
+</div>
+<div id="checking-accessibility" class="section level2">
+<h2><span class="header-section-number">8.2</span> Checking Accessibility</h2>
+<p>There are a couple of different phases to testing an app for Accessibility: Testing, Reading a Report, and Addressing Issues.</p>
+<div id="testing-accessibility" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Testing Accessibility</h3>
+<p>We highly recommend using the <a href="https://wave.webaim.org/">WAVE Web Accessibility Evaluation Tool</a>. If you use Firefox or Chrome, we recommend that you install the <a href="https://wave.webaim.org/extension/">WAVE Browser Extension</a> as this will give you a quick way to test your App’s accessibility.</p>
+<p>Depending on whether you’re checking an app that is already in BOAST or a revision/new app, you’ll need to access the WAVE tool differently.</p>
+<div id="testing-an-app-in-boast" class="section level4">
+<h4><span class="header-section-number">8.2.1.1</span> Testing an App in BOAST</h4>
+<p>To check an App that is currently linked in BOAST:</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://wave.webaim.org/">WAVE Web Accessibility Evaluation Tool</a></li>
+<li>In a new tab, launch the app from BOAST</li>
+<li>Copy the app’s URL from the address bar of your browser</li>
+<li>Paste the URL in the Web page address field of WAVE</li>
+</ol>
+</div>
+<div id="testing-a-revisionnew-app" class="section level4">
+<h4><span class="header-section-number">8.2.1.2</span> Testing a Revision/New App</h4>
+<p>To check an App that you are currently revising and/or developing (i.e., the App has <em>not</em> been formally added to BOAST):</p>
+<ol style="list-style-type: decimal">
+<li>Make sure you install the <a href="https://wave.webaim.org/extension/">WAVE Browser Extension</a> for Firefox or Chrome.</li>
+<li>Click the Run App button in RStudio</li>
+<li>In the resulting window, click the Open in Browser button located along the top edge</li>
+<li>Activate the WAVE Browser Extension</li>
+</ol>
+<p>To help make the report more friendly with your browser, we also recommend you install the <a href="https://addons.mozilla.org/en-US/firefox/addon/styl-us/">Stylus Add-on for Firefox</a> or the <a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en">Stylus Add-on for Chrome</a>. Once you’ve installed Stylus, you’ll want to</p>
+<ol style="list-style-type: decimal">
+<li><p>Create a new Style in Stylus</p></li>
+<li><p>Add the following code:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="accessibility.html#cb1-1"></a>body<span class="fu">.ng-scope</span> {</span>
+<span id="cb1-2"><a href="accessibility.html#cb1-2"></a>  <span class="kw">position</span>: <span class="dv">relative</span></span>
+<span id="cb1-3"><a href="accessibility.html#cb1-3"></a>}</span></code></pre></div></li>
+<li><p>Save and close the Stylus tab</p></li>
+</ol>
+<p>This will move the the WAVE summary bar further to the left. If you have questions, please reach out to Neil and Bob.</p>
+</div>
+</div>
+<div id="reading-a-wave-report" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Reading a WAVE Report</h3>
 <div class="figure" style="text-align: center"><span id="fig:waveDescStat"></span>
 <img src="images/descStatOverview.png" alt="WAVE Report for Descriptive Statistics App" width="822" />
 <p class="caption">
 Figure 8.1: WAVE Report for Descriptive Statistics App
 </p>
 </div>
-<p>Figure <a href="accessibility.html#fig:waveDescStat">8.1</a> shows the WAVE report for the Descriptive Statistics App. There are 54 errors including missing alternative text, empty headings. There are also 8 contrast errors, 14 alerts (skipping heading levels),</p>
+<p><a href="accessibility.html#fig:waveDescStat">Figure <a href="accessibility.html#fig:waveDescStat">8.1</a></a> shows the WAVE report for the Descriptive Statistics App. There are 54 errors including missing alternative text, empty headings. There are also 8 contrast errors, 14 alerts (skipping heading levels),</p>
 <div class="figure" style="text-align: center"><span id="fig:waveOverfit"></span>
 <img src="images/overfitPrereq.png" alt="WAVE Report for Overfitting App" width="709" />
 <p class="caption">
 Figure 8.2: WAVE Report for Overfitting App
 </p>
 </div>
-<p>While there are fewer errors for the Overfitting App (Figure <a href="accessibility.html#fig:waveOverfit">8.2</a>), there are a lot of alerts on this app including skipping heading levels and small text.</p>
+<p>While there are fewer errors for the Overfitting App (<a href="#waveOverfit">Figure <a href="accessibility.html#fig:waveOverfit">8.2</a></a>), there are a lot of alerts on this app including skipping heading levels and small text.</p>
+<p>The six categories of items in the WAVE report reflect the areas in which you’re going to work on identifying issues. The two most critical issues are Errors and Contrast Errors. While the goal would be to have 0 for both, we do anticipate a few issues that we will have to leave unresolved. The third category that you need to attend to is the Alerts group. Again, we would like this number to be 0. The Features, Structural Elements, and ARIA categories are informational and you don’t necessarily need to worry about them (they don’t signify problems).</p>
+<p>After running WAVE and getting the report, click on the View details button to see the list of all items found to see details. Additionally, you’ll be able to click on items in the Details to see which things in your App are being flagged.</p>
+</div>
+<div id="addressing-issues" class="section level3">
+<h3><span class="header-section-number">8.2.3</span> Addressing Issues</h3>
+<p>By looking at the details you’ll be able to identify what issues you need to address. We fully expect that some issues (e.g., Error: missing alt text, Alert: missing first level heading) are things that you can directly fix. However, we also anticipate that there are some issues that you might not be able to fix (e.g., Error: Document language missing) without assistance.</p>
+<p>We recommend that you document all errors and alerts that you’ve yet to resolve with you make your Pull Request. The decision about whether to leave an Accessibility Error or Alert alone/un-addressed has to be made by a faculty member (e.g., Neil, Dennis, Matt, or Bob), not any student.</p>
 <p>By using the <code>boastApp</code> function and adhering to this Style Guide, your App should be in a good initial position. After running your App through WAVE, we can work with you address any changes that might be necessary.</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -402,20 +454,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

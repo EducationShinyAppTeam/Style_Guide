@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-08" />
+<meta name="date" content="2020-06-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -322,32 +322,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.1</span> PSU Branding</h2>
 <p>Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.</p>
 <p>In your UI section of <code>app.R</code> (or the <code>ui.R</code> file), at the end of the <code>dashboardSidebar()</code> section, you will need to include the following:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="designStyle.html#cb27-1"></a>tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
-<span id="cb27-2"><a href="designStyle.html#cb27-2"></a>         boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="designStyle.html#cb1-1"></a>tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb1-2"><a href="designStyle.html#cb1-2"></a>         boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</span></code></pre></div>
 <p>Here’s how this code would look in context:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="designStyle.html#cb28-1"></a><span class="kw">dashboardPage</span>(</span>
-<span id="cb28-2"><a href="designStyle.html#cb28-2"></a>  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb28-3"><a href="designStyle.html#cb28-3"></a>  <span class="kw">dashboardHeader</span>(</span>
-<span id="cb28-4"><a href="designStyle.html#cb28-4"></a>    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</span>
-<span id="cb28-5"><a href="designStyle.html#cb28-5"></a>    <span class="co"># [omitted code]</span></span>
-<span id="cb28-6"><a href="designStyle.html#cb28-6"></a>  ),</span>
-<span id="cb28-7"><a href="designStyle.html#cb28-7"></a>  <span class="kw">dashboardSidebar</span>(</span>
-<span id="cb28-8"><a href="designStyle.html#cb28-8"></a>    <span class="dt">width =</span> <span class="dv">300</span>,</span>
-<span id="cb28-9"><a href="designStyle.html#cb28-9"></a>    <span class="kw">sidebarMenu</span>(</span>
-<span id="cb28-10"><a href="designStyle.html#cb28-10"></a>      <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</span>
-<span id="cb28-11"><a href="designStyle.html#cb28-11"></a>      <span class="co"># [omitted code],</span></span>
-<span id="cb28-12"><a href="designStyle.html#cb28-12"></a>      tags<span class="op">$</span><span class="kw">div</span>(</span>
-<span id="cb28-13"><a href="designStyle.html#cb28-13"></a>        <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
-<span id="cb28-14"><a href="designStyle.html#cb28-14"></a>        boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</span>
-<span id="cb28-15"><a href="designStyle.html#cb28-15"></a>        )</span>
-<span id="cb28-16"><a href="designStyle.html#cb28-16"></a>      ),</span>
-<span id="cb28-17"><a href="designStyle.html#cb28-17"></a>    <span class="kw">dashboardBody</span>(</span>
-<span id="cb28-18"><a href="designStyle.html#cb28-18"></a>    tags<span class="op">$</span><span class="kw">head</span>(</span>
-<span id="cb28-19"><a href="designStyle.html#cb28-19"></a>      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</span>
-<span id="cb28-20"><a href="designStyle.html#cb28-20"></a>        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</span>
-<span id="cb28-21"><a href="designStyle.html#cb28-21"></a>      <span class="kw">tabItems</span>(</span>
-<span id="cb28-22"><a href="designStyle.html#cb28-22"></a>       <span class="co"># [omitted code]</span></span>
-<span id="cb28-23"><a href="designStyle.html#cb28-23"></a>      )  )  )  )  )</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="designStyle.html#cb2-1"></a><span class="kw">dashboardPage</span>(</span>
+<span id="cb2-2"><a href="designStyle.html#cb2-2"></a>  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb2-3"><a href="designStyle.html#cb2-3"></a>  <span class="kw">dashboardHeader</span>(</span>
+<span id="cb2-4"><a href="designStyle.html#cb2-4"></a>    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</span>
+<span id="cb2-5"><a href="designStyle.html#cb2-5"></a>    <span class="co"># [omitted code]</span></span>
+<span id="cb2-6"><a href="designStyle.html#cb2-6"></a>  ),</span>
+<span id="cb2-7"><a href="designStyle.html#cb2-7"></a>  <span class="kw">dashboardSidebar</span>(</span>
+<span id="cb2-8"><a href="designStyle.html#cb2-8"></a>    <span class="dt">width =</span> <span class="dv">300</span>,</span>
+<span id="cb2-9"><a href="designStyle.html#cb2-9"></a>    <span class="kw">sidebarMenu</span>(</span>
+<span id="cb2-10"><a href="designStyle.html#cb2-10"></a>      <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</span>
+<span id="cb2-11"><a href="designStyle.html#cb2-11"></a>      <span class="co"># [omitted code],</span></span>
+<span id="cb2-12"><a href="designStyle.html#cb2-12"></a>      tags<span class="op">$</span><span class="kw">div</span>(</span>
+<span id="cb2-13"><a href="designStyle.html#cb2-13"></a>        <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb2-14"><a href="designStyle.html#cb2-14"></a>        boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</span>
+<span id="cb2-15"><a href="designStyle.html#cb2-15"></a>        )</span>
+<span id="cb2-16"><a href="designStyle.html#cb2-16"></a>      ),</span>
+<span id="cb2-17"><a href="designStyle.html#cb2-17"></a>    <span class="kw">dashboardBody</span>(</span>
+<span id="cb2-18"><a href="designStyle.html#cb2-18"></a>    tags<span class="op">$</span><span class="kw">head</span>(</span>
+<span id="cb2-19"><a href="designStyle.html#cb2-19"></a>      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</span>
+<span id="cb2-20"><a href="designStyle.html#cb2-20"></a>        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</span>
+<span id="cb2-21"><a href="designStyle.html#cb2-21"></a>      <span class="kw">tabItems</span>(</span>
+<span id="cb2-22"><a href="designStyle.html#cb2-22"></a>       <span class="co"># [omitted code]</span></span>
+<span id="cb2-23"><a href="designStyle.html#cb2-23"></a>      )  )  )  )  )</span></code></pre></div>
 <p>This will ensure that the Penn State logo gets properly used.</p>
 </div>
 <div id="colors" class="section level2">
@@ -369,13 +369,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
 <p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
 <p>For example, this code:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="designStyle.html#cb29-1"></a><span class="kw">p</span>(</span>
-<span id="cb29-2"><a href="designStyle.html#cb29-2"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
-<span id="cb29-3"><a href="designStyle.html#cb29-3"></a>  tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;t&quot;</span>),</span>
-<span id="cb29-4"><a href="designStyle.html#cb29-4"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
-<span id="cb29-5"><a href="designStyle.html#cb29-5"></a>  tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
-<span id="cb29-6"><a href="designStyle.html#cb29-6"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
-<span id="cb29-7"><a href="designStyle.html#cb29-7"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="designStyle.html#cb3-1"></a><span class="kw">p</span>(</span>
+<span id="cb3-2"><a href="designStyle.html#cb3-2"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
+<span id="cb3-3"><a href="designStyle.html#cb3-3"></a>  tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;t&quot;</span>),</span>
+<span id="cb3-4"><a href="designStyle.html#cb3-4"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
+<span id="cb3-5"><a href="designStyle.html#cb3-5"></a>  tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
+<span id="cb3-6"><a href="designStyle.html#cb3-6"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
+<span id="cb3-7"><a href="designStyle.html#cb3-7"></a>)</span></code></pre></div>
 <p>Becomes:</p>
 <blockquote>
 <p>When dealing with the <em>t</em>-distribution, we only have one parameter, the <strong>degrees of freedom</strong> that we need to input.</p>
@@ -408,15 +408,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.3.7</span> Text in <code>R</code> Plots</h3>
 <p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the <code>grid</code> framework like <code>lattice</code>) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
 <p>Here is an example for how to do this:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="designStyle.html#cb30-1"></a><span class="co"># Create a ggplot2 object</span></span>
-<span id="cb30-2"><a href="designStyle.html#cb30-2"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data=</span>df, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>grp)) </span>
-<span id="cb30-3"><a href="designStyle.html#cb30-3"></a><span class="co"># Add your layers, for example</span></span>
-<span id="cb30-4"><a href="designStyle.html#cb30-4"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</span>
-<span id="cb30-5"><a href="designStyle.html#cb30-5"></a><span class="co"># Use theme to control text size</span></span>
-<span id="cb30-6"><a href="designStyle.html#cb30-6"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(</span>
-<span id="cb30-7"><a href="designStyle.html#cb30-7"></a>  <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>),</span>
-<span id="cb30-8"><a href="designStyle.html#cb30-8"></a>  <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>)</span>
-<span id="cb30-9"><a href="designStyle.html#cb30-9"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="designStyle.html#cb4-1"></a><span class="co"># Create a ggplot2 object</span></span>
+<span id="cb4-2"><a href="designStyle.html#cb4-2"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data=</span>df, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>grp)) </span>
+<span id="cb4-3"><a href="designStyle.html#cb4-3"></a><span class="co"># Add your layers, for example</span></span>
+<span id="cb4-4"><a href="designStyle.html#cb4-4"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</span>
+<span id="cb4-5"><a href="designStyle.html#cb4-5"></a><span class="co"># Use theme to control text size</span></span>
+<span id="cb4-6"><a href="designStyle.html#cb4-6"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(</span>
+<span id="cb4-7"><a href="designStyle.html#cb4-7"></a>  <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>),</span>
+<span id="cb4-8"><a href="designStyle.html#cb4-8"></a>  <span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">18</span>)</span>
+<span id="cb4-9"><a href="designStyle.html#cb4-9"></a>  )</span></code></pre></div>
 <p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
 <p><strong>Note:</strong> The text in your plot might not behave well for dynamic re-sizing on different mobile devices.</p>
 </div>
@@ -465,29 +465,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.4.2</span> Axes and Scales</h3>
 <p><code>R</code>’s default axes are terrible. They often do not fully cover the data and the have gaps between the axes. All this impedes the user’s construction of meaning. Thus, you’ll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.</p>
 <p>To force <code>ggplot2</code> to place (0, 0) in the lower-left corner and to control the scales, you will need to include the following:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="designStyle.html#cb31-1"></a><span class="co"># Create the ggplot2 object</span></span>
-<span id="cb31-2"><a href="designStyle.html#cb31-2"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(...)</span>
-<span id="cb31-3"><a href="designStyle.html#cb31-3"></a><span class="co"># Add your layer</span></span>
-<span id="cb31-4"><a href="designStyle.html#cb31-4"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</span>
-<span id="cb31-5"><a href="designStyle.html#cb31-5"></a><span class="co"># Control axes and scale</span></span>
-<span id="cb31-6"><a href="designStyle.html#cb31-6"></a><span class="co">## Multiplicative Scaling of the Horizontal (x) Axis</span></span>
-<span id="cb31-7"><a href="designStyle.html#cb31-7"></a><span class="co">## Additive Scaling of the Vertical (y) Axis</span></span>
-<span id="cb31-8"><a href="designStyle.html#cb31-8"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">add =</span> <span class="dv">0</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb31-9"><a href="designStyle.html#cb31-9"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="dv">0</span>, <span class="dt">add =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="designStyle.html#cb5-1"></a><span class="co"># Create the ggplot2 object</span></span>
+<span id="cb5-2"><a href="designStyle.html#cb5-2"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(...)</span>
+<span id="cb5-3"><a href="designStyle.html#cb5-3"></a><span class="co"># Add your layer</span></span>
+<span id="cb5-4"><a href="designStyle.html#cb5-4"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_point</span>()</span>
+<span id="cb5-5"><a href="designStyle.html#cb5-5"></a><span class="co"># Control axes and scale</span></span>
+<span id="cb5-6"><a href="designStyle.html#cb5-6"></a><span class="co">## Multiplicative Scaling of the Horizontal (x) Axis</span></span>
+<span id="cb5-7"><a href="designStyle.html#cb5-7"></a><span class="co">## Additive Scaling of the Vertical (y) Axis</span></span>
+<span id="cb5-8"><a href="designStyle.html#cb5-8"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">add =</span> <span class="dv">0</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb5-9"><a href="designStyle.html#cb5-9"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expansion</span>(<span class="dt">mult =</span> <span class="dv">0</span>, <span class="dt">add =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </span></code></pre></div>
 </div>
 <div id="colorPlots" class="section level3">
 <h3><span class="header-section-number">5.4.3</span> Color and Plots in <code>R</code></h3>
 <p>In <code>R</code> you can set color theme which you use in <code>ggplot2</code>. Here are two custom color palettes that you can use in your App. Additionally, the package <code>viridis</code> provides several additional color palettes which are improvements upon the default color scheme.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="designStyle.html#cb32-1"></a><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></span>
-<span id="cb32-2"><a href="designStyle.html#cb32-2"></a>boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
-<span id="cb32-3"><a href="designStyle.html#cb32-3"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
-<span id="cb32-4"><a href="designStyle.html#cb32-4"></a></span>
-<span id="cb32-5"><a href="designStyle.html#cb32-5"></a><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></span>
-<span id="cb32-6"><a href="designStyle.html#cb32-6"></a><span class="co"># and checked at the above webite.</span></span>
-<span id="cb32-7"><a href="designStyle.html#cb32-7"></a>psuPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</span>
-<span id="cb32-8"><a href="designStyle.html#cb32-8"></a>    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</span>
-<span id="cb32-9"><a href="designStyle.html#cb32-9"></a></span>
-<span id="cb32-10"><a href="designStyle.html#cb32-10"></a><span class="co"># Both palettes get used in the order of what is listed.</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="designStyle.html#cb6-1"></a><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></span>
+<span id="cb6-2"><a href="designStyle.html#cb6-2"></a>boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
+<span id="cb6-3"><a href="designStyle.html#cb6-3"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb6-4"><a href="designStyle.html#cb6-4"></a></span>
+<span id="cb6-5"><a href="designStyle.html#cb6-5"></a><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></span>
+<span id="cb6-6"><a href="designStyle.html#cb6-6"></a><span class="co"># and checked at the above webite.</span></span>
+<span id="cb6-7"><a href="designStyle.html#cb6-7"></a>psuPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</span>
+<span id="cb6-8"><a href="designStyle.html#cb6-8"></a>    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</span>
+<span id="cb6-9"><a href="designStyle.html#cb6-9"></a></span>
+<span id="cb6-10"><a href="designStyle.html#cb6-10"></a><span class="co"># Both palettes get used in the order of what is listed.</span></span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:boastPalette"></span>
 <img src="BOAST_style_guide_files/figure-html/boastPalette-1.png" alt="The Boast Palette" width="672" />
 <p class="caption">
@@ -501,18 +501,18 @@ Figure 5.2: The PSU Palette
 </p>
 </div>
 <p>To use these palettes (or ones from <code>viridis</code>) with a <code>ggplot2</code> object, you’ll need to do the following</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="designStyle.html#cb33-1"></a><span class="co"># You will need to first add whichever palette line from above to your code</span></span>
-<span id="cb33-2"><a href="designStyle.html#cb33-2"></a>boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
-<span id="cb33-3"><a href="designStyle.html#cb33-3"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
-<span id="cb33-4"><a href="designStyle.html#cb33-4"></a></span>
-<span id="cb33-5"><a href="designStyle.html#cb33-5"></a><span class="co"># Create ggplot2 object</span></span>
-<span id="cb33-6"><a href="designStyle.html#cb33-6"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data =</span> df, </span>
-<span id="cb33-7"><a href="designStyle.html#cb33-7"></a>                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">color =</span> grp, <span class="dt">fill =</span> grp))</span>
-<span id="cb33-8"><a href="designStyle.html#cb33-8"></a><span class="co"># Add your layers</span></span>
-<span id="cb33-9"><a href="designStyle.html#cb33-9"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_points</span>()</span>
-<span id="cb33-10"><a href="designStyle.html#cb33-10"></a><span class="co"># Tell R to use your chosen palette</span></span>
-<span id="cb33-11"><a href="designStyle.html#cb33-11"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></span>
-<span id="cb33-12"><a href="designStyle.html#cb33-12"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="designStyle.html#cb7-1"></a><span class="co"># You will need to first add whichever palette line from above to your code</span></span>
+<span id="cb7-2"><a href="designStyle.html#cb7-2"></a>boastPalette &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
+<span id="cb7-3"><a href="designStyle.html#cb7-3"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb7-4"><a href="designStyle.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="designStyle.html#cb7-5"></a><span class="co"># Create ggplot2 object</span></span>
+<span id="cb7-6"><a href="designStyle.html#cb7-6"></a>g1 &lt;-<span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(<span class="dt">data =</span> df, </span>
+<span id="cb7-7"><a href="designStyle.html#cb7-7"></a>                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">color =</span> grp, <span class="dt">fill =</span> grp))</span>
+<span id="cb7-8"><a href="designStyle.html#cb7-8"></a><span class="co"># Add your layers</span></span>
+<span id="cb7-9"><a href="designStyle.html#cb7-9"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">geom_points</span>()</span>
+<span id="cb7-10"><a href="designStyle.html#cb7-10"></a><span class="co"># Tell R to use your chosen palette</span></span>
+<span id="cb7-11"><a href="designStyle.html#cb7-11"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></span>
+<span id="cb7-12"><a href="designStyle.html#cb7-12"></a>g1 <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></span></code></pre></div>
 <p>If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)</p>
 <p>With an eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.</p>
 </div>
@@ -543,38 +543,38 @@ Figure 5.2: The PSU Palette
 <p>In either case, be sure you identify what columns you’re going to use. If your original data file has 50 columns, but your App only makes use of 5, drop the other 45. Only display the columns that you actually use.</p>
 <p>Your next step is to decide on where to put this display (e.g., inside an Exploration Tab or as a separate page). This will help you identify where in your App’s UI section you need to put the appropriate code.</p>
 <p>To ensure that your data table is accessible and responsive (i.e., mobile friendly), you will need to use the <code>DT</code> package.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="designStyle.html#cb34-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
-<span id="cb34-2"><a href="designStyle.html#cb34-2"></a><span class="co"># Be sure to include this in your library call</span></span>
-<span id="cb34-3"><a href="designStyle.html#cb34-3"></a><span class="kw">library</span>(DT)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="designStyle.html#cb8-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
+<span id="cb8-2"><a href="designStyle.html#cb8-2"></a><span class="co"># Be sure to include this in your library call</span></span>
+<span id="cb8-3"><a href="designStyle.html#cb8-3"></a><span class="kw">library</span>(DT)</span></code></pre></div>
 <p>In your UI section, you’ll need to use the following code, placed in the appropriate area:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="designStyle.html#cb35-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb35-2"><a href="designStyle.html#cb35-2"></a>DT<span class="op">::</span><span class="kw">DTOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;mtCars&quot;</span>)</span>
-<span id="cb35-3"><a href="designStyle.html#cb35-3"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="designStyle.html#cb9-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb9-2"><a href="designStyle.html#cb9-2"></a>DT<span class="op">::</span><span class="kw">DTOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;mtCars&quot;</span>)</span>
+<span id="cb9-3"><a href="designStyle.html#cb9-3"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>Then, in your Server section, you’ll need to use the following code:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="designStyle.html#cb36-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb36-2"><a href="designStyle.html#cb36-2"></a><span class="co"># Prepare your data set with only the columns needed</span></span>
-<span id="cb36-3"><a href="designStyle.html#cb36-3"></a>carData &lt;-<span class="st"> </span>mtcars[,<span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;gear&quot;</span>, <span class="st">&quot;wt&quot;</span>)]</span>
-<span id="cb36-4"><a href="designStyle.html#cb36-4"></a></span>
-<span id="cb36-5"><a href="designStyle.html#cb36-5"></a><span class="co">## Use Short but Meaningful Column Names</span></span>
-<span id="cb36-6"><a href="designStyle.html#cb36-6"></a><span class="kw">names</span>(carData) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;MPG&quot;</span>, <span class="st">&quot;# of Cylinders&quot;</span>, <span class="st">&quot;Horsepower&quot;</span>, <span class="st">&quot;# of Gears&quot;</span>, <span class="st">&quot;Weight&quot;</span>)</span>
-<span id="cb36-7"><a href="designStyle.html#cb36-7"></a></span>
-<span id="cb36-8"><a href="designStyle.html#cb36-8"></a><span class="co"># Create the output data table</span></span>
-<span id="cb36-9"><a href="designStyle.html#cb36-9"></a><span class="co"># Be sure to use the same name as you did in the UI</span></span>
-<span id="cb36-10"><a href="designStyle.html#cb36-10"></a>output<span class="op">$</span>mtCars &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
-<span id="cb36-11"><a href="designStyle.html#cb36-11"></a>  <span class="dt">expr =</span> carData,</span>
-<span id="cb36-12"><a href="designStyle.html#cb36-12"></a>  <span class="dt">caption =</span> <span class="st">&quot;Motor Trend US Data, 1973-1974 Models&quot;</span>, <span class="co"># Add a caption to your table</span></span>
-<span id="cb36-13"><a href="designStyle.html#cb36-13"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, <span class="co"># You must use this style</span></span>
-<span id="cb36-14"><a href="designStyle.html#cb36-14"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb36-15"><a href="designStyle.html#cb36-15"></a>  <span class="dt">options =</span> <span class="kw">list</span>( <span class="co"># You must use these options</span></span>
-<span id="cb36-16"><a href="designStyle.html#cb36-16"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, <span class="co"># allows the data table to be mobile friendly</span></span>
-<span id="cb36-17"><a href="designStyle.html#cb36-17"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>, <span class="co"># allows the user to scroll through a wide table</span></span>
-<span id="cb36-18"><a href="designStyle.html#cb36-18"></a>    <span class="dt">columnDefs =</span> <span class="kw">list</span>(  <span class="co"># These will set alignment of data values</span></span>
-<span id="cb36-19"><a href="designStyle.html#cb36-19"></a>      <span class="co"># Notice the use of ncol on your data frame; leave the 1 as is.</span></span>
-<span id="cb36-20"><a href="designStyle.html#cb36-20"></a>      <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>, <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(carData))</span>
-<span id="cb36-21"><a href="designStyle.html#cb36-21"></a>    )</span>
-<span id="cb36-22"><a href="designStyle.html#cb36-22"></a>  )</span>
-<span id="cb36-23"><a href="designStyle.html#cb36-23"></a>)</span>
-<span id="cb36-24"><a href="designStyle.html#cb36-24"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="designStyle.html#cb10-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb10-2"><a href="designStyle.html#cb10-2"></a><span class="co"># Prepare your data set with only the columns needed</span></span>
+<span id="cb10-3"><a href="designStyle.html#cb10-3"></a>carData &lt;-<span class="st"> </span>mtcars[,<span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;gear&quot;</span>, <span class="st">&quot;wt&quot;</span>)]</span>
+<span id="cb10-4"><a href="designStyle.html#cb10-4"></a></span>
+<span id="cb10-5"><a href="designStyle.html#cb10-5"></a><span class="co">## Use Short but Meaningful Column Names</span></span>
+<span id="cb10-6"><a href="designStyle.html#cb10-6"></a><span class="kw">names</span>(carData) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;MPG&quot;</span>, <span class="st">&quot;# of Cylinders&quot;</span>, <span class="st">&quot;Horsepower&quot;</span>, <span class="st">&quot;# of Gears&quot;</span>, <span class="st">&quot;Weight&quot;</span>)</span>
+<span id="cb10-7"><a href="designStyle.html#cb10-7"></a></span>
+<span id="cb10-8"><a href="designStyle.html#cb10-8"></a><span class="co"># Create the output data table</span></span>
+<span id="cb10-9"><a href="designStyle.html#cb10-9"></a><span class="co"># Be sure to use the same name as you did in the UI</span></span>
+<span id="cb10-10"><a href="designStyle.html#cb10-10"></a>output<span class="op">$</span>mtCars &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
+<span id="cb10-11"><a href="designStyle.html#cb10-11"></a>  <span class="dt">expr =</span> carData,</span>
+<span id="cb10-12"><a href="designStyle.html#cb10-12"></a>  <span class="dt">caption =</span> <span class="st">&quot;Motor Trend US Data, 1973-1974 Models&quot;</span>, <span class="co"># Add a caption to your table</span></span>
+<span id="cb10-13"><a href="designStyle.html#cb10-13"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, <span class="co"># You must use this style</span></span>
+<span id="cb10-14"><a href="designStyle.html#cb10-14"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb10-15"><a href="designStyle.html#cb10-15"></a>  <span class="dt">options =</span> <span class="kw">list</span>( <span class="co"># You must use these options</span></span>
+<span id="cb10-16"><a href="designStyle.html#cb10-16"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, <span class="co"># allows the data table to be mobile friendly</span></span>
+<span id="cb10-17"><a href="designStyle.html#cb10-17"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>, <span class="co"># allows the user to scroll through a wide table</span></span>
+<span id="cb10-18"><a href="designStyle.html#cb10-18"></a>    <span class="dt">columnDefs =</span> <span class="kw">list</span>(  <span class="co"># These will set alignment of data values</span></span>
+<span id="cb10-19"><a href="designStyle.html#cb10-19"></a>      <span class="co"># Notice the use of ncol on your data frame; leave the 1 as is.</span></span>
+<span id="cb10-20"><a href="designStyle.html#cb10-20"></a>      <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>, <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(carData))</span>
+<span id="cb10-21"><a href="designStyle.html#cb10-21"></a>    )</span>
+<span id="cb10-22"><a href="designStyle.html#cb10-22"></a>  )</span>
+<span id="cb10-23"><a href="designStyle.html#cb10-23"></a>)</span>
+<span id="cb10-24"><a href="designStyle.html#cb10-24"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>If you are making a Summary Data Table, you will need to follow the same process. If your data frame does not have row names, but instead a column with values acting as row names, you may replace the <code>rownames = TRUE</code> with <code>rownames = FALSE</code>; there should not be a column of sequential numbers on the left.</p>
 <p>Column names <strong>MUST</strong> be simple and <em>meaningful</em> to the user. To this end, you should rename any columns that might have poor choices for names, just as we have done with the <code>mtcars</code> data. This includes using Greek characters in isolation. You should not have any columns labeled <span class="math inline">\(\mu\)</span> or <span class="math inline">\(\sigma\)</span>. Rather you need to use English words.</p>
 <p><em>Note: getting mathematical expressions to render properly in graphical environments in <code>R</code> is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.</em></p>
@@ -588,22 +588,22 @@ Figure 5.2: The PSU Palette
 <div id="adding-an-image" class="section level4">
 <h4><span class="header-section-number">5.4.5.1</span> Adding an Image</h4>
 <p>To include the image in your App, you’ll need to make use of the image tag, <code>img</code>. When you run your App, Shiny automatically knows to check the <code>www</code> folder any time the <code>img</code> tag gets called. Here is an example supposing that the check mark image for correct answers is in the app’s <code>www</code> folder:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="designStyle.html#cb37-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb37-2"><a href="designStyle.html#cb37-2"></a><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;right&quot;</span>,</span>
-<span id="cb37-3"><a href="designStyle.html#cb37-3"></a>    <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb37-4"><a href="designStyle.html#cb37-4"></a>        <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb37-5"><a href="designStyle.html#cb37-5"></a>        <span class="dt">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
-<span id="cb37-6"><a href="designStyle.html#cb37-6"></a>        <span class="dt">height =</span> <span class="dv">25</span>,</span>
-<span id="cb37-7"><a href="designStyle.html#cb37-7"></a>        ))</span>
-<span id="cb37-8"><a href="designStyle.html#cb37-8"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="designStyle.html#cb11-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb11-2"><a href="designStyle.html#cb11-2"></a><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb11-3"><a href="designStyle.html#cb11-3"></a>    <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb11-4"><a href="designStyle.html#cb11-4"></a>        <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb11-5"><a href="designStyle.html#cb11-5"></a>        <span class="dt">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
+<span id="cb11-6"><a href="designStyle.html#cb11-6"></a>        <span class="dt">height =</span> <span class="dv">25</span>,</span>
+<span id="cb11-7"><a href="designStyle.html#cb11-7"></a>        ))</span>
+<span id="cb11-8"><a href="designStyle.html#cb11-8"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>You’ll notice that we’ve wrapped the <code>img</code> call in a <code>div</code> call. The <code>div</code> call allows us to specify that we want the image to be right aligned; you could also do left or center. You can replace the <code>div</code> call with the paragraph environment and include text on either side, effectively making your image part of the text.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="designStyle.html#cb38-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb38-2"><a href="designStyle.html#cb38-2"></a><span class="kw">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
-<span id="cb38-3"><a href="designStyle.html#cb38-3"></a>  <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb38-4"><a href="designStyle.html#cb38-4"></a>      <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb38-5"><a href="designStyle.html#cb38-5"></a>      <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>),</span>
-<span id="cb38-6"><a href="designStyle.html#cb38-6"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
-<span id="cb38-7"><a href="designStyle.html#cb38-7"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="designStyle.html#cb12-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb12-2"><a href="designStyle.html#cb12-2"></a><span class="kw">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb12-3"><a href="designStyle.html#cb12-3"></a>  <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb12-4"><a href="designStyle.html#cb12-4"></a>      <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb12-5"><a href="designStyle.html#cb12-5"></a>      <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>),</span>
+<span id="cb12-6"><a href="designStyle.html#cb12-6"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
+<span id="cb12-7"><a href="designStyle.html#cb12-7"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 </div>
 <div id="sizing-and-positioning-your-image" class="section level4">
 <h4><span class="header-section-number">5.4.5.2</span> Sizing and Positioning Your Image</h4>
@@ -622,15 +622,37 @@ Figure 5.2: The PSU Palette
 <div id="altStatic" class="section level4">
 <h4><span class="header-section-number">5.4.6.1</span> Adding Alt Text to Static Images</h4>
 <p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="designStyle.html#cb39-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb39-2"><a href="designStyle.html#cb39-2"></a><span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
-<span id="cb39-3"><a href="designStyle.html#cb39-3"></a>    <span class="dt">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
-<span id="cb39-4"><a href="designStyle.html#cb39-4"></a>    <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>)</span>
-<span id="cb39-5"><a href="designStyle.html#cb39-5"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="designStyle.html#cb13-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb13-2"><a href="designStyle.html#cb13-2"></a><span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb13-3"><a href="designStyle.html#cb13-3"></a>    <span class="dt">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb13-4"><a href="designStyle.html#cb13-4"></a>    <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>)</span>
+<span id="cb13-5"><a href="designStyle.html#cb13-5"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 </div>
 <div id="adding-alt-text-graphs" class="section level4">
 <h4><span class="header-section-number">5.4.6.2</span> Adding Alt Text Graphs</h4>
-<p><em>This section is under construction.</em></p>
+<p>At this point in time (6/10/2020), adding alt text to plots generated in <code>R</code> is not as easy as for static pictures. While there are some potential changes coming down the pipe, there is not a firm time line for the addition of appropriate arguments to the existing <code>render*</code> functions. Therefore we will need to put in some (hopefully) temporary measures.</p>
+<p>In particular, we will use <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">Accessible Rich Internet Applications (ARIA)</a> to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="designStyle.html#cb14-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb14-2"><a href="designStyle.html#cb14-2"></a><span class="co"># In the UI section, in the appropriate tabItem</span></span>
+<span id="cb14-3"><a href="designStyle.html#cb14-3"></a><span class="kw">plotOutput</span>(<span class="dt">outputId =</span> plotID) <span class="co"># Look for lines like this </span></span>
+<span id="cb14-4"><a href="designStyle.html#cb14-4"></a><span class="co"># Code for adding the aria label</span></span>
+<span id="cb14-5"><a href="designStyle.html#cb14-5"></a>tags<span class="op">$</span><span class="kw">script</span>(<span class="kw">HTML</span>(</span>
+<span id="cb14-6"><a href="designStyle.html#cb14-6"></a>  <span class="st">&quot;#(document).ready(function() {</span></span>
+<span id="cb14-7"><a href="designStyle.html#cb14-7"></a><span class="st">  document.getElementById(&#39;plotId&#39;).setAttribute(&#39;aria-label&#39;,</span></span>
+<span id="cb14-8"><a href="designStyle.html#cb14-8"></a><span class="st">  &#39;General description of the plot&#39;)</span></span>
+<span id="cb14-9"><a href="designStyle.html#cb14-9"></a><span class="st">  })&quot;</span></span>
+<span id="cb14-10"><a href="designStyle.html#cb14-10"></a>))</span>
+<span id="cb14-11"><a href="designStyle.html#cb14-11"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>Important things to note:</p>
+<ol style="list-style-type: decimal">
+<li>Place the <code>tags$script(HTML(...))</code> code right after each instance of <code>plotOutput</code>.</li>
+<li>Copy the above code as formatted</li>
+<li>Change the two (2) pieces for each particular plot
+<ol style="list-style-type: lower-alpha">
+<li>Replace <code>plotId</code> (keep the single quotation marks in the code)</li>
+<li>Replace <code>General description of the plot</code> (keep the single quotation marks in the code)</li>
+</ol></li>
+</ol>
 
 </div>
 </div>
