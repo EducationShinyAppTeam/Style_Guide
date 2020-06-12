@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-08" />
+<meta name="date" content="2020-06-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -272,7 +272,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Accessibility and Mobile Devices</b></span></li>
 <li class="chapter" data-level="8" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>8</b> Accessibility</a><ul>
-<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>8.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="8.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>8.2</b> Checking Accessibility</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>8.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="8.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>8.2.3</b> Addressing Issues</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>9</b> Mobile Friendliness</a></li>
 <li class="part"><span><b>VI Examples</b></span></li>
@@ -333,23 +338,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-the-dashboard" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Creating the Dashboard</h3>
 <p>Creating the overarching Dashboard layout in your App is actually quit easy:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="layout.html#cb13-1"></a><span class="co"># Required package</span></span>
-<span id="cb13-2"><a href="layout.html#cb13-2"></a><span class="kw">library</span>(shinydashboard)</span>
-<span id="cb13-3"><a href="layout.html#cb13-3"></a></span>
-<span id="cb13-4"><a href="layout.html#cb13-4"></a><span class="co"># For app.R files</span></span>
-<span id="cb13-5"><a href="layout.html#cb13-5"></a><span class="co"># [code omitted]</span></span>
-<span id="cb13-6"><a href="layout.html#cb13-6"></a>ui &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
-<span id="cb13-7"><a href="layout.html#cb13-7"></a>  <span class="kw">dashboardPage</span>(</span>
-<span id="cb13-8"><a href="layout.html#cb13-8"></a>    <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb13-9"><a href="layout.html#cb13-9"></a>    <span class="co"># [code omitted]</span></span>
-<span id="cb13-10"><a href="layout.html#cb13-10"></a>  )</span>
-<span id="cb13-11"><a href="layout.html#cb13-11"></a>)</span>
-<span id="cb13-12"><a href="layout.html#cb13-12"></a></span>
-<span id="cb13-13"><a href="layout.html#cb13-13"></a><span class="co"># For ui.R files</span></span>
-<span id="cb13-14"><a href="layout.html#cb13-14"></a><span class="kw">dashboardPage</span>(</span>
-<span id="cb13-15"><a href="layout.html#cb13-15"></a>  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb13-16"><a href="layout.html#cb13-16"></a>  <span class="co"># [code omitted]</span></span>
-<span id="cb13-17"><a href="layout.html#cb13-17"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="layout.html#cb1-1"></a><span class="co"># Required package</span></span>
+<span id="cb1-2"><a href="layout.html#cb1-2"></a><span class="kw">library</span>(shinydashboard)</span>
+<span id="cb1-3"><a href="layout.html#cb1-3"></a></span>
+<span id="cb1-4"><a href="layout.html#cb1-4"></a><span class="co"># For app.R files</span></span>
+<span id="cb1-5"><a href="layout.html#cb1-5"></a><span class="co"># [code omitted]</span></span>
+<span id="cb1-6"><a href="layout.html#cb1-6"></a>ui &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb1-7"><a href="layout.html#cb1-7"></a>  <span class="kw">dashboardPage</span>(</span>
+<span id="cb1-8"><a href="layout.html#cb1-8"></a>    <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb1-9"><a href="layout.html#cb1-9"></a>    <span class="co"># [code omitted]</span></span>
+<span id="cb1-10"><a href="layout.html#cb1-10"></a>  )</span>
+<span id="cb1-11"><a href="layout.html#cb1-11"></a>)</span>
+<span id="cb1-12"><a href="layout.html#cb1-12"></a></span>
+<span id="cb1-13"><a href="layout.html#cb1-13"></a><span class="co"># For ui.R files</span></span>
+<span id="cb1-14"><a href="layout.html#cb1-14"></a><span class="kw">dashboardPage</span>(</span>
+<span id="cb1-15"><a href="layout.html#cb1-15"></a>  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb1-16"><a href="layout.html#cb1-16"></a>  <span class="co"># [code omitted]</span></span>
+<span id="cb1-17"><a href="layout.html#cb1-17"></a>)</span></code></pre></div>
 <p>The <code>dashboardPage</code> function will wrap around the rest of your UI element, thereby establishing the overarching structure. Three of this function’s arguments (<code>header</code>, <code>sidebar</code>, and <code>body</code>) will be covered in following sections. We do not need to worry about the <code>title</code> argument as this will be controlled by the Dashboard Header.</p>
 <p>The one argument that you need to explicitly set for the <code>dashboardPage</code> is the <code>skin</code> argument. This argument sets the overall color theme for your App. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout.</p>
 </div>
@@ -579,22 +584,22 @@ Figure 4.24: Sliders Using the Red Palette
 <div id="creating-the-dashboard-header" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Creating the Dashboard Header</h3>
 <p>You will use the same structure regardless if you are using <code>app.R</code> or <code>ui.R</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="layout.html#cb14-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb14-2"><a href="layout.html#cb14-2"></a><span class="kw">dashboardHeader</span>(</span>
-<span id="cb14-3"><a href="layout.html#cb14-3"></a>      <span class="dt">title =</span> <span class="st">&quot;Sample App&quot;</span>, <span class="co"># You may use a shortened form of the title here</span></span>
-<span id="cb14-4"><a href="layout.html#cb14-4"></a>      <span class="dt">titleWidth =</span> <span class="st">&quot;300&quot;</span>,</span>
-<span id="cb14-5"><a href="layout.html#cb14-5"></a>      <span class="co"># the following is OPTIONAL</span></span>
-<span id="cb14-6"><a href="layout.html#cb14-6"></a>      tags<span class="op">$</span><span class="kw">li</span>(<span class="dt">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="kw">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="kw">icon</span>(<span class="st">&quot;info&quot;</span>))),</span>
-<span id="cb14-7"><a href="layout.html#cb14-7"></a>      <span class="co"># You will see the following commented code in the Sample App; </span></span>
-<span id="cb14-8"><a href="layout.html#cb14-8"></a>      <span class="co"># you may delete this from your app</span></span>
-<span id="cb14-9"><a href="layout.html#cb14-9"></a>      <span class="co"># tags$li(class = &quot;dropdown&quot;,</span></span>
-<span id="cb14-10"><a href="layout.html#cb14-10"></a>      <span class="co">#         tags$a(href=&#39;https://github.com/EducationShinyAppTeam/BOAST&#39;,</span></span>
-<span id="cb14-11"><a href="layout.html#cb14-11"></a>      <span class="co">#                icon(&quot;github&quot;))),</span></span>
-<span id="cb14-12"><a href="layout.html#cb14-12"></a>      <span class="co"># the following is REQUIRED and must be last.</span></span>
-<span id="cb14-13"><a href="layout.html#cb14-13"></a>      tags<span class="op">$</span><span class="kw">li</span>(<span class="dt">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
-<span id="cb14-14"><a href="layout.html#cb14-14"></a>              tags<span class="op">$</span><span class="kw">a</span>(<span class="dt">href=</span><span class="st">&#39;https://shinyapps.science.psu.edu/&#39;</span>, <span class="kw">icon</span>(<span class="st">&quot;home&quot;</span>)))</span>
-<span id="cb14-15"><a href="layout.html#cb14-15"></a>)</span>
-<span id="cb14-16"><a href="layout.html#cb14-16"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="layout.html#cb2-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb2-2"><a href="layout.html#cb2-2"></a><span class="kw">dashboardHeader</span>(</span>
+<span id="cb2-3"><a href="layout.html#cb2-3"></a>      <span class="dt">title =</span> <span class="st">&quot;Sample App&quot;</span>, <span class="co"># You may use a shortened form of the title here</span></span>
+<span id="cb2-4"><a href="layout.html#cb2-4"></a>      <span class="dt">titleWidth =</span> <span class="st">&quot;300&quot;</span>,</span>
+<span id="cb2-5"><a href="layout.html#cb2-5"></a>      <span class="co"># the following is OPTIONAL</span></span>
+<span id="cb2-6"><a href="layout.html#cb2-6"></a>      tags<span class="op">$</span><span class="kw">li</span>(<span class="dt">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="kw">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="kw">icon</span>(<span class="st">&quot;info&quot;</span>))),</span>
+<span id="cb2-7"><a href="layout.html#cb2-7"></a>      <span class="co"># You will see the following commented code in the Sample App; </span></span>
+<span id="cb2-8"><a href="layout.html#cb2-8"></a>      <span class="co"># you may delete this from your app</span></span>
+<span id="cb2-9"><a href="layout.html#cb2-9"></a>      <span class="co"># tags$li(class = &quot;dropdown&quot;,</span></span>
+<span id="cb2-10"><a href="layout.html#cb2-10"></a>      <span class="co">#         tags$a(href=&#39;https://github.com/EducationShinyAppTeam/BOAST&#39;,</span></span>
+<span id="cb2-11"><a href="layout.html#cb2-11"></a>      <span class="co">#                icon(&quot;github&quot;))),</span></span>
+<span id="cb2-12"><a href="layout.html#cb2-12"></a>      <span class="co"># the following is REQUIRED and must be last.</span></span>
+<span id="cb2-13"><a href="layout.html#cb2-13"></a>      tags<span class="op">$</span><span class="kw">li</span>(<span class="dt">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
+<span id="cb2-14"><a href="layout.html#cb2-14"></a>              tags<span class="op">$</span><span class="kw">a</span>(<span class="dt">href=</span><span class="st">&#39;https://shinyapps.science.psu.edu/&#39;</span>, <span class="kw">icon</span>(<span class="st">&quot;home&quot;</span>)))</span>
+<span id="cb2-15"><a href="layout.html#cb2-15"></a>)</span>
+<span id="cb2-16"><a href="layout.html#cb2-16"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>A couple of things to notice:</p>
 <ul>
 <li>The <code>dashboardHeader</code> acts as a list environment, so it is safe to use <code>tags$li</code> here even though there isn’t a <code>tags$ol</code> or <code>tags$ul</code>.</li>
@@ -612,24 +617,24 @@ Figure 4.24: Sliders Using the Red Palette
 <h3><span class="header-section-number">4.2.2</span> What’s Needed in the Server Definition</h3>
 <p>If you just have a bare bones Header (i.e., title and home button), you do not need to add anything special to your server definition.</p>
 <p>If you do have something, for example, an Info button. You will need to add some additional code to your server definition. The code you add will depend upon the element. In general, for alert messages, we recommend that you use <code>shinyWidgets::sendSweetAlert</code>. Here’s a generic example of what could be used for the Info button.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="layout.html#cb15-1"></a><span class="co"># Required Packages</span></span>
-<span id="cb15-2"><a href="layout.html#cb15-2"></a><span class="kw">library</span>(shinyWidgets)</span>
-<span id="cb15-3"><a href="layout.html#cb15-3"></a></span>
-<span id="cb15-4"><a href="layout.html#cb15-4"></a><span class="co"># Move to your server definition</span></span>
-<span id="cb15-5"><a href="layout.html#cb15-5"></a><span class="co"># Either look for server &lt;- function(input, output, session) or open the server.R file.</span></span>
-<span id="cb15-6"><a href="layout.html#cb15-6"></a></span>
-<span id="cb15-7"><a href="layout.html#cb15-7"></a><span class="co"># [omitted code]</span></span>
-<span id="cb15-8"><a href="layout.html#cb15-8"></a></span>
-<span id="cb15-9"><a href="layout.html#cb15-9"></a><span class="kw">observeEvent</span>(input<span class="op">$</span>info, { <span class="co"># Replace &quot;info&quot; with the appropriate id</span></span>
-<span id="cb15-10"><a href="layout.html#cb15-10"></a>  shinyWidgets<span class="op">::</span><span class="kw">sendSweetAlert</span>(</span>
-<span id="cb15-11"><a href="layout.html#cb15-11"></a>    <span class="dt">session =</span> session, <span class="co"># This should stay as is</span></span>
-<span id="cb15-12"><a href="layout.html#cb15-12"></a>    <span class="dt">title =</span> <span class="st">&quot;App Information&quot;</span>,</span>
-<span id="cb15-13"><a href="layout.html#cb15-13"></a>    <span class="dt">text =</span> <span class="kw">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
-<span id="cb15-14"><a href="layout.html#cb15-14"></a>                 <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
-<span id="cb15-15"><a href="layout.html#cb15-15"></a>                 <span class="st">&quot;improve code reability.&quot;</span>),</span>
-<span id="cb15-16"><a href="layout.html#cb15-16"></a>    <span class="dt">type =</span> <span class="st">&quot;info&quot;</span> <span class="co"># This option will depend upon the nature of your message</span></span>
-<span id="cb15-17"><a href="layout.html#cb15-17"></a>  )</span>
-<span id="cb15-18"><a href="layout.html#cb15-18"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="layout.html#cb3-1"></a><span class="co"># Required Packages</span></span>
+<span id="cb3-2"><a href="layout.html#cb3-2"></a><span class="kw">library</span>(shinyWidgets)</span>
+<span id="cb3-3"><a href="layout.html#cb3-3"></a></span>
+<span id="cb3-4"><a href="layout.html#cb3-4"></a><span class="co"># Move to your server definition</span></span>
+<span id="cb3-5"><a href="layout.html#cb3-5"></a><span class="co"># Either look for server &lt;- function(input, output, session) or open the server.R file.</span></span>
+<span id="cb3-6"><a href="layout.html#cb3-6"></a></span>
+<span id="cb3-7"><a href="layout.html#cb3-7"></a><span class="co"># [omitted code]</span></span>
+<span id="cb3-8"><a href="layout.html#cb3-8"></a></span>
+<span id="cb3-9"><a href="layout.html#cb3-9"></a><span class="kw">observeEvent</span>(input<span class="op">$</span>info, { <span class="co"># Replace &quot;info&quot; with the appropriate id</span></span>
+<span id="cb3-10"><a href="layout.html#cb3-10"></a>  shinyWidgets<span class="op">::</span><span class="kw">sendSweetAlert</span>(</span>
+<span id="cb3-11"><a href="layout.html#cb3-11"></a>    <span class="dt">session =</span> session, <span class="co"># This should stay as is</span></span>
+<span id="cb3-12"><a href="layout.html#cb3-12"></a>    <span class="dt">title =</span> <span class="st">&quot;App Information&quot;</span>,</span>
+<span id="cb3-13"><a href="layout.html#cb3-13"></a>    <span class="dt">text =</span> <span class="kw">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
+<span id="cb3-14"><a href="layout.html#cb3-14"></a>                 <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
+<span id="cb3-15"><a href="layout.html#cb3-15"></a>                 <span class="st">&quot;improve code reability.&quot;</span>),</span>
+<span id="cb3-16"><a href="layout.html#cb3-16"></a>    <span class="dt">type =</span> <span class="st">&quot;info&quot;</span> <span class="co"># This option will depend upon the nature of your message</span></span>
+<span id="cb3-17"><a href="layout.html#cb3-17"></a>  )</span>
+<span id="cb3-18"><a href="layout.html#cb3-18"></a>})</span></code></pre></div>
 <p>The <code>type</code> argument will take one of several options. use the one that best aligns with your purposes.</p>
 <ul>
 <li><code>info</code>: If you are just conveying some general information to your user, you’ll use this value. This is the value that we will use in the vast majority of cases.</li>
@@ -649,29 +654,29 @@ Figure 4.24: Sliders Using the Red Palette
 <div id="creating-the-dashboard-sidebar" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Creating the Dashboard Sidebar</h3>
 <p>This code will be the same regardless if you use <code>app.R</code> or <code>ui.R</code>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="layout.html#cb16-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb16-2"><a href="layout.html#cb16-2"></a><span class="kw">dashboardSidebar</span>(</span>
-<span id="cb16-3"><a href="layout.html#cb16-3"></a>  <span class="dt">width =</span> <span class="dv">300</span>,</span>
-<span id="cb16-4"><a href="layout.html#cb16-4"></a>  <span class="kw">sidebarMenu</span>(</span>
-<span id="cb16-5"><a href="layout.html#cb16-5"></a>    <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</span>
-<span id="cb16-6"><a href="layout.html#cb16-6"></a>    <span class="co"># Overivew is REQUIRED</span></span>
-<span id="cb16-7"><a href="layout.html#cb16-7"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;dashboard&quot;</span>)),</span>
-<span id="cb16-8"><a href="layout.html#cb16-8"></a>    <span class="co"># Prerequisites is optional</span></span>
-<span id="cb16-9"><a href="layout.html#cb16-9"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Prerequisites&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Prerequisites&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;book&quot;</span>)),</span>
-<span id="cb16-10"><a href="layout.html#cb16-10"></a>    <span class="co"># At least one of the next three is REQUIRED</span></span>
-<span id="cb16-11"><a href="layout.html#cb16-11"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Explore&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
-<span id="cb16-12"><a href="layout.html#cb16-12"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Challenge&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
-<span id="cb16-13"><a href="layout.html#cb16-13"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Game&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
-<span id="cb16-14"><a href="layout.html#cb16-14"></a>    <span class="co"># References is REQUIRED</span></span>
-<span id="cb16-15"><a href="layout.html#cb16-15"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
-<span id="cb16-16"><a href="layout.html#cb16-16"></a>  ),</span>
-<span id="cb16-17"><a href="layout.html#cb16-17"></a>  <span class="co"># PSU Logo is REQUIRED and to be last</span></span>
-<span id="cb16-18"><a href="layout.html#cb16-18"></a>  tags<span class="op">$</span><span class="kw">div</span>(</span>
-<span id="cb16-19"><a href="layout.html#cb16-19"></a>    <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
-<span id="cb16-20"><a href="layout.html#cb16-20"></a>    boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</span>
-<span id="cb16-21"><a href="layout.html#cb16-21"></a>  )</span>
-<span id="cb16-22"><a href="layout.html#cb16-22"></a>)</span>
-<span id="cb16-23"><a href="layout.html#cb16-23"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="layout.html#cb4-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb4-2"><a href="layout.html#cb4-2"></a><span class="kw">dashboardSidebar</span>(</span>
+<span id="cb4-3"><a href="layout.html#cb4-3"></a>  <span class="dt">width =</span> <span class="dv">300</span>,</span>
+<span id="cb4-4"><a href="layout.html#cb4-4"></a>  <span class="kw">sidebarMenu</span>(</span>
+<span id="cb4-5"><a href="layout.html#cb4-5"></a>    <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</span>
+<span id="cb4-6"><a href="layout.html#cb4-6"></a>    <span class="co"># Overivew is REQUIRED</span></span>
+<span id="cb4-7"><a href="layout.html#cb4-7"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;dashboard&quot;</span>)),</span>
+<span id="cb4-8"><a href="layout.html#cb4-8"></a>    <span class="co"># Prerequisites is optional</span></span>
+<span id="cb4-9"><a href="layout.html#cb4-9"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Prerequisites&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Prerequisites&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;book&quot;</span>)),</span>
+<span id="cb4-10"><a href="layout.html#cb4-10"></a>    <span class="co"># At least one of the next three is REQUIRED</span></span>
+<span id="cb4-11"><a href="layout.html#cb4-11"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Explore&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
+<span id="cb4-12"><a href="layout.html#cb4-12"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Challenge&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
+<span id="cb4-13"><a href="layout.html#cb4-13"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;Game&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
+<span id="cb4-14"><a href="layout.html#cb4-14"></a>    <span class="co"># References is REQUIRED</span></span>
+<span id="cb4-15"><a href="layout.html#cb4-15"></a>    <span class="kw">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="dt">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
+<span id="cb4-16"><a href="layout.html#cb4-16"></a>  ),</span>
+<span id="cb4-17"><a href="layout.html#cb4-17"></a>  <span class="co"># PSU Logo is REQUIRED and to be last</span></span>
+<span id="cb4-18"><a href="layout.html#cb4-18"></a>  tags<span class="op">$</span><span class="kw">div</span>(</span>
+<span id="cb4-19"><a href="layout.html#cb4-19"></a>    <span class="dt">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb4-20"><a href="layout.html#cb4-20"></a>    boastUtils<span class="op">::</span><span class="kw">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</span>
+<span id="cb4-21"><a href="layout.html#cb4-21"></a>  )</span>
+<span id="cb4-22"><a href="layout.html#cb4-22"></a>)</span>
+<span id="cb4-23"><a href="layout.html#cb4-23"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>Notice that after setting the <code>width</code> of the Sidebar, you will need to call the <code>sidebarMenu</code> function. This will create the appropriate structure for your Sidebar.</p>
 </div>
 <div id="sidebar-order" class="section level3">
@@ -709,13 +714,13 @@ Figure 4.24: Sliders Using the Red Palette
 <h3><span class="header-section-number">4.3.4</span> Sidebar Icons</h3>
 <p>Each type of Tab that appears in the Sidebar must use a specific icon:</p>
 <ul>
-<li>Overview – tachometer-alt (formerly called dashboard), <svg style="height:25;" viewBox="0 0 576 512"><path d="M288 32C128.94 32 0 160.94 0 320c0 52.8 14.25 102.26 39.06 144.8 5.61 9.62 16.3 15.2 27.44 15.2h443c11.14 0 21.83-5.58 27.44-15.2C561.75 422.26 576 372.8 576 320c0-159.06-128.94-288-288-288zm0 64c14.71 0 26.58 10.13 30.32 23.65-1.11 2.26-2.64 4.23-3.45 6.67l-9.22 27.67c-5.13 3.49-10.97 6.01-17.64 6.01-17.67 0-32-14.33-32-32S270.33 96 288 96zM96 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm48-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm246.77-72.41l-61.33 184C343.13 347.33 352 364.54 352 384c0 11.72-3.38 22.55-8.88 32H232.88c-5.5-9.45-8.88-20.28-8.88-32 0-33.94 26.5-61.43 59.9-63.59l61.34-184.01c4.17-12.56 17.73-19.45 30.36-15.17 12.57 4.19 19.35 17.79 15.17 30.36zm14.66 57.2l15.52-46.55c3.47-1.29 7.13-2.23 11.05-2.23 17.67 0 32 14.33 32 32s-14.33 32-32 32c-11.38-.01-20.89-6.28-26.57-15.22zM480 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"/></svg></li>
-<li>Prerequisites – book, <svg style="height:25;" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg></li>
-<li>Explore Tabs – wpexplorer, <svg style="height:25;" viewBox="0 0 512 512"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg></li>
-<li>Challenge Tabs – cogs (formerly called gears), <svg style="height:25;" viewBox="0 0 640 512"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"/></svg><br />
+<li>Overview – tachometer-alt (formerly called dashboard), <svg style="height:25px;" viewBox="0 0 576 512"><path d="M288 32C128.94 32 0 160.94 0 320c0 52.8 14.25 102.26 39.06 144.8 5.61 9.62 16.3 15.2 27.44 15.2h443c11.14 0 21.83-5.58 27.44-15.2C561.75 422.26 576 372.8 576 320c0-159.06-128.94-288-288-288zm0 64c14.71 0 26.58 10.13 30.32 23.65-1.11 2.26-2.64 4.23-3.45 6.67l-9.22 27.67c-5.13 3.49-10.97 6.01-17.64 6.01-17.67 0-32-14.33-32-32S270.33 96 288 96zM96 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm48-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm246.77-72.41l-61.33 184C343.13 347.33 352 364.54 352 384c0 11.72-3.38 22.55-8.88 32H232.88c-5.5-9.45-8.88-20.28-8.88-32 0-33.94 26.5-61.43 59.9-63.59l61.34-184.01c4.17-12.56 17.73-19.45 30.36-15.17 12.57 4.19 19.35 17.79 15.17 30.36zm14.66 57.2l15.52-46.55c3.47-1.29 7.13-2.23 11.05-2.23 17.67 0 32 14.33 32 32s-14.33 32-32 32c-11.38-.01-20.89-6.28-26.57-15.22zM480 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"/></svg></li>
+<li>Prerequisites – book, <svg style="height:25px;" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg></li>
+<li>Explore Tabs – wpexplorer, <svg style="height:25px;" viewBox="0 0 512 512"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg></li>
+<li>Challenge Tabs – cogs (formerly called gears), <svg style="height:25px;" viewBox="0 0 640 512"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"/></svg><br />
 </li>
-<li>Game Tabs – gamepad, <svg style="height:25;" viewBox="0 0 640 512"><path d="M480 96H160C71.6 96 0 167.6 0 256s71.6 160 160 160c44.8 0 85.2-18.4 114.2-48h91.5c29 29.6 69.5 48 114.2 48 88.4 0 160-71.6 160-160S568.4 96 480 96zM256 276c0 6.6-5.4 12-12 12h-52v52c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-52H76c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h52v-52c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h52c6.6 0 12 5.4 12 12v40zm184 68c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-80c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/></svg></li>
-<li>References – leanpub, <svg style="height:25;" viewBox="0 0 576 512"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg></li>
+<li>Game Tabs – gamepad, <svg style="height:25px;" viewBox="0 0 640 512"><path d="M480 96H160C71.6 96 0 167.6 0 256s71.6 160 160 160c44.8 0 85.2-18.4 114.2-48h91.5c29 29.6 69.5 48 114.2 48 88.4 0 160-71.6 160-160S568.4 96 480 96zM256 276c0 6.6-5.4 12-12 12h-52v52c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-52H76c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h52v-52c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h52c6.6 0 12 5.4 12 12v40zm184 68c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-80c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/></svg></li>
+<li>References – leanpub, <svg style="height:25px;" viewBox="0 0 576 512"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg></li>
 </ul>
 <p>If you come across any of these types of tabs that have a different icon or a missing icon, please create an issue in GitHub and/or fix.</p>
 <p>If there is a type of tab that does fit these, please talk to Neil to see about what we need to add.</p>
@@ -734,18 +739,18 @@ Figure 4.24: Sliders Using the Red Palette
 <p>The Dashboard Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with. Thus, this is the most important part of the layout of your App.</p>
 <p>The order in which your code the Tabs in the Dashboard body needs to mirror the order of the tabs in the Sidebar. Thus, the first <code>tabItem</code> in the <code>dashboardBody</code> should be the Overview; the last, the References.</p>
 <p>The Dashboard Body will begin with the following code in the UI section:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="layout.html#cb17-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb17-2"><a href="layout.html#cb17-2"></a><span class="kw">dashboardBody</span>(</span>
-<span id="cb17-3"><a href="layout.html#cb17-3"></a>  <span class="kw">tabItems</span>(</span>
-<span id="cb17-4"><a href="layout.html#cb17-4"></a>    <span class="kw">tabItem</span>(</span>
-<span id="cb17-5"><a href="layout.html#cb17-5"></a>      <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>, <span class="co"># needs to match the names you used in the Sidebar</span></span>
-<span id="cb17-6"><a href="layout.html#cb17-6"></a>      <span class="kw">withMathJax</span>(), <span class="co"># if you need to display mathematics, include this line</span></span>
-<span id="cb17-7"><a href="layout.html#cb17-7"></a>      <span class="co"># [code for the tab]</span></span>
-<span id="cb17-8"><a href="layout.html#cb17-8"></a>    ),</span>
-<span id="cb17-9"><a href="layout.html#cb17-9"></a>    <span class="co"># repeat tabItem chunk for each subsequent tab</span></span>
-<span id="cb17-10"><a href="layout.html#cb17-10"></a>  )</span>
-<span id="cb17-11"><a href="layout.html#cb17-11"></a>)</span>
-<span id="cb17-12"><a href="layout.html#cb17-12"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="layout.html#cb5-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb5-2"><a href="layout.html#cb5-2"></a><span class="kw">dashboardBody</span>(</span>
+<span id="cb5-3"><a href="layout.html#cb5-3"></a>  <span class="kw">tabItems</span>(</span>
+<span id="cb5-4"><a href="layout.html#cb5-4"></a>    <span class="kw">tabItem</span>(</span>
+<span id="cb5-5"><a href="layout.html#cb5-5"></a>      <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>, <span class="co"># needs to match the names you used in the Sidebar</span></span>
+<span id="cb5-6"><a href="layout.html#cb5-6"></a>      <span class="kw">withMathJax</span>(), <span class="co"># if you need to display mathematics, include this line</span></span>
+<span id="cb5-7"><a href="layout.html#cb5-7"></a>      <span class="co"># [code for the tab]</span></span>
+<span id="cb5-8"><a href="layout.html#cb5-8"></a>    ),</span>
+<span id="cb5-9"><a href="layout.html#cb5-9"></a>    <span class="co"># repeat tabItem chunk for each subsequent tab</span></span>
+<span id="cb5-10"><a href="layout.html#cb5-10"></a>  )</span>
+<span id="cb5-11"><a href="layout.html#cb5-11"></a>)</span>
+<span id="cb5-12"><a href="layout.html#cb5-12"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>The following subsections explain the purposes of each type of Tab.</p>
 <div id="the-overview-tab" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> The Overview Tab</h3>
@@ -765,53 +770,53 @@ Figure 4.24: Sliders Using the Red Palette
 <div id="creating-the-overview-tab" class="section level4">
 <h4><span class="header-section-number">4.4.1.1</span> Creating the Overview Tab</h4>
 <p>Here’s an example of making an Overview Tab</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="layout.html#cb18-1"></a><span class="co"># Required Package</span></span>
-<span id="cb18-2"><a href="layout.html#cb18-2"></a><span class="kw">library</span>(shinyBS)</span>
-<span id="cb18-3"><a href="layout.html#cb18-3"></a></span>
-<span id="cb18-4"><a href="layout.html#cb18-4"></a><span class="co"># In the UI Section</span></span>
-<span id="cb18-5"><a href="layout.html#cb18-5"></a><span class="co"># Inside the Dashboard Body</span></span>
-<span id="cb18-6"><a href="layout.html#cb18-6"></a></span>
-<span id="cb18-7"><a href="layout.html#cb18-7"></a><span class="kw">tabItem</span>(</span>
-<span id="cb18-8"><a href="layout.html#cb18-8"></a>  <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
-<span id="cb18-9"><a href="layout.html#cb18-9"></a>  <span class="kw">withMathJax</span>(),</span>
-<span id="cb18-10"><a href="layout.html#cb18-10"></a>  <span class="kw">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
-<span id="cb18-11"><a href="layout.html#cb18-11"></a>  <span class="kw">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
-<span id="cb18-12"><a href="layout.html#cb18-12"></a>  <span class="kw">p</span>(<span class="st">&quot;While not a proper app for helping students learn some statistical concept,</span></span>
-<span id="cb18-13"><a href="layout.html#cb18-13"></a><span class="st">    this app functions as an example for a variety of features.&quot;</span>),</span>
-<span id="cb18-14"><a href="layout.html#cb18-14"></a>  <span class="kw">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
-<span id="cb18-15"><a href="layout.html#cb18-15"></a>  <span class="kw">p</span>(<span class="st">&quot;This information will change depending on what you want to do.&quot;</span>),</span>
-<span id="cb18-16"><a href="layout.html#cb18-16"></a>  tags<span class="op">$</span><span class="kw">ol</span>(</span>
-<span id="cb18-17"><a href="layout.html#cb18-17"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Review any prerequiste ideas using the Prerequistes tab.&quot;</span>),</span>
-<span id="cb18-18"><a href="layout.html#cb18-18"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Explore the Exploration Tab.&quot;</span>),</span>
-<span id="cb18-19"><a href="layout.html#cb18-19"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Challenge yourself.&quot;</span>),</span>
-<span id="cb18-20"><a href="layout.html#cb18-20"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Play the game to test how far you&#39;ve come.&quot;</span>)</span>
-<span id="cb18-21"><a href="layout.html#cb18-21"></a>    ),</span>
-<span id="cb18-22"><a href="layout.html#cb18-22"></a>  <span class="co">##### Go Button--location and text will depend on your goals</span></span>
-<span id="cb18-23"><a href="layout.html#cb18-23"></a>  <span class="kw">div</span>(</span>
-<span id="cb18-24"><a href="layout.html#cb18-24"></a>    <span class="dt">style =</span> <span class="st">&quot;text-align: center&quot;</span>,</span>
-<span id="cb18-25"><a href="layout.html#cb18-25"></a>    <span class="kw">bsButton</span>(</span>
-<span id="cb18-26"><a href="layout.html#cb18-26"></a>      <span class="dt">inputId =</span> <span class="st">&quot;explore1&quot;</span>,</span>
-<span id="cb18-27"><a href="layout.html#cb18-27"></a>      <span class="dt">label =</span> <span class="st">&quot;Explore!&quot;</span>, <span class="co"># Notice there are NO spaces between the letters</span></span>
-<span id="cb18-28"><a href="layout.html#cb18-28"></a>      <span class="dt">size =</span> <span class="st">&quot;large&quot;</span>,</span>
-<span id="cb18-29"><a href="layout.html#cb18-29"></a>      <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
-<span id="cb18-30"><a href="layout.html#cb18-30"></a>      <span class="dt">style =</span> <span class="st">&quot;default&quot;</span></span>
-<span id="cb18-31"><a href="layout.html#cb18-31"></a>      )</span>
-<span id="cb18-32"><a href="layout.html#cb18-32"></a>    ),</span>
-<span id="cb18-33"><a href="layout.html#cb18-33"></a>  <span class="co">##### Create two lines of space</span></span>
-<span id="cb18-34"><a href="layout.html#cb18-34"></a>  <span class="kw">br</span>(),</span>
-<span id="cb18-35"><a href="layout.html#cb18-35"></a>  <span class="kw">br</span>(),</span>
-<span id="cb18-36"><a href="layout.html#cb18-36"></a>  <span class="kw">h2</span>(<span class="st">&quot;Acknowledgements&quot;</span>),</span>
-<span id="cb18-37"><a href="layout.html#cb18-37"></a>  <span class="kw">p</span>(<span class="st">&quot;This version of the app was developed and coded by Neil J. Hatfield and Robert P.</span></span>
-<span id="cb18-38"><a href="layout.html#cb18-38"></a><span class="st">    Carey, III.&quot;</span>,</span>
-<span id="cb18-39"><a href="layout.html#cb18-39"></a>    <span class="kw">br</span>(),</span>
-<span id="cb18-40"><a href="layout.html#cb18-40"></a>    <span class="st">&quot;We would like to extend a special thanks to the Shiny Program Students.&quot;</span>,</span>
-<span id="cb18-41"><a href="layout.html#cb18-41"></a>    <span class="co">#### Create three lines of space</span></span>
-<span id="cb18-42"><a href="layout.html#cb18-42"></a>    <span class="kw">br</span>(),</span>
-<span id="cb18-43"><a href="layout.html#cb18-43"></a>    <span class="kw">br</span>(),</span>
-<span id="cb18-44"><a href="layout.html#cb18-44"></a>    <span class="kw">br</span>(),</span>
-<span id="cb18-45"><a href="layout.html#cb18-45"></a>    <span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/13/2020 by NJH.&quot;</span>)</span>
-<span id="cb18-46"><a href="layout.html#cb18-46"></a>  )</span>
-<span id="cb18-47"><a href="layout.html#cb18-47"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="layout.html#cb6-1"></a><span class="co"># Required Package</span></span>
+<span id="cb6-2"><a href="layout.html#cb6-2"></a><span class="kw">library</span>(shinyBS)</span>
+<span id="cb6-3"><a href="layout.html#cb6-3"></a></span>
+<span id="cb6-4"><a href="layout.html#cb6-4"></a><span class="co"># In the UI Section</span></span>
+<span id="cb6-5"><a href="layout.html#cb6-5"></a><span class="co"># Inside the Dashboard Body</span></span>
+<span id="cb6-6"><a href="layout.html#cb6-6"></a></span>
+<span id="cb6-7"><a href="layout.html#cb6-7"></a><span class="kw">tabItem</span>(</span>
+<span id="cb6-8"><a href="layout.html#cb6-8"></a>  <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
+<span id="cb6-9"><a href="layout.html#cb6-9"></a>  <span class="kw">withMathJax</span>(),</span>
+<span id="cb6-10"><a href="layout.html#cb6-10"></a>  <span class="kw">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
+<span id="cb6-11"><a href="layout.html#cb6-11"></a>  <span class="kw">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
+<span id="cb6-12"><a href="layout.html#cb6-12"></a>  <span class="kw">p</span>(<span class="st">&quot;While not a proper app for helping students learn some statistical concept,</span></span>
+<span id="cb6-13"><a href="layout.html#cb6-13"></a><span class="st">    this app functions as an example for a variety of features.&quot;</span>),</span>
+<span id="cb6-14"><a href="layout.html#cb6-14"></a>  <span class="kw">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
+<span id="cb6-15"><a href="layout.html#cb6-15"></a>  <span class="kw">p</span>(<span class="st">&quot;This information will change depending on what you want to do.&quot;</span>),</span>
+<span id="cb6-16"><a href="layout.html#cb6-16"></a>  tags<span class="op">$</span><span class="kw">ol</span>(</span>
+<span id="cb6-17"><a href="layout.html#cb6-17"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Review any prerequiste ideas using the Prerequistes tab.&quot;</span>),</span>
+<span id="cb6-18"><a href="layout.html#cb6-18"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Explore the Exploration Tab.&quot;</span>),</span>
+<span id="cb6-19"><a href="layout.html#cb6-19"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Challenge yourself.&quot;</span>),</span>
+<span id="cb6-20"><a href="layout.html#cb6-20"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Play the game to test how far you&#39;ve come.&quot;</span>)</span>
+<span id="cb6-21"><a href="layout.html#cb6-21"></a>    ),</span>
+<span id="cb6-22"><a href="layout.html#cb6-22"></a>  <span class="co">##### Go Button--location and text will depend on your goals</span></span>
+<span id="cb6-23"><a href="layout.html#cb6-23"></a>  <span class="kw">div</span>(</span>
+<span id="cb6-24"><a href="layout.html#cb6-24"></a>    <span class="dt">style =</span> <span class="st">&quot;text-align: center&quot;</span>,</span>
+<span id="cb6-25"><a href="layout.html#cb6-25"></a>    <span class="kw">bsButton</span>(</span>
+<span id="cb6-26"><a href="layout.html#cb6-26"></a>      <span class="dt">inputId =</span> <span class="st">&quot;explore1&quot;</span>,</span>
+<span id="cb6-27"><a href="layout.html#cb6-27"></a>      <span class="dt">label =</span> <span class="st">&quot;Explore!&quot;</span>, <span class="co"># Notice there are NO spaces between the letters</span></span>
+<span id="cb6-28"><a href="layout.html#cb6-28"></a>      <span class="dt">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb6-29"><a href="layout.html#cb6-29"></a>      <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
+<span id="cb6-30"><a href="layout.html#cb6-30"></a>      <span class="dt">style =</span> <span class="st">&quot;default&quot;</span></span>
+<span id="cb6-31"><a href="layout.html#cb6-31"></a>      )</span>
+<span id="cb6-32"><a href="layout.html#cb6-32"></a>    ),</span>
+<span id="cb6-33"><a href="layout.html#cb6-33"></a>  <span class="co">##### Create two lines of space</span></span>
+<span id="cb6-34"><a href="layout.html#cb6-34"></a>  <span class="kw">br</span>(),</span>
+<span id="cb6-35"><a href="layout.html#cb6-35"></a>  <span class="kw">br</span>(),</span>
+<span id="cb6-36"><a href="layout.html#cb6-36"></a>  <span class="kw">h2</span>(<span class="st">&quot;Acknowledgements&quot;</span>),</span>
+<span id="cb6-37"><a href="layout.html#cb6-37"></a>  <span class="kw">p</span>(<span class="st">&quot;This version of the app was developed and coded by Neil J. Hatfield and Robert P.</span></span>
+<span id="cb6-38"><a href="layout.html#cb6-38"></a><span class="st">    Carey, III.&quot;</span>,</span>
+<span id="cb6-39"><a href="layout.html#cb6-39"></a>    <span class="kw">br</span>(),</span>
+<span id="cb6-40"><a href="layout.html#cb6-40"></a>    <span class="st">&quot;We would like to extend a special thanks to the Shiny Program Students.&quot;</span>,</span>
+<span id="cb6-41"><a href="layout.html#cb6-41"></a>    <span class="co">#### Create three lines of space</span></span>
+<span id="cb6-42"><a href="layout.html#cb6-42"></a>    <span class="kw">br</span>(),</span>
+<span id="cb6-43"><a href="layout.html#cb6-43"></a>    <span class="kw">br</span>(),</span>
+<span id="cb6-44"><a href="layout.html#cb6-44"></a>    <span class="kw">br</span>(),</span>
+<span id="cb6-45"><a href="layout.html#cb6-45"></a>    <span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/13/2020 by NJH.&quot;</span>)</span>
+<span id="cb6-46"><a href="layout.html#cb6-46"></a>  )</span>
+<span id="cb6-47"><a href="layout.html#cb6-47"></a>)</span></code></pre></div>
 <p>A few things to notice:</p>
 <ul>
 <li>If you need a new line but not a new paragraph, you use the <code>br()</code> tag.</li>
@@ -825,30 +830,30 @@ Figure 4.24: Sliders Using the Red Palette
 <h4><span class="header-section-number">4.4.1.2</span> What’s Needed in the Server Defintion</h4>
 <p>At bare minimum you will need to have one element in your server definition: the action for your button. If you have multiple buttons, you might need to have several more code chunks.</p>
 <p>Here is a generic example for the button on the Overview Tab that moves the user to the appropriate next Tab:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="layout.html#cb19-1"></a><span class="co">## Define what each button does; repeat this style of coding for each button</span></span>
-<span id="cb19-2"><a href="layout.html#cb19-2"></a></span>
-<span id="cb19-3"><a href="layout.html#cb19-3"></a><span class="co"># In your server section</span></span>
-<span id="cb19-4"><a href="layout.html#cb19-4"></a><span class="co"># [code omitted]</span></span>
-<span id="cb19-5"><a href="layout.html#cb19-5"></a><span class="kw">observeEvent</span>(</span>
-<span id="cb19-6"><a href="layout.html#cb19-6"></a>  <span class="dt">eventExpr =</span> input<span class="op">$</span>expore1, <span class="co">#append the button&#39;s inputId to input$ as the event expression</span></span>
-<span id="cb19-7"><a href="layout.html#cb19-7"></a>  <span class="dt">handlerExpr =</span> { <span class="co"># This is the action portion of your button and must be in { }</span></span>
-<span id="cb19-8"><a href="layout.html#cb19-8"></a>  <span class="kw">updateTabItems</span>(session, <span class="co"># This how you allow the user to move Tabs</span></span>
-<span id="cb19-9"><a href="layout.html#cb19-9"></a>                 <span class="dt">inputId =</span> <span class="st">&quot;tabs&quot;</span>, <span class="co"># the id of your Sidebar</span></span>
-<span id="cb19-10"><a href="layout.html#cb19-10"></a>                 <span class="dt">selected =</span> <span class="st">&quot;Explore&quot;</span> <span class="co"># Name of Tab to go to</span></span>
-<span id="cb19-11"><a href="layout.html#cb19-11"></a>                 ) </span>
-<span id="cb19-12"><a href="layout.html#cb19-12"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="layout.html#cb7-1"></a><span class="co">## Define what each button does; repeat this style of coding for each button</span></span>
+<span id="cb7-2"><a href="layout.html#cb7-2"></a></span>
+<span id="cb7-3"><a href="layout.html#cb7-3"></a><span class="co"># In your server section</span></span>
+<span id="cb7-4"><a href="layout.html#cb7-4"></a><span class="co"># [code omitted]</span></span>
+<span id="cb7-5"><a href="layout.html#cb7-5"></a><span class="kw">observeEvent</span>(</span>
+<span id="cb7-6"><a href="layout.html#cb7-6"></a>  <span class="dt">eventExpr =</span> input<span class="op">$</span>expore1, <span class="co">#append the button&#39;s inputId to input$ as the event expression</span></span>
+<span id="cb7-7"><a href="layout.html#cb7-7"></a>  <span class="dt">handlerExpr =</span> { <span class="co"># This is the action portion of your button and must be in { }</span></span>
+<span id="cb7-8"><a href="layout.html#cb7-8"></a>  <span class="kw">updateTabItems</span>(session, <span class="co"># This how you allow the user to move Tabs</span></span>
+<span id="cb7-9"><a href="layout.html#cb7-9"></a>                 <span class="dt">inputId =</span> <span class="st">&quot;tabs&quot;</span>, <span class="co"># the id of your Sidebar</span></span>
+<span id="cb7-10"><a href="layout.html#cb7-10"></a>                 <span class="dt">selected =</span> <span class="st">&quot;Explore&quot;</span> <span class="co"># Name of Tab to go to</span></span>
+<span id="cb7-11"><a href="layout.html#cb7-11"></a>                 ) </span>
+<span id="cb7-12"><a href="layout.html#cb7-12"></a>})</span></code></pre></div>
 <p>In the rare cases where you’re having a button in the Overview Tab do something other than move to a new tab, you’ll change the <code>handlerExpr</code> to do that other action.</p>
 </div>
 <div id="buttons-that-go-to-activity-packets" class="section level4">
 <h4><span class="header-section-number">4.4.1.3</span> Buttons that Go to Activity Packets</h4>
 <p>An exception to the above is if the button is to allow the user to download/open up an activity file. In these cases, you’ll not place any code in the server definition. Rather, you’ll change the nature of the button. Specifically, you’ll not use <code>bsButton</code> but <code>actionButton</code>:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="layout.html#cb20-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb20-2"><a href="layout.html#cb20-2"></a><span class="kw">actionButton</span>(</span>
-<span id="cb20-3"><a href="layout.html#cb20-3"></a>  <span class="dt">inputId =</span> <span class="st">&quot;ap1&quot;</span>,</span>
-<span id="cb20-4"><a href="layout.html#cb20-4"></a>  <span class="dt">label =</span> <span class="st">&quot;Activity Packet&quot;</span>,</span>
-<span id="cb20-5"><a href="layout.html#cb20-5"></a>  <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;cloud-download&quot;</span>),</span>
-<span id="cb20-6"><a href="layout.html#cb20-6"></a>  <span class="dt">onclick =</span> <span class="st">&quot;window.open(&#39;../../ActivityPackets/Caveats/&#39;)&quot;</span></span>
-<span id="cb20-7"><a href="layout.html#cb20-7"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="layout.html#cb8-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb8-2"><a href="layout.html#cb8-2"></a><span class="kw">actionButton</span>(</span>
+<span id="cb8-3"><a href="layout.html#cb8-3"></a>  <span class="dt">inputId =</span> <span class="st">&quot;ap1&quot;</span>,</span>
+<span id="cb8-4"><a href="layout.html#cb8-4"></a>  <span class="dt">label =</span> <span class="st">&quot;Activity Packet&quot;</span>,</span>
+<span id="cb8-5"><a href="layout.html#cb8-5"></a>  <span class="dt">icon =</span> <span class="kw">icon</span>(<span class="st">&quot;cloud-download&quot;</span>),</span>
+<span id="cb8-6"><a href="layout.html#cb8-6"></a>  <span class="dt">onclick =</span> <span class="st">&quot;window.open(&#39;../../ActivityPackets/Caveats/&#39;)&quot;</span></span>
+<span id="cb8-7"><a href="layout.html#cb8-7"></a>)</span></code></pre></div>
 <p>Notice that the <code>onclick</code> argument is what creates the action for button and references a relative path to a particular file. In this case a R Markdown file that lives the in directory called. (The actual file name isn’t listed to ensure that the processed/rendered version of the RMD is what the users see.)</p>
 </div>
 </div>
@@ -875,79 +880,79 @@ Figure 4.24: Sliders Using the Red Palette
 <p>*Note: not all requests for anchors may be fulfilled and not all course notes have anchors.</p>
 <p>The styling of the link will be managed by the BOAST CSS file.</p>
 <p>Here’s are two examples of how you would code a text link:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="layout.html#cb21-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb21-2"><a href="layout.html#cb21-2"></a><span class="co"># Working in the UI section</span></span>
-<span id="cb21-3"><a href="layout.html#cb21-3"></a></span>
-<span id="cb21-4"><a href="layout.html#cb21-4"></a><span class="co"># Example 1: in a paragraph</span></span>
-<span id="cb21-5"><a href="layout.html#cb21-5"></a><span class="kw">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some of the basic shapes</span></span>
-<span id="cb21-6"><a href="layout.html#cb21-6"></a><span class="st">  of graphs in statistics. A good resource for this would be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb21-7"><a href="layout.html#cb21-7"></a>  tags<span class="op">$</span><span class="kw">a</span>(</span>
-<span id="cb21-8"><a href="layout.html#cb21-8"></a>    <span class="dt">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb21-9"><a href="layout.html#cb21-9"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span> <span class="co"># the descriptive text for the link</span></span>
-<span id="cb21-10"><a href="layout.html#cb21-10"></a>    ),</span>
-<span id="cb21-11"><a href="layout.html#cb21-11"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
-<span id="cb21-12"><a href="layout.html#cb21-12"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
-<span id="cb21-13"><a href="layout.html#cb21-13"></a>)</span>
-<span id="cb21-14"><a href="layout.html#cb21-14"></a></span>
-<span id="cb21-15"><a href="layout.html#cb21-15"></a><span class="co"># Example 2: in a list item</span></span>
-<span id="cb21-16"><a href="layout.html#cb21-16"></a>tags<span class="op">$</span><span class="kw">ul</span>(</span>
-<span id="cb21-17"><a href="layout.html#cb21-17"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb21-18"><a href="layout.html#cb21-18"></a>    tags<span class="op">$</span><span class="kw">a</span>(</span>
-<span id="cb21-19"><a href="layout.html#cb21-19"></a>      <span class="dt">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb21-20"><a href="layout.html#cb21-20"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span> <span class="co"># the descriptive text for the link</span></span>
-<span id="cb21-21"><a href="layout.html#cb21-21"></a>      )</span>
-<span id="cb21-22"><a href="layout.html#cb21-22"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
-<span id="cb21-23"><a href="layout.html#cb21-23"></a>    <span class="co">#Be consistent; either all items do or none.</span></span>
-<span id="cb21-24"><a href="layout.html#cb21-24"></a>  ) </span>
-<span id="cb21-25"><a href="layout.html#cb21-25"></a>)</span>
-<span id="cb21-26"><a href="layout.html#cb21-26"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="layout.html#cb9-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb9-2"><a href="layout.html#cb9-2"></a><span class="co"># Working in the UI section</span></span>
+<span id="cb9-3"><a href="layout.html#cb9-3"></a></span>
+<span id="cb9-4"><a href="layout.html#cb9-4"></a><span class="co"># Example 1: in a paragraph</span></span>
+<span id="cb9-5"><a href="layout.html#cb9-5"></a><span class="kw">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some of the basic shapes</span></span>
+<span id="cb9-6"><a href="layout.html#cb9-6"></a><span class="st">  of graphs in statistics. A good resource for this would be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb9-7"><a href="layout.html#cb9-7"></a>  tags<span class="op">$</span><span class="kw">a</span>(</span>
+<span id="cb9-8"><a href="layout.html#cb9-8"></a>    <span class="dt">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb9-9"><a href="layout.html#cb9-9"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span> <span class="co"># the descriptive text for the link</span></span>
+<span id="cb9-10"><a href="layout.html#cb9-10"></a>    ),</span>
+<span id="cb9-11"><a href="layout.html#cb9-11"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
+<span id="cb9-12"><a href="layout.html#cb9-12"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
+<span id="cb9-13"><a href="layout.html#cb9-13"></a>)</span>
+<span id="cb9-14"><a href="layout.html#cb9-14"></a></span>
+<span id="cb9-15"><a href="layout.html#cb9-15"></a><span class="co"># Example 2: in a list item</span></span>
+<span id="cb9-16"><a href="layout.html#cb9-16"></a>tags<span class="op">$</span><span class="kw">ul</span>(</span>
+<span id="cb9-17"><a href="layout.html#cb9-17"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb9-18"><a href="layout.html#cb9-18"></a>    tags<span class="op">$</span><span class="kw">a</span>(</span>
+<span id="cb9-19"><a href="layout.html#cb9-19"></a>      <span class="dt">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb9-20"><a href="layout.html#cb9-20"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span> <span class="co"># the descriptive text for the link</span></span>
+<span id="cb9-21"><a href="layout.html#cb9-21"></a>      )</span>
+<span id="cb9-22"><a href="layout.html#cb9-22"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
+<span id="cb9-23"><a href="layout.html#cb9-23"></a>    <span class="co">#Be consistent; either all items do or none.</span></span>
+<span id="cb9-24"><a href="layout.html#cb9-24"></a>  ) </span>
+<span id="cb9-25"><a href="layout.html#cb9-25"></a>)</span>
+<span id="cb9-26"><a href="layout.html#cb9-26"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 </div>
 <div id="creating-a-prerequisites-tab" class="section level4">
 <h4><span class="header-section-number">4.4.2.3</span> Creating a Prerequisites Tab</h4>
 <p>Here’s an example of the code needed to create the Prerequisites Tab in the UI:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="layout.html#cb22-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb22-2"><a href="layout.html#cb22-2"></a><span class="kw">tabItem</span>(</span>
-<span id="cb22-3"><a href="layout.html#cb22-3"></a>  <span class="dt">tabName =</span> <span class="st">&quot;Prerequisites&quot;</span>,</span>
-<span id="cb22-4"><a href="layout.html#cb22-4"></a>  <span class="kw">withMathJax</span>(), <span class="co"># this line only need if you display mathematics</span></span>
-<span id="cb22-5"><a href="layout.html#cb22-5"></a>  <span class="kw">h2</span>(<span class="st">&quot;Prerequisites&quot;</span>),</span>
-<span id="cb22-6"><a href="layout.html#cb22-6"></a>  <span class="kw">p</span>(<span class="st">&quot;In order to get the most out of this app, please review the following:&quot;</span>),</span>
-<span id="cb22-7"><a href="layout.html#cb22-7"></a>  tags<span class="op">$</span><span class="kw">ul</span>(</span>
-<span id="cb22-8"><a href="layout.html#cb22-8"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 1&quot;</span>),</span>
-<span id="cb22-9"><a href="layout.html#cb22-9"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 2&quot;</span>),</span>
-<span id="cb22-10"><a href="layout.html#cb22-10"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 3&quot;</span>),</span>
-<span id="cb22-11"><a href="layout.html#cb22-11"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 4&quot;</span>)</span>
-<span id="cb22-12"><a href="layout.html#cb22-12"></a>    ),</span>
-<span id="cb22-13"><a href="layout.html#cb22-13"></a>    <span class="kw">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list any way they wish.&quot;</span>),</span>
-<span id="cb22-14"><a href="layout.html#cb22-14"></a>  <span class="kw">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
-<span id="cb22-15"><a href="layout.html#cb22-15"></a>  <span class="kw">box</span>(</span>
-<span id="cb22-16"><a href="layout.html#cb22-16"></a>    <span class="dt">title =</span> <span class="kw">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
-<span id="cb22-17"><a href="layout.html#cb22-17"></a>    <span class="dt">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb22-18"><a href="layout.html#cb22-18"></a>    <span class="dt">collapsible =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb22-19"><a href="layout.html#cb22-19"></a>    <span class="dt">collapsed =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb22-20"><a href="layout.html#cb22-20"></a>    <span class="dt">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb22-21"><a href="layout.html#cb22-21"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance tests serve as a</span></span>
-<span id="cb22-22"><a href="layout.html#cb22-22"></a><span class="st">    critical tool to confirm that a particular theoretical model describes our data and to make a</span></span>
-<span id="cb22-23"><a href="layout.html#cb22-23"></a><span class="st">    generalization from our sample to the broader population (i.e., make an inference). The null</span></span>
-<span id="cb22-24"><a href="layout.html#cb22-24"></a><span class="st">    hypothesis often reflects the simpler of two models (e.g., &#39;no statistical difference&#39;,</span></span>
-<span id="cb22-25"><a href="layout.html#cb22-25"></a><span class="st">    &#39;there is an additive difference of 1&#39;, etc.) that we will use to build a sampling</span></span>
-<span id="cb22-26"><a href="layout.html#cb22-26"></a><span class="st">    distribution for our chosen estimator. These methods let us test whether our sample data are</span></span>
-<span id="cb22-27"><a href="layout.html#cb22-27"></a><span class="st">    consistent with this simple model (null hypothesis).&quot;</span></span>
-<span id="cb22-28"><a href="layout.html#cb22-28"></a>  ),</span>
-<span id="cb22-29"><a href="layout.html#cb22-29"></a>  <span class="kw">box</span>(</span>
-<span id="cb22-30"><a href="layout.html#cb22-30"></a>    <span class="dt">title =</span> <span class="kw">strong</span>(tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
-<span id="cb22-31"><a href="layout.html#cb22-31"></a>    <span class="dt">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb22-32"><a href="layout.html#cb22-32"></a>    <span class="dt">collapsible =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb22-33"><a href="layout.html#cb22-33"></a>    <span class="dt">collapsed =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb22-34"><a href="layout.html#cb22-34"></a>    <span class="dt">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb22-35"><a href="layout.html#cb22-35"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as extreme as what we</span></span>
-<span id="cb22-36"><a href="layout.html#cb22-36"></a><span class="st">    observed given our null hypothesis. If we were to carry out our study infinitely many times</span></span>
-<span id="cb22-37"><a href="layout.html#cb22-37"></a><span class="st">    and the null hypothesis accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
-<span id="cb22-38"><a href="layout.html#cb22-38"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen 100*(p-value)% of the</span></span>
-<span id="cb22-39"><a href="layout.html#cb22-39"></a><span class="st">    time. The larger the p-value, the more often we would expect our estimator to take on a value</span></span>
-<span id="cb22-40"><a href="layout.html#cb22-40"></a><span class="st">    at least as extreme as what we&#39;ve seen; the smaller, the less often.&quot;</span></span>
-<span id="cb22-41"><a href="layout.html#cb22-41"></a>  )</span>
-<span id="cb22-42"><a href="layout.html#cb22-42"></a>),</span>
-<span id="cb22-43"><a href="layout.html#cb22-43"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="layout.html#cb10-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb10-2"><a href="layout.html#cb10-2"></a><span class="kw">tabItem</span>(</span>
+<span id="cb10-3"><a href="layout.html#cb10-3"></a>  <span class="dt">tabName =</span> <span class="st">&quot;Prerequisites&quot;</span>,</span>
+<span id="cb10-4"><a href="layout.html#cb10-4"></a>  <span class="kw">withMathJax</span>(), <span class="co"># this line only need if you display mathematics</span></span>
+<span id="cb10-5"><a href="layout.html#cb10-5"></a>  <span class="kw">h2</span>(<span class="st">&quot;Prerequisites&quot;</span>),</span>
+<span id="cb10-6"><a href="layout.html#cb10-6"></a>  <span class="kw">p</span>(<span class="st">&quot;In order to get the most out of this app, please review the following:&quot;</span>),</span>
+<span id="cb10-7"><a href="layout.html#cb10-7"></a>  tags<span class="op">$</span><span class="kw">ul</span>(</span>
+<span id="cb10-8"><a href="layout.html#cb10-8"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 1&quot;</span>),</span>
+<span id="cb10-9"><a href="layout.html#cb10-9"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 2&quot;</span>),</span>
+<span id="cb10-10"><a href="layout.html#cb10-10"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 3&quot;</span>),</span>
+<span id="cb10-11"><a href="layout.html#cb10-11"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Pre-req 4&quot;</span>)</span>
+<span id="cb10-12"><a href="layout.html#cb10-12"></a>    ),</span>
+<span id="cb10-13"><a href="layout.html#cb10-13"></a>    <span class="kw">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list any way they wish.&quot;</span>),</span>
+<span id="cb10-14"><a href="layout.html#cb10-14"></a>  <span class="kw">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
+<span id="cb10-15"><a href="layout.html#cb10-15"></a>  <span class="kw">box</span>(</span>
+<span id="cb10-16"><a href="layout.html#cb10-16"></a>    <span class="dt">title =</span> <span class="kw">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
+<span id="cb10-17"><a href="layout.html#cb10-17"></a>    <span class="dt">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb10-18"><a href="layout.html#cb10-18"></a>    <span class="dt">collapsible =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb10-19"><a href="layout.html#cb10-19"></a>    <span class="dt">collapsed =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb10-20"><a href="layout.html#cb10-20"></a>    <span class="dt">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb10-21"><a href="layout.html#cb10-21"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance tests serve as a</span></span>
+<span id="cb10-22"><a href="layout.html#cb10-22"></a><span class="st">    critical tool to confirm that a particular theoretical model describes our data and to make a</span></span>
+<span id="cb10-23"><a href="layout.html#cb10-23"></a><span class="st">    generalization from our sample to the broader population (i.e., make an inference). The null</span></span>
+<span id="cb10-24"><a href="layout.html#cb10-24"></a><span class="st">    hypothesis often reflects the simpler of two models (e.g., &#39;no statistical difference&#39;,</span></span>
+<span id="cb10-25"><a href="layout.html#cb10-25"></a><span class="st">    &#39;there is an additive difference of 1&#39;, etc.) that we will use to build a sampling</span></span>
+<span id="cb10-26"><a href="layout.html#cb10-26"></a><span class="st">    distribution for our chosen estimator. These methods let us test whether our sample data are</span></span>
+<span id="cb10-27"><a href="layout.html#cb10-27"></a><span class="st">    consistent with this simple model (null hypothesis).&quot;</span></span>
+<span id="cb10-28"><a href="layout.html#cb10-28"></a>  ),</span>
+<span id="cb10-29"><a href="layout.html#cb10-29"></a>  <span class="kw">box</span>(</span>
+<span id="cb10-30"><a href="layout.html#cb10-30"></a>    <span class="dt">title =</span> <span class="kw">strong</span>(tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
+<span id="cb10-31"><a href="layout.html#cb10-31"></a>    <span class="dt">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb10-32"><a href="layout.html#cb10-32"></a>    <span class="dt">collapsible =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb10-33"><a href="layout.html#cb10-33"></a>    <span class="dt">collapsed =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb10-34"><a href="layout.html#cb10-34"></a>    <span class="dt">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb10-35"><a href="layout.html#cb10-35"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as extreme as what we</span></span>
+<span id="cb10-36"><a href="layout.html#cb10-36"></a><span class="st">    observed given our null hypothesis. If we were to carry out our study infinitely many times</span></span>
+<span id="cb10-37"><a href="layout.html#cb10-37"></a><span class="st">    and the null hypothesis accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
+<span id="cb10-38"><a href="layout.html#cb10-38"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen 100*(p-value)% of the</span></span>
+<span id="cb10-39"><a href="layout.html#cb10-39"></a><span class="st">    time. The larger the p-value, the more often we would expect our estimator to take on a value</span></span>
+<span id="cb10-40"><a href="layout.html#cb10-40"></a><span class="st">    at least as extreme as what we&#39;ve seen; the smaller, the less often.&quot;</span></span>
+<span id="cb10-41"><a href="layout.html#cb10-41"></a>  )</span>
+<span id="cb10-42"><a href="layout.html#cb10-42"></a>),</span>
+<span id="cb10-43"><a href="layout.html#cb10-43"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>For more information on collapsible boxes, see <a href="layout.html#collapsible">Section <a href="layout.html#collapsible">4.5.6</a></a>.</p>
 </div>
 <div id="whats-needed-in-the-server-definition-2" class="section level4">
@@ -960,21 +965,21 @@ Figure 4.24: Sliders Using the Red Palette
 <p>The heart of your App is the one or more tabs where users interact with the App beyond simple navigation. These are the Activity Tabs. Some apps will have a single activity, others several; deciding on how many is part of the design process.</p>
 <p>Currently, we have three types of Activity Tabs in BOAST:</p>
 <ul>
-<li>Exploration/Explore Tabs, <svg style="height:25;" viewBox="0 0 512 512"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg>
+<li>Exploration/Explore Tabs, <svg style="height:25px;" viewBox="0 0 512 512"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg>
 <ul>
 <li>These tabs center around the user exploring the target concept.</li>
 <li>These tabs will generally have more text on the page here than other types of Activity Tabs.</li>
 <li>There are often guiding questions meant to help the user engage in productive explorations.</li>
 <li>The goal is not to assess the user’s understanding, but to support their construction of productive meanings for the concept.</li>
 </ul></li>
-<li>Challenge Tabs, <svg style="height:25;" viewBox="0 0 640 512"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"/></svg>
+<li>Challenge Tabs, <svg style="height:25px;" viewBox="0 0 640 512"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"/></svg>
 <ul>
 <li>These tabs center around a user challenging themselves by testing out their understanding of a concept.</li>
 <li>While there might still be a fair amount of text on the page, there will be less than an Exploration Tab.</li>
 <li>Questions here will be in-between a guiding question and an assessment question.</li>
 <li>The goal is to provide the user an opportunity to test and refine their understandings.</li>
 </ul></li>
-<li>Game Tabs, <svg style="height:25;" viewBox="0 0 640 512"><path d="M480 96H160C71.6 96 0 167.6 0 256s71.6 160 160 160c44.8 0 85.2-18.4 114.2-48h91.5c29 29.6 69.5 48 114.2 48 88.4 0 160-71.6 160-160S568.4 96 480 96zM256 276c0 6.6-5.4 12-12 12h-52v52c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-52H76c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h52v-52c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h52c6.6 0 12 5.4 12 12v40zm184 68c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-80c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/></svg>
+<li>Game Tabs, <svg style="height:25px;" viewBox="0 0 640 512"><path d="M480 96H160C71.6 96 0 167.6 0 256s71.6 160 160 160c44.8 0 85.2-18.4 114.2-48h91.5c29 29.6 69.5 48 114.2 48 88.4 0 160-71.6 160-160S568.4 96 480 96zM256 276c0 6.6-5.4 12-12 12h-52v52c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-52H76c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h52v-52c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h52c6.6 0 12 5.4 12 12v40zm184 68c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-80c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/></svg>
 <ul>
 <li>These tabs center around the user review a concept (or several) in a game like format.</li>
 <li>These generally have the least amount of non-question text on the page (i.e., instructions).</li>
@@ -1011,49 +1016,49 @@ Figure 4.24: Sliders Using the Red Palette
 <li>Data sets</li>
 <li>Refer to the <a href="documentation.html#documentation">Chapter <a href="documentation.html#documentation">7</a></a> <a href="documentation.html#documentation">on Documentation</a> of this Style Guide for more information.</li>
 </ul>
-<p>The icon for this Tab must be “leanpub”, <svg style="height:25;" viewBox="0 0 576 512"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg>.</p>
+<p>The icon for this Tab must be “leanpub”, <svg style="height:25px;" viewBox="0 0 576 512"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg>.</p>
 <div id="creating-a-references-tab" class="section level4">
 <h4><span class="header-section-number">4.4.4.1</span> Creating a References Tab</h4>
 <p>Creating a References Tab mimics both the Overview and Prerequisites Tab structure and is done in the UI section:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="layout.html#cb23-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb23-2"><a href="layout.html#cb23-2"></a><span class="co"># [code omitted]</span></span>
-<span id="cb23-3"><a href="layout.html#cb23-3"></a><span class="kw">tabItem</span>(</span>
-<span id="cb23-4"><a href="layout.html#cb23-4"></a>  <span class="dt">tabName =</span> <span class="st">&quot;References&quot;</span>,</span>
-<span id="cb23-5"><a href="layout.html#cb23-5"></a>  <span class="kw">withMathJax</span>(), <span class="co"># Rarely, if ever, will you need MathJax in the references</span></span>
-<span id="cb23-6"><a href="layout.html#cb23-6"></a>  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb23-7"><a href="layout.html#cb23-7"></a>  <span class="kw">p</span>( <span class="co"># Each reference is in its own paragraph</span></span>
-<span id="cb23-8"><a href="layout.html#cb23-8"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>, <span class="co"># you must set this class argument</span></span>
-<span id="cb23-9"><a href="layout.html#cb23-9"></a>    <span class="st">&quot;Bailey, E. (2015), shinyBS: Twitter bootstrap components for shiny, R package. Available</span></span>
-<span id="cb23-10"><a href="layout.html#cb23-10"></a><span class="st">    from https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
-<span id="cb23-11"><a href="layout.html#cb23-11"></a>    ),</span>
-<span id="cb23-12"><a href="layout.html#cb23-12"></a>  <span class="kw">p</span>(</span>
-<span id="cb23-13"><a href="layout.html#cb23-13"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb23-14"><a href="layout.html#cb23-14"></a>    <span class="st">&quot;Carey, R. (2019), boastUtils: BOAST Utilities, R Package. Available from</span></span>
-<span id="cb23-15"><a href="layout.html#cb23-15"></a><span class="st">    https://github.com/EducationShinyAppTeam/boastUtils&quot;</span></span>
-<span id="cb23-16"><a href="layout.html#cb23-16"></a>    ),</span>
-<span id="cb23-17"><a href="layout.html#cb23-17"></a>  <span class="kw">p</span>(</span>
-<span id="cb23-18"><a href="layout.html#cb23-18"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb23-19"><a href="layout.html#cb23-19"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with &#39;Shiny&#39;, R</span></span>
-<span id="cb23-20"><a href="layout.html#cb23-20"></a><span class="st">    Package. Available from https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
-<span id="cb23-21"><a href="layout.html#cb23-21"></a>    ),</span>
-<span id="cb23-22"><a href="layout.html#cb23-22"></a>  <span class="kw">p</span>(</span>
-<span id="cb23-23"><a href="layout.html#cb23-23"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb23-24"><a href="layout.html#cb23-24"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J., Xie, Y., and McPherson, J. (2019),  shiny: Web </span></span>
-<span id="cb23-25"><a href="layout.html#cb23-25"></a><span class="st">    application framework for R, R Package. Available from </span></span>
-<span id="cb23-26"><a href="layout.html#cb23-26"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
-<span id="cb23-27"><a href="layout.html#cb23-27"></a>  ),</span>
-<span id="cb23-28"><a href="layout.html#cb23-28"></a>  <span class="kw">p</span>(</span>
-<span id="cb23-29"><a href="layout.html#cb23-29"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb23-30"><a href="layout.html#cb23-30"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web App. Available from</span></span>
-<span id="cb23-31"><a href="layout.html#cb23-31"></a><span class="st">    https://github.com/EducationShinyAppTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
-<span id="cb23-32"><a href="layout.html#cb23-32"></a>  ),</span>
-<span id="cb23-33"><a href="layout.html#cb23-33"></a>  <span class="kw">p</span>(</span>
-<span id="cb23-34"><a href="layout.html#cb23-34"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb23-35"><a href="layout.html#cb23-35"></a>    <span class="st">&quot;Wickham, H. (2016), ggplot2: Elegant graphics for data analysis, R Package, New York:</span></span>
-<span id="cb23-36"><a href="layout.html#cb23-36"></a><span class="st">    Springer-Verlag. Available from https://ggplot2.tidyverse.org&quot;</span></span>
-<span id="cb23-37"><a href="layout.html#cb23-37"></a>  )</span>
-<span id="cb23-38"><a href="layout.html#cb23-38"></a>)</span>
-<span id="cb23-39"><a href="layout.html#cb23-39"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="layout.html#cb11-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb11-2"><a href="layout.html#cb11-2"></a><span class="co"># [code omitted]</span></span>
+<span id="cb11-3"><a href="layout.html#cb11-3"></a><span class="kw">tabItem</span>(</span>
+<span id="cb11-4"><a href="layout.html#cb11-4"></a>  <span class="dt">tabName =</span> <span class="st">&quot;References&quot;</span>,</span>
+<span id="cb11-5"><a href="layout.html#cb11-5"></a>  <span class="kw">withMathJax</span>(), <span class="co"># Rarely, if ever, will you need MathJax in the references</span></span>
+<span id="cb11-6"><a href="layout.html#cb11-6"></a>  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
+<span id="cb11-7"><a href="layout.html#cb11-7"></a>  <span class="kw">p</span>( <span class="co"># Each reference is in its own paragraph</span></span>
+<span id="cb11-8"><a href="layout.html#cb11-8"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>, <span class="co"># you must set this class argument</span></span>
+<span id="cb11-9"><a href="layout.html#cb11-9"></a>    <span class="st">&quot;Bailey, E. (2015), shinyBS: Twitter bootstrap components for shiny, R package. Available</span></span>
+<span id="cb11-10"><a href="layout.html#cb11-10"></a><span class="st">    from https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
+<span id="cb11-11"><a href="layout.html#cb11-11"></a>    ),</span>
+<span id="cb11-12"><a href="layout.html#cb11-12"></a>  <span class="kw">p</span>(</span>
+<span id="cb11-13"><a href="layout.html#cb11-13"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb11-14"><a href="layout.html#cb11-14"></a>    <span class="st">&quot;Carey, R. (2019), boastUtils: BOAST Utilities, R Package. Available from</span></span>
+<span id="cb11-15"><a href="layout.html#cb11-15"></a><span class="st">    https://github.com/EducationShinyAppTeam/boastUtils&quot;</span></span>
+<span id="cb11-16"><a href="layout.html#cb11-16"></a>    ),</span>
+<span id="cb11-17"><a href="layout.html#cb11-17"></a>  <span class="kw">p</span>(</span>
+<span id="cb11-18"><a href="layout.html#cb11-18"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb11-19"><a href="layout.html#cb11-19"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with &#39;Shiny&#39;, R</span></span>
+<span id="cb11-20"><a href="layout.html#cb11-20"></a><span class="st">    Package. Available from https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
+<span id="cb11-21"><a href="layout.html#cb11-21"></a>    ),</span>
+<span id="cb11-22"><a href="layout.html#cb11-22"></a>  <span class="kw">p</span>(</span>
+<span id="cb11-23"><a href="layout.html#cb11-23"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb11-24"><a href="layout.html#cb11-24"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J., Xie, Y., and McPherson, J. (2019),  shiny: Web </span></span>
+<span id="cb11-25"><a href="layout.html#cb11-25"></a><span class="st">    application framework for R, R Package. Available from </span></span>
+<span id="cb11-26"><a href="layout.html#cb11-26"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
+<span id="cb11-27"><a href="layout.html#cb11-27"></a>  ),</span>
+<span id="cb11-28"><a href="layout.html#cb11-28"></a>  <span class="kw">p</span>(</span>
+<span id="cb11-29"><a href="layout.html#cb11-29"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb11-30"><a href="layout.html#cb11-30"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web App. Available from</span></span>
+<span id="cb11-31"><a href="layout.html#cb11-31"></a><span class="st">    https://github.com/EducationShinyAppTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
+<span id="cb11-32"><a href="layout.html#cb11-32"></a>  ),</span>
+<span id="cb11-33"><a href="layout.html#cb11-33"></a>  <span class="kw">p</span>(</span>
+<span id="cb11-34"><a href="layout.html#cb11-34"></a>    <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb11-35"><a href="layout.html#cb11-35"></a>    <span class="st">&quot;Wickham, H. (2016), ggplot2: Elegant graphics for data analysis, R Package, New York:</span></span>
+<span id="cb11-36"><a href="layout.html#cb11-36"></a><span class="st">    Springer-Verlag. Available from https://ggplot2.tidyverse.org&quot;</span></span>
+<span id="cb11-37"><a href="layout.html#cb11-37"></a>  )</span>
+<span id="cb11-38"><a href="layout.html#cb11-38"></a>)</span>
+<span id="cb11-39"><a href="layout.html#cb11-39"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 </div>
 <div id="whats-needed-in-the-server-definition-3" class="section level4">
 <h4><span class="header-section-number">4.4.4.2</span> What’s Needed in the Server Definition</h4>
@@ -1184,9 +1189,9 @@ Figure 4.24: Sliders Using the Red Palette
 <ul>
 <li>Game buttons will NOT have any icons.</li>
 <li>Direction Buttons (e.g., “Next” or “Previous”) will NOT have any icons. Rather make the button text “&lt;&lt; Previous” or “Next &gt;&gt;”</li>
-<li>A “Prerequisites” button will use the “book” icon, <svg style="height:25;" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg></li>
-<li>All other tab buttons (labels ending with “!”) will use the “bolt” icon, <svg style="height:25;" viewBox="0 0 320 512"><path d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z"/></svg></li>
-<li>A download button will use the “cloud-download-alt” icon, <svg style="height:25;" viewBox="0 0 640 512"><path d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4zm-132.9 88.7L299.3 420.7c-6.2 6.2-16.4 6.2-22.6 0L171.3 315.3c-10.1-10.1-2.9-27.3 11.3-27.3H248V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v112h65.4c14.2 0 21.4 17.2 11.3 27.3z"/></svg></li>
+<li>A “Prerequisites” button will use the “book” icon, <svg style="height:25px;" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg></li>
+<li>All other tab buttons (labels ending with “!”) will use the “bolt” icon, <svg style="height:25px;" viewBox="0 0 320 512"><path d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z"/></svg></li>
+<li>A download button will use the “cloud-download-alt” icon, <svg style="height:25px;" viewBox="0 0 640 512"><path d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4zm-132.9 88.7L299.3 420.7c-6.2 6.2-16.4 6.2-22.6 0L171.3 315.3c-10.1-10.1-2.9-27.3 11.3-27.3H248V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v112h65.4c14.2 0 21.4 17.2 11.3 27.3z"/></svg></li>
 </ul>
 </div>
 </div>
@@ -1207,17 +1212,17 @@ Figure 4.25: Correct and Incorrect Marks
 <h3><span class="header-section-number">4.5.4</span> Animation Buttons</h3>
 <p>One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable.</p>
 <p>To enable this, you’ll need to make use of the <code>animate</code> argument:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="layout.html#cb24-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb24-2"><a href="layout.html#cb24-2"></a><span class="kw">sliderInput</span>(</span>
-<span id="cb24-3"><a href="layout.html#cb24-3"></a>  <span class="dt">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
-<span id="cb24-4"><a href="layout.html#cb24-4"></a>  <span class="dt">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="ch">\\</span><span class="st">(</span><span class="ch">\\</span><span class="st">alpha_{UT}</span><span class="ch">\\</span><span class="st">):&quot;</span>,</span>
-<span id="cb24-5"><a href="layout.html#cb24-5"></a>  <span class="dt">min =</span> <span class="fl">0.01</span>,</span>
-<span id="cb24-6"><a href="layout.html#cb24-6"></a>  <span class="dt">max =</span> <span class="fl">0.25</span>,</span>
-<span id="cb24-7"><a href="layout.html#cb24-7"></a>  <span class="dt">value =</span> <span class="fl">0.1</span>,</span>
-<span id="cb24-8"><a href="layout.html#cb24-8"></a>  <span class="dt">step =</span> <span class="fl">0.01</span>,</span>
-<span id="cb24-9"><a href="layout.html#cb24-9"></a>  <span class="dt">animate =</span> <span class="kw">animationOptions</span>(</span>
-<span id="cb24-10"><a href="layout.html#cb24-10"></a>    <span class="dt">interval =</span> <span class="dv">1000</span>, <span class="dt">loop =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb24-11"><a href="layout.html#cb24-11"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="layout.html#cb12-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb12-2"><a href="layout.html#cb12-2"></a><span class="kw">sliderInput</span>(</span>
+<span id="cb12-3"><a href="layout.html#cb12-3"></a>  <span class="dt">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
+<span id="cb12-4"><a href="layout.html#cb12-4"></a>  <span class="dt">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="ch">\\</span><span class="st">(</span><span class="ch">\\</span><span class="st">alpha_{UT}</span><span class="ch">\\</span><span class="st">):&quot;</span>,</span>
+<span id="cb12-5"><a href="layout.html#cb12-5"></a>  <span class="dt">min =</span> <span class="fl">0.01</span>,</span>
+<span id="cb12-6"><a href="layout.html#cb12-6"></a>  <span class="dt">max =</span> <span class="fl">0.25</span>,</span>
+<span id="cb12-7"><a href="layout.html#cb12-7"></a>  <span class="dt">value =</span> <span class="fl">0.1</span>,</span>
+<span id="cb12-8"><a href="layout.html#cb12-8"></a>  <span class="dt">step =</span> <span class="fl">0.01</span>,</span>
+<span id="cb12-9"><a href="layout.html#cb12-9"></a>  <span class="dt">animate =</span> <span class="kw">animationOptions</span>(</span>
+<span id="cb12-10"><a href="layout.html#cb12-10"></a>    <span class="dt">interval =</span> <span class="dv">1000</span>, <span class="dt">loop =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb12-11"><a href="layout.html#cb12-11"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>You can set <code>animate=TRUE</code>, <code>animate=FALSE</code> or invoke the <code>animationOptions</code> function as we’ve done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (<code>interval</code>, in milliseconds) and should the animation start over once the slider reaches the maximum (<code>loop</code>).</p>
 <p>The <code>interval</code> is going to the most challenging value to figure out. This timer <em><strong>ignores</strong></em> everything else; that is, it doesn’t wait to see whether your plot has updated. Remember, the more complicated the process that generates your plot is, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While <code>renderCachePlot</code> can help speed things up, keep in mind that you still might need to play around with the <code>interval</code> value to ensure smooth functionality.</p>
 <p>Make sure when you’re testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.</p>
@@ -1235,19 +1240,19 @@ Figure 4.25: Correct and Incorrect Marks
 <div id="creating-collapsible-boxes" class="section level4">
 <h4><span class="header-section-number">4.5.6.1</span> Creating Collapsible Boxes</h4>
 <p>To create a Collapsible Box, you’ll need to work in th UI section of your code:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="layout.html#cb25-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb25-2"><a href="layout.html#cb25-2"></a><span class="kw">box</span>(</span>
-<span id="cb25-3"><a href="layout.html#cb25-3"></a>  <span class="dt">title =</span> <span class="kw">strong</span>(<span class="st">&quot;Title for the Box&quot;</span>), <span class="co"># Use the strong tag</span></span>
-<span id="cb25-4"><a href="layout.html#cb25-4"></a>  <span class="co"># Give either the title of the review concept or &quot;Context&quot;</span></span>
-<span id="cb25-5"><a href="layout.html#cb25-5"></a>  <span class="dt">status =</span> <span class="st">&quot;primary&quot;</span>, <span class="co"># Leave as primary</span></span>
-<span id="cb25-6"><a href="layout.html#cb25-6"></a>  <span class="dt">collapsible =</span> <span class="ot">TRUE</span>, <span class="co"># This allows collapsing</span></span>
-<span id="cb25-7"><a href="layout.html#cb25-7"></a>  <span class="dt">collapsed =</span> <span class="ot">FALSE</span>, <span class="co"># Initial value</span></span>
-<span id="cb25-8"><a href="layout.html#cb25-8"></a>  <span class="co"># If the only collapsible item, use FALSE</span></span>
-<span id="cb25-9"><a href="layout.html#cb25-9"></a>  <span class="co"># If there are multiple, the first one is FALSE, others can be set to TRUE.</span></span>
-<span id="cb25-10"><a href="layout.html#cb25-10"></a>  <span class="dt">width =</span> <span class="st">&#39;100%&#39;</span>, <span class="co"># use this setting</span></span>
-<span id="cb25-11"><a href="layout.html#cb25-11"></a>  <span class="st">&quot;The text that will &#39;disappear&#39; goes here.&quot;</span></span>
-<span id="cb25-12"><a href="layout.html#cb25-12"></a>),</span>
-<span id="cb25-13"><a href="layout.html#cb25-13"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="layout.html#cb13-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb13-2"><a href="layout.html#cb13-2"></a><span class="kw">box</span>(</span>
+<span id="cb13-3"><a href="layout.html#cb13-3"></a>  <span class="dt">title =</span> <span class="kw">strong</span>(<span class="st">&quot;Title for the Box&quot;</span>), <span class="co"># Use the strong tag</span></span>
+<span id="cb13-4"><a href="layout.html#cb13-4"></a>  <span class="co"># Give either the title of the review concept or &quot;Context&quot;</span></span>
+<span id="cb13-5"><a href="layout.html#cb13-5"></a>  <span class="dt">status =</span> <span class="st">&quot;primary&quot;</span>, <span class="co"># Leave as primary</span></span>
+<span id="cb13-6"><a href="layout.html#cb13-6"></a>  <span class="dt">collapsible =</span> <span class="ot">TRUE</span>, <span class="co"># This allows collapsing</span></span>
+<span id="cb13-7"><a href="layout.html#cb13-7"></a>  <span class="dt">collapsed =</span> <span class="ot">FALSE</span>, <span class="co"># Initial value</span></span>
+<span id="cb13-8"><a href="layout.html#cb13-8"></a>  <span class="co"># If the only collapsible item, use FALSE</span></span>
+<span id="cb13-9"><a href="layout.html#cb13-9"></a>  <span class="co"># If there are multiple, the first one is FALSE, others can be set to TRUE.</span></span>
+<span id="cb13-10"><a href="layout.html#cb13-10"></a>  <span class="dt">width =</span> <span class="st">&#39;100%&#39;</span>, <span class="co"># use this setting</span></span>
+<span id="cb13-11"><a href="layout.html#cb13-11"></a>  <span class="st">&quot;The text that will &#39;disappear&#39; goes here.&quot;</span></span>
+<span id="cb13-12"><a href="layout.html#cb13-12"></a>),</span>
+<span id="cb13-13"><a href="layout.html#cb13-13"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>Given the static nature of the information in a collapsible box, you should not need to add anything to the server definition.</p>
 <p>The styling of Collapsible Boxes is controlled by the central CSS file. If you use the above code as your template, the coloring will automatically match your App’s assigned color theme.</p>
 </div>
@@ -1257,47 +1262,47 @@ Figure 4.25: Correct and Incorrect Marks
 <p>Well panels are visual styling that we use to help offset user controls (i.e., inputs) from both context and graphs (i.e., outputs).</p>
 <p>To place something inside of a well panel, all you need to do is wrap that object in the <code>wellPanel</code> function. However, the placement of the <code>wellPanel</code> call matters.</p>
 <p>If you wrap each individual element in <code>wellPanel</code> you’ll get a separate well panel for each call. If you place <code>wellPanel</code> too high up in your code, you’ll end up putting everything into the well panel.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="layout.html#cb26-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb26-2"><a href="layout.html#cb26-2"></a><span class="co"># [code omitted]</span></span>
-<span id="cb26-3"><a href="layout.html#cb26-3"></a><span class="co"># Inside a tabItem</span></span>
-<span id="cb26-4"><a href="layout.html#cb26-4"></a><span class="kw">fluidRow</span>( <span class="co"># this allows you to create dynamic columns for responsive design (mobile friendly)</span></span>
-<span id="cb26-5"><a href="layout.html#cb26-5"></a>  <span class="kw">column</span>( <span class="co"># this is one of those columns</span></span>
-<span id="cb26-6"><a href="layout.html#cb26-6"></a>    <span class="dt">width =</span> <span class="dv">4</span>, <span class="co"># the initial grid width; all columns must add to 12</span></span>
-<span id="cb26-7"><a href="layout.html#cb26-7"></a>    <span class="kw">wellPanel</span>( <span class="co"># Placing the wellPanel call here will wrap around all controls</span></span>
-<span id="cb26-8"><a href="layout.html#cb26-8"></a>      <span class="kw">h3</span>(<span class="st">&quot;Controls&quot;</span>),</span>
-<span id="cb26-9"><a href="layout.html#cb26-9"></a>      <span class="kw">sliderInput</span>(</span>
-<span id="cb26-10"><a href="layout.html#cb26-10"></a>        <span class="dt">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
-<span id="cb26-11"><a href="layout.html#cb26-11"></a>        <span class="dt">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="ch">\\</span><span class="st">(</span><span class="ch">\\</span><span class="st">alpha_{UT}</span><span class="ch">\\</span><span class="st">):&quot;</span>,</span>
-<span id="cb26-12"><a href="layout.html#cb26-12"></a>        <span class="dt">min =</span> <span class="fl">0.01</span>,</span>
-<span id="cb26-13"><a href="layout.html#cb26-13"></a>        <span class="dt">max =</span> <span class="fl">0.25</span>,</span>
-<span id="cb26-14"><a href="layout.html#cb26-14"></a>        <span class="dt">value =</span> <span class="fl">0.1</span>,</span>
-<span id="cb26-15"><a href="layout.html#cb26-15"></a>        <span class="dt">step =</span> <span class="fl">0.01</span>,</span>
-<span id="cb26-16"><a href="layout.html#cb26-16"></a>        <span class="dt">animate =</span> <span class="kw">animationOptions</span>(<span class="dt">interval =</span> <span class="dv">1000</span>, <span class="dt">loop =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb26-17"><a href="layout.html#cb26-17"></a>        ),</span>
-<span id="cb26-18"><a href="layout.html#cb26-18"></a>      <span class="kw">br</span>(), <span class="co"># creating vertical space between sliders</span></span>
-<span id="cb26-19"><a href="layout.html#cb26-19"></a>      <span class="kw">sliderInput</span>(</span>
-<span id="cb26-20"><a href="layout.html#cb26-20"></a>        <span class="dt">inputId =</span> <span class="st">&quot;mtcTests&quot;</span>,</span>
-<span id="cb26-21"><a href="layout.html#cb26-21"></a>        <span class="dt">label =</span> <span class="st">&quot;Set the number of hypothesis tests conducted:&quot;</span>,</span>
-<span id="cb26-22"><a href="layout.html#cb26-22"></a>        <span class="dt">min =</span> <span class="dv">0</span>,</span>
-<span id="cb26-23"><a href="layout.html#cb26-23"></a>        <span class="dt">max =</span> <span class="dv">500</span>,</span>
-<span id="cb26-24"><a href="layout.html#cb26-24"></a>        <span class="dt">value =</span> <span class="dv">5</span>,</span>
-<span id="cb26-25"><a href="layout.html#cb26-25"></a>        <span class="dt">step =</span> <span class="dv">5</span></span>
-<span id="cb26-26"><a href="layout.html#cb26-26"></a>        )</span>
-<span id="cb26-27"><a href="layout.html#cb26-27"></a>      ) <span class="co"># this closes the wellPanel</span></span>
-<span id="cb26-28"><a href="layout.html#cb26-28"></a>    ), <span class="co"># this closes the first column</span></span>
-<span id="cb26-29"><a href="layout.html#cb26-29"></a>  <span class="kw">column</span>(</span>
-<span id="cb26-30"><a href="layout.html#cb26-30"></a>    <span class="dt">width =</span> <span class="dv">8</span>,</span>
-<span id="cb26-31"><a href="layout.html#cb26-31"></a>    <span class="kw">h3</span>(<span class="st">&quot;Plot&quot;</span>),</span>
-<span id="cb26-32"><a href="layout.html#cb26-32"></a>    <span class="kw">plotOutput</span>(<span class="st">&quot;pplotMTC&quot;</span>),</span>
-<span id="cb26-33"><a href="layout.html#cb26-33"></a>    <span class="kw">bsPopover</span>(</span>
-<span id="cb26-34"><a href="layout.html#cb26-34"></a>      <span class="dt">id =</span> <span class="st">&quot;pplotMTC&quot;</span>,</span>
-<span id="cb26-35"><a href="layout.html#cb26-35"></a>      <span class="dt">title =</span> <span class="st">&quot;Investigate!&quot;</span>,</span>
-<span id="cb26-36"><a href="layout.html#cb26-36"></a>      <span class="dt">content =</span> <span class="st">&quot;What happens to the number of statistically significant tests when you</span></span>
-<span id="cb26-37"><a href="layout.html#cb26-37"></a><span class="st">      increase the number of tests?&quot;</span>,</span>
-<span id="cb26-38"><a href="layout.html#cb26-38"></a>      <span class="dt">placement =</span> <span class="st">&quot;top&quot;</span></span>
-<span id="cb26-39"><a href="layout.html#cb26-39"></a>      )</span>
-<span id="cb26-40"><a href="layout.html#cb26-40"></a>    ) <span class="co"># closes second column</span></span>
-<span id="cb26-41"><a href="layout.html#cb26-41"></a>  ), <span class="co">#closes the fluid row</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="layout.html#cb14-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb14-2"><a href="layout.html#cb14-2"></a><span class="co"># [code omitted]</span></span>
+<span id="cb14-3"><a href="layout.html#cb14-3"></a><span class="co"># Inside a tabItem</span></span>
+<span id="cb14-4"><a href="layout.html#cb14-4"></a><span class="kw">fluidRow</span>( <span class="co"># this allows you to create dynamic columns for responsive design (mobile friendly)</span></span>
+<span id="cb14-5"><a href="layout.html#cb14-5"></a>  <span class="kw">column</span>( <span class="co"># this is one of those columns</span></span>
+<span id="cb14-6"><a href="layout.html#cb14-6"></a>    <span class="dt">width =</span> <span class="dv">4</span>, <span class="co"># the initial grid width; all columns must add to 12</span></span>
+<span id="cb14-7"><a href="layout.html#cb14-7"></a>    <span class="kw">wellPanel</span>( <span class="co"># Placing the wellPanel call here will wrap around all controls</span></span>
+<span id="cb14-8"><a href="layout.html#cb14-8"></a>      <span class="kw">h3</span>(<span class="st">&quot;Controls&quot;</span>),</span>
+<span id="cb14-9"><a href="layout.html#cb14-9"></a>      <span class="kw">sliderInput</span>(</span>
+<span id="cb14-10"><a href="layout.html#cb14-10"></a>        <span class="dt">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
+<span id="cb14-11"><a href="layout.html#cb14-11"></a>        <span class="dt">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="ch">\\</span><span class="st">(</span><span class="ch">\\</span><span class="st">alpha_{UT}</span><span class="ch">\\</span><span class="st">):&quot;</span>,</span>
+<span id="cb14-12"><a href="layout.html#cb14-12"></a>        <span class="dt">min =</span> <span class="fl">0.01</span>,</span>
+<span id="cb14-13"><a href="layout.html#cb14-13"></a>        <span class="dt">max =</span> <span class="fl">0.25</span>,</span>
+<span id="cb14-14"><a href="layout.html#cb14-14"></a>        <span class="dt">value =</span> <span class="fl">0.1</span>,</span>
+<span id="cb14-15"><a href="layout.html#cb14-15"></a>        <span class="dt">step =</span> <span class="fl">0.01</span>,</span>
+<span id="cb14-16"><a href="layout.html#cb14-16"></a>        <span class="dt">animate =</span> <span class="kw">animationOptions</span>(<span class="dt">interval =</span> <span class="dv">1000</span>, <span class="dt">loop =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb14-17"><a href="layout.html#cb14-17"></a>        ),</span>
+<span id="cb14-18"><a href="layout.html#cb14-18"></a>      <span class="kw">br</span>(), <span class="co"># creating vertical space between sliders</span></span>
+<span id="cb14-19"><a href="layout.html#cb14-19"></a>      <span class="kw">sliderInput</span>(</span>
+<span id="cb14-20"><a href="layout.html#cb14-20"></a>        <span class="dt">inputId =</span> <span class="st">&quot;mtcTests&quot;</span>,</span>
+<span id="cb14-21"><a href="layout.html#cb14-21"></a>        <span class="dt">label =</span> <span class="st">&quot;Set the number of hypothesis tests conducted:&quot;</span>,</span>
+<span id="cb14-22"><a href="layout.html#cb14-22"></a>        <span class="dt">min =</span> <span class="dv">0</span>,</span>
+<span id="cb14-23"><a href="layout.html#cb14-23"></a>        <span class="dt">max =</span> <span class="dv">500</span>,</span>
+<span id="cb14-24"><a href="layout.html#cb14-24"></a>        <span class="dt">value =</span> <span class="dv">5</span>,</span>
+<span id="cb14-25"><a href="layout.html#cb14-25"></a>        <span class="dt">step =</span> <span class="dv">5</span></span>
+<span id="cb14-26"><a href="layout.html#cb14-26"></a>        )</span>
+<span id="cb14-27"><a href="layout.html#cb14-27"></a>      ) <span class="co"># this closes the wellPanel</span></span>
+<span id="cb14-28"><a href="layout.html#cb14-28"></a>    ), <span class="co"># this closes the first column</span></span>
+<span id="cb14-29"><a href="layout.html#cb14-29"></a>  <span class="kw">column</span>(</span>
+<span id="cb14-30"><a href="layout.html#cb14-30"></a>    <span class="dt">width =</span> <span class="dv">8</span>,</span>
+<span id="cb14-31"><a href="layout.html#cb14-31"></a>    <span class="kw">h3</span>(<span class="st">&quot;Plot&quot;</span>),</span>
+<span id="cb14-32"><a href="layout.html#cb14-32"></a>    <span class="kw">plotOutput</span>(<span class="st">&quot;pplotMTC&quot;</span>),</span>
+<span id="cb14-33"><a href="layout.html#cb14-33"></a>    <span class="kw">bsPopover</span>(</span>
+<span id="cb14-34"><a href="layout.html#cb14-34"></a>      <span class="dt">id =</span> <span class="st">&quot;pplotMTC&quot;</span>,</span>
+<span id="cb14-35"><a href="layout.html#cb14-35"></a>      <span class="dt">title =</span> <span class="st">&quot;Investigate!&quot;</span>,</span>
+<span id="cb14-36"><a href="layout.html#cb14-36"></a>      <span class="dt">content =</span> <span class="st">&quot;What happens to the number of statistically significant tests when you</span></span>
+<span id="cb14-37"><a href="layout.html#cb14-37"></a><span class="st">      increase the number of tests?&quot;</span>,</span>
+<span id="cb14-38"><a href="layout.html#cb14-38"></a>      <span class="dt">placement =</span> <span class="st">&quot;top&quot;</span></span>
+<span id="cb14-39"><a href="layout.html#cb14-39"></a>      )</span>
+<span id="cb14-40"><a href="layout.html#cb14-40"></a>    ) <span class="co"># closes second column</span></span>
+<span id="cb14-41"><a href="layout.html#cb14-41"></a>  ), <span class="co">#closes the fluid row</span></span></code></pre></div>
 
 </div>
 </div>
@@ -1355,20 +1360,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

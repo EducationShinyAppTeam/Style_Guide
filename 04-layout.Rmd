@@ -611,12 +611,12 @@ There are three Tabs whose names are fixed (i.e., you can not change): the Overv
 ### Sidebar Icons
 Each type of Tab that appears in the Sidebar must use a specific icon:
 
-+ Overview -- tachometer-alt (formerly called dashboard), `r fontawesome::fa(name = "fas fa-tachometer-alt", height = 25)` 
-+ Prerequisites -- book, `r fontawesome::fa(name = "fas fa-book", height = 25)`
-+ Explore Tabs -- wpexplorer, `r fontawesome::fa(name = "fab fa-wpexplorer", height = 25)`
-+ Challenge Tabs -- cogs (formerly called gears), `r fontawesome::fa(name = "fas fa-cogs", height = 25)`  
-+ Game Tabs -- gamepad, `r fontawesome::fa(name = "fas fa-gamepad", height = 25)`
-+ References -- leanpub, `r fontawesome::fa(name = "fab fa-leanpub", height = 25)`
++ Overview -- tachometer-alt (formerly called dashboard), `r fontawesome::fa(name = "fas fa-tachometer-alt", height = "25px")` 
++ Prerequisites -- book, `r fontawesome::fa(name = "fas fa-book", height = "25px")`
++ Explore Tabs -- wpexplorer, `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")`
++ Challenge Tabs -- cogs (formerly called gears), `r fontawesome::fa(name = "fas fa-cogs", height = "25px")`  
++ Game Tabs -- gamepad, `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")`
++ References -- leanpub, `r fontawesome::fa(name = "fab fa-leanpub", height = "25px")`
 
 If you come across any of these types of tabs that have a different icon or a missing icon, please create an issue in GitHub and/or fix.
 
@@ -895,17 +895,17 @@ The heart of your App is the one or more tabs where users interact with the App 
 
 Currently, we have three types of Activity Tabs in BOAST:
 
-+ Exploration/Explore Tabs, `r fontawesome::fa(name = "fab fa-wpexplorer", height = 25)`
++ Exploration/Explore Tabs, `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")`
     - These tabs center around the user exploring the target concept.
     - These tabs will generally have more text on the page here than other types of Activity Tabs.
     - There are often guiding questions meant to help the user engage in productive explorations.
     - The goal is not to assess the user's understanding, but to support their construction of productive meanings for the concept.
-+ Challenge Tabs, `r fontawesome::fa(name = "fas fa-cogs", height = 25)`
++ Challenge Tabs, `r fontawesome::fa(name = "fas fa-cogs", height = "25px")`
     - These tabs center around a user challenging themselves by testing out their understanding of a concept.
     - While there might still be a fair amount of text on the page, there will be less than an Exploration Tab.
     - Questions here will be in-between a guiding question and an assessment question. 
     - The goal is to provide the user an opportunity to test and refine their understandings.
-+ Game Tabs, `r fontawesome::fa(name = "fas fa-gamepad", height = 25)`
++ Game Tabs, `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")`
     - These tabs center around the user review a concept (or several) in a game like format.
     - These generally have the least amount of non-question text on the page (i.e., instructions).
     - The goal is to provide an opportunity for a student to review and practice one or more concepts.
@@ -944,7 +944,7 @@ The last Tab will be for your references. This Tab is __REQUIRED__ and is where 
 + Data sets
 + Refer to the [Chapter \@ref(documentation)](#documentation) [on Documentation](#documentation) of this Style Guide for more information.
 
-The icon for this Tab must be "leanpub", `r fontawesome::fa(name = "fab fa-leanpub", height = 25)`.
+The icon for this Tab must be "leanpub", `r fontawesome::fa(name = "fab fa-leanpub", height = "25px")`.
 
 #### Creating a References Tab
 
@@ -1096,9 +1096,9 @@ Here are guidelines for the inclusion of icons in a button:
 
 + Game buttons will NOT have any icons.
 + Direction Buttons (e.g., "Next" or "Previous") will NOT have any icons. Rather make the button text "<< Previous" or "Next >>"
-+ A "Prerequisites" button will use the "book" icon, `r fontawesome::fa(name = "fas fa-book", height = 25)`
-+ All other tab buttons (labels ending with "!") will use the "bolt" icon, `r fontawesome::fa(name = "fas fa-bolt", height = 25)`
-+ A download button will use the "cloud-download-alt" icon, `r fontawesome::fa(name = "fas fa-cloud-download-alt", height = 25)`
++ A "Prerequisites" button will use the "book" icon, `r fontawesome::fa(name = "fas fa-book", height = "25px")`
++ All other tab buttons (labels ending with "!") will use the "bolt" icon, `r fontawesome::fa(name = "fas fa-bolt", height = "25px")`
++ A download button will use the "cloud-download-alt" icon, `r fontawesome::fa(name = "fas fa-cloud-download-alt", height = "25px")`
 
 ### Correct/Incorrect Marks
 In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of two images:
