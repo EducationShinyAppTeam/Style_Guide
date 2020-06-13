@@ -913,10 +913,10 @@ create customized appearances. This is NOT recommended.*/
 }
 
 /* tab panel controls */
-nav-tabs > li > a {
+.nav-tabs > li > a {
 	color: black;
 }
 
-nav-tabs > li.active > a {
+.nav-tabs > li.active > a {
 	color: black;
 }
