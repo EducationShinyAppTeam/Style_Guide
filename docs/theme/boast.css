@@ -911,3 +911,12 @@ create customized appearances. This is NOT recommended.*/
 .slider-animate-container {
 	padding-top: 5px;
 }
+
+/* tab panel controls */
+nav-tabs > li > a {
+	color: black;
+}
+
+nav-tabs > li.active > a {
+	color: black;
+}
