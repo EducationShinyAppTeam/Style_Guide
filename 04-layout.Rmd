@@ -474,7 +474,7 @@ Additional icons might be included to the left of the Home icon. However, these 
 
 There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
 
-The width of the Title component of the Header should be 300; `titleWidth = 300`.
+The width of the Title component of the Header should be 250; `titleWidth = 250`.
 
 ### Creating the Dashboard Header
 
@@ -483,7 +483,7 @@ You will use the same structure regardless if you are using `app.R` or `ui.R`.
 # [omitted code]
 dashboardHeader(
       title = "Sample App", # You may use a shortened form of the title here
-      titleWidth = "300",
+      titleWidth = "250",
       # the following is OPTIONAL
       tags$li(class = "dropdown", actionLink("info", icon("info"))),
       # You will see the following commented code in the Sample App; 
@@ -550,7 +550,7 @@ The `type` argument will take one of several options. use the one that best alig
 
 The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. These are referred to as [Tabs Inside the Body](#innerTabs) and are covered in their own section.
 
-The Sidebar should have a width of 300, (`width = 300`).
+The Sidebar should have a width of 250, (`width = 250`).
 
 For full descriptions of each type of Tab, please refer to the [Dashboard Body Section](#body).
 
@@ -559,7 +559,7 @@ This code will be the same regardless if you use `app.R` or `ui.R`.
 ```{r makeSidebar1, echo=TRUE, eval=FALSE}
 # [omitted code]
 dashboardSidebar(
-  width = 300,
+  width = 250,
   sidebarMenu(
     id = "tabs",
     # Overivew is REQUIRED

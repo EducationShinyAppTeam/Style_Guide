@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-12" />
+<meta name="date" content="2020-06-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -580,14 +580,14 @@ Figure 4.24: Sliders Using the Red Palette
 <p>Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon.</p>
 <p>Additional icons might be included to the left of the Home icon. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.</p>
 <p>There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.</p>
-<p>The width of the Title component of the Header should be 300; <code>titleWidth = 300</code>.</p>
+<p>The width of the Title component of the Header should be 250; <code>titleWidth = 250</code>.</p>
 <div id="creating-the-dashboard-header" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Creating the Dashboard Header</h3>
 <p>You will use the same structure regardless if you are using <code>app.R</code> or <code>ui.R</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="layout.html#cb2-1"></a><span class="co"># [omitted code]</span></span>
 <span id="cb2-2"><a href="layout.html#cb2-2"></a><span class="kw">dashboardHeader</span>(</span>
 <span id="cb2-3"><a href="layout.html#cb2-3"></a>      <span class="dt">title =</span> <span class="st">&quot;Sample App&quot;</span>, <span class="co"># You may use a shortened form of the title here</span></span>
-<span id="cb2-4"><a href="layout.html#cb2-4"></a>      <span class="dt">titleWidth =</span> <span class="st">&quot;300&quot;</span>,</span>
+<span id="cb2-4"><a href="layout.html#cb2-4"></a>      <span class="dt">titleWidth =</span> <span class="st">&quot;250&quot;</span>,</span>
 <span id="cb2-5"><a href="layout.html#cb2-5"></a>      <span class="co"># the following is OPTIONAL</span></span>
 <span id="cb2-6"><a href="layout.html#cb2-6"></a>      tags<span class="op">$</span><span class="kw">li</span>(<span class="dt">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="kw">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="kw">icon</span>(<span class="st">&quot;info&quot;</span>))),</span>
 <span id="cb2-7"><a href="layout.html#cb2-7"></a>      <span class="co"># You will see the following commented code in the Sample App; </span></span>
@@ -649,14 +649,14 @@ Figure 4.24: Sliders Using the Red Palette
 <div id="sidebar" class="section level2">
 <h2><span class="header-section-number">4.3</span> Dashboard Sidebar</h2>
 <p>The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. These are referred to as <a href="layout.html#innerTabs">Tabs Inside the Body</a> and are covered in their own section.</p>
-<p>The Sidebar should have a width of 300, (<code>width = 300</code>).</p>
+<p>The Sidebar should have a width of 250, (<code>width = 250</code>).</p>
 <p>For full descriptions of each type of Tab, please refer to the <a href="layout.html#body">Dashboard Body Section</a>.</p>
 <div id="creating-the-dashboard-sidebar" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Creating the Dashboard Sidebar</h3>
 <p>This code will be the same regardless if you use <code>app.R</code> or <code>ui.R</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="layout.html#cb4-1"></a><span class="co"># [omitted code]</span></span>
 <span id="cb4-2"><a href="layout.html#cb4-2"></a><span class="kw">dashboardSidebar</span>(</span>
-<span id="cb4-3"><a href="layout.html#cb4-3"></a>  <span class="dt">width =</span> <span class="dv">300</span>,</span>
+<span id="cb4-3"><a href="layout.html#cb4-3"></a>  <span class="dt">width =</span> <span class="dv">250</span>,</span>
 <span id="cb4-4"><a href="layout.html#cb4-4"></a>  <span class="kw">sidebarMenu</span>(</span>
 <span id="cb4-5"><a href="layout.html#cb4-5"></a>    <span class="dt">id =</span> <span class="st">&quot;tabs&quot;</span>,</span>
 <span id="cb4-6"><a href="layout.html#cb4-6"></a>    <span class="co"># Overivew is REQUIRED</span></span>
