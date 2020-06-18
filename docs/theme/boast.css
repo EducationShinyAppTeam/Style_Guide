@@ -434,6 +434,11 @@ label {
 /*Slider Controls; note that .js-irs-# can be appended in front of the following to
 create customized appearances. This is NOT recommended.*/
 
+/*Slider spacing*/
+.irs {
+	margin-top: 4px;
+}
+
 /*Ends of Slider Bar*/
 .skin-blue .irs-bar-edge {
 	border-color: var(--nittany-navy);
@@ -653,6 +658,7 @@ create customized appearances. This is NOT recommended.*/
 	text-align: left !important;
 }
 
+/* Icon sizing; works for info type, conflicts with others.*/
 /*.swal2-icon {
 	width: 3em !important;
 	height: 3em !important;
