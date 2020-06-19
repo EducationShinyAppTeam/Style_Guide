@@ -361,7 +361,16 @@ An App should only have one `launched` and `exited` event but can have multiple 
 **Sample generator function**
 
 ```{r, eval = FALSE}
-.generateStatement <- function(session, verb = NA, object = NA, description = NA, interactionType = NA, response = NA, success = NA, completion = FALSE) {
+.generateStatement <- function(
+  session,
+  verb = NA,
+  object = NA,
+  description = NA,
+  interactionType = NA,
+  response = NA,
+  success = NA,
+  completion = FALSE)
+{
   statement <- rlocker::createStatement(list(
     verb = verb,
     object = list(
