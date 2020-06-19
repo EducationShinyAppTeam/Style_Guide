@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-08" />
+<meta name="date" content="2020-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.5</b> CSS</a></li>
 <li class="chapter" data-level="3.6" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.6</b> Metadata</a></li>
-<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rlocker</a><ul>
+<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rLocker</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>3.7.1</b> Installing</a></li>
 <li class="chapter" data-level="3.7.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>3.7.2</b> Setup</a></li>
 <li class="chapter" data-level="3.7.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>3.7.3</b> Usage</a></li>
@@ -272,7 +272,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Accessibility and Mobile Devices</b></span></li>
 <li class="chapter" data-level="8" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>8</b> Accessibility</a><ul>
-<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>8.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="8.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>8.2</b> Checking Accessibility</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>8.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="8.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>8.2.3</b> Addressing Issues</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>9</b> Mobile Friendliness</a></li>
 <li class="part"><span><b>VI Examples</b></span></li>
@@ -323,17 +328,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgments.</p>
 <p><strong>NOTE:</strong> listing something in the Acknowledgments DOES NOT waive this requirement.</p>
 <p>We will make use of the <a href="https://amstat.tfjournals.com/asa-style-guide/">American Statistical Association’s</a> reference style. Please check with Neil, Matt, and Dennis for getting assistance. You can see this style in action, with the <a href="layout.html#refTab">Reference Tab</a> example of <a href="layout.html#layout">Chapter <a href="layout.html#layout">4</a></a>. Here is a starting code block for you to use:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="documentation.html#cb42-1"></a><span class="co">#[omitted code]</span></span>
-<span id="cb42-2"><a href="documentation.html#cb42-2"></a><span class="kw">tabItem</span>(</span>
-<span id="cb42-3"><a href="documentation.html#cb42-3"></a>  <span class="dt">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
-<span id="cb42-4"><a href="documentation.html#cb42-4"></a>  <span class="kw">withMathJax</span>(),</span>
-<span id="cb42-5"><a href="documentation.html#cb42-5"></a>  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb42-6"><a href="documentation.html#cb42-6"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb42-7"><a href="documentation.html#cb42-7"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
-<span id="cb42-8"><a href="documentation.html#cb42-8"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb42-9"><a href="documentation.html#cb42-9"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
-<span id="cb42-10"><a href="documentation.html#cb42-10"></a>  <span class="co"># Repeat as needed</span></span>
-<span id="cb42-11"><a href="documentation.html#cb42-11"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="documentation.html#cb43-1"></a><span class="co">#[omitted code]</span></span>
+<span id="cb43-2"><a href="documentation.html#cb43-2"></a><span class="kw">tabItem</span>(</span>
+<span id="cb43-3"><a href="documentation.html#cb43-3"></a>  <span class="dt">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
+<span id="cb43-4"><a href="documentation.html#cb43-4"></a>  <span class="kw">withMathJax</span>(),</span>
+<span id="cb43-5"><a href="documentation.html#cb43-5"></a>  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
+<span id="cb43-6"><a href="documentation.html#cb43-6"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb43-7"><a href="documentation.html#cb43-7"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
+<span id="cb43-8"><a href="documentation.html#cb43-8"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb43-9"><a href="documentation.html#cb43-9"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
+<span id="cb43-10"><a href="documentation.html#cb43-10"></a>  <span class="co"># Repeat as needed</span></span>
+<span id="cb43-11"><a href="documentation.html#cb43-11"></a>)</span></code></pre></div>
 <p>Notice the use of <code>class = "hangingindent"</code>. You must include this with each reference as this will ensure the proper styling of your references.</p>
 <p>If you need assistance with this section, please talk to Neil.</p>
 </div>
@@ -360,17 +365,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="in-code" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> In Code</h3>
 <p>Use the following format in your code to cite where you got the code from.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="documentation.html#cb43-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb43-2"><a href="documentation.html#cb43-2"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
-<span id="cb43-3"><a href="documentation.html#cb43-3"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
-<span id="cb43-4"><a href="documentation.html#cb43-4"></a><span class="co">#  Date: &lt;date&gt;</span></span>
-<span id="cb43-5"><a href="documentation.html#cb43-5"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
-<span id="cb43-6"><a href="documentation.html#cb43-6"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
-<span id="cb43-7"><a href="documentation.html#cb43-7"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb43-8"><a href="documentation.html#cb43-8"></a><span class="co"># [borrowed code then follows]</span></span>
-<span id="cb43-9"><a href="documentation.html#cb43-9"></a><span class="co"># ...</span></span>
-<span id="cb43-10"><a href="documentation.html#cb43-10"></a><span class="co"># [last line of borrowed code]      </span></span>
-<span id="cb43-11"><a href="documentation.html#cb43-11"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="documentation.html#cb44-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb44-2"><a href="documentation.html#cb44-2"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
+<span id="cb44-3"><a href="documentation.html#cb44-3"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
+<span id="cb44-4"><a href="documentation.html#cb44-4"></a><span class="co">#  Date: &lt;date&gt;</span></span>
+<span id="cb44-5"><a href="documentation.html#cb44-5"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
+<span id="cb44-6"><a href="documentation.html#cb44-6"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
+<span id="cb44-7"><a href="documentation.html#cb44-7"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb44-8"><a href="documentation.html#cb44-8"></a><span class="co"># [borrowed code then follows]</span></span>
+<span id="cb44-9"><a href="documentation.html#cb44-9"></a><span class="co"># ...</span></span>
+<span id="cb44-10"><a href="documentation.html#cb44-10"></a><span class="co"># [last line of borrowed code]      </span></span>
+<span id="cb44-11"><a href="documentation.html#cb44-11"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
 </div>
 </div>
 <div id="r-packages" class="section level2">

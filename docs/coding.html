@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-08" />
+<meta name="date" content="2020-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.5</b> CSS</a></li>
 <li class="chapter" data-level="3.6" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.6</b> Metadata</a></li>
-<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rlocker</a><ul>
+<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rLocker</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>3.7.1</b> Installing</a></li>
 <li class="chapter" data-level="3.7.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>3.7.2</b> Setup</a></li>
 <li class="chapter" data-level="3.7.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>3.7.3</b> Usage</a></li>
@@ -272,7 +272,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Accessibility and Mobile Devices</b></span></li>
 <li class="chapter" data-level="8" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>8</b> Accessibility</a><ul>
-<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>8.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="8.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>8.2</b> Checking Accessibility</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>8.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="8.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>8.2.3</b> Addressing Issues</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>9</b> Mobile Friendliness</a></li>
 <li class="part"><span><b>VI Examples</b></span></li>
@@ -597,7 +602,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="rlocker" class="section level2">
-<h2><span class="header-section-number">3.7</span> Using rlocker</h2>
+<h2><span class="header-section-number">3.7</span> Using rLocker</h2>
 <p>Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The <a href="https://github.com/rpc5102/rlocker">rlocker</a> package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.</p>
 <div id="installing" class="section level3">
 <h3><span class="header-section-number">3.7.1</span> Installing</h3>
@@ -607,11 +612,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="setup" class="section level3">
 <h3><span class="header-section-number">3.7.2</span> Setup</h3>
-<p>Core configuration is included in the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package. Simply use the boastApp wrapper function instead of shinyApp and you’re done!</p>
+<p>Core configuration is included in the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package. Simply use the boastApp wrapper function instead of shinyApp and you’re done! See <a href="https://github.com/EducationShinyAppTeam/boastUtils#creating-an-app">Creating an App</a> for more information on how to use boastApp.</p>
 </div>
 <div id="usage" class="section level3">
 <h3><span class="header-section-number">3.7.3</span> Usage</h3>
-<p>The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the “Who did what, where did they do it, and when did they do it?” in your App. Statements are often structured as Actor, Verb, and Object that sometimes also have a Result. For more on xAPI, check out <a href="https://xapi.com/overview/">What is the Experience API?</a> or experiment with Statements in the <a href="https://adlnet.github.io/xapi-lab/">xAPI Lab</a>.</p>
+<p>The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the “Who did what, where did they do it, and when did they do it?” in your App. Statements are often structured as Actor, Verb, and Object that can also Result in something. For more on xAPI, check out <a href="https://xapi.com/overview/">What is the Experience API?</a> or experiment with Statements in the <a href="https://adlnet.github.io/xapi-lab/">xAPI Lab</a>.</p>
 <p><strong>For example:</strong></p>
 <blockquote>
 <p><strong>Bob</strong> (Actor) <strong>clicked</strong> (Verb) <strong>submit</strong> (Object).</p>
@@ -620,52 +625,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p><strong>Neil</strong> (Actor) <strong>answered</strong> (Verb) <strong>Question 1</strong> (Object) <strong>correctly</strong> with the answer <strong>true</strong> (Result).</p>
 </blockquote>
-<p>This is a good way to frame it in your mind when beginning to write collection functions. Which brings us to our next part, writing collection functions.</p>
+<p>This is a good way to think about it when beginning to write collection functions. Which brings us to our next part, writing collection functions.</p>
 <p>Out of the box, <code>rlocker</code> does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like <a href="https://www.ht2labs.com/learning-locker-community/overview/">Learning Locker</a>, it is important to transform it in a way that makes sense.</p>
+<p><strong>boastUtils</strong></p>
+<p>If using the <code>boastApp</code> wrapper for your project, your App will automatically generate and store a few of the more typical Statements. Please refrain from creating additional versions of the following statement descriptions:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Statement</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">launched</td>
+<td align="left">User has started the app.</td>
+</tr>
+<tr class="even">
+<td align="left">experienced</td>
+<td align="left">User has visited a tab (page) within the app.</td>
+</tr>
+<tr class="odd">
+<td align="left">exited *</td>
+<td align="left">User has left the app.</td>
+</tr>
+</tbody>
+</table>
+<p>An App should only have one <code>launched</code> and <code>exited</code> event but can have multiple experiences per session. Therefore, you may use <code>experienced</code> in other places within your App.</p>
+<p>* Requires <code>boastUtils &gt;= 0.1.5</code>.</p>
 <p><strong>Sample generator function</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1"></a>.generateStatement &lt;-<span class="st"> </span><span class="cf">function</span>(session, <span class="dt">verb =</span> <span class="ot">NA</span>, <span class="dt">object =</span> <span class="ot">NA</span>, <span class="dt">description =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-2"><a href="coding.html#cb11-2"></a>                               <span class="dt">interactionType =</span> <span class="ot">NA</span>, <span class="dt">response =</span> <span class="ot">NA</span>, <span class="dt">success =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-3"><a href="coding.html#cb11-3"></a>                               <span class="dt">completion =</span> <span class="ot">FALSE</span>) {</span>
-<span id="cb11-4"><a href="coding.html#cb11-4"></a>  statement &lt;-<span class="st"> </span>rlocker<span class="op">::</span><span class="kw">createStatement</span>(<span class="kw">list</span>(</span>
-<span id="cb11-5"><a href="coding.html#cb11-5"></a>    <span class="dt">verb =</span> verb,</span>
-<span id="cb11-6"><a href="coding.html#cb11-6"></a>    <span class="dt">object =</span> <span class="kw">list</span>(</span>
-<span id="cb11-7"><a href="coding.html#cb11-7"></a>      <span class="dt">id =</span> <span class="kw">paste0</span>(<span class="kw">getCurrentAddress</span>(session), <span class="st">&quot;#&quot;</span>, object),</span>
-<span id="cb11-8"><a href="coding.html#cb11-8"></a>      <span class="dt">name =</span> <span class="kw">paste0</span>(APP_TITLE),</span>
-<span id="cb11-9"><a href="coding.html#cb11-9"></a>      <span class="dt">description =</span> <span class="kw">paste0</span>(<span class="st">&quot;Question &quot;</span>, activeQuestion, <span class="st">&quot;: &quot;</span>, description),</span>
-<span id="cb11-10"><a href="coding.html#cb11-10"></a>      <span class="dt">interactionType =</span> interactionType</span>
-<span id="cb11-11"><a href="coding.html#cb11-11"></a>    ),</span>
-<span id="cb11-12"><a href="coding.html#cb11-12"></a>    <span class="dt">result =</span> <span class="kw">list</span>(</span>
-<span id="cb11-13"><a href="coding.html#cb11-13"></a>      <span class="dt">success =</span> success,</span>
-<span id="cb11-14"><a href="coding.html#cb11-14"></a>      <span class="dt">response =</span> response,</span>
-<span id="cb11-15"><a href="coding.html#cb11-15"></a>      <span class="dt">completion =</span> completion</span>
-<span id="cb11-16"><a href="coding.html#cb11-16"></a>    )</span>
-<span id="cb11-17"><a href="coding.html#cb11-17"></a>  ))</span>
-<span id="cb11-18"><a href="coding.html#cb11-18"></a>  <span class="kw">return</span>(rlocker<span class="op">::</span><span class="kw">store</span>(session, statement))   </span>
-<span id="cb11-19"><a href="coding.html#cb11-19"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1"></a>.generateStatement &lt;-<span class="st"> </span><span class="cf">function</span>(session, <span class="dt">verb =</span> <span class="ot">NA</span>, <span class="dt">object =</span> <span class="ot">NA</span>, <span class="dt">description =</span> <span class="ot">NA</span>, <span class="dt">interactionType =</span> <span class="ot">NA</span>, <span class="dt">response =</span> <span class="ot">NA</span>, <span class="dt">success =</span> <span class="ot">NA</span>, <span class="dt">completion =</span> <span class="ot">FALSE</span>) {</span>
+<span id="cb11-2"><a href="coding.html#cb11-2"></a>  statement &lt;-<span class="st"> </span>rlocker<span class="op">::</span><span class="kw">createStatement</span>(<span class="kw">list</span>(</span>
+<span id="cb11-3"><a href="coding.html#cb11-3"></a>    <span class="dt">verb =</span> verb,</span>
+<span id="cb11-4"><a href="coding.html#cb11-4"></a>    <span class="dt">object =</span> <span class="kw">list</span>(</span>
+<span id="cb11-5"><a href="coding.html#cb11-5"></a>      <span class="dt">id =</span> <span class="kw">paste0</span>(<span class="kw">getCurrentAddress</span>(session), <span class="st">&quot;#&quot;</span>, object),</span>
+<span id="cb11-6"><a href="coding.html#cb11-6"></a>      <span class="dt">name =</span> <span class="kw">paste0</span>(APP_TITLE),</span>
+<span id="cb11-7"><a href="coding.html#cb11-7"></a>      <span class="dt">description =</span> <span class="kw">paste0</span>(<span class="st">&quot;Question &quot;</span>, activeQuestion, <span class="st">&quot;: &quot;</span>, description),</span>
+<span id="cb11-8"><a href="coding.html#cb11-8"></a>      <span class="dt">interactionType =</span> interactionType</span>
+<span id="cb11-9"><a href="coding.html#cb11-9"></a>    ),</span>
+<span id="cb11-10"><a href="coding.html#cb11-10"></a>    <span class="dt">result =</span> <span class="kw">list</span>(</span>
+<span id="cb11-11"><a href="coding.html#cb11-11"></a>      <span class="dt">success =</span> success,</span>
+<span id="cb11-12"><a href="coding.html#cb11-12"></a>      <span class="dt">response =</span> response,</span>
+<span id="cb11-13"><a href="coding.html#cb11-13"></a>      <span class="dt">completion =</span> completion</span>
+<span id="cb11-14"><a href="coding.html#cb11-14"></a>    )</span>
+<span id="cb11-15"><a href="coding.html#cb11-15"></a>  ))</span>
+<span id="cb11-16"><a href="coding.html#cb11-16"></a>  <span class="kw">return</span>(rlocker<span class="op">::</span><span class="kw">store</span>(session, statement))   </span>
+<span id="cb11-17"><a href="coding.html#cb11-17"></a>}</span></code></pre></div>
 <p><strong>Sample event observer</strong></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1"></a><span class="kw">observeEvent</span>(session<span class="op">$</span>input[[id]], {</span>
 <span id="cb12-2"><a href="coding.html#cb12-2"></a>  </span>
-<span id="cb12-3"><a href="coding.html#cb12-3"></a>  <span class="co"># # #</span></span>
-<span id="cb12-4"><a href="coding.html#cb12-4"></a>  <span class="co"># Check app state + validation data; yours will be different!</span></span>
-<span id="cb12-5"><a href="coding.html#cb12-5"></a>  answer &lt;-<span class="st"> </span>gameSet[id, <span class="st">&quot;answer&quot;</span>]</span>
-<span id="cb12-6"><a href="coding.html#cb12-6"></a>  description &lt;-<span class="st"> </span>gameSet[id,]<span class="op">$</span>question</span>
-<span id="cb12-7"><a href="coding.html#cb12-7"></a>  interactionType &lt;-<span class="st"> </span><span class="kw">ifelse</span>(gameSet[id,]<span class="op">$</span>format <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span>)</span>
-<span id="cb12-8"><a href="coding.html#cb12-8"></a>  success &lt;-<span class="st"> </span>input<span class="op">$</span>ans <span class="op">==</span><span class="st"> </span>answer</span>
-<span id="cb12-9"><a href="coding.html#cb12-9"></a>  completion &lt;-<span class="st"> </span><span class="kw">ifelse</span>(.appState <span class="op">==</span><span class="st"> &quot;continue&quot;</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span>
-<span id="cb12-10"><a href="coding.html#cb12-10"></a>  <span class="co"># # #</span></span>
-<span id="cb12-11"><a href="coding.html#cb12-11"></a>  </span>
-<span id="cb12-12"><a href="coding.html#cb12-12"></a>  <span class="kw">.generateStatement</span>(</span>
-<span id="cb12-13"><a href="coding.html#cb12-13"></a>    session,</span>
-<span id="cb12-14"><a href="coding.html#cb12-14"></a>    <span class="dt">object =</span> id,</span>
-<span id="cb12-15"><a href="coding.html#cb12-15"></a>    <span class="dt">verb =</span> <span class="st">&quot;answered&quot;</span>,</span>
-<span id="cb12-16"><a href="coding.html#cb12-16"></a>    <span class="dt">description =</span> description,</span>
-<span id="cb12-17"><a href="coding.html#cb12-17"></a>    <span class="dt">response =</span> input<span class="op">$</span>ans,</span>
-<span id="cb12-18"><a href="coding.html#cb12-18"></a>    <span class="dt">interactionType =</span> interactionType,</span>
-<span id="cb12-19"><a href="coding.html#cb12-19"></a>    <span class="dt">success =</span> success,</span>
-<span id="cb12-20"><a href="coding.html#cb12-20"></a>    <span class="dt">completion =</span> completion</span>
-<span id="cb12-21"><a href="coding.html#cb12-21"></a>  )</span>
-<span id="cb12-22"><a href="coding.html#cb12-22"></a>}</span></code></pre></div>
-<p>Additional code can be found in the <a href="https://github.com/rpc5102/rlocker/tree/master/inst/examples">examples</a> folder as well as the main <a href="https://github.com/rpc5102/rlocker/blob/master/README.md">README</a> of the project; apps such as the <a href="https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game">Hypothesis_Testing_Game</a> have been outfitted with rlocker. The statement generator above will eventually make its way into <code>boastUtils</code> once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
+<span id="cb12-3"><a href="coding.html#cb12-3"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
+<span id="cb12-4"><a href="coding.html#cb12-4"></a>  <span class="co"># </span><span class="re">BEGIN</span><span class="co"> VALIDATION                                                          #</span></span>
+<span id="cb12-5"><a href="coding.html#cb12-5"></a>  <span class="co">#                                                                           #</span></span>
+<span id="cb12-6"><a href="coding.html#cb12-6"></a>  <span class="co"># For this example,                                                         #</span></span>
+<span id="cb12-7"><a href="coding.html#cb12-7"></a>  <span class="co">#   We will check if someone answered a question in our game correctly.     #</span></span>
+<span id="cb12-8"><a href="coding.html#cb12-8"></a>  <span class="co">#   Your code should be different here!                                     #</span></span>
+<span id="cb12-9"><a href="coding.html#cb12-9"></a>  <span class="co">#                                                                           #</span></span>
+<span id="cb12-10"><a href="coding.html#cb12-10"></a>    </span>
+<span id="cb12-11"><a href="coding.html#cb12-11"></a>  <span class="co"># The input element we&#39;re observing.                                        #</span></span>
+<span id="cb12-12"><a href="coding.html#cb12-12"></a>  object &lt;-<span class="st"> </span>id</span>
+<span id="cb12-13"><a href="coding.html#cb12-13"></a>  </span>
+<span id="cb12-14"><a href="coding.html#cb12-14"></a>  <span class="co"># The user&#39;s action verb. Most likely going to be answered in this case.    #</span></span>
+<span id="cb12-15"><a href="coding.html#cb12-15"></a>  <span class="co"># Use rlocker::getVerbList() if you are unsure of the options.              #</span></span>
+<span id="cb12-16"><a href="coding.html#cb12-16"></a>  verb &lt;-<span class="st"> &quot;answered&quot;</span></span>
+<span id="cb12-17"><a href="coding.html#cb12-17"></a>  </span>
+<span id="cb12-18"><a href="coding.html#cb12-18"></a>  <span class="co"># The correct answer to the question.                                       #</span></span>
+<span id="cb12-19"><a href="coding.html#cb12-19"></a>  answer &lt;-<span class="st"> </span>gameSet[id, <span class="st">&quot;answer&quot;</span>]</span>
+<span id="cb12-20"><a href="coding.html#cb12-20"></a>  </span>
+<span id="cb12-21"><a href="coding.html#cb12-21"></a>  <span class="co"># The user&#39;s answer to the question.                                        #</span></span>
+<span id="cb12-22"><a href="coding.html#cb12-22"></a>  response &lt;-<span class="st"> </span>input<span class="op">$</span>ans</span>
+<span id="cb12-23"><a href="coding.html#cb12-23"></a>  </span>
+<span id="cb12-24"><a href="coding.html#cb12-24"></a>  <span class="co"># A description of the question or the full question itself (if short).     #</span></span>
+<span id="cb12-25"><a href="coding.html#cb12-25"></a>  description &lt;-<span class="st"> </span>gameSet[id,]<span class="op">$</span>question</span>
+<span id="cb12-26"><a href="coding.html#cb12-26"></a>  </span>
+<span id="cb12-27"><a href="coding.html#cb12-27"></a>  <span class="co"># The type of question it is.                                               #</span></span>
+<span id="cb12-28"><a href="coding.html#cb12-28"></a>  <span class="co"># Use rlocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
+<span id="cb12-29"><a href="coding.html#cb12-29"></a>  interactionType &lt;-<span class="st"> </span><span class="kw">ifelse</span>(</span>
+<span id="cb12-30"><a href="coding.html#cb12-30"></a>    gameSet[id,]<span class="op">$</span>format <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span></span>
+<span id="cb12-31"><a href="coding.html#cb12-31"></a>  )</span>
+<span id="cb12-32"><a href="coding.html#cb12-32"></a></span>
+<span id="cb12-33"><a href="coding.html#cb12-33"></a>  <span class="co"># Was the question answered successfully?                                   #</span></span>
+<span id="cb12-34"><a href="coding.html#cb12-34"></a>  success &lt;-<span class="st"> </span>input<span class="op">$</span>ans <span class="op">==</span><span class="st"> </span>answer</span>
+<span id="cb12-35"><a href="coding.html#cb12-35"></a>  </span>
+<span id="cb12-36"><a href="coding.html#cb12-36"></a>  <span class="co"># Did this event trigger the completion of your activity?                   #</span></span>
+<span id="cb12-37"><a href="coding.html#cb12-37"></a>  completion &lt;-<span class="st"> </span><span class="kw">ifelse</span>(.appState <span class="op">==</span><span class="st"> &quot;continue&quot;</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span>
+<span id="cb12-38"><a href="coding.html#cb12-38"></a>  </span>
+<span id="cb12-39"><a href="coding.html#cb12-39"></a>  <span class="co">#                                                                           #  </span></span>
+<span id="cb12-40"><a href="coding.html#cb12-40"></a>  <span class="co"># </span><span class="re">END</span><span class="co"> VALIDATION                                                            # </span></span>
+<span id="cb12-41"><a href="coding.html#cb12-41"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
+<span id="cb12-42"><a href="coding.html#cb12-42"></a>  </span>
+<span id="cb12-43"><a href="coding.html#cb12-43"></a>  <span class="kw">.generateStatement</span>(</span>
+<span id="cb12-44"><a href="coding.html#cb12-44"></a>    session,</span>
+<span id="cb12-45"><a href="coding.html#cb12-45"></a>    <span class="dt">object =</span> object,</span>
+<span id="cb12-46"><a href="coding.html#cb12-46"></a>    <span class="dt">verb =</span> verb,</span>
+<span id="cb12-47"><a href="coding.html#cb12-47"></a>    <span class="dt">description =</span> description,</span>
+<span id="cb12-48"><a href="coding.html#cb12-48"></a>    <span class="dt">response =</span> response,</span>
+<span id="cb12-49"><a href="coding.html#cb12-49"></a>    <span class="dt">interactionType =</span> interactionType,</span>
+<span id="cb12-50"><a href="coding.html#cb12-50"></a>    <span class="dt">success =</span> success,</span>
+<span id="cb12-51"><a href="coding.html#cb12-51"></a>    <span class="dt">completion =</span> completion</span>
+<span id="cb12-52"><a href="coding.html#cb12-52"></a>  )</span>
+<span id="cb12-53"><a href="coding.html#cb12-53"></a>}</span></code></pre></div>
+<p>Additional code can be found in the <a href="https://github.com/rpc5102/rlocker/tree/master/inst/examples">examples</a> folder as well as the main <a href="https://github.com/rpc5102/rlocker/blob/master/README.md">README</a> of the rLocker project; apps such as the <a href="https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game">Hypothesis_Testing_Game</a> have already been outfitted with rlocker. The statement generator above will eventually make its way into <code>boastUtils</code> once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
 <p><strong>Did you know?</strong></p>
 <p>You can run <code>help(package = "rlocker")</code> to view the help files for this package or press <code>F1</code> while typing a function name to see the documentation for that specific function.</p>
 

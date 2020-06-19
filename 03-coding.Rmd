@@ -312,7 +312,7 @@ Notice two important things:
 + The use of `<<-` rather than `<-`. This is again to deal with a global aspect.
 
 
-## Using rlocker {#rlocker}
+## Using rLocker {#rlocker}
 
 Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The [rlocker](https://github.com/rpc5102/rlocker) package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
 
@@ -326,11 +326,11 @@ devtools::install_github("rpc5102/rlocker")
 
 ### Setup
 
-Core configuration is included in the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) package. Simply use the boastApp wrapper function instead of shinyApp and you're done!
+Core configuration is included in the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) package. Simply use the boastApp wrapper function instead of shinyApp and you're done! See [Creating an App](https://github.com/EducationShinyAppTeam/boastUtils#creating-an-app) for more information on how to use boastApp.
 
 ### Usage
 
-The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the "Who did what, where did they do it, and when did they do it?" in your App. Statements are often structured as Actor, Verb, and Object that sometimes also have a Result. For more on xAPI, check out [What is the Experience API?](https://xapi.com/overview/) or experiment with Statements in the [xAPI Lab](https://adlnet.github.io/xapi-lab/).
+The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the "Who did what, where did they do it, and when did they do it?" in your App. Statements are often structured as Actor, Verb, and Object that can also Result in something. For more on xAPI, check out [What is the Experience API?](https://xapi.com/overview/) or experiment with Statements in the [xAPI Lab](https://adlnet.github.io/xapi-lab/).
 
 **For example:**
 
@@ -340,16 +340,28 @@ The main purpose of this package is to help create meaningful- structured- xAPI 
 
 > **Neil** (Actor) **answered** (Verb) **Question 1** (Object) **correctly** with the answer **true** (Result).
 
-This is a good way to frame it in your mind when beginning to write collection functions. Which brings us to our next part, writing collection functions.
+This is a good way to think about it when beginning to write collection functions. Which brings us to our next part, writing collection functions.
 
 Out of the box, `rlocker` does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like [Learning Locker](https://www.ht2labs.com/learning-locker-community/overview/), it is important to transform it in a way that makes sense.
+
+**boastUtils**
+
+If using the `boastApp` wrapper for your project, your App will automatically generate and store a few of the more typical Statements. Please refrain from creating additional versions of the following statement descriptions:
+
+| Statement   | Description                                   |
+|:------------|:----------------------------------------------|
+| launched    | User has started the app.                     |
+| experienced | User has visited a tab (page) within the app. |
+| exited *    | User has left the app.                        |
+
+An App should only have one `launched` and `exited` event but can have multiple experiences per session. Therefore, you may use `experienced` in other places within your App.
+
+\* Requires `boastUtils >= 0.1.5`.
 
 **Sample generator function**
 
 ```{r, eval = FALSE}
-.generateStatement <- function(session, verb = NA, object = NA, description = NA,
-                               interactionType = NA, response = NA, success = NA,
-                               completion = FALSE) {
+.generateStatement <- function(session, verb = NA, object = NA, description = NA, interactionType = NA, response = NA, success = NA, completion = FALSE) {
   statement <- rlocker::createStatement(list(
     verb = verb,
     object = list(
@@ -373,21 +385,52 @@ Out of the box, `rlocker` does not provide any collection functions for apps, on
 ```{r, eval = FALSE}
 observeEvent(session$input[[id]], {
   
-  # # #
-  # Check app state + validation data; yours will be different!
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # BEGIN VALIDATION                                                          #
+  #                                                                           #
+  # For this example,                                                         #
+  #   We will check if someone answered a question in our game correctly.     #
+  #   Your code should be different here!                                     #
+  #                                                                           #
+    
+  # The input element we're observing.                                        #
+  object <- id
+  
+  # The user's action verb. Most likely going to be answered in this case.    #
+  # Use rlocker::getVerbList() if you are unsure of the options.              #
+  verb <- "answered"
+  
+  # The correct answer to the question.                                       #
   answer <- gameSet[id, "answer"]
+  
+  # The user's answer to the question.                                        #
+  response <- input$ans
+  
+  # A description of the question or the full question itself (if short).     #
   description <- gameSet[id,]$question
-  interactionType <- ifelse(gameSet[id,]$format == "numeric", "numeric", "choice")
+  
+  # The type of question it is.                                               #
+  # Use rlocker::getInteractionTypes() if you are unsure of the options.      #
+  interactionType <- ifelse(
+    gameSet[id,]$format == "numeric", "numeric", "choice"
+  )
+
+  # Was the question answered successfully?                                   #
   success <- input$ans == answer
+  
+  # Did this event trigger the completion of your activity?                   #
   completion <- ifelse(.appState == "continue", FALSE, TRUE)
-  # # #
+  
+  #                                                                           #  
+  # END VALIDATION                                                            # 
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   
   .generateStatement(
     session,
-    object = id,
-    verb = "answered",
+    object = object,
+    verb = verb,
     description = description,
-    response = input$ans,
+    response = response,
     interactionType = interactionType,
     success = success,
     completion = completion
@@ -395,7 +438,7 @@ observeEvent(session$input[[id]], {
 }
 ```
 
-Additional code can be found in the [examples](https://github.com/rpc5102/rlocker/tree/master/inst/examples) folder as well as the main [README](https://github.com/rpc5102/rlocker/blob/master/README.md) of the project; apps such as the [Hypothesis_Testing_Game](https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game) have been outfitted with rlocker. The statement generator above will eventually make its way into `boastUtils` once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob ([rpc5102](mailto:rpc5102@psu.edu)).
+Additional code can be found in the [examples](https://github.com/rpc5102/rlocker/tree/master/inst/examples) folder as well as the main [README](https://github.com/rpc5102/rlocker/blob/master/README.md) of the rLocker project; apps such as the [Hypothesis_Testing_Game](https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game) have already been outfitted with rlocker. The statement generator above will eventually make its way into `boastUtils` once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob ([rpc5102](mailto:rpc5102@psu.edu)).
 
 **Did you know?**
 

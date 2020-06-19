@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-10" />
+<meta name="date" content="2020-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.5</b> CSS</a></li>
 <li class="chapter" data-level="3.6" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.6</b> Metadata</a></li>
-<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rlocker</a><ul>
+<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rLocker</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>3.7.1</b> Installing</a></li>
 <li class="chapter" data-level="3.7.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>3.7.2</b> Setup</a></li>
 <li class="chapter" data-level="3.7.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>3.7.3</b> Usage</a></li>
@@ -365,9 +365,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li><p>Create a new Style in Stylus</p></li>
 <li><p>Add the following code:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="accessibility.html#cb1-1"></a>body<span class="fu">.ng-scope</span> {</span>
-<span id="cb1-2"><a href="accessibility.html#cb1-2"></a>  <span class="kw">position</span>: <span class="dv">relative</span></span>
-<span id="cb1-3"><a href="accessibility.html#cb1-3"></a>}</span></code></pre></div></li>
+<div class="sourceCode" id="cb45"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb45-1"><a href="accessibility.html#cb45-1"></a>body<span class="fu">.ng-scope</span> {</span>
+<span id="cb45-2"><a href="accessibility.html#cb45-2"></a>  <span class="kw">position</span>: <span class="dv">relative</span></span>
+<span id="cb45-3"><a href="accessibility.html#cb45-3"></a>}</span></code></pre></div></li>
 <li><p>Save and close the Stylus tab</p></li>
 </ol>
 <p>This will move the the WAVE summary bar further to the left. If you have questions, please reach out to Neil and Bob.</p>
@@ -376,14 +376,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="reading-a-wave-report" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Reading a WAVE Report</h3>
 <div class="figure" style="text-align: center"><span id="fig:waveDescStat"></span>
-<img src="images/descStatOverview.png" alt="WAVE Report for Descriptive Statistics App" width="822" />
+<img src="images/descStatOverview.png" alt="WAVE Report for Descriptive Statistics App"  />
 <p class="caption">
 Figure 8.1: WAVE Report for Descriptive Statistics App
 </p>
 </div>
 <p><a href="accessibility.html#fig:waveDescStat">Figure <a href="accessibility.html#fig:waveDescStat">8.1</a></a> shows the WAVE report for the Descriptive Statistics App. There are 54 errors including missing alternative text, empty headings. There are also 8 contrast errors, 14 alerts (skipping heading levels),</p>
 <div class="figure" style="text-align: center"><span id="fig:waveOverfit"></span>
-<img src="images/overfitPrereq.png" alt="WAVE Report for Overfitting App" width="709" />
+<img src="images/overfitPrereq.png" alt="WAVE Report for Overfitting App"  />
 <p class="caption">
 Figure 8.2: WAVE Report for Overfitting App
 </p>
@@ -454,6 +454,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

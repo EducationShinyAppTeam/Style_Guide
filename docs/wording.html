@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-08" />
+<meta name="date" content="2020-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.5</b> CSS</a></li>
 <li class="chapter" data-level="3.6" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.6</b> Metadata</a></li>
-<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rlocker</a><ul>
+<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rLocker</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>3.7.1</b> Installing</a></li>
 <li class="chapter" data-level="3.7.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>3.7.2</b> Setup</a></li>
 <li class="chapter" data-level="3.7.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>3.7.3</b> Usage</a></li>
@@ -272,7 +272,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Accessibility and Mobile Devices</b></span></li>
 <li class="chapter" data-level="8" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>8</b> Accessibility</a><ul>
-<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>8.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="8.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>8.2</b> Checking Accessibility</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="8.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>8.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="8.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>8.2.3</b> Addressing Issues</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>9</b> Mobile Friendliness</a></li>
 <li class="part"><span><b>VI Examples</b></span></li>
@@ -382,28 +387,28 @@ conciseness/brevity.</strong> While we don’t necessarily want a wall of text, 
 <h3><span class="header-section-number">6.3.3</span> Option 1: Hover Text</h3>
 <p>The more immediate solution to differing vocabularies is for us to make use of hover text. This approach is appealing in that the user doesn’t have to leave your App (like going to a dictionary/thesaurus) and the content of these tips is not critical to using your App. That is to say, the information is available for those who might need a quick reminder but does not take up permanent screen space.</p>
 <p>To use this tool you’ll need to make sure that you install and load the <code>tippy</code> package.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="wording.html#cb40-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="wording.html#cb41-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
 <p>Suppose that we want to add the hover text to the the word “positive” in the following sentence:</p>
 <blockquote>
 <p>A positively skewed histogram will hoave potential outliers that are larger than the main modal clump(s).</p>
 </blockquote>
 <p>We would need to do the following in our <code>app.R</code> (or <code>ui.R</code>) file:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="wording.html#cb41-1"></a><span class="co"># Required Library</span></span>
-<span id="cb41-2"><a href="wording.html#cb41-2"></a><span class="kw">library</span>(tippy)</span>
-<span id="cb41-3"><a href="wording.html#cb41-3"></a><span class="co"># In UI Section</span></span>
-<span id="cb41-4"><a href="wording.html#cb41-4"></a><span class="co">#[code omitted]</span></span>
-<span id="cb41-5"><a href="wording.html#cb41-5"></a><span class="kw">dashboardBody</span>(</span>
-<span id="cb41-6"><a href="wording.html#cb41-6"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb41-7"><a href="wording.html#cb41-7"></a>  <span class="kw">tabItem</span>(</span>
-<span id="cb41-8"><a href="wording.html#cb41-8"></a>    <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
-<span id="cb41-9"><a href="wording.html#cb41-9"></a>    <span class="kw">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
-<span id="cb41-10"><a href="wording.html#cb41-10"></a>    <span class="kw">p</span>(<span class="st">&quot;A &quot;</span>,</span>
-<span id="cb41-11"><a href="wording.html#cb41-11"></a>      tippy<span class="op">::</span><span class="kw">tippy</span>(<span class="dt">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
-<span id="cb41-12"><a href="wording.html#cb41-12"></a>                   <span class="dt">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
-<span id="cb41-13"><a href="wording.html#cb41-13"></a>                   <span class="dt">arrow =</span> <span class="ot">TRUE</span>, <span class="dt">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
-<span id="cb41-14"><a href="wording.html#cb41-14"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
-<span id="cb41-15"><a href="wording.html#cb41-15"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb41-16"><a href="wording.html#cb41-16"></a>)) </span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="wording.html#cb42-1"></a><span class="co"># Required Library</span></span>
+<span id="cb42-2"><a href="wording.html#cb42-2"></a><span class="kw">library</span>(tippy)</span>
+<span id="cb42-3"><a href="wording.html#cb42-3"></a><span class="co"># In UI Section</span></span>
+<span id="cb42-4"><a href="wording.html#cb42-4"></a><span class="co">#[code omitted]</span></span>
+<span id="cb42-5"><a href="wording.html#cb42-5"></a><span class="kw">dashboardBody</span>(</span>
+<span id="cb42-6"><a href="wording.html#cb42-6"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb42-7"><a href="wording.html#cb42-7"></a>  <span class="kw">tabItem</span>(</span>
+<span id="cb42-8"><a href="wording.html#cb42-8"></a>    <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
+<span id="cb42-9"><a href="wording.html#cb42-9"></a>    <span class="kw">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
+<span id="cb42-10"><a href="wording.html#cb42-10"></a>    <span class="kw">p</span>(<span class="st">&quot;A &quot;</span>,</span>
+<span id="cb42-11"><a href="wording.html#cb42-11"></a>      tippy<span class="op">::</span><span class="kw">tippy</span>(<span class="dt">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
+<span id="cb42-12"><a href="wording.html#cb42-12"></a>                   <span class="dt">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
+<span id="cb42-13"><a href="wording.html#cb42-13"></a>                   <span class="dt">arrow =</span> <span class="ot">TRUE</span>, <span class="dt">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
+<span id="cb42-14"><a href="wording.html#cb42-14"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
+<span id="cb42-15"><a href="wording.html#cb42-15"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb42-16"><a href="wording.html#cb42-16"></a>)) </span></code></pre></div>
 <p>There are several things to notice in the example:</p>
 <ol style="list-style-type: decimal">
 <li>The <code>tippy</code> call is part of the paragraph environment. If the text is going to be part of a list, then the <code>tippy</code> call should be part of a list item.</li>
