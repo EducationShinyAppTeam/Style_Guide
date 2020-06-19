@@ -686,7 +686,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-12"><a href="coding.html#cb12-12"></a>  object &lt;-<span class="st"> </span>id</span>
 <span id="cb12-13"><a href="coding.html#cb12-13"></a>  </span>
 <span id="cb12-14"><a href="coding.html#cb12-14"></a>  <span class="co"># The user&#39;s action verb. Most likely going to be answered in this case.    #</span></span>
-<span id="cb12-15"><a href="coding.html#cb12-15"></a>  <span class="co"># Use rlocker::getVerbList() if you are unsure of the options.              #</span></span>
+<span id="cb12-15"><a href="coding.html#cb12-15"></a>  <span class="co"># Run rlocker::getVerbList() if you are unsure of the options.              #</span></span>
 <span id="cb12-16"><a href="coding.html#cb12-16"></a>  verb &lt;-<span class="st"> &quot;answered&quot;</span></span>
 <span id="cb12-17"><a href="coding.html#cb12-17"></a>  </span>
 <span id="cb12-18"><a href="coding.html#cb12-18"></a>  <span class="co"># The correct answer to the question.                                       #</span></span>
@@ -699,7 +699,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-25"><a href="coding.html#cb12-25"></a>  description &lt;-<span class="st"> </span>gameSet[id,]<span class="op">$</span>question</span>
 <span id="cb12-26"><a href="coding.html#cb12-26"></a>  </span>
 <span id="cb12-27"><a href="coding.html#cb12-27"></a>  <span class="co"># The type of question it is.                                               #</span></span>
-<span id="cb12-28"><a href="coding.html#cb12-28"></a>  <span class="co"># Use rlocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
+<span id="cb12-28"><a href="coding.html#cb12-28"></a>  <span class="co"># Run rlocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
 <span id="cb12-29"><a href="coding.html#cb12-29"></a>  interactionType &lt;-<span class="st"> </span><span class="kw">ifelse</span>(</span>
 <span id="cb12-30"><a href="coding.html#cb12-30"></a>    gameSet[id,]<span class="op">$</span>format <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span></span>
 <span id="cb12-31"><a href="coding.html#cb12-31"></a>  )</span>

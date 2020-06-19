@@ -397,7 +397,7 @@ observeEvent(session$input[[id]], {
   object <- id
   
   # The user's action verb. Most likely going to be answered in this case.    #
-  # Use rlocker::getVerbList() if you are unsure of the options.              #
+  # Run rlocker::getVerbList() if you are unsure of the options.              #
   verb <- "answered"
   
   # The correct answer to the question.                                       #
@@ -410,7 +410,7 @@ observeEvent(session$input[[id]], {
   description <- gameSet[id,]$question
   
   # The type of question it is.                                               #
-  # Use rlocker::getInteractionTypes() if you are unsure of the options.      #
+  # Run rlocker::getInteractionTypes() if you are unsure of the options.      #
   interactionType <- ifelse(
     gameSet[id,]$format == "numeric", "numeric", "choice"
   )
