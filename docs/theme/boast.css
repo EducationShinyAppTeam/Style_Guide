@@ -142,6 +142,10 @@ hr {
 	text-indent:  -48px;
 }
 
+.answertext {
+	color: var(--green-opportunity)
+}
+
 /*Non-title portion of dashboard header*/
 .skin-blue .main-header>.navbar {
 	background-color: var(--beaver-blue);
