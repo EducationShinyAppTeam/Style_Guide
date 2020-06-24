@@ -933,5 +933,8 @@ create customized appearances. This is NOT recommended.*/
 
 /* References Tab */
 .license {
+	background-color: #eef0f3;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
 	max-width: 8rem;
 }
