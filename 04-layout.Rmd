@@ -946,6 +946,8 @@ The last Tab will be for your references. This Tab is __REQUIRED__ and is where 
 
 The icon for this Tab must be "leanpub", `r fontawesome::fa(name = "fab fa-leanpub", height = "25px")`.
 
+We will additionally place licensing information for your App at the bottom of the Reference page. We have created a function in `boastUtils` (version ≥ 0.1.6.1) that will automatically put the correct information on the page.
+
 #### Creating a References Tab
 
 Creating a References Tab mimics both the Overview and Prerequisites Tab structure and is done in the UI section:
@@ -987,7 +989,11 @@ tabItem(
     class = "hangingindent",
     "Wickham, H. (2016), ggplot2: Elegant graphics for data analysis, R Package, New York:
     Springer-Verlag. Available from https://ggplot2.tidyverse.org"
-  )
+  ),
+  br(), # Three blank spaces
+  br(),
+  br(),
+  boastUtils::copyrightInfo()
 )
 # [code omitted]
 ```

@@ -120,7 +120,7 @@
 
 \title{The BOAST Style Guide}
 \author{Neil Hatfield (\href{mailto:njh5464@psu.edu}{\nolinkurl{njh5464@psu.edu}}) and Robert Carey (\href{mailto:rpc5102@psu.edu}{\nolinkurl{rpc5102@psu.edu}})}
-\date{08 June 2020}
+\date{24 June 2020}
 
 \begin{document}
 \maketitle
@@ -1056,7 +1056,7 @@ Notice two important things:
 \end{itemize}
 
 \hypertarget{rlocker}{%
-\section{Using rlocker}\label{rlocker}}
+\section{Using rLocker}\label{rlocker}}
 
 Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The \href{https://github.com/rpc5102/rlocker}{rlocker} package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
 
@@ -1075,12 +1075,12 @@ Because these apps are being developed for educational purposes, it is beneficia
 \hypertarget{setup}{%
 \subsection{Setup}\label{setup}}
 
-Core configuration is included in the \href{https://github.com/EducationShinyAppTeam/boastUtils}{boastUtils} package. Simply use the boastApp wrapper function instead of shinyApp and you're done!
+Core configuration is included in the \href{https://github.com/EducationShinyAppTeam/boastUtils}{boastUtils} package. Simply use the boastApp wrapper function instead of shinyApp and you're done! See \href{https://github.com/EducationShinyAppTeam/boastUtils\#creating-an-app}{Creating an App} for more information on how to use boastApp.
 
 \hypertarget{usage}{%
 \subsection{Usage}\label{usage}}
 
-The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the ``Who did what, where did they do it, and when did they do it?'' in your App. Statements are often structured as Actor, Verb, and Object that sometimes also have a Result. For more on xAPI, check out \href{https://xapi.com/overview/}{What is the Experience API?} or experiment with Statements in the \href{https://adlnet.github.io/xapi-lab/}{xAPI Lab}.
+The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the ``Who did what, where did they do it, and when did they do it?'' in your App. Statements are often structured as Actor, Verb, and Object that can also Result in something. For more on xAPI, check out \href{https://xapi.com/overview/}{What is the Experience API?} or experiment with Statements in the \href{https://adlnet.github.io/xapi-lab/}{xAPI Lab}.
 
 \textbf{For example:}
 
@@ -1094,17 +1094,43 @@ The main purpose of this package is to help create meaningful- structured- xAPI 
 \textbf{Neil} (Actor) \textbf{answered} (Verb) \textbf{Question 1} (Object) \textbf{correctly} with the answer \textbf{true} (Result).
 \end{quote}
 
-This is a good way to frame it in your mind when beginning to write collection functions. Which brings us to our next part, writing collection functions.
+This is a good way to think about it when beginning to write collection functions. Which brings us to our next part, writing collection functions.
 
 Out of the box, \texttt{rlocker} does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like \href{https://www.ht2labs.com/learning-locker-community/overview/}{Learning Locker}, it is important to transform it in a way that makes sense.
+
+\textbf{boastUtils}
+
+If using the \texttt{boastApp} wrapper for your project, your App will automatically generate and store a few of the more typical Statements. Please refrain from creating additional versions of the following statement descriptions:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Statement & Description\tabularnewline
+\midrule
+\endhead
+launched & User has started the app.\tabularnewline
+experienced & User has visited a tab (page) within the app.\tabularnewline
+exited * & User has left the app.\tabularnewline
+\bottomrule
+\end{longtable}
+
+An App should only have one \texttt{launched} and \texttt{exited} event but can have multiple experiences per session. Therefore, you may use \texttt{experienced} in other places within your App.
+
+* Requires \texttt{boastUtils\ \textgreater{}=\ 0.1.5}.
 
 \textbf{Sample generator function}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{.generateStatement <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(session, }\DataTypeTok{verb =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{object =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{description =} \OtherTok{NA}\NormalTok{,}
-                               \DataTypeTok{interactionType =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{response =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{success =} \OtherTok{NA}\NormalTok{,}
-                               \DataTypeTok{completion =} \OtherTok{FALSE}\NormalTok{) \{}
+\NormalTok{.generateStatement <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}
+\NormalTok{  session,}
+  \DataTypeTok{verb =} \OtherTok{NA}\NormalTok{,}
+  \DataTypeTok{object =} \OtherTok{NA}\NormalTok{,}
+  \DataTypeTok{description =} \OtherTok{NA}\NormalTok{,}
+  \DataTypeTok{interactionType =} \OtherTok{NA}\NormalTok{,}
+  \DataTypeTok{response =} \OtherTok{NA}\NormalTok{,}
+  \DataTypeTok{success =} \OtherTok{NA}\NormalTok{,}
+  \DataTypeTok{completion =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{\{}
 \NormalTok{  statement <-}\StringTok{ }\NormalTok{rlocker}\OperatorTok{::}\KeywordTok{createStatement}\NormalTok{(}\KeywordTok{list}\NormalTok{(}
     \DataTypeTok{verb =}\NormalTok{ verb,}
     \DataTypeTok{object =} \KeywordTok{list}\NormalTok{(}
@@ -1130,21 +1156,52 @@ Out of the box, \texttt{rlocker} does not provide any collection functions for a
 \begin{Highlighting}[]
 \KeywordTok{observeEvent}\NormalTok{(session}\OperatorTok{$}\NormalTok{input[[id]], \{}
   
-  \CommentTok{# # #}
-  \CommentTok{# Check app state + validation data; yours will be different!}
+  \CommentTok{# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #}
+  \CommentTok{# }\RegionMarkerTok{BEGIN}\CommentTok{ VALIDATION                                                          #}
+  \CommentTok{#                                                                           #}
+  \CommentTok{# For this example,                                                         #}
+  \CommentTok{#   We will check if someone answered a question in our game correctly.     #}
+  \CommentTok{#   Your code should be different here!                                     #}
+  \CommentTok{#                                                                           #}
+    
+  \CommentTok{# The input element we're observing.                                        #}
+\NormalTok{  object <-}\StringTok{ }\NormalTok{id}
+  
+  \CommentTok{# The user's action verb. Most likely going to be answered in this case.    #}
+  \CommentTok{# Run rlocker::getVerbList() if you are unsure of the options.              #}
+\NormalTok{  verb <-}\StringTok{ "answered"}
+  
+  \CommentTok{# The correct answer to the question.                                       #}
 \NormalTok{  answer <-}\StringTok{ }\NormalTok{gameSet[id, }\StringTok{"answer"}\NormalTok{]}
+  
+  \CommentTok{# The user's answer to the question.                                        #}
+\NormalTok{  response <-}\StringTok{ }\NormalTok{input}\OperatorTok{$}\NormalTok{ans}
+  
+  \CommentTok{# A description of the question or the full question itself (if short).     #}
 \NormalTok{  description <-}\StringTok{ }\NormalTok{gameSet[id,]}\OperatorTok{$}\NormalTok{question}
-\NormalTok{  interactionType <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(gameSet[id,]}\OperatorTok{$}\NormalTok{format }\OperatorTok{==}\StringTok{ "numeric"}\NormalTok{, }\StringTok{"numeric"}\NormalTok{, }\StringTok{"choice"}\NormalTok{)}
+  
+  \CommentTok{# The type of question it is.                                               #}
+  \CommentTok{# Run rlocker::getInteractionTypes() if you are unsure of the options.      #}
+\NormalTok{  interactionType <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(}
+\NormalTok{    gameSet[id,]}\OperatorTok{$}\NormalTok{format }\OperatorTok{==}\StringTok{ "numeric"}\NormalTok{, }\StringTok{"numeric"}\NormalTok{, }\StringTok{"choice"}
+\NormalTok{  )}
+
+  \CommentTok{# Was the question answered successfully?                                   #}
 \NormalTok{  success <-}\StringTok{ }\NormalTok{input}\OperatorTok{$}\NormalTok{ans }\OperatorTok{==}\StringTok{ }\NormalTok{answer}
+  
+  \CommentTok{# Did this event trigger the completion of your activity?                   #}
 \NormalTok{  completion <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(.appState }\OperatorTok{==}\StringTok{ "continue"}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{)}
-  \CommentTok{# # #}
+  
+  \CommentTok{#                                                                           #  }
+  \CommentTok{# }\RegionMarkerTok{END}\CommentTok{ VALIDATION                                                            # }
+  \CommentTok{# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #}
   
   \KeywordTok{.generateStatement}\NormalTok{(}
 \NormalTok{    session,}
-    \DataTypeTok{object =}\NormalTok{ id,}
-    \DataTypeTok{verb =} \StringTok{"answered"}\NormalTok{,}
+    \DataTypeTok{object =}\NormalTok{ object,}
+    \DataTypeTok{verb =}\NormalTok{ verb,}
     \DataTypeTok{description =}\NormalTok{ description,}
-    \DataTypeTok{response =}\NormalTok{ input}\OperatorTok{$}\NormalTok{ans,}
+    \DataTypeTok{response =}\NormalTok{ response,}
     \DataTypeTok{interactionType =}\NormalTok{ interactionType,}
     \DataTypeTok{success =}\NormalTok{ success,}
     \DataTypeTok{completion =}\NormalTok{ completion}
@@ -1153,7 +1210,7 @@ Out of the box, \texttt{rlocker} does not provide any collection functions for a
 \end{Highlighting}
 \end{Shaded}
 
-Additional code can be found in the \href{https://github.com/rpc5102/rlocker/tree/master/inst/examples}{examples} folder as well as the main \href{https://github.com/rpc5102/rlocker/blob/master/README.md}{README} of the project; apps such as the \href{https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game}{Hypothesis\_Testing\_Game} have been outfitted with rlocker. The statement generator above will eventually make its way into \texttt{boastUtils} once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (\href{mailto:rpc5102@psu.edu}{rpc5102}).
+Additional code can be found in the \href{https://github.com/rpc5102/rlocker/tree/master/inst/examples}{examples} folder as well as the main \href{https://github.com/rpc5102/rlocker/blob/master/README.md}{README} of the rLocker project; apps such as the \href{https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game}{Hypothesis\_Testing\_Game} have already been outfitted with rlocker. The statement generator above will eventually make its way into \texttt{boastUtils} once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (\href{mailto:rpc5102@psu.edu}{rpc5102}).
 
 \textbf{Did you know?}
 
@@ -1560,7 +1617,7 @@ Additional icons might be included to the left of the Home icon. However, these 
 
 There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
 
-The width of the Title component of the Header should be 300; \texttt{titleWidth\ =\ 300}.
+The width of the Title component of the Header should be 250; \texttt{titleWidth\ =\ 250}.
 
 \hypertarget{creating-the-dashboard-header}{%
 \subsection{Creating the Dashboard Header}\label{creating-the-dashboard-header}}
@@ -1572,7 +1629,7 @@ You will use the same structure regardless if you are using \texttt{app.R} or \t
 \CommentTok{# [omitted code]}
 \KeywordTok{dashboardHeader}\NormalTok{(}
       \DataTypeTok{title =} \StringTok{"Sample App"}\NormalTok{, }\CommentTok{# You may use a shortened form of the title here}
-      \DataTypeTok{titleWidth =} \StringTok{"300"}\NormalTok{,}
+      \DataTypeTok{titleWidth =} \StringTok{"250"}\NormalTok{,}
       \CommentTok{# the following is OPTIONAL}
 \NormalTok{      tags}\OperatorTok{$}\KeywordTok{li}\NormalTok{(}\DataTypeTok{class =} \StringTok{"dropdown"}\NormalTok{, }\KeywordTok{actionLink}\NormalTok{(}\StringTok{"info"}\NormalTok{, }\KeywordTok{icon}\NormalTok{(}\StringTok{"info"}\NormalTok{))),}
       \CommentTok{# You will see the following commented code in the Sample App; }
@@ -1665,7 +1722,7 @@ The \texttt{type} argument will take one of several options. use the one that be
 
 The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. These are referred to as \protect\hyperlink{innerTabs}{Tabs Inside the Body} and are covered in their own section.
 
-The Sidebar should have a width of 300, (\texttt{width\ =\ 300}).
+The Sidebar should have a width of 250, (\texttt{width\ =\ 250}).
 
 For full descriptions of each type of Tab, please refer to the \protect\hyperlink{body}{Dashboard Body Section}.
 
@@ -1678,7 +1735,7 @@ This code will be the same regardless if you use \texttt{app.R} or \texttt{ui.R}
 \begin{Highlighting}[]
 \CommentTok{# [omitted code]}
 \KeywordTok{dashboardSidebar}\NormalTok{(}
-  \DataTypeTok{width =} \DecValTok{300}\NormalTok{,}
+  \DataTypeTok{width =} \DecValTok{250}\NormalTok{,}
   \KeywordTok{sidebarMenu}\NormalTok{(}
     \DataTypeTok{id =} \StringTok{"tabs"}\NormalTok{,}
     \CommentTok{# Overivew is REQUIRED}
@@ -2209,6 +2266,8 @@ The last Tab will be for your references. This Tab is \textbf{REQUIRED} and is w
 
 The icon for this Tab must be ``leanpub'', .
 
+We will additionally place licensing information for your App at the bottom of the Reference page. We have created a function in \texttt{boastUtils} (version ≥ 0.1.6.1) that will automatically put the correct information on the page.
+
 \hypertarget{creating-a-references-tab}{%
 \subsubsection{Creating a References Tab}\label{creating-a-references-tab}}
 
@@ -2252,7 +2311,11 @@ Creating a References Tab mimics both the Overview and Prerequisites Tab structu
     \DataTypeTok{class =} \StringTok{"hangingindent"}\NormalTok{,}
     \StringTok{"Wickham, H. (2016), ggplot2: Elegant graphics for data analysis, R Package, New York:}
 \StringTok{    Springer-Verlag. Available from https://ggplot2.tidyverse.org"}
-\NormalTok{  )}
+\NormalTok{  ),}
+  \KeywordTok{br}\NormalTok{(), }\CommentTok{# Three blank spaces}
+  \KeywordTok{br}\NormalTok{(),}
+  \KeywordTok{br}\NormalTok{(),}
+\NormalTok{  boastUtils}\OperatorTok{::}\KeywordTok{copyrightInfo}\NormalTok{()}
 \NormalTok{)}
 \CommentTok{# [code omitted]}
 \end{Highlighting}
@@ -3128,7 +3191,47 @@ In the prior section on static images, you saw exactly how to set the alt text; 
 \hypertarget{adding-alt-text-graphs}{%
 \subsubsection{Adding Alt Text Graphs}\label{adding-alt-text-graphs}}
 
-\emph{This section is under construction.}
+At this point in time (6/10/2020), adding alt text to plots generated in \texttt{R} is not as easy as for static pictures. While there are some potential changes coming down the pipe, there is not a firm time line for the addition of appropriate arguments to the existing \texttt{render*} functions. Therefore we will need to put in some (hopefully) temporary measures.
+
+In particular, we will use \href{https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA}{Accessible Rich Internet Applications (ARIA)} to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# [code omitted]}
+\CommentTok{# In the UI section, in the appropriate tabItem}
+\KeywordTok{plotOutput}\NormalTok{(}\DataTypeTok{outputId =}\NormalTok{ plotID) }\CommentTok{# Look for lines like this }
+\CommentTok{# Code for adding the aria label}
+\NormalTok{tags}\OperatorTok{$}\KeywordTok{script}\NormalTok{(}\KeywordTok{HTML}\NormalTok{(}
+  \StringTok{"#(document).ready(function() \{}
+\StringTok{  document.getElementById('plotId').setAttribute('aria-label',}
+\StringTok{  'General description of the plot')}
+\StringTok{  \})"}
+\NormalTok{))}
+\CommentTok{# [code omitted]}
+\end{Highlighting}
+\end{Shaded}
+
+Important things to note:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Place the \texttt{tags\$script(HTML(...))} code right after each instance of \texttt{plotOutput}.
+\item
+  Copy the above code as formatted
+\item
+  Change the two (2) pieces for each particular plot
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Replace \texttt{plotId} (keep the single quotation marks in the code)
+  \item
+    Replace \texttt{General\ description\ of\ the\ plot} (keep the single quotation marks in the code)
+  \end{enumerate}
+\end{enumerate}
 
 \hypertarget{part-linguistics}{%
 \part{Linguistics}\label{part-linguistics}}
@@ -3376,7 +3479,7 @@ We recommend avoiding footnotes in favor of \protect\hyperlink{hovertext}{Hover 
 \hypertarget{documentation}{%
 \chapter{Documentation}\label{documentation}}
 
-These apps are the product of your hard work and are part of your academic record. Thus, you need to adhere to \href{https://undergrad.psu.edu/aappm/G-9-academic-integrity.html}{Penn State's Academic Integrity Policy}. This is especially important as we are making the apps available through a Creative Commons Attribution-ShareAlike 4.0 International license (\href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}). If you have used code, pictures, data, or other materials from outside of the BOAST team, you \textbf{MUST} give proper credit. These references will then be included on the App's References Tab.
+These apps are the product of your hard work and are part of your academic record. Thus, you need to adhere to \href{https://undergrad.psu.edu/aappm/G-9-academic-integrity.html}{Penn State's Academic Integrity Policy}. This is especially important as we are making the apps available through a Creative Commons Attribution-NonCommerical-ShareAlike 4.0 International license (\href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}). If you have used code, pictures, data, or other materials from outside of the BOAST team, you \textbf{MUST} give proper credit. These references will then be included on the App's References Tab.
 
 \hypertarget{references}{%
 \section{References}\label{references}}
@@ -3475,8 +3578,8 @@ Wickham, H. (2011), ``The Split-apply-combine strategy for data analysis''. Jour
 
 Notice, that the format of the R package will depend on whether there is an article published for the package. The \texttt{shinydashboard} package is not associated with an article while the \texttt{plyr} package is associated with Wickham's article.
 
-\hypertarget{graphics-1}{%
-\section{Graphics}\label{graphics-1}}
+\hypertarget{graphics}{%
+\section{Graphics}\label{graphics}}
 
 Pictures, drawings, photographs, images, etc. are typically copyrighted. When you're selecting images, make sure that the images are Open Source/Copyright Free/Royalty Free/Public Domain. Additionally, include a reference to where the pictures came from in the Overview Page. The basic format to use is:
 
@@ -3512,22 +3615,94 @@ We need to make sure that our Apps are accessible. If you have been adhering to 
 \begin{itemize}
 \tightlist
 \item
-  \href{https://accessibility.psu.edu/}{Accessibility and Usability at Penn
-  State}
+  \href{https://accessibility.psu.edu/}{Accessibility and Usability at Penn State}
 \item
-  \href{https://www.psu.edu/accessibilitystatement}{Accessibility
-  Statement}
+  \href{https://www.psu.edu/accessibilitystatement}{Accessibility Statement}
 \item
-  \href{https://www.w3.org/WAI/WCAG21/quickref/}{How to Meet Web Content Accessibility
-  Guidelines}
+  \href{https://www.w3.org/WAI/WCAG21/quickref/}{How to Meet Web Content Accessibility Guidelines}
 \item
   \href{https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b}{7 Things Every Designer Needs to Know about Accessibility}
 \end{itemize}
 
-\hypertarget{testing-accessibility}{%
-\section{Testing Accessibility}\label{testing-accessibility}}
+\hypertarget{making-your-app-accessible}{%
+\section{Making Your App Accessible}\label{making-your-app-accessible}}
 
-We highly recommend using the \href{https://wave.webaim.org/}{WAVE Web Accessibility Evaluation Tool}. If you use Firefox or Chrome, we recommend that you install the \href{https://wave.webaim.org/extension/}{WAVE Browser Extension} as this will give you a quick way to test your App's accessbility.
+The best way that you can make your App accessible is to adhere to this Style Guide as closely as possible. Sadly, the Shiny framework is woefully behind the times for making truly accessible apps. We have tried to strike a balance so that you won't be inundated with significant burdens for accessibility. By following this Style Guide, you'll place your App in the best position possible.
+
+As we figure out and develop new tools to help you improve the accessibility of your App, we might ask you to return to your App and make updates.
+
+\hypertarget{checking-accessibility}{%
+\section{Checking Accessibility}\label{checking-accessibility}}
+
+There are a couple of different phases to testing an app for Accessibility: Testing, Reading a Report, and Addressing Issues.
+
+\hypertarget{testing-accessibility}{%
+\subsection{Testing Accessibility}\label{testing-accessibility}}
+
+We highly recommend using the \href{https://wave.webaim.org/}{WAVE Web Accessibility Evaluation Tool}. If you use Firefox or Chrome, we recommend that you install the \href{https://wave.webaim.org/extension/}{WAVE Browser Extension} as this will give you a quick way to test your App's accessibility.
+
+Depending on whether you're checking an app that is already in BOAST or a revision/new app, you'll need to access the WAVE tool differently.
+
+\hypertarget{testing-an-app-in-boast}{%
+\subsubsection{Testing an App in BOAST}\label{testing-an-app-in-boast}}
+
+To check an App that is currently linked in BOAST:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Go to \href{https://wave.webaim.org/}{WAVE Web Accessibility Evaluation Tool}
+\item
+  In a new tab, launch the app from BOAST
+\item
+  Copy the app's URL from the address bar of your browser
+\item
+  Paste the URL in the Web page address field of WAVE
+\end{enumerate}
+
+\hypertarget{testing-a-revisionnew-app}{%
+\subsubsection{Testing a Revision/New App}\label{testing-a-revisionnew-app}}
+
+To check an App that you are currently revising and/or developing (i.e., the App has \emph{not} been formally added to BOAST):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Make sure you install the \href{https://wave.webaim.org/extension/}{WAVE Browser Extension} for Firefox or Chrome.
+\item
+  Click the Run App button in RStudio
+\item
+  In the resulting window, click the Open in Browser button located along the top edge
+\item
+  Activate the WAVE Browser Extension
+\end{enumerate}
+
+To help make the report more friendly with your browser, we also recommend you install the \href{https://addons.mozilla.org/en-US/firefox/addon/styl-us/}{Stylus Add-on for Firefox} or the \href{https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en}{Stylus Add-on for Chrome}. Once you've installed Stylus, you'll want to
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create a new Style in Stylus
+\item
+  Add the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{body}\FunctionTok{.ng-scope}\NormalTok{ \{}
+  \KeywordTok{position}\NormalTok{: }\DecValTok{relative}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Save and close the Stylus tab
+\end{enumerate}
+
+This will move the the WAVE summary bar further to the left. If you have questions, please reach out to Neil and Bob.
+
+\hypertarget{reading-a-wave-report}{%
+\subsection{Reading a WAVE Report}\label{reading-a-wave-report}}
 
 \begin{figure}
 
@@ -3538,7 +3713,7 @@ We highly recommend using the \href{https://wave.webaim.org/}{WAVE Web Accessibi
 \caption{WAVE Report for Descriptive Statistics App}\label{fig:waveDescStat}
 \end{figure}
 
-Figure \ref{fig:waveDescStat} shows the WAVE report for the Descriptive Statistics App. There are 54 errors including missing alternative text, empty headings. There are also 8 contrast errors, 14 alerts (skipping heading levels),
+\protect\hyperlink{fig:waveDescStat}{Figure \ref{fig:waveDescStat}} shows the WAVE report for the Descriptive Statistics App. There are 54 errors including missing alternative text, empty headings. There are also 8 contrast errors, 14 alerts (skipping heading levels),
 
 \begin{figure}
 
@@ -3549,7 +3724,18 @@ Figure \ref{fig:waveDescStat} shows the WAVE report for the Descriptive Statisti
 \caption{WAVE Report for Overfitting App}\label{fig:waveOverfit}
 \end{figure}
 
-While there are fewer errors for the Overfitting App (Figure \ref{fig:waveOverfit}), there are a lot of alerts on this app including skipping heading levels and small text.
+While there are fewer errors for the Overfitting App (\protect\hyperlink{waveOverfit}{Figure \ref{fig:waveOverfit}}), there are a lot of alerts on this app including skipping heading levels and small text.
+
+The six categories of items in the WAVE report reflect the areas in which you're going to work on identifying issues. The two most critical issues are Errors and Contrast Errors. While the goal would be to have 0 for both, we do anticipate a few issues that we will have to leave unresolved. The third category that you need to attend to is the Alerts group. Again, we would like this number to be 0. The Features, Structural Elements, and ARIA categories are informational and you don't necessarily need to worry about them (they don't signify problems).
+
+After running WAVE and getting the report, click on the View details button to see the list of all items found to see details. Additionally, you'll be able to click on items in the Details to see which things in your App are being flagged.
+
+\hypertarget{addressing-issues}{%
+\subsection{Addressing Issues}\label{addressing-issues}}
+
+By looking at the details you'll be able to identify what issues you need to address. We fully expect that some issues (e.g., Error: missing alt text, Alert: missing first level heading) are things that you can directly fix. However, we also anticipate that there are some issues that you might not be able to fix (e.g., Error: Document language missing) without assistance.
+
+We recommend that you document all errors and alerts that you've yet to resolve with you make your Pull Request. The decision about whether to leave an Accessibility Error or Alert alone/un-addressed has to be made by a faculty member (e.g., Neil, Dennis, Matt, or Bob), not any student.
 
 By using the \texttt{boastApp} function and adhering to this Style Guide, your App should be in a good initial position. After running your App through WAVE, we can work with you address any changes that might be necessary.
 

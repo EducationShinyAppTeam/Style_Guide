@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.4.29)  8 JUN 2020 17:13
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.4.29)  24 JUN 2020 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -435,7 +435,11 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip62
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count299
-) (./BOAST_style_guide.aux)
+) (./BOAST_style_guide.aux
+
+LaTeX Warning: Label `graphics' multiply defined.
+
+)
 \openout1 = `BOAST_style_guide.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
@@ -815,10 +819,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 4.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 4.
-[3]
-Underfull \vbox (badness 2753) has occurred while \output is active []
-
-[4])
+[3] [4])
 \tf@toc=\write4
 \openout4 = `BOAST_style_guide.toc'.
 
@@ -927,36 +928,44 @@ Overfull \hbox (16.99997pt too wide) in paragraph at lines 995--996
 []\TU/lmtt/m/n/10 style="color: #fff; background-color: #337ab7; border-color:
  []
 
-[33] [34] [35] [36] [37
+[33] [34] [35] [36]
+Underfull \vbox (badness 10000) detected at line 1211
+ []
 
-] [38]
-Chapter 4.
-[39
+
+Underfull \vbox (badness 10000) detected at line 1211
+ []
+
+[37] [38] [39
 
 ] [40]
+Chapter 4.
+[41
+
+] [42]
 File: BOAST_style_guide_files/figure-latex/bluePalette-1.pdf Graphic file (type
  pdf)
 <use BOAST_style_guide_files/figure-latex/bluePalette-1.pdf>
 File: images/blueOverview.png Graphic file (type bmp)
 <images/blueOverview.png>
 
-Overfull \hbox (375.5431pt too wide) in paragraph at lines 1279--1280
+Overfull \hbox (375.5431pt too wide) in paragraph at lines 1336--1337
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1284.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1341.
 
-[41]
+[43]
 File: images/blueCollapse.png Graphic file (type bmp)
 <images/blueCollapse.png>
 
-Overfull \hbox (375.5431pt too wide) in paragraph at lines 1288--1289
+Overfull \hbox (375.5431pt too wide) in paragraph at lines 1345--1346
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1293.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1350.
 
 File: images/blueSliders.png Graphic file (type bmp)
 <images/blueSliders.png>
@@ -966,22 +975,22 @@ e pdf)
 File: images/greenOverview.png Graphic file (type bmp)
 <images/greenOverview.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1322--1323
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1379--1380
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1327.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1384.
 
 File: images/greenCollapse.png Graphic file (type bmp)
 <images/greenCollapse.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1331--1332
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1388--1389
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1336.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1393.
 
 File: images/greenSliders.png Graphic file (type bmp)
 <images/greenSliders.png>
@@ -991,22 +1000,22 @@ pe pdf)
 File: images/purpleOverview.png Graphic file (type bmp)
 <images/purpleOverview.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1365--1366
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1422--1423
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1370.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1427.
 
 File: images/purpleCollapse.png Graphic file (type bmp)
 <images/purpleCollapse.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1374--1375
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1431--1432
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1379.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1436.
 
 File: images/purpleSliders.png Graphic file (type bmp)
 <images/purpleSliders.png>
@@ -1016,22 +1025,22 @@ e pdf)
 File: images/blackOverview.png Graphic file (type bmp)
 <images/blackOverview.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1408--1409
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1465--1466
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1413.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1470.
 
 File: images/blackCollapse.png Graphic file (type bmp)
 <images/blackCollapse.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1417--1418
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1474--1475
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1422.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1479.
 
 File: images/blackSliders.png Graphic file (type bmp)
 <images/blackSliders.png>
@@ -1041,22 +1050,22 @@ pe pdf)
 File: images/yellowOverview.png Graphic file (type bmp)
 <images/yellowOverview.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1451--1452
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1508--1509
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1456.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1513.
 
 File: images/yellowCollapse.png Graphic file (type bmp)
 <images/yellowCollapse.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1460--1461
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1517--1518
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1465.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1522.
 
 File: images/yellowSliders.png Graphic file (type bmp)
 <images/yellowSliders.png>
@@ -1066,94 +1075,93 @@ pdf)
 File: images/redOverview.png Graphic file (type bmp)
 <images/redOverview.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1494--1495
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1551--1552
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1499.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1556.
 
 File: images/redCollapse.png Graphic file (type bmp)
 <images/redCollapse.png>
 
-Overfull \hbox (415.5314pt too wide) in paragraph at lines 1503--1504
+Overfull \hbox (415.5314pt too wide) in paragraph at lines 1560--1561
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08714pt on input line 1508.
+LaTeX Warning: Float too large for page by 24.08714pt on input line 1565.
 
 File: images/redSliders.png Graphic file (type bmp)
 <images/redSliders.png>
-[42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]
-[58] [59] [60] [61] [62] [63] [64]
-Underfull \hbox (badness 10000) in paragraph at lines 1779--1781
+[44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]
+[60] [61] [62] [63] [64] [65] [66]
+Underfull \hbox (badness 10000) in paragraph at lines 1836--1838
 
  []
 
-[65] [66] [67] [68] [69] [70]
+[67] [68] [69] [70] [71] [72]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[71] [72] [73]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[74]
-Underfull \hbox (badness 10000) in paragraph at lines 2283--2285
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2294--2296
+[73] [74]
+Missing character: There is no ≥ in font [lmroman10-regular]:mapping=tex-text;!
+[75] [76]
+Underfull \hbox (badness 10000) in paragraph at lines 2346--2348
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2296--2297
+Underfull \hbox (badness 10000) in paragraph at lines 2357--2359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2305--2307
-
- []
-
-[75]
-Underfull \hbox (badness 10000) in paragraph at lines 2343--2345
+Underfull \hbox (badness 10000) in paragraph at lines 2359--2360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2345--2348
+Underfull \hbox (badness 10000) in paragraph at lines 2368--2370
+
+ []
+
+[77]
+Underfull \hbox (badness 10000) in paragraph at lines 2406--2408
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2348--2350
+Underfull \hbox (badness 10000) in paragraph at lines 2408--2411
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2359--2361
+Underfull \hbox (badness 10000) in paragraph at lines 2411--2413
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2361--2363
+Underfull \hbox (badness 10000) in paragraph at lines 2422--2424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2363--2365
+Underfull \hbox (badness 10000) in paragraph at lines 2424--2426
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2365--2366
+Underfull \hbox (badness 10000) in paragraph at lines 2426--2428
 
  []
 
-[76] [77]
-Underfull \hbox (badness 2970) in paragraph at lines 2441--2443
+
+Underfull \hbox (badness 10000) in paragraph at lines 2428--2429
+
+ []
+
+[78] [79]
+Underfull \hbox (badness 2970) in paragraph at lines 2504--2506
 []\TU/lmr/m/n/10 “Show/Hide Graph” if a button makes a graph object ap-
  []
 
@@ -1161,55 +1169,49 @@ File: images/check.png Graphic file (type bmp)
 <images/check.png>
 File: images/cross.png Graphic file (type bmp)
 <images/cross.png>
-[78] [79]
-Underfull \vbox (badness 3058) has occurred while \output is active []
-
-[80] [81]
-Underfull \vbox (badness 10000) detected at line 2634
+[80] [81] [82] [83]
+Underfull \vbox (badness 1259) detected at line 2697
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[82] [83] [84
+[84] [85] [86
 
 ]
 Chapter 5.
 
-Underfull \hbox (badness 2181) in paragraph at lines 2646--2647
+Underfull \hbox (badness 2181) in paragraph at lines 2709--2710
 []\TU/lmr/m/n/10 In your UI section of \TU/lmtt/m/n/10 app.R \TU/lmr/m/n/10 (or
  the \TU/lmtt/m/n/10 ui.R \TU/lmr/m/n/10 file), at the end of the
  []
 
-[85] [86] [87] [88]
-Underfull \hbox (badness 10000) in paragraph at lines 2839--2841
+[87] [88] [89] [90]
+Underfull \hbox (badness 10000) in paragraph at lines 2902--2904
 
  []
 
-[89]
+[91]
 File: BOAST_style_guide_files/figure-latex/boastPalette-1.pdf Graphic file (typ
 e pdf)
 <use BOAST_style_guide_files/figure-latex/boastPalette-1.pdf>
 File: BOAST_style_guide_files/figure-latex/psuPalette-1.pdf Graphic file (type 
 pdf)
 <use BOAST_style_guide_files/figure-latex/psuPalette-1.pdf>
-[90] [91] [92] [93] [94] [95] [96
+[92] [93] [94] [95] [96] [97] [98] [99
 
-] [97] [98]
+] [100]
 Chapter 6.
 
-Underfull \hbox (badness 2189) in paragraph at lines 3147--3148
+Underfull \hbox (badness 2189) in paragraph at lines 3250--3251
 []\TU/lmr/bx/n/10 DO NOT sacrifice clarity and precision/accuracy for concise-
  []
 
-[99
+[101
 
-] [100] [101]
-Underfull \hbox (badness 10000) in paragraph at lines 3303--3305
+] [102] [103]
+Underfull \hbox (badness 10000) in paragraph at lines 3406--3408
 
  []
 
-[102]
+[104]
 File: BOAST_style_guide_files/figure-latex/skewEx1-1.pdf Graphic file (type pdf
 )
 <use BOAST_style_guide_files/figure-latex/skewEx1-1.pdf>
@@ -1217,121 +1219,125 @@ File: BOAST_style_guide_files/figure-latex/skewEx1-2.pdf Graphic file (type pdf
 )
 <use BOAST_style_guide_files/figure-latex/skewEx1-2.pdf>
 
-LaTeX Warning: Float too large for page by 29.12862pt on input line 3357.
+LaTeX Warning: Float too large for page by 29.12862pt on input line 3460.
 
-[103] [104]
+[105] [106]
 Chapter 7.
-[105
+[107
 
-] [106] [107] [108] [109
+] [108] [109] [110] [111
 
-] [110]
+] [112]
 Chapter 8.
+[113
+
+]
 File: images/descStatOverview.png Graphic file (type bmp)
 <images/descStatOverview.png>
 
-Overfull \hbox (638.4276pt too wide) in paragraph at lines 3534--3535
+Overfull \hbox (638.4276pt too wide) in paragraph at lines 3709--3710
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.06206pt on input line 3539.
+LaTeX Warning: Float too large for page by 24.06206pt on input line 3714.
 
 File: images/overfitPrereq.png Graphic file (type bmp)
 <images/overfitPrereq.png>
 
-Overfull \hbox (532.27885pt too wide) in paragraph at lines 3545--3546
+Overfull \hbox (532.27885pt too wide) in paragraph at lines 3720--3721
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.06061pt on input line 3550.
+LaTeX Warning: Float too large for page by 24.06061pt on input line 3725.
 
-[111
-
-] [112] [113] [114
+[114] [115] [116] [117] [118
 
 ]
 Chapter 9.
-[115] [116
+[119] [120
 
-] [117] [118]
+] [121] [122]
 Chapter 10.
-[119
+[123
 
-] [120] [121] [122]
+] [124] [125] [126]
 File: images/planSketch1.jpg Graphic file (type bmp)
 <images/planSketch1.jpg>
 
-Overfull \hbox (388.35326pt too wide) in paragraph at lines 3810--3811
+Overfull \hbox (388.35326pt too wide) in paragraph at lines 3996--3997
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.07492pt on input line 3815.
+LaTeX Warning: Float too large for page by 24.07492pt on input line 4001.
 
 File: images/planSketch2-Info.jpg Graphic file (type bmp)
 <images/planSketch2-Info.jpg>
 
-Overfull \hbox (388.35326pt too wide) in paragraph at lines 3823--3824
+Overfull \hbox (388.35326pt too wide) in paragraph at lines 4009--4010
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.07492pt on input line 3828.
+LaTeX Warning: Float too large for page by 24.07492pt on input line 4014.
 
 File: images/planSketch3-Overview.jpg Graphic file (type bmp)
 <images/planSketch3-Overview.jpg>
 
-Overfull \hbox (388.35326pt too wide) in paragraph at lines 3834--3835
+Overfull \hbox (388.35326pt too wide) in paragraph at lines 4020--4021
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.07492pt on input line 3839.
+LaTeX Warning: Float too large for page by 24.07492pt on input line 4025.
 
 File: images/planSketch4-Explore.jpg Graphic file (type bmp)
 <images/planSketch4-Explore.jpg>
 
-Overfull \hbox (388.35326pt too wide) in paragraph at lines 3843--3844
+Overfull \hbox (388.35326pt too wide) in paragraph at lines 4029--4030
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.07492pt on input line 3848.
+LaTeX Warning: Float too large for page by 24.07492pt on input line 4034.
 
-[123] [124] [125] [126] [127]
+[127] [128] [129] [130] [131]
 File: images/planSketch5-Challenge.jpg Graphic file (type bmp)
 <images/planSketch5-Challenge.jpg>
 
-Overfull \hbox (388.35326pt too wide) in paragraph at lines 3858--3859
+Overfull \hbox (388.35326pt too wide) in paragraph at lines 4044--4045
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.07492pt on input line 3863.
+LaTeX Warning: Float too large for page by 24.07492pt on input line 4049.
 
-[128] [129] [130] [131
+[132] [133] [134] [135
 
-] [132]
+] [136]
 Chapter 11.
 No file BOAST_style_guide.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3931.
-[133
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4117.
+[137
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3931.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4117.
 (./BOAST_style_guide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3931.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3931.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4117.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4117.
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 19711 strings out of 479488
- 352355 string characters out of 5885584
- 788536 words of memory out of 5000000
- 36815 multiletter control sequences out of 15000+600000
+ 19718 strings out of 479488
+ 352499 string characters out of 5885584
+ 790018 words of memory out of 5000000
+ 36822 multiletter control sequences out of 15000+600000
  538861 words of font info for 86 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,7n,118p,906b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on BOAST_style_guide.pdf (133 pages).
+Output written on BOAST_style_guide.pdf (137 pages).
