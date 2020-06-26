@@ -477,6 +477,134 @@ Column names __MUST__ be simple and *meaningful* to the user. To this end, you s
 
 Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, __talk to Neil and Bob__. 
 
+#### Additional Table Examples
+
+We're including some additional Summary Data Table examples. For these examples, I'm going to make use of the `palmerpenguins` package of data sets.
+
+##### Summary Data Table of Descriptive Statistics
+
+```{r dtSummary1Setup, echo=TRUE, eval=TRUE}
+library(palmerpenguins)
+library(psych)
+library(DT)
+library(tibble)
+
+penStats <- psych::describeBy(
+  x = penguins$body_mass_g,
+  group = penguins$species,
+  mat = TRUE, # Formats output appropriate for DT
+  digits = 3 # sets the number of digits retained
+)
+
+# Picking which columns to keep
+penStats <- penStats[, c("group1", "n", "mean", "sd", "median", "mad", "min", "max", "skew",
+                         "kurtosis")]
+# Make the group1 column the row names
+penStats <- tibble::remove_rownames(penStats)
+penStats <- tibble::column_to_rownames(penStats,
+                          var = "group1")
+# Improve column names
+names(penStats) <- c("Count", "SAM (g/penguin)", "SASD (g)", "Median (g)", "MAD (g)", "Min (g)",
+                     "Max (g)", "Sample Skewness (g^3)", "Sample Excess Kurtosis (g^4)")
+```
+
+```{r dtSummary1Shiny, echo=TRUE, eval=FALSE}
+# Make the Table
+output$penguinSummary <- DT::renderDT(
+  expr = penStats,
+  caption = "Descriptive Stats for Palmer Penguins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  autoHideNavigation = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE, # Set to False for small tables
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(penStats))
+    )
+  )
+)
+```
+
+```{r dtSummary1Target, echo=FALSE, eval=FALSE}
+DT::datatable(
+  data = penStats,
+  caption = "Descriptive Stats for Palmer Penguins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  autoHideNavigation = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE,
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(penStats))
+    )
+  )
+)
+
+```
+
+##### Summary Data Table for Output Table
+
+While this example is for an ANOVA table, you can build from this for other output tables. If you store the output of any call as an object, you can then use the structure function, `str` to investigate the output. Ultimately, you need something that is either a matrix or a data frame. 
+
+```{r dtSummary2Setup, echo=TRUE, eval=TRUE}
+library(palmerpenguins)
+library(psych)
+library(DT)
+library(tibble)
+library(rstatix)
+
+# This bad practice but I'm going to pretend that all assumptions are met
+penModel <- aov(body_mass_g ~ species*sex, data = penguins)
+
+anovaPen <- round(anova(penModel), 3)
+# Rounding to truncate decimals
+
+```
+
+```{r dtSummary2Shiny, echo=TRUE, eval=FALSE}
+# Make the Table
+output$penguinAnova <- DT::renderDT(
+  expr = anovaPen,
+  caption = "(Classical) ANOVA Table for Palmer Pengins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE, # Set to False for small tables
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(anovaPen))
+    )
+  )
+)
+```
+
+```{r dtSummary2Target, echo=FALSE, eval=FALSE}
+DT::datatable(
+  data = anovaPen,
+  caption = "(Classical) ANOVA Table for Palmer Penguins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE,
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(anovaPen))
+    )
+  )
+)
+```
+
+
 ### Static Images
 Static image refers to any image you're using in your App which is not produced by `R`. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.
 

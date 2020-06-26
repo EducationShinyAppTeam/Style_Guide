@@ -120,7 +120,7 @@
 
 \title{The BOAST Style Guide}
 \author{Neil Hatfield (\href{mailto:njh5464@psu.edu}{\nolinkurl{njh5464@psu.edu}}) and Robert Carey (\href{mailto:rpc5102@psu.edu}{\nolinkurl{rpc5102@psu.edu}})}
-\date{24 June 2020}
+\date{25 June 2020}
 
 \begin{document}
 \maketitle
@@ -3111,6 +3111,105 @@ Column names \textbf{MUST} be simple and \emph{meaningful} to the user. To this 
 \emph{Note: getting mathematical expressions to render properly in graphical environments in \texttt{R} is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.}
 
 Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, \textbf{talk to Neil and Bob}.
+
+\hypertarget{additional-table-examples}{%
+\subsubsection{Additional Table Examples}\label{additional-table-examples}}
+
+We're including some additional Summary Data Table examples. For these examples, I'm going to make use of the \texttt{palmerpenguins} package of data sets.
+
+\hypertarget{summary-data-table-of-descriptive-statistics}{%
+\paragraph{Summary Data Table of Descriptive Statistics}\label{summary-data-table-of-descriptive-statistics}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(palmerpenguins)}
+\KeywordTok{library}\NormalTok{(psych)}
+\KeywordTok{library}\NormalTok{(DT)}
+\KeywordTok{library}\NormalTok{(tibble)}
+
+\NormalTok{penStats <-}\StringTok{ }\NormalTok{psych}\OperatorTok{::}\KeywordTok{describeBy}\NormalTok{(}
+  \DataTypeTok{x =}\NormalTok{ penguins}\OperatorTok{$}\NormalTok{body_mass_g,}
+  \DataTypeTok{group =}\NormalTok{ penguins}\OperatorTok{$}\NormalTok{species,}
+  \DataTypeTok{mat =} \OtherTok{TRUE}\NormalTok{, }\CommentTok{# Formats output appropriate for DT}
+  \DataTypeTok{digits =} \DecValTok{3} \CommentTok{# sets the number of digits retained}
+\NormalTok{)}
+
+\CommentTok{# Picking which columns to keep}
+\NormalTok{penStats <-}\StringTok{ }\NormalTok{penStats[, }\KeywordTok{c}\NormalTok{(}\StringTok{"group1"}\NormalTok{, }\StringTok{"n"}\NormalTok{, }\StringTok{"mean"}\NormalTok{, }\StringTok{"sd"}\NormalTok{, }\StringTok{"median"}\NormalTok{, }\StringTok{"mad"}\NormalTok{, }\StringTok{"min"}\NormalTok{, }\StringTok{"max"}\NormalTok{, }\StringTok{"skew"}\NormalTok{,}
+                         \StringTok{"kurtosis"}\NormalTok{)]}
+\CommentTok{# Make the group1 column the row names}
+\NormalTok{penStats <-}\StringTok{ }\NormalTok{tibble}\OperatorTok{::}\KeywordTok{remove_rownames}\NormalTok{(penStats)}
+\NormalTok{penStats <-}\StringTok{ }\NormalTok{tibble}\OperatorTok{::}\KeywordTok{column_to_rownames}\NormalTok{(penStats,}
+                          \DataTypeTok{var =} \StringTok{"group1"}\NormalTok{)}
+\CommentTok{# Improve column names}
+\KeywordTok{names}\NormalTok{(penStats) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Count"}\NormalTok{, }\StringTok{"SAM (g/penguin)"}\NormalTok{, }\StringTok{"SASD (g)"}\NormalTok{, }\StringTok{"Median (g)"}\NormalTok{, }\StringTok{"MAD (g)"}\NormalTok{, }\StringTok{"Min (g)"}\NormalTok{,}
+                     \StringTok{"Max (g)"}\NormalTok{, }\StringTok{"Sample Skewness (g^3)"}\NormalTok{, }\StringTok{"Sample Excess Kurtosis (g^4)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Make the Table}
+\NormalTok{output}\OperatorTok{$}\NormalTok{penguinSummary <-}\StringTok{ }\NormalTok{DT}\OperatorTok{::}\KeywordTok{renderDT}\NormalTok{(}
+  \DataTypeTok{expr =}\NormalTok{ penStats,}
+  \DataTypeTok{caption =} \StringTok{"Descriptive Stats for Palmer Penguins"}\NormalTok{, }
+  \DataTypeTok{style =} \StringTok{"bootstrap4"}\NormalTok{, }
+  \DataTypeTok{rownames =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{autoHideNavigation =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{options =} \KeywordTok{list}\NormalTok{( }
+    \DataTypeTok{responsive =} \OtherTok{TRUE}\NormalTok{, }
+    \DataTypeTok{scrollX =} \OtherTok{TRUE}\NormalTok{,}
+    \DataTypeTok{paging =} \OtherTok{FALSE}\NormalTok{, }\CommentTok{# Set to False for small tables}
+     \DataTypeTok{columnDefs =} \KeywordTok{list}\NormalTok{(}
+       \KeywordTok{list}\NormalTok{(}\DataTypeTok{className =} \StringTok{'dt-center'}\NormalTok{,}
+            \DataTypeTok{targets =} \DecValTok{1}\OperatorTok{:}\KeywordTok{ncol}\NormalTok{(penStats))}
+\NormalTok{    )}
+\NormalTok{  )}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{summary-data-table-for-output-table}{%
+\paragraph{Summary Data Table for Output Table}\label{summary-data-table-for-output-table}}
+
+While this example is for an ANOVA table, you can build from this for other output tables. If you store the output of any call as an object, you can then use the structure function, \texttt{str} to investigate the output. Ultimately, you need something that is either a matrix or a data frame.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(palmerpenguins)}
+\KeywordTok{library}\NormalTok{(psych)}
+\KeywordTok{library}\NormalTok{(DT)}
+\KeywordTok{library}\NormalTok{(tibble)}
+\KeywordTok{library}\NormalTok{(rstatix)}
+
+\CommentTok{# This bad practice but I'm going to pretend that all assumptions are met}
+\NormalTok{penModel <-}\StringTok{ }\KeywordTok{aov}\NormalTok{(body_mass_g }\OperatorTok{~}\StringTok{ }\NormalTok{species}\OperatorTok{*}\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ penguins)}
+
+\NormalTok{anovaPen <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{anova}\NormalTok{(penModel), }\DecValTok{3}\NormalTok{)}
+\CommentTok{# Rounding to truncate decimals}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Make the Table}
+\NormalTok{output}\OperatorTok{$}\NormalTok{penguinAnova <-}\StringTok{ }\NormalTok{DT}\OperatorTok{::}\KeywordTok{renderDT}\NormalTok{(}
+  \DataTypeTok{expr =}\NormalTok{ anovaPen,}
+  \DataTypeTok{caption =} \StringTok{"(Classical) ANOVA Table for Palmer Pengins"}\NormalTok{, }
+  \DataTypeTok{style =} \StringTok{"bootstrap4"}\NormalTok{, }
+  \DataTypeTok{rownames =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{options =} \KeywordTok{list}\NormalTok{( }
+    \DataTypeTok{responsive =} \OtherTok{TRUE}\NormalTok{, }
+    \DataTypeTok{scrollX =} \OtherTok{TRUE}\NormalTok{,}
+    \DataTypeTok{paging =} \OtherTok{FALSE}\NormalTok{, }\CommentTok{# Set to False for small tables}
+     \DataTypeTok{columnDefs =} \KeywordTok{list}\NormalTok{(}
+       \KeywordTok{list}\NormalTok{(}\DataTypeTok{className =} \StringTok{'dt-center'}\NormalTok{,}
+            \DataTypeTok{targets =} \DecValTok{1}\OperatorTok{:}\KeywordTok{ncol}\NormalTok{(anovaPen))}
+\NormalTok{    )}
+\NormalTok{  )}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{static-images}{%
 \subsection{Static Images}\label{static-images}}
