@@ -158,9 +158,10 @@ hr {
 
 .sidebarsection {
 	font-weight: 700;
-	text-align: center;
-	text-decoration-line: underline;
+	text-align: left;
 	margin-bottom: -0.5rem;
+	margin-left: 0.5rem;
+	border-bottom: 1 px solid;
 }
 
 /*Non-title portion of dashboard header*/
