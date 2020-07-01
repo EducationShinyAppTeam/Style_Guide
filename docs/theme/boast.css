@@ -146,6 +146,16 @@ hr {
 	color: var(--green-opportunity)
 }
 
+.bluetext {
+	color: blue;
+	margin-top: -1rem;
+}
+
+.redtext {
+	color: red;
+	margin-top: -1rem
+}
+
 /*Non-title portion of dashboard header*/
 .skin-blue .main-header>.navbar {
 	background-color: var(--beaver-blue);
