@@ -156,6 +156,13 @@ hr {
 	margin-top: -1rem
 }
 
+.sidebarsection {
+	font-weight: 700;
+	text-align: center;
+	text-decoration-line: underline;
+	margin-bottom: -0.5rem;
+}
+
 /*Non-title portion of dashboard header*/
 .skin-blue .main-header>.navbar {
 	background-color: var(--beaver-blue);
