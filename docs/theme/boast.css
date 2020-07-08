@@ -959,6 +959,9 @@ create customized appearances. This is NOT recommended.*/
 
 /*Group header for select groups*/
 .optgroup-header{
-	font-size: inherit;
-	line-height: inherit;
+	font-size: inherit !important;
+	line-height: inherit !important;
+	color: black !important;
+	border-bottom: solid #66666670 1px;
+	padding: 3px 5px !important;
 }
