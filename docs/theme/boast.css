@@ -448,7 +448,7 @@ hr {
 	color: black;
 }
 
-.label {
+label {
 	font: 100% 'Open Sans';
 	font-weight: 400 !important;
 }
