@@ -562,7 +562,7 @@ create customized appearances. This is NOT recommended.*/
 }
 
 /*Slider Text bubble*/
-.irs-single {
+.irs-single, .irs-to, .irs-from {
 	font-weight: 700;
 	font-size: 0.875rem;
 	color: black;
@@ -570,11 +570,15 @@ create customized appearances. This is NOT recommended.*/
 	margin-top: -4px;
 }
 
-.skin-blue .irs-single {
+.skin-blue .irs-single, 
+.skin-blue .irs-to,
+.skin-blue .irs-from  {
 	background: var(--pugh-blue);
 }
 
-.skin-green .irs-single {
+.skin-green .irs-single, 
+.skin-green .irs-to,
+.skin-green .irs-from  {
 	background: var(--future-calling);
 }
 
@@ -582,19 +586,24 @@ create customized appearances. This is NOT recommended.*/
 .skin-purple .irs-to,
 .skin-purple .irs-from {
 	background: var(--stately-atherton);
-	color: black;
 }
 
 
-.skin-yellow .irs-single {
+.skin-yellow .irs-single, 
+.skin-yellow .irs-to,
+.skin-yellow .irs-from  {
 	background: var(--bright-keystone);
 }
 
-.skin-black .irs-single {
+.skin-black .irs-single, 
+.skin-black .irs-to,
+.skin-black .irs-from  {
 	background: var(--teal);
 }
 
-.skin-red .irs-single {
+.skin-red .irs-single, 
+.skin-red .irs-to,
+.skin-red .irs-from  {
 	background: var(--dawn-discovery);
 }
 
