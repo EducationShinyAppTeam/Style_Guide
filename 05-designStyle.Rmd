@@ -677,9 +677,9 @@ In particular, we will use [Accessible Rich Internet Applications (ARIA)](https:
 plotOutput(outputId = plotID) # Look for lines like this 
 # Code for adding the aria label
 tags$script(HTML(
-  "#(document).ready(function() {
+  "$(document).ready(function() {
   document.getElementById('plotId').setAttribute('aria-label',
-  'General description of the plot')
+  `General description of the plot`)
   })"
 ))
 # [code omitted]
