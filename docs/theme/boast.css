@@ -978,3 +978,10 @@ create customized appearances. This is NOT recommended.*/
 	border-bottom: solid #66666670 1px;
 	padding: 3px 5px !important;
 }
+
+/*Error Validation Message Style*/
+.shiny-output-error-validation {
+	color: black;
+	padding-top: 5rem;
+	text-align: center;
+}
