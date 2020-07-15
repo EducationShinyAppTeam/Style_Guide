@@ -989,8 +989,29 @@ create customized appearances. This is NOT recommended.*/
 /*Body links*/
 .bodylinks {
 	text-decoration: underline;
+	text-weight: 700;
+}
+
+.skin-blue .bodylinks{
+	color: var(--beaver-blue);
+}
+
+.skin-green .bodylinks{
+	color: var(--green-opportunity);
+}
+
+.skin-purple .bodylinks{
+	color: var(--perpetual-wonder);
 }
 
 .skin-yellow .bodylinks{
 	color: var(--lion-roar);
+}
+
+.skin-black .bodylinks{
+	color: var(--creek);
+}
+
+.skin-red .bodylinks{
+	color: var(--original-1887);
 }
