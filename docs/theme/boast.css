@@ -990,3 +990,7 @@ create customized appearances. This is NOT recommended.*/
 .bodylinks {
 	text-decoration: underline;
 }
+
+.skin-yellow .bodylinks{
+	color: var(--lion-roar);
+}
