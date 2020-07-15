@@ -985,3 +985,8 @@ create customized appearances. This is NOT recommended.*/
 	padding-top: 5rem;
 	text-align: center;
 }
+
+/*Body links*/
+.bodylinks {
+	text-decoration: underline;
+}
