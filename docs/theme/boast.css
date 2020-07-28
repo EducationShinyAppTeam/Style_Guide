@@ -981,9 +981,10 @@ create customized appearances. This is NOT recommended.*/
 
 /*Error Validation Message Style*/
 .shiny-output-error-validation {
-	color: black;
+	color: var(--invent-orange);
 	padding-top: 5rem;
 	text-align: center;
+	font-weight: 700;
 }
 
 /*Body links*/
