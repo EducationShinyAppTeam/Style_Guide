@@ -1016,8 +1016,3 @@ create customized appearances. This is NOT recommended.*/
 .skin-red .bodylinks{
 	color: var(--original-1887);
 }
-
-/*Inline Input Labels--Experimental*/
-.inline-input {
-	display: inline-block;
-}
