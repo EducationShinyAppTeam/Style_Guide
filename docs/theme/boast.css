@@ -1020,5 +1020,4 @@ create customized appearances. This is NOT recommended.*/
 /*Inline Input Labels--Experimental*/
 .inline-input {
 	display: inline-block;
-	text-align: right;
 }
