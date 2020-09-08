@@ -73,6 +73,10 @@ h6, .h6 {
 	font-size: 1rem;
 }
 
+.largerFont {
+	font-size: 1.2rem;
+}
+
 hr {
 	border-top: 1px solid black;
 	margin-top: 20px;
