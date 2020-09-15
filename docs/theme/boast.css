@@ -152,12 +152,12 @@ hr {
 
 .bluetext {
 	color: blue;
-	margin-top: -1rem;
+	margin-top: -0.5rem;
 }
 
 .redtext {
 	color: red;
-	margin-top: -1rem
+	margin-top: -0.5rem;
 }
 
 .sidebarsection {
