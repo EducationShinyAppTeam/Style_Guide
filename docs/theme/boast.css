@@ -1041,12 +1041,12 @@ create customized appearances. This is NOT recommended.*/
   top: 0;
   left: 0;
   background: rgba(0,0,0,0.6);
-  z-index: 998; 
+  z-index: 9998; 
 }
 
 .expanded {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   width: 100%;
   height: auto;
   top: 0;
