@@ -1020,3 +1020,36 @@ create customized appearances. This is NOT recommended.*/
 .skin-red .bodylinks{
 	color: var(--original-1887);
 }
+
+/* Image expansion utilities */
+.expand-img-btn {
+  position: absolute;
+  right: 10%;
+  background-color: rgba(85, 85, 85, 0.9);
+  color: white;
+  font-size: 16px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.expand-img-btn[aria-expanded="true"]::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 998; 
+}
+
+.expanded {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  padding: 10%;
+}
