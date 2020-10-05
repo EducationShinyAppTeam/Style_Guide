@@ -220,7 +220,7 @@ hr {
 
 .skin-yellow .main-header .logo {
 	background-color: var(--invent-orange);
-	color: white;
+	color: black;
 }
 
 .skin-black .main-header .logo {
@@ -300,7 +300,7 @@ hr {
 }
 
 .skin-yellow .sidebar a {
-	color: white;
+	color: black;
 }
 
 .skin-black .sidebar a {
