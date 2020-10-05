@@ -376,7 +376,7 @@ hr {
 
 .skin-yellow .btn-default {
 	background-color: var(--invent-orange);
-	color: white;
+	color: black;
 }
 
 .skin-black .btn-default {
@@ -647,7 +647,7 @@ create customized appearances. This is NOT recommended.*/
 
 .skin-yellow .sweet-alert button {
 	background-color: var(--invent-orange) !important;
-	color: white;
+	color: black;
 }
 
 .skin-black .sweet-alert button {
@@ -871,7 +871,7 @@ create customized appearances. This is NOT recommended.*/
 
 .skin-yellow .grid-tile button[disabled]:hover {
   background-color: var(--invent-orange);
-  color: white;
+  color: black;
 }
 
 .skin-black .grid-tile button[disabled]:hover {
