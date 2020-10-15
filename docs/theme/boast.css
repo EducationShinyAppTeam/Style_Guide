@@ -152,12 +152,12 @@ hr {
 
 .bluetext {
 	color: blue;
-	margin-top: -1rem;
+	margin-top: -0.5rem;
 }
 
 .redtext {
 	color: red;
-	margin-top: -1rem
+	margin-top: -0.5rem;
 }
 
 .sidebarsection {
@@ -220,7 +220,7 @@ hr {
 
 .skin-yellow .main-header .logo {
 	background-color: var(--invent-orange);
-	color: white;
+	color: black;
 }
 
 .skin-black .main-header .logo {
@@ -300,7 +300,7 @@ hr {
 }
 
 .skin-yellow .sidebar a {
-	color: white;
+	color: black;
 }
 
 .skin-black .sidebar a {
@@ -376,7 +376,7 @@ hr {
 
 .skin-yellow .btn-default {
 	background-color: var(--invent-orange);
-	color: white;
+	color: black;
 }
 
 .skin-black .btn-default {
@@ -647,7 +647,7 @@ create customized appearances. This is NOT recommended.*/
 
 .skin-yellow .sweet-alert button {
 	background-color: var(--invent-orange) !important;
-	color: white;
+	color: black;
 }
 
 .skin-black .sweet-alert button {
@@ -871,7 +871,7 @@ create customized appearances. This is NOT recommended.*/
 
 .skin-yellow .grid-tile button[disabled]:hover {
   background-color: var(--invent-orange);
-  color: white;
+  color: black;
 }
 
 .skin-black .grid-tile button[disabled]:hover {
@@ -1019,4 +1019,37 @@ create customized appearances. This is NOT recommended.*/
 
 .skin-red .bodylinks{
 	color: var(--original-1887);
+}
+
+/* Image expansion utilities */
+.expand-img-btn {
+  position: absolute;
+  right: 50px;
+  background-color: rgba(85, 85, 85, 0.9);
+  color: white;
+  font-size: 16px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.expand-img-btn[aria-expanded="true"]::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #8A8A8A;
+  z-index: 9998; 
+}
+
+.expanded {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  padding: 10%;
 }
