@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Making an App | The BOAST Style Guide</title>
-  <meta name="description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <title>Chapter 10 Making an App | Building Shiny Apps the BOAST Way</title>
+  <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Making an App | The BOAST Style Guide" />
+  <meta property="og:title" content="Chapter 10 Making an App | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Making an App | The BOAST Style Guide" />
+  <meta name="twitter:title" content="Chapter 10 Making an App | Building Shiny Apps the BOAST Way" />
   
-  <meta name="twitter:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="twitter:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   
 
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-25" />
+<meta name="date" content="2020-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,7 +134,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">BOAST Style Guide</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#organization"><i class="fa fa-check"></i><b>0.1</b> Organization</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a><ul>
+<li class="chapter" data-level="0.2.1" data-path="index.html"><a href="index.html#were-a-team-of-developers"><i class="fa fa-check"></i><b>0.2.1</b> We’re a Team of Developers</a></li>
+<li class="chapter" data-level="0.2.2" data-path="index.html"><a href="index.html#research-driven"><i class="fa fa-check"></i><b>0.2.2</b> Research Driven</a></li>
+<li class="chapter" data-level="0.2.3" data-path="index.html"><a href="index.html#accesiblity-minded"><i class="fa fa-check"></i><b>0.2.3</b> Accesiblity Minded</a></li>
+<li class="chapter" data-level="0.2.4" data-path="index.html"><a href="index.html#avoid-the-shiny-problem"><i class="fa fa-check"></i><b>0.2.4</b> Avoid the “Shiny” Problem</a></li>
+</ul></li>
+</ul></li>
 <li class="part"><span><b>I Getting Started</b></span></li>
 <li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> The Basics</a><ul>
 <li class="chapter" data-level="1.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>1.1</b> Getting Started Checklist</a></li>
@@ -313,7 +321,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The BOAST Style Guide</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Building Shiny Apps the BOAST Way</a>
           </h1>
         </div>
 
@@ -434,7 +442,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">10.3.1</span> Example</h3>
 <p>As I start thinking about what this app might look like, I’m going to use a sheet of paper in quarters to organize some thoughts. Figure <a href="makingApp.html#fig:planSketchFull">10.1</a> shows the entire sheet of paper. The quadrants move left to right, top to bottom.</p>
 <div class="figure" style="text-align: center"><span id="fig:planSketchFull"></span>
-<img src="images/planSketch1.jpg" alt="Picture of My Plan" width="800" />
+<img src="images/planSketches/planSketch1.jpg" alt="Picture of My Plan" width="800" />
 <p class="caption">
 Figure 10.1: Picture of My Plan
 </p>
@@ -442,20 +450,20 @@ Figure 10.1: Picture of My Plan
 <p>In the first quadrant (Figure <a href="makingApp.html#fig:planSketchInfo">10.2</a>), I’ve listed a title (“Skewness’s Impact on the Values of the <em>Sample Median</em> and <em>Sample Arithmetic Mean</em>”), a possible short title (“Skew, Med, SAM”) as well as a restatement of my goal. I’ve then listed general aspects about the layout of my app, including what skin/theme color (yellow) I would need to use.</p>
 <p>I’ve additionally identified that I need to include the von Hippel article in my Reference Tab as well as locating a version of the General Social Survey (GSS).</p>
 <div class="figure" style="text-align: center"><span id="fig:planSketchInfo"></span>
-<img src="images/planSketch2-Info.jpg" alt="First Quadrant: General Information" width="800" />
+<img src="images/planSketches/planSketch2-Info.jpg" alt="First Quadrant: General Information" width="800" />
 <p class="caption">
 Figure 10.2: First Quadrant: General Information
 </p>
 </div>
 <p>The second quadrant of my paper is the Overview Tab sketch (Figure <a href="makingApp.html#fig:planSketchOverview">10.3</a>. I don’t have much information here.</p>
 <div class="figure" style="text-align: center"><span id="fig:planSketchOverview"></span>
-<img src="images/planSketch3-Overview.jpg" alt="Second Quadrant: Overview Tab" width="800" />
+<img src="images/planSketches/planSketch3-Overview.jpg" alt="Second Quadrant: Overview Tab" width="800" />
 <p class="caption">
 Figure 10.3: Second Quadrant: Overview Tab
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:planSketchExplore"></span>
-<img src="images/planSketch4-Explore.jpg" alt="Third Quadrant: Exploration Tab" width="800" />
+<img src="images/planSketches/planSketch4-Explore.jpg" alt="Third Quadrant: Exploration Tab" width="800" />
 <p class="caption">
 Figure 10.4: Third Quadrant: Exploration Tab
 </p>
@@ -464,7 +472,7 @@ Figure 10.4: Third Quadrant: Exploration Tab
 <p>I’m imagining a drop-down menu that would allow the user to move through a variety of data sets. Ideally, these data sets would be real data. The General Social Survey, has a variety of attributes that we could use, include several that demonstrate what I want. For example, the number of adults (18+ y.o.) living in a household is positively skewed but the value of the <em>sample median</em> is larger than than the value of the <em>sample arithmetic mean</em>. Which each choice of the user makes, the histogram on the right will update to show the appropriate data, plus reference lines for the values of the two statistics. I might want to add a numerical display as well. I also want there to be some context helping the user to understand each choice.</p>
 <p>I’ve left as an open question whether to enable a user to import/create their own data set on this tab. I’m currently leaning towards not allowing this. Additionally, I’ve marked something for a punchline but this will need more thought.</p>
 <div class="figure" style="text-align: center"><span id="fig:planSketchChallenge"></span>
-<img src="images/planSketch5-Challenge.jpg" alt="Fourth Quadrant: Challenge Tab" width="800" />
+<img src="images/planSketches/planSketch5-Challenge.jpg" alt="Fourth Quadrant: Challenge Tab" width="800" />
 <p class="caption">
 Figure 10.5: Fourth Quadrant: Challenge Tab
 </p>

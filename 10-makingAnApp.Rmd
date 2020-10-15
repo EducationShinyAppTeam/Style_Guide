@@ -107,7 +107,7 @@ The format of your sketches is up to you.
 As I start thinking about what this app might look like, I'm going to use a sheet of paper in quarters to organize some thoughts. Figure \@ref(fig:planSketchFull) shows the entire sheet of paper. The quadrants move left to right, top to bottom.
 
 ```{r planSketchFull, fig.align='center', echo=FALSE, fig.cap="Picture of My Plan", fig.width=5, fig.height=3}
-knitr::include_graphics("images/planSketch1.jpg")
+knitr::include_graphics("images/planSketches/planSketch1.jpg")
 ```
 
 In the first quadrant (Figure \@ref(fig:planSketchInfo)), I've listed a title ("Skewness's Impact on the Values of the *Sample Median* and *Sample Arithmetic Mean*"), a possible short title ("Skew, Med, SAM") as well as a restatement of my goal. I've then listed general aspects about the layout of my app, including what skin/theme color (yellow) I would need to use. 
@@ -115,17 +115,17 @@ In the first quadrant (Figure \@ref(fig:planSketchInfo)), I've listed a title ("
 I've additionally identified that I need to include the von Hippel article in my Reference Tab as well as locating a version of the General Social Survey (GSS).
 
 ```{r planSketchInfo, fig.align='center', echo=FALSE, fig.cap="First Quadrant: General Information", fig.width=5, fig.height=3}
-knitr::include_graphics("images/planSketch2-Info.jpg")
+knitr::include_graphics("images/planSketches/planSketch2-Info.jpg")
 ```
 
 The second quadrant of my paper is the Overview Tab sketch (Figure \@ref(fig:planSketchOverview). I don't have much information here.
 
 ```{r planSketchOverview, fig.align='center', echo=FALSE, fig.cap="Second Quadrant: Overview Tab", fig.width=5, fig.height=3}
-knitr::include_graphics("images/planSketch3-Overview.jpg")
+knitr::include_graphics("images/planSketches/planSketch3-Overview.jpg")
 ```
 
 ```{r planSketchExplore, fig.align='center', echo=FALSE, fig.cap="Third Quadrant: Exploration Tab", fig.width=5, fig.height=3}
-knitr::include_graphics("images/planSketch4-Explore.jpg")
+knitr::include_graphics("images/planSketches/planSketch4-Explore.jpg")
 ```
 
 The next quadrant (Figure \@ref(fig:planSketchExplore)) is where I started detailing the first Activity Tab of my app: the first Exploration. I'm imagining that in this exploration that the user would look through a variety of cases where the "rule" does and does not work. What I want the user to walk away from this tab is that just because a histogram looks positively skewed does not imply that the value of the *sample arithmetic mean* is greater than the value of the *sample median*. 
@@ -135,7 +135,7 @@ I'm imagining a drop-down menu that would allow the user to move through a varie
 I've left as an open question whether to enable a user to import/create their own data set on this tab. I'm currently leaning towards not allowing this. Additionally, I've marked something for a punchline but this will need more thought.
 
 ```{r planSketchChallenge, fig.align='center', echo=FALSE, fig.cap="Fourth Quadrant: Challenge Tab", fig.width=5, fig.height=3}
-knitr::include_graphics("images/planSketch5-Challenge.jpg")
+knitr::include_graphics("images/planSketches/planSketch5-Challenge.jpg")
 ```
 
 The fourth and final quadrant (Figure \@ref(fig:planSketchChallenge)) is an idea I'm still kicking around. This would depend on the specific audience and course goals for which users would go here. My idea is to extend the goal for the app to allow students to construct an understanding for what conditions might lead to \(Sample\;Median\left(\mathcal{X}\right)<SAM\left(\mathcal{X}\right)\), \(Sample\;Median\left(\mathcal{X}\right)=SAM\left(\mathcal{X}\right)\), and \(Sample\;Median\left(\mathcal{X}\right)>SAM\left(\mathcal{X}\right)\).

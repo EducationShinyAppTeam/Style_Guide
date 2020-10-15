@@ -1,6 +1,6 @@
 Package: placeholder
 Type: Book
 Title: BOAST Style Guide.
-Version: 3.0.1
+Version: 4
 Imports: bookdown
 Remotes: rstudio/bookdown

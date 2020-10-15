@@ -136,16 +136,16 @@ ggplot2::ggplot() +
 Here is what the Blue Palette looks like in action:
 
 ```{r blueAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Blue Palette"}
-knitr::include_graphics("images/blueOverview.png")
+knitr::include_graphics("images/colorThemes/blueOverview.png")
 ```
 
 ```{r blueAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Blue Palette"}
-knitr::include_graphics("images/blueCollapse.png")
+knitr::include_graphics("images/colorThemes/blueCollapse.png")
 ```
 
 ```{r blueAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Blue Palette"}
 
-knitr::include_graphics("images/blueSliders.png", dpi=NA)
+knitr::include_graphics("images/colorThemes/blueSliders.png", dpi=NA)
 ```
 
 ##### Green
@@ -196,16 +196,16 @@ ggplot2::ggplot() +
 Here is what the Green Palette looks like in action:
 
 ```{r greenAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Green Palette"}
-knitr::include_graphics("images/greenOverview.png")
+knitr::include_graphics("images/colorThemes/greenOverview.png")
 ```
 
 ```{r greenAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Green Palette"}
-knitr::include_graphics("images/greenCollapse.png")
+knitr::include_graphics("images/colorThemes/greenCollapse.png")
 ```
 
 ```{r greenAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Green Palette"}
 
-knitr::include_graphics("images/greenSliders.png", dpi= NA)
+knitr::include_graphics("images/colorThemes/greenSliders.png", dpi= NA)
 ```
 
 ##### Purple
@@ -256,16 +256,16 @@ ggplot2::ggplot() +
 Here is what the Purple Palette looks like in action:
 
 ```{r purpleAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Purple Palette"}
-knitr::include_graphics("images/purpleOverview.png")
+knitr::include_graphics("images/colorThemes/purpleOverview.png")
 ```
 
 ```{r purpleAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Purple Palette"}
-knitr::include_graphics("images/purpleCollapse.png")
+knitr::include_graphics("images/colorThemes/purpleCollapse.png")
 ```
 
 ```{r purpleAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Purple Palette"}
 
-knitr::include_graphics("images/purpleSliders.png", dpi= NA)
+knitr::include_graphics("images/colorThemes/purpleSliders.png", dpi= NA)
 ```
 
 ##### Black
@@ -316,16 +316,16 @@ ggplot2::ggplot() +
 Here is what the "Black" Palette looks like in action:
 
 ```{r blackAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the 'Black' Palette"}
-knitr::include_graphics("images/blackOverview.png")
+knitr::include_graphics("images/colorThemes/blackOverview.png")
 ```
 
 ```{r blackAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the 'Black' Palette"}
-knitr::include_graphics("images/blackCollapse.png")
+knitr::include_graphics("images/colorThemes/blackCollapse.png")
 ```
 
 ```{r blackAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the 'Black' Palette"}
 
-knitr::include_graphics("images/blackSliders.png", dpi= NA)
+knitr::include_graphics("images/colorThemes/blackSliders.png", dpi= NA)
 ```
 
 ##### Yellow
@@ -376,16 +376,16 @@ ggplot2::ggplot() +
 Here is what the Yellow Palette looks like in action:
 
 ```{r yellowAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Yellow Palette"}
-knitr::include_graphics("images/yellowOverview.png")
+knitr::include_graphics("images/colorThemes/yellowOverview.png")
 ```
 
 ```{r yellowAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Yellow Palette"}
-knitr::include_graphics("images/yellowCollapse.png")
+knitr::include_graphics("images/colorThemes/yellowCollapse.png")
 ```
 
 ```{r yellowAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Yellow Palette"}
 
-knitr::include_graphics("images/yellowSliders.png", dpi= NA)
+knitr::include_graphics("images/colorThemes/yellowSliders.png", dpi= NA)
 ```
 
 ##### Red
@@ -436,16 +436,16 @@ ggplot2::ggplot() +
 Here is what the Red Palette looks like in action:
 
 ```{r redAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Red Palette"}
-knitr::include_graphics("images/redOverview.png")
+knitr::include_graphics("images/colorThemes/redOverview.png")
 ```
 
 ```{r redAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Red Palette"}
-knitr::include_graphics("images/redCollapse.png")
+knitr::include_graphics("images/colorThemes/redCollapse.png")
 ```
 
 ```{r redAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Red Palette"}
 
-knitr::include_graphics("images/redSliders.png", dpi= NA)
+knitr::include_graphics("images/colorThemes/redSliders.png", dpi= NA)
 ```
 
 ### Current Chapter Color Assignments {#chapterColor}
@@ -1109,9 +1109,10 @@ Here are guidelines for the inclusion of icons in a button:
 ### Correct/Incorrect Marks
 In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of two images:
 
-```{r marks, fig.align='center', echo=FALSE, fig.cap="Correct and Incorrect Marks", fig.show='hold'}
-knitr::include_graphics("images/check.png")
-knitr::include_graphics("images/cross.png")
+```{r marks, fig.align='center', echo=FALSE, fig.cap="Correct, Partially Correct, and Incorrect Marks", fig.show='hold'}
+knitr::include_graphics("images/scoringMarks/right-07.png")
+knitr::include_graphics("images/scoringMarks/part-right-08.png")
+knitr::include_graphics("images/scoringMarks/wrong-09.png")
 
 ```
 

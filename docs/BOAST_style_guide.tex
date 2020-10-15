@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={The BOAST Style Guide},
+  pdftitle={Building Shiny Apps the BOAST Way},
   pdfauthor={Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -118,9 +118,16 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
-\title{The BOAST Style Guide}
+\title{Building Shiny Apps the BOAST Way}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A How To and Official Style Guide}
 \author{Neil Hatfield (\href{mailto:njh5464@psu.edu}{\nolinkurl{njh5464@psu.edu}}) and Robert Carey (\href{mailto:rpc5102@psu.edu}{\nolinkurl{rpc5102@psu.edu}})}
-\date{25 June 2020}
+\date{15 October 2020}
 
 \begin{document}
 \maketitle
@@ -133,49 +140,176 @@
 \chapter*{Welcome}\label{welcome}}
 \addcontentsline{toc}{chapter}{Welcome}
 
-This guide spells out the styling that should be used for all apps included in the \href{https://github.com/EducationShinyAppTeam/BOAST}{Book of Apps for Statistics Teaching (BOAST)}.
+One of the biggest advantages of the modern era is computing power. This provides with the ability to present statistical concepts in ways that allow students to explore and build their understandings in dynamic ways. A growing tool on this front is the advent of applications built in the \texttt{R} language and utilizing the \texttt{shiny} package by the RStudio company; these are called ``Shiny Apps''.
 
-There are several different aspects to what makes up styling including:
+We are not the first group to build online applications to help students learn ideas, nor will we be the last. In fact, we're not even the first group to build Shiny apps for Statistics Education. Thus, there are many different approaches to how we go about designing and coding our Shiny apps. The primary goal of this document is to layout the approach that we use to 1) formalize the approach for ourselves, and 2) share our approach with others who are wanting to build their own Shiny apps for teaching.
 
-\begin{itemize}
-\tightlist
-\item
-  Coding (how you write, organize, and comment the code that makes the app)
-\item
-  Visual Appearance (how you make the app look including tabs, fonts, colors, icons, etc.)
-\item
-  Wording (how you write information, instructions, and other messages to the users)
-\item
-  Documentation (how you provide references, including code and data sources, and give credit)
-\end{itemize}
+This guide spells out the recommended approach for building and the required styling to should be used for all apps included in the \href{https://github.com/EducationShinyAppTeam/BOAST}{Book of Apps for Statistics Teaching (BOAST)}. You will need to follow this Style Guide to ensure that any app you create meets (or exceeds) our standards is worth of inclusion in BOAST.
 
-In addition to these elements, we've provide information on ensuring that your App is accessible to all users and works well on mobile devices such as smart phones and tablets.
+\textbf{Effective Date: {[}to be listed here{]}}\\
+\emph{All apps created and/or modified after the Effective Date are required to adhere to this version of the Style Guide. Apps which have not been modified since before the Effective Date will be brought into compliance on rolling basis.}
 
-Whenever possible, we've attempted to provide you with examples to help you see our standards in action as well as code that you can use as templates. For each code block, you should be able to place your cursor over the block and see a copy icon in the upper-right hand corner. This will allow you to copy the code. We've also included links to additional resources so that you can learn more about key topics.
+\hypertarget{organization}{%
+\section{Organization}\label{organization}}
 
-You will need to follow this Style Guide to ensure that any app you create meets (or exceeds) our standards is worth of inclusion in BOAST.
-
-This Style Guide is laid out in several parts:
+We've laid out this document into several parts, each with their own chapters.
 
 \begin{itemize}
 \tightlist
 \item
-  Part 1 covers the basics for getting started
+  Part 1: Getting Started
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chapter 1---Explain Your Idea\\
+  \item
+    Chapter 2---Using a Workflow\\
+  \end{itemize}
 \item
-  Part 2 focuses on Coding Style
+  Part 2: Getting Ready to Code
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chapter 3---Setting Up Your Computer\\
+  \item
+    Chapter 4---Exploring the Boast Template
+  \end{itemize}
 \item
-  Part 3 deals with the many aspects of Visual Styling
+  Part 3: Style Guide--Coding
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chapter 5---BOAST Coding Style
+  \item
+    Chapter 6---HTML and CSS
+  \item
+    Chapter 7---Additional Coding Information
+  \end{itemize}
 \item
-  Part 4 centers on Linguistic Styling
+  Part 4: Style Guide--App Layout
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chapter 8---General Layout
+  \item
+    Chapter 9---Common/Reoccurring Elements
+  \end{itemize}
 \item
-  Part 5 conveys important information on Accessibility and Mobile Friendliness
+  Part 5: Style Guide--Visual Style
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chapter 10---Color
+  \item
+    Chapter 11---Static Images
+  \item
+    Chapter 12---R Plots
+  \end{itemize}
 \item
-  Part 6 is where you can see an example of building an app from scratch
+  Part 6: Style Guide--Language
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chapter 13--Wording
+  \item
+    Chapter 14--Documentation
+  \end{itemize}
 \item
-  The final part is where you can find some additional tools and information.
+  Part 7: Accessibility and Mobile Devices
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chapter 15--Accessibility
+  \item
+    Chapter 16--Mobile Friendliness
+  \end{itemize}
 \end{itemize}
 
-Please keep in mind that this Style Guide is a living document. As issues arise, we will update this guide to address those issues. Additionally, as we think of potential issues, we'll also update the guide to provide guidance before they occur. We also welcome any suggestions for improvements.
+Yes, this looks long but keep in mind the following:
+
+\begin{quote}
+Building an app is easy.
+Building an app that someone else can use is a challenge.
+\end{quote}
+
+\begin{quote}
+While building an app that supports a user in developing a procedural conception of an idea is easy, building an equitable app that supports anyone in developing productive meanings is more difficult.
+\end{quote}
+
+Our mission with BOAST is to achieve both with our entire collection. Thus, writing downs all of the ins and outs of our process will take a significant amount of space. Whenever possible, we've attempted to provide you with examples to help you see our standards in action as well as code that you can use as templates. For each code block, you should be able to place your cursor over the block and see a copy icon in the upper-right hand corner. This will allow you to copy the code. We've also included links to additional resources so that you can learn more about key topics.
+
+Keep in mind that this is a living document. As issues arise, we will update this guide to address them. Additionally, as we think of potential issues, we'll also update the guide to provide guidance before they occur. We also welcome any suggestions for improvements.
+
+\hypertarget{why-our-approach}{%
+\section{Why Our Approach?}\label{why-our-approach}}
+
+While we could go on about the many reasons for our approach, we will focus on the critical ones:
+
+\hypertarget{were-a-team-of-developers}{%
+\subsection{We're a Team of Developers}\label{were-a-team-of-developers}}
+
+From the start, the \href{https://github.com/EducationShinyAppTeam/BOAST}{Book of Apps for Statistics Teaching (BOAST)} has been the joint effort of faculty members and students. Having a clear articulation of how to make apps within our environment is critically to ensure that we have cohesiveness between the apps and through the years as the team changes. Our approach is meant to maximize the team's ability to adapt, maintain, and grow BOAST throughout the years.
+
+\hypertarget{research-driven}{%
+\subsection{Research Driven}\label{research-driven}}
+
+We place a premium on drawing from what researchers have found about student thinking on various topics. And for those topics where the literature is thin or non-existent, we can fall back on the wealth of experience and expertise our faculty have. When we design apps, we focus on what the learning objectives are and work on how we might support students in developing meanings that are consistent with our targets.
+
+\hypertarget{accesiblity-minded}{%
+\subsection{Accesiblity Minded}\label{accesiblity-minded}}
+
+One of the key ways in which our approach differs from a vast majority of others is the level of accessibility thinking we go through. Shiny apps are \textbf{not} very accessible by default and are extremely easy to make even more inaccessible.
+
+For example, consider the following entries in the \href{https://blog.rstudio.com/2020/07/13/winners-of-the-2nd-shiny-contest/}{2020 Shiny app competition}, as of 10/15/2020:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://nz-stefan.shinyapps.io/blog-explorer/\#data}{Blog Explorer by Stefan Schliebs}: This Grand Prize winner has 11 errors, 68 contrast errors, and 14 alerts.
+\item
+  \href{https://shahreyar-abeer.shinyapps.io/life_of_pi/}{Life of Pi: A Monte Carlo Simulation by Zauad Shahereer Abeer}: This Honorable mention has 17 errors, 13 contrast errors, and 9 alerts.
+\item
+  \href{https://pachamaltese.shinyapps.io/tradestatistics/}{OTS Beta Dashboard by Mauricio Vargas}: This Honorable mention generates 14 errors, 0 contrast errors, and 5 alerts.
+\item
+  \href{https://azures.shinyapps.io/normdist/}{Probability of Normal Distribution by Aep Hidayatuloh}: Produces 5 errors, 108 contrast errors, and 27 alerts.
+\item
+  \href{https://shiny.rstudio.com/gallery/didacting-modeling.html}{Didactic Modeling Process: Linear Regression by Daniel Rivera}: while not part of the Shiny contest, this is a currently featured app in \href{https://shiny.rstudio.com/gallery/}{RStudio's Shiny User Showcase}, which has 57 errors, 26 contrast errors, and 184 alerts.
+\end{itemize}
+
+We used WebAIM's Web Accessibility Evaluation Tool (WAVE) to get these measurements. However, we must point out that the above numbers are \emph{under-}estimates. The nature of a Shiny app interferes with WAVE's scanning tool (for example, non-displayed app pages aren't checked) as well as the fact that rendered R plots can only be checked for the presence of alt text/aria labels but not contrast errors, small font sizes, etc.
+
+Now, this isn't to say that our problem free. However, our process ensures that the number of errors that exist are in the single digits. When we publish an app, most of the remaining errors are ones we inherent from the \texttt{shiny} package and we're striving to address.
+
+\hypertarget{avoid-the-shiny-problem}{%
+\subsection{Avoid the ``Shiny'' Problem}\label{avoid-the-shiny-problem}}
+
+In Education, and particularly in the American system, we wrestle with the ``silver bullet problem''. This problem is the belief that some reform effort will function as a fix or cure-all for the issues facing the education system. These reforms never bare out.
+
+In design, people can get caught up with new (at least to them) tools such as a glitzy new system to do something. They will then start incorporating it everywhere they can. However, they often don't stop to think about whether or not this glittery new toy is appropriate or sound design. This is especially true for novice designers.
+
+When dealing with Shiny apps for teaching, we face both problems simultaneously, which we call ``The Shiny Problem''. We work hard to ensure that
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Our apps aren't going to be viewed as silver bullets but as useful resources that can supplement instruction
+\item
+  Just because \texttt{R} can do something doesn't automatically mean that we're going to include it; there must be a sound educational and pedagogical reason for including it.
+\item
+  Just because there's a fancy new package that's been released doesn't mean we'll blindly adopt it and use it wherever; there must be a sound educational and pedagogical reason
+\item
+  Just because someone else made an app that did such-and-such doesn't we mean we're going to; there must be a sound educational and pedagogical reason.
+\end{enumerate}
+
+A key exception to the above deals with coding and app performance, but these are secondary to sound education and pedagogical reasons. We strive for our shiny apps to not become \emph{shiny}.
 
 \hypertarget{part-getting-started}{%
 \part{Getting Started}\label{part-getting-started}}
@@ -1333,7 +1467,7 @@ Here is what the Blue Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=13.26in]{images/blueOverview} 
+{\centering \includegraphics[width=13.26in]{images/colorThemes/blueOverview} 
 
 }
 
@@ -1342,7 +1476,7 @@ Here is what the Blue Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=13.26in]{images/blueCollapse} 
+{\centering \includegraphics[width=13.26in]{images/colorThemes/blueCollapse} 
 
 }
 
@@ -1351,7 +1485,7 @@ Here is what the Blue Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics{images/blueSliders} 
+{\centering \includegraphics{images/colorThemes/blueSliders} 
 
 }
 
@@ -1376,7 +1510,7 @@ Here is what the Green Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/greenOverview} 
+{\centering \includegraphics[width=14in]{images/colorThemes/greenOverview} 
 
 }
 
@@ -1385,7 +1519,7 @@ Here is what the Green Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/greenCollapse} 
+{\centering \includegraphics[width=14in]{images/colorThemes/greenCollapse} 
 
 }
 
@@ -1394,7 +1528,7 @@ Here is what the Green Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics{images/greenSliders} 
+{\centering \includegraphics{images/colorThemes/greenSliders} 
 
 }
 
@@ -1419,7 +1553,7 @@ Here is what the Purple Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/purpleOverview} 
+{\centering \includegraphics[width=14in]{images/colorThemes/purpleOverview} 
 
 }
 
@@ -1428,7 +1562,7 @@ Here is what the Purple Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/purpleCollapse} 
+{\centering \includegraphics[width=14in]{images/colorThemes/purpleCollapse} 
 
 }
 
@@ -1437,7 +1571,7 @@ Here is what the Purple Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics{images/purpleSliders} 
+{\centering \includegraphics{images/colorThemes/purpleSliders} 
 
 }
 
@@ -1462,7 +1596,7 @@ Here is what the ``Black'' Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/blackOverview} 
+{\centering \includegraphics[width=14in]{images/colorThemes/blackOverview} 
 
 }
 
@@ -1471,7 +1605,7 @@ Here is what the ``Black'' Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/blackCollapse} 
+{\centering \includegraphics[width=14in]{images/colorThemes/blackCollapse} 
 
 }
 
@@ -1480,7 +1614,7 @@ Here is what the ``Black'' Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics{images/blackSliders} 
+{\centering \includegraphics{images/colorThemes/blackSliders} 
 
 }
 
@@ -1505,7 +1639,7 @@ Here is what the Yellow Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/yellowOverview} 
+{\centering \includegraphics[width=14in]{images/colorThemes/yellowOverview} 
 
 }
 
@@ -1514,7 +1648,7 @@ Here is what the Yellow Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/yellowCollapse} 
+{\centering \includegraphics[width=14in]{images/colorThemes/yellowCollapse} 
 
 }
 
@@ -1523,7 +1657,7 @@ Here is what the Yellow Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics{images/yellowSliders} 
+{\centering \includegraphics{images/colorThemes/yellowSliders} 
 
 }
 
@@ -1548,7 +1682,7 @@ Here is what the Red Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/redOverview} 
+{\centering \includegraphics[width=14in]{images/colorThemes/redOverview} 
 
 }
 
@@ -1557,7 +1691,7 @@ Here is what the Red Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics[width=14in]{images/redCollapse} 
+{\centering \includegraphics[width=14in]{images/colorThemes/redCollapse} 
 
 }
 
@@ -1566,7 +1700,7 @@ Here is what the Red Palette looks like in action:
 
 \begin{figure}
 
-{\centering \includegraphics{images/redSliders} 
+{\centering \includegraphics{images/colorThemes/redSliders} 
 
 }
 
@@ -2556,11 +2690,11 @@ In games, you can give the user a visual cue as to whether they are correct or i
 
 \begin{figure}
 
-{\centering \includegraphics[width=3.75in]{images/check} \includegraphics[width=3.75in]{images/cross} 
+{\centering \includegraphics[width=3.06in]{images/scoringMarks/right-07} \includegraphics[width=3.06in]{images/scoringMarks/part-right-08} \includegraphics[width=3.06in]{images/scoringMarks/wrong-09} 
 
 }
 
-\caption{Correct and Incorrect Marks}\label{fig:marks}
+\caption{Correct, Partially Correct, and Incorrect Marks}\label{fig:marks}
 \end{figure}
 
 You can save these two images by right-clicking on them and selecting ``Save Image As\ldots{}''. You will need to put them in the \texttt{www} folder/directory of your App.
@@ -3301,9 +3435,9 @@ In particular, we will use \href{https://developer.mozilla.org/en-US/docs/Web/Ac
 \KeywordTok{plotOutput}\NormalTok{(}\DataTypeTok{outputId =}\NormalTok{ plotID) }\CommentTok{# Look for lines like this }
 \CommentTok{# Code for adding the aria label}
 \NormalTok{tags}\OperatorTok{$}\KeywordTok{script}\NormalTok{(}\KeywordTok{HTML}\NormalTok{(}
-  \StringTok{"#(document).ready(function() \{}
+  \StringTok{"$(document).ready(function() \{}
 \StringTok{  document.getElementById('plotId').setAttribute('aria-label',}
-\StringTok{  'General description of the plot')}
+\StringTok{  `General description of the plot`)}
 \StringTok{  \})"}
 \NormalTok{))}
 \CommentTok{# [code omitted]}
@@ -4092,7 +4226,7 @@ As I start thinking about what this app might look like, I'm going to use a shee
 
 \begin{figure}
 
-{\centering \includegraphics[width=22.22in]{images/planSketch1} 
+{\centering \includegraphics[width=22.22in]{images/planSketches/planSketch1} 
 
 }
 
@@ -4105,7 +4239,7 @@ I've additionally identified that I need to include the von Hippel article in my
 
 \begin{figure}
 
-{\centering \includegraphics[width=22.22in]{images/planSketch2-Info} 
+{\centering \includegraphics[width=22.22in]{images/planSketches/planSketch2-Info} 
 
 }
 
@@ -4116,7 +4250,7 @@ The second quadrant of my paper is the Overview Tab sketch (Figure \ref{fig:plan
 
 \begin{figure}
 
-{\centering \includegraphics[width=22.22in]{images/planSketch3-Overview} 
+{\centering \includegraphics[width=22.22in]{images/planSketches/planSketch3-Overview} 
 
 }
 
@@ -4125,7 +4259,7 @@ The second quadrant of my paper is the Overview Tab sketch (Figure \ref{fig:plan
 
 \begin{figure}
 
-{\centering \includegraphics[width=22.22in]{images/planSketch4-Explore} 
+{\centering \includegraphics[width=22.22in]{images/planSketches/planSketch4-Explore} 
 
 }
 
@@ -4140,7 +4274,7 @@ I've left as an open question whether to enable a user to import/create their ow
 
 \begin{figure}
 
-{\centering \includegraphics[width=22.22in]{images/planSketch5-Challenge} 
+{\centering \includegraphics[width=22.22in]{images/planSketches/planSketch5-Challenge} 
 
 }
 
