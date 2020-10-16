@@ -223,6 +223,14 @@ hr {
 	color: black;
 }
 
+.skin-yellow .main-header .navbar .sidebar-toggle {
+	color: black;
+}
+
+.skin-yellow .main-header .navbar .nav > li > a {
+	color: black
+}
+
 .skin-black .main-header .logo {
 	background-color: var(--creek);
 	color: black;
