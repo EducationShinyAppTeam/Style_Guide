@@ -1069,7 +1069,7 @@ caption {
 }
 
 /* Error Messages */
-.leftParagraphError {
+.shiny-output-error-leftParagraphError {
 	text-align: left;
 	padding: 0;
 }
