@@ -1067,3 +1067,9 @@ caption {
   left: 0;
   padding: 10%;
 }
+
+/* Error Messages */
+.leftParagraphError {
+	text-align: left;
+	padding: 0;
+}
