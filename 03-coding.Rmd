@@ -292,25 +292,28 @@ If you come across an app that has in-line CSS OR calls to a CSS file that isn't
 
 ## Metadata {#metadata}
 
-Your App will need the following metadata in either the `app.R` or the `ui.R` file. For long lines, use the `paste` function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.
+As of boastUtils `v0.1.10`, your App will need the following metadata in a file named [DESCRIPTION](https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION) (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased).
 
-For now, use the following format:
+**DESCRIPTION**
 
-```{r metadata, echo=TRUE, eval=FALSE}
-## App Meta Data----------------------------------------------------------------
-APP_TITLE  <<- "Title of the app"
-APP_DESCP  <<- paste(
-  "Description of the app",
-  "use multiple lines to keep the description legible."
-)
-## End App Meta Data------------------------------------------------------------
+```{r metadata, echo = TRUE, eval = FALSE}
+Title: Sample App - A Lengthy Title
+ShortName: Sample App
+Date: 2020-12-31
+Authors@R: c(
+    person("Lorem", "Ipsum", email = "lorem.ipsum@psu.edu", role = c("aut", "cre"))
+    person("Ang", "Li", email = "ang.li@psu.edu", role = c("ctb"))
+  )
+Chapter: Sample Chapter
+Description: This app is focused on the common types of xyz.
+LearningObjectives: The student is expected to learn about xyz and the effects of abc.
+DisplayMode: Normal
+URL: https://psu-eberly.shinyapps.io/Sample_App
+BugReports: https://github.com/EducationShinyAppTeam/Sample_App/issues
+License: CC BY-NC-SA 4.0
+Tags: simulation
+Type: Shiny
 ```
-
-Notice two important things:
-
-+ Both `APP_TITLE` and `APP_DESCP` do not follow camelCase. This is by intent to denote global `constants`.
-+ The use of `<<-` rather than `<-`. This is again to deal with a global aspect.
-
 
 ## Using rLocker {#rlocker}
 

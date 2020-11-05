@@ -15,6 +15,15 @@ description: "This is a manual for one approach to building Shiny Apps and serve
 ---
 
 ```{r, echo = FALSE, eval = FALSE}
+# Required packages to build book
+install.packages(c("bookdown", "devtools", "palmerpenguins", "psych", "rstatix"))
+
+library(devtools)
+devtools::install_github("rstudio/fontawesome")
+
+# Required system library (pandoc-citeproc)
+#  => https://pandoc.org/installing.html
+
 # Rebuild book
 bookdown::render_book("index.Rmd", "bookdown::gitbook")
 ```
