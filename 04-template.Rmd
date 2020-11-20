@@ -1,0 +1,75 @@
+# The Exploring the BOAST Template {#template}
+
+Now that you've gotten your computer set up and you've made yourself a workflow, you're nearly ready to begin working on apps for BOAST. This Style Guide is the primary key to getting start but the BOAST Template is the secondary key to your success. 
+
+## Structure of the BOAST Template Repository {#templateRepo}
+
+To get started, you'll want to take a look at the [BOAST App Template Repository](https://github.com/EducationShinyAppTeam/App_Template) either online or clone the repository ("repo") to your computer. There are several key items in the repo that you'll need to be aware of:
+
++ `app.R`: this is where you will write the code for your app.
+    - Note: Older apps (i.e., non-compliant with this Style Guide) might have `ui.R` and `server.R` files instead. You'll need to convert them if you are doing an update.
++ `www` folder: this will be where you store image files and other non-data, non-R files for your app.
++ `docs` folder: this is where several key files are stored for your including the License, a Readme, and a screenshot.
++ `DESCRIPTION`: this file is where you'll need to place some key information about your app
++ Additional files you may ignore: `.gitignore`, `.lintr`.
+
+As you build your app (or work with existing apps), you'll add various files to the repo. For some of the older apps, part of the maintainer's job will be move the repo into alignment with this template (i.e., add anything missing and move files around as needed).
+
+We will now briefly discuss the files which you will be editing.
+
+## The app.R {#appR}
+
+## DESCRIPTION {#description}
+
+## README.md {#readme}
+
+The `README.md` file is a fairly simple file which only contains four items:
+
+1) The app's [Full] Title
+2) The app's badges
+3) A link to a current screenshot of the app
+4) The app's description
+
+Three of these items (title, screenshot, and description) are self-explanatory. We will quickly mention that you will need to insure that you use the appropriate Title and Description not only here in the `README.md` but also in `DESCRIPTION`. You'll also need to use the full title inside the `app.R`.
+
+### Badges
+
+The second element of the `README.md` are the badges. These allow viewers to see (at a glance) some important information about the app. There are two main types of badges: lifecycle and year.
+
+Beneath each explanation, we've included the code you would place in the `README.md` file to make that badge appear.
+
+
+#### Lifecycle Badges
+
+Lifecycle badges act as a signifier of where in the cycle of development your app is at. Each badge conveys a particular meaning for us.
+
++ ![stable](https://img.shields.io/badge/lifecycle-stable-brightgreen) An app is considered stable when we've reached a point where there are no bugs left to fix, only minimal improvements can be made, and adding new features is not necessary a priority. This is where we want most apps to end up.
+    - `![stable](https://img.shields.io/badge/lifecycle-stable-brightgreen)`
+<br /> <br />
++ ![maturing](https://img.shields.io/badge/lifecycle-maturing-blue) A maturing app is one that is nearing stability but we're still in the process of fine tuning or adding new features to the app.
+    - `![maturing](https://img.shields.io/badge/lifecycle-maturing-blue)`
+<br /> <br />
++ ![experimental](https://img.shields.io/badge/lifecycle-experimental-orange) The experimental badge is for two types of apps: ones that we are still in the process of developing and ones which we've recently released and are actively refining. The common element here is that these apps can change much more drastically than a mature or stable app will.
+    - `![experimental](https://img.shields.io/badge/lifecycle-experimental-orange)`
+<br /> <br />
++ ![questioning](https://img.shields.io/badge/lifecycle-questioning-yellow) Labeling an app with the questioning badge is a sign that we have doubts that the app in it's current state meets the educational/pedagogical goals intended. These are apps where we need to make a decision about whether to update the app, create a new app, or retire the app.
+    - `![questioning](https://img.shields.io/badge/lifecycle-questioning-yellow)`
+<br /> <br />
++ ![superseded](https://img.shields.io/badge/lifecycle-superseded-orange) A superseded app is one where we've made the decision to create a brand new app which will ultimately replace this one. The new app will have its own repository and will be treated as a brand new app rather than a replacement of this app. In time, a superseded app will be downgraded and then retired.
+    - `![superseded](https://img.shields.io/badge/lifecycle-superseded-orange)`
+<br /> <br />
++ ![retired](https://img.shields.io/badge/lifecycle-retired-red) Once an app has reached a point where we have chosen to no longer actively maintain it and feel that it does not serve a pedagogical purpose, we retire the app. This includes removing the app from our shinyapps.io server. The code will be saved on GitHub for posterity but no development will take place.
+    - `![retired](https://img.shields.io/badge/lifecycle-retired-red)`
+
+#### Year Badges
+
+Year badges denote when the app was officially added to the BOAST shinyapps.io server (i.e., deployment). 
+
++ ![year](https://img.shields.io/badge/year-2018-lightgrey) Here the four digit year indicates in what calendar year we deployed the app.
+    - `![year](https://img.shields.io/badge/year-YYYY-lightgrey)`
+    - Replace YYYY with the appropriate year.
+<br /> <br />
++ ![new](https://img.shields.io/badge/lifecycle-newapp-brightgreen) This signifies that the app has just recently been added to our shinyapps.io server for the first time. We will drop this badge after one year.
+    - `![new](https://img.shields.io/badge/lifecycle-newapp-brightgreen)`
+
+## screenshot.png {#screenshot}

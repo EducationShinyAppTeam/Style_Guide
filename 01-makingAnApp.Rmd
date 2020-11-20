@@ -1,4 +1,6 @@
-# (PART) Examples {-}
+# (PART) Getting Started {-}
+
+\setcounter{chapter}{0}
 
 # Making an App {#makingApp}
 

@@ -1,16 +1,14 @@
-# (PART) Visual Appearance {-}
+# App Layout {#layoutb}
 
-# App Layout {#layout}
-
-When considering the Visual Appearance of your App, there are two major areas of consideration: the [Layout](#layout) and what we refer to as [Design Styling](#designStyle). Each of these will be handled in turn. Keep in mind that these two aspects are inter-related and have significant cross-over.
+When considering the Visual Appearance of your App, there are two major areas of consideration: the [Layout](#layoutb) and what we refer to as [Design Styling](#designStyleb). Each of these will be handled in turn. Keep in mind that these two aspects are inter-related and have significant cross-over.
 
 In this chapter, we will be focusing on the layout aspect of how your App looks. That is to say, we're going to talk about the standards/guidelines that cut across all of our apps so that they look like they belong together. 
 
-A good number of the elements of the layout will have a direct consequence on your coding. For instance, in the section on [Organizing Your Code](#orgCode), you saw that the UI definition needed to come before the Server definition. This section defines additional organizational structure to your code as it pertains to the layout of your App.
+A good number of the elements of the layout will have a direct consequence on your coding. For instance, in the section on [Organizing Your Code](#orgCodeb), you saw that the UI definition needed to come before the Server definition. This section defines additional organizational structure to your code as it pertains to the layout of your App.
 
 As a reminder, one of the most important benefits of using the `boastApp` function from the `boastUtils` package is that is that certain aspects of Visual Appearance will be automatically handled for you. However, you still need to do adhere to this Style Guide.
 
-## Dashboard {#dashboard}
+## Dashboard {#dashboardb}
 
 All apps will make use of a Dashboard structure. This divides the visual appearance of each App into three main areas. 
 
@@ -24,7 +22,7 @@ Several of the older apps will have outdated UI calls including, but not limited
 
 Creating the overarching Dashboard layout in your App is actually quit easy:
 
-```{r makeDashboard1, echo=TRUE, eval=FALSE}
+```{r makeDashboard1b, echo=TRUE, eval=FALSE}
 # Required package
 library(shinydashboard)
 
@@ -48,7 +46,7 @@ The `dashboardPage` function will wrap around the rest of your UI element, there
 
 The one argument that you need to explicitly set for the `dashboardPage` is the `skin` argument. This argument sets the overall color theme for your App. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout. 
 
-### Color in the User Interface {#colorUI}
+### Color in the User Interface {#colorUIb}
 
 Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process of this Style Guide seeks to bring the many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden on the students, who should focus on the R side of the programming, not the CSS side.
 
@@ -79,7 +77,7 @@ All of the themes have been checked against 8 different forms of color blindness
 ##### Blue
 
 The Blue Palette is our central palette and should be used by default. The Blue Palette looks like the following:
-```{r bluePalette, fig.cap="The Blue Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
+```{r bluePaletteb, fig.cap="The Blue Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
     mapping = ggplot2::aes(
@@ -135,15 +133,15 @@ ggplot2::ggplot() +
 
 Here is what the Blue Palette looks like in action:
 
-```{r blueAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Blue Palette"}
+```{r blueAction1b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Blue Palette"}
 knitr::include_graphics("images/colorThemes/blueOverview.png")
 ```
 
-```{r blueAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Blue Palette"}
+```{r blueAction2b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Blue Palette"}
 knitr::include_graphics("images/colorThemes/blueCollapse.png")
 ```
 
-```{r blueAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Blue Palette"}
+```{r blueAction3b, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Blue Palette"}
 
 knitr::include_graphics("images/colorThemes/blueSliders.png", dpi=NA)
 ```
@@ -151,7 +149,7 @@ knitr::include_graphics("images/colorThemes/blueSliders.png", dpi=NA)
 ##### Green
 
 The Green Palette looks like the following:
-```{r greenPalette, fig.cap="The Green Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
+```{r greenPaletteb, fig.cap="The Green Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
     mapping = ggplot2::aes(
@@ -195,15 +193,15 @@ ggplot2::ggplot() +
 
 Here is what the Green Palette looks like in action:
 
-```{r greenAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Green Palette"}
+```{r greenAction1b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Green Palette"}
 knitr::include_graphics("images/colorThemes/greenOverview.png")
 ```
 
-```{r greenAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Green Palette"}
+```{r greenAction2b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Green Palette"}
 knitr::include_graphics("images/colorThemes/greenCollapse.png")
 ```
 
-```{r greenAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Green Palette"}
+```{r greenAction3b, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Green Palette"}
 
 knitr::include_graphics("images/colorThemes/greenSliders.png", dpi= NA)
 ```
@@ -211,7 +209,7 @@ knitr::include_graphics("images/colorThemes/greenSliders.png", dpi= NA)
 ##### Purple
 
 The Purple Palette looks like the following:
-```{r purplePalette, fig.cap="The Purple Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
+```{r purplePaletteb, fig.cap="The Purple Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
     mapping = ggplot2::aes(
@@ -255,15 +253,15 @@ ggplot2::ggplot() +
 
 Here is what the Purple Palette looks like in action:
 
-```{r purpleAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Purple Palette"}
+```{r purpleAction1b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Purple Palette"}
 knitr::include_graphics("images/colorThemes/purpleOverview.png")
 ```
 
-```{r purpleAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Purple Palette"}
+```{r purpleAction2b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Purple Palette"}
 knitr::include_graphics("images/colorThemes/purpleCollapse.png")
 ```
 
-```{r purpleAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Purple Palette"}
+```{r purpleAction3b, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Purple Palette"}
 
 knitr::include_graphics("images/colorThemes/purpleSliders.png", dpi= NA)
 ```
@@ -271,7 +269,7 @@ knitr::include_graphics("images/colorThemes/purpleSliders.png", dpi= NA)
 ##### Black
 
 The "Black" Palette is not pegged to the color black, but rather teal/aqua colors. However, to call the theme in the Shiny dashboard, the user must use the value `black` for the the `skin` argument. Here's what the "Black" Palette looks like:
-```{r blackPalette, fig.cap="The 'Black' Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
+```{r blackPaletteb, fig.cap="The 'Black' Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
     mapping = ggplot2::aes(
@@ -315,15 +313,15 @@ ggplot2::ggplot() +
 
 Here is what the "Black" Palette looks like in action:
 
-```{r blackAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the 'Black' Palette"}
+```{r blackAction1b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the 'Black' Palette"}
 knitr::include_graphics("images/colorThemes/blackOverview.png")
 ```
 
-```{r blackAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the 'Black' Palette"}
+```{r blackAction2b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the 'Black' Palette"}
 knitr::include_graphics("images/colorThemes/blackCollapse.png")
 ```
 
-```{r blackAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the 'Black' Palette"}
+```{r blackAction3b, fig.align='center', echo=FALSE, fig.cap="Sliders Using the 'Black' Palette"}
 
 knitr::include_graphics("images/colorThemes/blackSliders.png", dpi= NA)
 ```
@@ -331,7 +329,7 @@ knitr::include_graphics("images/colorThemes/blackSliders.png", dpi= NA)
 ##### Yellow
 
 The Yellow Palette is still under consideration. The current set looks like the following:
-```{r yellowPalette, fig.cap="The Yellow Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
+```{r yellowPaletteb, fig.cap="The Yellow Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
     mapping = ggplot2::aes(
@@ -375,15 +373,15 @@ ggplot2::ggplot() +
 
 Here is what the Yellow Palette looks like in action:
 
-```{r yellowAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Yellow Palette"}
+```{r yellowAction1b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Yellow Palette"}
 knitr::include_graphics("images/colorThemes/yellowOverview.png")
 ```
 
-```{r yellowAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Yellow Palette"}
+```{r yellowAction2b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Yellow Palette"}
 knitr::include_graphics("images/colorThemes/yellowCollapse.png")
 ```
 
-```{r yellowAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Yellow Palette"}
+```{r yellowAction3b, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Yellow Palette"}
 
 knitr::include_graphics("images/colorThemes/yellowSliders.png", dpi= NA)
 ```
@@ -391,7 +389,7 @@ knitr::include_graphics("images/colorThemes/yellowSliders.png", dpi= NA)
 ##### Red
 
 The Red Palette is still under construction. Here's the current set:
-```{r redPalette, fig.cap="The Red Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
+```{r redPaletteb, fig.cap="The Red Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
     mapping = ggplot2::aes(
@@ -435,20 +433,20 @@ ggplot2::ggplot() +
 
 Here is what the Red Palette looks like in action:
 
-```{r redAction1, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Red Palette"}
+```{r redAction1b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Overview Page Using the Red Palette"}
 knitr::include_graphics("images/colorThemes/redOverview.png")
 ```
 
-```{r redAction2, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Red Palette"}
+```{r redAction2b, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Collapsible Boxes Using the Red Palette"}
 knitr::include_graphics("images/colorThemes/redCollapse.png")
 ```
 
-```{r redAction3, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Red Palette"}
+```{r redAction3b, fig.align='center', echo=FALSE, fig.cap="Sliders Using the Red Palette"}
 
 knitr::include_graphics("images/colorThemes/redSliders.png", dpi= NA)
 ```
 
-### Current Chapter Color Assignments {#chapterColor}
+### Current Chapter Color Assignments {#chapterColorb}
 
 Here are the current (05/27/2020) color theme assignments for chapters:
 
@@ -466,7 +464,7 @@ Here are the current (05/27/2020) color theme assignments for chapters:
 + Chapter 12: Stochastic Processes BLUE
 + Chapter 13: Biology GREEN
 
-## Dashboard Header {#header}
+## Dashboard Header {#headerb}
 
 Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon.  
 
@@ -479,7 +477,7 @@ The width of the Title component of the Header should be 250; `titleWidth = 250`
 ### Creating the Dashboard Header
 
 You will use the same structure regardless if you are using `app.R` or `ui.R`.
-```{r makeHeader1, echo=TRUE, eval=FALSE}
+```{r makeHeader1b, echo=TRUE, eval=FALSE}
 # [omitted code]
 dashboardHeader(
       title = "Sample App", # You may use a shortened form of the title here
@@ -514,7 +512,7 @@ If you just have a bare bones Header (i.e., title and home button), you do not n
 
 If you do have something, for example, an Info button. You will need to add some additional code to your server definition. The code you add will depend upon the element. In general, for alert messages, we recommend that you use `shinyWidgets::sendSweetAlert`. Here's a generic example of what could be used for the Info button.
 
-```{r infoServer, echo=TRUE, eval=FALSE}
+```{r infoServerb, echo=TRUE, eval=FALSE}
 # Required Packages
 library(shinyWidgets)
 
@@ -546,7 +544,7 @@ The `type` argument will take one of several options. use the one that best alig
 
 *Note: these buttons/links will throw an error when using the WAVE tool. This is expected at this time.*
 
-## Dashboard Sidebar {#sidebar}
+## Dashboard Sidebar {#sidebarb}
 
 The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. These are referred to as [Tabs Inside the Body](#innerTabs) and are covered in their own section.
 
@@ -556,7 +554,7 @@ For full descriptions of each type of Tab, please refer to the [Dashboard Body S
 
 ### Creating the Dashboard Sidebar
 This code will be the same regardless if you use `app.R` or `ui.R`.
-```{r makeSidebar1, echo=TRUE, eval=FALSE}
+```{r makeSidebar1b, echo=TRUE, eval=FALSE}
 # [omitted code]
 dashboardSidebar(
   width = 250,
@@ -629,7 +627,7 @@ Given the nature of our Apps, there is __NO__ reason for having submenus. If you
 
 If you have followed the above specifications, you do not need to add anything special to your server definition.
 
-## Dashboard Body {#body}
+## Dashboard Body {#bodyb}
 
 The Dashboard Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with. Thus, this is the most important part of the layout of your App.
 
@@ -637,7 +635,7 @@ The order in which your code the Tabs in the Dashboard body needs to mirror the 
 
 The Dashboard Body will begin with the following code in the UI section:
 
-```{r makeBody1, echo=TRUE, eval=FALSE}
+```{r makeBody1b, echo=TRUE, eval=FALSE}
 # [code omitted]
 dashboardBody(
   tabItems(
@@ -673,7 +671,7 @@ The purpose of the Overview Tab is the act like the front/home page of any newsp
 
 #### Creating the Overview Tab
 Here's an example of making an Overview Tab
-```{r makeOverview1, echo=TRUE, eval=FALSE}
+```{r makeOverview1b, echo=TRUE, eval=FALSE}
 # Required Package
 library(shinyBS)
 
@@ -737,7 +735,7 @@ At bare minimum you will need to have one element in your server definition: the
 
 Here is a generic example for the button on the Overview Tab that moves the user to the appropriate next Tab:
 
-```{r movementButton1, echo=TRUE, eval=FALSE}
+```{r movementButton1b, echo=TRUE, eval=FALSE}
 ## Define what each button does; repeat this style of coding for each button
 
 # In your server section
@@ -758,7 +756,7 @@ In the rare cases where you're having a button in the Overview Tab do something 
 
 An exception to the above is if the button is to allow the user to download/open up an activity file. In these cases, you'll not place any code in the server definition. Rather, you'll change the nature of the button. Specifically, you'll not use `bsButton` but `actionButton`:
 
-```{r actionButton1, echo=TRUE, eval=FALSE}
+```{r actionButton1b, echo=TRUE, eval=FALSE}
 # In the UI Section
 actionButton(
   inputId = "ap1",
@@ -805,7 +803,7 @@ Once you find the appropriate page, you'll need to copy the URL for your link. T
 The styling of the link will be managed by the BOAST CSS file.
 
 Here's are two examples of how you would code a text link:
-```{r textLinkEx1, echo=TRUE, eval=FALSE}
+```{r textLinkEx1b, echo=TRUE, eval=FALSE}
 # [omitted code]
 # Working in the UI section
 
@@ -837,7 +835,7 @@ tags$ul(
 #### Creating a Prerequisites Tab
 Here's an example of the code needed to create the Prerequisites Tab in the UI:
 
-```{r makePrereq1, echo=TRUE, eval=FALSE}
+```{r makePrereq1b, echo=TRUE, eval=FALSE}
 # [code omitted]
 tabItem(
   tabName = "Prerequisites",
@@ -934,7 +932,7 @@ At this time, we do not have any examples of creating these tabs for this Style 
 
 Keep in mind that of all tabs in your App, these tabs will demand the most for the UI and the Server.
 
-### References {#refTab}
+### References {#refTabb}
 
 The last Tab will be for your references. This Tab is __REQUIRED__ and is where you will place a reference list for all of the following items that you used in your app:
 
@@ -952,7 +950,7 @@ We will additionally place licensing information for your App at the bottom of t
 
 Creating a References Tab mimics both the Overview and Prerequisites Tab structure and is done in the UI section:
 
-```{r makeRef, echo=TRUE, eval=FALSE}
+```{r makeRefb, echo=TRUE, eval=FALSE}
 # In the UI Section
 # [code omitted]
 tabItem(
@@ -1002,7 +1000,7 @@ tabItem(
 
 You do not need to place anything in the server definition for the References Tab.
 
-### Tabs Inside the Body {#innerTabs}
+### Tabs Inside the Body {#innerTabsb}
 
 There are two types of tabs in a Shiny app: there are the `tabItem` (i.e., the pages within an app and should appear in the Sidebar) and `tabPanel` (i.e., creating sub-pages or independent sections). In this section, we will discuss this later case.
 
@@ -1047,7 +1045,7 @@ Please use the following guidelines for determining the order of inputs in the U
     d. Some combination of the above  
 5. If the inputs are not dynamically linked to the output (e.g., plots automatically update with a change in the input's value), then you should include a button that says "Make Plot" at the end of the inputs.
    
-### Buttons {#buttons}
+### Buttons {#buttonsb}
 Buttons are one way in which users interact with the apps. The two most common button functions that we use are `shiny::actionButton` and `shinyBS::bsButton`. Both functions share many of the same features. Two ways in which they are different is that `shinyBS::bsButton` has an additional `style` argument while `shiny::actionButton` has a `width` argument that gives you fine grain size control (`bsButton` just has a qualitative size option). 
 
 There are three key styling aspects to every button: shape/animation, color, and text & icon.
@@ -1109,7 +1107,7 @@ Here are guidelines for the inclusion of icons in a button:
 ### Correct/Incorrect Marks
 In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of two images:
 
-```{r marks, fig.align='center', echo=FALSE, fig.cap="Correct, Partially Correct, and Incorrect Marks", fig.show='hold'}
+```{r marksb, fig.align='center', echo=FALSE, fig.cap="Correct, Partially Correct, and Incorrect Marks", fig.show='hold'}
 knitr::include_graphics("images/scoringMarks/right-07.png")
 knitr::include_graphics("images/scoringMarks/part-right-08.png")
 knitr::include_graphics("images/scoringMarks/wrong-09.png")
@@ -1127,7 +1125,7 @@ One feature of slider inputs is the option to include a Play/Pause button that a
 
 To enable this, you'll need to make use of the `animate` argument:
 
-```{r animateEx1, echo=TRUE, eval=FALSE}
+```{r animateEx1b, echo=TRUE, eval=FALSE}
 #[code omitted]
 sliderInput(
   inputId = "mtcAlpha",
@@ -1153,7 +1151,7 @@ The styling of the play/pause button will be controlled by the BOAST CSS file.
 
 Consider adding a loading bar to show the process for intense computations; this will help the user understand that your App is processing and not frozen/broken.
 
-### Collapsible Boxes {#collapsible}
+### Collapsible Boxes {#collapsibleb}
 
 One technique that we can make use of to cut down on the amount of visible text on a page is through the use of collapsible boxes. Collapsible boxes are preferred than other methods in that 1) the content remains on the page and thereby accessible, and 2) the user retains control for when to show/hide this information. 
 
@@ -1165,7 +1163,7 @@ Two great places to consider using collapsible boxes include the Prerequisites T
 
 To create a Collapsible Box, you'll need to work in th UI section of your code:
 
-```{r makeCollapsibe, echo=TRUE, eval=FALSE}
+```{r makeCollapsibeb, echo=TRUE, eval=FALSE}
 # [code omitted]
 box(
   title = strong("Title for the Box"), # Use the strong tag
@@ -1193,7 +1191,7 @@ To place something inside of a well panel, all you need to do is wrap that objec
 
 If you wrap each individual element in `wellPanel` you'll get a separate well panel for each call. If you place `wellPanel` too high up in your code, you'll end up putting everything into the well panel.
 
-```{r wellPanel1, echo=TRUE, eval=FALSE}
+```{r wellPanel1b, echo=TRUE, eval=FALSE}
 # In the UI Section
 # [code omitted]
 # Inside a tabItem

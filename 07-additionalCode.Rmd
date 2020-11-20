@@ -1,25 +1,23 @@
-# (PART) Writing Code {-}
-
-# Coding Style {#coding}
+# Coding Style {#codingc}
 
 Now that you've gone through the Getting Started chapters, we can turn our attention to the first part of the Style Guide: Coding. There are many aspects that fall under the heading of Coding Style. 
 
-## General Coding Style {#genCode}
+## General Coding Style {#genCodec}
 
 Our general practice is to make use of the [tidyverse style guide](https://style.tidyverse.org/). However, we do have some important departures and additional practices you need to follow:
 
-- [Leave comments](#comments)
-- [Use informative names](#naming)
-- [Format your code](#formatCode)
-- [Be explicit](#explicit)
+- [Leave comments](#commentsc)
+- [Use informative names](#namingc)
+- [Format your code](#formatCodec)
+- [Be explicit](#explicitc)
 
-### Leave Comments {#comments}
+### Leave Comments {#commentsc}
 
 At bare minimum, use a comment to break your code into sections. This helps you and others conceptualize the code into more manageable chunks. Your comments can provide others with potential keywords to search for when looking at your code later on.
 
 For particularly complex sections, use comments to summarize what you're trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.
 
-### Informative Names {#naming}
+### Informative Names {#namingc}
 
 Use informative names for variables and functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,
 
@@ -30,9 +28,9 @@ Use [camelCase](https://en.wikipedia.org/wiki/Camel_case) for variable names and
 
 Avoid using the variable names from code that you're making use of from another app or script. For example, don't use `waitTimes` to hold your data on the number of correct answers a user has given. It is also good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid [namespace collision](https://en.wikipedia.org/wiki/Naming_collision).
 
-### Format Your Code {#formatCode}
+### Format Your Code {#formatCodec}
 
-See also [Section \@ref(orgCode)](#orgCode)
+See also [Section \@ref(orgCode)](#orgCodec)
 
 Use indentation spacing to help make your code readable. RStudio has a built-in tool that can help with this.
 
@@ -44,7 +42,7 @@ NOTE: this tool is imperfect and can result in left parenthesis or curly braces 
 
 Additionally, you can make use of the `styler` and `lintr` packages to help you perform formatting checks and to quickly reformat code.
 
-### Be Explicit {#explicit}
+### Be Explicit {#explicitc}
 
 One of the best practices a coder can do is to be explicit. And no, we don't mean that type of explicit. This links back to [Informative Naming](#naming) but goes a step beyond. `R` is a functional programming language. One of the important aspects of this is that functions in `R` obey the same rules as mathematical functions, especially multivariate functions. 
 
@@ -52,7 +50,7 @@ One implicit fact about functions that most students don't realize is that the o
 
 Therefore, when you pass values to the arguments of a function in `R`, you should be explicit and include the argument name in your code. For example,
 
-```{r explicit1, eval = FALSE}
+```{r explicit1c, eval = FALSE}
 actionButton(
   inputId = "submit",
   label = "Submit",
@@ -79,17 +77,17 @@ Remember the following: the more proactive you are from the get go in commenting
 ## Additional Coding Style
 In addition, we use the following coding practices.
 
-### Minimize Package Usage {#minPackages}
+### Minimize Package Usage {#minPackagesc}
 
 Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R.
 
 This is not to say that you can't make use of a new package. This guideline's purpose is to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.
 
-To help you avoid name masking (i.e., [Section \@ref(explicit)](#explicit)), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use `dplyr::filter([arguments])` instead of just `filter([arguments])`.
+To help you avoid name masking (i.e., [Section \@ref(explicit)](#explicitc)), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use `dplyr::filter([arguments])` instead of just `filter([arguments])`.
 
 You can also run a `funchir::stale_package_check` on your `app.R`, `ui.R`, and `sever.R` files to see which packages you're loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
 
-```{r staleCheck, echo=TRUE, eval=FALSE}
+```{r staleCheckc, echo=TRUE, eval=FALSE}
 # Check working directory
 getwd()
 # Does the output match the folder path to where you app lives?
@@ -106,7 +104,7 @@ Once you're sure that a package isn't being used, remove the `library` call for 
 
 If you are dealing with a `ui.R`/`server.R` pair, make sure that the appropriate packages are loaded in the right file. For example, `ggplot2` only needs to be loaded in the `server.R` file.
 
-### Minimize External Files {#exFiles}
+### Minimize External Files {#exFilesc}
 
 Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
 
@@ -114,7 +112,7 @@ Wherever possible try to place external files into the `www` directory/folder th
 
 If there are any external files (e.g., `*.csv`, `*.txt`, `*.dat`, `*.jpg`) that are not being used, delete them from the repository.
 
-### Plot Caching {#plotCache}
+### Plot Caching {#plotCachec}
 
 There are cases when your app will include a plot that falls into any of the following categories:
 
@@ -124,7 +122,7 @@ There are cases when your app will include a plot that falls into any of the fol
 
 Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the `renderCachePlot` function rather than `renderPlot`. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).
 
-### Styling Text {#textStyle}
+### Styling Text {#textStylec}
 
 The styling of text (including font size, font weight (i.e., boldface), font family, color, etc.) is something that we began standardizing in Fall 2019. This is centrally managed by Neil and Bob to ensure 1) consistency across apps, 2) to cut down on the extraneous coding you need to do (this way you can focus on the apps), and 3) ensures that our apps are accessible and mobile friendly. To this end:
 
@@ -133,7 +131,7 @@ The styling of text will be controlled using an __external__ CSS (Cascading Styl
 + If you're using the `boastApp` function from `boastUtils` (__recommended for all new apps__), you don't need to do anything as the appropriate calls will automatically be done for you.
 + If you are using the `ui.R` and `server.R` format (i.e., apps from prior years), place the following code in the `tags$head( )` portion at the top of the `dashboardBody` section of the `ui.R` file :
 <!-- end list -->
-``` {r cssCall1, echo = TRUE, eval = FALSE}
+``` {r cssCall1c, echo = TRUE, eval = FALSE}
 dashboardPage(
   skin = "blue",
   dashboardHeader(
@@ -155,10 +153,10 @@ There times when you might need some additional text styling that is not already
 
 The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.
 
-See also [Section \@ref(css)](#css).
+See also [Section \@ref(css)](#cssc).
 
 
-## Organizing Your Code {#orgCode}
+## Organizing Your Code {#orgCodec}
 
 There is a fixed order in which you should write your code. This will depend on if you are using a singular `app.R` file or the pair `ui.r` and `server.r`.
 
@@ -169,7 +167,7 @@ The order for your code will be as follows:
 1.  Packages to be loaded
 2.  App Metadata (see below)
 3.  Any additional source files and custom functions
-4.  UI definition (see [Chapter \@ref(layout)](#layout))
+4.  UI definition (see [Chapter \@ref(layout)](#layoutc))
 5.  Server definition
 6.  `boastApp` call
 
@@ -180,7 +178,7 @@ The order for your code in the `ui.R` file:
 1.  Packages to be loaded
 2.  App Metadata (see below)
 3.  Any additional source files and custom functions
-4.  UI definition (see [Chapter \@ref(layout)](#layout))
+4.  UI definition (see [Chapter \@ref(layout)](#layoutc))
 
 The order for your code in the `server.R` file:
 
@@ -188,7 +186,7 @@ The order for your code in the `server.R` file:
 2.  Any additional source files and custom functions
 3.  Server definition
 
-## HTML {#html}
+## HTML {#htmlc}
 
 Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in `R`. When you run a Shiny app, `R` and the `shiny` packages actually convert all of the `R` code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an __Accessibility Issue__.
 
@@ -206,7 +204,7 @@ The two list environments are Ordered Lists and Unordered Lists.
 Once you've created the list environment, you create items for your list in the same way: `tags$li([content])`. You do not need to and should __NOT__ use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.
 
 Here is an example of how you might create a list:
-```{r listExample1, echo=TRUE, eval=FALSE}
+```{r listExample1c, echo=TRUE, eval=FALSE}
 tags$ul(
   tags$li("This is my first item."),
   tags$li("A second item with a", tags$strong("boldface"), "word.")
@@ -219,7 +217,7 @@ which turns into
 
 There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to `tags$li()` when in that section.
 
-### Headers {#headers}
+### Headers {#headersc}
 
 Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. In fact, if you look at the Table of Contents to the left (provided you haven't hidden it), everything you see there is actually tied to a Header in this document.
 
@@ -246,17 +244,17 @@ For more information check out
 + [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
 + [Penn State's Headings and Subheadings Accessibility](https://accessibility.psu.edu/headings/)
 
-### Paragraphs {#paragraphs}
+### Paragraphs {#paragraphsc}
 
 Your content should be enclosed in the paragraph tag, `p()`. Even if your content is relatively brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is. 
 
-## CSS {#css}
+## CSS {#cssc}
 
 Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.
 
 There are a few key elements at play for CSS:  
 
-1. All apps need to have the appropriate reference to the CSS file (See [Section \@ref(textStyle)](#textStyle)).  
+1. All apps need to have the appropriate reference to the CSS file (See [Section \@ref(textStyle)](#textStylec)).  
     a. Please register any issues, bugs, enhancements, new styling to the Style Guide repository of GitHub. 
 2. Any App specific styling needs to as be in a CSS file and approved.
 3. There should not be any styling code in the `app.R`, `ui.R`, or `server.R` files (a.k.a. in-line CSS). Styling code would look like this:  
@@ -264,7 +262,7 @@ There are a few key elements at play for CSS:
     + `style="color: #fff; background-color: #337ab7; border-color: #2e6da4"`
 4. For objects that need to have a particular styling invoked, we will make use of the `class` attribute. These will invoked through the HTML tags or through the function calls.  
 
-```{r classTag1, echo=TRUE, eval=FALSE}
+```{r classTag1c, echo=TRUE, eval=FALSE}
 # HTML Tag Example 1
 p(
   class = "hangingindent",
@@ -290,13 +288,13 @@ There is an exception to #3: setting up alignment for a div section. This would 
 
 If you come across an app that has in-line CSS OR calls to a CSS file that isn't `boast.css`, please log an issue and mention/assign Neil. (Most common external CSS files are `style.css` and `Feature(s).css`.)
 
-## Metadata {#metadata}
+## Metadata {#metadatac}
 
 As of boastUtils `v0.1.10`, your App will need the following metadata in a file named [DESCRIPTION](https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION) (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased).
 
 **DESCRIPTION**
 
-```{r metadata, echo = TRUE, eval = FALSE}
+```{r metadatac, echo = TRUE, eval = FALSE}
 Title: Sample App - A Lengthy Title
 ShortName: Sample App
 Date: 2020-12-31
@@ -318,7 +316,7 @@ Tags: simulation
 Type: Shiny
 ```
 
-## Using rLocker {#rlocker}
+## Using rLocker {#rlockerc}
 
 Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The [rlocker](https://github.com/rpc5102/rlocker) package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
 

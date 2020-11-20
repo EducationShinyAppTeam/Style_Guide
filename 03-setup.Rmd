@@ -1,6 +1,4 @@
-# (PART) Getting Started {-}
-
-\setcounter{chapter}{0}
+# (PART) Getting Ready to Code {-}
 
 # The Basics {#basics}
 

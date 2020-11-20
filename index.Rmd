@@ -119,5 +119,5 @@ When dealing with Shiny apps for teaching, we face both problems simultaneously,
 3. Just because there's a fancy new package that's been released doesn't mean we'll blindly adopt it and use it wherever; there must be a sound educational and pedagogical reason
 4. Just because someone else made an app that did such-and-such doesn't we mean we're going to; there must be a sound educational and pedagogical reason.
 
-A key exception to the above deals with coding and app performance, but these are secondary to sound education and pedagogical reasons. We strive for our shiny apps to not become *shiny*.
+A key exception to the above deals with coding and app performance, but these are secondary to sound education and pedagogical reasons. We strive for our Shiny apps to not become *shiny*.
 

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 The Basics | Building Shiny Apps the BOAST Way</title>
+  <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 The Basics | Building Shiny Apps the BOAST Way" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 The Basics | Building Shiny Apps the BOAST Way" />
+  
+  <meta name="twitter:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  
+
+<meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
+
+
+<meta name="date" content="2020-11-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basics.html"/>
+<link rel="next" href="coding.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BOAST Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#organization"><i class="fa fa-check"></i><b>0.1</b> Organization</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a><ul>
+<li class="chapter" data-level="0.2.1" data-path="index.html"><a href="index.html#were-a-team-of-developers"><i class="fa fa-check"></i><b>0.2.1</b> We’re a Team of Developers</a></li>
+<li class="chapter" data-level="0.2.2" data-path="index.html"><a href="index.html#research-driven"><i class="fa fa-check"></i><b>0.2.2</b> Research Driven</a></li>
+<li class="chapter" data-level="0.2.3" data-path="index.html"><a href="index.html#accesiblity-minded"><i class="fa fa-check"></i><b>0.2.3</b> Accesiblity Minded</a></li>
+<li class="chapter" data-level="0.2.4" data-path="index.html"><a href="index.html#avoid-the-shiny-problem"><i class="fa fa-check"></i><b>0.2.4</b> Avoid the “Shiny” Problem</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Getting Started</b></span></li>
+<li class="chapter" data-level="1" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>1</b> Making an App</a><ul>
+<li class="chapter" data-level="1.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>1.1</b> Step 1: Read the Style Guide</a></li>
+<li class="chapter" data-level="1.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>1.2</b> Step 2: Identify a Topic</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>1.2.1</b> Your App’s Purpose</a></li>
+<li class="chapter" data-level="1.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>1.2.2</b> The Topic</a></li>
+<li class="chapter" data-level="1.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>1.2.3</b> Goals</a></li>
+<li class="chapter" data-level="1.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>1.2.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>1.3</b> Step 3: Sketch out plans</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="makingApp.html"><a href="makingApp.html#example-1"><i class="fa fa-check"></i><b>1.3.1</b> Example</a></li>
+<li class="chapter" data-level="1.3.2" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>1.3.2</b> Share Your Plan</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>1.4</b> Step 4: Create Repository</a></li>
+<li class="chapter" data-level="1.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>1.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
+<li class="chapter" data-level="1.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>1.6</b> Step 9: Larger Scale Testing</a></li>
+<li class="chapter" data-level="1.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>1.7</b> Steps 10-11: Pull Requestion and Tweaks</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>2</b> Workflow</a><ul>
+<li class="chapter" data-level="2.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps"><i class="fa fa-check"></i><b>2.1</b> Revising Existing Apps</a></li>
+<li class="chapter" data-level="2.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps"><i class="fa fa-check"></i><b>2.2</b> Creating New Apps</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>2.2.1</b> GitHub Repo Names</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>2.3</b> Testing Your App</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>2.3.1</b> Set Up/Login to the VPN</a></li>
+<li class="chapter" data-level="2.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>2.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
+<li class="chapter" data-level="2.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>2.3.3</b> Publishing Your App for Testing</a></li>
+<li class="chapter" data-level="2.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>2.3.4</b> Configuring for Testing</a></li>
+<li class="chapter" data-level="2.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>2.3.5</b> Check the Logs</a></li>
+<li class="chapter" data-level="2.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>2.3.6</b> Problems?</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Getting Ready to Code</b></span></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>3.3</b> Sample App</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.3.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>3.3.2</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.3.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.3.4</b> RStudio Project</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basicsb.html"><a href="basicsb.html"><i class="fa fa-check"></i><b>4</b> The Basics</a><ul>
+<li class="chapter" data-level="4.1" data-path="basicsb.html"><a href="basicsb.html#checklistb"><i class="fa fa-check"></i><b>4.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="4.2" data-path="basicsb.html"><a href="basicsb.html#boastutils-package-1"><i class="fa fa-check"></i><b>4.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="4.3" data-path="basicsb.html"><a href="basicsb.html#sample-app-1"><i class="fa fa-check"></i><b>4.3</b> Sample App</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="basicsb.html"><a href="basicsb.html#direct-download-1"><i class="fa fa-check"></i><b>4.3.1</b> Direct Download</a></li>
+<li class="chapter" data-level="4.3.2" data-path="basicsb.html"><a href="basicsb.html#github-desktop-1"><i class="fa fa-check"></i><b>4.3.2</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="4.3.3" data-path="basicsb.html"><a href="basicsb.html#command-line-1"><i class="fa fa-check"></i><b>4.3.3</b> Command Line</a></li>
+<li class="chapter" data-level="4.3.4" data-path="basicsb.html"><a href="basicsb.html#rstudio-projectb"><i class="fa fa-check"></i><b>4.3.4</b> RStudio Project</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Style Guide-Coding</b></span></li>
+<li class="chapter" data-level="5" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>5</b> Coding Style</a><ul>
+<li class="chapter" data-level="5.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>5.1</b> General Coding Style</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>5.1.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="5.1.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>5.1.2</b> Informative Names</a></li>
+<li class="chapter" data-level="5.1.3" data-path="coding.html"><a href="coding.html#formatCode"><i class="fa fa-check"></i><b>5.1.3</b> Format Your Code</a></li>
+<li class="chapter" data-level="5.1.4" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>5.1.4</b> Be Explicit</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="coding.html"><a href="coding.html#additional-coding-style"><i class="fa fa-check"></i><b>5.2</b> Additional Coding Style</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>5.2.1</b> Minimize Package Usage</a></li>
+<li class="chapter" data-level="5.2.2" data-path="coding.html"><a href="coding.html#exFiles"><i class="fa fa-check"></i><b>5.2.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="5.2.3" data-path="coding.html"><a href="coding.html#plotCache"><i class="fa fa-check"></i><b>5.2.3</b> Plot Caching</a></li>
+<li class="chapter" data-level="5.2.4" data-path="coding.html"><a href="coding.html#textStyle"><i class="fa fa-check"></i><b>5.2.4</b> Styling Text</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="coding.html"><a href="coding.html#orgCode"><i class="fa fa-check"></i><b>5.3</b> Organizing Your Code</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="coding.html"><a href="coding.html#using-app.r"><i class="fa fa-check"></i><b>5.3.1</b> Using <code>app.R</code></a></li>
+<li class="chapter" data-level="5.3.2" data-path="coding.html"><a href="coding.html#using-ui.r-and-server.r"><i class="fa fa-check"></i><b>5.3.2</b> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="coding.html"><a href="coding.html#html"><i class="fa fa-check"></i><b>5.4</b> HTML</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="coding.html"><a href="coding.html#lists"><i class="fa fa-check"></i><b>5.4.1</b> Lists</a></li>
+<li class="chapter" data-level="5.4.2" data-path="coding.html"><a href="coding.html#headers"><i class="fa fa-check"></i><b>5.4.2</b> Headers</a></li>
+<li class="chapter" data-level="5.4.3" data-path="coding.html"><a href="coding.html#paragraphs"><i class="fa fa-check"></i><b>5.4.3</b> Paragraphs</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>5.5</b> CSS</a></li>
+<li class="chapter" data-level="5.6" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>5.6</b> Metadata</a></li>
+<li class="chapter" data-level="5.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>5.7</b> Using rLocker</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>5.7.1</b> Installing</a></li>
+<li class="chapter" data-level="5.7.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>5.7.2</b> Setup</a></li>
+<li class="chapter" data-level="5.7.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>5.7.3</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="codingb.html"><a href="codingb.html"><i class="fa fa-check"></i><b>6</b> Coding Style</a><ul>
+<li class="chapter" data-level="6.1" data-path="codingb.html"><a href="codingb.html#genCodeb"><i class="fa fa-check"></i><b>6.1</b> General Coding Style</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="codingb.html"><a href="codingb.html#commentsb"><i class="fa fa-check"></i><b>6.1.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="6.1.2" data-path="codingb.html"><a href="codingb.html#namingb"><i class="fa fa-check"></i><b>6.1.2</b> Informative Names</a></li>
+<li class="chapter" data-level="6.1.3" data-path="codingb.html"><a href="codingb.html#formatCodeb"><i class="fa fa-check"></i><b>6.1.3</b> Format Your Code</a></li>
+<li class="chapter" data-level="6.1.4" data-path="codingb.html"><a href="codingb.html#explicitb"><i class="fa fa-check"></i><b>6.1.4</b> Be Explicit</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="codingb.html"><a href="codingb.html#additional-coding-style-1"><i class="fa fa-check"></i><b>6.2</b> Additional Coding Style</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="codingb.html"><a href="codingb.html#minPackagesb"><i class="fa fa-check"></i><b>6.2.1</b> Minimize Package Usage</a></li>
+<li class="chapter" data-level="6.2.2" data-path="codingb.html"><a href="codingb.html#exFilesb"><i class="fa fa-check"></i><b>6.2.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="6.2.3" data-path="codingb.html"><a href="codingb.html#plotCacheb"><i class="fa fa-check"></i><b>6.2.3</b> Plot Caching</a></li>
+<li class="chapter" data-level="6.2.4" data-path="codingb.html"><a href="codingb.html#textStyleb"><i class="fa fa-check"></i><b>6.2.4</b> Styling Text</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="codingb.html"><a href="codingb.html#orgCodeb"><i class="fa fa-check"></i><b>6.3</b> Organizing Your Code</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="codingb.html"><a href="codingb.html#using-app.r-1"><i class="fa fa-check"></i><b>6.3.1</b> Using <code>app.R</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="codingb.html"><a href="codingb.html#using-ui.r-and-server.r-1"><i class="fa fa-check"></i><b>6.3.2</b> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="codingb.html"><a href="codingb.html#htmlb"><i class="fa fa-check"></i><b>6.4</b> HTML</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="codingb.html"><a href="codingb.html#lists-1"><i class="fa fa-check"></i><b>6.4.1</b> Lists</a></li>
+<li class="chapter" data-level="6.4.2" data-path="codingb.html"><a href="codingb.html#headersb"><i class="fa fa-check"></i><b>6.4.2</b> Headers</a></li>
+<li class="chapter" data-level="6.4.3" data-path="codingb.html"><a href="codingb.html#paragraphsb"><i class="fa fa-check"></i><b>6.4.3</b> Paragraphs</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="codingb.html"><a href="codingb.html#cssb"><i class="fa fa-check"></i><b>6.5</b> CSS</a></li>
+<li class="chapter" data-level="6.6" data-path="codingb.html"><a href="codingb.html#metadatab"><i class="fa fa-check"></i><b>6.6</b> Metadata</a></li>
+<li class="chapter" data-level="6.7" data-path="codingb.html"><a href="codingb.html#rlockerb"><i class="fa fa-check"></i><b>6.7</b> Using rLocker</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="codingb.html"><a href="codingb.html#installing-1"><i class="fa fa-check"></i><b>6.7.1</b> Installing</a></li>
+<li class="chapter" data-level="6.7.2" data-path="codingb.html"><a href="codingb.html#setup-1"><i class="fa fa-check"></i><b>6.7.2</b> Setup</a></li>
+<li class="chapter" data-level="6.7.3" data-path="codingb.html"><a href="codingb.html#usage-1"><i class="fa fa-check"></i><b>6.7.3</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="codingc.html"><a href="codingc.html"><i class="fa fa-check"></i><b>7</b> Coding Style</a><ul>
+<li class="chapter" data-level="7.1" data-path="codingc.html"><a href="codingc.html#genCodec"><i class="fa fa-check"></i><b>7.1</b> General Coding Style</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="codingc.html"><a href="codingc.html#commentsc"><i class="fa fa-check"></i><b>7.1.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="7.1.2" data-path="codingc.html"><a href="codingc.html#namingc"><i class="fa fa-check"></i><b>7.1.2</b> Informative Names</a></li>
+<li class="chapter" data-level="7.1.3" data-path="codingc.html"><a href="codingc.html#formatCodec"><i class="fa fa-check"></i><b>7.1.3</b> Format Your Code</a></li>
+<li class="chapter" data-level="7.1.4" data-path="codingc.html"><a href="codingc.html#explicitc"><i class="fa fa-check"></i><b>7.1.4</b> Be Explicit</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="codingc.html"><a href="codingc.html#additional-coding-style-2"><i class="fa fa-check"></i><b>7.2</b> Additional Coding Style</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="codingc.html"><a href="codingc.html#minPackagesc"><i class="fa fa-check"></i><b>7.2.1</b> Minimize Package Usage</a></li>
+<li class="chapter" data-level="7.2.2" data-path="codingc.html"><a href="codingc.html#exFilesc"><i class="fa fa-check"></i><b>7.2.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="7.2.3" data-path="codingc.html"><a href="codingc.html#plotCachec"><i class="fa fa-check"></i><b>7.2.3</b> Plot Caching</a></li>
+<li class="chapter" data-level="7.2.4" data-path="codingc.html"><a href="codingc.html#textStylec"><i class="fa fa-check"></i><b>7.2.4</b> Styling Text</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="codingc.html"><a href="codingc.html#orgCodec"><i class="fa fa-check"></i><b>7.3</b> Organizing Your Code</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="codingc.html"><a href="codingc.html#using-app.r-2"><i class="fa fa-check"></i><b>7.3.1</b> Using <code>app.R</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="codingc.html"><a href="codingc.html#using-ui.r-and-server.r-2"><i class="fa fa-check"></i><b>7.3.2</b> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="codingc.html"><a href="codingc.html#htmlc"><i class="fa fa-check"></i><b>7.4</b> HTML</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="codingc.html"><a href="codingc.html#lists-2"><i class="fa fa-check"></i><b>7.4.1</b> Lists</a></li>
+<li class="chapter" data-level="7.4.2" data-path="codingc.html"><a href="codingc.html#headersc"><i class="fa fa-check"></i><b>7.4.2</b> Headers</a></li>
+<li class="chapter" data-level="7.4.3" data-path="codingc.html"><a href="codingc.html#paragraphsc"><i class="fa fa-check"></i><b>7.4.3</b> Paragraphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="codingc.html"><a href="codingc.html#cssc"><i class="fa fa-check"></i><b>7.5</b> CSS</a></li>
+<li class="chapter" data-level="7.6" data-path="codingc.html"><a href="codingc.html#metadatac"><i class="fa fa-check"></i><b>7.6</b> Metadata</a></li>
+<li class="chapter" data-level="7.7" data-path="codingc.html"><a href="codingc.html#rlockerc"><i class="fa fa-check"></i><b>7.7</b> Using rLocker</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="codingc.html"><a href="codingc.html#installing-2"><i class="fa fa-check"></i><b>7.7.1</b> Installing</a></li>
+<li class="chapter" data-level="7.7.2" data-path="codingc.html"><a href="codingc.html#setup-2"><i class="fa fa-check"></i><b>7.7.2</b> Setup</a></li>
+<li class="chapter" data-level="7.7.3" data-path="codingc.html"><a href="codingc.html#usage-2"><i class="fa fa-check"></i><b>7.7.3</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
+<li class="chapter" data-level="8" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i><b>8</b> App Layout</a><ul>
+<li class="chapter" data-level="8.1" data-path="layout.html"><a href="layout.html#dashboard"><i class="fa fa-check"></i><b>8.1</b> Dashboard</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard"><i class="fa fa-check"></i><b>8.1.1</b> Creating the Dashboard</a></li>
+<li class="chapter" data-level="8.1.2" data-path="layout.html"><a href="layout.html#colorUI"><i class="fa fa-check"></i><b>8.1.2</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="8.1.3" data-path="layout.html"><a href="layout.html#chapterColor"><i class="fa fa-check"></i><b>8.1.3</b> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="layout.html"><a href="layout.html#header"><i class="fa fa-check"></i><b>8.2</b> Dashboard Header</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>8.2.1</b> Creating the Dashboard Header</a></li>
+<li class="chapter" data-level="8.2.2" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>8.2.2</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="layout.html"><a href="layout.html#sidebar"><i class="fa fa-check"></i><b>8.3</b> Dashboard Sidebar</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>8.3.1</b> Creating the Dashboard Sidebar</a></li>
+<li class="chapter" data-level="8.3.2" data-path="layout.html"><a href="layout.html#sidebar-order"><i class="fa fa-check"></i><b>8.3.2</b> Sidebar Order</a></li>
+<li class="chapter" data-level="8.3.3" data-path="layout.html"><a href="layout.html#sidebar-names"><i class="fa fa-check"></i><b>8.3.3</b> Sidebar Names</a></li>
+<li class="chapter" data-level="8.3.4" data-path="layout.html"><a href="layout.html#sidebar-icons"><i class="fa fa-check"></i><b>8.3.4</b> Sidebar Icons</a></li>
+<li class="chapter" data-level="8.3.5" data-path="layout.html"><a href="layout.html#submenus"><i class="fa fa-check"></i><b>8.3.5</b> Submenus</a></li>
+<li class="chapter" data-level="8.3.6" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>8.3.6</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="layout.html"><a href="layout.html#body"><i class="fa fa-check"></i><b>8.4</b> Dashboard Body</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="layout.html"><a href="layout.html#the-overview-tab"><i class="fa fa-check"></i><b>8.4.1</b> The Overview Tab</a></li>
+<li class="chapter" data-level="8.4.2" data-path="layout.html"><a href="layout.html#a-prerequisites-tab"><i class="fa fa-check"></i><b>8.4.2</b> A Prerequisites Tab</a></li>
+<li class="chapter" data-level="8.4.3" data-path="layout.html"><a href="layout.html#activity-tabs"><i class="fa fa-check"></i><b>8.4.3</b> Activity Tab(s)</a></li>
+<li class="chapter" data-level="8.4.4" data-path="layout.html"><a href="layout.html#refTab"><i class="fa fa-check"></i><b>8.4.4</b> References</a></li>
+<li class="chapter" data-level="8.4.5" data-path="layout.html"><a href="layout.html#innerTabs"><i class="fa fa-check"></i><b>8.4.5</b> Tabs Inside the Body</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="layout.html"><a href="layout.html#common-elements"><i class="fa fa-check"></i><b>8.5</b> Common Elements</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="layout.html"><a href="layout.html#ordering-inputs"><i class="fa fa-check"></i><b>8.5.1</b> Ordering Inputs</a></li>
+<li class="chapter" data-level="8.5.2" data-path="layout.html"><a href="layout.html#buttons"><i class="fa fa-check"></i><b>8.5.2</b> Buttons</a></li>
+<li class="chapter" data-level="8.5.3" data-path="layout.html"><a href="layout.html#correctincorrect-marks"><i class="fa fa-check"></i><b>8.5.3</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="8.5.4" data-path="layout.html"><a href="layout.html#animation-buttons"><i class="fa fa-check"></i><b>8.5.4</b> Animation Buttons</a></li>
+<li class="chapter" data-level="8.5.5" data-path="layout.html"><a href="layout.html#progress-bar"><i class="fa fa-check"></i><b>8.5.5</b> Progress Bar</a></li>
+<li class="chapter" data-level="8.5.6" data-path="layout.html"><a href="layout.html#collapsible"><i class="fa fa-check"></i><b>8.5.6</b> Collapsible Boxes</a></li>
+<li class="chapter" data-level="8.5.7" data-path="layout.html"><a href="layout.html#well-panels"><i class="fa fa-check"></i><b>8.5.7</b> Well Panels</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="layoutb.html"><a href="layoutb.html"><i class="fa fa-check"></i><b>9</b> App Layout</a><ul>
+<li class="chapter" data-level="9.1" data-path="layoutb.html"><a href="layoutb.html#dashboardb"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="layoutb.html"><a href="layoutb.html#creating-the-dashboard-1"><i class="fa fa-check"></i><b>9.1.1</b> Creating the Dashboard</a></li>
+<li class="chapter" data-level="9.1.2" data-path="layoutb.html"><a href="layoutb.html#colorUIb"><i class="fa fa-check"></i><b>9.1.2</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="9.1.3" data-path="layoutb.html"><a href="layoutb.html#chapterColorb"><i class="fa fa-check"></i><b>9.1.3</b> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="layoutb.html"><a href="layoutb.html#headerb"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="layoutb.html"><a href="layoutb.html#creating-the-dashboard-header-1"><i class="fa fa-check"></i><b>9.2.1</b> Creating the Dashboard Header</a></li>
+<li class="chapter" data-level="9.2.2" data-path="layoutb.html"><a href="layoutb.html#whats-needed-in-the-server-definition-4"><i class="fa fa-check"></i><b>9.2.2</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="layoutb.html"><a href="layoutb.html#sidebarb"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="layoutb.html"><a href="layoutb.html#creating-the-dashboard-sidebar-1"><i class="fa fa-check"></i><b>9.3.1</b> Creating the Dashboard Sidebar</a></li>
+<li class="chapter" data-level="9.3.2" data-path="layoutb.html"><a href="layoutb.html#sidebar-order-1"><i class="fa fa-check"></i><b>9.3.2</b> Sidebar Order</a></li>
+<li class="chapter" data-level="9.3.3" data-path="layoutb.html"><a href="layoutb.html#sidebar-names-1"><i class="fa fa-check"></i><b>9.3.3</b> Sidebar Names</a></li>
+<li class="chapter" data-level="9.3.4" data-path="layoutb.html"><a href="layoutb.html#sidebar-icons-1"><i class="fa fa-check"></i><b>9.3.4</b> Sidebar Icons</a></li>
+<li class="chapter" data-level="9.3.5" data-path="layoutb.html"><a href="layoutb.html#submenus-1"><i class="fa fa-check"></i><b>9.3.5</b> Submenus</a></li>
+<li class="chapter" data-level="9.3.6" data-path="layoutb.html"><a href="layoutb.html#whats-needed-in-the-server-definition-5"><i class="fa fa-check"></i><b>9.3.6</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="layoutb.html"><a href="layoutb.html#bodyb"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="layoutb.html"><a href="layoutb.html#the-overview-tab-1"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Tab</a></li>
+<li class="chapter" data-level="9.4.2" data-path="layoutb.html"><a href="layoutb.html#a-prerequisites-tab-1"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Tab</a></li>
+<li class="chapter" data-level="9.4.3" data-path="layoutb.html"><a href="layoutb.html#activity-tabs-1"><i class="fa fa-check"></i><b>9.4.3</b> Activity Tab(s)</a></li>
+<li class="chapter" data-level="9.4.4" data-path="layoutb.html"><a href="layoutb.html#refTabb"><i class="fa fa-check"></i><b>9.4.4</b> References</a></li>
+<li class="chapter" data-level="9.4.5" data-path="layoutb.html"><a href="layoutb.html#innerTabsb"><i class="fa fa-check"></i><b>9.4.5</b> Tabs Inside the Body</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="layoutb.html"><a href="layoutb.html#common-elements-1"><i class="fa fa-check"></i><b>9.5</b> Common Elements</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="layoutb.html"><a href="layoutb.html#ordering-inputs-1"><i class="fa fa-check"></i><b>9.5.1</b> Ordering Inputs</a></li>
+<li class="chapter" data-level="9.5.2" data-path="layoutb.html"><a href="layoutb.html#buttonsb"><i class="fa fa-check"></i><b>9.5.2</b> Buttons</a></li>
+<li class="chapter" data-level="9.5.3" data-path="layoutb.html"><a href="layoutb.html#correctincorrect-marks-1"><i class="fa fa-check"></i><b>9.5.3</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="9.5.4" data-path="layoutb.html"><a href="layoutb.html#animation-buttons-1"><i class="fa fa-check"></i><b>9.5.4</b> Animation Buttons</a></li>
+<li class="chapter" data-level="9.5.5" data-path="layoutb.html"><a href="layoutb.html#progress-bar-1"><i class="fa fa-check"></i><b>9.5.5</b> Progress Bar</a></li>
+<li class="chapter" data-level="9.5.6" data-path="layoutb.html"><a href="layoutb.html#collapsibleb"><i class="fa fa-check"></i><b>9.5.6</b> Collapsible Boxes</a></li>
+<li class="chapter" data-level="9.5.7" data-path="layoutb.html"><a href="layoutb.html#well-panels-1"><i class="fa fa-check"></i><b>9.5.7</b> Well Panels</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Style Guide-Visual Style</b></span></li>
+<li class="chapter" data-level="10" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i><b>10</b> Design Style</a><ul>
+<li class="chapter" data-level="10.1" data-path="designStyle.html"><a href="designStyle.html#logo"><i class="fa fa-check"></i><b>10.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="10.2" data-path="designStyle.html"><a href="designStyle.html#colors"><i class="fa fa-check"></i><b>10.2</b> Colors</a></li>
+<li class="chapter" data-level="10.3" data-path="designStyle.html"><a href="designStyle.html#styleText"><i class="fa fa-check"></i><b>10.3</b> Text Styling</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="designStyle.html"><a href="designStyle.html#headings"><i class="fa fa-check"></i><b>10.3.1</b> Headings</a></li>
+<li class="chapter" data-level="10.3.2" data-path="designStyle.html"><a href="designStyle.html#paragraph-text"><i class="fa fa-check"></i><b>10.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="10.3.3" data-path="designStyle.html"><a href="designStyle.html#mathematics"><i class="fa fa-check"></i><b>10.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="10.3.4" data-path="designStyle.html"><a href="designStyle.html#game-question-text"><i class="fa fa-check"></i><b>10.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="10.3.5" data-path="designStyle.html"><a href="designStyle.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>10.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="10.3.6" data-path="designStyle.html"><a href="designStyle.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>10.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="10.3.7" data-path="designStyle.html"><a href="designStyle.html#text-in-r-plots"><i class="fa fa-check"></i><b>10.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="10.3.8" data-path="designStyle.html"><a href="designStyle.html#text-case"><i class="fa fa-check"></i><b>10.3.8</b> Text Case</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="designStyle.html"><a href="designStyle.html#graphics"><i class="fa fa-check"></i><b>10.4</b> Graphics</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="designStyle.html"><a href="designStyle.html#graphLab"><i class="fa fa-check"></i><b>10.4.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="10.4.2" data-path="designStyle.html"><a href="designStyle.html#axes-and-scales"><i class="fa fa-check"></i><b>10.4.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="10.4.3" data-path="designStyle.html"><a href="designStyle.html#colorPlots"><i class="fa fa-check"></i><b>10.4.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="10.4.4" data-path="designStyle.html"><a href="designStyle.html#tables"><i class="fa fa-check"></i><b>10.4.4</b> Tables</a></li>
+<li class="chapter" data-level="10.4.5" data-path="designStyle.html"><a href="designStyle.html#static-images"><i class="fa fa-check"></i><b>10.4.5</b> Static Images</a></li>
+<li class="chapter" data-level="10.4.6" data-path="designStyle.html"><a href="designStyle.html#altText"><i class="fa fa-check"></i><b>10.4.6</b> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="designStyleb.html"><a href="designStyleb.html"><i class="fa fa-check"></i><b>11</b> Design Style</a><ul>
+<li class="chapter" data-level="11.1" data-path="designStyleb.html"><a href="designStyleb.html#logob"><i class="fa fa-check"></i><b>11.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="11.2" data-path="designStyleb.html"><a href="designStyleb.html#colors-1"><i class="fa fa-check"></i><b>11.2</b> Colors</a></li>
+<li class="chapter" data-level="11.3" data-path="designStyleb.html"><a href="designStyleb.html#styleTextb"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="designStyleb.html"><a href="designStyleb.html#headings-1"><i class="fa fa-check"></i><b>11.3.1</b> Headings</a></li>
+<li class="chapter" data-level="11.3.2" data-path="designStyleb.html"><a href="designStyleb.html#paragraph-text-1"><i class="fa fa-check"></i><b>11.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="11.3.3" data-path="designStyleb.html"><a href="designStyleb.html#mathematics-1"><i class="fa fa-check"></i><b>11.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="11.3.4" data-path="designStyleb.html"><a href="designStyleb.html#game-question-text-1"><i class="fa fa-check"></i><b>11.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="11.3.5" data-path="designStyleb.html"><a href="designStyleb.html#label-text-buttons-sliders-other-inputs-and-alerts-1"><i class="fa fa-check"></i><b>11.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="11.3.6" data-path="designStyleb.html"><a href="designStyleb.html#feedback-and-hint-text-1"><i class="fa fa-check"></i><b>11.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="11.3.7" data-path="designStyleb.html"><a href="designStyleb.html#text-in-r-plots-1"><i class="fa fa-check"></i><b>11.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="11.3.8" data-path="designStyleb.html"><a href="designStyleb.html#text-case-1"><i class="fa fa-check"></i><b>11.3.8</b> Text Case</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="designStyleb.html"><a href="designStyleb.html#graphicsb"><i class="fa fa-check"></i><b>11.4</b> Graphics</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="designStyleb.html"><a href="designStyleb.html#graphLabb"><i class="fa fa-check"></i><b>11.4.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="11.4.2" data-path="designStyleb.html"><a href="designStyleb.html#axes-and-scales-1"><i class="fa fa-check"></i><b>11.4.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="11.4.3" data-path="designStyleb.html"><a href="designStyleb.html#colorPlotsb"><i class="fa fa-check"></i><b>11.4.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="11.4.4" data-path="designStyleb.html"><a href="designStyleb.html#tables-1"><i class="fa fa-check"></i><b>11.4.4</b> Tables</a></li>
+<li class="chapter" data-level="11.4.5" data-path="designStyleb.html"><a href="designStyleb.html#static-images-1"><i class="fa fa-check"></i><b>11.4.5</b> Static Images</a></li>
+<li class="chapter" data-level="11.4.6" data-path="designStyleb.html"><a href="designStyleb.html#altTextb"><i class="fa fa-check"></i><b>11.4.6</b> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="designStylec.html"><a href="designStylec.html"><i class="fa fa-check"></i><b>12</b> Design Style</a><ul>
+<li class="chapter" data-level="12.1" data-path="designStylec.html"><a href="designStylec.html#logoc"><i class="fa fa-check"></i><b>12.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="12.2" data-path="designStylec.html"><a href="designStylec.html#colors-2"><i class="fa fa-check"></i><b>12.2</b> Colors</a></li>
+<li class="chapter" data-level="12.3" data-path="designStylec.html"><a href="designStylec.html#styleTextc"><i class="fa fa-check"></i><b>12.3</b> Text Styling</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="designStylec.html"><a href="designStylec.html#headings-2"><i class="fa fa-check"></i><b>12.3.1</b> Headings</a></li>
+<li class="chapter" data-level="12.3.2" data-path="designStylec.html"><a href="designStylec.html#paragraph-text-2"><i class="fa fa-check"></i><b>12.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="12.3.3" data-path="designStylec.html"><a href="designStylec.html#mathematics-2"><i class="fa fa-check"></i><b>12.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="12.3.4" data-path="designStylec.html"><a href="designStylec.html#game-question-text-2"><i class="fa fa-check"></i><b>12.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="12.3.5" data-path="designStylec.html"><a href="designStylec.html#label-text-buttons-sliders-other-inputs-and-alerts-2"><i class="fa fa-check"></i><b>12.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="12.3.6" data-path="designStylec.html"><a href="designStylec.html#feedback-and-hint-text-2"><i class="fa fa-check"></i><b>12.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="12.3.7" data-path="designStylec.html"><a href="designStylec.html#text-in-r-plots-2"><i class="fa fa-check"></i><b>12.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="12.3.8" data-path="designStylec.html"><a href="designStylec.html#text-case-2"><i class="fa fa-check"></i><b>12.3.8</b> Text Case</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="designStylec.html"><a href="designStylec.html#graphicsc"><i class="fa fa-check"></i><b>12.4</b> Graphics</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="designStylec.html"><a href="designStylec.html#graphLabc"><i class="fa fa-check"></i><b>12.4.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="12.4.2" data-path="designStylec.html"><a href="designStylec.html#axes-and-scales-2"><i class="fa fa-check"></i><b>12.4.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="12.4.3" data-path="designStylec.html"><a href="designStylec.html#colorPlotsc"><i class="fa fa-check"></i><b>12.4.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="12.4.4" data-path="designStylec.html"><a href="designStylec.html#tables-2"><i class="fa fa-check"></i><b>12.4.4</b> Tables</a></li>
+<li class="chapter" data-level="12.4.5" data-path="designStylec.html"><a href="designStylec.html#static-images-2"><i class="fa fa-check"></i><b>12.4.5</b> Static Images</a></li>
+<li class="chapter" data-level="12.4.6" data-path="designStylec.html"><a href="designStylec.html#altTextc"><i class="fa fa-check"></i><b>12.4.6</b> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>VI Style Guide-Language</b></span></li>
+<li class="chapter" data-level="13" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>13</b> Wording</a><ul>
+<li class="chapter" data-level="13.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>13.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="13.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>13.2</b> Popovers</a></li>
+<li class="chapter" data-level="13.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>13.3</b> Dealing with Differing Vocabularies</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>13.3.1</b> The Jingle/Jangle Problem</a></li>
+<li class="chapter" data-level="13.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>13.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
+<li class="chapter" data-level="13.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>13.3.3</b> Option 1: Hover Text</a></li>
+<li class="chapter" data-level="13.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>13.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>13.4</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>14</b> Documentation</a><ul>
+<li class="chapter" data-level="14.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>14.1</b> References</a></li>
+<li class="chapter" data-level="14.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>14.2</b> Plagiarism</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>14.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="14.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>14.2.2</b> In Code</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>14.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="14.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>14.4</b> Graphics</a></li>
+<li class="chapter" data-level="14.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>14.5</b> Data</a></li>
+</ul></li>
+<li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
+<li class="chapter" data-level="15" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>15</b> Accessibility</a><ul>
+<li class="chapter" data-level="15.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>15.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="15.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>15.2</b> Checking Accessibility</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>15.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="15.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>15.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="15.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>15.2.3</b> Addressing Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>16</b> Mobile Friendliness</a></li>
+<li class="part"><span><b>VIII Final Thoughts</b></span></li>
+<li class="chapter" data-level="17" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>17</b> Additional Tools</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Building Shiny Apps the BOAST Way</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="basicsb" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> The Basics</h1>
+<p>Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.</p>
+<div id="checklistb" class="section level2">
+<h2><span class="header-section-number">4.1</span> Getting Started Checklist</h2>
+<ol style="list-style-type: decimal">
+<li><p>Ensure that you have all of necessary accounts and if not, put in a request to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
+<ol style="list-style-type: lower-alpha">
+<li><a href="https://www.datacamp.com/">DataCamp</a><br />
+</li>
+<li><a href="https://github.com/">GitHub</a><br />
+</li>
+<li><a href="https://github.com/EducationShinyAppTeam">EducationShinyAppTeam</a></li>
+<li><a href="https://teams.microsoft.com/l/team/19%3a8423bc25992a4451952d8312b497324d%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&amp;tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e">BOAST</a> in Microsoft Teams (tied to your PSU AccessID)</li>
+</ol></li>
+<li><p>Ensure that you have all of the required software</p>
+<ol style="list-style-type: lower-alpha">
+<li><a href="https://cloud.r-project.org/"><code>R</code> (version 3.5.* minimum, version 4.0.0 preferred)</a></li>
+<li><a href="https://rstudio.com/products/rstudio/download/#download">RStudio Desktop (most current version preferred)</a></li>
+</ol></li>
+<li><p>Additional Software that we strongly recommend</p>
+<ol style="list-style-type: lower-alpha">
+<li><a href="https://desktop.github.com/">GitHub Desktop</a></li>
+</ol></li>
+<li><p><code>R</code> Packages–here are some basic packages that everyone will need; be sure to install their dependencies</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="basicsb.html#cb4-1"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;DT&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;shiny&quot;</span>, <span class="st">&quot;shinyBS&quot;</span>, </span>
+<span id="cb4-2"><a href="basicsb.html#cb4-2"></a>                   <span class="st">&quot;shinyWidgets&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;tippy&quot;</span>))</span></code></pre></div></li>
+<li><p>A copy of the Sample App (<a href="#sample-appb">see below</a>)</p></li>
+</ol>
+</div>
+<div id="boastutils-package-1" class="section level2">
+<h2><span class="header-section-number">4.2</span> <code>boastUtils</code> Package</h2>
+<p>Bob created the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent.</p>
+<p><strong>Starting Summer 2020, you will be required to you make use of this tool.</strong></p>
+<p>Please check out the <a href="https://github.com/EducationShinyAppTeam/boastUtils">package’s GitHub page</a> for instructions on installing and usage.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="basicsb.html#cb5-1"></a><span class="kw">library</span>(devtools)</span>
+<span id="cb5-2"><a href="basicsb.html#cb5-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/boastUtils&quot;</span>)</span></code></pre></div>
+</div>
+<div id="sample-app-1" class="section level2">
+<h2><span class="header-section-number">4.3</span> Sample App</h2>
+<p>Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the <a href="https://github.com/EducationShinyAppTeam/Sample_App">Sample_App</a> template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.</p>
+<p>There are several methods you can use:</p>
+<ul>
+<li><a href="basics.html#direct-download">Direct Download (Basic)</a></li>
+<li><a href="basics.html#github-desktop">GitHub Desktop (Recommended)</a></li>
+<li><a href="basics.html#command-line">Command Line (Advanced)</a></li>
+<li><a href="basics.html#rstudio-project">RStudio Project</a></li>
+</ul>
+<div id="direct-download-1" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Direct Download</h3>
+<p>You can download this repository directly by visiting:</p>
+<blockquote>
+<p><a href="https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip" class="uri">https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip</a></p>
+</blockquote>
+</div>
+<div id="github-desktop-1" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> GitHub Desktop</h3>
+<p>If you are using <a href="https://desktop.github.com/">GitHub Desktop</a> and have <a href="https://help.github.com/en/desktop/getting-started-with-github-desktop/authenticating-to-github">linked your account</a> that has access to the <a href="https://github.com/EducationShinyAppTeam">EducationShinyAppTeam</a> repository, you can do the following from inside GitHub Desktop:</p>
+<ol style="list-style-type: decimal">
+<li>Bring up the Clone Repository Menu (File -&gt; Clone Repository…)<br />
+</li>
+<li>Enter Sample_App in the search bar and select the option that says Sample_App (not sampleapp)</li>
+<li>Click the Choose… button for the local path (this is where you want to the clone to live on your computer)</li>
+<li>Click the Clone button.</li>
+</ol>
+<p><strong>See also:</strong></p>
+<ul>
+<li><a href="https://help.github.com/en/desktop">GitHub Desktop Help</a></li>
+</ul>
+</div>
+<div id="command-line-1" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Command Line</h3>
+<p>Enter the following command in your terminal:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="basicsb.html#cb6-1"></a><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/Sample_App.git</span></code></pre></div>
+<p><strong>See also:</strong></p>
+<ul>
+<li><a href="https://guides.github.com/introduction/git-handbook/">Git Handbook</a></li>
+<li><a href="https://try.github.io/">Resources to learn Git</a></li>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the userR</a></li>
+</ul>
+</div>
+<div id="rstudio-projectb" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> RStudio Project</h3>
+<p>You can also use RStudio to connect to and copy repositories from GitHub. There are a few extra steps that you’ll need to go through compared to other methods. We recommend that you use GitHub Desktop.</p>
+<ol style="list-style-type: decimal">
+<li>In your browser, navigate to the repository you want to copy; in this case the <a href="https://github.com/EducationShinyAppTeam/Sample_App">Sample_App repo</a>.</li>
+<li>Launch RStudio and create a new project.</li>
+<li>Select the Version Control option and then Git.</li>
+<li>Switch back to your browser and click on the Clone or Download button. There should be a line of text starting with <code>git@github</code> that you can copy. Do so.</li>
+<li>Returning to RStudio, paste the get you just copied into the Repository URL field.</li>
+<li>Adjust the directory name and the subdirectory (where this project will live on your machine) as you see fit.</li>
+<li>Click the Create Project button.</li>
+</ol>
+<p>This method will ensure that you will be able to successfully push and pull changes to GitHub. For additional help, Neil has created a video “<a href="https://youtu.be/IK0SiEz5vjs">Using RStudio to Connect to GitHub</a>” which walks you through the process.</p>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="coding.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["BOAST_style_guide.pdf", "BOAST_style_guide.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

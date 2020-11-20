@@ -1,4 +1,4 @@
-# (PART) Linguistics {-}
+# (PART) Style Guide-Language {-}
 
 # Wording {#wording}
 
