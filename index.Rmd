@@ -44,8 +44,8 @@ __Effective Date: [to be listed here]__
 We've laid out this document into several parts, each with their own chapters.
 
 + Part 1: Getting Started
-    - Chapter 1---Explain Your Idea  
-    - Chapter 2---Using a Workflow  
+    - Chapter 1---Using a Workflow
+    - Chapter 2---Explain Your Idea  
 + Part 2: Getting Ready to Code  
     - Chapter 3---Setting Up Your Computer  
     - Chapter 4---Exploring the Boast Template 
@@ -80,11 +80,11 @@ Keep in mind that this is a living document. As issues arise, we will update thi
 
 ## Why Our Approach?
 
-While we could go on about the many reasons for our approach, we will focus on the critical ones:
+While we could go on about the many reasons for our approach, we will focus on the critical ones.
 
 ### We're a Team of Developers
 
-From the start, the [Book of Apps for Statistics Teaching (BOAST)](https://github.com/EducationShinyAppTeam/BOAST) has been the joint effort of faculty members and students. Having a clear articulation of how to make apps within our environment is critically to ensure that we have cohesiveness between the apps and through the years as the team changes. Our approach is meant to maximize the team's ability to adapt, maintain, and grow BOAST throughout the years. 
+From the start, the [Book of Apps for Statistics Teaching (BOAST)](https://github.com/EducationShinyAppTeam/BOAST) has been the joint effort of faculty members and students. Having a clear articulation of how to make apps within our environment is critical to ensure that we have cohesiveness between the apps and through the years as the team changes. Our approach is meant to maximize the team's ability to adapt, maintain, and grow BOAST throughout the years. 
 
 ### Research Driven
 
@@ -117,7 +117,7 @@ When dealing with Shiny apps for teaching, we face both problems simultaneously,
 1. Our apps aren't going to be viewed as silver bullets but as useful resources that can supplement instruction
 2. Just because `R` can do something doesn't automatically mean that we're going to include it; there must be a sound educational and pedagogical reason for including it.
 3. Just because there's a fancy new package that's been released doesn't mean we'll blindly adopt it and use it wherever; there must be a sound educational and pedagogical reason
-4. Just because someone else made an app that did such-and-such doesn't we mean we're going to; there must be a sound educational and pedagogical reason.
+4. Just because someone else made an app that did such-and-such doesn't mean we're going to; there must be a sound educational and pedagogical reason.
 
-A key exception to the above deals with coding and app performance, but these are secondary to sound education and pedagogical reasons. We strive for our Shiny apps to not become *shiny*.
+A key exception to the above deals with coding and app performance, but these are secondary to sound educational and pedagogical reasons. We strive for our Shiny apps to not become *shiny*.
 

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="11.2 Colors | Building Shiny Apps the BOAST Way" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+<meta name="github-repo" content="educationshinyappteam/Style_Guide" />
+
+<meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
+
+<meta name="date" content="2020-11-20" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST).">
+
+<title>11.2 Colors | Building Shiny Apps the BOAST Way</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#welcome">Welcome</a><ul>
+<li><a href="0-1-organization.html#organization"><span class="toc-section-number">0.1</span> Organization</a></li>
+<li class="has-sub"><a href="0-2-why-our-approach.html#why-our-approach"><span class="toc-section-number">0.2</span> Why Our Approach?</a><ul>
+<li><a href="0-2-why-our-approach.html#were-a-team-of-developers"><span class="toc-section-number">0.2.1</span> We’re a Team of Developers</a></li>
+<li><a href="0-2-why-our-approach.html#research-driven"><span class="toc-section-number">0.2.2</span> Research Driven</a></li>
+<li><a href="0-2-why-our-approach.html#accesiblity-minded"><span class="toc-section-number">0.2.3</span> Accesiblity Minded</a></li>
+<li><a href="0-2-why-our-approach.html#avoid-the-shiny-problem"><span class="toc-section-number">0.2.4</span> Avoid the “Shiny” Problem</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="1-workflow.html#workflow"><span class="toc-section-number">1</span> Workflow</a><ul>
+<li><a href="1-1-revising-existing-apps.html#revising-existing-apps"><span class="toc-section-number">1.1</span> Revising Existing Apps</a></li>
+<li class="has-sub"><a href="1-2-creating-new-apps.html#creating-new-apps"><span class="toc-section-number">1.2</span> Creating New Apps</a><ul>
+<li><a href="1-2-creating-new-apps.html#repo-naming"><span class="toc-section-number">1.2.1</span> GitHub Repo Names</a></li>
+</ul></li>
+<li class="has-sub"><a href="1-3-testing.html#testing"><span class="toc-section-number">1.3</span> Testing Your App</a><ul>
+<li><a href="1-3-testing.html#set-uplogin-to-the-vpn"><span class="toc-section-number">1.3.1</span> Set Up/Login to the VPN</a></li>
+<li><a href="1-3-testing.html#connecting-your-rstudio-to-tlts-rstudio-connect"><span class="toc-section-number">1.3.2</span> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
+<li><a href="1-3-testing.html#publishing-your-app-for-testing"><span class="toc-section-number">1.3.3</span> Publishing Your App for Testing</a></li>
+<li><a href="1-3-testing.html#configuring-for-testing"><span class="toc-section-number">1.3.4</span> Configuring for Testing</a></li>
+<li><a href="1-3-testing.html#check-the-logs"><span class="toc-section-number">1.3.5</span> Check the Logs</a></li>
+<li><a href="1-3-testing.html#problems"><span class="toc-section-number">1.3.6</span> Problems?</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Getting Started</b></span></li>
+<li class="has-sub"><a href="2-makingApp.html#makingApp"><span class="toc-section-number">2</span> Making an App</a><ul>
+<li><a href="2-1-step1.html#step1"><span class="toc-section-number">2.1</span> Step 1: Read the Style Guide</a></li>
+<li class="has-sub"><a href="2-2-step2.html#step2"><span class="toc-section-number">2.2</span> Step 2: Identify a Topic</a><ul>
+<li><a href="2-2-step2.html#step2a"><span class="toc-section-number">2.2.1</span> Your App’s Purpose</a></li>
+<li><a href="2-2-step2.html#step2b"><span class="toc-section-number">2.2.2</span> The Topic</a></li>
+<li><a href="2-2-step2.html#step2c"><span class="toc-section-number">2.2.3</span> Goals</a></li>
+<li><a href="2-2-step2.html#example"><span class="toc-section-number">2.2.4</span> Example</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-3-step3.html#step3"><span class="toc-section-number">2.3</span> Step 3: Sketch out plans</a><ul>
+<li><a href="2-3-step3.html#example-1"><span class="toc-section-number">2.3.1</span> Example</a></li>
+<li><a href="2-3-step3.html#share-your-plan"><span class="toc-section-number">2.3.2</span> Share Your Plan</a></li>
+</ul></li>
+<li><a href="2-4-step4.html#step4"><span class="toc-section-number">2.4</span> Step 4: Create Repository</a></li>
+<li><a href="2-5-steps5-8.html#steps5-8"><span class="toc-section-number">2.5</span> Steps 5-8: Write, Edit, Test, Debug</a></li>
+<li><a href="2-6-step9.html#step9"><span class="toc-section-number">2.6</span> Step 9: Larger Scale Testing</a></li>
+<li><a href="2-7-steps10-11.html#steps10-11"><span class="toc-section-number">2.7</span> Steps 10-11: Pull Requestion and Tweaks</a></li>
+</ul></li>
+<li class="part"><span><b>II Getting Ready to Code</b></span></li>
+<li class="has-sub"><a href="3-basics.html#basics"><span class="toc-section-number">3</span> The Basics</a><ul>
+<li><a href="3-1-checklist.html#checklist"><span class="toc-section-number">3.1</span> Getting Started Checklist</a></li>
+<li><a href="3-2-boastutils-package.html#boastutils-package"><span class="toc-section-number">3.2</span> <code>boastUtils</code> Package</a></li>
+<li class="has-sub"><a href="3-3-sample-app.html#sample-app"><span class="toc-section-number">3.3</span> Sample App</a><ul>
+<li><a href="3-3-sample-app.html#direct-download"><span class="toc-section-number">3.3.1</span> Direct Download</a></li>
+<li><a href="3-3-sample-app.html#github-desktop"><span class="toc-section-number">3.3.2</span> GitHub Desktop</a></li>
+<li><a href="3-3-sample-app.html#command-line"><span class="toc-section-number">3.3.3</span> Command Line</a></li>
+<li><a href="3-3-sample-app.html#rstudio-project"><span class="toc-section-number">3.3.4</span> RStudio Project</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="4-template.html#template"><span class="toc-section-number">4</span> The Exploring the BOAST Template</a><ul>
+<li><a href="4-1-templateRepo.html#templateRepo"><span class="toc-section-number">4.1</span> Structure of the BOAST Template Repository</a></li>
+<li><a href="4-2-appR.html#appR"><span class="toc-section-number">4.2</span> The app.R</a></li>
+<li><a href="4-3-description.html#description"><span class="toc-section-number">4.3</span> DESCRIPTION</a></li>
+<li class="has-sub"><a href="4-4-readme.html#readme"><span class="toc-section-number">4.4</span> README.md</a><ul>
+<li><a href="4-4-readme.html#badges"><span class="toc-section-number">4.4.1</span> Badges</a></li>
+</ul></li>
+<li><a href="4-5-screenshot.html#screenshot"><span class="toc-section-number">4.5</span> screenshot.png</a></li>
+</ul></li>
+<li class="part"><span><b>III Style Guide-Coding</b></span></li>
+<li class="has-sub"><a href="5-coding.html#coding"><span class="toc-section-number">5</span> Coding Style</a><ul>
+<li class="has-sub"><a href="5-1-genCode.html#genCode"><span class="toc-section-number">5.1</span> General Coding Style</a><ul>
+<li><a href="5-1-genCode.html#comments"><span class="toc-section-number">5.1.1</span> Leave Comments</a></li>
+<li><a href="5-1-genCode.html#naming"><span class="toc-section-number">5.1.2</span> Informative Names</a></li>
+<li><a href="5-1-genCode.html#formatCode"><span class="toc-section-number">5.1.3</span> Format Your Code</a></li>
+<li><a href="5-1-genCode.html#explicit"><span class="toc-section-number">5.1.4</span> Be Explicit</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-2-additional-coding-style.html#additional-coding-style"><span class="toc-section-number">5.2</span> Additional Coding Style</a><ul>
+<li><a href="5-2-additional-coding-style.html#minPackages"><span class="toc-section-number">5.2.1</span> Minimize Package Usage</a></li>
+<li><a href="5-2-additional-coding-style.html#exFiles"><span class="toc-section-number">5.2.2</span> Minimize External Files</a></li>
+<li><a href="5-2-additional-coding-style.html#plotCache"><span class="toc-section-number">5.2.3</span> Plot Caching</a></li>
+<li><a href="5-2-additional-coding-style.html#textStyle"><span class="toc-section-number">5.2.4</span> Styling Text</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-3-orgCode.html#orgCode"><span class="toc-section-number">5.3</span> Organizing Your Code</a><ul>
+<li><a href="5-3-orgCode.html#using-app.r"><span class="toc-section-number">5.3.1</span> Using <code>app.R</code></a></li>
+<li><a href="5-3-orgCode.html#using-ui.r-and-server.r"><span class="toc-section-number">5.3.2</span> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="has-sub"><a href="5-4-html.html#html"><span class="toc-section-number">5.4</span> HTML</a><ul>
+<li><a href="5-4-html.html#lists"><span class="toc-section-number">5.4.1</span> Lists</a></li>
+<li><a href="5-4-html.html#headers"><span class="toc-section-number">5.4.2</span> Headers</a></li>
+<li><a href="5-4-html.html#paragraphs"><span class="toc-section-number">5.4.3</span> Paragraphs</a></li>
+</ul></li>
+<li><a href="5-5-css.html#css"><span class="toc-section-number">5.5</span> CSS</a></li>
+<li><a href="5-6-metadata.html#metadata"><span class="toc-section-number">5.6</span> Metadata</a></li>
+<li class="has-sub"><a href="5-7-rlocker.html#rlocker"><span class="toc-section-number">5.7</span> Using rLocker</a><ul>
+<li><a href="5-7-rlocker.html#installing"><span class="toc-section-number">5.7.1</span> Installing</a></li>
+<li><a href="5-7-rlocker.html#setup"><span class="toc-section-number">5.7.2</span> Setup</a></li>
+<li><a href="5-7-rlocker.html#usage"><span class="toc-section-number">5.7.3</span> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="6-codingb.html#codingb"><span class="toc-section-number">6</span> Coding Style</a><ul>
+<li class="has-sub"><a href="6-1-genCodeb.html#genCodeb"><span class="toc-section-number">6.1</span> General Coding Style</a><ul>
+<li><a href="6-1-genCodeb.html#commentsb"><span class="toc-section-number">6.1.1</span> Leave Comments</a></li>
+<li><a href="6-1-genCodeb.html#namingb"><span class="toc-section-number">6.1.2</span> Informative Names</a></li>
+<li><a href="6-1-genCodeb.html#formatCodeb"><span class="toc-section-number">6.1.3</span> Format Your Code</a></li>
+<li><a href="6-1-genCodeb.html#explicitb"><span class="toc-section-number">6.1.4</span> Be Explicit</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-additional-coding-style-1.html#additional-coding-style-1"><span class="toc-section-number">6.2</span> Additional Coding Style</a><ul>
+<li><a href="6-2-additional-coding-style-1.html#minPackagesb"><span class="toc-section-number">6.2.1</span> Minimize Package Usage</a></li>
+<li><a href="6-2-additional-coding-style-1.html#exFilesb"><span class="toc-section-number">6.2.2</span> Minimize External Files</a></li>
+<li><a href="6-2-additional-coding-style-1.html#plotCacheb"><span class="toc-section-number">6.2.3</span> Plot Caching</a></li>
+<li><a href="6-2-additional-coding-style-1.html#textStyleb"><span class="toc-section-number">6.2.4</span> Styling Text</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-orgCodeb.html#orgCodeb"><span class="toc-section-number">6.3</span> Organizing Your Code</a><ul>
+<li><a href="6-3-orgCodeb.html#using-app.r-1"><span class="toc-section-number">6.3.1</span> Using <code>app.R</code></a></li>
+<li><a href="6-3-orgCodeb.html#using-ui.r-and-server.r-1"><span class="toc-section-number">6.3.2</span> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="has-sub"><a href="6-4-htmlb.html#htmlb"><span class="toc-section-number">6.4</span> HTML</a><ul>
+<li><a href="6-4-htmlb.html#lists-1"><span class="toc-section-number">6.4.1</span> Lists</a></li>
+<li><a href="6-4-htmlb.html#headersb"><span class="toc-section-number">6.4.2</span> Headers</a></li>
+<li><a href="6-4-htmlb.html#paragraphsb"><span class="toc-section-number">6.4.3</span> Paragraphs</a></li>
+</ul></li>
+<li><a href="6-5-cssb.html#cssb"><span class="toc-section-number">6.5</span> CSS</a></li>
+<li><a href="6-6-metadatab.html#metadatab"><span class="toc-section-number">6.6</span> Metadata</a></li>
+<li class="has-sub"><a href="6-7-rlockerb.html#rlockerb"><span class="toc-section-number">6.7</span> Using rLocker</a><ul>
+<li><a href="6-7-rlockerb.html#installing-1"><span class="toc-section-number">6.7.1</span> Installing</a></li>
+<li><a href="6-7-rlockerb.html#setup-1"><span class="toc-section-number">6.7.2</span> Setup</a></li>
+<li><a href="6-7-rlockerb.html#usage-1"><span class="toc-section-number">6.7.3</span> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="7-codingc.html#codingc"><span class="toc-section-number">7</span> Coding Style</a><ul>
+<li class="has-sub"><a href="7-1-genCodec.html#genCodec"><span class="toc-section-number">7.1</span> General Coding Style</a><ul>
+<li><a href="7-1-genCodec.html#commentsc"><span class="toc-section-number">7.1.1</span> Leave Comments</a></li>
+<li><a href="7-1-genCodec.html#namingc"><span class="toc-section-number">7.1.2</span> Informative Names</a></li>
+<li><a href="7-1-genCodec.html#formatCodec"><span class="toc-section-number">7.1.3</span> Format Your Code</a></li>
+<li><a href="7-1-genCodec.html#explicitc"><span class="toc-section-number">7.1.4</span> Be Explicit</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-2-additional-coding-style-2.html#additional-coding-style-2"><span class="toc-section-number">7.2</span> Additional Coding Style</a><ul>
+<li><a href="7-2-additional-coding-style-2.html#minPackagesc"><span class="toc-section-number">7.2.1</span> Minimize Package Usage</a></li>
+<li><a href="7-2-additional-coding-style-2.html#exFilesc"><span class="toc-section-number">7.2.2</span> Minimize External Files</a></li>
+<li><a href="7-2-additional-coding-style-2.html#plotCachec"><span class="toc-section-number">7.2.3</span> Plot Caching</a></li>
+<li><a href="7-2-additional-coding-style-2.html#textStylec"><span class="toc-section-number">7.2.4</span> Styling Text</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-orgCodec.html#orgCodec"><span class="toc-section-number">7.3</span> Organizing Your Code</a><ul>
+<li><a href="7-3-orgCodec.html#using-app.r-2"><span class="toc-section-number">7.3.1</span> Using <code>app.R</code></a></li>
+<li><a href="7-3-orgCodec.html#using-ui.r-and-server.r-2"><span class="toc-section-number">7.3.2</span> Using <code>ui.R</code> and <code>server.R</code></a></li>
+</ul></li>
+<li class="has-sub"><a href="7-4-htmlc.html#htmlc"><span class="toc-section-number">7.4</span> HTML</a><ul>
+<li><a href="7-4-htmlc.html#lists-2"><span class="toc-section-number">7.4.1</span> Lists</a></li>
+<li><a href="7-4-htmlc.html#headersc"><span class="toc-section-number">7.4.2</span> Headers</a></li>
+<li><a href="7-4-htmlc.html#paragraphsc"><span class="toc-section-number">7.4.3</span> Paragraphs</a></li>
+</ul></li>
+<li><a href="7-5-cssc.html#cssc"><span class="toc-section-number">7.5</span> CSS</a></li>
+<li><a href="7-6-metadatac.html#metadatac"><span class="toc-section-number">7.6</span> Metadata</a></li>
+<li class="has-sub"><a href="7-7-rlockerc.html#rlockerc"><span class="toc-section-number">7.7</span> Using rLocker</a><ul>
+<li><a href="7-7-rlockerc.html#installing-2"><span class="toc-section-number">7.7.1</span> Installing</a></li>
+<li><a href="7-7-rlockerc.html#setup-2"><span class="toc-section-number">7.7.2</span> Setup</a></li>
+<li><a href="7-7-rlockerc.html#usage-2"><span class="toc-section-number">7.7.3</span> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
+<li class="has-sub"><a href="8-layout.html#layout"><span class="toc-section-number">8</span> App Layout</a><ul>
+<li class="has-sub"><a href="8-1-dashboard.html#dashboard"><span class="toc-section-number">8.1</span> Dashboard</a><ul>
+<li><a href="8-1-dashboard.html#creating-the-dashboard"><span class="toc-section-number">8.1.1</span> Creating the Dashboard</a></li>
+<li><a href="8-1-dashboard.html#colorUI"><span class="toc-section-number">8.1.2</span> Color in the User Interface</a></li>
+<li><a href="8-1-dashboard.html#chapterColor"><span class="toc-section-number">8.1.3</span> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-2-header.html#header"><span class="toc-section-number">8.2</span> Dashboard Header</a><ul>
+<li><a href="8-2-header.html#creating-the-dashboard-header"><span class="toc-section-number">8.2.1</span> Creating the Dashboard Header</a></li>
+<li><a href="8-2-header.html#whats-needed-in-the-server-definition"><span class="toc-section-number">8.2.2</span> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-3-sidebar.html#sidebar"><span class="toc-section-number">8.3</span> Dashboard Sidebar</a><ul>
+<li><a href="8-3-sidebar.html#creating-the-dashboard-sidebar"><span class="toc-section-number">8.3.1</span> Creating the Dashboard Sidebar</a></li>
+<li><a href="8-3-sidebar.html#sidebar-order"><span class="toc-section-number">8.3.2</span> Sidebar Order</a></li>
+<li><a href="8-3-sidebar.html#sidebar-names"><span class="toc-section-number">8.3.3</span> Sidebar Names</a></li>
+<li><a href="8-3-sidebar.html#sidebar-icons"><span class="toc-section-number">8.3.4</span> Sidebar Icons</a></li>
+<li><a href="8-3-sidebar.html#submenus"><span class="toc-section-number">8.3.5</span> Submenus</a></li>
+<li><a href="8-3-sidebar.html#whats-needed-in-the-server-definition-1"><span class="toc-section-number">8.3.6</span> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-4-body.html#body"><span class="toc-section-number">8.4</span> Dashboard Body</a><ul>
+<li><a href="8-4-body.html#the-overview-tab"><span class="toc-section-number">8.4.1</span> The Overview Tab</a></li>
+<li><a href="8-4-body.html#a-prerequisites-tab"><span class="toc-section-number">8.4.2</span> A Prerequisites Tab</a></li>
+<li><a href="8-4-body.html#activity-tabs"><span class="toc-section-number">8.4.3</span> Activity Tab(s)</a></li>
+<li><a href="8-4-body.html#refTab"><span class="toc-section-number">8.4.4</span> References</a></li>
+<li><a href="8-4-body.html#innerTabs"><span class="toc-section-number">8.4.5</span> Tabs Inside the Body</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-5-common-elements.html#common-elements"><span class="toc-section-number">8.5</span> Common Elements</a><ul>
+<li><a href="8-5-common-elements.html#ordering-inputs"><span class="toc-section-number">8.5.1</span> Ordering Inputs</a></li>
+<li><a href="8-5-common-elements.html#buttons"><span class="toc-section-number">8.5.2</span> Buttons</a></li>
+<li><a href="8-5-common-elements.html#correctincorrect-marks"><span class="toc-section-number">8.5.3</span> Correct/Incorrect Marks</a></li>
+<li><a href="8-5-common-elements.html#animation-buttons"><span class="toc-section-number">8.5.4</span> Animation Buttons</a></li>
+<li><a href="8-5-common-elements.html#progress-bar"><span class="toc-section-number">8.5.5</span> Progress Bar</a></li>
+<li><a href="8-5-common-elements.html#collapsible"><span class="toc-section-number">8.5.6</span> Collapsible Boxes</a></li>
+<li><a href="8-5-common-elements.html#well-panels"><span class="toc-section-number">8.5.7</span> Well Panels</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="9-layoutb.html#layoutb"><span class="toc-section-number">9</span> App Layout</a><ul>
+<li class="has-sub"><a href="9-1-dashboardb.html#dashboardb"><span class="toc-section-number">9.1</span> Dashboard</a><ul>
+<li><a href="9-1-dashboardb.html#creating-the-dashboard-1"><span class="toc-section-number">9.1.1</span> Creating the Dashboard</a></li>
+<li><a href="9-1-dashboardb.html#colorUIb"><span class="toc-section-number">9.1.2</span> Color in the User Interface</a></li>
+<li><a href="9-1-dashboardb.html#chapterColorb"><span class="toc-section-number">9.1.3</span> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-2-headerb.html#headerb"><span class="toc-section-number">9.2</span> Dashboard Header</a><ul>
+<li><a href="9-2-headerb.html#creating-the-dashboard-header-1"><span class="toc-section-number">9.2.1</span> Creating the Dashboard Header</a></li>
+<li><a href="9-2-headerb.html#whats-needed-in-the-server-definition-4"><span class="toc-section-number">9.2.2</span> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-3-sidebarb.html#sidebarb"><span class="toc-section-number">9.3</span> Dashboard Sidebar</a><ul>
+<li><a href="9-3-sidebarb.html#creating-the-dashboard-sidebar-1"><span class="toc-section-number">9.3.1</span> Creating the Dashboard Sidebar</a></li>
+<li><a href="9-3-sidebarb.html#sidebar-order-1"><span class="toc-section-number">9.3.2</span> Sidebar Order</a></li>
+<li><a href="9-3-sidebarb.html#sidebar-names-1"><span class="toc-section-number">9.3.3</span> Sidebar Names</a></li>
+<li><a href="9-3-sidebarb.html#sidebar-icons-1"><span class="toc-section-number">9.3.4</span> Sidebar Icons</a></li>
+<li><a href="9-3-sidebarb.html#submenus-1"><span class="toc-section-number">9.3.5</span> Submenus</a></li>
+<li><a href="9-3-sidebarb.html#whats-needed-in-the-server-definition-5"><span class="toc-section-number">9.3.6</span> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-4-bodyb.html#bodyb"><span class="toc-section-number">9.4</span> Dashboard Body</a><ul>
+<li><a href="9-4-bodyb.html#the-overview-tab-1"><span class="toc-section-number">9.4.1</span> The Overview Tab</a></li>
+<li><a href="9-4-bodyb.html#a-prerequisites-tab-1"><span class="toc-section-number">9.4.2</span> A Prerequisites Tab</a></li>
+<li><a href="9-4-bodyb.html#activity-tabs-1"><span class="toc-section-number">9.4.3</span> Activity Tab(s)</a></li>
+<li><a href="9-4-bodyb.html#refTabb"><span class="toc-section-number">9.4.4</span> References</a></li>
+<li><a href="9-4-bodyb.html#innerTabsb"><span class="toc-section-number">9.4.5</span> Tabs Inside the Body</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-5-common-elements-1.html#common-elements-1"><span class="toc-section-number">9.5</span> Common Elements</a><ul>
+<li><a href="9-5-common-elements-1.html#ordering-inputs-1"><span class="toc-section-number">9.5.1</span> Ordering Inputs</a></li>
+<li><a href="9-5-common-elements-1.html#buttonsb"><span class="toc-section-number">9.5.2</span> Buttons</a></li>
+<li><a href="9-5-common-elements-1.html#correctincorrect-marks-1"><span class="toc-section-number">9.5.3</span> Correct/Incorrect Marks</a></li>
+<li><a href="9-5-common-elements-1.html#animation-buttons-1"><span class="toc-section-number">9.5.4</span> Animation Buttons</a></li>
+<li><a href="9-5-common-elements-1.html#progress-bar-1"><span class="toc-section-number">9.5.5</span> Progress Bar</a></li>
+<li><a href="9-5-common-elements-1.html#collapsibleb"><span class="toc-section-number">9.5.6</span> Collapsible Boxes</a></li>
+<li><a href="9-5-common-elements-1.html#well-panels-1"><span class="toc-section-number">9.5.7</span> Well Panels</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Style Guide-Visual Style</b></span></li>
+<li class="has-sub"><a href="10-designStyle.html#designStyle"><span class="toc-section-number">10</span> Design Style</a><ul>
+<li><a href="10-1-logo.html#logo"><span class="toc-section-number">10.1</span> PSU Branding</a></li>
+<li><a href="10-2-colors.html#colors"><span class="toc-section-number">10.2</span> Colors</a></li>
+<li class="has-sub"><a href="10-3-styleText.html#styleText"><span class="toc-section-number">10.3</span> Text Styling</a><ul>
+<li><a href="10-3-styleText.html#headings"><span class="toc-section-number">10.3.1</span> Headings</a></li>
+<li><a href="10-3-styleText.html#paragraph-text"><span class="toc-section-number">10.3.2</span> Paragraph Text</a></li>
+<li><a href="10-3-styleText.html#mathematics"><span class="toc-section-number">10.3.3</span> Mathematics</a></li>
+<li><a href="10-3-styleText.html#game-question-text"><span class="toc-section-number">10.3.4</span> [Game] Question Text</a></li>
+<li><a href="10-3-styleText.html#label-text-buttons-sliders-other-inputs-and-alerts"><span class="toc-section-number">10.3.5</span> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li><a href="10-3-styleText.html#feedback-and-hint-text"><span class="toc-section-number">10.3.6</span> Feedback and Hint Text</a></li>
+<li><a href="10-3-styleText.html#text-in-r-plots"><span class="toc-section-number">10.3.7</span> Text in <code>R</code> Plots</a></li>
+<li><a href="10-3-styleText.html#text-case"><span class="toc-section-number">10.3.8</span> Text Case</a></li>
+</ul></li>
+<li class="has-sub"><a href="10-4-graphics.html#graphics"><span class="toc-section-number">10.4</span> Graphics</a><ul>
+<li><a href="10-4-graphics.html#graphLab"><span class="toc-section-number">10.4.1</span> Titles and Labels</a></li>
+<li><a href="10-4-graphics.html#axes-and-scales"><span class="toc-section-number">10.4.2</span> Axes and Scales</a></li>
+<li><a href="10-4-graphics.html#colorPlots"><span class="toc-section-number">10.4.3</span> Color and Plots in <code>R</code></a></li>
+<li><a href="10-4-graphics.html#tables"><span class="toc-section-number">10.4.4</span> Tables</a></li>
+<li><a href="10-4-graphics.html#static-images"><span class="toc-section-number">10.4.5</span> Static Images</a></li>
+<li><a href="10-4-graphics.html#altText"><span class="toc-section-number">10.4.6</span> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="11-designStyleb.html#designStyleb"><span class="toc-section-number">11</span> Design Style</a><ul>
+<li><a href="11-1-logob.html#logob"><span class="toc-section-number">11.1</span> PSU Branding</a></li>
+<li><a href="11-2-colors-1.html#colors-1"><span class="toc-section-number">11.2</span> Colors</a></li>
+<li class="has-sub"><a href="11-3-styleTextb.html#styleTextb"><span class="toc-section-number">11.3</span> Text Styling</a><ul>
+<li><a href="11-3-styleTextb.html#headings-1"><span class="toc-section-number">11.3.1</span> Headings</a></li>
+<li><a href="11-3-styleTextb.html#paragraph-text-1"><span class="toc-section-number">11.3.2</span> Paragraph Text</a></li>
+<li><a href="11-3-styleTextb.html#mathematics-1"><span class="toc-section-number">11.3.3</span> Mathematics</a></li>
+<li><a href="11-3-styleTextb.html#game-question-text-1"><span class="toc-section-number">11.3.4</span> [Game] Question Text</a></li>
+<li><a href="11-3-styleTextb.html#label-text-buttons-sliders-other-inputs-and-alerts-1"><span class="toc-section-number">11.3.5</span> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li><a href="11-3-styleTextb.html#feedback-and-hint-text-1"><span class="toc-section-number">11.3.6</span> Feedback and Hint Text</a></li>
+<li><a href="11-3-styleTextb.html#text-in-r-plots-1"><span class="toc-section-number">11.3.7</span> Text in <code>R</code> Plots</a></li>
+<li><a href="11-3-styleTextb.html#text-case-1"><span class="toc-section-number">11.3.8</span> Text Case</a></li>
+</ul></li>
+<li class="has-sub"><a href="11-4-graphicsb.html#graphicsb"><span class="toc-section-number">11.4</span> Graphics</a><ul>
+<li><a href="11-4-graphicsb.html#graphLabb"><span class="toc-section-number">11.4.1</span> Titles and Labels</a></li>
+<li><a href="11-4-graphicsb.html#axes-and-scales-1"><span class="toc-section-number">11.4.2</span> Axes and Scales</a></li>
+<li><a href="11-4-graphicsb.html#colorPlotsb"><span class="toc-section-number">11.4.3</span> Color and Plots in <code>R</code></a></li>
+<li><a href="11-4-graphicsb.html#tables-1"><span class="toc-section-number">11.4.4</span> Tables</a></li>
+<li><a href="11-4-graphicsb.html#static-images-1"><span class="toc-section-number">11.4.5</span> Static Images</a></li>
+<li><a href="11-4-graphicsb.html#altTextb"><span class="toc-section-number">11.4.6</span> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="12-designStylec.html#designStylec"><span class="toc-section-number">12</span> Design Style</a><ul>
+<li><a href="12-1-logoc.html#logoc"><span class="toc-section-number">12.1</span> PSU Branding</a></li>
+<li><a href="12-2-colors-2.html#colors-2"><span class="toc-section-number">12.2</span> Colors</a></li>
+<li class="has-sub"><a href="12-3-styleTextc.html#styleTextc"><span class="toc-section-number">12.3</span> Text Styling</a><ul>
+<li><a href="12-3-styleTextc.html#headings-2"><span class="toc-section-number">12.3.1</span> Headings</a></li>
+<li><a href="12-3-styleTextc.html#paragraph-text-2"><span class="toc-section-number">12.3.2</span> Paragraph Text</a></li>
+<li><a href="12-3-styleTextc.html#mathematics-2"><span class="toc-section-number">12.3.3</span> Mathematics</a></li>
+<li><a href="12-3-styleTextc.html#game-question-text-2"><span class="toc-section-number">12.3.4</span> [Game] Question Text</a></li>
+<li><a href="12-3-styleTextc.html#label-text-buttons-sliders-other-inputs-and-alerts-2"><span class="toc-section-number">12.3.5</span> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li><a href="12-3-styleTextc.html#feedback-and-hint-text-2"><span class="toc-section-number">12.3.6</span> Feedback and Hint Text</a></li>
+<li><a href="12-3-styleTextc.html#text-in-r-plots-2"><span class="toc-section-number">12.3.7</span> Text in <code>R</code> Plots</a></li>
+<li><a href="12-3-styleTextc.html#text-case-2"><span class="toc-section-number">12.3.8</span> Text Case</a></li>
+</ul></li>
+<li class="has-sub"><a href="12-4-graphicsc.html#graphicsc"><span class="toc-section-number">12.4</span> Graphics</a><ul>
+<li><a href="12-4-graphicsc.html#graphLabc"><span class="toc-section-number">12.4.1</span> Titles and Labels</a></li>
+<li><a href="12-4-graphicsc.html#axes-and-scales-2"><span class="toc-section-number">12.4.2</span> Axes and Scales</a></li>
+<li><a href="12-4-graphicsc.html#colorPlotsc"><span class="toc-section-number">12.4.3</span> Color and Plots in <code>R</code></a></li>
+<li><a href="12-4-graphicsc.html#tables-2"><span class="toc-section-number">12.4.4</span> Tables</a></li>
+<li><a href="12-4-graphicsc.html#static-images-2"><span class="toc-section-number">12.4.5</span> Static Images</a></li>
+<li><a href="12-4-graphicsc.html#altTextc"><span class="toc-section-number">12.4.6</span> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>VI Style Guide-Language</b></span></li>
+<li class="has-sub"><a href="13-wording.html#wording"><span class="toc-section-number">13</span> Wording</a><ul>
+<li><a href="13-1-general-guidelines.html#general-guidelines"><span class="toc-section-number">13.1</span> General Guidelines</a></li>
+<li><a href="13-2-popovers.html#popovers"><span class="toc-section-number">13.2</span> Popovers</a></li>
+<li class="has-sub"><a href="13-3-dealing-with-differing-vocabularies.html#dealing-with-differing-vocabularies"><span class="toc-section-number">13.3</span> Dealing with Differing Vocabularies</a><ul>
+<li><a href="13-3-dealing-with-differing-vocabularies.html#jingleJangle"><span class="toc-section-number">13.3.1</span> The Jingle/Jangle Problem</a></li>
+<li><a href="13-3-dealing-with-differing-vocabularies.html#option-0-dictionarythesaurus"><span class="toc-section-number">13.3.2</span> Option 0: Dictionary/Thesaurus</a></li>
+<li><a href="13-3-dealing-with-differing-vocabularies.html#hovertext"><span class="toc-section-number">13.3.3</span> Option 1: Hover Text</a></li>
+<li><a href="13-3-dealing-with-differing-vocabularies.html#option-2-entry-on-the-prerequisites-tabpage"><span class="toc-section-number">13.3.4</span> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+</ul></li>
+<li><a href="13-4-footnotes.html#footnotes"><span class="toc-section-number">13.4</span> Footnotes</a></li>
+</ul></li>
+<li class="has-sub"><a href="14-documentation.html#documentation"><span class="toc-section-number">14</span> Documentation</a><ul>
+<li><a href="14-1-references.html#references"><span class="toc-section-number">14.1</span> References</a></li>
+<li class="has-sub"><a href="14-2-plagiarism.html#plagiarism"><span class="toc-section-number">14.2</span> Plagiarism</a><ul>
+<li><a href="14-2-plagiarism.html#reference-tab"><span class="toc-section-number">14.2.1</span> Reference Tab</a></li>
+<li><a href="14-2-plagiarism.html#in-code"><span class="toc-section-number">14.2.2</span> In Code</a></li>
+</ul></li>
+<li><a href="14-3-r-packages.html#r-packages"><span class="toc-section-number">14.3</span> <code>R</code> Packages</a></li>
+<li><a href="14-4-graphics-1.html#graphics-1"><span class="toc-section-number">14.4</span> Graphics</a></li>
+<li><a href="14-5-data.html#data"><span class="toc-section-number">14.5</span> Data</a></li>
+</ul></li>
+<li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
+<li class="has-sub"><a href="15-accessibility.html#accessibility"><span class="toc-section-number">15</span> Accessibility</a><ul>
+<li><a href="15-1-making-your-app-accessible.html#making-your-app-accessible"><span class="toc-section-number">15.1</span> Making Your App Accessible</a></li>
+<li class="has-sub"><a href="15-2-checking-accessibility.html#checking-accessibility"><span class="toc-section-number">15.2</span> Checking Accessibility</a><ul>
+<li><a href="15-2-checking-accessibility.html#testing-accessibility"><span class="toc-section-number">15.2.1</span> Testing Accessibility</a></li>
+<li><a href="15-2-checking-accessibility.html#reading-a-wave-report"><span class="toc-section-number">15.2.2</span> Reading a WAVE Report</a></li>
+<li><a href="15-2-checking-accessibility.html#addressing-issues"><span class="toc-section-number">15.2.3</span> Addressing Issues</a></li>
+</ul></li>
+</ul></li>
+<li><a href="16-mobile.html#mobile"><span class="toc-section-number">16</span> Mobile Friendliness</a></li>
+<li class="part"><span><b>VIII Final Thoughts</b></span></li>
+<li><a href="17-addTools.html#addTools"><span class="toc-section-number">17</span> Additional Tools</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="colors-1" class="section level2">
+<h2><span class="header-section-number">11.2</span> Colors</h2>
+<p>Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a> Level AA. You can do so at the <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7">Coloring for Colorblindness</a> website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.</p>
+<p>See <a href="8-1-dashboard.html#colorUI">Section <a href="8-1-dashboard.html#colorUI">8.1.2</a></a> and <a href="10-4-graphics.html#colorPlots">Section <a href="10-4-graphics.html#colorPlots">10.4.3</a></a> for additional information on the use of colors.</p>
+</div>
+<p style="text-align: center;">
+<a href="11-1-logob.html"><button class="btn btn-default">Previous</button></a>
+<a href="11-3-styleTextb.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
