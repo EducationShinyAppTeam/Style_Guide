@@ -1054,6 +1054,12 @@ create customized appearances. This is NOT recommended.*/
   padding: 10%;
 }
 
+/* Error Messages */
+.shiny-output-error-leftParagraphError {
+	text-align: left;
+	padding: 0;
+}
+
 /* Shiny Matrix Input Controls */
 .matrix-input-col-header-cell{
   padding: 15px 0px 0px 5px;
