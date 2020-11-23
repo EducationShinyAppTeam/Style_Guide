@@ -180,18 +180,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Getting Ready to Code</b></span></li>
 <li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
 <li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
-<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
-<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>3.3</b> Sample App</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.3.1</b> Direct Download</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>3.3.2</b> GitHub Desktop</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.3.3</b> Command Line</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.3.4</b> RStudio Project</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a><ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The app.R</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
@@ -642,6 +647,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

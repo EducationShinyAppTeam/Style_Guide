@@ -180,18 +180,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Getting Ready to Code</b></span></li>
 <li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
 <li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
-<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
-<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>3.3</b> Sample App</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.3.1</b> Direct Download</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>3.3.2</b> GitHub Desktop</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.3.3</b> Command Line</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.3.4</b> RStudio Project</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a><ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The app.R</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
@@ -751,79 +756,84 @@ Figure 10.2: The PSU Palette
 <div id="summary-data-table-of-descriptive-statistics" class="section level5">
 <h5><span class="header-section-number">10.4.4.2.1</span> Summary Data Table of Descriptive Statistics</h5>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="designStyle.html#cb69-1"></a><span class="kw">library</span>(palmerpenguins)</span>
-<span id="cb69-2"><a href="designStyle.html#cb69-2"></a><span class="kw">library</span>(psych)</span>
-<span id="cb69-3"><a href="designStyle.html#cb69-3"></a><span class="kw">library</span>(DT)</span>
-<span id="cb69-4"><a href="designStyle.html#cb69-4"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb69-5"><a href="designStyle.html#cb69-5"></a></span>
-<span id="cb69-6"><a href="designStyle.html#cb69-6"></a>penStats &lt;-<span class="st"> </span>psych<span class="op">::</span><span class="kw">describeBy</span>(</span>
-<span id="cb69-7"><a href="designStyle.html#cb69-7"></a>  <span class="dt">x =</span> penguins<span class="op">$</span>body_mass_g,</span>
-<span id="cb69-8"><a href="designStyle.html#cb69-8"></a>  <span class="dt">group =</span> penguins<span class="op">$</span>species,</span>
-<span id="cb69-9"><a href="designStyle.html#cb69-9"></a>  <span class="dt">mat =</span> <span class="ot">TRUE</span>, <span class="co"># Formats output appropriate for DT</span></span>
-<span id="cb69-10"><a href="designStyle.html#cb69-10"></a>  <span class="dt">digits =</span> <span class="dv">3</span> <span class="co"># sets the number of digits retained</span></span>
-<span id="cb69-11"><a href="designStyle.html#cb69-11"></a>)</span>
-<span id="cb69-12"><a href="designStyle.html#cb69-12"></a></span>
-<span id="cb69-13"><a href="designStyle.html#cb69-13"></a><span class="co"># Picking which columns to keep</span></span>
-<span id="cb69-14"><a href="designStyle.html#cb69-14"></a>penStats &lt;-<span class="st"> </span>penStats[, <span class="kw">c</span>(<span class="st">&quot;group1&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="st">&quot;mean&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;mad&quot;</span>, <span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;skew&quot;</span>,</span>
-<span id="cb69-15"><a href="designStyle.html#cb69-15"></a>                         <span class="st">&quot;kurtosis&quot;</span>)]</span>
-<span id="cb69-16"><a href="designStyle.html#cb69-16"></a><span class="co"># Make the group1 column the row names</span></span>
-<span id="cb69-17"><a href="designStyle.html#cb69-17"></a>penStats &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">remove_rownames</span>(penStats)</span>
-<span id="cb69-18"><a href="designStyle.html#cb69-18"></a>penStats &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">column_to_rownames</span>(penStats,</span>
-<span id="cb69-19"><a href="designStyle.html#cb69-19"></a>                          <span class="dt">var =</span> <span class="st">&quot;group1&quot;</span>)</span>
-<span id="cb69-20"><a href="designStyle.html#cb69-20"></a><span class="co"># Improve column names</span></span>
-<span id="cb69-21"><a href="designStyle.html#cb69-21"></a><span class="kw">names</span>(penStats) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Count&quot;</span>, <span class="st">&quot;SAM (g/penguin)&quot;</span>, <span class="st">&quot;SASD (g)&quot;</span>, <span class="st">&quot;Median (g)&quot;</span>, <span class="st">&quot;MAD (g)&quot;</span>, <span class="st">&quot;Min (g)&quot;</span>,</span>
-<span id="cb69-22"><a href="designStyle.html#cb69-22"></a>                     <span class="st">&quot;Max (g)&quot;</span>, <span class="st">&quot;Sample Skewness (g^3)&quot;</span>, <span class="st">&quot;Sample Excess Kurtosis (g^4)&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="designStyle.html#cb70-1"></a><span class="co"># Make the Table</span></span>
-<span id="cb70-2"><a href="designStyle.html#cb70-2"></a>output<span class="op">$</span>penguinSummary &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
-<span id="cb70-3"><a href="designStyle.html#cb70-3"></a>  <span class="dt">expr =</span> penStats,</span>
-<span id="cb70-4"><a href="designStyle.html#cb70-4"></a>  <span class="dt">caption =</span> <span class="st">&quot;Descriptive Stats for Palmer Penguins&quot;</span>, </span>
-<span id="cb70-5"><a href="designStyle.html#cb70-5"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, </span>
-<span id="cb70-6"><a href="designStyle.html#cb70-6"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb70-7"><a href="designStyle.html#cb70-7"></a>  <span class="dt">autoHideNavigation =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb70-8"><a href="designStyle.html#cb70-8"></a>  <span class="dt">options =</span> <span class="kw">list</span>( </span>
-<span id="cb70-9"><a href="designStyle.html#cb70-9"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb70-10"><a href="designStyle.html#cb70-10"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb70-11"><a href="designStyle.html#cb70-11"></a>    <span class="dt">paging =</span> <span class="ot">FALSE</span>, <span class="co"># Set to False for small tables</span></span>
-<span id="cb70-12"><a href="designStyle.html#cb70-12"></a>     <span class="dt">columnDefs =</span> <span class="kw">list</span>(</span>
-<span id="cb70-13"><a href="designStyle.html#cb70-13"></a>       <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>,</span>
-<span id="cb70-14"><a href="designStyle.html#cb70-14"></a>            <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(penStats))</span>
-<span id="cb70-15"><a href="designStyle.html#cb70-15"></a>    )</span>
-<span id="cb70-16"><a href="designStyle.html#cb70-16"></a>  )</span>
-<span id="cb70-17"><a href="designStyle.html#cb70-17"></a>)</span></code></pre></div>
+<span id="cb69-2"><a href="designStyle.html#cb69-2"></a><span class="kw">library</span>(psych)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;psych&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
+## 
+##     %+%, alpha</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="designStyle.html#cb72-1"></a><span class="kw">library</span>(DT)</span>
+<span id="cb72-2"><a href="designStyle.html#cb72-2"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb72-3"><a href="designStyle.html#cb72-3"></a></span>
+<span id="cb72-4"><a href="designStyle.html#cb72-4"></a>penStats &lt;-<span class="st"> </span>psych<span class="op">::</span><span class="kw">describeBy</span>(</span>
+<span id="cb72-5"><a href="designStyle.html#cb72-5"></a>  <span class="dt">x =</span> penguins<span class="op">$</span>body_mass_g,</span>
+<span id="cb72-6"><a href="designStyle.html#cb72-6"></a>  <span class="dt">group =</span> penguins<span class="op">$</span>species,</span>
+<span id="cb72-7"><a href="designStyle.html#cb72-7"></a>  <span class="dt">mat =</span> <span class="ot">TRUE</span>, <span class="co"># Formats output appropriate for DT</span></span>
+<span id="cb72-8"><a href="designStyle.html#cb72-8"></a>  <span class="dt">digits =</span> <span class="dv">3</span> <span class="co"># sets the number of digits retained</span></span>
+<span id="cb72-9"><a href="designStyle.html#cb72-9"></a>)</span>
+<span id="cb72-10"><a href="designStyle.html#cb72-10"></a></span>
+<span id="cb72-11"><a href="designStyle.html#cb72-11"></a><span class="co"># Picking which columns to keep</span></span>
+<span id="cb72-12"><a href="designStyle.html#cb72-12"></a>penStats &lt;-<span class="st"> </span>penStats[, <span class="kw">c</span>(<span class="st">&quot;group1&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="st">&quot;mean&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;mad&quot;</span>, <span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;skew&quot;</span>,</span>
+<span id="cb72-13"><a href="designStyle.html#cb72-13"></a>                         <span class="st">&quot;kurtosis&quot;</span>)]</span>
+<span id="cb72-14"><a href="designStyle.html#cb72-14"></a><span class="co"># Make the group1 column the row names</span></span>
+<span id="cb72-15"><a href="designStyle.html#cb72-15"></a>penStats &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">remove_rownames</span>(penStats)</span>
+<span id="cb72-16"><a href="designStyle.html#cb72-16"></a>penStats &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">column_to_rownames</span>(penStats,</span>
+<span id="cb72-17"><a href="designStyle.html#cb72-17"></a>                          <span class="dt">var =</span> <span class="st">&quot;group1&quot;</span>)</span>
+<span id="cb72-18"><a href="designStyle.html#cb72-18"></a><span class="co"># Improve column names</span></span>
+<span id="cb72-19"><a href="designStyle.html#cb72-19"></a><span class="kw">names</span>(penStats) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Count&quot;</span>, <span class="st">&quot;SAM (g/penguin)&quot;</span>, <span class="st">&quot;SASD (g)&quot;</span>, <span class="st">&quot;Median (g)&quot;</span>, <span class="st">&quot;MAD (g)&quot;</span>, <span class="st">&quot;Min (g)&quot;</span>,</span>
+<span id="cb72-20"><a href="designStyle.html#cb72-20"></a>                     <span class="st">&quot;Max (g)&quot;</span>, <span class="st">&quot;Sample Skewness (g^3)&quot;</span>, <span class="st">&quot;Sample Excess Kurtosis (g^4)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="designStyle.html#cb73-1"></a><span class="co"># Make the Table</span></span>
+<span id="cb73-2"><a href="designStyle.html#cb73-2"></a>output<span class="op">$</span>penguinSummary &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
+<span id="cb73-3"><a href="designStyle.html#cb73-3"></a>  <span class="dt">expr =</span> penStats,</span>
+<span id="cb73-4"><a href="designStyle.html#cb73-4"></a>  <span class="dt">caption =</span> <span class="st">&quot;Descriptive Stats for Palmer Penguins&quot;</span>, </span>
+<span id="cb73-5"><a href="designStyle.html#cb73-5"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, </span>
+<span id="cb73-6"><a href="designStyle.html#cb73-6"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb73-7"><a href="designStyle.html#cb73-7"></a>  <span class="dt">autoHideNavigation =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb73-8"><a href="designStyle.html#cb73-8"></a>  <span class="dt">options =</span> <span class="kw">list</span>( </span>
+<span id="cb73-9"><a href="designStyle.html#cb73-9"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb73-10"><a href="designStyle.html#cb73-10"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb73-11"><a href="designStyle.html#cb73-11"></a>    <span class="dt">paging =</span> <span class="ot">FALSE</span>, <span class="co"># Set to False for small tables</span></span>
+<span id="cb73-12"><a href="designStyle.html#cb73-12"></a>     <span class="dt">columnDefs =</span> <span class="kw">list</span>(</span>
+<span id="cb73-13"><a href="designStyle.html#cb73-13"></a>       <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>,</span>
+<span id="cb73-14"><a href="designStyle.html#cb73-14"></a>            <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(penStats))</span>
+<span id="cb73-15"><a href="designStyle.html#cb73-15"></a>    )</span>
+<span id="cb73-16"><a href="designStyle.html#cb73-16"></a>  )</span>
+<span id="cb73-17"><a href="designStyle.html#cb73-17"></a>)</span></code></pre></div>
 </div>
 <div id="summary-data-table-for-output-table" class="section level5">
 <h5><span class="header-section-number">10.4.4.2.2</span> Summary Data Table for Output Table</h5>
 <p>While this example is for an ANOVA table, you can build from this for other output tables. If you store the output of any call as an object, you can then use the structure function, <code>str</code> to investigate the output. Ultimately, you need something that is either a matrix or a data frame.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="designStyle.html#cb71-1"></a><span class="kw">library</span>(palmerpenguins)</span>
-<span id="cb71-2"><a href="designStyle.html#cb71-2"></a><span class="kw">library</span>(psych)</span>
-<span id="cb71-3"><a href="designStyle.html#cb71-3"></a><span class="kw">library</span>(DT)</span>
-<span id="cb71-4"><a href="designStyle.html#cb71-4"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb71-5"><a href="designStyle.html#cb71-5"></a><span class="kw">library</span>(rstatix)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="designStyle.html#cb74-1"></a><span class="kw">library</span>(palmerpenguins)</span>
+<span id="cb74-2"><a href="designStyle.html#cb74-2"></a><span class="kw">library</span>(psych)</span>
+<span id="cb74-3"><a href="designStyle.html#cb74-3"></a><span class="kw">library</span>(DT)</span>
+<span id="cb74-4"><a href="designStyle.html#cb74-4"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb74-5"><a href="designStyle.html#cb74-5"></a><span class="kw">library</span>(rstatix)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;rstatix&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:stats&#39;:
 ## 
 ##     filter</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="designStyle.html#cb74-1"></a><span class="co"># This bad practice but I&#39;m going to pretend that all assumptions are met</span></span>
-<span id="cb74-2"><a href="designStyle.html#cb74-2"></a>penModel &lt;-<span class="st"> </span><span class="kw">aov</span>(body_mass_g <span class="op">~</span><span class="st"> </span>species<span class="op">*</span>sex, <span class="dt">data =</span> penguins)</span>
-<span id="cb74-3"><a href="designStyle.html#cb74-3"></a></span>
-<span id="cb74-4"><a href="designStyle.html#cb74-4"></a>anovaPen &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">anova</span>(penModel), <span class="dv">3</span>)</span>
-<span id="cb74-5"><a href="designStyle.html#cb74-5"></a><span class="co"># Rounding to truncate decimals</span></span></code></pre></div>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="designStyle.html#cb75-1"></a><span class="co"># Make the Table</span></span>
-<span id="cb75-2"><a href="designStyle.html#cb75-2"></a>output<span class="op">$</span>penguinAnova &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
-<span id="cb75-3"><a href="designStyle.html#cb75-3"></a>  <span class="dt">expr =</span> anovaPen,</span>
-<span id="cb75-4"><a href="designStyle.html#cb75-4"></a>  <span class="dt">caption =</span> <span class="st">&quot;(Classical) ANOVA Table for Palmer Pengins&quot;</span>, </span>
-<span id="cb75-5"><a href="designStyle.html#cb75-5"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, </span>
-<span id="cb75-6"><a href="designStyle.html#cb75-6"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb75-7"><a href="designStyle.html#cb75-7"></a>  <span class="dt">options =</span> <span class="kw">list</span>( </span>
-<span id="cb75-8"><a href="designStyle.html#cb75-8"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb75-9"><a href="designStyle.html#cb75-9"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb75-10"><a href="designStyle.html#cb75-10"></a>    <span class="dt">paging =</span> <span class="ot">FALSE</span>, <span class="co"># Set to False for small tables</span></span>
-<span id="cb75-11"><a href="designStyle.html#cb75-11"></a>     <span class="dt">columnDefs =</span> <span class="kw">list</span>(</span>
-<span id="cb75-12"><a href="designStyle.html#cb75-12"></a>       <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>,</span>
-<span id="cb75-13"><a href="designStyle.html#cb75-13"></a>            <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(anovaPen))</span>
-<span id="cb75-14"><a href="designStyle.html#cb75-14"></a>    )</span>
-<span id="cb75-15"><a href="designStyle.html#cb75-15"></a>  )</span>
-<span id="cb75-16"><a href="designStyle.html#cb75-16"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="designStyle.html#cb77-1"></a><span class="co"># This bad practice but I&#39;m going to pretend that all assumptions are met</span></span>
+<span id="cb77-2"><a href="designStyle.html#cb77-2"></a>penModel &lt;-<span class="st"> </span><span class="kw">aov</span>(body_mass_g <span class="op">~</span><span class="st"> </span>species<span class="op">*</span>sex, <span class="dt">data =</span> penguins)</span>
+<span id="cb77-3"><a href="designStyle.html#cb77-3"></a></span>
+<span id="cb77-4"><a href="designStyle.html#cb77-4"></a>anovaPen &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">anova</span>(penModel), <span class="dv">3</span>)</span>
+<span id="cb77-5"><a href="designStyle.html#cb77-5"></a><span class="co"># Rounding to truncate decimals</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="designStyle.html#cb78-1"></a><span class="co"># Make the Table</span></span>
+<span id="cb78-2"><a href="designStyle.html#cb78-2"></a>output<span class="op">$</span>penguinAnova &lt;-<span class="st"> </span>DT<span class="op">::</span><span class="kw">renderDT</span>(</span>
+<span id="cb78-3"><a href="designStyle.html#cb78-3"></a>  <span class="dt">expr =</span> anovaPen,</span>
+<span id="cb78-4"><a href="designStyle.html#cb78-4"></a>  <span class="dt">caption =</span> <span class="st">&quot;(Classical) ANOVA Table for Palmer Pengins&quot;</span>, </span>
+<span id="cb78-5"><a href="designStyle.html#cb78-5"></a>  <span class="dt">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, </span>
+<span id="cb78-6"><a href="designStyle.html#cb78-6"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb78-7"><a href="designStyle.html#cb78-7"></a>  <span class="dt">options =</span> <span class="kw">list</span>( </span>
+<span id="cb78-8"><a href="designStyle.html#cb78-8"></a>    <span class="dt">responsive =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb78-9"><a href="designStyle.html#cb78-9"></a>    <span class="dt">scrollX =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb78-10"><a href="designStyle.html#cb78-10"></a>    <span class="dt">paging =</span> <span class="ot">FALSE</span>, <span class="co"># Set to False for small tables</span></span>
+<span id="cb78-11"><a href="designStyle.html#cb78-11"></a>     <span class="dt">columnDefs =</span> <span class="kw">list</span>(</span>
+<span id="cb78-12"><a href="designStyle.html#cb78-12"></a>       <span class="kw">list</span>(<span class="dt">className =</span> <span class="st">&#39;dt-center&#39;</span>,</span>
+<span id="cb78-13"><a href="designStyle.html#cb78-13"></a>            <span class="dt">targets =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(anovaPen))</span>
+<span id="cb78-14"><a href="designStyle.html#cb78-14"></a>    )</span>
+<span id="cb78-15"><a href="designStyle.html#cb78-15"></a>  )</span>
+<span id="cb78-16"><a href="designStyle.html#cb78-16"></a>)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -834,22 +844,22 @@ Figure 10.2: The PSU Palette
 <div id="adding-an-image" class="section level4">
 <h4><span class="header-section-number">10.4.5.1</span> Adding an Image</h4>
 <p>To include the image in your App, you’ll need to make use of the image tag, <code>img</code>. When you run your App, Shiny automatically knows to check the <code>www</code> folder any time the <code>img</code> tag gets called. Here is an example supposing that the check mark image for correct answers is in the app’s <code>www</code> folder:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="designStyle.html#cb76-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb76-2"><a href="designStyle.html#cb76-2"></a><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;right&quot;</span>,</span>
-<span id="cb76-3"><a href="designStyle.html#cb76-3"></a>    <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb76-4"><a href="designStyle.html#cb76-4"></a>        <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb76-5"><a href="designStyle.html#cb76-5"></a>        <span class="dt">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
-<span id="cb76-6"><a href="designStyle.html#cb76-6"></a>        <span class="dt">height =</span> <span class="dv">25</span>,</span>
-<span id="cb76-7"><a href="designStyle.html#cb76-7"></a>        ))</span>
-<span id="cb76-8"><a href="designStyle.html#cb76-8"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="designStyle.html#cb79-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb79-2"><a href="designStyle.html#cb79-2"></a><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb79-3"><a href="designStyle.html#cb79-3"></a>    <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb79-4"><a href="designStyle.html#cb79-4"></a>        <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb79-5"><a href="designStyle.html#cb79-5"></a>        <span class="dt">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
+<span id="cb79-6"><a href="designStyle.html#cb79-6"></a>        <span class="dt">height =</span> <span class="dv">25</span>,</span>
+<span id="cb79-7"><a href="designStyle.html#cb79-7"></a>        ))</span>
+<span id="cb79-8"><a href="designStyle.html#cb79-8"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>You’ll notice that we’ve wrapped the <code>img</code> call in a <code>div</code> call. The <code>div</code> call allows us to specify that we want the image to be right aligned; you could also do left or center. You can replace the <code>div</code> call with the paragraph environment and include text on either side, effectively making your image part of the text.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="designStyle.html#cb77-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb77-2"><a href="designStyle.html#cb77-2"></a><span class="kw">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
-<span id="cb77-3"><a href="designStyle.html#cb77-3"></a>  <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb77-4"><a href="designStyle.html#cb77-4"></a>      <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb77-5"><a href="designStyle.html#cb77-5"></a>      <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>),</span>
-<span id="cb77-6"><a href="designStyle.html#cb77-6"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
-<span id="cb77-7"><a href="designStyle.html#cb77-7"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="designStyle.html#cb80-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb80-2"><a href="designStyle.html#cb80-2"></a><span class="kw">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb80-3"><a href="designStyle.html#cb80-3"></a>  <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb80-4"><a href="designStyle.html#cb80-4"></a>      <span class="dt">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb80-5"><a href="designStyle.html#cb80-5"></a>      <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>),</span>
+<span id="cb80-6"><a href="designStyle.html#cb80-6"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
+<span id="cb80-7"><a href="designStyle.html#cb80-7"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 </div>
 <div id="sizing-and-positioning-your-image" class="section level4">
 <h4><span class="header-section-number">10.4.5.2</span> Sizing and Positioning Your Image</h4>
@@ -868,27 +878,27 @@ Figure 10.2: The PSU Palette
 <div id="altStatic" class="section level4">
 <h4><span class="header-section-number">10.4.6.1</span> Adding Alt Text to Static Images</h4>
 <p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="designStyle.html#cb78-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb78-2"><a href="designStyle.html#cb78-2"></a><span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
-<span id="cb78-3"><a href="designStyle.html#cb78-3"></a>    <span class="dt">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
-<span id="cb78-4"><a href="designStyle.html#cb78-4"></a>    <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>)</span>
-<span id="cb78-5"><a href="designStyle.html#cb78-5"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="designStyle.html#cb81-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb81-2"><a href="designStyle.html#cb81-2"></a><span class="kw">img</span>(<span class="dt">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb81-3"><a href="designStyle.html#cb81-3"></a>    <span class="dt">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb81-4"><a href="designStyle.html#cb81-4"></a>    <span class="dt">width =</span> <span class="dv">25</span>, <span class="dt">height =</span> <span class="dv">25</span>)</span>
+<span id="cb81-5"><a href="designStyle.html#cb81-5"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 </div>
 <div id="adding-alt-text-graphs" class="section level4">
 <h4><span class="header-section-number">10.4.6.2</span> Adding Alt Text Graphs</h4>
 <p>At this point in time (6/10/2020), adding alt text to plots generated in <code>R</code> is not as easy as for static pictures. While there are some potential changes coming down the pipe, there is not a firm time line for the addition of appropriate arguments to the existing <code>render*</code> functions. Therefore we will need to put in some (hopefully) temporary measures.</p>
 <p>In particular, we will use <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">Accessible Rich Internet Applications (ARIA)</a> to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="designStyle.html#cb79-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb79-2"><a href="designStyle.html#cb79-2"></a><span class="co"># In the UI section, in the appropriate tabItem</span></span>
-<span id="cb79-3"><a href="designStyle.html#cb79-3"></a><span class="kw">plotOutput</span>(<span class="dt">outputId =</span> plotID) <span class="co"># Look for lines like this </span></span>
-<span id="cb79-4"><a href="designStyle.html#cb79-4"></a><span class="co"># Code for adding the aria label</span></span>
-<span id="cb79-5"><a href="designStyle.html#cb79-5"></a>tags<span class="op">$</span><span class="kw">script</span>(<span class="kw">HTML</span>(</span>
-<span id="cb79-6"><a href="designStyle.html#cb79-6"></a>  <span class="st">&quot;$(document).ready(function() {</span></span>
-<span id="cb79-7"><a href="designStyle.html#cb79-7"></a><span class="st">  document.getElementById(&#39;plotId&#39;).setAttribute(&#39;aria-label&#39;,</span></span>
-<span id="cb79-8"><a href="designStyle.html#cb79-8"></a><span class="st">  `General description of the plot`)</span></span>
-<span id="cb79-9"><a href="designStyle.html#cb79-9"></a><span class="st">  })&quot;</span></span>
-<span id="cb79-10"><a href="designStyle.html#cb79-10"></a>))</span>
-<span id="cb79-11"><a href="designStyle.html#cb79-11"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="designStyle.html#cb82-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb82-2"><a href="designStyle.html#cb82-2"></a><span class="co"># In the UI section, in the appropriate tabItem</span></span>
+<span id="cb82-3"><a href="designStyle.html#cb82-3"></a><span class="kw">plotOutput</span>(<span class="dt">outputId =</span> plotID) <span class="co"># Look for lines like this </span></span>
+<span id="cb82-4"><a href="designStyle.html#cb82-4"></a><span class="co"># Code for adding the aria label</span></span>
+<span id="cb82-5"><a href="designStyle.html#cb82-5"></a>tags<span class="op">$</span><span class="kw">script</span>(<span class="kw">HTML</span>(</span>
+<span id="cb82-6"><a href="designStyle.html#cb82-6"></a>  <span class="st">&quot;$(document).ready(function() {</span></span>
+<span id="cb82-7"><a href="designStyle.html#cb82-7"></a><span class="st">  document.getElementById(&#39;plotId&#39;).setAttribute(&#39;aria-label&#39;,</span></span>
+<span id="cb82-8"><a href="designStyle.html#cb82-8"></a><span class="st">  `General description of the plot`)</span></span>
+<span id="cb82-9"><a href="designStyle.html#cb82-9"></a><span class="st">  })&quot;</span></span>
+<span id="cb82-10"><a href="designStyle.html#cb82-10"></a>))</span>
+<span id="cb82-11"><a href="designStyle.html#cb82-11"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>Important things to note:</p>
 <ol style="list-style-type: decimal">
 <li>Place the <code>tags$script(HTML(...))</code> code right after each instance of <code>plotOutput</code>.</li>

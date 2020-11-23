@@ -1,25 +1,32 @@
 # Workflow {#workflow}
 
-As you work on apps, both updating existing and developing new ones, moving through a workflow can help you organize yourself.
+Before we get too far into designing, building, and maintaining BOAST apps, it is helpful to take a moment and talk about setting yourself up for success. One way to do this is through the notion of a workflow. In essence, you want to come up with a series of steps to follow. Writing this list out can provide you with something where you can take a step back and go "Wait. Where am I again? Oh yeah." This is particularly important as there will be times when you find yourself lost in coding and losing track of your broader goals.
 
+We have two major workflows within BOAST: Revising existing apps and creating brand new apps.
+
+Something to keep in mind with these workflows is that they are not strictly linear. That is, just because you have moved into Step 3, doesn't mean that you can't go back to Step 2 and make revisions. Additionally, as you get into Steps 5-8, you might find yourself coming back to Step 3 (and possibly Step 2) and making changes. This said, sketching out your plans will help you as you move forward with developing.
 
 ## Revising Existing Apps
 
-1. Read the Style Guide
-2. Explore the existing apps in the [book](https://sites.psu.edu/shinyapps/)
+1. Read the Style Guide.
+2. Explore the existing apps in the [book](https://sites.psu.edu/shinyapps/).
 3. When you identify an app you wish to work on,
     a. Go to that app's repository in [GitHub](https://github.com/EducationShinyAppTeam)
-    b. Create new issues on GitHub to log both bugs and suggestions for improvements
-    c. Create an issue specifically if the App currently does not abide by this Style Guide
-    d. Optional--assign yourself to the issue
-4. Download the current version of the app by using either RStudio or GitHub Desktop
-5. Create a new branch for your developments
-6. Begin editing the code
-7. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio
-8. Periodically push your edits to your development branch; don't forget to add commit messages and reference any issues
-9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing))
-10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request; assign Neil as a reviewer
-11. Make any requested changes and re-push to your development branch; update the Pull Request with a new comment
+    b. Look through the `README.md` and the `DESCRIPTION` files (if present) so that you can get a sense of what the aims of the app are
+    c. Play with the app after going through 3b; ask yourself how the app demonstrates the aims. If the app doesn't, note this.
+    d. Create new issues on GitHub to log both bugs and suggestions for improvements
+    e. Create an issue specifically if the App currently does not abide by this Style Guide
+    f. Optional---assign yourself to the issue
+4. Download the current version of the app by using either GitHub Desktop or RStudio.
+5. Create a new branch for your developments.
+6. Plan out your changes...ON PAPER.
+7. Discuss your edits with others to get feedback and additional suggestions.
+8. Begin editing the code.
+9. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
+10. Periodically push your edits to your development branch; don't forget to add commit messages and reference any issues.
+11. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing)).
+12. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request; assign Neil as a reviewer.
+13. Make any requested changes and re-push to your development branch; update the Pull Request with a new comment.
 
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
 
@@ -28,13 +35,13 @@ To see this workflow in action, check out [Chapter \@ref(makingApp)](#makingApp)
 
 1. Read the Style Guide.
 2. Identify a topic for your new App.
-3. Sketch out your plans for the App. __This should occur BEFORE you start coding.__ Be sure that you include:
-    a. Suggested Title
-    b. Goal of the app
+3. Sketch out your plans for the App...ON PAPER. __This should occur BEFORE you start coding.__ Be sure that you include:
+    a. Suggested Full Title and Short Title
+    b. Goal(s) of the app
     c. What will the user be doing (i.e., potential inputs)
     d. What will the user be experiencing (i.e., potential outputs)
     e. Relationships between various elements.
-4. When your plan __gets approval__, create a new repository on GitHub (see [Section \@ref(repo-naming)](#repo-naming)); you can initially load the Sample App template to this repository, if you wish.
+4. When your plan __gets approval__, create a new repository on GitHub (see [Section \@ref(repo-naming)](#repo-naming)) using the App Template as the template for your new repository.
 5. Begin writing the code.
 6. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
 7. When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.
@@ -53,6 +60,8 @@ Each Shiny App has its own repository (repo) on GitHub. As you begin to create n
 + Use underscores ( _ ) instead of spaces
 + Match the App name as closely as possible
 + You have a 100 character limit
+
+Be as descriptive as you can with your repo name; this will improve the indexing of your app.
 
 While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository. 
 
@@ -101,9 +110,9 @@ knitr::include_graphics("images/publish3.png")
 ```
 In [Figure \@ref(fig:testing3)](#fig:testing3), you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
 
-If you want, you can add collaborators as I did in the example (orange box). This is not required.
+If you want, you can add collaborators as I did in the example (orange box). While not required, adding at least me (Neil) will allow me to check your app's logs in the event of an error occurring on the TLT server and help you troubleshoot.
 
-The most important piece is the Content URL (marked with the blue star). You'll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device they are using.
+The most important piece is the Content URL (marked with the blue star). You'll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device (e.g., computer, tablet, phone) they are using.
 
 ### Check the Logs
 As you test your App, you'll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in [Figure \@ref(fig:testing3)](#fig:testing3)) to view.

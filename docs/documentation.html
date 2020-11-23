@@ -180,18 +180,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Getting Ready to Code</b></span></li>
 <li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
 <li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
-<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
-<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>3.3</b> Sample App</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.3.1</b> Direct Download</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>3.3.2</b> GitHub Desktop</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.3.3</b> Command Line</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.3.4</b> RStudio Project</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a><ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The app.R</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
@@ -488,17 +493,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgments.</p>
 <p><strong>NOTE:</strong> listing something in the Acknowledgments DOES NOT waive this requirement.</p>
 <p>We will make use of the <a href="https://amstat.tfjournals.com/asa-style-guide/">American Statistical Association’s</a> reference style. Please check with Neil, Matt, and Dennis for getting assistance. You can see this style in action, with the <a href="layout.html#refTab">Reference Tab</a> example of <a href="layout.html#layout">Chapter <a href="layout.html#layout">8</a></a>. Here is a starting code block for you to use:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="documentation.html#cb118-1"></a><span class="co">#[omitted code]</span></span>
-<span id="cb118-2"><a href="documentation.html#cb118-2"></a><span class="kw">tabItem</span>(</span>
-<span id="cb118-3"><a href="documentation.html#cb118-3"></a>  <span class="dt">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
-<span id="cb118-4"><a href="documentation.html#cb118-4"></a>  <span class="kw">withMathJax</span>(),</span>
-<span id="cb118-5"><a href="documentation.html#cb118-5"></a>  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb118-6"><a href="documentation.html#cb118-6"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb118-7"><a href="documentation.html#cb118-7"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
-<span id="cb118-8"><a href="documentation.html#cb118-8"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb118-9"><a href="documentation.html#cb118-9"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
-<span id="cb118-10"><a href="documentation.html#cb118-10"></a>  <span class="co"># Repeat as needed</span></span>
-<span id="cb118-11"><a href="documentation.html#cb118-11"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="documentation.html#cb121-1"></a><span class="co">#[omitted code]</span></span>
+<span id="cb121-2"><a href="documentation.html#cb121-2"></a><span class="kw">tabItem</span>(</span>
+<span id="cb121-3"><a href="documentation.html#cb121-3"></a>  <span class="dt">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
+<span id="cb121-4"><a href="documentation.html#cb121-4"></a>  <span class="kw">withMathJax</span>(),</span>
+<span id="cb121-5"><a href="documentation.html#cb121-5"></a>  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
+<span id="cb121-6"><a href="documentation.html#cb121-6"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb121-7"><a href="documentation.html#cb121-7"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
+<span id="cb121-8"><a href="documentation.html#cb121-8"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb121-9"><a href="documentation.html#cb121-9"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
+<span id="cb121-10"><a href="documentation.html#cb121-10"></a>  <span class="co"># Repeat as needed</span></span>
+<span id="cb121-11"><a href="documentation.html#cb121-11"></a>)</span></code></pre></div>
 <p>Notice the use of <code>class = "hangingindent"</code>. You must include this with each reference as this will ensure the proper styling of your references.</p>
 <p>If you need assistance with this section, please talk to Neil.</p>
 </div>
@@ -525,17 +530,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="in-code" class="section level3">
 <h3><span class="header-section-number">14.2.2</span> In Code</h3>
 <p>Use the following format in your code to cite where you got the code from.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="documentation.html#cb119-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb119-2"><a href="documentation.html#cb119-2"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
-<span id="cb119-3"><a href="documentation.html#cb119-3"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
-<span id="cb119-4"><a href="documentation.html#cb119-4"></a><span class="co">#  Date: &lt;date&gt;</span></span>
-<span id="cb119-5"><a href="documentation.html#cb119-5"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
-<span id="cb119-6"><a href="documentation.html#cb119-6"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
-<span id="cb119-7"><a href="documentation.html#cb119-7"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb119-8"><a href="documentation.html#cb119-8"></a><span class="co"># [borrowed code then follows]</span></span>
-<span id="cb119-9"><a href="documentation.html#cb119-9"></a><span class="co"># ...</span></span>
-<span id="cb119-10"><a href="documentation.html#cb119-10"></a><span class="co"># [last line of borrowed code]      </span></span>
-<span id="cb119-11"><a href="documentation.html#cb119-11"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="documentation.html#cb122-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb122-2"><a href="documentation.html#cb122-2"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
+<span id="cb122-3"><a href="documentation.html#cb122-3"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
+<span id="cb122-4"><a href="documentation.html#cb122-4"></a><span class="co">#  Date: &lt;date&gt;</span></span>
+<span id="cb122-5"><a href="documentation.html#cb122-5"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
+<span id="cb122-6"><a href="documentation.html#cb122-6"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
+<span id="cb122-7"><a href="documentation.html#cb122-7"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb122-8"><a href="documentation.html#cb122-8"></a><span class="co"># [borrowed code then follows]</span></span>
+<span id="cb122-9"><a href="documentation.html#cb122-9"></a><span class="co"># ...</span></span>
+<span id="cb122-10"><a href="documentation.html#cb122-10"></a><span class="co"># [last line of borrowed code]      </span></span>
+<span id="cb122-11"><a href="documentation.html#cb122-11"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
 </div>
 </div>
 <div id="r-packages" class="section level2">

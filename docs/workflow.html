@@ -180,18 +180,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Getting Ready to Code</b></span></li>
 <li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
 <li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
-<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
-<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>3.3</b> Sample App</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.3.1</b> Direct Download</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>3.3.2</b> GitHub Desktop</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.3.3</b> Command Line</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.3.4</b> RStudio Project</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a><ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The app.R</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
@@ -482,27 +487,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="workflow" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Workflow</h1>
-<p>As you work on apps, both updating existing and developing new ones, moving through a workflow can help you organize yourself.</p>
+<p>Before we get too far into designing, building, and maintaining BOAST apps, it is helpful to take a moment and talk about setting yourself up for success. One way to do this is through the notion of a workflow. In essence, you want to come up with a series of steps to follow. Writing this list out can provide you with something where you can take a step back and go “Wait. Where am I again? Oh yeah.” This is particularly important as there will be times when you find yourself lost in coding and losing track of your broader goals.</p>
+<p>We have two major workflows within BOAST: Revising existing apps and creating brand new apps.</p>
+<p>Something to keep in mind with these workflows is that they are not strictly linear. That is, just because you have moved into Step 3, doesn’t mean that you can’t go back to Step 2 and make revisions. Additionally, as you get into Steps 5-8, you might find yourself coming back to Step 3 (and possibly Step 2) and making changes. This said, sketching out your plans will help you as you move forward with developing.</p>
 <div id="revising-existing-apps" class="section level2">
 <h2><span class="header-section-number">1.1</span> Revising Existing Apps</h2>
 <ol style="list-style-type: decimal">
-<li>Read the Style Guide</li>
-<li>Explore the existing apps in the <a href="https://sites.psu.edu/shinyapps/">book</a></li>
+<li>Read the Style Guide.</li>
+<li>Explore the existing apps in the <a href="https://sites.psu.edu/shinyapps/">book</a>.</li>
 <li>When you identify an app you wish to work on,
 <ol style="list-style-type: lower-alpha">
 <li>Go to that app’s repository in <a href="https://github.com/EducationShinyAppTeam">GitHub</a></li>
+<li>Look through the <code>README.md</code> and the <code>DESCRIPTION</code> files (if present) so that you can get a sense of what the aims of the app are</li>
+<li>Play with the app after going through 3b; ask yourself how the app demonstrates the aims. If the app doesn’t, note this.</li>
 <li>Create new issues on GitHub to log both bugs and suggestions for improvements</li>
 <li>Create an issue specifically if the App currently does not abide by this Style Guide</li>
-<li>Optional–assign yourself to the issue</li>
+<li>Optional—assign yourself to the issue</li>
 </ol></li>
-<li>Download the current version of the app by using either RStudio or GitHub Desktop</li>
-<li>Create a new branch for your developments</li>
-<li>Begin editing the code</li>
-<li>As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio</li>
-<li>Periodically push your edits to your development branch; don’t forget to add commit messages and reference any issues</li>
-<li>When you’re ready to do larger scale testing you’ll need to publish your App to the TLT RStudio Connect server (see <a href="workflow.html#testing">Section <a href="workflow.html#testing">1.3</a></a>)</li>
-<li>When you’ve reached a point where you’ve finished editing, push your most recent commit to your development branch and then create a Pull Request; assign Neil as a reviewer</li>
-<li>Make any requested changes and re-push to your development branch; update the Pull Request with a new comment</li>
+<li>Download the current version of the app by using either GitHub Desktop or RStudio.</li>
+<li>Create a new branch for your developments.</li>
+<li>Plan out your changes…ON PAPER.</li>
+<li>Discuss your edits with others to get feedback and additional suggestions.</li>
+<li>Begin editing the code.</li>
+<li>As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.</li>
+<li>Periodically push your edits to your development branch; don’t forget to add commit messages and reference any issues.</li>
+<li>When you’re ready to do larger scale testing you’ll need to publish your App to the TLT RStudio Connect server (see <a href="workflow.html#testing">Section <a href="workflow.html#testing">1.3</a></a>).</li>
+<li>When you’ve reached a point where you’ve finished editing, push your most recent commit to your development branch and then create a Pull Request; assign Neil as a reviewer.</li>
+<li>Make any requested changes and re-push to your development branch; update the Pull Request with a new comment.</li>
 </ol>
 <p>If everything checks out, then we’ll merge your development branch with the master branch and schedule formal deployment of your App.</p>
 </div>
@@ -512,15 +523,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Read the Style Guide.</li>
 <li>Identify a topic for your new App.</li>
-<li>Sketch out your plans for the App. <strong>This should occur BEFORE you start coding.</strong> Be sure that you include:
+<li>Sketch out your plans for the App…ON PAPER. <strong>This should occur BEFORE you start coding.</strong> Be sure that you include:
 <ol style="list-style-type: lower-alpha">
-<li>Suggested Title</li>
-<li>Goal of the app</li>
+<li>Suggested Full Title and Short Title</li>
+<li>Goal(s) of the app</li>
 <li>What will the user be doing (i.e., potential inputs)</li>
 <li>What will the user be experiencing (i.e., potential outputs)</li>
 <li>Relationships between various elements.</li>
 </ol></li>
-<li>When your plan <strong>gets approval</strong>, create a new repository on GitHub (see <a href="workflow.html#repo-naming">Section <a href="workflow.html#repo-naming">1.2.1</a></a>); you can initially load the Sample App template to this repository, if you wish.</li>
+<li>When your plan <strong>gets approval</strong>, create a new repository on GitHub (see <a href="workflow.html#repo-naming">Section <a href="workflow.html#repo-naming">1.2.1</a></a>) using the App Template as the template for your new repository.</li>
 <li>Begin writing the code.</li>
 <li>As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.</li>
 <li>When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.</li>
@@ -539,6 +550,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Match the App name as closely as possible</li>
 <li>You have a 100 character limit</li>
 </ul>
+<p>Be as descriptive as you can with your repo name; this will improve the indexing of your app.</p>
 <p>While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository.</p>
 <p>If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.</p>
 </div>
@@ -598,8 +610,8 @@ Figure 1.3: Successful Publish and Settings
 </p>
 </div>
 <p>In <a href="workflow.html#fig:testing3">Figure <a href="workflow.html#fig:testing3">1.3</a></a>, you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.</p>
-<p>If you want, you can add collaborators as I did in the example (orange box). This is not required.</p>
-<p>The most important piece is the Content URL (marked with the blue star). You’ll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device they are using.</p>
+<p>If you want, you can add collaborators as I did in the example (orange box). While not required, adding at least me (Neil) will allow me to check your app’s logs in the event of an error occurring on the TLT server and help you troubleshoot.</p>
+<p>The most important piece is the Content URL (marked with the blue star). You’ll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device (e.g., computer, tablet, phone) they are using.</p>
 </div>
 <div id="check-the-logs" class="section level3">
 <h3><span class="header-section-number">1.3.5</span> Check the Logs</h3>

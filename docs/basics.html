@@ -180,18 +180,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Getting Ready to Code</b></span></li>
 <li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
 <li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
-<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
-<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>3.3</b> Sample App</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.3.1</b> Direct Download</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>3.3.2</b> GitHub Desktop</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.3.3</b> Command Line</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.3.4</b> RStudio Project</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a><ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The app.R</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
@@ -482,11 +487,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="basics" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> The Basics</h1>
-<p>Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.</p>
+<p>Before you get too far into this Guide and building apps, we would like for you to take a moment and ensure that you have the following tools at your disposal.</p>
 <div id="checklist" class="section level2">
 <h2><span class="header-section-number">3.1</span> Getting Started Checklist</h2>
 <ol style="list-style-type: decimal">
-<li><p>Ensure that you have all of necessary accounts and if not, put in a request to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
+<li>Ensure that you have all of necessary accounts and if not, put in a request to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).
 <ol style="list-style-type: lower-alpha">
 <li><a href="https://www.datacamp.com/">DataCamp</a><br />
 </li>
@@ -495,53 +500,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://github.com/EducationShinyAppTeam">EducationShinyAppTeam</a></li>
 <li><a href="https://teams.microsoft.com/l/team/19%3a8423bc25992a4451952d8312b497324d%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&amp;tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e">BOAST</a> in Microsoft Teams (tied to your PSU AccessID)</li>
 </ol></li>
-<li><p>Ensure that you have all of the required software</p>
+<li>Ensure that you have all of the required software
 <ol style="list-style-type: lower-alpha">
-<li><a href="https://cloud.r-project.org/"><code>R</code> (version 3.5.* minimum, version 4.0.0 preferred)</a></li>
+<li><a href="https://cloud.r-project.org/"><code>R</code> (version 4.0.3 minimum)</a></li>
 <li><a href="https://rstudio.com/products/rstudio/download/#download">RStudio Desktop (most current version preferred)</a></li>
-</ol></li>
-<li><p>Additional Software that we strongly recommend</p>
-<ol style="list-style-type: lower-alpha">
 <li><a href="https://desktop.github.com/">GitHub Desktop</a></li>
 </ol></li>
-<li><p><code>R</code> Packages–here are some basic packages that everyone will need; be sure to install their dependencies</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="basics.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;DT&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;shiny&quot;</span>, <span class="st">&quot;shinyBS&quot;</span>, </span>
-<span id="cb1-2"><a href="basics.html#cb1-2"></a>                   <span class="st">&quot;shinyWidgets&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;tippy&quot;</span>))</span></code></pre></div></li>
-<li><p>A copy of the Sample App (<a href="basics.html#sample-app">see below</a>)</p></li>
+<li><code>R</code> Packages from CRAN–here are some basic packages that everyone will need; be sure to install their dependencies. You may copy the following code into your R console to install the packages.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="basics.html#cb1-1"></a><span class="kw">install.packages</span>(</span>
+<span id="cb1-2"><a href="basics.html#cb1-2"></a>    <span class="dt">pkgs =</span> <span class="kw">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;shiny&quot;</span>, <span class="st">&quot;shinyBS&quot;</span>, </span>
+<span id="cb1-3"><a href="basics.html#cb1-3"></a>             <span class="st">&quot;shinydashboard&quot;</span>, <span class="st">&quot;shinyWidgets&quot;</span>)</span>
+<span id="cb1-4"><a href="basics.html#cb1-4"></a>)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>The <code>boastUtils</code> Package (<a href="basics.html#boastUtils">see below</a>)</li>
+<li>The BOAST App Template (<a href="basics.html#templateApp">see below</a>)</li>
 </ol>
 </div>
-<div id="boastutils-package" class="section level2">
+<div id="boastUtils" class="section level2">
 <h2><span class="header-section-number">3.2</span> <code>boastUtils</code> Package</h2>
-<p>Bob created the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent.</p>
-<p><strong>Starting Summer 2020, you will be required to you make use of this tool.</strong></p>
-<p>Please check out the <a href="https://github.com/EducationShinyAppTeam/boastUtils">package’s GitHub page</a> for instructions on installing and usage.</p>
+<p>Bob created the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent. Additionally, we routinely add tools to this package that are indispensable for creating and maintaining BOAST apps.</p>
+<p><strong>Starting Summer 2020, we require all apps to make use of this package.</strong></p>
+<p>Please check out the <a href="https://github.com/EducationShinyAppTeam/boastUtils">package’s GitHub page</a> for instructions on installing and usage. You may also copy the following code into your R console to install the <code>boastUtils</code> package.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="basics.html#cb2-1"></a><span class="kw">library</span>(devtools)</span>
 <span id="cb2-2"><a href="basics.html#cb2-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/boastUtils&quot;</span>)</span></code></pre></div>
 </div>
-<div id="sample-app" class="section level2">
-<h2><span class="header-section-number">3.3</span> Sample App</h2>
-<p>Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the <a href="https://github.com/EducationShinyAppTeam/Sample_App">Sample_App</a> template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.</p>
+<div id="a-quick-note-on-packages-and-r" class="section level2">
+<h2><span class="header-section-number">3.3</span> A Quick Note on Packages (and R)</h2>
+<p>All too often, people will install R and R packages and that is the end of it. However, both are living things: they change over time. To this end, we encourage you to get into the habit of checking for updates to R and packages on a regular basis (e.g., monthly). (You can also do the same with RStudio.) This will ensure that you are using the newest version of packages which can help mitagate errors.</p>
+<p>For updating R, you can type <code>version</code> in your R console to see what version you have and then compare that to current version posted to <a href="https://cran.r-project.org/">CRAN</a>.</p>
+<p>For checking for updates to R packages that are on CRAN, click on the Update button of RStudio’s packages window. (Typically found in the lower right quadrant.) You can also type <code>update.packages()</code> into your R console to run a check and then update packages. (You can also use <code>old.packages()</code> to see if you have any packages that have newer versions available.)</p>
+<p>To update <code>boastUtils</code> you’ll have to run the install command again.</p>
+</div>
+<div id="templateApp" class="section level2">
+<h2><span class="header-section-number">3.4</span> BOAST Template App</h2>
+<p>Bob and Neil have created a App_Template repository that you can use as a template for your own apps. To get started, clone the <a href="https://github.com/EducationShinyAppTeam/App_Template">App_Template</a> template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.</p>
 <p>There are several methods you can use:</p>
 <ul>
 <li><a href="basics.html#direct-download">Direct Download (Basic)</a></li>
-<li><a href="basics.html#github-desktop">GitHub Desktop (Recommended)</a></li>
+<li><a href="#github-desktop">GitHub Desktop (Recommended)</a></li>
 <li><a href="basics.html#command-line">Command Line (Advanced)</a></li>
 <li><a href="basics.html#rstudio-project">RStudio Project</a></li>
 </ul>
 <div id="direct-download" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Direct Download</h3>
+<h3><span class="header-section-number">3.4.1</span> Direct Download</h3>
 <p>You can download this repository directly by visiting:</p>
 <blockquote>
-<p><a href="https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip" class="uri">https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip</a></p>
+<p><a href="https://github.com/EducationShinyAppTeam/App_Template/archive/master.zip" class="uri">https://github.com/EducationShinyAppTeam/App_Template/archive/master.zip</a></p>
 </blockquote>
 </div>
-<div id="github-desktop" class="section level3">
-<h3><span class="header-section-number">3.3.2</span> GitHub Desktop</h3>
+<div id="github-desktop-strongly-recommended" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> GitHub Desktop (STRONGLY RECOMMENDED)</h3>
 <p>If you are using <a href="https://desktop.github.com/">GitHub Desktop</a> and have <a href="https://help.github.com/en/desktop/getting-started-with-github-desktop/authenticating-to-github">linked your account</a> that has access to the <a href="https://github.com/EducationShinyAppTeam">EducationShinyAppTeam</a> repository, you can do the following from inside GitHub Desktop:</p>
 <ol style="list-style-type: decimal">
 <li>Bring up the Clone Repository Menu (File -&gt; Clone Repository…)<br />
 </li>
-<li>Enter Sample_App in the search bar and select the option that says Sample_App (not sampleapp)</li>
+<li>Enter App_Template in the search bar and select the option that says App_Template</li>
 <li>Click the Choose… button for the local path (this is where you want to the clone to live on your computer)</li>
 <li>Click the Clone button.</li>
 </ol>
@@ -551,9 +565,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="command-line" class="section level3">
-<h3><span class="header-section-number">3.3.3</span> Command Line</h3>
+<h3><span class="header-section-number">3.4.3</span> Command Line</h3>
 <p>Enter the following command in your terminal:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="basics.html#cb3-1"></a><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/Sample_App.git</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="basics.html#cb3-1"></a><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/App_Template.git</span></code></pre></div>
 <p><strong>See also:</strong></p>
 <ul>
 <li><a href="https://guides.github.com/introduction/git-handbook/">Git Handbook</a></li>
@@ -562,13 +576,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="rstudio-project" class="section level3">
-<h3><span class="header-section-number">3.3.4</span> RStudio Project</h3>
+<h3><span class="header-section-number">3.4.4</span> RStudio Project</h3>
 <p>You can also use RStudio to connect to and copy repositories from GitHub. There are a few extra steps that you’ll need to go through compared to other methods. We recommend that you use GitHub Desktop.</p>
 <ol style="list-style-type: decimal">
-<li>In your browser, navigate to the repository you want to copy; in this case the <a href="https://github.com/EducationShinyAppTeam/Sample_App">Sample_App repo</a>.</li>
+<li>In your browser, navigate to the repository you want to copy; in this case the <a href="https://github.com/EducationShinyAppTeam/App_Template">App_Template repo</a>.</li>
 <li>Launch RStudio and create a new project.</li>
 <li>Select the Version Control option and then Git.</li>
-<li>Switch back to your browser and click on the Clone or Download button. There should be a line of text starting with <code>git@github</code> that you can copy. Do so.</li>
+<li>Switch back to your browser and click on the Clone or Download button. Click on the SSH, and then you should see a line of text starting with <code>git@github</code> that you can copy. Do so.</li>
 <li>Returning to RStudio, paste the get you just copied into the Repository URL field.</li>
 <li>Adjust the directory name and the subdirectory (where this project will live on your machine) as you see fit.</li>
 <li>Click the Create Project button.</li>
@@ -631,20 +645,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

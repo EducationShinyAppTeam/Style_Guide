@@ -180,18 +180,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Getting Ready to Code</b></span></li>
 <li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
 <li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
-<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
-<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>3.3</b> Sample App</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.3.1</b> Direct Download</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>3.3.2</b> GitHub Desktop</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.3.3</b> Command Line</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.3.4</b> RStudio Project</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a><ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The app.R</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
@@ -547,28 +552,28 @@ conciseness/brevity.</strong> While we don’t necessarily want a wall of text, 
 <h3><span class="header-section-number">13.3.3</span> Option 1: Hover Text</h3>
 <p>The more immediate solution to differing vocabularies is for us to make use of hover text. This approach is appealing in that the user doesn’t have to leave your App (like going to a dictionary/thesaurus) and the content of these tips is not critical to using your App. That is to say, the information is available for those who might need a quick reminder but does not take up permanent screen space.</p>
 <p>To use this tool you’ll need to make sure that you install and load the <code>tippy</code> package.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="wording.html#cb116-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="wording.html#cb119-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
 <p>Suppose that we want to add the hover text to the the word “positive” in the following sentence:</p>
 <blockquote>
 <p>A positively skewed histogram will hoave potential outliers that are larger than the main modal clump(s).</p>
 </blockquote>
 <p>We would need to do the following in our <code>app.R</code> (or <code>ui.R</code>) file:</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="wording.html#cb117-1"></a><span class="co"># Required Library</span></span>
-<span id="cb117-2"><a href="wording.html#cb117-2"></a><span class="kw">library</span>(tippy)</span>
-<span id="cb117-3"><a href="wording.html#cb117-3"></a><span class="co"># In UI Section</span></span>
-<span id="cb117-4"><a href="wording.html#cb117-4"></a><span class="co">#[code omitted]</span></span>
-<span id="cb117-5"><a href="wording.html#cb117-5"></a><span class="kw">dashboardBody</span>(</span>
-<span id="cb117-6"><a href="wording.html#cb117-6"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb117-7"><a href="wording.html#cb117-7"></a>  <span class="kw">tabItem</span>(</span>
-<span id="cb117-8"><a href="wording.html#cb117-8"></a>    <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
-<span id="cb117-9"><a href="wording.html#cb117-9"></a>    <span class="kw">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
-<span id="cb117-10"><a href="wording.html#cb117-10"></a>    <span class="kw">p</span>(<span class="st">&quot;A &quot;</span>,</span>
-<span id="cb117-11"><a href="wording.html#cb117-11"></a>      tippy<span class="op">::</span><span class="kw">tippy</span>(<span class="dt">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
-<span id="cb117-12"><a href="wording.html#cb117-12"></a>                   <span class="dt">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
-<span id="cb117-13"><a href="wording.html#cb117-13"></a>                   <span class="dt">arrow =</span> <span class="ot">TRUE</span>, <span class="dt">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
-<span id="cb117-14"><a href="wording.html#cb117-14"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
-<span id="cb117-15"><a href="wording.html#cb117-15"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb117-16"><a href="wording.html#cb117-16"></a>)) </span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="wording.html#cb120-1"></a><span class="co"># Required Library</span></span>
+<span id="cb120-2"><a href="wording.html#cb120-2"></a><span class="kw">library</span>(tippy)</span>
+<span id="cb120-3"><a href="wording.html#cb120-3"></a><span class="co"># In UI Section</span></span>
+<span id="cb120-4"><a href="wording.html#cb120-4"></a><span class="co">#[code omitted]</span></span>
+<span id="cb120-5"><a href="wording.html#cb120-5"></a><span class="kw">dashboardBody</span>(</span>
+<span id="cb120-6"><a href="wording.html#cb120-6"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb120-7"><a href="wording.html#cb120-7"></a>  <span class="kw">tabItem</span>(</span>
+<span id="cb120-8"><a href="wording.html#cb120-8"></a>    <span class="dt">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
+<span id="cb120-9"><a href="wording.html#cb120-9"></a>    <span class="kw">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
+<span id="cb120-10"><a href="wording.html#cb120-10"></a>    <span class="kw">p</span>(<span class="st">&quot;A &quot;</span>,</span>
+<span id="cb120-11"><a href="wording.html#cb120-11"></a>      tippy<span class="op">::</span><span class="kw">tippy</span>(<span class="dt">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
+<span id="cb120-12"><a href="wording.html#cb120-12"></a>                   <span class="dt">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
+<span id="cb120-13"><a href="wording.html#cb120-13"></a>                   <span class="dt">arrow =</span> <span class="ot">TRUE</span>, <span class="dt">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
+<span id="cb120-14"><a href="wording.html#cb120-14"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
+<span id="cb120-15"><a href="wording.html#cb120-15"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb120-16"><a href="wording.html#cb120-16"></a>)) </span></code></pre></div>
 <p>There are several things to notice in the example:</p>
 <ol style="list-style-type: decimal">
 <li>The <code>tippy</code> call is part of the paragraph environment. If the text is going to be part of a list, then the <code>tippy</code> call should be part of a list item.</li>

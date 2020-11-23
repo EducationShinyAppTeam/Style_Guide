@@ -2,42 +2,57 @@
 
 # The Basics {#basics}
 
-Before you get too far into the Style Guide, we would like for you to take a moment and ensure that you have the following tools at your disposal.
+Before you get too far into this Guide and building apps, we would like for you to take a moment and ensure that you have the following tools at your disposal.
 
 ## Getting Started Checklist {#checklist}
+
 1. Ensure that you have all of necessary accounts and if not, put in a request to Bob ([rpc5102](mailto:rpc5102@psu.edu)).  
     a. [DataCamp](https://www.datacamp.com/)  
     b. [GitHub](https://github.com/)  
     c. [EducationShinyAppTeam](https://github.com/EducationShinyAppTeam) 
     d. [BOAST](https://teams.microsoft.com/l/team/19%3a8423bc25992a4451952d8312b497324d%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e) in Microsoft Teams (tied to your PSU AccessID)
 2. Ensure that you have all of the required software  
-    a. [`R` (version 3.5.* minimum, version 4.0.0 preferred)](https://cloud.r-project.org/) 
+    a. [`R` (version 4.0.3 minimum)](https://cloud.r-project.org/) 
     b. [RStudio Desktop (most current version preferred)](https://rstudio.com/products/rstudio/download/#download)
-3. Additional Software that we strongly recommend 
-    a. [GitHub Desktop](https://desktop.github.com/)
-4. `R` Packages--here are some basic packages that everyone will need; be sure to install their dependencies
+    c. [GitHub Desktop](https://desktop.github.com/)
+3. `R` Packages from CRAN--here are some basic packages that everyone will need; be sure to install their dependencies. You may copy the following code into your R console to install the packages.
 
-    ```{r packageInstall, echo = TRUE, eval = FALSE}
-    install.packages(c("devtools", "DT", "ggplot2", "shiny", "shinyBS", 
-                       "shinyWidgets", "tidyverse", "tippy"))
-    ```
+```{r packageInstall, echo = TRUE, eval = FALSE}
+install.packages(
+    pkgs = c("devtools", "tidyverse", "shiny", "shinyBS", 
+             "shinydashboard", "shinyWidgets")
+)
+```
 
-5. A copy of the Sample App ([see below](#sample-app))
+4. The `boastUtils` Package ([see below](#boastUtils))
+5. The BOAST App Template ([see below](#templateApp))
 
-## `boastUtils` Package
-Bob created the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) package to automate much of the design and development process. This will not only reduce the amount of work you'll need to do, it'll also make apps more consistent. 
+## `boastUtils` Package{#boastUtils}
+
+Bob created the [boastUtils](https://github.com/EducationShinyAppTeam/boastUtils) package to automate much of the design and development process. This will not only reduce the amount of work you'll need to do, it'll also make apps more consistent. Additionally, we routinely add tools to this package that are indispensable for creating and maintaining BOAST apps.
  
-__Starting Summer 2020, you will be required to you make use of this tool.__
+__Starting Summer 2020, we require all apps to make use of this package.__
 
-Please check out the [package's GitHub page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and usage.
+Please check out the [package's GitHub page](https://github.com/EducationShinyAppTeam/boastUtils) for instructions on installing and usage. You may also copy the following code into your R console to install the `boastUtils` package.
 
 ```{r utilInstall, echo = TRUE, eval = FALSE}
 library(devtools)
 devtools::install_github("EducationShinyAppTeam/boastUtils")
 ```
 
-## Sample App  
-Bob and Neil have created a Sample App repository that you can use as a template for your own apps. To get started, clone the [Sample\_App](https://github.com/EducationShinyAppTeam/Sample_App) template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.
+## A Quick Note on Packages (and R)
+
+All too often, people will install R and R packages and that is the end of it. However, both are living things: they change over time. To this end, we encourage you to get into the habit of checking for updates to R and packages on a regular basis (e.g., monthly). (You can also do the same with RStudio.) This will ensure that you are using the newest version of packages which can help mitagate errors.
+
+For updating R, you can type `version` in your R console to see what version you have and then compare that to current version posted to [CRAN](https://cran.r-project.org/).
+
+For checking for updates to R packages that are on CRAN, click on the Update button of RStudio's packages window. (Typically found in the lower right quadrant.) You can also type `update.packages()` into your R console to run a check and then update packages. (You can also use `old.packages()` to see if you have any packages that have newer versions available.)
+
+To update `boastUtils` you'll have to run the install command again. 
+
+## BOAST Template App{#templateApp}
+
+Bob and Neil have created a App_Template repository that you can use as a template for your own apps. To get started, clone the [App\_Template](https://github.com/EducationShinyAppTeam/App_Template) template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.
 
 There are several methods you can use:
 
@@ -47,15 +62,17 @@ There are several methods you can use:
 - [RStudio Project](#rstudio-project)
 
 ### Direct Download
+
 You can download this repository directly by visiting:
 
-> <https://github.com/EducationShinyAppTeam/Sample_App/archive/master.zip>
+> <https://github.com/EducationShinyAppTeam/App_Template/archive/master.zip>
 
-### GitHub Desktop
+### GitHub Desktop (STRONGLY RECOMMENDED)
+
 If you are using [GitHub Desktop](https://desktop.github.com/) and have [linked your account](https://help.github.com/en/desktop/getting-started-with-github-desktop/authenticating-to-github) that has access to the [EducationShinyAppTeam](https://github.com/EducationShinyAppTeam) repository, you can do the following from inside GitHub Desktop:  
 
 1. Bring up the Clone Repository Menu (File -> Clone Repository...)  
-2. Enter Sample\_App in the search bar and select the option that says Sample\_App (not sampleapp)
+2. Enter App\_Template in the search bar and select the option that says App\_Template
 3. Click the Choose... button for the local path (this is where you want to the clone to live on your computer)
 4. Click the Clone button.
 
@@ -65,10 +82,11 @@ If you are using [GitHub Desktop](https://desktop.github.com/) and have [linked 
 
 
 ### Command Line
+
 Enter the following command in your terminal:
 
 ```{bash, eval = FALSE}
-git clone git@github.com:EducationShinyAppTeam/Sample_App.git
+git clone git@github.com:EducationShinyAppTeam/App_Template.git
 ```
 
 **See also:**
@@ -78,12 +96,13 @@ git clone git@github.com:EducationShinyAppTeam/Sample_App.git
 - [Happy Git and GitHub for the userR](https://happygitwithr.com/)
 
 ### RStudio Project {#rstudio-project}
+
 You can also use RStudio to connect to and copy repositories from GitHub. There are a few extra steps that you'll need to go through compared to other methods. We recommend that you use GitHub Desktop.
 
-1. In your browser, navigate to the repository you want to copy; in this case the [Sample\_App repo](https://github.com/EducationShinyAppTeam/Sample_App).
+1. In your browser, navigate to the repository you want to copy; in this case the [App\_Template repo](https://github.com/EducationShinyAppTeam/App_Template).
 2. Launch RStudio and create a new project.
 3. Select the Version Control option and then Git.
-4. Switch back to your browser and click on the Clone or Download button. There should be a line of text starting with `git@github` that you can copy. Do so.
+4. Switch back to your browser and click on the Clone or Download button. Click on the SSH, and then you should see a line of text starting with `git@github` that you can copy. Do so.
 5. Returning to RStudio, paste the get you just copied into the Repository URL field.
 6. Adjust the directory name and the subdirectory (where this project will live on your machine) as you see fit.
 7. Click the Create Project button.
