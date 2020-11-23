@@ -1073,3 +1073,23 @@ caption {
 	text-align: left;
 	padding: 0;
 }
+
+/* Shiny Matrix Input Controls */
+.matrix-input-col-header-cell{
+  padding: 15px 0px 0px 5px;
+}
+
+.matrix-input-row-header-cell{
+  text-align: right;
+  padding-right: 5px;
+}
+
+.matrix-input-cell{
+  border: 1pt solid black;
+  background: white;
+  padding-left: 5px;
+}
+
+.matrix-input-table{
+  width: 75%;
+}
