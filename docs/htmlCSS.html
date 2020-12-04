@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 14 Documentation | Building Shiny Apps the BOAST Way</title>
+  <title>Chapter 6 HTML and CSS | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 14 Documentation | Building Shiny Apps the BOAST Way" />
+  <meta property="og:title" content="Chapter 6 HTML and CSS | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 14 Documentation | Building Shiny Apps the BOAST Way" />
+  <meta name="twitter:title" content="Chapter 6 HTML and CSS | Building Shiny Apps the BOAST Way" />
   
   <meta name="twitter:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="wording.html"/>
-<link rel="next" href="accessibility.html"/>
+<link rel="prev" href="coding.html"/>
+<link rel="next" href="additionalCoding.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -431,105 +431,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="documentation" class="section level1">
-<h1><span class="header-section-number">Chapter 14</span> Documentation</h1>
-<p>These apps are the product of your hard work and are part of your academic record. Thus, you need to adhere to <a href="https://undergrad.psu.edu/aappm/G-9-academic-integrity.html">Penn State’s Academic Integrity Policy</a>. This is especially important as we are making the apps available through a Creative Commons Attribution-NonCommerical-ShareAlike 4.0 International license (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>). If you have used code, pictures, data, or other materials from outside of the BOAST team, you <strong>MUST</strong> give proper credit. These references will then be included on the App’s References Tab.</p>
-<div id="references" class="section level2">
-<h2><span class="header-section-number">14.1</span> References</h2>
-<p>All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgments.</p>
-<p><strong>NOTE:</strong> listing something in the Acknowledgments DOES NOT waive this requirement.</p>
-<p>We will make use of the <a href="https://amstat.tfjournals.com/asa-style-guide/">American Statistical Association’s</a> reference style. Please check with Neil, Matt, and Dennis for getting assistance. You can see this style in action, with the <a href="layout.html#refTab">Reference Tab</a> example of <a href="layout.html#layout">Chapter <a href="layout.html#layout">8</a></a>. Here is a starting code block for you to use:</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="documentation.html#cb108-1"></a><span class="co">#[omitted code]</span></span>
-<span id="cb108-2"><a href="documentation.html#cb108-2"></a><span class="kw">tabItem</span>(</span>
-<span id="cb108-3"><a href="documentation.html#cb108-3"></a>  <span class="dt">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
-<span id="cb108-4"><a href="documentation.html#cb108-4"></a>  <span class="kw">withMathJax</span>(),</span>
-<span id="cb108-5"><a href="documentation.html#cb108-5"></a>  <span class="kw">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb108-6"><a href="documentation.html#cb108-6"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb108-7"><a href="documentation.html#cb108-7"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
-<span id="cb108-8"><a href="documentation.html#cb108-8"></a>  <span class="kw">p</span>(<span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb108-9"><a href="documentation.html#cb108-9"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
-<span id="cb108-10"><a href="documentation.html#cb108-10"></a>  <span class="co"># Repeat as needed</span></span>
-<span id="cb108-11"><a href="documentation.html#cb108-11"></a>)</span></code></pre></div>
-<p>Notice the use of <code>class = "hangingindent"</code>. You must include this with each reference as this will ensure the proper styling of your references.</p>
-<p>If you need assistance with this section, please talk to Neil.</p>
-</div>
-<div id="plagiarism" class="section level2">
-<h2><span class="header-section-number">14.2</span> Plagiarism</h2>
-<p><strong>You MAY NOT use blocks of code you’ve found online without giving proper attribution.</strong></p>
-<p>There is a difference between looking at example code online to see how to do something and copying that code directly. The former is permissible, the later is plagiarism.</p>
+<div id="htmlCSS" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> HTML and CSS</h1>
+<div id="textStyle" class="section level2">
+<h2><span class="header-section-number">6.1</span> Styling Text</h2>
+<p>The styling of text (including font size, font weight (i.e., boldface), font family, color, etc.) is something that we began standardizing in Fall 2019. This is centrally managed by Neil and Bob to ensure 1) consistency across apps, 2) to cut down on the extraneous coding you need to do (this way you can focus on the apps), and 3) ensures that our apps are accessible and mobile friendly. To this end:</p>
+<p>The styling of text will be controlled using an <strong>external</strong> CSS (Cascading Style Sheet) file. You will implement this depending on what approach you use:</p>
 <ul>
-<li>If you want to use someone else’s code “as is” (without any changes), you should reach out to the author for permission first.</li>
-<li>If you use someone else’s code and make modifications, you need to give credit to where you got the code, and potentially ask for permission.</li>
+<li>If you’re using the <code>boastApp</code> function from <code>boastUtils</code> (<strong>recommended for all new apps</strong>), you don’t need to do anything as the appropriate calls will automatically be done for you.</li>
+<li>If you are using the <code>ui.R</code> and <code>server.R</code> format (i.e., apps from prior years), place the following code in the <code>tags$head( )</code> portion at the top of the <code>dashboardBody</code> section of the <code>ui.R</code> file :
+<!-- end list --></li>
 </ul>
-<p>You will need to place citations in <em><strong>two</strong></em> places: in the References Tab and in your code. You might want to also consider adding an acknowledgement to the Overview tab.</p>
-<div id="reference-tab" class="section level3">
-<h3><span class="header-section-number">14.2.1</span> Reference Tab</h3>
-<p>Use the following format:</p>
-<blockquote>
-<p>Author. (Date), Title of program/source code, [type of code]. Available from &lt; URL &gt;.</p>
-</blockquote>
-<p>For example,</p>
-<blockquote>
-<p>Hatfield, N. J. (2017), First day activity, Netlogo. Available from <a href="https://neilhatfield.github.io/statApps/Day1Activity.html" class="uri">https://neilhatfield.github.io/statApps/Day1Activity.html</a>.</p>
-</blockquote>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="htmlCSS.html#cb11-1"></a><span class="kw">dashboardPage</span>(</span>
+<span id="cb11-2"><a href="htmlCSS.html#cb11-2"></a>  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb11-3"><a href="htmlCSS.html#cb11-3"></a>  <span class="kw">dashboardHeader</span>(</span>
+<span id="cb11-4"><a href="htmlCSS.html#cb11-4"></a>    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</span>
+<span id="cb11-5"><a href="htmlCSS.html#cb11-5"></a>    <span class="dt">titleWidth =</span> <span class="dv">300</span>,</span>
+<span id="cb11-6"><a href="htmlCSS.html#cb11-6"></a>    <span class="co"># [omitted code]</span></span>
+<span id="cb11-7"><a href="htmlCSS.html#cb11-7"></a>  ),</span>
+<span id="cb11-8"><a href="htmlCSS.html#cb11-8"></a>  <span class="co"># [omitted code],</span></span>
+<span id="cb11-9"><a href="htmlCSS.html#cb11-9"></a>  <span class="kw">dashboardBody</span>(</span>
+<span id="cb11-10"><a href="htmlCSS.html#cb11-10"></a>    tags<span class="op">$</span><span class="kw">head</span>(</span>
+<span id="cb11-11"><a href="htmlCSS.html#cb11-11"></a>      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</span>
+<span id="cb11-12"><a href="htmlCSS.html#cb11-12"></a>        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</span>
+<span id="cb11-13"><a href="htmlCSS.html#cb11-13"></a>      <span class="kw">tabItems</span>(</span>
+<span id="cb11-14"><a href="htmlCSS.html#cb11-14"></a>       <span class="co"># [omitted code]</span></span>
+<span id="cb11-15"><a href="htmlCSS.html#cb11-15"></a>      )  )  )  )</span></code></pre></div>
+<p>There times when you might need some additional text styling that is not already defined. In these cases, <strong>you’ll need to talk to Neil or Bob to determine what is the best course of action</strong>. This could entail an addition to the central CSS file or the inclusion of an additional CSS file unique to your App.</p>
+<p>The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.</p>
+<p>See also <a href="htmlCSS.html#css">Section <a href="htmlCSS.html#css">6.3</a></a>.</p>
 </div>
-<div id="in-code" class="section level3">
-<h3><span class="header-section-number">14.2.2</span> In Code</h3>
-<p>Use the following format in your code to cite where you got the code from.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="documentation.html#cb109-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb109-2"><a href="documentation.html#cb109-2"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
-<span id="cb109-3"><a href="documentation.html#cb109-3"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
-<span id="cb109-4"><a href="documentation.html#cb109-4"></a><span class="co">#  Date: &lt;date&gt;</span></span>
-<span id="cb109-5"><a href="documentation.html#cb109-5"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
-<span id="cb109-6"><a href="documentation.html#cb109-6"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
-<span id="cb109-7"><a href="documentation.html#cb109-7"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb109-8"><a href="documentation.html#cb109-8"></a><span class="co"># [borrowed code then follows]</span></span>
-<span id="cb109-9"><a href="documentation.html#cb109-9"></a><span class="co"># ...</span></span>
-<span id="cb109-10"><a href="documentation.html#cb109-10"></a><span class="co"># [last line of borrowed code]      </span></span>
-<span id="cb109-11"><a href="documentation.html#cb109-11"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
+<div id="html" class="section level2">
+<h2><span class="header-section-number">6.2</span> HTML</h2>
+<p>Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in <code>R</code>. When you run a Shiny app, <code>R</code> and the <code>shiny</code> packages actually convert all of the <code>R</code> code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an <strong>Accessibility Issue</strong>.</p>
+<p>HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to a wider audience. Here are the most common HTML tags that you’ll encounter when making a Shiny App.</p>
+<div id="lists" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Lists</h3>
+<p>There are two aspects to lists: the items in the list and the environment those items live in.</p>
+<p>The two list environments are Ordered Lists and Unordered Lists.</p>
+<ul>
+<li>The Ordered List environment is for when you require that a user works through the items in a particular order. You call this environment in your App by using <code>tags$ol( [your list] )</code>. These lists are sequentially numbered/lettered.</li>
+<li>The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using <code>tags$ul( [your list] )</code>. These lists will appear with bullets.</li>
+</ul>
+<p>Once you’ve created the list environment, you create items for your list in the same way: <code>tags$li([content])</code>. You do not need to and should <strong>NOT</strong> use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.</p>
+<p>Here is an example of how you might create a list:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="htmlCSS.html#cb12-1"></a>tags<span class="op">$</span><span class="kw">ul</span>(</span>
+<span id="cb12-2"><a href="htmlCSS.html#cb12-2"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</span>
+<span id="cb12-3"><a href="htmlCSS.html#cb12-3"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item with a&quot;</span>, tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;boldface&quot;</span>), <span class="st">&quot;word.&quot;</span>)</span>
+<span id="cb12-4"><a href="htmlCSS.html#cb12-4"></a>)</span></code></pre></div>
+<p>which turns into</p>
+<ul>
+<li>This is my first item.</li>
+<li>A second item with a <strong>boldface</strong> word.</li>
+</ul>
+<p>There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to <code>tags$li()</code> when in that section.</p>
+</div>
+<div id="headers" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Headers</h3>
+<p>Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. In fact, if you look at the Table of Contents to the left (provided you haven’t hidden it), everything you see there is actually tied to a Header in this document.</p>
+<p>No matter how much new coders want, Heading Tags are <strong>NOT</strong> for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content. Just like the Table of Contents for this Style Guide.</p>
+<p>There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.</p>
+<ol style="list-style-type: decimal">
+<li><code>h1()</code> is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).</li>
+<li><code>h2()</code> is for Tab/Page titles within the App. These would correspond with the tab links you place in the dashboard’s left side panel.</li>
+<li><code>h3()</code> is for titling Sections within a Tab/Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.</li>
+<li><code>h4()</code> is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.</li>
+<li><code>h5()</code> and <code>h6()</code> should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., <code>h1()</code>, <code>h2()</code>, etc.</li>
+</ol>
+<p><strong>Avoid skipping heading levels</strong> as this will get your App flagged for an Accessibility Violation. That is to say don’t start at <code>h2</code> with no <code>h1</code> and don’t go from <code>h1</code> to <code>h3</code> without an <code>h2</code>. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn’t skip whole sections in either of those.</p>
+<p>Here are few more things to NOT do with the heading tags:</p>
+<ul>
+<li>DO NOT USE headings to style text (We cannot stress this enough.)</li>
+<li>Do not wrap a header tag around a list element (e.g., <code>h3(tags$li("here is my list item"))</code>) nor the reverse (e.g., <code>tags$li(h3("here is my list item"))</code>)</li>
+<li>Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(“Introduction to”, p(“my game”)))</li>
+</ul>
+<p>For more information check out</p>
+<ul>
+<li><a href="https://www.w3.org/WAI/tutorials/page-structure/headings/">W3C’s Tutorial</a></li>
+<li><a href="https://accessibility.psu.edu/headings/">Penn State’s Headings and Subheadings Accessibility</a></li>
+</ul>
+</div>
+<div id="paragraphs" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Paragraphs</h3>
+<p>Your content should be enclosed in the paragraph tag, <code>p()</code>. Even if your content is relatively brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is.</p>
 </div>
 </div>
-<div id="r-packages" class="section level2">
-<h2><span class="header-section-number">14.3</span> <code>R</code> Packages</h2>
-<p>If you made use of any packages in <code>R</code>, then you will need to add these to the Reference tab. Fortunately, there is a built-in tool that will help you: the <code>citation</code> function. In R (RStudio) simply type <code>citation("packageName")</code> and you’ll get the appropriate citation information for the package you used. For example, <code>citation("shinydashboard")</code> and <code>citation("plyr")</code> will give the information needed for the following citations:</p>
-<blockquote>
-<p>Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with ‘Shiny’, R Package. Available from <a href="https://CRAN.R-project.org/package=shinydashboard" class="uri">https://CRAN.R-project.org/package=shinydashboard</a></p>
-</blockquote>
-<blockquote>
-<p>Wickham, H. (2011), “The Split-apply-combine strategy for data analysis”. <em>Journal of Statistical Software</em>, 40, pp. 1-29. Available at <a href="http://www.jstatsoft.org/v40/i01/" class="uri">http://www.jstatsoft.org/v40/i01/</a>.</p>
-</blockquote>
-<p>Notice, that the format of the R package will depend on whether there is an article published for the package. The <code>shinydashboard</code> package is not associated with an article while the <code>plyr</code> package is associated with Wickham’s article.</p>
-</div>
-<div id="graphics-1" class="section level2">
-<h2><span class="header-section-number">14.4</span> Graphics</h2>
-<p>Pictures, drawings, photographs, images, etc. are typically copyrighted. When you’re selecting images, make sure that the images are Open Source/Copyright Free/Royalty Free/Public Domain. Additionally, include a reference to where the pictures came from in the Overview Page. The basic format to use is:</p>
-<blockquote>
-<p>LastName, First Initial. (Year), Title of artwork. Retrieved from &lt; URL &gt; (if available).</p>
-</blockquote>
-</div>
-<div id="data" class="section level2">
-<h2><span class="header-section-number">14.5</span> Data</h2>
-<p>If you are using any data files, you need to attribute where those files are coming from in the References tab. You might also want to add an acknowledgment on the Overview tab. A suggested format to use is:</p>
-<blockquote>
-<p>Author/Rightsholder. (Year), Title of data set, [Description of form], Location: Name of producer.</p>
-</blockquote>
-<blockquote>
-<p>Author/Rightsholder. (Year), Title of data set, [Description of form]. Available at <a href="http://www.url.com" class="uri">http://www.url.com</a></p>
-</blockquote>
-<p>If you (or someone else) had to sign some type of agreement to access the data, we must examine the agreement before you make your App publicly accessible. Just because you got access to the data does not mean you have the right to share the data.</p>
+<div id="css" class="section level2">
+<h2><span class="header-section-number">6.3</span> CSS</h2>
+<p>Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.</p>
+<p>There are a few key elements at play for CSS:</p>
+<ol style="list-style-type: decimal">
+<li>All apps need to have the appropriate reference to the CSS file (See <a href="htmlCSS.html#textStyle">Section <a href="htmlCSS.html#textStyle">6.1</a></a>).
+<ol style="list-style-type: lower-alpha">
+<li>Please register any issues, bugs, enhancements, new styling to the Style Guide repository of GitHub.</li>
+</ol></li>
+<li>Any App specific styling needs to as be in a CSS file and approved.</li>
+<li>There should not be any styling code in the <code>app.R</code>, <code>ui.R</code>, or <code>server.R</code> files (a.k.a. in-line CSS). Styling code would look like this:
+<ul>
+<li><code>tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: orange}"))</code><br />
+</li>
+<li><code>style="color: #fff; background-color: #337ab7; border-color: #2e6da4"</code></li>
+</ul></li>
+<li>For objects that need to have a particular styling invoked, we will make use of the <code>class</code> attribute. These will invoked through the HTML tags or through the function calls.</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="htmlCSS.html#cb13-1"></a><span class="co"># HTML Tag Example 1</span></span>
+<span id="cb13-2"><a href="htmlCSS.html#cb13-2"></a><span class="kw">p</span>(</span>
+<span id="cb13-3"><a href="htmlCSS.html#cb13-3"></a>  <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb13-4"><a href="htmlCSS.html#cb13-4"></a>  <span class="st">&quot;Attali, D. and Edwards, T. (2018). shinyalert: Easily create</span></span>
+<span id="cb13-5"><a href="htmlCSS.html#cb13-5"></a><span class="st">  pretty popup messages (modals) in &#39;Shiny&#39;. (v1.0). [R package].</span></span>
+<span id="cb13-6"><a href="htmlCSS.html#cb13-6"></a><span class="st">  Available from https://CRAN.R-project.org/package=shinyalert&quot;</span></span>
+<span id="cb13-7"><a href="htmlCSS.html#cb13-7"></a>)</span>
+<span id="cb13-8"><a href="htmlCSS.html#cb13-8"></a></span>
+<span id="cb13-9"><a href="htmlCSS.html#cb13-9"></a><span class="co"># HTML Tag Example 2</span></span>
+<span id="cb13-10"><a href="htmlCSS.html#cb13-10"></a><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 12/2/2019 by NJH.&quot;</span>)</span>
+<span id="cb13-11"><a href="htmlCSS.html#cb13-11"></a></span>
+<span id="cb13-12"><a href="htmlCSS.html#cb13-12"></a><span class="co"># Function Call Example</span></span>
+<span id="cb13-13"><a href="htmlCSS.html#cb13-13"></a><span class="kw">actionButton</span>(</span>
+<span id="cb13-14"><a href="htmlCSS.html#cb13-14"></a>  <span class="dt">inputId =</span> <span class="kw">paste0</span>(<span class="st">&quot;grid-&quot;</span>, row, <span class="st">&quot;-&quot;</span>, column),</span>
+<span id="cb13-15"><a href="htmlCSS.html#cb13-15"></a>  <span class="dt">label =</span> <span class="st">&quot;?&quot;</span>,</span>
+<span id="cb13-16"><a href="htmlCSS.html#cb13-16"></a>  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb13-17"><a href="htmlCSS.html#cb13-17"></a>  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
+<span id="cb13-18"><a href="htmlCSS.html#cb13-18"></a>  <span class="dt">class =</span> <span class="st">&quot;grid-fill&quot;</span></span>
+<span id="cb13-19"><a href="htmlCSS.html#cb13-19"></a>)</span></code></pre></div>
+<p>There is an exception to #3: setting up alignment for a div section. This would look like <code>div(style = "text-align: center"...)</code> This type of styling is allowed in the R files (generally in the UI portions only).</p>
+<p>If you come across an app that has in-line CSS OR calls to a CSS file that isn’t <code>boast.css</code>, please log an issue and mention/assign Neil. (Most common external CSS files are <code>style.css</code> and <code>Feature(s).css</code>.)</p>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="wording.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="accessibility.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="coding.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="additionalCoding.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
