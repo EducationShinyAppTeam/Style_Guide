@@ -1,0 +1,348 @@
+# HTML and CSS {#htmlCSS}
+
+Shiny apps are a blending of the R programming language and Hypertext Markup Language (HTML) which is the standard language of the web. When you run a Shiny app, `R` and the `shiny` packages actually convert all of the `R` code into an HTML document which is served up to the user. 
+
+As you create the user interface, you will run into using HTML in two ways: functions for shiny (e.g., `bsButton`, `dashboardBody`, `selectInput`, `sendSweetAlert`, etc.) and HTML tags. In the case of the former, the functions you call will automatically write any necessary HTML when the app runs. For the later, you will have to take care to use tags appropriately.
+
+## HTML Tags {#html}
+
+HTML tags are the way in which you tell browsers what type of element you are creating. For example, if you want to tell the browser that you passing along text for the user to read, you would use the paragraph tag, `p`. If instead, you were passing along a file for an image, you would use the image tag, `img`. Shiny has 110 HTML tags built in. However, you will not need to use the vast majority of them. Instead, we will cover the ones that you will be using the most often.
+
+One important word of caution here is that you need to pay close attention to the rules and guidelines in this chapter. If you don't use HTML tags appropriately, then 1) your app might not look/function the way that you intended, and 2) you'll make your app less accessible. Since our apps are to support students in their education, we need to do our best to ensure that all of our apps are as accessible as possible.
+
+### Paragraphs {#paragraphs}
+
+The most common HTML tag is that of paragraph. This is the tag that tells browsers "hey, here is some text content that I want you show the user". In your app, you'll encase the majority of any text in `p()` (more formally, `tags$p()`). 
+
+For example,
+
+```{r loadShiny, echo=FALSE, eval=TRUE}
+library(shiny)
+```
+
+```{r paraTag1, echo=TRUE, eval=TRUE}
+# Running this code produces a nice looking display of the text below.
+p(
+  "Statistics is the Liberal Art and Science of data to better
+  understand our world in the face of omnipresent variation so that
+  an individual can meaningfully participate in all levels of
+  society."
+)
+```
+
+No matter how short or long your content is, the paragraph tag should be your Go-To HTML tag. Treat the inputs of the paragraph tag exactly like you would write a document: separate paragraphs get their own instance of `p()`. Browsers will automatically put the appropriate space between them.
+
+### Breaks
+
+One of the next most important HTML tags is that for breaks. No, we don't mean coffee/snack breaks. Rather we mean line breaks. These allow you end a line and move down to a new line (without an empty line between them) or even put a line of empty space between HTML elements. Thus, breaks are a great way to help with vertical spacing in your app.
+
+To place a break all you need to type is `br()` (formal, `tags$br()`). One nice thing is that breaks can be typed into your code on their own or as part of another HTML element (e.g., a paragraph).
+
+```{r breakTag1, echo=TRUE, eval=TRUE}
+p(
+  "Here's an example where we're using a break",
+  br(),
+  "inside of a paragraph tag."
+)
+```
+
+### Lists
+
+There are two aspects to lists: what kind of list you want to make (known as the list environment) and the items that make up your list. 
+
+The two list environments are Ordered Lists and Unordered Lists.
+
++ The Ordered List environment is for when you require that a user works through the items in a particular order. You call this environment in your App by using `tags$ol( [your list] )`. These lists are sequentially numbered/lettered.
++ The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using `tags$ul( [your list] )`. These lists will appear with bullets.
+
+You must first set up the list environment by using the appropriate HTML tag. Here it is good practice to use the formal call: `tags$ol()` and `tags$li()`. Failure to do this makes orphaned items which is an __Accessibility Issue__ and will cause the list to not be formated appropriately. 
+
+Once you've created the list environment, you then tell browsers what the items are through the HTML item tag: `tags$li()`. (Again, use the formal call for safety.) The text of your item should be enclosed in quotation marks (double or single). 
+
+You should __NOT__ use the paragraph tag or any header tags with your list items. This is poor coding: `h1(tags$li("First item"))`. The paragraph, header, and list item tags all communicate important and distinct information to browsers and assistive technologies like screen readers. If you mix these tags together, you'll create confusion for the browser and mess up accessiblity features.
+
+You can use emphasis/italics or strong/boldface on portions of the content as appropriate; see the [Text Styling Tags](#stylingTags) section for details.
+
+Here is an example of how you might create a list:
+```{r listExample1, echo=TRUE, eval=TRUE}
+tags$ul(
+  tags$li("This is my first item."),
+  tags$li("A second item word.")
+)
+```
+
+If you wanted an ordered list, simply replace `tags$ul` with `tags$ol`:
+```{r listExample2, echo=TRUE, eval=TRUE}
+tags$ol(
+  tags$li("This is my first item."),
+  tags$li("A second item word.")
+)
+```
+
+There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in list environment and thus you will jump straight to `tags$li()` when in that section only.
+
+### Headers {#headers}
+
+Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. In fact, if you look at the Table of Contents to the left (provided you haven't hidden it), everything you see there is actually tied to a Header in this document.
+
+No matter how much coders want, Heading Tags are __NOT__ for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content. Just like the Table of Contents for this Style Guide.
+
+In fact, when you see different headers looking different (e.g., larger font size, boldface, etc.), this is *not* the due to the HTML heading tag; rather it is due to styling that is applied to the element through CSS. More on this later.
+
+There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.
+
+1. `h1()` is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).
+2. `h2()` is for Page titles within the App. These would correspond with the links you place in the dashboard's left-side panel.
+3. `h3()` is for titling Sections within a Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.
+4. `h4()` is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.
+5. `h5()` and `h6()` should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., `h1()`, `h2()`, etc.
+
+__Avoid skipping heading levels__ as this will get your App flagged for an Accessibility Violation. That is to say don't start at `h2` with no `h1` and don't go from `h1` to `h3` without an `h2`. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn't skip whole sections in either of those.
+
+Here are few more things to NOT do with the heading tags:
+
++ DO NOT USE headings to style text (We cannot stress this enough.)
++ Do not wrap a header tag around a list element (e.g., `h3(tags$li("here is my list item"))`) nor the reverse (e.g., `tags$li(h3("here is my list item"))`)
++ Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2("Introduction to", p("my game")))
+
+For more information check out
+
++ [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
++ [Penn State's Headings and Subheadings Accessibility](https://accessibility.psu.edu/headings/)
+
+### Links
+
+You might find yourself wanting to include a link in your text. For example, you might want to allow the user to go read up on your app's concept(s) before engaging further. To create a link you will need to use the HTML anchor tag, `tags$a()` and you'll need the following information:
+
++ The URL/web address that you want to reference (this is the Hypertext REFerence or HREF)
++ the text you want to be displayed. For accessibility, make the text descriptive of where you're sending the user.
+
+The anchor tag must be used within a paragraph tag (`p()`) or a list item tag (`tags$li()`). Here's an example of using the anchor tag to create a link to the PSU's Stat Department website:
+
+```{r anchorTag1, echo=TRUE, eval=TRUE}
+p(
+  "Learn more about us at the ",
+  tags$a(
+    href = "https://science.psu.edu/stat",
+    "Penn State Statistics Department website.",
+    class = "bodylinks"
+  )
+)
+```
+
+You'll notice that we added `class = "bodylinks"` to the anchor tag. Any time you're adding a link to the body of your app, you'll need to include this line. We'll explain more in the [CSS Section](#CSS).
+
+### Divisions {#div}
+
+A useful HTML tag is division, `div()` (formal, `tags$div()`); this tag allows you mark a chunk of your app as having special things applied to it. This is particularly useful for changing the alignment of text. The division needs to wrap around all of the elements that you want to include.
+
+```{r div1, echo=TRUE, eval=TRUE}
+div(
+  style = "text-align: center;",
+  p(
+    "Here is some text. You can include other elements such as
+    buttons, input fields, and output fields in addition to
+    paragraphs and lists."
+  )
+)
+```
+
+### Horizontal Rule
+
+On the rare occasion, you might find yourself wanting to draw a line in your app to help separate two chunks on the same page. For example, you might want to use a line to separate paragraphs of overarching instructions from paragraphs explaining a particular data set the user happens to pick. This is possible through the use of a horizontal rule. To create a horizontal rule, you simply place `hr()` on it's own line in your code (not inside of any other HTML tags). 
+
+```{r hr1, echo=TRUE, eval=TRUE}
+{
+  p(
+    "Here's an example of using a horizontal rule to separate the
+    above from the next section."
+  )
+  hr()
+}
+```
+
+### Other Tags
+
+There are a few other tags which you might need to use, depending upon your app. These include the image tag, `img()`, the figure caption tag, `figcaption()`. We will discuss these tags in the chapter on [Static Images](#staticImages).
+
+If you have questions about any other HTML tags, feel free to talk to Neil and/or Bob about them.
+
+### Text Styling Tags {#stylingTags}
+
+There are also some HTML tags whose goal is to work inside of the paragraph and list item tags to brings some extra information to text. These tags have a very visual impact on the text, which is why we refer to the Text Styling Tags. 
+
+#### Italics/Emphasis
+
+If you want to *italicize* a word or phrase, you'll need to use the emphasis tag, `tags$em()`. We want you to use the emphasis tag rather than the italics tag (`tags$i`) as emphasis is the __accessible__ option. The emphasis tag notifies screen readers to announce that the author has placed emphasis on the word or phrase. If you just use the italics tag, the user will not be notified of any differences between the word/phrase and surrounding text.
+
+```{r emph1, echo=TRUE, eval=TRUE}
+p(
+  "You", tags$em("must"), "use the emphasis tag to ensure that your
+  app is as accessible as possible."
+)
+```
+
+#### Boldface/Strong
+
+If you want to __boldface__ a word or phrase, you'll need to use the strong tag, `tags$strong()`. There is also a bold tag (`tags$b()`), but the same accessibility issues exist here. Thus, use `tags$strong()`.
+
+```{r strong1, eval=TRUE, echo=TRUE}
+tags$ul(
+  tags$li(
+    tags$strong("Level 1: "), "guess the sample size."
+  ),
+  tags$li(
+    tags$strong("Level 2: "), "guess the sample size AND set variance."
+  )
+)
+```
+
+#### Code and Pre-formatted
+
+If you want to display a block of code in your app (e.g., to show what code the user would need to type in order to recreate something on their own), you should use the code HTML tag, `tags$code()`. 
+
+The code tag can replace the paragraph tag and tells browsers (and screen readers) that the enclosed text should be treated and styled as non-executed computer code.
+
+To include a bit of code inside of a paragraph:
+```{r code1, echo=TRUE, eval=TRUE}
+p(
+  "Use the ", tags$code("bsButton"), "function to create buttons in
+  your Shiny app."
+)
+```
+
+If you need to display several lines of code, you should also use the pre-formatted HTML tag (`tags$pre()`) to ensure that the browser does not change any spacing/indentation on you.
+```{r code2, echo=TRUE, eval=TRUE}
+tags$pre(
+  tags$code(
+'bsButton(
+  inputId = "resample",
+  label = "Generate new sample",
+  size = "large",
+  style = "default",
+  icon = icon("retweet")
+)'
+  ) # Notice that the the single quoted code doesn't match the coding alignment.
+) # This is on purpose so that the we get the correct alignment in the rendered display below
+```
+
+## HTML `id` {#htmlID}
+
+No matter which HTML tag you use, you can always specific the identifier attribute (`id`) for each element. When you use a shiny function, e.g, `numericInput`, and you supply a value to the `inputId` argument, or when you define an output and set a value to the `outputId`, you are defining the HTML `id` attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id's. 
+
+In the rare case where you do find yourself needing to assign an `id` to an HTML element, you simply include `id = "uniqueName"` inside the tag. Keep in mind the id must not be shared by any other element/object, including inputs and outputs. 
+
+```{r htmlID1, echo=TRUE, eval=FALSE}
+p(
+  id = "idExample1",
+  "Here is some text whose paragraph now has the name 'idExample1'."
+)
+div(
+  id = "idExample2",
+  tags$ul(
+    tags$li("Here's an example where the div"),
+    tags$li("has the name 'idExample2' and contains"),
+    tags$li("a list")
+  )
+)
+```
+
+## CSS {#css}
+
+Cascading Style Sheets (CSS) are one of the most common ways in which people style HTML web pages. We have opted to make use of CSS technologies in BOAST through a centralized file. This ensures that 
+
+1. we have a consistent feel across all of our apps,
+2. we can ensure that our styling is as compliant as possible with [Web Accessibility Standards](https://www.w3.org/WAI/standards-guidelines/wcag/),
+3. we can rapidly deploy changes to all apps, and
+4. reduce the work load on the students (you).
+
+At this point in time, only Neil and Bob make edits to the BOAST CSS file. However, anyone is welcome to recommend changes and additions as need arises. 
+
+One of the perks of using the `boastApp` function, is that the loading of the BOAST CSS file is automatically done for you. The only things that you have to do is 1) write your app code, 2) use HTML tags appropriately, and 3) make sure to set the appropriate `skin` color in your app. Our CSS file will then do the rest (except for R plots).
+
+### Problematic CSS in Old Apps {#cssProblems}
+
+In many of the older apps, you will discover two highly problematic instances of CSS:
+
++ Calls to Non-BOAST CSS files
+  - Look in the `www` folder for any files that end in `.CSS`
+  - Look in the app for any code that looks similar to this:
+    ```{r badCSS1, echo=TRUE, eval=FALSE}
+    tags$link(rel = "stylesheet", type = "text/css", href = "/style.css")
+    ```
++ In-line CSS
+  - These would be lines that might look like the following:
+    ```{r badCSS2, echo=TRUE, eval=FALSE}
+    tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar 
+                    {background: orange}")),
+    # OR
+    style="color: #fff; background-color: #337ab7; border-color: #2e6da4"
+    ```
+
+In both cases, CSS of questionable quality is at play and needs to be rectified. In many cases, these bits of CSS are interfering with the BOAST CSS. __We need to eliminate all of these instances.__
+
+## Using CSS
+
+When we first began implementing our central CSS file, there was some push back in that students wouldn't get any say in the styling of their apps. This is not necessarily true. What we have done is made a much more consistent and coherent set of options for the major elements. Each student still has the ability to put in place styling, as long as that styling adheres to our conventions and does not contradict the BOAST CSS file.
+
+### Text Alignment
+
+Students may use `style = "text-align: left/center/right;"` to impose styling choice of the alignment of elements. However, we do ask that students apply such styling to a division (`div()`) rather than to any other HTML tag. To see an example, see the [Division Tag example](#div).
+
+Other than text alignment, we __discourage__ using the `style` argument with any CSS. (Note: some shiny functions like `bsButton` have a `style` argument which is different the `style` we're discussing here.)
+
+### Classes {#classes}
+
+The key way that students can style elements is through the use of classes which live in the BOAST CSS file. A class refers a group of elements which should all have similar styling. The any CSS file essentially consists of class definitions. If you want to apply a particular styling to an app element, the preferred method is through a CSS class. 
+
+To apply a class to an element, all you need to do is supply the `class = "className"` argument. Classes may be applied to divisions, paragraphs and even inputs/outputs. For example,
+
+```{r classes1, echo=TRUE, eval=FALSE}
+# HTML Tag Example 1
+p(
+  class = "hangingindent",
+  "Attali, D. and Edwards, T. (2018). shinyalert: Easily create
+  pretty popup messages (modals) in 'Shiny'. (v1.0). [R package].
+  Available from https://CRAN.R-project.org/package=shinyalert"
+)
+
+# HTML Tag Example 2
+div(class = "updated", "Last Update: 12/2/2019 by NJH.")
+
+# Function Call Example
+actionButton(
+  inputId = paste0("grid-", row, "-", column),
+  label = "?",
+  color = "primary",
+  style = "bordered",
+  class = "grid-fill"
+)
+```
+
+#### Existing Classes {#existingCSS}
+
+Here is a list of the current classes you may use
+
++ `largerFont` (for paragraphs): makes font 20% larger than the base font, __use sparingly__.
++ `updated` (for paragraphs): makes centered, smaller font size text for when the app was last updated.
++ `hangingindent` (for paragraphs): used in the Reference pages so that all subsequent lines of a reference are indented underneath the first line.
++ `answertext` (for paragraphs): makes text turn <span style = "color: #008755;">green</span>.
++ `bluetext` (for paragraphs): makes text turn <span style = "color: blue;">blue</span>.  
++ `redtext` (for paragraphs): makes text turn <span style = "color: red;">red</span>.
++ `bodylinks` (for anchors/links): makes the text change color depending upon the app's `skin` value, increases the font weight, and adds an underline: e.g., __<a href="https://www.psu.edu" style = "color: #1E407C; text-decoration: underline;">Penn State Website</a>__.
++ `leftParagraphError` (for use with `validate`'s `errorClass` argument): displays the validation error message as left aligned.
+
+#### New Classes {#newCSS}
+
+You might run into cases where you want an element styled in a new way or you might be the first person to use some new element (e.g., Fall 2020 was the first time someone used `matrixInput`) that needs BOAST styling. We can create new classes to handle cases. However, we ask that you follow this process:
+
+1. Get as many other bugs fixed in your app first.
+2. Identify the element(s) that need the styling.
+3. At least one idea for what you're wanting.
+3. Set up a meeting with Neil or Bob to discuss (we'll need an up-to-date version of your app prior to the meeting).
+4. Meet with Neil/Bob to discuss and nail down what the new class will be called and do.
+
+Be prepared during the meeting for Neil/Bob to ask lots of questions about the intent of the styling. We're doing this to make sure that the style decisions support the intent. By providing us with the most up-to-date version of your app, we can demo changes in real time for you. Once we get a class figured out, we'll add it to the BOAST CSS file and give you instructions on how to apply the class to the specific element(s).
+
+We must issue a caution: if you're requesting a change to a common element such as a `sliderInput` which could ripple throughout all of the apps, we are going to ask a lot of questions about the purpose of such a change. You will need to have justifications prepared.
+

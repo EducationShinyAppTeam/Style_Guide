@@ -12,6 +12,14 @@ Each of these cases represents a place where the performance of your app can suf
 
 ## Other Languages (Python, JavaScript, etc.) {#otherLanguages}
 
+## Minimize External Files {#exFiles}
+
+Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
+
+Wherever possible try to place external files into the `www` directory/folder that is at the same level as your `app.R` or `ui.R`/`server.R` files.
+
+If there are any external files (e.g., `*.csv`, `*.txt`, `*.dat`, `*.jpg`) that are not being used, delete them from the repository.
+
 ## Metadata {#metadatac}
 
 As of boastUtils `v0.1.10`, your App will need the following metadata in a file named [DESCRIPTION](https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION) (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased).

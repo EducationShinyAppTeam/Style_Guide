@@ -23,8 +23,11 @@ This is where you'll do the vast majority of your work. We will not spend too mu
 
 1. __Loading Packages:__ the first part of any `app.R` file will be where you load all necessary packages for your app through a series of `library` calls. Only load those packages that you are actively using. 
 2. __Global Constants, Functions, and Data Sets:__ after you load your app's packages, you can now define any constants, custom functions, and data files. We call these elements "global" as by defining them here, you may call them any where in your code. If you were to only define them in the server section, then you can only call on them while you're in the server. Additionally, by defining them here, you allow for better resource sharing when we deploy your app and you start having hundreds of users.
+
 3. __The User Interface (UI):__ this next portion is where you will define all of the elements that will make up the user interface. The App Template will provide you with a skeleton, but it is up to you to make your sketches come to life.
+
 4. __The Server:__ after you create the UI, you now have to create the server which is where you'll define actions for your app. This is where you'll make use of any inputs or buttons you created in the UI to make things happen such as causing events to occur, plots to appear/change, score user's answers, etc.
+
 5. __The BOAST App Call:__ the final line of your code will be the BOAST app call (`boastUtils::boastApp(ui = ui, server= server)`). This is the line of code which takes your UI and server definitions and actually creates your app.
 
 ## DESCRIPTION {#description}

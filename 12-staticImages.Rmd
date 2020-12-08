@@ -1,4 +1,4 @@
-# Design Style {#designStyleb}
+# Static Images {#staticImages}
 
 Design Style is the second side of the Visual Appearance of every app. Here, we deal with visual aspects that go beyond the layout of your App. This includes issues of branding, color, how you make text look (font, size, emphasis), and graphics (plots, tables, and images).
 

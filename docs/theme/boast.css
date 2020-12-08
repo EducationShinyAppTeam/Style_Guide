@@ -152,12 +152,12 @@ hr {
 
 .bluetext {
 	color: blue;
-	margin-top: -0.5rem;
+	margin-top: -0.5rem; /* Slatted for removal*/
 }
 
 .redtext {
 	color: red;
-	margin-top: -0.5rem;
+	margin-top: -0.5rem; /* Slatted for removal*/
 }
 
 .sidebarsection {
@@ -1046,7 +1046,7 @@ create customized appearances. This is NOT recommended.*/
 
 .expanded {
   position: fixed;
-  z-index: 9999;
+  z-index: 9999; (for)
   width: 100%;
   height: auto;
   top: 0;

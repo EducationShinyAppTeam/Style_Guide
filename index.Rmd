@@ -50,22 +50,23 @@ We've laid out this document into several parts, each with their own chapters.
     - Chapter 3---Setting Up Your Computer  
     - Chapter 4---Exploring the Boast Template 
 + Part 3: Style Guide--Coding  
-    - Chapter 5---BOAST Coding Style
-    - Chapter 6---HTML and CSS
-    - Chapter 7---Additional Coding Information
+    - Chapter 5---General BOAST Coding Style
+    - Chapter 6---Shiny (BOAST) Specific Coding Practices
+    - Chapter 7---HTML and CSS
+    - Chapter 8---Additional Coding Information
 + Part 4: Style Guide--App Layout
-    - Chapter 8---General Layout
-    - Chapter 9---Common/Reoccurring Elements
+    - Chapter 9---General Layout
+    - Chapter 10---Common/Reoccurring Elements
 + Part 5: Style Guide--Visual Style
-    - Chapter 10---Color
-    - Chapter 11---Static Images
-    - Chapter 12---R Plots
+    - Chapter 11---Color
+    - Chapter 12---Static Images
+    - Chapter 13---R Plots
 + Part 6: Style Guide--Language
-    - Chapter 13--Wording
-    - Chapter 14--Documentation
+    - Chapter 14--Wording
+    - Chapter 15--Documentation
 + Part 7: Accessibility and Mobile Devices
-    - Chapter 15--Accessibility
-    - Chapter 16--Mobile Friendliness
+    - Chapter 16--Accessibility
+    - Chapter 17--Mobile Friendliness
 
 Yes, this looks long but keep in mind the following:
 

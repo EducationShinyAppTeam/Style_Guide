@@ -6,7 +6,7 @@ Now that you've gone through the Getting Ready to Code chapters, we can turn our
 
 ## General Coding Style {#genCode}
 
-Our Coding Style is based upon the [tidyverse style guide](https://style.tidyverse.org/). However, we do make some important departures and have some additional practicies that you will need to follow. 
+Our Coding Style is based upon the [tidyverse style guide](https://style.tidyverse.org/). However, we do make some important departures and have some additional practices that you will need to follow. 
 
 When it comes to our Coding Style we strive to adhere to the following principles:
 
@@ -155,6 +155,8 @@ Avoid using the variable names from code that you're making use of from another 
 
 One of the best practices a coder can do is to be explicit. And no, we don't mean that type of explicit. This links back to [Informative Naming](#naming) but goes a step beyond. `R` is a functional programming language. One of the important aspects of this is that functions in `R` obey the same rules as mathematical functions, especially multivariate functions. 
 
+#### Function Arguments
+
 One implicit fact about functions that most students don't realize is that the order of a function's arguments are a matter of convention and is actually arbitrary. While we might define *f* as \(f(x,y) = x^2+3y\), we could call \(f(y=2,x=1)\) and get the same output as \(f(1,2)\) when we use the convention set up in the definition. This issue is exacerbated with functions in `R`.
 
 Therefore, when you pass values to the arguments of a function in `R`, you should be explicit and include the argument name in your code. For example,
@@ -168,6 +170,28 @@ bsButton(
   class = "btn-ttt"
 )
 ```  
+
+#### Function Definitions
+
+When you are defining your own function, it is always a good idea to explicit state what the function spits out. This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use `return` as shown below:
+
+```{r explictReturn, echo=TRUE, eval=FALSE}
+collatz <- function(x, c = 1){
+  if (x < 0 || x != round(x, digits = 0)) {
+    return("Error: x must be a positive integer.")
+  } else if (x == 1) {
+    return(paste("You're at 1 in", c, "steps."))
+  } else if (x %% 2 == 0) {
+    return(collatz(x = x / 2, c = c + 1))
+  } else {
+    return(collatz(x = 3 * x + 1, c = c + 1))
+  }
+}
+```
+
+The `collatz` function above allows us to see the Collatz Conjecture in action (i.e., that starting with any positive integer, the sequence formed by taking half of an even value or 3 times an odd value plus 1 will always go to 1). The control logic is the series of `if, else if, else` statements.
+
+Even if you store the outputs in an internal variable (see the `gradeProb` function in the [DRY Grading Example](#dryGrading)), you should still end your function definition with an explicit `return` call.
 
 #### Why is being explicit important?
 
@@ -183,13 +207,158 @@ If you are ever unsure about how readable your code is, all you have to do is as
 
 ## Make Your Code Efficient {#efficient}
 
+> I would have written a shorter letter, but I did not have the time.
+<div align="center">
+> --- Blaise Pascal
+</div>
+
+Much like writing a short letter (paper or memo), writing efficient code takes time. Often coders first write *inefficient* code to translate your sketches into a working app. Then you can begin to make your code more efficient.
+
+As you write more code, you'll get the hang of writing more efficient code from the start as well as seeing how to make existing code more efficient. Two ways that you can work towards efficient code is to practice DRY coding and to minimize your package usage.
+
 ### DRY Coding
+
+DRY coding is the principle of Don't Repeat Yourself when coding. If you find yourself writing the same code several times, then you should DRY your code and look for a way to make things more efficient. There are several different situations where DRY might come into play. Here are just a few cases.
+
+#### Reoccuring Elements 
+
+You use the same list of choices for input multiple times. Rather than retyping the list each time, define the list as an object (e.g, `nameList`) and then you can call that list in the inputs (e.g., `choices = nameList`).
+
+#### Grading User Responses {#dryGrading}
+
+Rather than retyping the grading logic several times, you can define a single function and then call that function. For example,
+
+   ```{r dryCode1a, echo=TRUE, eval=FALSE}
+   gradeProb <- function(user, answer, tolerance = 0.001, partial = 0.01){
+     outcome <- list()
+     if (abs(user - answer) <= tolerance) {
+       outcome$feedback <- "You are correct".
+       outcome$mark <- "correct
+     } else if (abs(user - answer) <= partial) {
+       outcome$feedback <- "You are almost correct."
+       outcome$mark <- "partial"
+     } else {
+       outcome$feedback <- "Please try again."
+       outcome$mark <- "incorrect"
+     }
+     return(outcome)
+   }
+   ```
+
+The `gradeProb` function defined above will grade a user's probability value (i.e., `user`) against the answer key (`answer`) and return a list of two items: a feedback statement and the scoring mark to pass along to `renderIcon`. The following code shows us using the `gradeProb` function to generate the necessary outputs.
+
+```{r dryCode1b, echo=TRUE, eval=FALSE}
+prob1 <- gradeProb(
+  user = input$problem1,
+  answer = answerKey[1],
+  ## Omitting the remaining two arugment will use the default values
+)
+output$problem1Feedback <- renderUI({
+  prob1$feedback
+})
+
+output$problem1Mark <- renderIcon(icon = prob1$mark)
+```
+
+#### Graphs
+
+If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph is a good idea. For example,
+
+  ```{r dryCode2, echo=TRUE, eval=FALSE}
+  # Create a basic data frame that will cover the majority of your cases
+  baseGraph <- ggplot(
+    data = data.frame(
+      x = -10:10,
+      y = -10:10
+    )
+  ) +
+    scale_x_continuous(expand = expansion(mult = 0, add = 1)) +
+    scale_y_continuous(expand = expansion(mult = 0, add = 1)) +
+    theme_bw() +
+    theme(
+      title = element_text(size = 18),
+      text = element_text(size = 16)
+    )
+  ```
+
+When we get to plotting our actual graphs, or updating the existing graph, we can call `baseGraph` and then add the elements we want, such as a scatter plot:
+
+  ```{r dryCode3, echo=TRUE, eval=FALSE}
+  plotData <- data.frame(
+    heights = rnorm(n = 50, mean = 70, sd = 3.5),
+    weights = rnorm(n = 50, mean = 100, sd = 8),
+    sex = sample(x = c("M", "F", "I"), size = 50, replace = TRUE)
+  )
+  baseGraph +
+    geom_point(
+      data = plotData,
+      mapping = aes(x = heights, y = weights, color = sex, shape = sex),
+      size = 2
+    ) +
+    theme(
+      legend.position = "right"
+    ) +
+    xlab("Height (in)") +
+    ylab("Weight (kg)") +
+    scale_color_discrete(
+      name = "Sex",
+      labels = c(
+        "M" = "Male",
+        "F" = "Female",
+        "I" = "Intersex/Other"
+      )
+    ) +
+    scale_shape_discrete(
+      name = "Sex",
+      labels = c(
+        "M" = "Male",
+        "F" = "Female",
+        "I" = "Intersex/Other"
+      )
+    ) +
+    labs(
+      title = "Height and Weight by Sex"
+    )
+  ```
+
+Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary. We also want to highlight that this plot highlights a key accessibility feature: combining color AND shape. Do not rely on just color alone as individuals who are color blind will struggle; always pair color usage with an additional aesthetic such as shape.
+
+#### Repeating Yourself
+
+There are many other cases where you might find yourself repeating. These are good cases for DRY-ing your code through the use of defining a new object/variable or a function. 
+
+#### Over DRY-ing Code
+
+When you are building an app, there will be a certain amount of repetition in what you're doing. For example, you'll have to call the `bsButton` function each time you want to create a button. This is expected and appropriate for you to do. After, the purpose of the `bsButton` function is to create a button. 
+
+However, you can over do the DRY principle. For example, you don't need to define a function for something that you're only going to call once. Further, it isn't necessary to define a new function that essentially just changes a default value of an existing function. Here is a case where the user has over DRY-ed:
+
+```{r dryCode4, echo=TRUE, eval=FALSE}
+customButton <- function(inputId, label){
+  return(
+    bsButton(
+      inputId = inputId,
+      label = label,
+      icon = icon("bolt"),
+      size = "large",
+      style = "success"
+    )
+  )
+}
+```
+
+Rather than simply calling the `bsButton` function in their code and passing the appropriate arguments, this user has defined a brand new function that does the same thing but sets the values for `icon`, `size`, and `style` to new defaults. This type of programming should be avoided.
 
 ### Minimize Package Usage {#minPackages}
 
+A second way to make your code more efficient is through the use of packages. When you load a package you want to be sure that 
+
+1. the package you're loading is absolutely necessary, and
+2. you maximize your usage of packages.
+
 Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R. 
 
-A previous student loaded the `scales` to use the `percent` function to convert a decimal into a percentage. This is problematic for a couple reasons: the `percent` function has been depreciated (i.e., the developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: `paste0(0.1 * 100, "%")`. If needed in several places, they could have written their own function:
+A previous student loaded the `scales` package to use the `percent` function to convert a decimal into a percentage. This was problematic for a couple reasons: the `percent` function has been depreciated (i.e., the developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: `paste0(0.1 * 100, "%")`. If needed in several places, they could have written their own function:
 
 ```{r percentFunction, echo=TRUE, eval=FALSE}
 makePercent <- function(proportion){
@@ -218,17 +387,9 @@ Be aware that while `stale_package_check` is useful, it doesn't always catch eve
 
 Once you're sure that a package isn't being used, remove the `library` call for that package from your code.
 
-### Minimize External Files {#exFiles}
-
-Try to minimize the number and size of external files you're attaching to your App. If you're working on an existing app, remove any external files that are no longer necessary.
-
-Wherever possible try to place external files into the `www` directory/folder that is at the same level as your `app.R` or `ui.R`/`server.R` files.
-
-If there are any external files (e.g., `*.csv`, `*.txt`, `*.dat`, `*.jpg`) that are not being used, delete them from the repository.
-
 ## Be Kind to Future Coders {#beKind}
 
-Keep in mind that we have a high turnover with a new group of students each summer. Thus, we need to ensure that we go out of our way now to help those students out. Strive to write the quality of code you wish you would have wanted to start with. If you follow the Readability and Efficiency Principles, you'll be well on your way to being kind to future coders. The best way to go above and beyond is through comments.
+Keep in mind that we have a high turnover with a new group of students each summer. Thus, we need to ensure that we go out of our way now to help those students out. Strive to write the quality of code you wish you would have wanted to start with. If you follow the Readability and Efficiency Principles, you'll be well on your way to being kind to future coders. The best way to go above and beyond is through comments and titling code sections (make jump points).
 
 ### Leave Comments {#comments}
 
@@ -237,3 +398,51 @@ At bare minimum, use a comment to break your code into sections. This helps you 
 For particularly complex sections, use comments to summarize what you're trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.
 
 Keep in mind that being kind is not only for other people, but also for yourself. When you come back to an app even after a couple days away, comments in addition to the readability and efficiency steps will help you see where you left off.
+
+### Code Section Titles/Jump Points
+
+Another way to be kind to future coders is to title sections of your code and create points which allow for them to jump to different sections of your code without having to scroll through each and every line. Remember, you also count as a future coder, so titling sections of code will help you navigate your code.
+
+To title a section of code and make a jump point, start by making a comment in R. Then type a word/phrase that explains what the section is. Finally, type (at least) four dashes, `-`, (alternatively, you could use four equal signs, `=`, or four hashtags/pound signs, `#`) without spaces. This will create a title/jump point which people can use through the Code-Jump To... menu. You can vary the number of hashtags/pound signs at the start of comment to reflect where in the hierarchy of your app you are. Here's an example.
+
+```{r jumpPoints1, echo=TRUE, eval=FALSE}
+# Load Packages ----
+library(shiny)
+
+# Define gloabl constants, functions, data ----
+## None for this example
+
+# Define the UI ----
+ui <- list(
+  dashboardPage(
+    ## Header ----
+    dashboardHeader(
+      # code omitted
+    ),
+    ## Sidebar ----
+    dashboardSidebar(
+      # code omitted
+    ),
+    ## Body ----
+    dashboardBody(
+      tabItems(
+        ### Overview ----
+        tabItem(
+          tabName = "overview",
+          # code omitted
+        ),
+        # code omitted
+      )
+    )
+  )
+)
+
+# Define the server ----
+server <- function(input, output, session){
+  ## Info button ----
+  # code omitted
+}
+
+# boastApp Call ----
+boastUtils::boastApp(ui = ui, server = server)
+```
