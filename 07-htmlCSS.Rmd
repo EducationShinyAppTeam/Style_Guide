@@ -34,7 +34,7 @@ No matter how short or long your content is, the paragraph tag should be your Go
 
 ### Breaks
 
-One of the next most important HTML tags is that for breaks. No, we don't mean coffee/snack breaks. Rather we mean line breaks. These allow you end a line and move down to a new line (without an empty line between them) or even put a line of empty space between HTML elements. Thus, breaks are a great way to help with vertical spacing in your app.
+Another useful HTML tag is the one for breaks. No, we don't mean coffee/snack breaks. Rather we mean line breaks. These allow you end a line and move down to a new line (without an empty line between them) or even put a line of empty space between HTML elements. Thus, breaks are a great way to help with vertical spacing in your app.
 
 To place a break all you need to type is `br()` (formal, `tags$br()`). One nice thing is that breaks can be typed into your code on their own or as part of another HTML element (e.g., a paragraph).
 
@@ -115,7 +115,7 @@ For more information check out
 You might find yourself wanting to include a link in your text. For example, you might want to allow the user to go read up on your app's concept(s) before engaging further. To create a link you will need to use the HTML anchor tag, `tags$a()` and you'll need the following information:
 
 + The URL/web address that you want to reference (this is the Hypertext REFerence or HREF)
-+ the text you want to be displayed. For accessibility, make the text descriptive of where you're sending the user.
++ the text you want to be displayed. For accessibility, make the text descriptive of where you're sending the user (that is, don't use the phrase "click here").
 
 The anchor tag must be used within a paragraph tag (`p()`) or a list item tag (`tags$li()`). Here's an example of using the anchor tag to create a link to the PSU's Stat Department website:
 
@@ -152,18 +152,12 @@ div(
 On the rare occasion, you might find yourself wanting to draw a line in your app to help separate two chunks on the same page. For example, you might want to use a line to separate paragraphs of overarching instructions from paragraphs explaining a particular data set the user happens to pick. This is possible through the use of a horizontal rule. To create a horizontal rule, you simply place `hr()` on it's own line in your code (not inside of any other HTML tags). 
 
 ```{r hr1, echo=TRUE, eval=TRUE}
-{
-  p(
-    "Here's an example of using a horizontal rule to separate the
-    above from the next section."
-  )
-  hr()
-}
+hr()
 ```
 
 ### Other Tags
 
-There are a few other tags which you might need to use, depending upon your app. These include the image tag, `img()`, the figure caption tag, `figcaption()`. We will discuss these tags in the chapter on [Static Images](#staticImages).
+There are a few other tags which you might need to use, depending upon your app. These include the image tag, `img()`, and the figure caption tag, `figcaption()`. We will discuss these tags in the chapter on [Static Images](#staticImages).
 
 If you have questions about any other HTML tags, feel free to talk to Neil and/or Bob about them.
 
@@ -222,13 +216,13 @@ tags$pre(
   style = "default",
   icon = icon("retweet")
 )'
-  ) # Notice that the the single quoted code doesn't match the coding alignment.
-) # This is on purpose so that the we get the correct alignment in the rendered display below
+  ) # Notice that the single quoted code doesn't match the usual coding alignment.
+) # This is on purpose so that the we get the correct alignment in the rendered display below.
 ```
 
 ## HTML `id` {#htmlID}
 
-No matter which HTML tag you use, you can always specific the identifier attribute (`id`) for each element. When you use a shiny function, e.g, `numericInput`, and you supply a value to the `inputId` argument, or when you define an output and set a value to the `outputId`, you are defining the HTML `id` attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id's. 
+No matter which HTML tag you use, you can always specific the identifier attribute (`id`) for each element. When you use a shiny function, e.g., `numericInput`, and you supply a value to the `inputId` argument, or when you define an output and set a value to the `outputId`, you are defining the HTML `id` attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id's. 
 
 In the rare case where you do find yourself needing to assign an `id` to an HTML element, you simply include `id = "uniqueName"` inside the tag. Keep in mind the id must not be shared by any other element/object, including inputs and outputs. 
 
@@ -293,7 +287,7 @@ Other than text alignment, we __discourage__ using the `style` argument with any
 
 ### Classes {#classes}
 
-The key way that students can style elements is through the use of classes which live in the BOAST CSS file. A class refers a group of elements which should all have similar styling. The any CSS file essentially consists of class definitions. If you want to apply a particular styling to an app element, the preferred method is through a CSS class. 
+The key way that students can style elements is through the use of classes which live in the BOAST CSS file. A class refers a group of elements which should all have similar styling. Any CSS file essentially consists of class definitions. If you want to apply a particular styling to an app element, the preferred method is through a CSS class. 
 
 To apply a class to an element, all you need to do is supply the `class = "className"` argument. Classes may be applied to divisions, paragraphs and even inputs/outputs. For example,
 
@@ -334,15 +328,15 @@ Here is a list of the current classes you may use
 
 #### New Classes {#newCSS}
 
-You might run into cases where you want an element styled in a new way or you might be the first person to use some new element (e.g., Fall 2020 was the first time someone used `matrixInput`) that needs BOAST styling. We can create new classes to handle cases. However, we ask that you follow this process:
+You might run into cases where you want an element styled in a new way or you might be the first person to use some new element (e.g., Fall 2020 was the first time someone used `matrixInput`) that needs BOAST styling. We can create new classes to handle these cases. However, we ask that you follow this process:
 
 1. Get as many other bugs fixed in your app first.
 2. Identify the element(s) that need the styling.
-3. At least one idea for what you're wanting.
+3. Write up at least one idea for what you're wanting.
 3. Set up a meeting with Neil or Bob to discuss (we'll need an up-to-date version of your app prior to the meeting).
 4. Meet with Neil/Bob to discuss and nail down what the new class will be called and do.
 
-Be prepared during the meeting for Neil/Bob to ask lots of questions about the intent of the styling. We're doing this to make sure that the style decisions support the intent. By providing us with the most up-to-date version of your app, we can demo changes in real time for you. Once we get a class figured out, we'll add it to the BOAST CSS file and give you instructions on how to apply the class to the specific element(s).
+Be prepared for Neil/Bob to ask lots of questions about the intent of the styling during the meeting . We're doing this to make sure that the style decisions support the intent. By providing us with the most up-to-date version of your app, we can demo changes in real time for you. Once we get a class figured out, we'll add it to the BOAST CSS file and give you instructions on how to apply the class to the specific element(s).
 
 We must issue a caution: if you're requesting a change to a common element such as a `sliderInput` which could ripple throughout all of the apps, we are going to ask a lot of questions about the purpose of such a change. You will need to have justifications prepared.
 

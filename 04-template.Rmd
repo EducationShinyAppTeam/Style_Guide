@@ -1,6 +1,6 @@
 # The Exploring the BOAST Template {#template}
 
-Now that you've gotten your computer set up and you've made yourself a workflow, you're nearly ready to begin working on apps for BOAST. This Guide is the primary key to getting start but the BOAST Template is the secondary key to your success. 
+Now that you've gotten your computer set up and you've made yourself a workflow, you're nearly ready to begin working on apps for BOAST. This Guide is the primary key to getting started but the BOAST Template is the secondary key to your success. 
 
 ## Structure of the BOAST Template Repository {#templateRepo}
 
@@ -17,9 +17,9 @@ As you build your app (or work with existing apps), you'll add various files to 
 
 We will now briefly discuss the files which you will be editing.
 
-## The app.R {#appR}
+## The `app.R`  File{#appR}
 
-This is where you'll do the vast majority of your work. We will not spend too much time describing the ins and outs of this file. However, we do want to mention the five components to any BOAST app.R file:
+This is where you'll do the vast majority of your work. We will not spend too much time describing the ins and outs of this file. However, we do want to mention the five components to any BOAST app.R file.
 
 1. __Loading Packages:__ the first part of any `app.R` file will be where you load all necessary packages for your app through a series of `library` calls. Only load those packages that you are actively using. 
 2. __Global Constants, Functions, and Data Sets:__ after you load your app's packages, you can now define any constants, custom functions, and data files. We call these elements "global" as by defining them here, you may call them any where in your code. If you were to only define them in the server section, then you can only call on them while you're in the server. Additionally, by defining them here, you allow for better resource sharing when we deploy your app and you start having hundreds of users.
@@ -32,7 +32,7 @@ This is where you'll do the vast majority of your work. We will not spend too mu
 
 ## DESCRIPTION {#description}
 
-The DESCRIPTION file plays the role of metadata for your app. Formerly, we used to store some metadata inside of the apps. However, as our needs for managing app metadata have grown, we've had to go a different route. Enter the DESCRIPTION file. If an existing app does not have a DESCRIPTION file, copy the DESCRIPTION file from the App Template and place that copy in the existing app's repo. Then edit the file. Be sure to push your changes to GitHub when finished.
+The DESCRIPTION file plays the role of metadata for your app. Formerly, we used to store some metadata inside of the apps. However, as our needs for managing app metadata have grown, we've gone a different route. Enter the DESCRIPTION file. If an existing app does not have a DESCRIPTION file, copy the DESCRIPTION file from the App Template and place that copy in the existing app's repo. Then edit the file. Be sure to push your changes to GitHub when finished.
 
 The DESCRIPTION contains several fields (typically, the first word of each line, to the left of a colon). You will be editing the following fields:
 
@@ -120,3 +120,5 @@ Year badges denote when the app was officially added to the BOAST shinyapps.io s
     - `![new](https://img.shields.io/badge/lifecycle-newapp-brightgreen)`
 
 ## screenshot.png {#screenshot}
+
+You may see a file called `screenshot.png`. This is a placeholder file that adds a generic screenshot to the `readme.md`. After your app is deployed, we will update the `readme.md.` to link to the photo of your app used on the BOAST website. Thus, you do not have to do anything with this file.

@@ -4,7 +4,7 @@
 
 # Making an App {#makingApp}
 
-Sooner or later, you'll reach the point where it is time to make your own Shiny App for BOAST. Approaching your App's construction in a systematic way will help you tremendously. The following suggested workflow is an abbreviated version of the one in Chapter \@ref(workflow):
+Sooner or later, you'll reach the point where it is time to make your own Shiny App for BOAST. Approaching your App's construction in a systematic way will help you tremendously. The following suggested workflow is an abbreviated version of the one in [Chapter \@ref(workflow)](#workflow):
 
 1. Read the Style Guide
 2. Identify a topic
@@ -28,15 +28,15 @@ As you build your App, we recommend periodically checking the Style Guide to 1) 
 
 ## Step 2: Identify a Topic {#step2}
 
-*Note: I've written this step to center on making a new app. However, you can also think of this as identifying what an existing app's goals are. Thus, keep both new and existing apps in mind as you read this section.*
+*Note: We've written this step to center on making a new app. However, you can also think of this as identifying what an existing app's goals are. Thus, keep both new and existing apps in mind as you read this section.*
 
-This is one of the more challenging tasks for anyone: deciding what to make an app about. The notion of "picking a topic" is a bit misleading as not only should you pick a topic, but you also need to pick the __purpose__ of the app, and the __goals__. While all three go hand-in-hand with each other, the easiest decision of the three is purpose.
+This is one of the more challenging tasks for anyone: deciding what to make an app about. The notion of "picking a topic" is a bit misleading as not only should you pick a __topic__, but you also need to pick the __purpose__ of the app, and the __goals__. While all three go hand-in-hand with each other, the easiest decision of the three is purpose.
 
 ### Your App's Purpose {#step2a}
 
 When we look across BOAST, we can categorize the apps into two major classes: apps whose purpose is to help students __learn__ an idea/concept and apps whose purpose is to help students __review__ an idea/concept. The [NHST Caveats App](https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/) stands as a good example of an app whose purpose is to help students learn something. On the other hand, the [[Null] Hypothesis Testing Game (Tic-tac-toe)](https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/) and the [Matching Distributions](https://psu-eberly.shinyapps.io/Matching_Distributions/) are examples where the student is reviewing their understandings. There are some apps such as [ANCOVA](https://psu-eberly.shinyapps.io/ANCOVA/) that are dual purpose, having both learning elements and reviewing elements.
 
-Generally speaking, apps whose purpose is __learning__ are going have Explorations and possibly Challenges for Activity Tabs. Apps whose purpose is __reviewing__ will have just Games for Activity Tab(s).
+Generally speaking, apps whose purpose is __learning__ are going to have Explorations and possibly Challenges for Activity Tabs. Apps whose purpose is __reviewing__ will have just Games for Activity Tab(s).
 
 By identifying early on the purpose of your App, you'll be able to better plan your app.
 
@@ -44,7 +44,7 @@ By identifying early on the purpose of your App, you'll be able to better plan y
 
 Here is where you'll decide what statistical idea/concept your App is going to be centered around. While you should be as specific as possible here, __apps for learning__ need to have much more specificity than __apps for reviewing__. Saying that you want your App "to deal with probability" is not going to be as useful as saying that you want your App "to help students recognize when probability is and is not appropriate for different contexts". 
 
-Don't feel like you have to details to the nanoscale. As you continue developing and talking with people, you'll start adding in more details.
+Don't feel like you have to details down to the nanoscale. As you continue developing and talking with people, you'll start adding in more details.
 
 You can identify potential topics through any of the following:
 
@@ -58,7 +58,7 @@ You can identify potential topics through any of the following:
 
 Again, this list is just a starting place to identify potential topics. Draw inspiration from your experiences, your curiosity. Bounce ideas off of each other and the faculty. 
 
-*__Word of Caution #1__*: While it is okay to get ideas from other websites, please keep track of this. We need to give credit where credit is due. If you come across an app (whether in Shiny or some other program) somewhere and you think that it would be good to translate that into Shiny app for BOAST, we need to know. 
+*__Word of Caution #1__*: While it is okay to get ideas from other websites, please keep track of this. We need to give credit where credit is due. If you come across an app (whether in Shiny or some other program) somewhere and you think that it would be good to translate that into Shiny app for BOAST, we need to know the original. 
 
 *__Word of Caution #2__*: An unproductive place to begin is to say "Hey, I want to make a memory game" or "I saw this really cool animation and I want to make an app that does that." Both of these (especially the second) place the educational aspect of the app as a secondary focus. __This is not consistent with BOAST.__ All apps should place educational purposes and goals before anything else. Forcing a topic to make use of certain tool because that tool would be "cool" or "fun" does not further our goals.
 
@@ -69,6 +69,7 @@ Now, we're sure that some people have already thought to themselves "hey, you've
 For this step, you're going to need to work with the faculty to identify the learning goals for your app. If you're drawing from a past experience in a course, look to see if there were learning objectives listed. Those can be extremely useful starting places.
 
 ### Example
+
 *The following is a somewhat stream-of-consciousness narrative of how Neil tackled this step. We'll place flags in parentheses.*
 
 I would like to make an app that would help introductory students (*identifies an intended audience*) wrestling with some of the concepts of descriptive/incisive statistics (*Purpose: learning*). Some ideas that I have are:
@@ -84,7 +85,7 @@ After using the app, a student should recognize that while for a many data colle
 
 ## Step 3: Sketch out plans {#step3}
 
-In both of the workflows of Chapter \@ref(workflow), there was the following phrase: ON PAPER. This step here is where you really do need to take this phrase seriously.
+In both workflows of [Chapter \@ref(workflow)](#workflow), there was the following phrase: ON PAPER. This step here is where you really do need to take this phrase seriously.
 
 To assist you, use the following layout:
 ```{r blankSketchLayout, fig.cap="Blank layout for sketching your ideas", echo=FALSE, fig.align='center'}
@@ -107,27 +108,27 @@ ggplot(data = data.frame(x = rep(0, 50))) +
 
 Figure \ref{fig:blankSketchLayout} gives you a BOAST app canvas upon which you can sketch your ideas. You can copy this image into any number of programs for printing or digitally editing. In the examples below, you'll see a hand-drawn version of this layout.
 
-We want to take a moment to stress just how useful sketching your ideas is. Neil routinely makes use of sketches whenever he builds apps for BOAST, for helping students working on BOAST apps (e.g., the Data Table Examples app), or for his own projects (e.g., a Mastery Based Grading Progress Check app). Further, making sketches allows you to better share your ideas and will give you goal for what to aim for as you actually begin to code.
+We want to take a moment to stress just how useful sketching your ideas is. Neil routinely makes use of sketches whenever he builds apps for BOAST, for helping students working on BOAST apps (e.g., the Data Table Examples app), or for his own projects (e.g., a Mastery Based Grading Progress Check app). Further, making sketches allows you to better share your ideas and will give you a goal for what to aim for as you actually begin to code.
 
 There are several things that you'll want to be sure that you include in your sketch:
 
 + A Suggested Title
     - This might not be what you settle on, but you'll need to have this firmed up by the time you get to Step 4.
-    - You'll want to have both a [Long/Formal] Name and a shortened name ready
+    - You'll want to have both a [Long/Formal] Name and a shortened name ready.
 + Goal(s) of the App
-    - Carry this forward from Step 2 as a tangible reminder
-    - If you have several goals, you might consider denoting which tabs go with which goals
-+ What will the user be doing
-    - Thinking about what you want the user to do
+    - Carry this forward from Step 2 as a tangible reminder.
+    - If you have several goals, you might consider denoting which pages go with which goals.
++ What will the user be doing?
+    - Thinking about what you want the user to do.
     - Identify anything the user might click on, drag, or otherwise manipulate.
     - If there are going to be options, identify what those options should be.
     - Will there be different levels?
-    - Will there be a Challenge tab?
-+ What will the user experience
-    - Think about the general layout (explore, game, etc.)
-    - What outputs should the user be examining
-+ What are the relationships between elements
-    - Think about how each input impacts the outputs
+    - Will there be a Challenge page?
++ What will the user experience?
+    - Think about the general layout (explore, game, etc.).
+    - What outputs should the user be examining?
++ What are the relationships between elements?
+    - Think about how each input impacts the outputs.
     - If you want the user to have a certain experience, does the coding allow for that experience to happen?
 + Other Elements
     - Are you going to reference any external images?
@@ -136,7 +137,7 @@ There are several things that you'll want to be sure that you include in your sk
 
 The format of your sketches is up to you. 
 
-### Example
+### Example, cont.
 
 As I start thinking about what this app might look like, I'm going to use a sheet of paper in quarters to organize some thoughts. Figure \@ref(fig:planSketchFull) shows the entire sheet of paper. The quadrants move left to right, top to bottom.
 
@@ -146,35 +147,35 @@ knitr::include_graphics("images/planSketches/planSketch1.jpg")
 
 In the first quadrant (Figure \@ref(fig:planSketchInfo)), I've listed a title ("Skewness's Impact on the Values of the *Sample Median* and *Sample Arithmetic Mean*"), a possible short title ("Skew, Med, SAM") as well as a restatement of my goal. I've then listed general aspects about the layout of my app, including what skin/theme color (yellow) I would need to use. 
 
-I've additionally identified that I need to include the von Hippel article in my Reference Tab as well as locating a version of the General Social Survey (GSS).
+I've additionally identified that I need to include the von Hippel article in my Reference Page as well as locating a version of the General Social Survey (GSS).
 
 ```{r planSketchInfo, fig.align='center', echo=FALSE, fig.cap="First Quadrant: General Information", fig.width=5, fig.height=3}
 knitr::include_graphics("images/planSketches/planSketch2-Info.jpg")
 ```
 
-The second quadrant of my paper is the Overview Tab sketch (Figure \@ref(fig:planSketchOverview). I don't have much information here.
+The second quadrant of my paper is the Overview Page sketch (Figure \@ref(fig:planSketchOverview). I don't have much information here.
 
-```{r planSketchOverview, fig.align='center', echo=FALSE, fig.cap="Second Quadrant: Overview Tab", fig.width=5, fig.height=3}
+```{r planSketchOverview, fig.align='center', echo=FALSE, fig.cap="Second Quadrant: Overview Page", fig.width=5, fig.height=3}
 knitr::include_graphics("images/planSketches/planSketch3-Overview.jpg")
 ```
 
-```{r planSketchExplore, fig.align='center', echo=FALSE, fig.cap="Third Quadrant: Exploration Tab", fig.width=5, fig.height=3}
+```{r planSketchExplore, fig.align='center', echo=FALSE, fig.cap="Third Quadrant: Exploration Page", fig.width=5, fig.height=3}
 knitr::include_graphics("images/planSketches/planSketch4-Explore.jpg")
 ```
 
-The next quadrant (Figure \@ref(fig:planSketchExplore)) is where I started detailing the first Activity Tab of my app: the first Exploration. I'm imagining that in this exploration that the user would look through a variety of cases where the "rule" does and does not work. What I want the user to walk away from this tab is that just because a histogram looks positively skewed does not imply that the value of the *sample arithmetic mean* is greater than the value of the *sample median*. 
+The next quadrant (Figure \@ref(fig:planSketchExplore)) is where I started detailing the first Activity Page of my app: the first Exploration. I'm imagining that in this exploration that the user would look through a variety of cases where the "rule" does and does not work. What I want the user to walk away from this page is that just because a histogram looks positively skewed does not imply that the value of the *sample arithmetic mean* is greater than the value of the *sample median*. 
 
 I'm imagining a drop-down menu that would allow the user to move through a variety of data sets. Ideally, these data sets would be real data. The General Social Survey, has a variety of attributes that we could use, include several that demonstrate what I want. For example, the number of adults (18+ y.o.) living in a household is positively skewed but the value of the *sample median* is larger than than the value of the *sample arithmetic mean*. Which each choice of the user makes, the histogram on the right will update to show the appropriate data, plus reference lines for the values of the two statistics. I might want to add a numerical display as well. I also want there to be some context helping the user to understand each choice.
 
-I've left as an open question whether to enable a user to import/create their own data set on this tab. I'm currently leaning towards not allowing this. Additionally, I've marked something for a punchline but this will need more thought.
+I've left as an open question whether to enable a user to import/create their own data set on this page. I'm currently leaning towards not allowing this. Additionally, I've marked something for a punchline but this will need more thought.
 
-```{r planSketchChallenge, fig.align='center', echo=FALSE, fig.cap="Fourth Quadrant: Challenge Tab", fig.width=5, fig.height=3}
+```{r planSketchChallenge, fig.align='center', echo=FALSE, fig.cap="Fourth Quadrant: Challenge Page", fig.width=5, fig.height=3}
 knitr::include_graphics("images/planSketches/planSketch5-Challenge.jpg")
 ```
 
 The fourth and final quadrant (Figure \@ref(fig:planSketchChallenge)) is an idea I'm still kicking around. This would depend on the specific audience and course goals for which users would go here. My idea is to extend the goal for the app to allow students to construct an understanding for what conditions might lead to \(Sample\;Median\left(\mathcal{X}\right)<SAM\left(\mathcal{X}\right)\), \(Sample\;Median\left(\mathcal{X}\right)=SAM\left(\mathcal{X}\right)\), and \(Sample\;Median\left(\mathcal{X}\right)>SAM\left(\mathcal{X}\right)\).
 
-At this moment, I'm leaning towards marking the Challenge Tab as being a future improvement/addition rather than being part of the initial version of the app.
+At this moment, I'm leaning towards marking the Challenge Page as being a future improvement/addition rather than being part of the initial version of the app.
 
 ### Share Your Plan
 
@@ -190,7 +191,7 @@ Be sure to use the App Template as the template for your new repository.
 
 Make sure to set Git Ignore to `R`.
 
-For the Example, Check out the [Rethinking Sample Median vs Sample Arithmetic Mean Repo](https://github.com/EducationShinyAppTeam/Rethinking_Sample_Median_vs_Sample_Arithmetic_Mean/tree/development). The repo name is 50 characters long (including the underscores), gets at the goal of the app, and was not already in use.
+For the example, check out the [Rethinking Sample Median vs Sample Arithmetic Mean Repo](https://github.com/EducationShinyAppTeam/Rethinking_Sample_Median_vs_Sample_Arithmetic_Mean/tree/development). The repo name is 50 characters long (including the underscores), gets at the goal of the app, and was not already in use.
 
 ## Steps 5-8: Write, Edit, Test, Debug {#steps5-8}
 

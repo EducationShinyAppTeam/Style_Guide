@@ -73,8 +73,8 @@ research-driven
 accesiblity-minded
 avoid-the-shiny-problem
 workflow
-revising-existing-apps
-creating-new-apps
+revising-existing-apps-worflow
+creating-new-apps-workflow
 repo-naming
 testing
 set-uplogin-to-the-vpn
@@ -92,7 +92,7 @@ step2b
 step2c
 example
 step3
-example-1
+example-cont.
 share-your-plan
 step4
 steps5-8
@@ -148,7 +148,7 @@ code-section-titlesjump-points
 specificCoding
 overarching-organization
 calling-inputs-and-outputs
-reactive-vs.-observer
+reactive-vs.-observe
 working-with-reactive-values
 input
 reactiveval
@@ -182,9 +182,9 @@ existingCSS
 newCSS
 additionalCoding
 plotCachec
-otherLanguages
 exFiles
 metadatac
+otherLanguages
 rlockerc
 installing
 setup

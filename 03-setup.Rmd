@@ -2,7 +2,7 @@
 
 # The Basics {#basics}
 
-Before you get too far into this Guide and building apps, we would like for you to take a moment and ensure that you have the following tools at your disposal.
+Before you get too far into this Guide and building apps, we would like for you to take a moment and ensure that you have the following tools at your disposal. This will help you start on a path to success.
 
 ## Getting Started Checklist {#checklist}
 
@@ -103,7 +103,7 @@ You can also use RStudio to connect to and copy repositories from GitHub. There 
 2. Launch RStudio and create a new project.
 3. Select the Version Control option and then Git.
 4. Switch back to your browser and click on the Clone or Download button. Click on the SSH, and then you should see a line of text starting with `git@github` that you can copy. Do so.
-5. Returning to RStudio, paste the get you just copied into the Repository URL field.
+5. Returning to RStudio, paste the text you just copied into the Repository URL field.
 6. Adjust the directory name and the subdirectory (where this project will live on your machine) as you see fit.
 7. Click the Create Project button.
 

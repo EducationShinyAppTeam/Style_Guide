@@ -6,7 +6,7 @@ Now that you've gone through the Getting Ready to Code chapters, we can turn our
 
 ## General Coding Style {#genCode}
 
-Our Coding Style is based upon the [tidyverse style guide](https://style.tidyverse.org/). However, we do make some important departures and have some additional practices that you will need to follow. 
+Our Coding Style is based upon the [tidyverse style guide](https://style.tidyverse.org/). However, we make some important departures and have some additional practices that you will need to follow. 
 
 When it comes to our Coding Style we strive to adhere to the following principles:
 
@@ -20,7 +20,7 @@ Yes, we realize that we stated "Make your code readable" three times. Readable c
 
 ## Make Your Code Readable {#readable}
 
-For us, making code readable boils down to three major aspects: formatting and spacing, naming, being explicit. By way of an example, consider the following code:
+For us, making code readable boils down to three major aspects: formatting and spacing, naming, and being explicit. By way of an example, consider the following code:
 
 ```{r badCodeExample1, echo=TRUE, eval=FALSE}
 # Bad Code Example
@@ -47,15 +47,15 @@ While the above code takes more lines, it is infinitely more readable. Both sets
 
 ### Formatting and Spacing {#formatSpace}
 
-One of the most important aspects of making code readable is through proper formatting and spacing. A common belief is that the fewer the lines of code, the better the program. However, what often happens when people attempt to follow this belief is that they wind up with indecipherable code...even to themselves. Thus, they violate not only our Readability principle but also our Be Kind principle. 
+One of the most important aspects of making code readable is proper formatting and spacing. A common belief is that the fewer the lines of code, the better the program. However, what often happens when people attempt to follow this belief is that they wind up with indecipherable code...even to themselves. Thus, they violate not only our Readability principle but also our Be Kind principle. 
 
 #### Line Length
 
-With only a few exceptions (e.g., URLs), we want to keep each line to no more than 80 characters long. RStudio has a built in tool to help you with this.
+With only a few exceptions (e.g., URLs), we want to keep each line to no more than 80 characters long. RStudio has a built-in tool to help you with this.
 
 1. Click on the Tools menu and select Global Options...
-2. Click on Code in the left menu that appears
-3. Along the top of the window for Code, find and click on Display
+2. Click on Code in the left menu that appears.
+3. Along the top of the window for Code, find and click on Display.
 4. Check the box for Show margin and ensure that 80 appears in the box labeled Margin column.
 5. Click Apply and OK.
 
@@ -92,7 +92,7 @@ ui <- list(
 
 We have several layers of indentation but by looking at the formatting, we can see which things are at which level and their relative ranks. For example, the Header, Sidebar, and Body are all at the same level (i.e., they are all aligned at the same indentation), while they are all subordinate to the Page and the user interface ("ui"). The tab called "overview" is part of the Body based on the indentation.
 
-One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade or close/right parentheses. When parentheses are directly on top of one another or have gaps between then, that is a good sign that have not proper closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4 will bring Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)
+One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4 brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)
 
 RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press Command + i; for Windows press Control + i. Keep in mind that this short cut works only on one line at a time and always references the one line just above the one you're in.
 
@@ -132,12 +132,12 @@ You'll also notice that we used `=` with all of the argument names and their val
 
 Spacing (or whitespace) refers to the portions of your line where you don't put any characters. In the bad example above, there was no whitespace in the code; everything ran together. Spacing acts in code exactly like it does in written languages. Whileapersoncanreadasentencewithnospaces, the sentence is much easier to read when we use proper spacing. 
 
-+ Put a space on both sides of `<-`, and `=`
-+ Put a space after every comma, unless the comma ends a line
-+ Put a space after `if`, `else`, `else if`, and `for` (but not `ifelse`)
-+ Put a space on both sides of comparison operator (e.g., `<`, `>=`, `!=`)
-+ Put a space on both sides of mathematical operators (e.g., `+`, `*`, `^`, `%%`, `~`)
-+ Put a space between the condition for an `if`/`for`/`else if` and the open/left curly brace `{`, then return to a new line.
++ Put a space on both sides of `<-` and `=`.
++ Put a space after every comma, unless the comma ends a line.
++ Put a space after `if`, `else`, `else if`, and `for` (but not `ifelse`).
++ Put a space on both sides of comparison operators (e.g., `<`, `>=`, `!=`).
++ Put a space on both sides of mathematical operators (e.g., `+`, `*`, `^`, `%%`, `~`).
++ Put a space between the condition (what's in parentheses) for an `if`/`for`/`else if` and the open/left curly brace `{`, then return to a new line.
 + When closing a chunk of code with a curly brace, `}`, if you are moving into an `else` or `else if` chunk, place a space after the close brace and then type `else`. For example, `} else {` or `} else if (condition) {`. Otherwise, return to new line.
 
 ### Use Informative Names {#naming}
@@ -173,7 +173,7 @@ bsButton(
 
 #### Function Definitions
 
-When you are defining your own function, it is always a good idea to explicit state what the function spits out. This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use `return` as shown below:
+When you are defining your own function, it is always a good idea to explicitly state what the function spits out. This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use `return` as shown below:
 
 ```{r explictReturn, echo=TRUE, eval=FALSE}
 collatz <- function(x, c = 1){
@@ -197,22 +197,22 @@ Even if you store the outputs in an internal variable (see the `gradeProb` funct
 
 When you write explicit code, you not only improve your code's readability and are automatically being kind to future coders, but you're also guarding against certain forms of code breaking changes. When we build Shiny apps, we often call upon packages that other people have made. In those packages are functions that have a default ordering to them. For example, in one version of the package you might have `gradeThis(userInput, answerKey, partNumb)`, but in the newest version you have `gradeThis(partNumb, userInput, answerKey)`. If you were not explicit by naming the arguments in calls of `gradeThis` updating the package will cause your app to break and throw errors.
 
-Further, being explicit also reduces the number of message printed to the console. For example, in `ggplot2`, if you call `geom_smooth(method = lm, se = false)` your code will execute properly. However, you will get a message in the console to the event that `geom_smooth` used `y ~ x`. You can suppress this message simply by adding `formula = y ~ x` to the `geom_smooth` argument list. (Anything that gets printed to the console fills up your app's log file. The more that's in the log file, the hard they are to use to debug your app if/when it crashes. Thus, we want to keep the console as quiet as possible.)
+Further, being explicit also reduces the number of message printed to the console. For example, in `ggplot2`, if you call `geom_smooth(method = lm, se = false)` your code will execute properly. However, you will get a message in the console to the effect that `geom_smooth` used `y ~ x`. You can suppress this message simply by adding `formula = y ~ x` to the `geom_smooth` argument list. (Anything that gets printed to the console fills up your app's log file. The more that's in the log file, the hard they are to use to debug your app if/when it crashes. Thus, we want to keep the console as quiet as possible.)
 
 ### Exceptions to Readability
 
 There are few places where we make exceptions to the above formatting rules. These exceptions include the Dashboard Header and the Dashboard Sidebar. While we keep these lines readable, they follow a sightly different set of formatting to minimize their impact on the readability of the rest of the code. The App Template already has code in these sections for you to copy/paste for additional lines.
 
-If you are ever unsure about how readable your code is, all you have to do is ask someone else. This is a great place for using Peer Reviews can help all students involved wither their coding skills.
+__If you are ever unsure about how readable your code is, all you have to do is ask someone else. This is a great place for using Peer Reviews can help all students involved wither their coding skills.__
 
 ## Make Your Code Efficient {#efficient}
 
 > I would have written a shorter letter, but I did not have the time.
-<div align="center">
+<div align="right">
 > --- Blaise Pascal
 </div>
 
-Much like writing a short letter (paper or memo), writing efficient code takes time. Often coders first write *inefficient* code to translate your sketches into a working app. Then you can begin to make your code more efficient.
+Much like writing a short letter (paper or memo), writing efficient code takes time. Often coders first write *inefficient* code to translate their sketches into a working app. Then they can begin to make their code more efficient.
 
 As you write more code, you'll get the hang of writing more efficient code from the start as well as seeing how to make existing code more efficient. Two ways that you can work towards efficient code is to practice DRY coding and to minimize your package usage.
 
@@ -222,7 +222,7 @@ DRY coding is the principle of Don't Repeat Yourself when coding. If you find yo
 
 #### Reoccuring Elements 
 
-You use the same list of choices for input multiple times. Rather than retyping the list each time, define the list as an object (e.g, `nameList`) and then you can call that list in the inputs (e.g., `choices = nameList`).
+Suppose that you use the same list of choices for several different inputs. Rather than retyping the list each time, define the list as an object (e.g, `nameList`) and then you can call that list in each of the inputs (e.g., `choices = nameList`).
 
 #### Grading User Responses {#dryGrading}
 
@@ -245,13 +245,13 @@ Rather than retyping the grading logic several times, you can define a single fu
    }
    ```
 
-The `gradeProb` function defined above will grade a user's probability value (i.e., `user`) against the answer key (`answer`) and return a list of two items: a feedback statement and the scoring mark to pass along to `renderIcon`. The following code shows us using the `gradeProb` function to generate the necessary outputs.
+The `gradeProb` function defined above will grade a user's [probability] value (i.e., `user`) against the answer key (`answer`) and return a list of two items: a feedback statement and the scoring mark to pass along to `renderIcon`. The following code shows us using the `gradeProb` function to generate the necessary outputs.
 
 ```{r dryCode1b, echo=TRUE, eval=FALSE}
 prob1 <- gradeProb(
   user = input$problem1,
-  answer = answerKey[1],
-  ## Omitting the remaining two arugment will use the default values
+  answer = answerKey[1]
+  ## Omitting the remaining two arguments will use the default values
 )
 output$problem1Feedback <- renderUI({
   prob1$feedback
@@ -262,7 +262,7 @@ output$problem1Mark <- renderIcon(icon = prob1$mark)
 
 #### Graphs
 
-If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph is a good idea. For example,
+If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph as an object is a good idea. For example,
 
   ```{r dryCode2, echo=TRUE, eval=FALSE}
   # Create a basic data frame that will cover the majority of your cases
@@ -321,7 +321,9 @@ When we get to plotting our actual graphs, or updating the existing graph, we ca
     )
   ```
 
-Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary. We also want to highlight that this plot highlights a key accessibility feature: combining color AND shape. Do not rely on just color alone as individuals who are color blind will struggle; always pair color usage with an additional aesthetic such as shape.
+Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary. 
+
+Another important feature of the above code is a __key accessibility feature__: combining color AND shape. Do not rely on just color alone as individuals who are color blind will struggle; always pair color usage with an additional aesthetic such as shape.
 
 #### Repeating Yourself
 
@@ -329,9 +331,9 @@ There are many other cases where you might find yourself repeating. These are go
 
 #### Over DRY-ing Code
 
-When you are building an app, there will be a certain amount of repetition in what you're doing. For example, you'll have to call the `bsButton` function each time you want to create a button. This is expected and appropriate for you to do. After, the purpose of the `bsButton` function is to create a button. 
+When you are building an app, there will be a certain amount of repetition in what you're doing. For example, you'll have to call the `bsButton` function each time you want to create a button. This is expected and appropriate for you to do. After all, the purpose of the `bsButton` function is to create a button. 
 
-However, you can over do the DRY principle. For example, you don't need to define a function for something that you're only going to call once. Further, it isn't necessary to define a new function that essentially just changes a default value of an existing function. Here is a case where the user has over DRY-ed:
+However, you can over do the DRY principle. For example, you don't need to define a function for something that you're only going to call once. Further, it isn't necessary to define a new function that just changes a default value of an existing function. Here is a case where the user has over DRY-ed:
 
 ```{r dryCode4, echo=TRUE, eval=FALSE}
 customButton <- function(inputId, label){
@@ -358,7 +360,7 @@ A second way to make your code more efficient is through the use of packages. Wh
 
 Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R. 
 
-A previous student loaded the `scales` package to use the `percent` function to convert a decimal into a percentage. This was problematic for a couple reasons: the `percent` function has been depreciated (i.e., the developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: `paste0(0.1 * 100, "%")`. If needed in several places, they could have written their own function:
+A previous student loaded the `scales` package to use the `percent` function to convert a decimal into a percentage. This was problematic for a couple reasons: the `percent` function has been depreciated (i.e., the package developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: `paste0(0.1 * 100, "%")`. If needed in several places, they could have written their own function:
 
 ```{r percentFunction, echo=TRUE, eval=FALSE}
 makePercent <- function(proportion){
@@ -383,13 +385,13 @@ setwd("~/Documents/GitHub/shiny-apps/Sample_App")
 funchir::stale_package_check("app.R")
 ```
 
-Be aware that while `stale_package_check` is useful, it doesn't always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from `ggplot2` or `tippy`. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might some more misses.
+Be aware that while `stale_package_check` is useful, it doesn't always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from `ggplot2` or `tippy`. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might be more misses.
 
 Once you're sure that a package isn't being used, remove the `library` call for that package from your code.
 
 ## Be Kind to Future Coders {#beKind}
 
-Keep in mind that we have a high turnover with a new group of students each summer. Thus, we need to ensure that we go out of our way now to help those students out. Strive to write the quality of code you wish you would have wanted to start with. If you follow the Readability and Efficiency Principles, you'll be well on your way to being kind to future coders. The best way to go above and beyond is through comments and titling code sections (make jump points).
+Keep in mind that we have a high coder turnover with a new group of students each summer. Thus, we need to ensure that we go out of our way now to help those students out. Strive to write the quality of code you wish you would have wanted to start with. If you follow the Readability and Efficiency Principles, you'll be well on your way to being kind to future coders. The best way to go above and beyond is through comments and titling code sections (making jump points).
 
 ### Leave Comments {#comments}
 

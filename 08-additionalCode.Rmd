@@ -1,16 +1,21 @@
 # Additional Coding Practices {#additionalCoding}
 
+The following coding practices arise much less frequently than our [Specific Coding Practices](#specificCoding) and [HTML/CSS](#htmlCSS). However, being aware of them will help you out in the long run.
+
 ## Plot Caching {#plotCachec}
 
-There are cases when your app will include a plot that falls into any of the following categories:
+Of these less frequent practices, Plot Caching is perhaps the most useful. Plot caching refers to the practice of your app to generate a plot once, save it, and then quickly serve the plot again and again to users. In essence, this is a method for improving the efficiency of an app. However, this is not something that always needs to be used.
 
-1) a plot that all users will see (i.e., static data set),
-2) is a computationally intense plot (i.e., lots of data and/or layers),
-3) might be a dynamic graph that the user explores and needs to move back and forth between various states.
+The following cases represent some of the most common places where using plot caching is beneficial:
 
-Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the `renderCachePlot` function rather than `renderPlot`. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).
++ If your app includes a computationally intense plot (i.e., lots of data and/or layers) whose underlying data is fixed.
++ If your app has a dynamic graph that the user explores and needs to move back and forth between various states.
 
-## Other Languages (Python, JavaScript, etc.) {#otherLanguages}
+These cases represent a place where the performance of your app can suffer. To improve performance, you should consider using the `renderCachedPlot` function rather than `renderPlot`. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).
+
+There are two key arguments to `renderCachedPlot`: `expr` and `cacheKeyExpr`. The `expr` is the code chunk which will generate the plot or the name of plot object you've created elsewhere.
+
+The `cacheKeyExpr` is the listing of all `reactive` elements that you want to tie the plot to. For example, if we set `cacheKeyExpr = { list(input$sampleSize, input$selectedData) }`, then the app will tie each saved version of the plot to the values of `sampleSize` and `selectedData`. The user sets these two inputs to a new pairing, your app would re-generate the plot. However, when the user sets them to a pairing that they've already looked at, your app immediately re-displays the saved plot. Plot caching also looks across all of the users, thus speeding up your app's plotting.
 
 ## Minimize External Files {#exFiles}
 
@@ -22,7 +27,7 @@ If there are any external files (e.g., `*.csv`, `*.txt`, `*.dat`, `*.jpg`) that 
 
 ## Metadata {#metadatac}
 
-As of boastUtils `v0.1.10`, your App will need the following metadata in a file named [DESCRIPTION](https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION) (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased).
+As of boastUtils `v0.1.10`, your App will need the following metadata in a file named [DESCRIPTION](https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION) (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased). See also our section on the [DESCRIPTION](#description) file in our chapter on the [App Template](#template)
 
 **DESCRIPTION**
 
@@ -47,6 +52,13 @@ License: CC-BY-NC-SA-4.0
 Tags: simulation
 Type: Shiny
 ```
+
+
+## Other Languages (Python, JavaScript, etc.) {#otherLanguages}
+
+Generally speaking, we want to keep the vast majority of our work within the R language (with the necessary HTML and CSS spots). Due to our turnover of coders, we won't always be able to ensure that we get someone who is proficient in additional languages such as Python, Rust, Netlogo, JavaScript, etc. 
+
+See if what you're trying to do can first be done in R. If not, set up a time to speak with Bob and Neil to see about the appropriate way to go about using another language.
 
 ## Using rLocker {#rlockerc}
 

@@ -37,11 +37,11 @@ boastUtils::boastApp(ui = ui, server = server)
 
 ## Calling Inputs and Outputs
 
-One of the first things to keep in mind as you make your interactive app is that you need to plan for what will be the inputs (i.e., triggers) and what will be the outputs (i.e., the results). Shiny apps automatically create an `input` and an `output` object. As you create inputs and outputs in the UI, you'll often fill in an argument listed as `inputId` or `outputId`. These arguments will select the appropriate element from `input`/`output` based upon the name you pass. All inputs and outputs must have __unique__ names, be sure to make the [names informative](#naming).
+One of the first things to keep in mind as you make your interactive app is that you need to plan for what will be the inputs (i.e., triggers) and what will be the outputs (i.e., the results). Shiny apps automatically create an `input` and an `output` object. As you create inputs and outputs in the UI, you'll often fill in an argument listed as `inputId` or `outputId`. These arguments will select the appropriate element from `input`/`output` based upon the name you pass. All inputs and outputs must have __unique__ names; be sure to make the [names informative](#naming).
 
 In your server code, you will have to first invoke the `input` or `output` object then you'll need to call the name of the specific element you want to use. For example, if we want to call an input called "difficultyLevel", we would need to type `input$difficultyLevel` in our server code. If we want to send a plot called "lifeExpectancy" to the app, we would need to type `output$lifePlot <- renderPlot({lifeExpectancy})`. If you have worked with lists or data frames in R before, then using the dollar sign, `$`, to call named elements inside of a parent element should not be anything new.
 
-## Reactive vs. Observer
+## Reactive vs. Observe
 
 In addition to `input` and `output`, there is another pairing you must become familiar with: `reactive` and `observe`. These are two classes of objects within the Shiny framework that impart special attributes to objects. In general, a `reactive` object anticipates changing over time and functioning as an input to other elements of your app. An `observe` object will call upon `reactive` elements, perform some task, and return an output. There are a couple of key differences between `reactive` and `observe`:
 
@@ -99,7 +99,7 @@ server <- function(input, output, session){
 
 In the above code, we've created `score` as a reactive element that starts with the initial value of 0. To call `score` and get its current value we need to use `score()`. To update `score`'s value we put the new value (or an expression) as an argument (e.g., `score() + 1`). Thus, the code `score(score() + 1)` says "take the current value of `score`, add 1, and then save as the new value of `score`".
 
-Unlike `inputs`, app users don't directly change the values of a `reactiveVal`. Rather there's an intermediate step. Further, `reactiveVal` may be called outside fo `eventReactive` and `observeEvent`...provided that you are acting on global objects or constants. That is to say, you can't write `submitCounter <- reactiveVal(input$submit)` without getting the above error message. In order to use `input$fieldName` inside of `reactiveVal`, you must be inside of an `eventReactive` or `observeEvent` chunk.
+Unlike `inputs`, app users don't directly change the values of a `reactiveVal`. Rather there's an intermediate step. Further, `reactiveVal` may be called outside fo `eventReactive` and `observeEvent`...provided that you are acting on global objects or constants. That is to say, you can't write `submitCounter <- reactiveVal(input$submit)` without getting the above error message. In order to use `input$fieldName` inside of `reactiveVal`, you must be inside of an `eventReactive` or `observeEvent` chunk. However, you can write `submitCounter <- reactiveVal(0)` and `submitCounter(1)` anywhere. 
 
 ### `reactiveValues`
 
@@ -152,8 +152,7 @@ dataSet <- eventReactive(
       EXPR = input$selectedData,
       "Iris" = iris,
       "Cars" = mtcars,
-      "Penguins" = palmerpenguins::penguins,
-      "Bike Sharing" = read.csv(file = "bikeShare.csv")
+      "Penguins" = palmerpenguins::penguins
     )
   },
   ignoreNULL = TRUE,
@@ -203,7 +202,7 @@ Just as in `eventReactive`, we have the `eventExpr` argument. This is the trigge
 
 Both `eventReactive` and `observeEvent` take the arguments `ignoreNULL` and `ignoreInit`. These are two *extremely* useful arguments to consider as you code your app. Both relate to what you are using as the `eventExpr`.
 
-When you're working in input fields or reactive elements, you can run into cases where the input will have the value `NULL`. Suppose you've created a drop down list for a user to select things from and they have yet to make a selection. In this event, the value of  `input$userSelection` could be `NULL` (unless you've provided a default value). By setting `ignoreNULL = TRUE`, you instruct the `eventReactive`/`observeEvent` to not be triggered when `eventExpr` ends up with a value of `NULL`. To put this another way, setting `ignoreNULL = TRUE` will tell your app to wait for the user to do something before carrying out the event while `ignoreNULL = FALSE` will tell your app to immediately carry out the event.
+When you're working with input fields or reactive elements, you can run into cases where the input will have the value `NULL`. Suppose you've created a drop down list for a user to select things from and they have yet to make a selection. In this event, the value of  `input$userSelection` could be `NULL` (unless you've provided a default value). By setting `ignoreNULL = TRUE`, you instruct the `eventReactive`/`observeEvent` to not be triggered when `eventExpr` ends up with a value of `NULL`. To put this another way, setting `ignoreNULL = TRUE` will tell your app to wait for the user to do something before carrying out the event while `ignoreNULL = FALSE` will tell your app to immediately carry out the event.
 
 When you launch a Shiny app two things happen before the user really even sees the interface: R reads all of the code and generates the user interface, and R activates (initializes) any `eventReactive` and `observeEvent` you've created. If you don't want the app to activate an event on initialization, you need to set `ignoreInit = TRUE`. If you want the app immediately carry out the event when the app loads, set `ignoreInit = FALSE`. Leaving `ignoreInit = FALSE` (the default) does carry some risks. If any code that is part of the `valueExpr` or the `handlrExpr` (not just `eventExpr`) has a value that is either `NULL` or needs the user to set to something valid, you can run the risk of your app encountering a fatal error and crashing when you try to run it. The following table provides a handy guide to getting the desired behavior out of `ignoreNULL` and `ignoreInit`:
 
@@ -214,15 +213,14 @@ When you launch a Shiny app two things happen before the user really even sees t
 | Run whenever `eventExpr` isn't `NULL`<br>(the default)                                  |        `TRUE`       |       `FALSE`       |
 | Run only when the user explicitly does something<br>(provided `eventExpr` isn't `NULL`) |        `TRUE`       |        `TRUE`       |
 
-
 ## Validation
 
 In addition to `ignoreNULL` and `ignoreInit`, the `shiny` package provides an additional tool that you can use in any of `render*` functions (e.g., `renderPlot`, `renderText`, `DT::renderDataTable`, etc.): validation. Validation will check that any needed inputs are available AND are valid.
 
-There are two components that you'll need to set up the `validate` call and at least one `need` call. You only need one instance of `validate` inside of each `render*` function. You will use as many `need` calls as is necessary to fully set up all of the validation checks you want in place. This could will be the first thing that you write inside the `expr` argument of the `render*` function. For example,
+There are two components that you'll need to set up validation are the `validate` call and at least one `need` call. You only need one instance of `validate` inside of each `render*` function. You will use as many `need` calls as is necessary to fully set up all of the validation checks you want in place. This would will be the first thing that you write inside the `expr` argument of the `render*` function. For example, the following code ensure that the sample size set by the user is at least two before generating/displaying the scatter plot.
 
 ```{r validate1, echo=TRUE, eval=FALSE}
-output$scatterplot <- renderPlot(
+output$scatterPlot <- renderPlot(
   expr = {
     validate(
       errorClass = "leftParagraphError",
@@ -240,7 +238,7 @@ output$scatterplot <- renderPlot(
 )
 ```
 
-There is one named argument for `validate` and that is `errorClass`. This would be where you put extra text to fully specify which CSS class this error message should belong to. For more details on this, see the section on [CSS](#css).
+There is one named argument for `validate` and that is `errorClass`. This would be where you put extra text to fully specify which CSS class this error message should belong to. For more details on this, see the section on [CSS](#css). In most cases, you can omit this argument thereby just using the default.
 
-Within the `need` function, you must specify two arguments: `expr` which is where you will define each validation check and `message` which is the text you want displayed for the user. For each `message` you should put something that will help the user fix the error.
+Within the `need` function, you must specify two arguments: `expr` which is where you will define each validation check and `message` which is the text you want displayed for the user. For the `message` you should put something that will help the user fix the error.
 
