@@ -1,7 +1,5 @@
 # (PART) Getting Started {-}
 
-\setcounter{chapter}{0}
-
 # Making an App {#makingApp}
 
 Sooner or later, you'll reach the point where it is time to make your own Shiny App for BOAST. Approaching your App's construction in a systematic way will help you tremendously. The following suggested workflow is an abbreviated version of the one in [Chapter \@ref(workflow)](#workflow):
@@ -26,9 +24,9 @@ This is step is critical to making an app that is easy to debug (vital when prog
 
 As you build your App, we recommend periodically checking the Style Guide to 1) ensure that you're still adhering to it, 2) to stay up-to-date with the Guide, and 3) to see (and then use) any useful code chunks that are listed. Even as the authors of this Guide, we're constantly looking things up in the guide. Thus, there is no shame in constantly referring to the Style Guide; after all, it is meant to be *the* Go-To Reference.
 
-## Step 2: Identify a Topic {#step2}
+*Note:* While we've written the following steps from the perspective of making a new app, what we describe equally applies to existing apps. Thus, you'll want to keep in mind both new and existing apps as you read through the remaining steps.
 
-*Note: We've written this step to center on making a new app. However, you can also think of this as identifying what an existing app's goals are. Thus, keep both new and existing apps in mind as you read this section.*
+## Step 2: Identify a Topic {#step2}
 
 This is one of the more challenging tasks for anyone: deciding what to make an app about. The notion of "picking a topic" is a bit misleading as not only should you pick a __topic__, but you also need to pick the __purpose__ of the app, and the __goals__. While all three go hand-in-hand with each other, the easiest decision of the three is purpose.
 
@@ -44,7 +42,7 @@ By identifying early on the purpose of your App, you'll be able to better plan y
 
 Here is where you'll decide what statistical idea/concept your App is going to be centered around. While you should be as specific as possible here, __apps for learning__ need to have much more specificity than __apps for reviewing__. Saying that you want your App "to deal with probability" is not going to be as useful as saying that you want your App "to help students recognize when probability is and is not appropriate for different contexts". 
 
-Don't feel like you have to details down to the nanoscale. As you continue developing and talking with people, you'll start adding in more details.
+Don't feel like you have to details down to the nanoscale from the start. As you continue developing and talking with people, you'll add in more details.
 
 You can identify potential topics through any of the following:
 
@@ -72,22 +70,23 @@ For this step, you're going to need to work with the faculty to identify the lea
 
 *The following is a somewhat stream-of-consciousness narrative of how Neil tackled this step. We'll place flags in parentheses.*
 
-I would like to make an app that would help introductory students (*identifies an intended audience*) wrestling with some of the concepts of descriptive/incisive statistics (*Purpose: learning*). Some ideas that I have are:
+I would like to make an app that would help introductory students __(*identifies an intended audience*)__ wrestling with some of the concepts of descriptive/incisive statistics __(*Purpose: learning*)__. Some ideas that I have are:
 
 + Conceptualizing the two distinct uses of the *sample arithmetic mean*--mitigation of measurement errors of a single object vs. measuring how well a group of objects/beings performs
 + Conceptualizing statistics as functions that measure attributes of collections
-+ Conceptualizing the relationship between the values of the *sample median* and *sample arithmetic mean* is not a competition (i.e., one is not "better than" the other)
++ Conceptualizing the relationship between the values of the *sample median* and *sample arithmetic mean* is not a competition, that is, one is not "better than" the other
 + Avoid falling into the skewness trap for the ordering of the values of the *sample median* and *sample arithmetic mean*.
 
-This last option feels like a fairly straightforward (and simple) app to create. Additionally, there's an [article by von Hippel on this issue](http://jse.amstat.org/v13n2/vonhippel.html) I can reference. (*Topic: relationship between the values of *sample median *and* sample arithmetic mean *in the presence of skewness*)
+This last option feels like a fairly straightforward (and simple) app to create. Additionally, there's an [article by von Hippel on this issue](http://jse.amstat.org/v13n2/vonhippel.html) I can reference. __(*Topic: relationship between the values of *sample median *and* sample arithmetic mean *in the presence of skewness*)__
 
-After using the app, a student should recognize that while for a many data collections that have skewness, the value of the *sample arithmetic mean* will be either greater (for positive skew) or less (for negative skew) than the value of the *sample median*, this is not an absolute rule. (*Learning Goal*) In other words, just because a histogram shows postive skewness does't automatically mean that the value of the *sample arithmetic mean* is actually greater than the value of the *sample median*.
+After using the app, a student should recognize that while for a many data collections that have skewness, the value of the *sample arithmetic mean* will be either greater (for positive skew) or less (for negative skew) than the value of the *sample median*, this is not an absolute rule. __(*Learning Goal*)__ In other words, just because a histogram shows positive skewness doesn't automatically mean that the value of the *sample arithmetic mean* is actually greater than the value of the *sample median*.
 
 ## Step 3: Sketch out plans {#step3}
 
-In both workflows of [Chapter \@ref(workflow)](#workflow), there was the following phrase: ON PAPER. This step here is where you really do need to take this phrase seriously.
+In both workflows of [Chapter \@ref(workflow)](#workflow), there was the phrase "ON PAPER". Step 3 is where you need to take this phrase seriously.
 
-To assist you, use the following layout:
+To assist you, use the following layout by copying into a Word program (you can fit four on a landscape oriented page) and printing OR by sketching your version on paper:
+
 ```{r blankSketchLayout, fig.cap="Blank layout for sketching your ideas", echo=FALSE, fig.align='center'}
 library(ggplot2)
 library(emojifont)
@@ -106,9 +105,11 @@ ggplot(data = data.frame(x = rep(0, 50))) +
 
 ```
 
-Figure \ref{fig:blankSketchLayout} gives you a BOAST app canvas upon which you can sketch your ideas. You can copy this image into any number of programs for printing or digitally editing. In the examples below, you'll see a hand-drawn version of this layout.
+Figure \@ref(fig:blankSketchLayout) gives you a BOAST app canvas upon which you can sketch your ideas. You can copy this image into any number of programs for printing or digitally editing. In the examples below, you'll see a hand-drawn version of this layout.
 
-We want to take a moment to stress just how useful sketching your ideas is. Neil routinely makes use of sketches whenever he builds apps for BOAST, for helping students working on BOAST apps (e.g., the Data Table Examples app), or for his own projects (e.g., a Mastery Based Grading Progress Check app). Further, making sketches allows you to better share your ideas and will give you a goal for what to aim for as you actually begin to code.
+We want to stress just how useful sketching your ideas is. Neil routinely makes use of sketches whenever he builds apps for BOAST (e.g., the [Hasse Diagram App](https://psu-eberly.shinyapps.io/Hasse_Diagrams/)), for helping students working on BOAST apps (e.g., the [Data Table Examples app](https://rstudio-connect.tlt.psu.edu:3939/content/249) on the TLT server), or for his own projects (e.g., a [Mastery Based Grading Progress](https://rstudio-connect.tlt.psu.edu:3939/content/330) app also on the TLT server). Further, making sketches allows you to better share your ideas and will give you a goal for what to aim for as you actually begin to code.
+
+### Key Elements
 
 There are several things that you'll want to be sure that you include in your sketch:
 
@@ -195,12 +196,49 @@ For the example, check out the [Rethinking Sample Median vs Sample Arithmetic Me
 
 ## Steps 5-8: Write, Edit, Test, Debug {#steps5-8}
 
-(*Still under construction*)
+I have not had the time to return to the *Rethinking* app for the purposes of this chapter. I ended up shifting to work on both the Hasse Diagram app as well as the Mastery Grading Progress apps. In both cases, I started with paper sketches for what I wanted and as I started coding to make the apps come to life, I needed to make changes. However, the paper sketches became an anchor that helped me stay focused on what I was doing.
+
+For the Hasse Diagram app, I'm sharing two images so that you can get a sense of the changes that occurred during the process. Be sure to check out the [Hasse Diagram App](https://psu-eberly.shinyapps.io/Hasse_Diagrams/).
+
+```{r hasseSketch, fig.align='center', echo=FALSE, fig.cap="Hasse Diagram App Sketches", fig.width=5, fig.height=3}
+knitr::include_graphics("images/planSketches/hasseSketch.jpg")
+```
+
+In addition to the sketches which help with designing the visual appearance, you can also sketch out important coding aspects:
+
+```{r hasseNotes, fig.align='center', echo=FALSE, fig.cap="Hasse Diagram App Coding Notes", fig.width=3, fig.height=5, }
+knitr::include_graphics("images/planSketches/hasseNotes.jpg")
+```
+
+(Please pardon the fuzzy nature of the photograph in Figure \@ref(fig:hasseNotes).) Figure \@ref(fig:hasseNotes) is the "sketch" of important actions that need to happen in the Hasse Diagram app: from resetting a page to navigation, from tab specific actions to objects that persist across the various tabs. Ultimately, this sketch became a useful To Do list as built the app. I must stress that you're seeing the final product. I built up this page as I went, I did not start out with this page filled out as you see here.
+
 
 ## Step 9: Larger Scale Testing {#step9}
 
-(*Still under construction*)
+Once you've built your app and you've done some initial debugging on your own machine, you then need to test your app on a larger scale. This is when you'll want to publish your app on the [TLT Server](#testing).
 
-## Steps 10-11: Pull Requestion and Tweaks {#steps10-11}
+This is where you can get important feedback from people actually trying to use your app. This can help you improve the user interface as well as any behind the scenes coding that might be an issue. 
 
-(*Still under construction*)
+A common issue that occurs with Games is that when multiple people are playing the game, their game sessions might interact with each other. For example, one person might suddenly gain/lose points because of the actions of another player. This type of issue would only show up on servers when you have several people using the app at the same time. Make sure that during your testing, you try to have several people use the app at the same time.
+
+## Steps 10-11: Pull Requests and Tweaks {#steps10-11}
+
+Once you get to a certain point, you'll want to make a Pull Request on GitHub. This will trigger a review process for your code.
+
+There are two parts to the Review Process: Appearance Review and Coding Review.
+
+### Appearance Review (part of Large Scale Testing)
+
+You'll need to post the TLT link to a common forum where you'll receive feedback in terms of testing and design. You'll want to attend to any feedback you get through this process. Faculty members will typically send you either an email with proposed changes or provide verbal feedback during a meeting.
+
+### Coding Review
+
+At least one other student team member will need to look through your code and make sure that 1) the code follows this Style Guide, 2) your app actually works, 3) any improvements that could still be made (including spelling and grammar). Each reviewer will need to leave their feedback as well as decision on GitHub. (The most common decision is "Request Changes".) 
+
+Once you get their feedback, you'll need to do what you can to implement those changes. Once you've done so, push your updates and let the reviewer know. They will then need to perform a second review. If everything checks out, they will mark "Approve" as the decision.
+
+Once your Pull Request has been approved by your peers, there is one last review: a quality control check by a faculty member (typically Neil). This check will look at your coding and the appearance. Feedback and a decision will be posted on GitHub. 
+
+After all of the issues have been taken care of, Neil and/or Bob will merge your development branch into the main branch of the repo and will then deploy the app to the world. 
+
+__CAUTION:__ if you ever see a "Merge" button, do not click on this button. Please let Neil and Bob be the only ones who click this button.

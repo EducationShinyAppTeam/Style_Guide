@@ -36,7 +36,7 @@ We are not the first group to build online applications to help students learn i
 
 This guide spells out the recommended approach for building and the required styling to be used for all apps included in the [Book of Apps for Statistics Teaching (BOAST)](https://github.com/EducationShinyAppTeam/BOAST). You will need to follow this Style Guide to ensure that any app you create meets (or exceeds) our standards and is worthy of inclusion in BOAST. 
 
-__Effective Date: [to be listed here]__  
+__Effective Date: May 17, 2021__  
 *All apps created and/or modified after the Effective Date are required to adhere to this version of the Style Guide. Apps which have not been modified since before the Effective Date will be brought into compliance on rolling basis.*
 
 ## Organization 
@@ -71,18 +71,18 @@ We've laid out this document into several parts, each with their own chapters.
 Yes, this looks long but keep in mind the following:
 
 <div style = "color: blue;">
-+ Building an app is easy. Building an app that someone else can use is a challenge. 
++ Building an app is easy, but building an app that someone else can use effectively is a challenge. 
 
-+ While building an app that supports a user in developing a procedural conception of an idea is easy, building an equitable app that supports anyone in developing productive meanings is more difficult.
++ Building apps which support procedural conceptions is quick and easy to do. Building equitable apps which support users in developing productive meanings is much more difficult.
 </div>
 
 Our mission with BOAST is to achieve both with our entire collection. Thus, writing down all of the ins and outs of our process will take a significant amount of space.Whenever possible, we've attempted to provide you with examples where you can see our standards in action as well as code that you can use as templates. For each code block, you should be able to place your cursor over the block and see a copy icon in the upper-right hand corner. This will allow you to copy the code. We've also included links to additional resources so that you can learn more about key topics.
 
-Keep in mind that this is a living document. As issues arise, we will update this guide to address them. Additionally, as we think of potential issues, we'll also update the guide to provide guidance before they occur. We also welcome any suggestions for improvements.
+Keep in mind that this guide is a living document. As issues arise, we will update this guide to address them. Additionally, as we think of potential issues, we'll also update the guide to provide guidance before they occur. We welcome any suggestions for improvements.
 
 ## Why Our Approach?
 
-While we could go on about the many reasons for our approach, we will focus on the critical ones.
+There are many different reasons for why we've developed this particular approach. THe most important of these reasons are 1) we're a team, 2) drawing upon research, 3) accessibility matters, and 4) a need to avoid the "shiny" problem. We will briefly discuss each one of these in turn.
 
 ### We're a Team of Developers
 
@@ -123,3 +123,5 @@ When dealing with Shiny apps for teaching, we face both problems simultaneously,
 
 If you notice, ensuring that our apps are based in sound educational and pedagogical practices is key to our decision making. We strive for our Shiny apps to not become *shiny*.
 
+
+We hope that this Welcome has helped you develop an image for the basis for many of the decisions that we've laid out in this guide. Feel free to move through the guide sequentially or to jump to various sections as needed. 

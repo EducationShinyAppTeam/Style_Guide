@@ -25,8 +25,10 @@ Something to keep in mind with these workflows is that they are not strictly lin
 9. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
 10. Periodically push your edits to your development branch; don't forget to add commit messages and reference any issues.
 11. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing)).
-12. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request; assign Neil as a reviewer.
-13. Make any requested changes and re-push to your development branch; update the Pull Request with a new comment.
+12. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request
+    a. You will automatically get assigned at least one Reviewer (you will also be asked to review other people's code)
+    b. Make any requested changes and re-push to your development branch
+    c. Eventually, your code will get a final review before being formally approved.
 
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
 
@@ -48,8 +50,10 @@ To see this workflow in action, check out [Chapter \@ref(makingApp)](#makingApp)
 7. When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.
 8. Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
 9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing)).
-10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request. Assign Neil as a reviewer.
-11. Make any requested changes and re-push to your development branch. Update the Pull Request with a new comment.
+10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request.
+    a. You will automatically get assigned at least one Reviewer (you will also be asked to review other people's code)
+    b. Make any requested changes and re-push to your development branch
+    c. Eventually, your code will get a final review before being formally approved.
 
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
 
@@ -66,7 +70,7 @@ Be as descriptive as you can with your repo name; this will improve the indexing
 
 While we can change repo names, doing so results in a large number of edits that have to be made. Thus, think carefully about how you are going to name your repository. 
 
-If you come across a repo that is poorly named, please make an issue and provide some suggestions for new names.
+If you come across a repo that is poorly named, please make an issue on the repo, and provide some suggestions for new names.
 
 ## Testing Your App {#testing}
 
@@ -76,10 +80,12 @@ To test your App beyond your local machine, we will be making use of TLT's RStud
 
 Please refer to the following PSU Knowledge Basis Articles:
 
-+ [VPN for Mac OS](https://pennstate.service-now.com/sp?id=kb_article&sys_id=c628298bdb1d6f44a318fb671d961971)
-+ [VPN for Windows](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=c151310cdb85abc84222778ebf961957)
-+ [VPN for Apple iOS](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=1de84eb6dbd5ab44a318fb671d9619a5)
-+ [VPN for Android](https://pennstate.service-now.com/sp?id=kb_article_view&sys_kb_id=a35e0a7edb59ab44a318fb671d961964)
++ [VPN for Windows](https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0013419)
++ [VPN for Mac OS 10.x](https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0013420)
++ [VPN for Mac OS 11.x](https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0016224)
++ [VPN for Linux OS](https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0013424)
++ [VPN for Apple iOS](https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0013422)
++ [VPN for Android](https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0013423)
 
 You MUST be logged into the PSU VPN to both upload and test your App on each device.
 
@@ -118,7 +124,7 @@ knitr::include_graphics("images/publish3.png")
 
 In [Figure \@ref(fig:testing3)](#fig:testing3), you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
 
-If you want, you can add collaborators as we did in the example (orange box). While not required, adding at least Neil or Bob will allow us to check your app's logs in the event of an error occurring on the TLT server and help you troubleshoot.
+We encourage you to add contributors as we did (orange box). Both Bob and I are the Go To people for tech issues and by adding us, you give us the ability to help you the best that we can. By adding us to the list of contributors on the TLT server, you will allow us to check the app's log files as well as any particular settings. Ultimately, this help us troubleshoot any difficulty you might encounter.
 
 The most important piece is the Content URL (marked with the blue star). You'll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device (e.g., computer, tablet, phone) they are using.
 

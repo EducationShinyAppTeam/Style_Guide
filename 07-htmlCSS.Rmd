@@ -222,7 +222,7 @@ tags$pre(
 
 ## HTML `id` {#htmlID}
 
-No matter which HTML tag you use, you can always specific the identifier attribute (`id`) for each element. When you use a shiny function, e.g., `numericInput`, and you supply a value to the `inputId` argument, or when you define an output and set a value to the `outputId`, you are defining the HTML `id` attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id's. 
+No matter which HTML tag you use, you can always specify the identifier attribute (`id`) for each element. When you use a shiny function, e.g., `numericInput`, and you supply a value to the `inputId` argument, or when you define an output and set a value to the `outputId`, you are defining the HTML `id` attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id's. 
 
 In the rare case where you do find yourself needing to assign an `id` to an HTML element, you simply include `id = "uniqueName"` inside the tag. Keep in mind the id must not be shared by any other element/object, including inputs and outputs. 
 

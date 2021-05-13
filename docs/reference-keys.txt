@@ -7,6 +7,8 @@ fig:planSketchInfo
 fig:planSketchOverview
 fig:planSketchExplore
 fig:planSketchChallenge
+fig:hasseSketch
+fig:hasseNotes
 fig:bluePalette
 fig:blueAction1
 fig:blueAction2
@@ -92,12 +94,15 @@ step2b
 step2c
 example
 step3
+key-elements
 example-cont.
 share-your-plan
 step4
 steps5-8
 step9
 steps10-11
+appearance-review-part-of-large-scale-testing
+coding-review
 basics
 checklist
 boastUtils
@@ -107,6 +112,12 @@ direct-download
 github-desktop-strongly-recommended
 command-line
 rstudio-project
+useful-rstudio-settings
+coding-margin
+line-numbers
+whitespace-characters
+rainbow-parentheses
+code-diagnostics
 template
 templateRepo
 appR

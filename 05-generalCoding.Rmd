@@ -94,14 +94,14 @@ We have several layers of indentation but by looking at the formatting, we can s
 
 One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4 brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)
 
-RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press Command + i; for Windows press Control + i. Keep in mind that this short cut works only on one line at a time and always references the one line just above the one you're in.
+RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press Command + i; for Windows press Control + i. Keep in mind that this shortcut works only on one line at a time and always references the line just above the one you're in.
 
 #### Function Calls
 
 To format function calls, we will want to type the name of the function and the immediately put a open/left parenthesis--`functionName(`--what happens next depends on what you're trying to do:
 
 + If the function takes/needs no arguments, then immediately type the close/right parenthesis, e.g., `copyrightInfo()`, and return to a new line.
-+ If you can fit all of the arguments on that line without going beyond 80 characters, the you can do so. For example, `renderIcon(icon = "correct")`.
++ If you can fit all of the arguments on that line without going beyond 80 characters, then you can do so. For example, `renderIcon(icon = "correct")`.
 + In all other cases, press the return/enter key to move to a new line which should automatically indent. Enter each argument name and value followed by a comma on their own line. After you've typed the last argument's value, omit the comma, return to a new line and put the close/right parenthesis. For example,
 ```{r goodCodeExample3, echo=TRUE, eval=FALSE}
 # renderIcon has three arguments: icon, width, and html
@@ -195,9 +195,9 @@ Even if you store the outputs in an internal variable (see the `gradeProb` funct
 
 #### Why is being explicit important?
 
-When you write explicit code, you not only improve your code's readability and are automatically being kind to future coders, but you're also guarding against certain forms of code breaking changes. When we build Shiny apps, we often call upon packages that other people have made. In those packages are functions that have a default ordering to them. For example, in one version of the package you might have `gradeThis(userInput, answerKey, partNumb)`, but in the newest version you have `gradeThis(partNumb, userInput, answerKey)`. If you were not explicit by naming the arguments in calls of `gradeThis` updating the package will cause your app to break and throw errors.
+When you write explicit code, you not only improve your code's readability and are automatically being kind to future coders, but you're also guarding against certain forms of code breaking changes. When we build Shiny apps, we often call upon packages that other people have made. In those packages are functions that have a default ordering to them. For example, in one version of the package you might have `gradeThis(userInput, answerKey, partNumb)` but in the newest version you have `gradeThis(partNumb, userInput, answerKey)`. If you were not explicit by naming the arguments in calls of `gradeThis` updating the package will cause your app to break and throw errors.
 
-Further, being explicit also reduces the number of message printed to the console. For example, in `ggplot2`, if you call `geom_smooth(method = lm, se = false)` your code will execute properly. However, you will get a message in the console to the effect that `geom_smooth` used `y ~ x`. You can suppress this message simply by adding `formula = y ~ x` to the `geom_smooth` argument list. (Anything that gets printed to the console fills up your app's log file. The more that's in the log file, the hard they are to use to debug your app if/when it crashes. Thus, we want to keep the console as quiet as possible.)
+Further, being explicit also reduces the number of message printed to the console. For example, in `ggplot2`, if you call `geom_smooth(method = lm, se = false)` your code will execute properly. However, you will get a message in the console to the effect that `geom_smooth` used `y ~ x`. You can suppress this message simply by adding `formula = y ~ x` to the `geom_smooth` argument list. (Anything that gets printed to the console fills up your app's log file. The more that's in the log file, the harder they are to use to debug your app if/when it crashes. Thus, we want to keep the console as quiet as possible.)
 
 ### Exceptions to Readability
 
@@ -232,8 +232,8 @@ Rather than retyping the grading logic several times, you can define a single fu
    gradeProb <- function(user, answer, tolerance = 0.001, partial = 0.01){
      outcome <- list()
      if (abs(user - answer) <= tolerance) {
-       outcome$feedback <- "You are correct".
-       outcome$mark <- "correct
+       outcome$feedback <- "You are correct."
+       outcome$mark <- "correct"
      } else if (abs(user - answer) <= partial) {
        outcome$feedback <- "You are almost correct."
        outcome$mark <- "partial"
@@ -356,7 +356,7 @@ Rather than simply calling the `bsButton` function in their code and passing the
 A second way to make your code more efficient is through the use of packages. When you load a package you want to be sure that 
 
 1. the package you're loading is absolutely necessary, and
-2. you maximize your usage of packages.
+2. you maximize your usage of what packages you do load.
 
 Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R. 
 

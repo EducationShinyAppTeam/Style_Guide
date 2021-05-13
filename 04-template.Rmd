@@ -11,7 +11,7 @@ To get started, you'll want to take a look at the [BOAST App Template Repository
 + `www` folder: this will be where you store image files and other non-data, non-R files for your app.
 + `docs` folder: this is where several key files are stored for your including the License, a Readme, and a screenshot.
 + `DESCRIPTION`: this file is where you'll need to place some key information about your app
-+ Additional files you may ignore: `.gitignore`, `.lintr`.
++ Additional files and folders you may ignore: `.git`, `.gitignore`, `.lintr`.
 
 As you build your app (or work with existing apps), you'll add various files to the repo. For some of the older apps, part of the maintainer's job will be move the repo into alignment with this template (i.e., add anything missing and move files around as needed). However, the basics of the App Template are required elements for all apps; thus, you need to familiarize yourself with them.
 
@@ -19,10 +19,13 @@ We will now briefly discuss the files which you will be editing.
 
 ## The `app.R`  File{#appR}
 
-This is where you'll do the vast majority of your work. We will not spend too much time describing the ins and outs of this file. However, we do want to mention the five components to any BOAST app.R file.
+This is where you'll do the vast majority of your work. We will not spend too much time describing the ins and outs of this file at this time. However, we do want to mention the five components to any BOAST app.R file.
 
 1. __Loading Packages:__ the first part of any `app.R` file will be where you load all necessary packages for your app through a series of `library` calls. Only load those packages that you are actively using. 
-2. __Global Constants, Functions, and Data Sets:__ after you load your app's packages, you can now define any constants, custom functions, and data files. We call these elements "global" as by defining them here, you may call them any where in your code. If you were to only define them in the server section, then you can only call on them while you're in the server. Additionally, by defining them here, you allow for better resource sharing when we deploy your app and you start having hundreds of users.
+
+    For example, if you only need `ggplot2`, include `library(ggplot2)` in the list rather than loading all of the the Tidyverse (i.e., `library(tidyverse)`). 
+
+2. __Global Constants, Functions, and Data Sets:__ after you load all needed packages, you can now define any constants, custom functions, and data files. We call these elements "global" as by defining them here, you may call them any where in your code. If you were to only define them in the server section, then you can only call on them while you're in the server. Additionally, by defining them here, you allow for better resource sharing when we deploy your app and you start having hundreds of users.
 
 3. __The User Interface (UI):__ this next portion is where you will define all of the elements that will make up the user interface. The App Template will provide you with a skeleton, but it is up to you to make your sketches come to life.
 
@@ -39,7 +42,7 @@ The DESCRIPTION contains several fields (typically, the first word of each line,
 + __Title:__ this is where you'll put the full title of your app.
 + __ShortName:__ this is where you'll put the short version of your app's title (you'll also use this in your app's header.)
 + __Date:__ this should reflect the date of the submission that was approved for deployment.
-+ __Lifecycle:__ you'll put the one word mention of the lifecycle; see [below](#lifecycle) for the words to put here.
++ __Lifecycle:__ you'll put the one word mention of the lifecycle which will match what you place in the README; see [below](#lifecycle) for the words to put here.
 + __Authors:__ this is where you'll put information about who worked on the app; more on this [below](#authors).
 + __Chapter:__ this will be the primary chapter of BOAST where the app will live; e.g., Chapter 2.
 + __Description:__ you'll enter the description of the app here.

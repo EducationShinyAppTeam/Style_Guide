@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 HTML and CSS | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 HTML and CSS | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-12-09" />
+<meta name="date" content="2021-05-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="specificCoding.html"/>
 <link rel="next" href="additionalCoding.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,6 +119,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -136,21 +136,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">BOAST Style Guide</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#organization"><i class="fa fa-check"></i><b>0.1</b> Organization</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a><ul>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a>
+<ul>
 <li class="chapter" data-level="0.2.1" data-path="index.html"><a href="index.html#were-a-team-of-developers"><i class="fa fa-check"></i><b>0.2.1</b> We’re a Team of Developers</a></li>
 <li class="chapter" data-level="0.2.2" data-path="index.html"><a href="index.html#research-driven"><i class="fa fa-check"></i><b>0.2.2</b> Research Driven</a></li>
 <li class="chapter" data-level="0.2.3" data-path="index.html"><a href="index.html#accesiblity-minded"><i class="fa fa-check"></i><b>0.2.3</b> Accesiblity Minded</a></li>
 <li class="chapter" data-level="0.2.4" data-path="index.html"><a href="index.html#avoid-the-shiny-problem"><i class="fa fa-check"></i><b>0.2.4</b> Avoid the “Shiny” Problem</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>1</b> Workflow</a><ul>
+<li class="chapter" data-level="1" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>1</b> Workflow</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps-worflow"><i class="fa fa-check"></i><b>1.1</b> Revising Existing Apps Worflow</a></li>
-<li class="chapter" data-level="1.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps-workflow"><i class="fa fa-check"></i><b>1.2</b> Creating New Apps Workflow</a><ul>
+<li class="chapter" data-level="1.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps-workflow"><i class="fa fa-check"></i><b>1.2</b> Creating New Apps Workflow</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>1.2.1</b> GitHub Repo Names</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a><ul>
+<li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>1.3.1</b> Set Up/Login to the VPN</a></li>
 <li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>1.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
 <li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>1.3.3</b> Publishing Your App for Testing</a></li>
@@ -160,84 +165,114 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>I Getting Started</b></span></li>
-<li class="chapter" data-level="2" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>2</b> Making an App</a><ul>
+<li class="chapter" data-level="2" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>2</b> Making an App</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>2.1</b> Step 1: Read the Style Guide</a></li>
-<li class="chapter" data-level="2.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>2.2</b> Step 2: Identify a Topic</a><ul>
+<li class="chapter" data-level="2.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>2.2</b> Step 2: Identify a Topic</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>2.2.1</b> Your App’s Purpose</a></li>
 <li class="chapter" data-level="2.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>2.2.2</b> The Topic</a></li>
 <li class="chapter" data-level="2.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>2.2.3</b> Goals</a></li>
 <li class="chapter" data-level="2.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>2.2.4</b> Example</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>2.3</b> Step 3: Sketch out plans</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="makingApp.html"><a href="makingApp.html#example-cont."><i class="fa fa-check"></i><b>2.3.1</b> Example, cont.</a></li>
-<li class="chapter" data-level="2.3.2" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>2.3.2</b> Share Your Plan</a></li>
+<li class="chapter" data-level="2.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>2.3</b> Step 3: Sketch out plans</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="makingApp.html"><a href="makingApp.html#key-elements"><i class="fa fa-check"></i><b>2.3.1</b> Key Elements</a></li>
+<li class="chapter" data-level="2.3.2" data-path="makingApp.html"><a href="makingApp.html#example-cont."><i class="fa fa-check"></i><b>2.3.2</b> Example, cont.</a></li>
+<li class="chapter" data-level="2.3.3" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>2.3.3</b> Share Your Plan</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>2.4</b> Step 4: Create Repository</a></li>
 <li class="chapter" data-level="2.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>2.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
 <li class="chapter" data-level="2.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>2.6</b> Step 9: Larger Scale Testing</a></li>
-<li class="chapter" data-level="2.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>2.7</b> Steps 10-11: Pull Requestion and Tweaks</a></li>
+<li class="chapter" data-level="2.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>2.7</b> Steps 10-11: Pull Requests and Tweaks</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="makingApp.html"><a href="makingApp.html#appearance-review-part-of-large-scale-testing"><i class="fa fa-check"></i><b>2.7.1</b> Appearance Review (part of Large Scale Testing)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="makingApp.html"><a href="makingApp.html#coding-review"><i class="fa fa-check"></i><b>2.7.2</b> Coding Review</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>II Getting Ready to Code</b></span></li>
-<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a><ul>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
 <li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
 <li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
-<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a><ul>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
 <li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
 <li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
 <li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
+<li class="chapter" data-level="3.5" data-path="basics.html"><a href="basics.html#useful-rstudio-settings"><i class="fa fa-check"></i><b>3.5</b> Useful RStudio Settings</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basics.html"><a href="basics.html#coding-margin"><i class="fa fa-check"></i><b>3.5.1</b> Coding Margin</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics.html"><a href="basics.html#line-numbers"><i class="fa fa-check"></i><b>3.5.2</b> Line Numbers</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basics.html"><a href="basics.html#whitespace-characters"><i class="fa fa-check"></i><b>3.5.3</b> Whitespace Characters</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basics.html"><a href="basics.html#rainbow-parentheses"><i class="fa fa-check"></i><b>3.5.4</b> Rainbow Parentheses</a></li>
+<li class="chapter" data-level="3.5.5" data-path="basics.html"><a href="basics.html#code-diagnostics"><i class="fa fa-check"></i><b>3.5.5</b> Code Diagnostics</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a><ul>
+</ul></li>
+<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The <code>app.R</code> File</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a><ul>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
 <li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
 <li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a><ul>
+<li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="template.html"><a href="template.html#screenshot"><i class="fa fa-check"></i><b>4.5</b> screenshot.png</a></li>
 </ul></li>
 <li class="part"><span><b>III Style Guide-Coding</b></span></li>
-<li class="chapter" data-level="5" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>5</b> Coding Style</a><ul>
+<li class="chapter" data-level="5" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>5</b> Coding Style</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>5.1</b> General Coding Style</a></li>
-<li class="chapter" data-level="5.2" data-path="coding.html"><a href="coding.html#readable"><i class="fa fa-check"></i><b>5.2</b> Make Your Code Readable</a><ul>
+<li class="chapter" data-level="5.2" data-path="coding.html"><a href="coding.html#readable"><i class="fa fa-check"></i><b>5.2</b> Make Your Code Readable</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="coding.html"><a href="coding.html#formatSpace"><i class="fa fa-check"></i><b>5.2.1</b> Formatting and Spacing</a></li>
 <li class="chapter" data-level="5.2.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>5.2.2</b> Use Informative Names</a></li>
 <li class="chapter" data-level="5.2.3" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>5.2.3</b> Be Explicit</a></li>
 <li class="chapter" data-level="5.2.4" data-path="coding.html"><a href="coding.html#exceptions-to-readability"><i class="fa fa-check"></i><b>5.2.4</b> Exceptions to Readability</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="coding.html"><a href="coding.html#efficient"><i class="fa fa-check"></i><b>5.3</b> Make Your Code Efficient</a><ul>
+<li class="chapter" data-level="5.3" data-path="coding.html"><a href="coding.html#efficient"><i class="fa fa-check"></i><b>5.3</b> Make Your Code Efficient</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="coding.html"><a href="coding.html#dry-coding"><i class="fa fa-check"></i><b>5.3.1</b> DRY Coding</a></li>
 <li class="chapter" data-level="5.3.2" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>5.3.2</b> Minimize Package Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="coding.html"><a href="coding.html#beKind"><i class="fa fa-check"></i><b>5.4</b> Be Kind to Future Coders</a><ul>
+<li class="chapter" data-level="5.4" data-path="coding.html"><a href="coding.html#beKind"><i class="fa fa-check"></i><b>5.4</b> Be Kind to Future Coders</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>5.4.1</b> Leave Comments</a></li>
 <li class="chapter" data-level="5.4.2" data-path="coding.html"><a href="coding.html#code-section-titlesjump-points"><i class="fa fa-check"></i><b>5.4.2</b> Code Section Titles/Jump Points</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="specificCoding.html"><a href="specificCoding.html"><i class="fa fa-check"></i><b>6</b> Shiny (BOAST) Specific Coding Practices</a><ul>
+<li class="chapter" data-level="6" data-path="specificCoding.html"><a href="specificCoding.html"><i class="fa fa-check"></i><b>6</b> Shiny (BOAST) Specific Coding Practices</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="specificCoding.html"><a href="specificCoding.html#overarching-organization"><i class="fa fa-check"></i><b>6.1</b> Overarching Organization</a></li>
 <li class="chapter" data-level="6.2" data-path="specificCoding.html"><a href="specificCoding.html#calling-inputs-and-outputs"><i class="fa fa-check"></i><b>6.2</b> Calling Inputs and Outputs</a></li>
 <li class="chapter" data-level="6.3" data-path="specificCoding.html"><a href="specificCoding.html#reactive-vs.-observe"><i class="fa fa-check"></i><b>6.3</b> Reactive vs. Observe</a></li>
-<li class="chapter" data-level="6.4" data-path="specificCoding.html"><a href="specificCoding.html#working-with-reactive-values"><i class="fa fa-check"></i><b>6.4</b> Working with Reactive Values</a><ul>
+<li class="chapter" data-level="6.4" data-path="specificCoding.html"><a href="specificCoding.html#working-with-reactive-values"><i class="fa fa-check"></i><b>6.4</b> Working with Reactive Values</a>
+<ul>
 <li class="chapter" data-level="6.4.1" data-path="specificCoding.html"><a href="specificCoding.html#input"><i class="fa fa-check"></i><b>6.4.1</b> <code>input</code></a></li>
 <li class="chapter" data-level="6.4.2" data-path="specificCoding.html"><a href="specificCoding.html#reactiveval"><i class="fa fa-check"></i><b>6.4.2</b> <code>reactiveVal</code></a></li>
 <li class="chapter" data-level="6.4.3" data-path="specificCoding.html"><a href="specificCoding.html#reactivevalues"><i class="fa fa-check"></i><b>6.4.3</b> <code>reactiveValues</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="specificCoding.html"><a href="specificCoding.html#events"><i class="fa fa-check"></i><b>6.5</b> Events</a><ul>
+<li class="chapter" data-level="6.5" data-path="specificCoding.html"><a href="specificCoding.html#events"><i class="fa fa-check"></i><b>6.5</b> Events</a>
+<ul>
 <li class="chapter" data-level="6.5.1" data-path="specificCoding.html"><a href="specificCoding.html#eventreactive"><i class="fa fa-check"></i><b>6.5.1</b> <code>eventReactive</code></a></li>
 <li class="chapter" data-level="6.5.2" data-path="specificCoding.html"><a href="specificCoding.html#observeevent"><i class="fa fa-check"></i><b>6.5.2</b> <code>observeEvent</code></a></li>
 <li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a><ul>
-<li class="chapter" data-level="7.1" data-path="htmlCSS.html"><a href="htmlCSS.html#html"><i class="fa fa-check"></i><b>7.1</b> HTML Tags</a><ul>
+<li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="htmlCSS.html"><a href="htmlCSS.html#html"><i class="fa fa-check"></i><b>7.1</b> HTML Tags</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="htmlCSS.html"><a href="htmlCSS.html#paragraphs"><i class="fa fa-check"></i><b>7.1.1</b> Paragraphs</a></li>
 <li class="chapter" data-level="7.1.2" data-path="htmlCSS.html"><a href="htmlCSS.html#breaks"><i class="fa fa-check"></i><b>7.1.2</b> Breaks</a></li>
 <li class="chapter" data-level="7.1.3" data-path="htmlCSS.html"><a href="htmlCSS.html#lists"><i class="fa fa-check"></i><b>7.1.3</b> Lists</a></li>
@@ -249,37 +284,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.9" data-path="htmlCSS.html"><a href="htmlCSS.html#stylingTags"><i class="fa fa-check"></i><b>7.1.9</b> Text Styling Tags</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="htmlCSS.html"><a href="htmlCSS.html#htmlID"><i class="fa fa-check"></i><b>7.2</b> HTML <code>id</code></a></li>
-<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.3</b> CSS</a><ul>
+<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.3</b> CSS</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="htmlCSS.html"><a href="htmlCSS.html#cssProblems"><i class="fa fa-check"></i><b>7.3.1</b> Problematic CSS in Old Apps</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.4</b> Using CSS</a><ul>
+<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.4</b> Using CSS</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="htmlCSS.html"><a href="htmlCSS.html#text-alignment"><i class="fa fa-check"></i><b>7.4.1</b> Text Alignment</a></li>
 <li class="chapter" data-level="7.4.2" data-path="htmlCSS.html"><a href="htmlCSS.html#classes"><i class="fa fa-check"></i><b>7.4.2</b> Classes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="additionalCoding.html"><a href="additionalCoding.html"><i class="fa fa-check"></i><b>8</b> Additional Coding Practices</a><ul>
+<li class="chapter" data-level="8" data-path="additionalCoding.html"><a href="additionalCoding.html"><i class="fa fa-check"></i><b>8</b> Additional Coding Practices</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="additionalCoding.html"><a href="additionalCoding.html#plotCachec"><i class="fa fa-check"></i><b>8.1</b> Plot Caching</a></li>
 <li class="chapter" data-level="8.2" data-path="additionalCoding.html"><a href="additionalCoding.html#exFiles"><i class="fa fa-check"></i><b>8.2</b> Minimize External Files</a></li>
 <li class="chapter" data-level="8.3" data-path="additionalCoding.html"><a href="additionalCoding.html#metadatac"><i class="fa fa-check"></i><b>8.3</b> Metadata</a></li>
 <li class="chapter" data-level="8.4" data-path="additionalCoding.html"><a href="additionalCoding.html#otherLanguages"><i class="fa fa-check"></i><b>8.4</b> Other Languages (Python, JavaScript, etc.)</a></li>
-<li class="chapter" data-level="8.5" data-path="additionalCoding.html"><a href="additionalCoding.html#rlockerc"><i class="fa fa-check"></i><b>8.5</b> Using rLocker</a><ul>
+<li class="chapter" data-level="8.5" data-path="additionalCoding.html"><a href="additionalCoding.html#rlockerc"><i class="fa fa-check"></i><b>8.5</b> Using rLocker</a>
+<ul>
 <li class="chapter" data-level="8.5.1" data-path="additionalCoding.html"><a href="additionalCoding.html#installing"><i class="fa fa-check"></i><b>8.5.1</b> Installing</a></li>
 <li class="chapter" data-level="8.5.2" data-path="additionalCoding.html"><a href="additionalCoding.html#setup"><i class="fa fa-check"></i><b>8.5.2</b> Setup</a></li>
 <li class="chapter" data-level="8.5.3" data-path="additionalCoding.html"><a href="additionalCoding.html#usage"><i class="fa fa-check"></i><b>8.5.3</b> Usage</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
-<li class="chapter" data-level="9" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i><b>9</b> App Layout</a><ul>
-<li class="chapter" data-level="9.1" data-path="layout.html"><a href="layout.html#dashboard"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a><ul>
+<li class="chapter" data-level="9" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i><b>9</b> App Layout</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="layout.html"><a href="layout.html#dashboard"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard"><i class="fa fa-check"></i><b>9.1.1</b> Creating the Dashboard</a></li>
 <li class="chapter" data-level="9.1.2" data-path="layout.html"><a href="layout.html#colorUI"><i class="fa fa-check"></i><b>9.1.2</b> Color in the User Interface</a></li>
 <li class="chapter" data-level="9.1.3" data-path="layout.html"><a href="layout.html#chapterColor"><i class="fa fa-check"></i><b>9.1.3</b> Current Chapter Color Assignments</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="layout.html"><a href="layout.html#header"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a><ul>
+<li class="chapter" data-level="9.2" data-path="layout.html"><a href="layout.html#header"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>9.2.1</b> Creating the Dashboard Header</a></li>
 <li class="chapter" data-level="9.2.2" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>9.2.2</b> What’s Needed in the Server Definition</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="layout.html"><a href="layout.html#sidebar"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a><ul>
+<li class="chapter" data-level="9.3" data-path="layout.html"><a href="layout.html#sidebar"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a>
+<ul>
 <li class="chapter" data-level="9.3.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>9.3.1</b> Creating the Dashboard Sidebar</a></li>
 <li class="chapter" data-level="9.3.2" data-path="layout.html"><a href="layout.html#sidebar-order"><i class="fa fa-check"></i><b>9.3.2</b> Sidebar Order</a></li>
 <li class="chapter" data-level="9.3.3" data-path="layout.html"><a href="layout.html#sidebar-names"><i class="fa fa-check"></i><b>9.3.3</b> Sidebar Names</a></li>
@@ -287,14 +330,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.5" data-path="layout.html"><a href="layout.html#submenus"><i class="fa fa-check"></i><b>9.3.5</b> Submenus</a></li>
 <li class="chapter" data-level="9.3.6" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>9.3.6</b> What’s Needed in the Server Definition</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="layout.html"><a href="layout.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a><ul>
+<li class="chapter" data-level="9.4" data-path="layout.html"><a href="layout.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a>
+<ul>
 <li class="chapter" data-level="9.4.1" data-path="layout.html"><a href="layout.html#the-overview-tab"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Tab</a></li>
 <li class="chapter" data-level="9.4.2" data-path="layout.html"><a href="layout.html#a-prerequisites-tab"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Tab</a></li>
 <li class="chapter" data-level="9.4.3" data-path="layout.html"><a href="layout.html#activity-tabs"><i class="fa fa-check"></i><b>9.4.3</b> Activity Tab(s)</a></li>
 <li class="chapter" data-level="9.4.4" data-path="layout.html"><a href="layout.html#refTab"><i class="fa fa-check"></i><b>9.4.4</b> References</a></li>
 <li class="chapter" data-level="9.4.5" data-path="layout.html"><a href="layout.html#innerTabs"><i class="fa fa-check"></i><b>9.4.5</b> Tabs Inside the Body</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="layout.html"><a href="layout.html#common-elements"><i class="fa fa-check"></i><b>9.5</b> Common Elements</a><ul>
+<li class="chapter" data-level="9.5" data-path="layout.html"><a href="layout.html#common-elements"><i class="fa fa-check"></i><b>9.5</b> Common Elements</a>
+<ul>
 <li class="chapter" data-level="9.5.1" data-path="layout.html"><a href="layout.html#ordering-inputs"><i class="fa fa-check"></i><b>9.5.1</b> Ordering Inputs</a></li>
 <li class="chapter" data-level="9.5.2" data-path="layout.html"><a href="layout.html#buttons"><i class="fa fa-check"></i><b>9.5.2</b> Buttons</a></li>
 <li class="chapter" data-level="9.5.3" data-path="layout.html"><a href="layout.html#correctincorrect-marks"><i class="fa fa-check"></i><b>9.5.3</b> Correct/Incorrect Marks</a></li>
@@ -304,17 +349,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5.7" data-path="layout.html"><a href="layout.html#well-panels"><i class="fa fa-check"></i><b>9.5.7</b> Well Panels</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="layoutb.html"><a href="layoutb.html"><i class="fa fa-check"></i><b>10</b> App Layout</a><ul>
-<li class="chapter" data-level="10.1" data-path="layoutb.html"><a href="layoutb.html#dashboardb"><i class="fa fa-check"></i><b>10.1</b> Dashboard</a><ul>
+<li class="chapter" data-level="10" data-path="layoutb.html"><a href="layoutb.html"><i class="fa fa-check"></i><b>10</b> App Layout</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="layoutb.html"><a href="layoutb.html#dashboardb"><i class="fa fa-check"></i><b>10.1</b> Dashboard</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="layoutb.html"><a href="layoutb.html#creating-the-dashboard-1"><i class="fa fa-check"></i><b>10.1.1</b> Creating the Dashboard</a></li>
 <li class="chapter" data-level="10.1.2" data-path="layoutb.html"><a href="layoutb.html#colorUIb"><i class="fa fa-check"></i><b>10.1.2</b> Color in the User Interface</a></li>
 <li class="chapter" data-level="10.1.3" data-path="layoutb.html"><a href="layoutb.html#chapterColorb"><i class="fa fa-check"></i><b>10.1.3</b> Current Chapter Color Assignments</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="layoutb.html"><a href="layoutb.html#headerb"><i class="fa fa-check"></i><b>10.2</b> Dashboard Header</a><ul>
+<li class="chapter" data-level="10.2" data-path="layoutb.html"><a href="layoutb.html#headerb"><i class="fa fa-check"></i><b>10.2</b> Dashboard Header</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="layoutb.html"><a href="layoutb.html#creating-the-dashboard-header-1"><i class="fa fa-check"></i><b>10.2.1</b> Creating the Dashboard Header</a></li>
 <li class="chapter" data-level="10.2.2" data-path="layoutb.html"><a href="layoutb.html#whats-needed-in-the-server-definition-4"><i class="fa fa-check"></i><b>10.2.2</b> What’s Needed in the Server Definition</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="layoutb.html"><a href="layoutb.html#sidebarb"><i class="fa fa-check"></i><b>10.3</b> Dashboard Sidebar</a><ul>
+<li class="chapter" data-level="10.3" data-path="layoutb.html"><a href="layoutb.html#sidebarb"><i class="fa fa-check"></i><b>10.3</b> Dashboard Sidebar</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="layoutb.html"><a href="layoutb.html#creating-the-dashboard-sidebar-1"><i class="fa fa-check"></i><b>10.3.1</b> Creating the Dashboard Sidebar</a></li>
 <li class="chapter" data-level="10.3.2" data-path="layoutb.html"><a href="layoutb.html#sidebar-order-1"><i class="fa fa-check"></i><b>10.3.2</b> Sidebar Order</a></li>
 <li class="chapter" data-level="10.3.3" data-path="layoutb.html"><a href="layoutb.html#sidebar-names-1"><i class="fa fa-check"></i><b>10.3.3</b> Sidebar Names</a></li>
@@ -322,14 +371,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.5" data-path="layoutb.html"><a href="layoutb.html#submenus-1"><i class="fa fa-check"></i><b>10.3.5</b> Submenus</a></li>
 <li class="chapter" data-level="10.3.6" data-path="layoutb.html"><a href="layoutb.html#whats-needed-in-the-server-definition-5"><i class="fa fa-check"></i><b>10.3.6</b> What’s Needed in the Server Definition</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="layoutb.html"><a href="layoutb.html#bodyb"><i class="fa fa-check"></i><b>10.4</b> Dashboard Body</a><ul>
+<li class="chapter" data-level="10.4" data-path="layoutb.html"><a href="layoutb.html#bodyb"><i class="fa fa-check"></i><b>10.4</b> Dashboard Body</a>
+<ul>
 <li class="chapter" data-level="10.4.1" data-path="layoutb.html"><a href="layoutb.html#the-overview-tab-1"><i class="fa fa-check"></i><b>10.4.1</b> The Overview Tab</a></li>
 <li class="chapter" data-level="10.4.2" data-path="layoutb.html"><a href="layoutb.html#a-prerequisites-tab-1"><i class="fa fa-check"></i><b>10.4.2</b> A Prerequisites Tab</a></li>
 <li class="chapter" data-level="10.4.3" data-path="layoutb.html"><a href="layoutb.html#activity-tabs-1"><i class="fa fa-check"></i><b>10.4.3</b> Activity Tab(s)</a></li>
 <li class="chapter" data-level="10.4.4" data-path="layoutb.html"><a href="layoutb.html#refTabb"><i class="fa fa-check"></i><b>10.4.4</b> References</a></li>
 <li class="chapter" data-level="10.4.5" data-path="layoutb.html"><a href="layoutb.html#innerTabsb"><i class="fa fa-check"></i><b>10.4.5</b> Tabs Inside the Body</a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path="layoutb.html"><a href="layoutb.html#common-elements-1"><i class="fa fa-check"></i><b>10.5</b> Common Elements</a><ul>
+<li class="chapter" data-level="10.5" data-path="layoutb.html"><a href="layoutb.html#common-elements-1"><i class="fa fa-check"></i><b>10.5</b> Common Elements</a>
+<ul>
 <li class="chapter" data-level="10.5.1" data-path="layoutb.html"><a href="layoutb.html#ordering-inputs-1"><i class="fa fa-check"></i><b>10.5.1</b> Ordering Inputs</a></li>
 <li class="chapter" data-level="10.5.2" data-path="layoutb.html"><a href="layoutb.html#buttonsb"><i class="fa fa-check"></i><b>10.5.2</b> Buttons</a></li>
 <li class="chapter" data-level="10.5.3" data-path="layoutb.html"><a href="layoutb.html#correctincorrect-marks-1"><i class="fa fa-check"></i><b>10.5.3</b> Correct/Incorrect Marks</a></li>
@@ -340,10 +391,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>V Style Guide-Visual Style</b></span></li>
-<li class="chapter" data-level="11" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i><b>11</b> Design Style</a><ul>
+<li class="chapter" data-level="11" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i><b>11</b> Design Style</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="designStyle.html"><a href="designStyle.html#logo"><i class="fa fa-check"></i><b>11.1</b> PSU Branding</a></li>
 <li class="chapter" data-level="11.2" data-path="designStyle.html"><a href="designStyle.html#colors"><i class="fa fa-check"></i><b>11.2</b> Colors</a></li>
-<li class="chapter" data-level="11.3" data-path="designStyle.html"><a href="designStyle.html#styleText"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a><ul>
+<li class="chapter" data-level="11.3" data-path="designStyle.html"><a href="designStyle.html#styleText"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a>
+<ul>
 <li class="chapter" data-level="11.3.1" data-path="designStyle.html"><a href="designStyle.html#headings"><i class="fa fa-check"></i><b>11.3.1</b> Headings</a></li>
 <li class="chapter" data-level="11.3.2" data-path="designStyle.html"><a href="designStyle.html#paragraph-text"><i class="fa fa-check"></i><b>11.3.2</b> Paragraph Text</a></li>
 <li class="chapter" data-level="11.3.3" data-path="designStyle.html"><a href="designStyle.html#mathematics"><i class="fa fa-check"></i><b>11.3.3</b> Mathematics</a></li>
@@ -353,7 +406,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3.7" data-path="designStyle.html"><a href="designStyle.html#text-in-r-plots"><i class="fa fa-check"></i><b>11.3.7</b> Text in <code>R</code> Plots</a></li>
 <li class="chapter" data-level="11.3.8" data-path="designStyle.html"><a href="designStyle.html#text-case"><i class="fa fa-check"></i><b>11.3.8</b> Text Case</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="designStyle.html"><a href="designStyle.html#graphics"><i class="fa fa-check"></i><b>11.4</b> Graphics</a><ul>
+<li class="chapter" data-level="11.4" data-path="designStyle.html"><a href="designStyle.html#graphics"><i class="fa fa-check"></i><b>11.4</b> Graphics</a>
+<ul>
 <li class="chapter" data-level="11.4.1" data-path="designStyle.html"><a href="designStyle.html#graphLab"><i class="fa fa-check"></i><b>11.4.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="11.4.2" data-path="designStyle.html"><a href="designStyle.html#axes-and-scales"><i class="fa fa-check"></i><b>11.4.2</b> Axes and Scales</a></li>
 <li class="chapter" data-level="11.4.3" data-path="designStyle.html"><a href="designStyle.html#colorPlots"><i class="fa fa-check"></i><b>11.4.3</b> Color and Plots in <code>R</code></a></li>
@@ -362,10 +416,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4.6" data-path="designStyle.html"><a href="designStyle.html#altText"><i class="fa fa-check"></i><b>11.4.6</b> Alt Text</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>12</b> Static Images</a><ul>
+<li class="chapter" data-level="12" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>12</b> Static Images</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#logob"><i class="fa fa-check"></i><b>12.1</b> PSU Branding</a></li>
 <li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#colors-1"><i class="fa fa-check"></i><b>12.2</b> Colors</a></li>
-<li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#styleTextb"><i class="fa fa-check"></i><b>12.3</b> Text Styling</a><ul>
+<li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#styleTextb"><i class="fa fa-check"></i><b>12.3</b> Text Styling</a>
+<ul>
 <li class="chapter" data-level="12.3.1" data-path="staticImages.html"><a href="staticImages.html#headings-1"><i class="fa fa-check"></i><b>12.3.1</b> Headings</a></li>
 <li class="chapter" data-level="12.3.2" data-path="staticImages.html"><a href="staticImages.html#paragraph-text-1"><i class="fa fa-check"></i><b>12.3.2</b> Paragraph Text</a></li>
 <li class="chapter" data-level="12.3.3" data-path="staticImages.html"><a href="staticImages.html#mathematics-1"><i class="fa fa-check"></i><b>12.3.3</b> Mathematics</a></li>
@@ -375,7 +431,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3.7" data-path="staticImages.html"><a href="staticImages.html#text-in-r-plots-1"><i class="fa fa-check"></i><b>12.3.7</b> Text in <code>R</code> Plots</a></li>
 <li class="chapter" data-level="12.3.8" data-path="staticImages.html"><a href="staticImages.html#text-case-1"><i class="fa fa-check"></i><b>12.3.8</b> Text Case</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="staticImages.html"><a href="staticImages.html#graphicsb"><i class="fa fa-check"></i><b>12.4</b> Graphics</a><ul>
+<li class="chapter" data-level="12.4" data-path="staticImages.html"><a href="staticImages.html#graphicsb"><i class="fa fa-check"></i><b>12.4</b> Graphics</a>
+<ul>
 <li class="chapter" data-level="12.4.1" data-path="staticImages.html"><a href="staticImages.html#graphLabb"><i class="fa fa-check"></i><b>12.4.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="12.4.2" data-path="staticImages.html"><a href="staticImages.html#axes-and-scales-1"><i class="fa fa-check"></i><b>12.4.2</b> Axes and Scales</a></li>
 <li class="chapter" data-level="12.4.3" data-path="staticImages.html"><a href="staticImages.html#colorPlotsb"><i class="fa fa-check"></i><b>12.4.3</b> Color and Plots in <code>R</code></a></li>
@@ -384,10 +441,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4.6" data-path="staticImages.html"><a href="staticImages.html#altTextb"><i class="fa fa-check"></i><b>12.4.6</b> Alt Text</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="designStylec.html"><a href="designStylec.html"><i class="fa fa-check"></i><b>13</b> Design Style</a><ul>
+<li class="chapter" data-level="13" data-path="designStylec.html"><a href="designStylec.html"><i class="fa fa-check"></i><b>13</b> Design Style</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="designStylec.html"><a href="designStylec.html#logoc"><i class="fa fa-check"></i><b>13.1</b> PSU Branding</a></li>
 <li class="chapter" data-level="13.2" data-path="designStylec.html"><a href="designStylec.html#colors-2"><i class="fa fa-check"></i><b>13.2</b> Colors</a></li>
-<li class="chapter" data-level="13.3" data-path="designStylec.html"><a href="designStylec.html#styleTextc"><i class="fa fa-check"></i><b>13.3</b> Text Styling</a><ul>
+<li class="chapter" data-level="13.3" data-path="designStylec.html"><a href="designStylec.html#styleTextc"><i class="fa fa-check"></i><b>13.3</b> Text Styling</a>
+<ul>
 <li class="chapter" data-level="13.3.1" data-path="designStylec.html"><a href="designStylec.html#headings-2"><i class="fa fa-check"></i><b>13.3.1</b> Headings</a></li>
 <li class="chapter" data-level="13.3.2" data-path="designStylec.html"><a href="designStylec.html#paragraph-text-2"><i class="fa fa-check"></i><b>13.3.2</b> Paragraph Text</a></li>
 <li class="chapter" data-level="13.3.3" data-path="designStylec.html"><a href="designStylec.html#mathematics-2"><i class="fa fa-check"></i><b>13.3.3</b> Mathematics</a></li>
@@ -397,7 +456,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3.7" data-path="designStylec.html"><a href="designStylec.html#text-in-r-plots-2"><i class="fa fa-check"></i><b>13.3.7</b> Text in <code>R</code> Plots</a></li>
 <li class="chapter" data-level="13.3.8" data-path="designStylec.html"><a href="designStylec.html#text-case-2"><i class="fa fa-check"></i><b>13.3.8</b> Text Case</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="designStylec.html"><a href="designStylec.html#graphicsc"><i class="fa fa-check"></i><b>13.4</b> Graphics</a><ul>
+<li class="chapter" data-level="13.4" data-path="designStylec.html"><a href="designStylec.html#graphicsc"><i class="fa fa-check"></i><b>13.4</b> Graphics</a>
+<ul>
 <li class="chapter" data-level="13.4.1" data-path="designStylec.html"><a href="designStylec.html#graphLabc"><i class="fa fa-check"></i><b>13.4.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.4.2" data-path="designStylec.html"><a href="designStylec.html#axes-and-scales-2"><i class="fa fa-check"></i><b>13.4.2</b> Axes and Scales</a></li>
 <li class="chapter" data-level="13.4.3" data-path="designStylec.html"><a href="designStylec.html#colorPlotsc"><i class="fa fa-check"></i><b>13.4.3</b> Color and Plots in <code>R</code></a></li>
@@ -407,10 +467,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
-<li class="chapter" data-level="14" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>14</b> Wording</a><ul>
+<li class="chapter" data-level="14" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>14</b> Wording</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>14.1</b> General Guidelines</a></li>
 <li class="chapter" data-level="14.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>14.2</b> Popovers</a></li>
-<li class="chapter" data-level="14.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>14.3</b> Dealing with Differing Vocabularies</a><ul>
+<li class="chapter" data-level="14.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>14.3</b> Dealing with Differing Vocabularies</a>
+<ul>
 <li class="chapter" data-level="14.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>14.3.1</b> The Jingle/Jangle Problem</a></li>
 <li class="chapter" data-level="14.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>14.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
 <li class="chapter" data-level="14.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>14.3.3</b> Option 1: Hover Text</a></li>
@@ -418,9 +480,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>14.4</b> Footnotes</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>15</b> Documentation</a><ul>
+<li class="chapter" data-level="15" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>15</b> Documentation</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>15.1</b> References</a></li>
-<li class="chapter" data-level="15.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>15.2</b> Plagiarism</a><ul>
+<li class="chapter" data-level="15.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>15.2</b> Plagiarism</a>
+<ul>
 <li class="chapter" data-level="15.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>15.2.1</b> Reference Tab</a></li>
 <li class="chapter" data-level="15.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>15.2.2</b> In Code</a></li>
 </ul></li>
@@ -429,9 +493,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>15.5</b> Data</a></li>
 </ul></li>
 <li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
-<li class="chapter" data-level="16" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>16</b> Accessibility</a><ul>
+<li class="chapter" data-level="16" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>16</b> Accessibility</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>16.1</b> Making Your App Accessible</a></li>
-<li class="chapter" data-level="16.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>16.2</b> Checking Accessibility</a><ul>
+<li class="chapter" data-level="16.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>16.2</b> Checking Accessibility</a>
+<ul>
 <li class="chapter" data-level="16.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>16.2.1</b> Testing Accessibility</a></li>
 <li class="chapter" data-level="16.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>16.2.2</b> Reading a WAVE Report</a></li>
 <li class="chapter" data-level="16.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>16.2.3</b> Addressing Issues</a></li>
@@ -460,47 +526,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="htmlCSS" class="section level1">
+<div id="htmlCSS" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> HTML and CSS</h1>
 <p>Shiny apps are a blending of the R programming language and Hypertext Markup Language (HTML) which is the standard language of the web. When you run a Shiny app, <code>R</code> and the <code>shiny</code> packages actually convert all of the <code>R</code> code into an HTML document which is served up to the user.</p>
 <p>As you create the user interface, you will run into using HTML in two ways: functions for shiny (e.g., <code>bsButton</code>, <code>dashboardBody</code>, <code>selectInput</code>, <code>sendSweetAlert</code>, etc.) and HTML tags. In the case of the former, the functions you call will automatically write any necessary HTML when the app runs. For the later, you will have to take care to use tags appropriately.</p>
-<div id="html" class="section level2">
+<div id="html" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> HTML Tags</h2>
 <p>HTML tags are the way in which you tell browsers what type of element you are creating. For example, if you want to tell the browser that you passing along text for the user to read, you would use the paragraph tag, <code>p</code>. If instead, you were passing along a file for an image, you would use the image tag, <code>img</code>. Shiny has 110 HTML tags built in. However, you will not need to use the vast majority of them. Instead, we will cover the ones that you will be using the most often.</p>
 <p>One important word of caution here is that you need to pay close attention to the rules and guidelines in this chapter. If you don’t use HTML tags appropriately, then 1) your app might not look/function the way that you intended, and 2) you’ll make your app less accessible. Since our apps are to support students in their education, we need to do our best to ensure that all of our apps are as accessible as possible.</p>
-<div id="paragraphs" class="section level3">
+<div id="paragraphs" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Paragraphs</h3>
-<p>The most common HTML tag is that of paragraph. This is the tag that tells browsers “hey, here is some text content that I want you show the user”. In your app, you’ll encase the majority of any text in <code>p()</code> (more formally, <code>tags$p()</code>).</p>
+<p>The most common HTML tag is that of paragraph. This is the tag that tells browsers “hey, here is some text content that I want you show the user.” In your app, you’ll encase the majority of any text in <code>p()</code> (more formally, <code>tags$p()</code>).</p>
 <p>For example,</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="htmlCSS.html#cb26-1"></a><span class="co"># Running this code produces a nice looking display of the text below.</span></span>
-<span id="cb26-2"><a href="htmlCSS.html#cb26-2"></a><span class="kw">p</span>(</span>
-<span id="cb26-3"><a href="htmlCSS.html#cb26-3"></a>  <span class="st">&quot;Statistics is the Liberal Art and Science of data to better</span></span>
-<span id="cb26-4"><a href="htmlCSS.html#cb26-4"></a><span class="st">  understand our world in the face of omnipresent variation so that</span></span>
-<span id="cb26-5"><a href="htmlCSS.html#cb26-5"></a><span class="st">  an individual can meaningfully participate in all levels of</span></span>
-<span id="cb26-6"><a href="htmlCSS.html#cb26-6"></a><span class="st">  society.&quot;</span></span>
-<span id="cb26-7"><a href="htmlCSS.html#cb26-7"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="htmlCSS.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running this code produces a nice looking display of the text below.</span></span>
+<span id="cb26-2"><a href="htmlCSS.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb26-3"><a href="htmlCSS.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Statistics is the Liberal Art and Science of data to better</span></span>
+<span id="cb26-4"><a href="htmlCSS.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="st">  understand our world in the face of omnipresent variation so that</span></span>
+<span id="cb26-5"><a href="htmlCSS.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="st">  an individual can meaningfully participate in all levels of</span></span>
+<span id="cb26-6"><a href="htmlCSS.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="st">  society.&quot;</span></span>
+<span id="cb26-7"><a href="htmlCSS.html#cb26-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Statistics is the Liberal Art and Science of data to better
   understand our world in the face of omnipresent variation so that
   an individual can meaningfully participate in all levels of
   society.</p>
 <p>No matter how short or long your content is, the paragraph tag should be your Go-To HTML tag. Treat the inputs of the paragraph tag exactly like you would write a document: separate paragraphs get their own instance of <code>p()</code>. Browsers will automatically put the appropriate space between them.</p>
 </div>
-<div id="breaks" class="section level3">
+<div id="breaks" class="section level3" number="7.1.2">
 <h3><span class="header-section-number">7.1.2</span> Breaks</h3>
 <p>Another useful HTML tag is the one for breaks. No, we don’t mean coffee/snack breaks. Rather we mean line breaks. These allow you end a line and move down to a new line (without an empty line between them) or even put a line of empty space between HTML elements. Thus, breaks are a great way to help with vertical spacing in your app.</p>
 <p>To place a break all you need to type is <code>br()</code> (formal, <code>tags$br()</code>). One nice thing is that breaks can be typed into your code on their own or as part of another HTML element (e.g., a paragraph).</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="htmlCSS.html#cb27-1"></a><span class="kw">p</span>(</span>
-<span id="cb27-2"><a href="htmlCSS.html#cb27-2"></a>  <span class="st">&quot;Here&#39;s an example where we&#39;re using a break&quot;</span>,</span>
-<span id="cb27-3"><a href="htmlCSS.html#cb27-3"></a>  <span class="kw">br</span>(),</span>
-<span id="cb27-4"><a href="htmlCSS.html#cb27-4"></a>  <span class="st">&quot;inside of a paragraph tag.&quot;</span></span>
-<span id="cb27-5"><a href="htmlCSS.html#cb27-5"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="htmlCSS.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb27-2"><a href="htmlCSS.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Here&#39;s an example where we&#39;re using a break&quot;</span>,</span>
+<span id="cb27-3"><a href="htmlCSS.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb27-4"><a href="htmlCSS.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;inside of a paragraph tag.&quot;</span></span>
+<span id="cb27-5"><a href="htmlCSS.html#cb27-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>
 Here's an example where we're using a break
 <br/>
 inside of a paragraph tag.
 </p>
 </div>
-<div id="lists" class="section level3">
+<div id="lists" class="section level3" number="7.1.3">
 <h3><span class="header-section-number">7.1.3</span> Lists</h3>
 <p>There are two aspects to lists: what kind of list you want to make (known as the list environment) and the items that make up your list.</p>
 <p>The two list environments are Ordered Lists and Unordered Lists.</p>
@@ -513,26 +579,26 @@ inside of a paragraph tag.
 <p>You should <strong>NOT</strong> use the paragraph tag or any header tags with your list items. This is poor coding: <code>h1(tags$li("First item"))</code>. The paragraph, header, and list item tags all communicate important and distinct information to browsers and assistive technologies like screen readers. If you mix these tags together, you’ll create confusion for the browser and mess up accessiblity features.</p>
 <p>You can use emphasis/italics or strong/boldface on portions of the content as appropriate; see the <a href="htmlCSS.html#stylingTags">Text Styling Tags</a> section for details.</p>
 <p>Here is an example of how you might create a list:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="htmlCSS.html#cb28-1"></a>tags<span class="op">$</span><span class="kw">ul</span>(</span>
-<span id="cb28-2"><a href="htmlCSS.html#cb28-2"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</span>
-<span id="cb28-3"><a href="htmlCSS.html#cb28-3"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item word.&quot;</span>)</span>
-<span id="cb28-4"><a href="htmlCSS.html#cb28-4"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="htmlCSS.html#cb28-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb28-2"><a href="htmlCSS.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</span>
+<span id="cb28-3"><a href="htmlCSS.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;A second item word.&quot;</span>)</span>
+<span id="cb28-4"><a href="htmlCSS.html#cb28-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <ul>
 <li>This is my first item.</li>
 <li>A second item word.</li>
 </ul>
 <p>If you wanted an ordered list, simply replace <code>tags$ul</code> with <code>tags$ol</code>:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="htmlCSS.html#cb29-1"></a>tags<span class="op">$</span><span class="kw">ol</span>(</span>
-<span id="cb29-2"><a href="htmlCSS.html#cb29-2"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</span>
-<span id="cb29-3"><a href="htmlCSS.html#cb29-3"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item word.&quot;</span>)</span>
-<span id="cb29-4"><a href="htmlCSS.html#cb29-4"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="htmlCSS.html#cb29-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ol</span>(</span>
+<span id="cb29-2"><a href="htmlCSS.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</span>
+<span id="cb29-3"><a href="htmlCSS.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;A second item word.&quot;</span>)</span>
+<span id="cb29-4"><a href="htmlCSS.html#cb29-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <ol>
 <li>This is my first item.</li>
 <li>A second item word.</li>
 </ol>
 <p>There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in list environment and thus you will jump straight to <code>tags$li()</code> when in that section only.</p>
 </div>
-<div id="headers" class="section level3">
+<div id="headers" class="section level3" number="7.1.4">
 <h3><span class="header-section-number">7.1.4</span> Headers</h3>
 <p>Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. In fact, if you look at the Table of Contents to the left (provided you haven’t hidden it), everything you see there is actually tied to a Header in this document.</p>
 <p>No matter how much coders want, Heading Tags are <strong>NOT</strong> for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content. Just like the Table of Contents for this Style Guide.</p>
@@ -550,7 +616,7 @@ inside of a paragraph tag.
 <ul>
 <li>DO NOT USE headings to style text (We cannot stress this enough.)</li>
 <li>Do not wrap a header tag around a list element (e.g., <code>h3(tags$li("here is my list item"))</code>) nor the reverse (e.g., <code>tags$li(h3("here is my list item"))</code>)</li>
-<li>Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(“Introduction to”, p(“my game”)))</li>
+<li>Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(“Introduction to,” p(“my game”)))</li>
 </ul>
 <p>For more information check out</p>
 <ul>
@@ -558,7 +624,7 @@ inside of a paragraph tag.
 <li><a href="https://accessibility.psu.edu/headings/">Penn State’s Headings and Subheadings Accessibility</a></li>
 </ul>
 </div>
-<div id="links" class="section level3">
+<div id="links" class="section level3" number="7.1.5">
 <h3><span class="header-section-number">7.1.5</span> Links</h3>
 <p>You might find yourself wanting to include a link in your text. For example, you might want to allow the user to go read up on your app’s concept(s) before engaging further. To create a link you will need to use the HTML anchor tag, <code>tags$a()</code> and you’ll need the following information:</p>
 <ul>
@@ -566,58 +632,58 @@ inside of a paragraph tag.
 <li>the text you want to be displayed. For accessibility, make the text descriptive of where you’re sending the user (that is, don’t use the phrase “click here”).</li>
 </ul>
 <p>The anchor tag must be used within a paragraph tag (<code>p()</code>) or a list item tag (<code>tags$li()</code>). Here’s an example of using the anchor tag to create a link to the PSU’s Stat Department website:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="htmlCSS.html#cb30-1"></a><span class="kw">p</span>(</span>
-<span id="cb30-2"><a href="htmlCSS.html#cb30-2"></a>  <span class="st">&quot;Learn more about us at the &quot;</span>,</span>
-<span id="cb30-3"><a href="htmlCSS.html#cb30-3"></a>  tags<span class="op">$</span><span class="kw">a</span>(</span>
-<span id="cb30-4"><a href="htmlCSS.html#cb30-4"></a>    <span class="dt">href =</span> <span class="st">&quot;https://science.psu.edu/stat&quot;</span>,</span>
-<span id="cb30-5"><a href="htmlCSS.html#cb30-5"></a>    <span class="st">&quot;Penn State Statistics Department website.&quot;</span>,</span>
-<span id="cb30-6"><a href="htmlCSS.html#cb30-6"></a>    <span class="dt">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
-<span id="cb30-7"><a href="htmlCSS.html#cb30-7"></a>  )</span>
-<span id="cb30-8"><a href="htmlCSS.html#cb30-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="htmlCSS.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb30-2"><a href="htmlCSS.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Learn more about us at the &quot;</span>,</span>
+<span id="cb30-3"><a href="htmlCSS.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="cb30-4"><a href="htmlCSS.html#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">href =</span> <span class="st">&quot;https://science.psu.edu/stat&quot;</span>,</span>
+<span id="cb30-5"><a href="htmlCSS.html#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Penn State Statistics Department website.&quot;</span>,</span>
+<span id="cb30-6"><a href="htmlCSS.html#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
+<span id="cb30-7"><a href="htmlCSS.html#cb30-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb30-8"><a href="htmlCSS.html#cb30-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>
 Learn more about us at the 
 <a href="https://science.psu.edu/stat" class="bodylinks">Penn State Statistics Department website.</a>
 </p>
 <p>You’ll notice that we added <code>class = "bodylinks"</code> to the anchor tag. Any time you’re adding a link to the body of your app, you’ll need to include this line. We’ll explain more in the <a href="#CSS">CSS Section</a>.</p>
 </div>
-<div id="div" class="section level3">
+<div id="div" class="section level3" number="7.1.6">
 <h3><span class="header-section-number">7.1.6</span> Divisions</h3>
 <p>A useful HTML tag is division, <code>div()</code> (formal, <code>tags$div()</code>); this tag allows you mark a chunk of your app as having special things applied to it. This is particularly useful for changing the alignment of text. The division needs to wrap around all of the elements that you want to include.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="htmlCSS.html#cb31-1"></a><span class="kw">div</span>(</span>
-<span id="cb31-2"><a href="htmlCSS.html#cb31-2"></a>  <span class="dt">style =</span> <span class="st">&quot;text-align: center;&quot;</span>,</span>
-<span id="cb31-3"><a href="htmlCSS.html#cb31-3"></a>  <span class="kw">p</span>(</span>
-<span id="cb31-4"><a href="htmlCSS.html#cb31-4"></a>    <span class="st">&quot;Here is some text. You can include other elements such as</span></span>
-<span id="cb31-5"><a href="htmlCSS.html#cb31-5"></a><span class="st">    buttons, input fields, and output fields in addition to</span></span>
-<span id="cb31-6"><a href="htmlCSS.html#cb31-6"></a><span class="st">    paragraphs and lists.&quot;</span></span>
-<span id="cb31-7"><a href="htmlCSS.html#cb31-7"></a>  )</span>
-<span id="cb31-8"><a href="htmlCSS.html#cb31-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="htmlCSS.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">div</span>(</span>
+<span id="cb31-2"><a href="htmlCSS.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;text-align: center;&quot;</span>,</span>
+<span id="cb31-3"><a href="htmlCSS.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb31-4"><a href="htmlCSS.html#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Here is some text. You can include other elements such as</span></span>
+<span id="cb31-5"><a href="htmlCSS.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="st">    buttons, input fields, and output fields in addition to</span></span>
+<span id="cb31-6"><a href="htmlCSS.html#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="st">    paragraphs and lists.&quot;</span></span>
+<span id="cb31-7"><a href="htmlCSS.html#cb31-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-8"><a href="htmlCSS.html#cb31-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <div style="text-align: center;">
 <p>Here is some text. You can include other elements such as
     buttons, input fields, and output fields in addition to
     paragraphs and lists.</p>
 </div>
 </div>
-<div id="horizontal-rule" class="section level3">
+<div id="horizontal-rule" class="section level3" number="7.1.7">
 <h3><span class="header-section-number">7.1.7</span> Horizontal Rule</h3>
 <p>On the rare occasion, you might find yourself wanting to draw a line in your app to help separate two chunks on the same page. For example, you might want to use a line to separate paragraphs of overarching instructions from paragraphs explaining a particular data set the user happens to pick. This is possible through the use of a horizontal rule. To create a horizontal rule, you simply place <code>hr()</code> on it’s own line in your code (not inside of any other HTML tags).</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="htmlCSS.html#cb32-1"></a><span class="kw">hr</span>()</span></code></pre></div>
-<hr/>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="htmlCSS.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hr</span>()</span></code></pre></div>
+<p><hr/></p>
 </div>
-<div id="other-tags" class="section level3">
+<div id="other-tags" class="section level3" number="7.1.8">
 <h3><span class="header-section-number">7.1.8</span> Other Tags</h3>
 <p>There are a few other tags which you might need to use, depending upon your app. These include the image tag, <code>img()</code>, and the figure caption tag, <code>figcaption()</code>. We will discuss these tags in the chapter on <a href="staticImages.html#staticImages">Static Images</a>.</p>
 <p>If you have questions about any other HTML tags, feel free to talk to Neil and/or Bob about them.</p>
 </div>
-<div id="stylingTags" class="section level3">
+<div id="stylingTags" class="section level3" number="7.1.9">
 <h3><span class="header-section-number">7.1.9</span> Text Styling Tags</h3>
 <p>There are also some HTML tags whose goal is to work inside of the paragraph and list item tags to brings some extra information to text. These tags have a very visual impact on the text, which is why we refer to the Text Styling Tags.</p>
-<div id="italicsemphasis" class="section level4">
+<div id="italicsemphasis" class="section level4" number="7.1.9.1">
 <h4><span class="header-section-number">7.1.9.1</span> Italics/Emphasis</h4>
 <p>If you want to <em>italicize</em> a word or phrase, you’ll need to use the emphasis tag, <code>tags$em()</code>. We want you to use the emphasis tag rather than the italics tag (<code>tags$i</code>) as emphasis is the <strong>accessible</strong> option. The emphasis tag notifies screen readers to announce that the author has placed emphasis on the word or phrase. If you just use the italics tag, the user will not be notified of any differences between the word/phrase and surrounding text.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="htmlCSS.html#cb33-1"></a><span class="kw">p</span>(</span>
-<span id="cb33-2"><a href="htmlCSS.html#cb33-2"></a>  <span class="st">&quot;You&quot;</span>, tags<span class="op">$</span><span class="kw">em</span>(<span class="st">&quot;must&quot;</span>), <span class="st">&quot;use the emphasis tag to ensure that your</span></span>
-<span id="cb33-3"><a href="htmlCSS.html#cb33-3"></a><span class="st">  app is as accessible as possible.&quot;</span></span>
-<span id="cb33-4"><a href="htmlCSS.html#cb33-4"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="htmlCSS.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb33-2"><a href="htmlCSS.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;You&quot;</span>, tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;must&quot;</span>), <span class="st">&quot;use the emphasis tag to ensure that your</span></span>
+<span id="cb33-3"><a href="htmlCSS.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="st">  app is as accessible as possible.&quot;</span></span>
+<span id="cb33-4"><a href="htmlCSS.html#cb33-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>
 You
 <em>must</em>
@@ -625,17 +691,17 @@ use the emphasis tag to ensure that your
   app is as accessible as possible.
 </p>
 </div>
-<div id="boldfacestrong" class="section level4">
+<div id="boldfacestrong" class="section level4" number="7.1.9.2">
 <h4><span class="header-section-number">7.1.9.2</span> Boldface/Strong</h4>
 <p>If you want to <strong>boldface</strong> a word or phrase, you’ll need to use the strong tag, <code>tags$strong()</code>. There is also a bold tag (<code>tags$b()</code>), but the same accessibility issues exist here. Thus, use <code>tags$strong()</code>.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="htmlCSS.html#cb34-1"></a>tags<span class="op">$</span><span class="kw">ul</span>(</span>
-<span id="cb34-2"><a href="htmlCSS.html#cb34-2"></a>  tags<span class="op">$</span><span class="kw">li</span>(</span>
-<span id="cb34-3"><a href="htmlCSS.html#cb34-3"></a>    tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;Level 1: &quot;</span>), <span class="st">&quot;guess the sample size.&quot;</span></span>
-<span id="cb34-4"><a href="htmlCSS.html#cb34-4"></a>  ),</span>
-<span id="cb34-5"><a href="htmlCSS.html#cb34-5"></a>  tags<span class="op">$</span><span class="kw">li</span>(</span>
-<span id="cb34-6"><a href="htmlCSS.html#cb34-6"></a>    tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;Level 2: &quot;</span>), <span class="st">&quot;guess the sample size AND set variance.&quot;</span></span>
-<span id="cb34-7"><a href="htmlCSS.html#cb34-7"></a>  )</span>
-<span id="cb34-8"><a href="htmlCSS.html#cb34-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="htmlCSS.html#cb34-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb34-2"><a href="htmlCSS.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb34-3"><a href="htmlCSS.html#cb34-3" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Level 1: &quot;</span>), <span class="st">&quot;guess the sample size.&quot;</span></span>
+<span id="cb34-4"><a href="htmlCSS.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb34-5"><a href="htmlCSS.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb34-6"><a href="htmlCSS.html#cb34-6" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Level 2: &quot;</span>), <span class="st">&quot;guess the sample size AND set variance.&quot;</span></span>
+<span id="cb34-7"><a href="htmlCSS.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb34-8"><a href="htmlCSS.html#cb34-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <ul>
 <li>
 <strong>Level 1: </strong>
@@ -647,15 +713,15 @@ guess the sample size AND set variance.
 </li>
 </ul>
 </div>
-<div id="code-and-pre-formatted" class="section level4">
+<div id="code-and-pre-formatted" class="section level4" number="7.1.9.3">
 <h4><span class="header-section-number">7.1.9.3</span> Code and Pre-formatted</h4>
 <p>If you want to display a block of code in your app (e.g., to show what code the user would need to type in order to recreate something on their own), you should use the code HTML tag, <code>tags$code()</code>.</p>
 <p>The code tag can replace the paragraph tag and tells browsers (and screen readers) that the enclosed text should be treated and styled as non-executed computer code.</p>
 <p>To include a bit of code inside of a paragraph:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="htmlCSS.html#cb35-1"></a><span class="kw">p</span>(</span>
-<span id="cb35-2"><a href="htmlCSS.html#cb35-2"></a>  <span class="st">&quot;Use the &quot;</span>, tags<span class="op">$</span><span class="kw">code</span>(<span class="st">&quot;bsButton&quot;</span>), <span class="st">&quot;function to create buttons in</span></span>
-<span id="cb35-3"><a href="htmlCSS.html#cb35-3"></a><span class="st">  your Shiny app.&quot;</span></span>
-<span id="cb35-4"><a href="htmlCSS.html#cb35-4"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="htmlCSS.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb35-2"><a href="htmlCSS.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Use the &quot;</span>, tags<span class="sc">$</span><span class="fu">code</span>(<span class="st">&quot;bsButton&quot;</span>), <span class="st">&quot;function to create buttons in</span></span>
+<span id="cb35-3"><a href="htmlCSS.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="st">  your Shiny app.&quot;</span></span>
+<span id="cb35-4"><a href="htmlCSS.html#cb35-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>
 Use the 
 <code>bsButton</code>
@@ -663,17 +729,17 @@ function to create buttons in
   your Shiny app.
 </p>
 <p>If you need to display several lines of code, you should also use the pre-formatted HTML tag (<code>tags$pre()</code>) to ensure that the browser does not change any spacing/indentation on you.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="htmlCSS.html#cb36-1"></a>tags<span class="op">$</span><span class="kw">pre</span>(</span>
-<span id="cb36-2"><a href="htmlCSS.html#cb36-2"></a>  tags<span class="op">$</span><span class="kw">code</span>(</span>
-<span id="cb36-3"><a href="htmlCSS.html#cb36-3"></a><span class="st">&#39;bsButton(</span></span>
-<span id="cb36-4"><a href="htmlCSS.html#cb36-4"></a><span class="st">  inputId = &quot;resample&quot;,</span></span>
-<span id="cb36-5"><a href="htmlCSS.html#cb36-5"></a><span class="st">  label = &quot;Generate new sample&quot;,</span></span>
-<span id="cb36-6"><a href="htmlCSS.html#cb36-6"></a><span class="st">  size = &quot;large&quot;,</span></span>
-<span id="cb36-7"><a href="htmlCSS.html#cb36-7"></a><span class="st">  style = &quot;default&quot;,</span></span>
-<span id="cb36-8"><a href="htmlCSS.html#cb36-8"></a><span class="st">  icon = icon(&quot;retweet&quot;)</span></span>
-<span id="cb36-9"><a href="htmlCSS.html#cb36-9"></a><span class="st">)&#39;</span></span>
-<span id="cb36-10"><a href="htmlCSS.html#cb36-10"></a>  ) <span class="co"># Notice that the single quoted code doesn&#39;t match the usual coding alignment.</span></span>
-<span id="cb36-11"><a href="htmlCSS.html#cb36-11"></a>) <span class="co"># This is on purpose so that the we get the correct alignment in the rendered display below.</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="htmlCSS.html#cb36-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">pre</span>(</span>
+<span id="cb36-2"><a href="htmlCSS.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">code</span>(</span>
+<span id="cb36-3"><a href="htmlCSS.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;bsButton(</span></span>
+<span id="cb36-4"><a href="htmlCSS.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="st">  inputId = &quot;resample&quot;,</span></span>
+<span id="cb36-5"><a href="htmlCSS.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="st">  label = &quot;Generate new sample&quot;,</span></span>
+<span id="cb36-6"><a href="htmlCSS.html#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="st">  size = &quot;large&quot;,</span></span>
+<span id="cb36-7"><a href="htmlCSS.html#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="st">  style = &quot;default&quot;,</span></span>
+<span id="cb36-8"><a href="htmlCSS.html#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="st">  icon = icon(&quot;retweet&quot;)</span></span>
+<span id="cb36-9"><a href="htmlCSS.html#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="st">)&#39;</span></span>
+<span id="cb36-10"><a href="htmlCSS.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="co"># Notice that the single quoted code doesn&#39;t match the usual coding alignment.</span></span>
+<span id="cb36-11"><a href="htmlCSS.html#cb36-11" aria-hidden="true" tabindex="-1"></a>) <span class="co"># This is on purpose so that the we get the correct alignment in the rendered display below.</span></span></code></pre></div>
 <pre>
 <code>bsButton(
   inputId = "resample",
@@ -686,24 +752,24 @@ function to create buttons in
 </div>
 </div>
 </div>
-<div id="htmlID" class="section level2">
+<div id="htmlID" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> HTML <code>id</code></h2>
-<p>No matter which HTML tag you use, you can always specific the identifier attribute (<code>id</code>) for each element. When you use a shiny function, e.g., <code>numericInput</code>, and you supply a value to the <code>inputId</code> argument, or when you define an output and set a value to the <code>outputId</code>, you are defining the HTML <code>id</code> attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id’s.</p>
+<p>No matter which HTML tag you use, you can always specify the identifier attribute (<code>id</code>) for each element. When you use a shiny function, e.g., <code>numericInput</code>, and you supply a value to the <code>inputId</code> argument, or when you define an output and set a value to the <code>outputId</code>, you are defining the HTML <code>id</code> attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id’s.</p>
 <p>In the rare case where you do find yourself needing to assign an <code>id</code> to an HTML element, you simply include <code>id = "uniqueName"</code> inside the tag. Keep in mind the id must not be shared by any other element/object, including inputs and outputs.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="htmlCSS.html#cb37-1"></a><span class="kw">p</span>(</span>
-<span id="cb37-2"><a href="htmlCSS.html#cb37-2"></a>  <span class="dt">id =</span> <span class="st">&quot;idExample1&quot;</span>,</span>
-<span id="cb37-3"><a href="htmlCSS.html#cb37-3"></a>  <span class="st">&quot;Here is some text whose paragraph now has the name &#39;idExample1&#39;.&quot;</span></span>
-<span id="cb37-4"><a href="htmlCSS.html#cb37-4"></a>)</span>
-<span id="cb37-5"><a href="htmlCSS.html#cb37-5"></a><span class="kw">div</span>(</span>
-<span id="cb37-6"><a href="htmlCSS.html#cb37-6"></a>  <span class="dt">id =</span> <span class="st">&quot;idExample2&quot;</span>,</span>
-<span id="cb37-7"><a href="htmlCSS.html#cb37-7"></a>  tags<span class="op">$</span><span class="kw">ul</span>(</span>
-<span id="cb37-8"><a href="htmlCSS.html#cb37-8"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;Here&#39;s an example where the div&quot;</span>),</span>
-<span id="cb37-9"><a href="htmlCSS.html#cb37-9"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;has the name &#39;idExample2&#39; and contains&quot;</span>),</span>
-<span id="cb37-10"><a href="htmlCSS.html#cb37-10"></a>    tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;a list&quot;</span>)</span>
-<span id="cb37-11"><a href="htmlCSS.html#cb37-11"></a>  )</span>
-<span id="cb37-12"><a href="htmlCSS.html#cb37-12"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="htmlCSS.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb37-2"><a href="htmlCSS.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="st">&quot;idExample1&quot;</span>,</span>
+<span id="cb37-3"><a href="htmlCSS.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Here is some text whose paragraph now has the name &#39;idExample1&#39;.&quot;</span></span>
+<span id="cb37-4"><a href="htmlCSS.html#cb37-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb37-5"><a href="htmlCSS.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">div</span>(</span>
+<span id="cb37-6"><a href="htmlCSS.html#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="st">&quot;idExample2&quot;</span>,</span>
+<span id="cb37-7"><a href="htmlCSS.html#cb37-7" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb37-8"><a href="htmlCSS.html#cb37-8" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Here&#39;s an example where the div&quot;</span>),</span>
+<span id="cb37-9"><a href="htmlCSS.html#cb37-9" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;has the name &#39;idExample2&#39; and contains&quot;</span>),</span>
+<span id="cb37-10"><a href="htmlCSS.html#cb37-10" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;a list&quot;</span>)</span>
+<span id="cb37-11"><a href="htmlCSS.html#cb37-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb37-12"><a href="htmlCSS.html#cb37-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="css" class="section level2">
+<div id="css" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> CSS</h2>
 <p>Cascading Style Sheets (CSS) are one of the most common ways in which people style HTML web pages. We have opted to make use of CSS technologies in BOAST through a centralized file. This ensures that</p>
 <ol style="list-style-type: decimal">
@@ -714,7 +780,7 @@ function to create buttons in
 </ol>
 <p>At this point in time, only Neil and Bob make edits to the BOAST CSS file. However, anyone is welcome to recommend changes and additions as need arises.</p>
 <p>One of the perks of using the <code>boastApp</code> function, is that the loading of the BOAST CSS file is automatically done for you. The only things that you have to do is 1) write your app code, 2) use HTML tags appropriately, and 3) make sure to set the appropriate <code>skin</code> color in your app. Our CSS file will then do the rest (except for R plots).</p>
-<div id="cssProblems" class="section level3">
+<div id="cssProblems" class="section level3" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Problematic CSS in Old Apps</h3>
 <p>In many of the older apps, you will discover two highly problematic instances of CSS:</p>
 <ul>
@@ -722,52 +788,52 @@ function to create buttons in
 <ul>
 <li><p>Look in the <code>www</code> folder for any files that end in <code>.CSS</code></p></li>
 <li><p>Look in the app for any code that looks similar to this:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="htmlCSS.html#cb38-1"></a>tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>, <span class="dt">href =</span> <span class="st">&quot;/style.css&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="htmlCSS.html#cb38-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">link</span>(<span class="at">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="at">type =</span> <span class="st">&quot;text/css&quot;</span>, <span class="at">href =</span> <span class="st">&quot;/style.css&quot;</span>)</span></code></pre></div></li>
 </ul></li>
 <li>In-line CSS
 <ul>
 <li><p>These would be lines that might look like the following:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="htmlCSS.html#cb39-1"></a>tags<span class="op">$</span><span class="kw">style</span>(<span class="kw">HTML</span>(<span class="st">&quot;.js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar </span></span>
-<span id="cb39-2"><a href="htmlCSS.html#cb39-2"></a><span class="st">                {background: orange}&quot;</span>)),</span>
-<span id="cb39-3"><a href="htmlCSS.html#cb39-3"></a><span class="co"># OR</span></span>
-<span id="cb39-4"><a href="htmlCSS.html#cb39-4"></a>style=<span class="st">&quot;color: #fff; background-color: #337ab7; border-color: #2e6da4&quot;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="htmlCSS.html#cb39-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">style</span>(<span class="fu">HTML</span>(<span class="st">&quot;.js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar </span></span>
+<span id="cb39-2"><a href="htmlCSS.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="st">                {background: orange}&quot;</span>)),</span>
+<span id="cb39-3"><a href="htmlCSS.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># OR</span></span>
+<span id="cb39-4"><a href="htmlCSS.html#cb39-4" aria-hidden="true" tabindex="-1"></a>style<span class="ot">=</span><span class="st">&quot;color: #fff; background-color: #337ab7; border-color: #2e6da4&quot;</span></span></code></pre></div></li>
 </ul></li>
 </ul>
 <p>In both cases, CSS of questionable quality is at play and needs to be rectified. In many cases, these bits of CSS are interfering with the BOAST CSS. <strong>We need to eliminate all of these instances.</strong></p>
 </div>
 </div>
-<div id="using-css" class="section level2">
+<div id="using-css" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Using CSS</h2>
 <p>When we first began implementing our central CSS file, there was some push back in that students wouldn’t get any say in the styling of their apps. This is not necessarily true. What we have done is made a much more consistent and coherent set of options for the major elements. Each student still has the ability to put in place styling, as long as that styling adheres to our conventions and does not contradict the BOAST CSS file.</p>
-<div id="text-alignment" class="section level3">
+<div id="text-alignment" class="section level3" number="7.4.1">
 <h3><span class="header-section-number">7.4.1</span> Text Alignment</h3>
 <p>Students may use <code>style = "text-align: left/center/right;"</code> to impose styling choice of the alignment of elements. However, we do ask that students apply such styling to a division (<code>div()</code>) rather than to any other HTML tag. To see an example, see the <a href="htmlCSS.html#div">Division Tag example</a>.</p>
 <p>Other than text alignment, we <strong>discourage</strong> using the <code>style</code> argument with any CSS. (Note: some shiny functions like <code>bsButton</code> have a <code>style</code> argument which is different the <code>style</code> we’re discussing here.)</p>
 </div>
-<div id="classes" class="section level3">
+<div id="classes" class="section level3" number="7.4.2">
 <h3><span class="header-section-number">7.4.2</span> Classes</h3>
 <p>The key way that students can style elements is through the use of classes which live in the BOAST CSS file. A class refers a group of elements which should all have similar styling. Any CSS file essentially consists of class definitions. If you want to apply a particular styling to an app element, the preferred method is through a CSS class.</p>
 <p>To apply a class to an element, all you need to do is supply the <code>class = "className"</code> argument. Classes may be applied to divisions, paragraphs and even inputs/outputs. For example,</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="htmlCSS.html#cb40-1"></a><span class="co"># HTML Tag Example 1</span></span>
-<span id="cb40-2"><a href="htmlCSS.html#cb40-2"></a><span class="kw">p</span>(</span>
-<span id="cb40-3"><a href="htmlCSS.html#cb40-3"></a>  <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb40-4"><a href="htmlCSS.html#cb40-4"></a>  <span class="st">&quot;Attali, D. and Edwards, T. (2018). shinyalert: Easily create</span></span>
-<span id="cb40-5"><a href="htmlCSS.html#cb40-5"></a><span class="st">  pretty popup messages (modals) in &#39;Shiny&#39;. (v1.0). [R package].</span></span>
-<span id="cb40-6"><a href="htmlCSS.html#cb40-6"></a><span class="st">  Available from https://CRAN.R-project.org/package=shinyalert&quot;</span></span>
-<span id="cb40-7"><a href="htmlCSS.html#cb40-7"></a>)</span>
-<span id="cb40-8"><a href="htmlCSS.html#cb40-8"></a></span>
-<span id="cb40-9"><a href="htmlCSS.html#cb40-9"></a><span class="co"># HTML Tag Example 2</span></span>
-<span id="cb40-10"><a href="htmlCSS.html#cb40-10"></a><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 12/2/2019 by NJH.&quot;</span>)</span>
-<span id="cb40-11"><a href="htmlCSS.html#cb40-11"></a></span>
-<span id="cb40-12"><a href="htmlCSS.html#cb40-12"></a><span class="co"># Function Call Example</span></span>
-<span id="cb40-13"><a href="htmlCSS.html#cb40-13"></a><span class="kw">actionButton</span>(</span>
-<span id="cb40-14"><a href="htmlCSS.html#cb40-14"></a>  <span class="dt">inputId =</span> <span class="kw">paste0</span>(<span class="st">&quot;grid-&quot;</span>, row, <span class="st">&quot;-&quot;</span>, column),</span>
-<span id="cb40-15"><a href="htmlCSS.html#cb40-15"></a>  <span class="dt">label =</span> <span class="st">&quot;?&quot;</span>,</span>
-<span id="cb40-16"><a href="htmlCSS.html#cb40-16"></a>  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb40-17"><a href="htmlCSS.html#cb40-17"></a>  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
-<span id="cb40-18"><a href="htmlCSS.html#cb40-18"></a>  <span class="dt">class =</span> <span class="st">&quot;grid-fill&quot;</span></span>
-<span id="cb40-19"><a href="htmlCSS.html#cb40-19"></a>)</span></code></pre></div>
-<div id="existingCSS" class="section level4">
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="htmlCSS.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># HTML Tag Example 1</span></span>
+<span id="cb40-2"><a href="htmlCSS.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb40-3"><a href="htmlCSS.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb40-4"><a href="htmlCSS.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Attali, D. and Edwards, T. (2018). shinyalert: Easily create</span></span>
+<span id="cb40-5"><a href="htmlCSS.html#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="st">  pretty popup messages (modals) in &#39;Shiny&#39;. (v1.0). [R package].</span></span>
+<span id="cb40-6"><a href="htmlCSS.html#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="st">  Available from https://CRAN.R-project.org/package=shinyalert&quot;</span></span>
+<span id="cb40-7"><a href="htmlCSS.html#cb40-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-8"><a href="htmlCSS.html#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="htmlCSS.html#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># HTML Tag Example 2</span></span>
+<span id="cb40-10"><a href="htmlCSS.html#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 12/2/2019 by NJH.&quot;</span>)</span>
+<span id="cb40-11"><a href="htmlCSS.html#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-12"><a href="htmlCSS.html#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Function Call Example</span></span>
+<span id="cb40-13"><a href="htmlCSS.html#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="fu">actionButton</span>(</span>
+<span id="cb40-14"><a href="htmlCSS.html#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="fu">paste0</span>(<span class="st">&quot;grid-&quot;</span>, row, <span class="st">&quot;-&quot;</span>, column),</span>
+<span id="cb40-15"><a href="htmlCSS.html#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;?&quot;</span>,</span>
+<span id="cb40-16"><a href="htmlCSS.html#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb40-17"><a href="htmlCSS.html#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
+<span id="cb40-18"><a href="htmlCSS.html#cb40-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;grid-fill&quot;</span></span>
+<span id="cb40-19"><a href="htmlCSS.html#cb40-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div id="existingCSS" class="section level4" number="7.4.2.1">
 <h4><span class="header-section-number">7.4.2.1</span> Existing Classes</h4>
 <p>Here is a list of the current classes you may use</p>
 <ul>
@@ -782,7 +848,7 @@ function to create buttons in
 <li><code>leftParagraphError</code> (for use with <code>validate</code>’s <code>errorClass</code> argument): displays the validation error message as left aligned.</li>
 </ul>
 </div>
-<div id="newCSS" class="section level4">
+<div id="newCSS" class="section level4" number="7.4.2.2">
 <h4><span class="header-section-number">7.4.2.2</span> New Classes</h4>
 <p>You might run into cases where you want an element styled in a new way or you might be the first person to use some new element (e.g., Fall 2020 was the first time someone used <code>matrixInput</code>) that needs BOAST styling. We can create new classes to handle these cases. However, we ask that you follow this process:</p>
 <ol style="list-style-type: decimal">
@@ -828,6 +894,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
