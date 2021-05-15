@@ -1,21 +1,27 @@
 # (PART) Style Guide-App Layout {-}
 
-# App Layout {#layout}
+# App Layout {#layout -}
 
-When considering the Visual Appearance of your App, there are two major areas of consideration: the [Layout](#layout) and what we refer to as [Design Styling](#designStyle). Each of these will be handled in turn. Keep in mind that these two aspects are inter-related and have significant cross-over.
+When considering the Visual Appearance of your App, there are two major areas of consideration: the [App Layout](#layout) and what we refer to as [Design Styling](#designStyle). Each of these will be handled in turn. Keep in mind that these two aspects are inter-related and have significant cross-over.
 
-In this chapter, we will be focusing on the layout aspect of how your App looks. That is to say, we're going to talk about the standards/guidelines that cut across all of our apps so that they look like they belong together. 
+In this part of the Style Guide, we'll focus on the App Layout. The App Layout refers to all of our standards/guidelines for how you organize different elements of the user interface that are common to all of the BOAST apps. This ensures that all of the apps look like they belong together.
+
+There are two main components to App Layout: the [User Interface Structure](#uiStructure) and [Common Elements](#commonElements). Each of these will be their own chapter.
+
+# User Interface Structure {#uiStructure}
+
+In this chapter, we will be focusing on the layout aspect of how your App looks.
 
 A good number of the elements of the layout will have a direct consequence on your coding. For instance, in the section on [Organizing Your Code](#orgCode), you saw that the UI definition needed to come before the Server definition. This section defines additional organizational structure to your code as it pertains to the layout of your App.
 
-As a reminder, one of the most important benefits of using the `boastApp` function from the `boastUtils` package is that is that certain aspects of Visual Appearance will be automatically handled for you. However, you still need to do adhere to this Style Guide.
+As a reminder, one of the most important benefits of using the `boastApp` function from the `boastUtils` package is that is that certain aspects of Visual Appearance will be automatically handled for you. However, you still need to adhere to this Style Guide.
 
 ## Dashboard {#dashboard}
 
 All apps will make use of a Dashboard structure. This divides the visual appearance of each App into three main areas. 
 
 + Across the top of the App will be the Header 
-+ Along the left side of the App will be the navigation list (the Sidebar) where the various Tabs (pages) of your App will be listed
++ Along the left side of the App will be the navigation list (the Sidebar) where you will list the various Pages of your App
 + The last area is the Body; this is where all content will appear
 
 Several of the older apps will have outdated UI calls including, but not limited to: `shinyUI` and `navbarPage`. These functions should no longer be used; apps that use them need to be updated to become compliant with this Style Guide. 
@@ -28,7 +34,6 @@ Creating the overarching Dashboard layout in your App is actually quit easy:
 # Required package
 library(shinydashboard)
 
-# For app.R files
 # [code omitted]
 ui <- list(
   dashboardPage(
@@ -37,16 +42,11 @@ ui <- list(
   )
 )
 
-# For ui.R files
-dashboardPage(
-  skin = "blue",
-  # [code omitted]
-)
 ```
 
 The `dashboardPage` function will wrap around the rest of your UI element, thereby establishing the overarching structure. Three of this function's arguments (`header`, `sidebar`, and `body`) will be covered in following sections. We do not need to worry about the `title` argument as this will be controlled by the Dashboard Header. 
 
-The one argument that you need to explicitly set for the `dashboardPage` is the `skin` argument. This argument sets the overall color theme for your App. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout. 
+The one argument that you must explicitly set for the `dashboardPage` is the `skin` argument. This argument sets the overall color theme for your App. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout. 
 
 ### Color in the User Interface {#colorUI}
 
@@ -62,7 +62,7 @@ By using CSS, especially through `boastApp`, you’ll be able to ensure that the
 
 #### Implementing a Color Theme
 
-To activate a color theme is a simple process, especially if you are following this Style Guide and using the `boastUtils` package. (If you are in an App using ui.R and server.R, make sure that the boast.css call is in the ui.R file. See [Section \@ref(textStyle)](#textStyle).)
+To activate a color theme is a simple process, especially if you are following this Style Guide and using the `boastUtils` package. (In the rare case where you are using separate ui.R and server.R files, make sure that the boast.css call is in the ui.R file.
 
 In your App's code, go to where you first call the function `dashboardPage`. Then, as the first argument you'll type `skin = "[theme]"` before moving on the next argument, `dashboardHeader`.
 
@@ -330,7 +330,7 @@ knitr::include_graphics("images/colorThemes/blackSliders.png", dpi= NA)
 
 ##### Yellow
 
-The Yellow Palette is still under consideration. The current set looks like the following:
+The Yellow Palette looks like the following:
 ```{r yellowPalette, fig.cap="The Yellow Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
@@ -390,7 +390,7 @@ knitr::include_graphics("images/colorThemes/yellowSliders.png", dpi= NA)
 
 ##### Red
 
-The Red Palette is still under construction. Here's the current set:
+The Red Palette looks like the following:
 ```{r redPalette, fig.cap="The Red Palette", fig.align='center', fig.width=6, fig.height=2, echo=FALSE}
 ggplot2::ggplot() +
   ggplot2::geom_rect(
@@ -468,9 +468,9 @@ Here are the current (05/27/2020) color theme assignments for chapters:
 
 ## Dashboard Header {#header}
 
-Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon.  
+Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon with a link to a user survey back towards the center. 
 
-Additional icons might be included to the left of the Home icon. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.
+Additional icons might be included to the left of the Home and Survey icons. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.
 
 There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.
 
@@ -482,18 +482,21 @@ You will use the same structure regardless if you are using `app.R` or `ui.R`.
 ```{r makeHeader1, echo=TRUE, eval=FALSE}
 # [omitted code]
 dashboardHeader(
-      title = "Sample App", # You may use a shortened form of the title here
-      titleWidth = "250",
-      # the following is OPTIONAL
-      tags$li(class = "dropdown", actionLink("info", icon("info"))),
-      # You will see the following commented code in the Sample App; 
-      # you may delete this from your app
-      # tags$li(class = "dropdown",
-      #         tags$a(href='https://github.com/EducationShinyAppTeam/BOAST',
-      #                icon("github"))),
-      # the following is REQUIRED and must be last.
-      tags$li(class = "dropdown",
-              tags$a(href='https://shinyapps.science.psu.edu/', icon("home")))
+      title = "App Template", # You may use a shortened form of the title here
+      titleWidth = 250,
+      tags$li(class = "dropdown", actionLink("info", icon("info"))), # Optional
+      # The next two are required
+      tags$li(
+        class = "dropdown",
+        boastUtils::surveyLink(name = "App_Template") # Replace App_Template with the repo name for your app 
+      ),
+      tags$li(
+        class = "dropdown",
+        tags$a(href = 'https://shinyapps.science.psu.edu/',
+               icon("home")
+        )
+      )
+    )
 )
 # [omitted code]
 ```
@@ -506,13 +509,15 @@ A couple of things to notice:
 + The `info` icon is optional; if you use this keep in mind two things:
     - You will need to define what the link does in the `server` definition.
     - This link's action remains the same for all tabs of your app. Thus, you should not use this to store or be the main conveyance of critical information/instructions for using a particular tab of your App.
++ The second to last element of the Header will always be the Survey link icon. This will take the user to a Qualtrics survey where they can provide us with feedback.
+    - You'll need to use the `boastUtils::surveyLink` function here.
 + The last element of the Header (i.e., the rightmost) will always be the home icon which takes the user to the BOAST home page.
 
 ### What's Needed in the Server Definition
 
-If you just have a bare bones Header (i.e., title and home button), you do not need to add anything special to your server definition.
+If you just have a bare bones Header (i.e., title, survey link, and home button), you do not need to add anything special to your server definition.
 
-If you do have something, for example, an Info button. You will need to add some additional code to your server definition. The code you add will depend upon the element. In general, for alert messages, we recommend that you use `shinyWidgets::sendSweetAlert`. Here's a generic example of what could be used for the Info button.
+If you have anything else (e.g., an Info button), you will need to add additional code to your server definition. The code you add will depend upon the element. In general, for alert messages, we recommend that you use `shinyWidgets::sendSweetAlert`. Here's a generic example of what could be used for the Info button.
 
 ```{r infoServer, echo=TRUE, eval=FALSE}
 # Required Packages
@@ -548,35 +553,38 @@ The `type` argument will take one of several options. use the one that best alig
 
 ## Dashboard Sidebar {#sidebar}
 
-The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. These are referred to as [Tabs Inside the Body](#innerTabs) and are covered in their own section.
+The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. We refer to these as [Tabs Inside the Body or Tabs](#innerTabs) and are covered in their own section.
 
 The Sidebar should have a width of 250, (`width = 250`).
 
-For full descriptions of each type of Tab, please refer to the [Dashboard Body Section](#body).
+For full descriptions of each type of Page, please refer to the [Dashboard Body Section](#body).
 
 ### Creating the Dashboard Sidebar
-This code will be the same regardless if you use `app.R` or `ui.R`.
+
+You'll need to use the following code as a template for creating the Sidebar. You will need to customize this to match your app's goals and design.
+
 ```{r makeSidebar1, echo=TRUE, eval=FALSE}
 # [omitted code]
 dashboardSidebar(
   width = 250,
   sidebarMenu(
-    id = "tabs",
+    id = "pages", # Use "pages" to name the menu
     # Overivew is REQUIRED
-    menuItem("Overview", tabName = "Overview", icon = icon("dashboard")),
+    menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
     # Prerequisites is optional
-    menuItem("Prerequisites", tabName = "Prerequisites", icon = icon("book")),
-    # At least one of the next three is REQUIRED
-    menuItem("Explore", tabName = "Explore", icon = icon("wpexplorer")),
-    menuItem("Challenge", tabName = "Challenge", icon = icon("gears")),
-    menuItem("Game", tabName = "Game", icon = icon("gamepad")),
+    menuItem("Prerequisites", tabName = "prerequisites", icon = icon("book")),
+    # At least one of the next four is REQUIRED
+    menuItem("Explore", tabName = "explore", icon = icon("wpexplorer")),
+    menuItem("Challenge", tabName = "challenge", icon = icon("gears")),
+    menuItem("Game", tabName = "game", icon = icon("gamepad")),
+    menuItem("Wizard", tabName = "wizard", icon = icon("hat-wizard")),
     # References is REQUIRED
     menuItem("References", tabName = "References", icon = icon("leanpub"))
   ),
-  # PSU Logo is REQUIRED and to be last
+  # The sidebar must end with the following code, exactly
   tags$div(
     class = "sidebar-logo",
-    boastUtils::psu_eberly_logo("reversed")
+    boastUtils::sidebarFooter()
   )
 )
 # [omitted code]
@@ -589,74 +597,105 @@ To ensure consistency across all apps, the Sidebar needs to have the following o
 
 1. The Overview Tab should always come first.
 2. If used, a Prerequisites Tab will come second.
-3. An Activity Tab (Explore, Challenge, or Game) will come next.
+3. An Activity Tab (Explore, Challenge, Game, Wizard, etc.) will come next.
 4. If there are multiple Activity Tabs, then
     a. Order by Concept so that Tabs dealing with the same idea are together,
     b. Then order by Explore, Challenge, then Game
     c. If a Game Tab covers multiple Explore/Challenge Tabs, place after the last of the Explore/Challenge Tabs
     d. For a set of Activity Tabs of the same type (e.g., three Explore Tabs), the order will be up to you and the learning goals for your App
 5. The References Tab will always come after the Activity Tabs and be the last element of the `sidebarMenu`.
-6. The PSU Logo will always be the last element of the Sidebar, and outside of the `sidebarMenu` call. Please refer to the [Section \@ref(logo)](#logo).
+6. The last element of the Sidebar will always be the PSU Logo. To ensure that this element is consistent across all apps, we will use a special function, `boastUtils::sidebarFooter`. You will need to copy the above code, including the `div` and use that exactly in your App. You'll place this code after (outside of) the `sidebarMenu` call but still inside the `dashboardSidebar` call. Please refer to the [Section \@ref(logo)](#logo).
 
 *Note: this order will also dictate how you should organize your code in the [Dashboard Body](#body).*
 
 ### Sidebar Names
-There are three Tabs whose names are fixed (i.e., you can not change): the Overview, Prerequisites, and References. The Activity Tabs will be named in the following manner:
 
-+ If there is only one Activity Tab of each type, you may use the names Explore, Challenge, and Game.
+There are three pages whose names are fixed (i.e., you can not change): the Overview, Prerequisites, and References. The rest of the pages should be named according to the following conventions:
+
++ __Only One Page of Any Type__: when you only have one Activity page of a particular type (e.g., one Explore, one Challenge), you can use the type of activity as the name. That is, you can call the pages "Explore", "Challenge", etc.
++ __Multiple Pages of the Same Type__: when you have several pages that are all the same Activity type, you need to give each page an appropriate name. For example,
+    - In the [NHST Caveats App](https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/), there are three Explore pages: the Multiple Testing Caution, the Large Sample Caution, and the Small Sample Caution.
+    - In the [One-way ANOVA App](https://psu-eberly.shinyapps.io/OneWay_ANOVA/) there are two Game pages: a Matching Game and a Fill in the Blank game.
++ __Clarity Matters__: The names of the pages need to be meaningful to others. Thus, you will need to ensure that
+    - You don't use a name that is so long it doesn't get displayed properly.
+    - You don't use a name that is confusing; the user should be able to anticipate where they are headed when they click on the link.
+    - Related to the last, you don't set the user up to anticipate going to one activity but wind up at a different activity.
+
+ff there is only one Activity Tab of each type, you may use the names Explore, Challenge, and Game.
 + If there are multiple Tabs of each type, you will need to rename each tab as appropriate. For example,
-    - In the [NHST Caveats App](https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/), there are three Explore tabs: the Multiple Testing Caution, the Large Sample Caution, and the Small Sample Caution.
-    - In the [One-way ANOVA App](https://psu-eberly.shinyapps.io/OneWay_ANOVA/) there are two Games: a Matching Game and a Fill in the Blank game.
+    - 
 
 ### Sidebar Icons
-Each type of Tab that appears in the Sidebar must use a specific icon:
 
-+ Overview -- tachometer-alt (formerly called dashboard), `r fontawesome::fa(name = "fas fa-tachometer-alt", height = "25px")` 
-+ Prerequisites -- book, `r fontawesome::fa(name = "fas fa-book", height = "25px")`
-+ Explore Tabs -- wpexplorer, `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")`
-+ Challenge Tabs -- cogs (formerly called gears), `r fontawesome::fa(name = "fas fa-cogs", height = "25px")`  
-+ Game Tabs -- gamepad, `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")`
-+ References -- leanpub, `r fontawesome::fa(name = "fab fa-leanpub", height = "25px")`
+For each type of Page in BOAST apps, we use a specific icon in the sidebar menu. This helps establish a common theme across all of the apps so that users can have some instant familiarity as they interact with new apps.
 
-If you come across any of these types of tabs that have a different icon or a missing icon, please create an issue in GitHub and/or fix.
+In each `menuItem` call, you'll want to use the following code `icon = icon("iconName")` to ensure that the appropriate icon is used. The listing of what you'll use in place of `iconName` appears in the following table. Note: you'll want to make sure that you keep the quotation marks when you code.
 
-If there is a type of tab that does fit these, please talk to Neil to see about what we need to add.
+| Page Type | `iconName` | Icon |
+|:----------|:---------:|:----:|
+| Overview | `"tachometer-alt"` | `r fontawesome::fa(name = "fas fa-tachometer-alt", height = "25px")` |
+| Prerequisites | `"book"` | `r fontawesome::fa(name = "fas fa-book", height = "25px")` |
+| Explore | `"wpexplorer"` | `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")` |
+| Challenge | `"cogs"` | `r fontawesome::fa(name = "fas fa-cogs", height = "25px")` |
+| Game | `"gamepad"` | `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")` |
+| Wizard | `"hat-wizard"` | `r fontawesome::fa(name = "fas fa-hat-wizard", height = "25px")` |
+| References | `"leanpub"` | `r fontawesome::fa(name = "fab fa-leanpub", height = "25px")` |
+
+If you come across any of these types of pages that have a different icon or a missing icon, please create an issue in GitHub and/or fix.
+
+If there is a type of page that does fit these, please talk to Neil to see about what we need to add.
 
 ### Submenus
-Given the nature of our Apps, there is __NO__ reason for having submenus. If you come across an app that has submenus or you believe that a submenu is necessary, then that is a good sign that you are looking at a "bloated" app. These apps need to be marked for review to investigate breaking the app in to two or more apps.
+
+Given the nature of our Apps, there is __NO__ reason for having submenus. If you come across an app that has submenus or you believe that a submenu is necessary, then that is a good sign that you are looking at a "bloated" app. These apps need to be marked for review to investigate re-designing the app and potentially splitting the app in to two or more apps.
 
 ### What's Needed in the Server Definition
 
-If you have followed the above specifications, you do not need to add anything special to your server definition.
+If you have followed the above specifications, you do not need to add anything special to your server definition. The `dashboardSidebar` function will automatically take care of everything that is needed. 
+
+The most important thing is that you keep track of what you set for each `tabName` argument. When you build the pages in the [Dashboard Body](#body) or want to create a button that sends the user to a particular page, these are the values that will be crucial.
 
 ## Dashboard Body {#body}
 
 The Dashboard Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with. Thus, this is the most important part of the layout of your App.
 
-The order in which your code the Tabs in the Dashboard body needs to mirror the order of the tabs in the Sidebar. Thus, the first `tabItem` in the `dashboardBody` should be the Overview; the last, the References.
+The order in which your code the Pages in the Dashboard body needs to mirror the order of the tabs in the Sidebar. This helps not only you keep track of where you're at, but is kind to future readers of your code.
 
-The Dashboard Body will begin with the following code in the UI section:
+The `dashboardBody` call will be the last element of the `dashboardPage` call inside of your User Interface (UI) list definition. Within the `dashboardBody` you will need to call the function `tabItems`. This will help your App make a connection between the menu items in your Sidebar and the pages that you make in the Body.
+
+Inside the `tabItems` call, you will then need to create separate `tabItem` calls--one for each Page you listed in your Sidebar menu. Each `tabItem` has a critical argument __which you must explicitly set__: `tabName`. The `tabName` argument needs to match the `tabName` you used in the Sidebar. (Remember `R` is case sensitive, thus "Overview" and "overview" are viewed as two distinct objects.)
+
+Once you have set the value for `tabName`, you can choose to include the code `withMathJax()`. This line of code is needed if you plan to include any mathematical formulas. You can omit this line if you are not going to. We will note that a safe default is to go ahead and include this line of code. We must stress that you have to include `withMathJax()` on each page of your app.
+
+What comes after these two lines of code will be all of the code necessary to bring the page of your App to life. However, the most important thing to remember while you're coding in this section are __*commas*__. After you finish each bit of code and before you move on to the next item on the page, you must place a comma and then return to a new line.
+
+The following code can serve as an example to help you get started:
 
 ```{r makeBody1, echo=TRUE, eval=FALSE}
 # [code omitted]
 dashboardBody(
   tabItems(
     tabItem(
-      tabName = "Overview", # needs to match the names you used in the Sidebar
-      withMathJax(), # if you need to display mathematics, include this line
-      # [code for the tab]
+      tabName = "overview",# needs to match the names you used in the Sidebar
+      withMathJax(),# if you need to display mathematics, include this line
+      h1("Sample Application for BOAST Apps"), 
+      p("This is a sample Shiny application for BOAST."),
+      h2("Instructions"),
+      # [code for the page continues]
     ),
-    # repeat tabItem chunk for each subsequent tab
+    tabItem(
+      # repeat tabItem chunk for each subsequent page
+    )
   )
 )
 # [code omitted]
 ```
 
-The following subsections explain the purposes of each type of Tab.
+The following subsections explain the purposes of each type of Page.
 
-### The Overview Tab
+### The Overview Page
 
-This Tab is __REQUIRED__ for all Apps. This is the main landing page of your App and should appear at the top of the Sidebar. The icon for this Tab must be "dashboard".
+This page is __REQUIRED__ for all Apps. This is the main landing page of your App and should appear at the top of the Sidebar. The icon for this page must be "dashboard".
 
 The Overview Tab must contain __ALL__ of the following elements:
 
@@ -664,29 +703,25 @@ The Overview Tab must contain __ALL__ of the following elements:
 2.  A description of the app (as paragraph text under the title)
 3.  “Instructions” (as Heading 2)
 4.  General instructions for using the App (using an Ordered List environment)
-5.  A button that will take the user to the next Tab/page (see [Section \@ref(buttons)](#buttons) on buttons)
-6.  “Acknowledgements” (as Heading 2)
-7.  A listing of acknowledgements including, coders, content writers, etc. (as a paragraph)
+5.  A button that will take the user to the next page (see [Section \@ref(buttons)](#buttons) on buttons)
+6.  “Acknowledgments” (as Heading 2)
+7.  A listing of acknowledgments including, coders, content writers, etc. (as a paragraph)
 8.  Last Element: `div(class = "updated", "Last Update: mm/dd/yyyy by FL.")` with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.
 
-The purpose of the Overview Tab is the act like the front/home page of any newspaper, magazine, or website. Set the stage for what the user will be doing.
+The purpose of the Overview Page is the act like the front/home page of any newspaper, magazine, or website. Set the stage for what you want the user to learn through your App.
 
-#### Creating the Overview Tab
-Here's an example of making an Overview Tab
+#### Creating the Overview Page
+
+Here's an example of making an Overview Page:
 ```{r makeOverview1, echo=TRUE, eval=FALSE}
-# Required Package
-library(shinyBS)
-
 # In the UI Section
 # Inside the Dashboard Body
-
+#### Set up the Overview Page ----
 tabItem(
-  tabName = "Overview",
+  tabName = "overview",
   withMathJax(),
   h1("Sample Application for BOAST Apps"), # This should be the full name.
   p("This is a sample Shiny application for BOAST."),
-  p("While not a proper app for helping students learn some statistical concept,
-    this app functions as an example for a variety of features."),
   h2("Instructions"),
   p("This information will change depending on what you want to do."),
   tags$ol(
@@ -694,39 +729,40 @@ tabItem(
     tags$li("Explore the Exploration Tab."),
     tags$li("Challenge yourself."),
     tags$li("Play the game to test how far you've come.")
-    ),
-  ##### Go Button--location and text will depend on your goals
+  ),
+  ##### Go Button--location will depend on your goals ----
   div(
     style = "text-align: center",
     bsButton(
-      inputId = "explore1",
-      label = "Explore!", # Notice there are NO spaces between the letters
+      inputId = "go1",
+      label = "GO!",
       size = "large",
       icon = icon("bolt"),
       style = "default"
-      )
-    ),
-  ##### Create two lines of space
+    )
+  ),
+  ##### Create two lines of space ----
   br(),
   br(),
   h2("Acknowledgements"),
-  p("This version of the app was developed and coded by Neil J. Hatfield and Robert P.
-    Carey, III.",
+  p(
+    "This version of the app was developed and coded by Neil J. Hatfield
+    and Robert P. Carey, III.",
     br(),
     "We would like to extend a special thanks to the Shiny Program Students.",
-    #### Create three lines of space
     br(),
     br(),
     br(),
-    div(class = "updated", "Last Update: 5/13/2020 by NJH.")
+    div(class = "updated", "Last Update: 5/14/2021 by NJH.")
   )
-)
+),
+
 ```
 
 A few things to notice:
 
 + If you need a new line but not a new paragraph, you use the `br()` tag. 
-+ The label for the button needs to be in-line with [Section \@ref(buttons)](#buttons).
++ The label for the button needs to be consistent with [Section \@ref(buttons)](#buttons).
 + There should __NOT__ be any spaces between letters of a button label. This is a violation of Accessibility as this destroys the label. While we might read "G (space) O" as the word "go", a screen reader reads out "gee" (pause) "oh" to the user.
 + There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, "Instructions:" does not follow this Style Guide.
 + There should not be an "About" heading. The text between the Title of your App and the Instructions head serves as the description.
@@ -735,66 +771,49 @@ A few things to notice:
 
 At bare minimum you will need to have one element in your server definition: the action for your button. If you have multiple buttons, you might need to have several more code chunks. 
 
-Here is a generic example for the button on the Overview Tab that moves the user to the appropriate next Tab:
+Here is a generic example for the button on the Overview Page that moves the user to the appropriate next page:
 
 ```{r movementButton1, echo=TRUE, eval=FALSE}
-## Define what each button does; repeat this style of coding for each button
-
 # In your server section
 # [code omitted]
 observeEvent(
-  eventExpr = input$expore1, #append the button's inputId to input$ as the event expression
+  eventExpr = input$go1, #append the button's inputId to input$ as the event expression
   handlerExpr = { # This is the action portion of your button and must be in { }
-  updateTabItems(session, # This how you allow the user to move Tabs
-                 inputId = "tabs", # the id of your Sidebar
-                 selected = "Explore" # Name of Tab to go to
-                 ) 
+    updateTabItems(
+      session = session, # This allows the user to move pages
+      inputId = "pages", # the id of your Sidebar
+      selected = "explore" # Name of page to go to
+    ) 
 })
 ```
 
-In the rare cases where you're having a button in the Overview Tab do something other than move to a new tab, you'll change the `handlerExpr` to do that other action. 
+In the rare case where you have other things happening on the Overview page, you'll need to include the appropriate calls in your server section to carry out those actions for you. 
 
-#### Buttons that Go to Activity Packets
+### A Prerequisites Page
 
-An exception to the above is if the button is to allow the user to download/open up an activity file. In these cases, you'll not place any code in the server definition. Rather, you'll change the nature of the button. Specifically, you'll not use `bsButton` but `actionButton`:
+If your App needs to ensure that the user has the base understandings necessary to interact with your App, you'll need to create a Prerequisites Page. Otherwise, you can omit this page.
 
-```{r actionButton1, echo=TRUE, eval=FALSE}
-# In the UI Section
-actionButton(
-  inputId = "ap1",
-  label = "Activity Packet",
-  icon = icon("cloud-download"),
-  onclick = "window.open('../../ActivityPackets/Caveats/')"
-)
-```
-
-Notice that the `onclick` argument is what creates the action for button and references a relative path to a particular file. In this case a R Markdown file that lives the in directory called. (The actual file name isn't listed to ensure that the processed/rendered version of the RMD is what the users see.)
-
-### A Prerequisites Tab
-
-If your App needs to ensure that the user has the base understandings necessary to interact with your App, you’ll need to create a prerequisites Tab. Otherwise, skip this Tab.
-
-The icon for this Tab must be "book".
-
-Use the word "Prerequisites" rather than "Pre-reqs", "Prereqs", or "Pre-requisites". 
+The icon for this Page must be "book". Use the word "Prerequisites" rather than "Pre-reqs", "Prereqs", or "Pre-requisites". 
 
 #### Types of Prerequisites
-There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites tab.
+
+There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites Page.
 
 Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App's statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.
 
 Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you're using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus. 
 
-Keep in mind that Contextual Prerequisites are different than context which should be part of the Activity Tab. If the information is necessary to interpret sliders/graphs and is *specific*, then you should include this information in the Activity Tab. If the information helps the user say "Oh, that's what they mean by [blank]", that is good sign of something to put in the Prerequisites Tab.
+Keep in mind that Contextual Prerequisites are different from the context which should be part of an Activity Page. If the information is necessary to interpret sliders/graphs and is *specific*, then you should include this information on the Activity Page. If the information helps the user say "Oh, that's what they mean by [blank]", that is good sign of something to put in the Prerequisites Page.
 
 #### Text Links in Prerequisites (and Beyond)
-In as many instances as possible, we would like to provide the user with a link to Online Notes of a World Campus Statistics course. 
 
 *Note: what appears here is applicable any time you want to link to an webpage that is beyond BOAST.*
 
+In as many instances as possible, we would like to provide the user with a link to Online Notes of a World Campus Statistics course. 
+
 The link that you provide must take the user to the appropriate location. Do not send the user to the home page for a course; rather, take them to the relevant page. To do this, you'll need to explore the [Department of Statistics STAT ONLINE](https://online.stat.psu.edu/statprogram/) page and look through the courses. 
 
-You will create these links in-line, not as a button. Thus, they must be part of a paragraph block (i.e., inside a `p()` with other text) or as part of list item (i.e., inside a `li()`).
+You will create these links in-line, not as a button. Thus, they must be part of a paragraph block (i.e., inside a `p()` with other text) or as part of list item (i.e., inside a `li()`). 
 
 Your link must include descriptive text. Using "Click Here" is __not__ descriptive. Rather say where the link will take the user. If you look through the links that we've included in this Style Guide, we've been modeling this. This descriptive text not only helps all users anticipate where they are going but also improves the accessibility of the links. (Plus, have you ever tried to click a small link on your phone?)
 
@@ -802,7 +821,7 @@ Once you find the appropriate page, you'll need to copy the URL for your link. T
 
 *Note: not all requests for anchors may be fulfilled and not all course notes have anchors.
 
-The styling of the link will be managed by the BOAST CSS file.
+The styling of the link will be managed by the BOAST CSS file. See the following examples as well as [HTML-Links](#bodyLinks) section.
 
 Here's are two examples of how you would code a text link:
 ```{r textLinkEx1, echo=TRUE, eval=FALSE}
@@ -814,8 +833,9 @@ p("While not critical, you might wish to refresh your understanding on some of t
   of graphs in statistics. A good resource for this would be the ", # Notice the ending space
   tags$a(
     herf = "https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes", #the URL
-    "STAT 100 Table of Graph Shapes" # the descriptive text for the link
-    ),
+    "STAT 100 Table of Graph Shapes", # the descriptive text for the link
+    class = "bodylinks"
+  ),
   ". Feel free to check that resource out." 
   # Notice the ending punctuation for the prior sentence is not part of the link.
 )
@@ -825,8 +845,9 @@ tags$ul(
   tags$li("Review the ", # Notice the ending space
     tags$a(
       herf = "https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes", #the URL
-      "STAT 100 Table of Graph Shapes" # the descriptive text for the link
-      )
+      "STAT 100 Table of Graph Shapes", # the descriptive text for the link
+      class = "bodylinks"
+    )
     # List items don't necessarily need ending punctuation. 
     #Be consistent; either all items do or none.
   ) 
@@ -834,13 +855,13 @@ tags$ul(
 # [omitted code]
 ```
 
-#### Creating a Prerequisites Tab
-Here's an example of the code needed to create the Prerequisites Tab in the UI:
+#### Creating a Prerequisites Page
+Here's an example of the code needed to create the Prerequisites Page in the UI:
 
 ```{r makePrereq1, echo=TRUE, eval=FALSE}
 # [code omitted]
 tabItem(
-  tabName = "Prerequisites",
+  tabName = "prerequisites",
   withMathJax(), # this line only need if you display mathematics
   h2("Prerequisites"),
   p("In order to get the most out of this app, please review the following:"),
@@ -887,56 +908,46 @@ For more information on collapsible boxes, see [Section \@ref(collapsible)](#col
 
 #### What's Needed in the Server Definition
 
-Generally speaking, the purpose of the Prerequisites Tab is to convey key background information for the user to double check they understand before moving into the heart of your App. Thus, this tab contains static text and images. You do no need to have anything in the server definition for the Prerequisites Tab.
+Generally speaking, the purpose of the Prerequisites Page is to convey key background information for the user to double check they understand before moving into the heart of your App. Thus, this page contains static text and images. Thus, it is rare that you would need to include anything in the server definition for this page.
 
-###  Activity Tab(s)
+###  Activity Pages
 
-The heart of your App is the one or more tabs where users interact with the App beyond simple navigation. These are the Activity Tabs. Some apps will have a single activity, others several; deciding on how many is part of the design process.
+The heart of your App is the one or more tabs where users interact with the App beyond simple navigation. These are the Activity Pages. Some apps will have a single activity, others several; deciding on how many is part of the design process.
 
-Currently, we have three types of Activity Tabs in BOAST:
+Currently, we have four types of Activities in BOAST:
 
-+ Exploration/Explore Tabs, `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")`
-    - These tabs center around the user exploring the target concept.
-    - These tabs will generally have more text on the page here than other types of Activity Tabs.
++ Exploration/Explore Pages, `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")`
+    - These pages center around the user exploring the target concept.
+    - These pages will generally have more text on the page here than other types of Activities.
     - There are often guiding questions meant to help the user engage in productive explorations.
     - The goal is not to assess the user's understanding, but to support their construction of productive meanings for the concept.
-+ Challenge Tabs, `r fontawesome::fa(name = "fas fa-cogs", height = "25px")`
-    - These tabs center around a user challenging themselves by testing out their understanding of a concept.
-    - While there might still be a fair amount of text on the page, there will be less than an Exploration Tab.
++ Challenge Pages, `r fontawesome::fa(name = "fas fa-cogs", height = "25px")`
+    - These pages center around a user challenging themselves by testing out their understanding of a concept.
+    - While there might still be a fair amount of text on the page, there will be less than an Exploration page..
     - Questions here will be in-between a guiding question and an assessment question. 
     - The goal is to provide the user an opportunity to test and refine their understandings.
-+ Game Tabs, `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")`
-    - These tabs center around the user review a concept (or several) in a game like format.
++ Game Pages, `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")`
+    - These pages center around the user reviewing a concept (or several) in a game like format.
     - These generally have the least amount of non-question text on the page (i.e., instructions).
     - The goal is to provide an opportunity for a student to review and practice one or more concepts.
++ Wizard Pages, `r fontawesome::fa(name = "fas fa-hat-wizard", height = "25px")`
+    - This is the newest (and rarest) of the Activity Page types (currently only in the [Hasse Diagram App](https://psu-eberly.shinyapps.io/Hasse_Diagrams/))
+    - This type of page centers on helping the student create something
+    - The goal is to help students apply their understandings of a concept to create something, typically for a prompt external to the app.
 
-#### General Layout for Activity Tabs
-
-While there are some differences between the different types of Activity Tabs, there is one firm constant for all of them:
-
-__Each Tab should contain all information/instructions for the user to be able to interact with the activity without having to switch to other Tabs.__
-
-There is nothing worse for the user than getting to an Activity Tab and not knowing what they are supposed to do. The Instructions on the Overview are for using the *entire* App, not any one particular page. Thus, you need to have specific page instructions somewhere on the page.
-
-Keep in mind that this is beneficial to all users, but especially those who are using assistive technology such as screen readers. If you put your instructions on a separate tab, you are now requiring that your user memorize those instructions. This is already cognitively demanding for sighted individuals, but for users with vision impairments, even more so.
-
-In addition, we will adopt a 3-part layout:
-
-+ Across the top will be any general information the user needs to interact with your App as well as an context information.
-+ To the left and wrapped in a well panel will be the inputs/controls that the user will need to manipulate.
-+ To the right and NOT in a well panel will be the outputs (graphs, images, R output)
-
-There will be some cases where this general layout does not necessarily work. For instance, Tic-Tac-Toe games will not follow this layout. 
+We will talk more about the layout of the Activity pages in [Section \@ref(activityLayout)](#activityLayout).
 
 #### UI and Server Definitions
 
-At this time, we do not have any examples of creating these tabs for this Style Guide. Rather, we encourage you to look at the many examples in the [Book of Apps for Statistics Teaching](https://sites.psu.edu/shinyapps/) as well as the [GitHub Repository for BOAST](https://github.com/EducationShinyAppTeam).
+We've opted to not include any specific examples of the UI or server code for the Activity pages here. Partly, we don't want to convey that there is only *one* way to code these pages by giving specific examples too early. Mostly though, we want to stress that the coding you do here depends almost entirely upon your goals for your App.
 
-Keep in mind that of all tabs in your App, these tabs will demand the most for the UI and the Server.
+We will be giving examples of how to code particular elements that you might need to include in your app throughout this Style Guide; draw upon those examples to help you with particular elements. Further, we encourage readers to spend time looking at the live versions of the apps in the [Book of Apps for Statistics Teaching](https://sites.psu.edu/shinyapps/) and then looking at the matching code located at the [GitHub Repository for BOAST](https://github.com/EducationShinyAppTeam).
 
-### References {#refTab}
+Keep in mind that of all pages in your App, the Activity pages will demand the most of you for coding. 
 
-The last Tab will be for your references. This Tab is __REQUIRED__ and is where you will place a reference list for all of the following items that you used in your app:
+### References Page {#refPage}
+
+The last page will be for your references. This Page is __REQUIRED__ and is where you will place a reference list for all of the following items that you used in your app:
 
 + All `R` packages you used
 + Sources of any Code you used directly or drew heavily upon from other people
@@ -948,15 +959,15 @@ The icon for this Tab must be "leanpub", `r fontawesome::fa(name = "fab fa-leanp
 
 We will additionally place licensing information for your App at the bottom of the Reference page. We have created a function in `boastUtils` (version ≥ 0.1.6.1) that will automatically put the correct information on the page.
 
-#### Creating a References Tab
+#### Creating a References Page
 
-Creating a References Tab mimics both the Overview and Prerequisites Tab structure and is done in the UI section:
+Creating a References Page mimics both the Overview and Prerequisites Pages' structure and is done in the UI section:
 
 ```{r makeRef, echo=TRUE, eval=FALSE}
 # In the UI Section
 # [code omitted]
 tabItem(
-  tabName = "References",
+  tabName = "references",
   withMathJax(), # Rarely, if ever, will you need MathJax in the references
   h2("References"),
   p( # Each reference is in its own paragraph
@@ -1000,239 +1011,173 @@ tabItem(
 
 #### What's Needed in the Server Definition
 
-You do not need to place anything in the server definition for the References Tab.
+You do not need to place anything in the server definition for the References Page.
 
-### Tabs Inside the Body {#innerTabs}
+## Layout of Activity Pages {#activityLayout}
 
-There are two types of tabs in a Shiny app: there are the `tabItem` (i.e., the pages within an app and should appear in the Sidebar) and `tabPanel` (i.e., creating sub-pages or independent sections). In this section, we will discuss this later case.
+Now that we've discussed the more general layout of your App, we can turn our attention to the layout of your Activity pages. As previously mentioned, the layout you use here will need to support the goals of your App. While there are several possible styles, there is one firm constant that everyone must adhere to:
 
-Deciding on whether to use `tabPanel` is going to depend on several things:
+__Each page should contain all information/instructions necessary for the user to be able to interact with the activity without having to switch to other pages.__
+
+In essence, if we were to give a person just the Activity page, they should be able to engage fully and completely with the activity without needing to refer to any other pages. This will ensure that you treating other pages as they are intended as well as ensuring your users can have success in using your App.
+
+### Two Required Elements
+
+No matter what layout you end up using, they all require the same two required first elements: a page title and some opening text.
+
+#### Page Title
+
+The Page Title will be enclosed in the Header 2 tag, `h2`, and should be a meaningful title related to what the user will be doing. For an Exploration/Explore page, you can't just say "Explore", you need to say *what* they will be exploring. Similarly, for the other types of pages. 
+
+#### Opening Text
+
+Immediately after the Page Title, you'll want to add some text, typically enclosed in the paragraph tag, `p`. This is where you'll want to 
+
++ give any specific background information,
++ set up any particular contexts, and/or
++ give instructions.
+
+There is nothing worse for the user than getting to an Activity page and not knowing what they are supposed to do. The Instructions on the Overview are for using the *entire* App, not any one particular page. Thus, you need to have specific page instructions somewhere on the page.
+
+Keep in mind that this is beneficial to all users, but especially those who are using assistive technology such as screen readers. If you put your instructions on a separate page or hidden somewhere else, you are now requiring that your user memorize those instructions. This is already cognitively demanding for sighted individuals, but for users with vision impairments, even more so.
+
+### The Classical Layout
+
+The Classical Layout for Activity pages is our most common/main layout style. This is the layout that you'll want to use unless there is a reason to use one of the others. Let's look at an example of this layout from the [Significance Testing Caveats app](https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/):
+
+```{r classicalLayout, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Classical Activity Page Layout"}
+knitr::include_graphics("images/activityLayouts/classic.png")
+```
+
+You can see the two required elements (Page Title and Opening Text) are labeled in blue (see Figure \@ref(fig:classicalLayout)). After the opening text you'll notice an orange colored box labeled "Fluid Row with 2 Columns". Within that box, we have two visual columns: a portion of controls with a grey background and a portion of the plot. 
+
+In this particular layout, we will always place controls such as sliders, number/text inputs, select options, buttons, etc. on the left and with a grey background. To the right, we will place any output results (e.g., plots, data tables, etc.) The split between the columns is typically 1/3 vs 2/3, although this can change to 1/2 vs 1/2. 
+
+To create this layout, you'll need to reference the next chapter; specifically, [Fluid Rows and Columns](#rowsCols), and [Well Panels](#wellPanels).
+
+### Visible Tabs {#visTabs}
+
+One of the more common alternative layouts for Activity pages includes the usage of a set of tabs inside the page. For example, the [Assumptions of ANOVA app](https://psu-eberly.shinyapps.io/Assumptions_of_ANOVA/) uses this type of layout:
+
+```{r visTabsLayout, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Visible Tabs Activity Page Layout"}
+knitr::include_graphics("images/activityLayouts/visibleTabs.png")
+```
+
+The Visible Tab layout provides an opportunity for you to create a "parent" page that then houses several inter-related topics together. This type of layout is also useful if you want the user to flip through a variety of different plots while still referencing the same inputs.
+
+Depending on your needs/goals, you can blend the Visible Tab layout with the Classical Layout as we'll see shortly. To build tab sets, you'll want to check out [Section \@ref(innerTabs)](#innerTabs).
+
+*(I will note here that the Assumptions of ANOVA app could use several modifications.)*
+
+### Hidden Tabs {#hiddenTabs}
+
+An alternate version of the Visible Tabs layout is the Hidden Tabs layout. There is still a set of tabs within the page but the user can no longer click on the tabs and move around at will. This is particularly useful if you have built a game where users need to progress through levels in a particular order (e.g., [Descriptive Statistics App](https://psu-eberly.shinyapps.io/Descriptive_Statistics/)) or in a wizard environment (e.g., [Hasse Diagram App](https://psu-eberly.shinyapps.io/Hasse_Diagrams/)).
+
+```{r hiddenTabsLayout, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Hidden Tabs Activity Page Layout"}
+knitr::include_graphics("images/activityLayouts/hiddenTabs.png")
+```
+
+A key element that you must be sure to include when using the Hidden Tabs layout are some type of navigation controls for the user as shown in Figre \@ref(fig:hiddenTabsLayout).
+
+### Sets of Controls
+
+Another Activity Layout is a blending of several of the previous layouts and occurs when you have several sets of controls. In an upcoming release of the [Population Growth Model app](https://psu-eberly.shinyapps.io/Population_Growth), we've split the controls into three separate sets:
+
+1. Initial values which apply to all models/situations (boxed in purple in Figure \@ref(fig:setsLayout)),
+2. Model Type as a Visible Tab Set (top of orange box),
+3. Model Specific Controls (Classic Layout with grey background; also in the orange box)
+
+```{r setsLayout, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Sets of Controls Activity Page Layout"}
+knitr::include_graphics("images/activityLayouts/setsOfControls.png")
+```
+
+This kind of layout is particularly useful for explorations where certain controls are getting used by several different aspects. This can also help to reduce the size of a Classical Layout's control area. Typically, we don't want the user to have to scroll far below the plot to change something. 
+
+### Tic-Tac-Toe
+
+Games are a common area where you might need to use a different layout than the Classical one. A good example here would be any of our Tic-Tac-Toe games such as the [Hypothesis Testing Game](https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/).
+
+```{r tictactoeLayout, fig.align='center', fig.width=6, fig.height=4, echo=FALSE, fig.cap="Tic-Tac-Toe Activity Page Layout"}
+knitr::include_graphics("images/activityLayouts/tictactoe.png")
+```
+
+## Tab Sets {#innerTabs}
+
+There are two types of tabs within the Shiny ecosystem: there is `tabItems` which connect the Pages of the `dashboardBody` to the menu items of the `dashboardSidebar` and there is `tabsetPanel` which allows you to create a set of tabs inside a particular page.
+
+The [Visible Tabs Layout](#visTabs) and the [Hidden Tabs Layout](#hiddenTabs) make use of this second type of tabs (i.e., `tabsetPanel`). 
+
+Deciding on whether to use `tabsetPanel` is going to depend on several things:
 
 1. Do you have two or more aspects that are related enough that they shouldn't be their own separate tabs/pages of your App?  
-    a. If NO, then you shouldn't use `tabPanel`.  
+    a. If NO, then you shouldn't use `tabsetPanel`.  
     b. If YES, then continue.
 2. Are any of your aspects something that would be better suited as a Challenge or Game tab?  
     a. If YES, move that aspect to a separate page. If you still have 2+ aspects, continue.  
     b. If NO, continue.  
 3. Are the aspects independent enough that a person can skip a couple and still use the App successfully?  
     a. If NO, then you should re-consider your design.  
-    b. If YES, then proceed with using `tabPanel` in you design.
+    b. If YES, then proceed with using `tabsetPanel` in you design.
+4. For the elements going into the `tabsetPanel`, can a person use them in any order or do they need to be done in a fixed order?
+    a. Any order, then use Visible Tabs with `type = "tabs"`.
+    b. Fixed order, then use Hidden Tabs with `type = "hidden"`.
 
-When you go to make a set of tab panels you will need to first create a `tabsetPanel` which will wrap around all of the individual panels. Use `type = "tabs"`.
+When you go to make a set of tabs, you need to do two things: 1) you have to create the set of tabs and 2) you then have to create each tab.
 
-The tabs inside the body should automatically appear horizontally and along the top of the tab body (i.e., in the white space below the Dashboard Header). Any visual styling will be managed by the BOAST CSS file at a global level.
+### Create the Tab Set
 
-## Common Elements
-In addition to the Dashboard elements of the apps, there are other elements that are common. This include things such as how inputs should be ordered, buttons, correct/incorrect indicators, and animation buttons.
+Once you've decided to create a set of tabs on a page of your app, you'll need to start coding the page as you would any other (see [Dashboard Body](#body) for more information) page. However, once you get to the point of wanting to create the tab set, you'll need to use the `tabsetPanel` function and set the value of two arguments and potentially a third.
 
-For information about popovers, rollovers, hover text, or tool tips, please see [Section \@ref(popovers)](#popovers).
-
-### Ordering Inputs
-One of the most powerful aspects of Shiny apps is that the user interacts with them. Thus, we need to consider not only the ways in which user interact (e.g., buttons, sliders, text entry, etc.) but also the order in which you want the user to manipulate the inputs. Coming up with a single declaration for how to order inputs in all cases is not necessarily feasible. However, we can set up a general guideline for how to make decisions on ordering your inputs.
-
-Please use the following guidelines for determining the order of inputs in the User Interface (UI):
-
-1. In general, if you want your user to do things in certain order, make your inputs appear in that order.  For example, If you want them to pick a data set, then an unusualness threshold/significance level, what attribute to test, and then set a parameter value, then your inputs should appear in that order.
-2. Make use of how we read the English language, i.e., Top-to-Bottom and Left-to-Right to provide an implicit ordering for your user.
-3. If a user needs to carry out steps in particular sequence for your App to run properly, then place your inputs inside of an Ordered List environment with explicit text on what they should do. For example,  
-    1. Choose your data set: [dropdown]  
-    2. Set your unusualness threshold/significance level  
-       [slider]  
-    3. Which attribute do you want to test: [dropdown]  
-    4. What parameter value do you want to use: [numeric input]
-4. If an input is going to reset other inputs you should either:  
-    a. Warn the user before hand  
-    b. Move the input to the top of the list  
-    c. Program the input to not reset other inputs, or  
-    d. Some combination of the above  
-5. If the inputs are not dynamically linked to the output (e.g., plots automatically update with a change in the input's value), then you should include a button that says "Make Plot" at the end of the inputs.
-   
-### Buttons {#buttons}
-Buttons are one way in which users interact with the apps. The two most common button functions that we use are `shiny::actionButton` and `shinyBS::bsButton`. Both functions share many of the same features. Two ways in which they are different is that `shinyBS::bsButton` has an additional `style` argument while `shiny::actionButton` has a `width` argument that gives you fine grain size control (`bsButton` just has a qualitative size option). 
-
-There are three key styling aspects to every button: shape/animation, color, and text & icon.
-
-#### Shape/Animation
-All shape aspects of buttons will be controlled by CSS. The standard shape will be rectangular (the default). Sizing will be controlled by CSS although setting `size = "large"` for the `bsButton` call may be done.
-
-We have a number of apps where a button will change shape/size when a person hovers their cursor over it. This "animation" is to be discontinued. This is to say that buttons which change shape/size should be flagged as issues and resolved at the first opportunity.
-
-At most, the button's color might change (i.e., lighten or darken only), depending on the context.
-
-#### Color
-
-The coloring of the button will also be controlled by CSS in one of two ways.
-
-The default way will be through the BOAST CSS. This will ensure that the selected color scheme for your App will be consistent.
-
-The second way only applies to `bsButton` and the `style` argument. Here, this option references an external CSS file beyond BOAST. We see these most often in Game Activity Tabs. Use the following list to guide you in choosing which style is appropriate:
-
-+ `warning`: Good for when you want the user to proceed with caution; for example a submit button in a game.
-+ `danger`: Good for when you want the user to think twice before clicking; for example, a reset game button.
-+ `success`: Good for when you want to convey that the user can proceed safely; for example, a button that advances the user through the game
-+ `info`: Good for when you want to give some additional information; for example, a button that triggers game instructions popping up, a button that gives a hint, or a button that might filter a question pool.
-
-When in doubt, use the the `default` style option (or even omit this argument) for `bsButton` or use `actionButton`.
-
-#### Text & Icon
-The last styling element of a button is two-fold: the text that is in the button and the icon. 
-
-Here are some guidelines for text of a button:
-
-+ All buttons must have some text. 
-+ Generally speaking, the text should be relatively brief and clear. 
-  - Don't use "Go to the next page" when you could use "Next"
-+ The text should make sense with the action of the button; for example,
-  - "Reset" if the button resets something (a game, a plot, inputs)
-  - "Submit" if the button triggers the app to grab and process input values
-  - "Make Graph" if button causes a graph to be generated
-  - "Show/Hide Graph" if a button makes a graph object appear/disappear
-  - "Next" if a button moves the user along some path.
-+ If the button references something like a particular tab (prerequisites, exploration, etc.), the text should reflect this.
-  - "Explore!" for a button that takes a user to an Exploration tab.
-  - "Prerequisites" for a button that takes a user to a Prerequisites tab.
-  - "Challenge Yourself!" for a button takes a user to a Challenge tab.
-  - "Play!" for a button that takes a user to Game tab.
-+ If a button references an object like an activity packet or a download prompt the text should refer to that
-  - "Activity Packet" for a button that would open up and/or download a packet for the user
-  - "Download Data" for a button that would download a data file.
-+ Clarity is essential. If there are multiple buttons on the page, make sure that you use clear text for what button does and/or references.
-
-Here are guidelines for the inclusion of icons in a button:
-
-+ Game buttons will NOT have any icons.
-+ Direction Buttons (e.g., "Next" or "Previous") will NOT have any icons. Rather make the button text "<< Previous" or "Next >>"
-+ A "Prerequisites" button will use the "book" icon, `r fontawesome::fa(name = "fas fa-book", height = "25px")`
-+ All other tab buttons (labels ending with "!") will use the "bolt" icon, `r fontawesome::fa(name = "fas fa-bolt", height = "25px")`
-+ A download button will use the "cloud-download-alt" icon, `r fontawesome::fa(name = "fas fa-cloud-download-alt", height = "25px")`
-
-### Correct/Incorrect Marks
-In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of two images:
-
-```{r marks, fig.align='center', echo=FALSE, fig.cap="Correct, Partially Correct, and Incorrect Marks", fig.show='hold'}
-knitr::include_graphics("images/scoringMarks/right-07.png")
-knitr::include_graphics("images/scoringMarks/part-right-08.png")
-knitr::include_graphics("images/scoringMarks/wrong-09.png")
+Here is the code that creates the tab set panel in the Hasse Diagram app:
+```{r hasseTabs, echo=TRUE, eval=FALSE}
+# We're in the Dashboard Body of the UI
+tabItem(
+  tabName = "wizard",
+  withMathJax(),
+  h2("Hasse Diagram Wizard"),
+  p("Follow the prompts to create a Hasse Diagram."),
+  tabsetPanel(
+    id = "diagramWiz",
+    type = "hidden",
+    ##### Step 1-Action and Measurement Units ----
+    tabPanel(
+      title = "First Step",
+      value = "S1",
+      h3("Response"),
+      p("Please provide/describe the the primary/surogate response for your study."),
+      # code omitted
+    )
+  )
+)
 
 ```
 
-You can save these two images by right-clicking on them and selecting "Save Image As...". You will need to put them in the `www` folder/directory of your App.
+The two arguments of `tabsetPanel` you need to provide are the `id` and `type`. The `id` allows for you to reference the tab set from anywhere in the app, which is useful for navigation. Make sure you use a meaningful and unique name here. The `type` argument will take one of two values: `tabs` or `hidden`. (At this time we do not allow for any other choices in BOAST.) The choice will come from Question 4 in the decision tree above.
 
-Their placement in your App will depend upon what makes the most sense.
+The optional third argument you can set is the `selected` argument (e.g., `selected = "S1"`). This will let you set the initial tab displayed be something specific. However, our recommendation is that you should put the tabs into an order that makes the most natural progression. The first tab displayed should be the first tab you create within the set. Thus, you don't really need to set the `selected` argument here.
 
-Be sure that you add [alternative text](#altText) to these images; see [Section \@ref(altText)](#altText). Do not use "right" for alt text; use "correct".
+### Create the Tabs
 
-### Animation Buttons
-One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable. 
+In the above example code, you can see the first tab getting created with the `tabPanel` call. The `tabPanel` call acts much like the `tabItem` call that you use to create pages. The key difference are the `title` and `value` arguments.
 
-To enable this, you'll need to make use of the `animate` argument:
+The `title` argument is the phrase that you want to appear in the tab that users click on. Notice you still must set this value even when you are using Hidden Tabs. The `value` argument provides an opportunity to give an abbreviation of the tab's title for use with the `selected` argument. If you are including spaces or special characters in your tab's `title`, we recommend setting something simpler for the `value`. (The default value for `value` will be whatever you set as the value of `title`.) You'll use the `value` for any navigation controls.
 
-```{r animateEx1, echo=TRUE, eval=FALSE}
-#[code omitted]
-sliderInput(
-  inputId = "mtcAlpha",
-  label = "Set your threshold level, \\(\\alpha_{UT}\\):",
-  min = 0.01,
-  max = 0.25,
-  value = 0.1,
-  step = 0.01,
-  animate = animationOptions(
-    interval = 1000, loop = TRUE))
-#[code omitted]
+### Moving Between Tabs
+
+You can create navigation buttons to move between the various tabs in a tab set. This is especially important if you are using Hidden Tabs.
+
+Within the `handlerExpr` of your button's `observeEvent` call, you'll need to include code similar to the following:
+
+```{r tabMovement, echo=TRUE, eval=FALSE}
+# In the server definition
+## In the observeEvent for a particular button
+### In the handlerExpr for that button
+updateTabsetPanel(
+  session = session,
+  inputId = "diagramWiz", # From the tabsetPanel
+  selected = "S2" # from the tabPanel
+)
+
 ```
 
-You can set `animate=TRUE`, `animate=FALSE` or invoke the `animationOptions` function as we've done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (`interval`, in milliseconds) and should the animation start over once the slider reaches the maximum (`loop`). 
-
-The `interval` is going to the most challenging value to figure out. This timer *__ignores__* everything else; that is, it doesn't wait to see whether your plot has updated. Remember, the more complicated the process that generates your plot is, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While `renderCachePlot` can help speed things up, keep in mind that you still might need to play around with the `interval` value to ensure smooth functionality.  
-
-Make sure when you're testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.
-
-The styling of the play/pause button will be controlled by the BOAST CSS file.
-
-### Progress Bar
-
-Consider adding a loading bar to show the process for intense computations; this will help the user understand that your App is processing and not frozen/broken.
-
-### Collapsible Boxes {#collapsible}
-
-One technique that we can make use of to cut down on the amount of visible text on a page is through the use of collapsible boxes. Collapsible boxes are preferred than other methods in that 1) the content remains on the page and thereby accessible, and 2) the user retains control for when to show/hide this information. 
-
-Two great places to consider using collapsible boxes include the Prerequisites Tab and __static__ Context Information across the top of an Activity Tab.
-
-*Note: if the context information changes (e.g., can be switched due to user actions), then collapsible boxes should __NOT__ be used. The context in these cases should __always__ remain visible.*
-
-#### Creating Collapsible Boxes
-
-To create a Collapsible Box, you'll need to work in th UI section of your code:
-
-```{r makeCollapsibe, echo=TRUE, eval=FALSE}
-# [code omitted]
-box(
-  title = strong("Title for the Box"), # Use the strong tag
-  # Give either the title of the review concept or "Context"
-  status = "primary", # Leave as primary
-  collapsible = TRUE, # This allows collapsing
-  collapsed = FALSE, # Initial value
-  # If the only collapsible item, use FALSE
-  # If there are multiple, the first one is FALSE, others can be set to TRUE.
-  width = '100%', # use this setting
-  "The text that will 'disappear' goes here."
-),
-# [code omitted]
-```
-
-Given the static nature of the information in a collapsible box, you should not need to add anything to the server definition.
-
-The styling of Collapsible Boxes is controlled by the central CSS file. If you use the above code as your template, the coloring will automatically match your App's assigned color theme.
-
-### Well Panels
-
-Well panels are visual styling that we use to help offset user controls (i.e., inputs) from both context and graphs (i.e., outputs). 
-
-To place something inside of a well panel, all you need to do is wrap that object in the `wellPanel` function. However, the placement of the `wellPanel` call matters. 
-
-If you wrap each individual element in `wellPanel` you'll get a separate well panel for each call. If you place `wellPanel` too high up in your code, you'll end up putting everything into the well panel.
-
-```{r wellPanel1, echo=TRUE, eval=FALSE}
-# In the UI Section
-# [code omitted]
-# Inside a tabItem
-fluidRow( # this allows you to create dynamic columns for responsive design (mobile friendly)
-  column( # this is one of those columns
-    width = 4, # the initial grid width; all columns must add to 12
-    wellPanel( # Placing the wellPanel call here will wrap around all controls
-      h3("Controls"),
-      sliderInput(
-        inputId = "mtcAlpha",
-        label = "Set your threshold level, \\(\\alpha_{UT}\\):",
-        min = 0.01,
-        max = 0.25,
-        value = 0.1,
-        step = 0.01,
-        animate = animationOptions(interval = 1000, loop = TRUE)
-        ),
-      br(), # creating vertical space between sliders
-      sliderInput(
-        inputId = "mtcTests",
-        label = "Set the number of hypothesis tests conducted:",
-        min = 0,
-        max = 500,
-        value = 5,
-        step = 5
-        )
-      ) # this closes the wellPanel
-    ), # this closes the first column
-  column(
-    width = 8,
-    h3("Plot"),
-    plotOutput("pplotMTC"),
-    bsPopover(
-      id = "pplotMTC",
-      title = "Investigate!",
-      content = "What happens to the number of statistically significant tests when you
-      increase the number of tests?",
-      placement = "top"
-      )
-    ) # closes second column
-  ), #closes the fluid row
-```
+You'll need to use the `updateTabsetPanel` function to tell R that you're wanting to move the user to a new tab. The `inputId` argument will need to be set to the `id` value of the `tabsetPanel` you created and want to be working with. The `selected` argument will need to be the `value` from the `tabPanel` that you want to send the user to.

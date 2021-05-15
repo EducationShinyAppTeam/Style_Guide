@@ -110,7 +110,7 @@ For more information check out
 + [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
 + [Penn State's Headings and Subheadings Accessibility](https://accessibility.psu.edu/headings/)
 
-### Links
+### Links (#bodyLinks)
 
 You might find yourself wanting to include a link in your text. For example, you might want to allow the user to go read up on your app's concept(s) before engaging further. To create a link you will need to use the HTML anchor tag, `tags$a()` and you'll need the following information:
 

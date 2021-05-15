@@ -2,7 +2,7 @@
 
 One of the most important aspects of Shiny apps is that they are interactive. Users not only can, but should be encouraged to manipulate various inputs to see what their explorations cause. However, making the most of Shiny's reactive environment does require that you take the proper steps.
 
-## Overarching Organization
+## Overarching Organization {#orgCode}
 
 As mentioned in the section on the [Template App](#appR), the format of your app.R file will need to be in a particular order:
 
