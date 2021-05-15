@@ -3,6 +3,7 @@
 These apps are the product of your hard work and are part of your academic record. Thus, you need to adhere to [Penn State's Academic Integrity Policy](https://undergrad.psu.edu/aappm/G-9-academic-integrity.html). This is especially important as we are making the apps available through a Creative Commons Attribution-NonCommerical-ShareAlike 4.0 International license ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)). If you have used code, pictures, data, or other materials from outside of the BOAST team, you __MUST__ give proper credit. These references will then be included on the App's References Tab.
 
 ## References
+
 All apps will need a References Tab. This is where you'll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgments.
 
 __NOTE:__ listing something in the Acknowledgments DOES NOT waive this requirement.
