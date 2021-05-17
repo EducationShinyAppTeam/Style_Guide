@@ -3,74 +3,96 @@
 
 /* Penn State Colors */
 :root {
-	/*Blue Theme*/
-	--nittany-navy: 	#001E44;
-	--beaver-blue: 		#1E407C;
-	--pennsylvania-sky:	#009CDE;
-	--pugh-blue: 		#96BEE6;
-	/*Green Theme*/
-	--penn-forest:		#4A7729;
-	--green-opportunity: #008755;
-	--future-calling:	#99CC00;
-	/*Purple Theme*/
-	--stately-atherton:	#AC8DCE;
-	--perpetual-wonder:	#491D70;
-	--endless-potential: #000321;
-	/*Yellow Theme*/
-	--bright-keystone:	#FFD100;
-	--invent-orange:	#E98300;
-	--lion-roar:		#BF8226;
-	/*"Black" Theme*/
-	--creek:			#3EA39E;
-	--teal:				#69C9CB;
-	--slate:			#314D64;
-	/*Red Theme*/
-	--original-1887:	#BC204B;
-	--dawn-discovery:	#F2665E;
-	--land-grant:		#6A3028;
+    /*Blue Theme*/
+    --nittany-navy: #001E44;
+    --beaver-blue: #1E407C;
+    --pennsylvania-sky: #009CDE;
+    --pugh-blue: #96BEE6;
+    /*Green Theme*/
+    --penn-forest: #4A7729;
+    --green-opportunity: #008755;
+    --future-calling: #99CC00;
+    /*Purple Theme*/
+    --stately-atherton: #AC8DCE;
+    --perpetual-wonder: #491D70;
+    --endless-potential: #000321;
+    /*Yellow Theme*/
+    --bright-keystone: #FFD100;
+    --invent-orange: #E98300;
+    --lion-roar: #BF8226;
+    /*"Black" Theme*/
+    --creek: #3EA39E;
+    --teal: #69C9CB;
+    --slate: #314D64;
+    /*Red Theme*/
+    --original-1887: #BC204B;
+    --dawn-discovery: #F2665E;
+    --land-grant: #6A3028;
 }
-  
+
 /*Core Text Display Elements*/
 html {
-	font-size: 1rem; /* 10px => 16px */
+    font-size: 1rem;
+    /* 10px => 16px */
 }
 
 body {
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Symbol";
-	font-weight: 400;
-	font-size: 1rem;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Symbol";
+    font-weight: 400;
+    font-size: 1rem;
     line-height: 1.5rem;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	margin-top: 0;
-  	margin-bottom: 0.5rem;
-	font-weight: 400;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
 }
 
-h1, .h1 {
-	font-size: 2.5rem;
+h1,
+.h1 {
+    font-size: 2.5rem;
 }
 
-h2, .h2 {
-	font-size: 2rem;
+h2,
+.h2 {
+    font-size: 2rem;
 }
 
-h3, .h3 {
-	font-size: 1.75rem;
+h3,
+.h3 {
+    font-size: 1.75rem;
 }
 
-h4, .h4 {
-	font-size: 1.5rem;
+h4,
+.h4 {
+    font-size: 1.5rem;
 }
 
-h5, .h5 {
-	font-size: 1.25rem;
-	font-weight: 700;
+h5,
+.h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
-h6, .h6 {
-	font-size: 1rem;
+h6,
+.h6 {
+    font-size: 1rem;
+}
+
+.largerFont {
+    font-size: 1.2rem;
 }
 
 .largerFont {
@@ -78,76 +100,77 @@ h6, .h6 {
 }
 
 hr {
-	border-top: 1px solid black;
-	margin-top: 20px;
-	margin-bottom: 20px;
+    border-top: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .main-header .sidebar-toggle {
-	padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.2rem;
 }
 
 .sidebar {
-	width: 100%;
+    width: 100%;
 }
 
-.main-sidebar, .sidebar {
-	display: flex;
+.main-sidebar,
+.sidebar {
+    display: flex;
 }
 
 .sidebar {
-	flex-direction: column;
-	flex: 1 0 auto;
-	justify-content: space-between;
+    flex-direction: column;
+    flex: 1 0 auto;
+    justify-content: space-between;
 }
 
 .skin-blue .main-sidebar {
-	background-color: var(--beaver-blue) !important;
+    background-color: var(--beaver-blue) !important;
 }
 
 .skin-green .main-sidebar {
-	background-color: var(--green-opportunity) !important;
+    background-color: var(--green-opportunity) !important;
 }
 
 .skin-purple .main-sidebar {
-	background-color: var(--perpetual-wonder) !important;
+    background-color: var(--perpetual-wonder) !important;
 }
 
 .skin-yellow .main-sidebar {
-	background-color: var(--invent-orange) !important;
+    background-color: var(--invent-orange) !important;
 }
 
 .skin-black .main-sidebar {
-	background-color: var(--creek) !important;
+    background-color: var(--creek) !important;
 }
 
 .skin-red .main-sidebar {
-	background-color: var(--original-1887) !important;
+    background-color: var(--original-1887) !important;
 }
 
 .sidebar-menu {
-	flex-direction: column;
-	flex: 1 0 auto;
-	justify-content: space-between;
+    flex-direction: column;
+    flex: 1 0 auto;
+    justify-content: space-between;
 }
 
 .sidebar-logo {
-	padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.5rem;
 }
 
 .updated {
-	font-size: 75%;
-	font-weight: 400;
-	text-align: center;
+    font-size: 75%;
+    font-weight: 400;
+    text-align: center;
 }
 
 .hangingindent {
-	padding-left: 48px;
-	text-indent:  -48px;
+    padding-left: 48px;
+    text-indent: -48px;
 }
 
 .answertext {
-	color: var(--green-opportunity)
+    color: var(--green-opportunity)
 }
 
 .bluetext {
@@ -161,61 +184,61 @@ hr {
 }
 
 .sidebarsection {
-	font-weight: 700;
-	text-align: left;
-	margin-right: 0.5rem;
-	margin-left: 0.5rem;
-	border-bottom: 1px solid #A0A0A0;
-	padding-bottom: 2px;
+    font-weight: 700;
+    text-align: left;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    border-bottom: 1px solid #A0A0A0;
+    padding-bottom: 2px;
 }
 
 /*Non-title portion of dashboard header*/
 .skin-blue .main-header>.navbar {
-	background-color: var(--beaver-blue);
-	color: black;
+    background-color: var(--beaver-blue);
+    color: black;
 }
 
 .skin-green .main-header>.navbar {
-	background-color: var(--green-opportunity) !important;
+    background-color: var(--green-opportunity) !important;
 }
 
 .skin-purple .main-header>.navbar {
-	background-color: var(--perpetual-wonder) !important;
+    background-color: var(--perpetual-wonder) !important;
 }
 
 .skin-yellow .main-header>.navbar {
-	background-color: var(--invent-orange) !important;
+    background-color: var(--invent-orange) !important;
 }
 
 .skin-black .main-header>.navbar {
-	background-color: var(--creek) !important;
+    background-color: var(--creek) !important;
 }
 
 .skin-red .main-header>.navbar {
-	background-color: var(--original-1887) !important;
+    background-color: var(--original-1887) !important;
 }
 
 /*Background of Main Text Area*/
 .content-wrapper,
 .right-side {
-	background-color: white;
-	/*Override requires the !important tag*/
+    background-color: white;
+    /*Override requires the !important tag*/
 }
 
 /*Title portion of dashboard header*/
 .skin-blue .main-header .logo {
-	background-color: var(--beaver-blue);
-	color: white;
+    background-color: var(--beaver-blue);
+    color: white;
 }
 
 .skin-green .main-header .logo {
-	background-color: var(--green-opportunity);
-	color: white;
+    background-color: var(--green-opportunity);
+    color: white;
 }
 
 .skin-purple .main-header .logo {
-	background-color: var(--perpetual-wonder);
-	color: white;
+    background-color: var(--perpetual-wonder);
+    color: white;
 }
 
 .skin-yellow .main-header .logo {
@@ -223,80 +246,88 @@ hr {
 	color: black;
 }
 
+.skin-yellow .main-header .navbar .sidebar-toggle {
+    color: black;
+}
+
+.skin-yellow .main-header .navbar .nav>li>a {
+    color: black
+}
+
 .skin-black .main-header .logo {
-	background-color: var(--creek);
-	color: black;
+    background-color: var(--creek);
+    color: black;
 }
 
 .skin-red .main-header .logo {
-	background-color: var(--original-1887);
-	color: white;
+    background-color: var(--original-1887);
+    color: white;
 }
 
 /*Title Portion Hover Color*/
 .skin-blue .main-header .logo:hover {
-	background-color: var(--beaver-blue);
+    background-color: var(--beaver-blue);
 }
 
 .skin-green .main-header .logo:hover {
-	background-color: var(--green-opportunity);
+    background-color: var(--green-opportunity);
 }
 
 .skin-purple .main-header .logo:hover {
-	background-color: var(--perpetual-wonder);
+    background-color: var(--perpetual-wonder);
 }
 
 .skin-yellow .main-header .logo:hover {
-	background-color: var(--invent-orange);
+    background-color: var(--invent-orange);
 }
 
 .skin-black .main-header .logo:hover {
-	background-color: var(--creek);
+    background-color: var(--creek);
 }
 
 .skin-red .main-header .logo:hover {
-	background-color: var(--original-1887);
+    background-color: var(--original-1887);
 }
 
 .skin-blue .main-header .sidebar-toggle:hover {
-	background: var(--pennsylvania-sky) !important;
+    background: var(--pennsylvania-sky) !important;
 }
 
 .skin-green .main-header .sidebar-toggle:hover {
-	background: var(--future-calling) !important;
+    background: var(--future-calling) !important;
 }
 
 .skin-purple .main-header .sidebar-toggle:hover {
-	background: var(--stately-atherton) !important;
+    background: var(--stately-atherton) !important;
 }
 
 .skin-yellow .main-header .sidebar-toggle:hover {
-	background: var(--bright-keystone) !important;
+    background: var(--bright-keystone) !important;
 }
 
 .skin-black .main-header .sidebar-toggle:hover {
-	background: var(--teal) !important;
+    background: var(--teal) !important;
 }
 
 .skin-red .main-header .sidebar-toggle:hover {
-	background: var(--original-1887) !important;
+    background: var(--original-1887) !important;
 }
 
 /*Font Control for Dashboard Title*/
 .main-header .logo {
-	/* Default is White; to overide use -> color: #f39c12 !important; */
+    /* Default is White; to overide use -> color: #f39c12 !important; */
 }
 
 .skin-blue .sidebar a {
-	color: white;
+    color: white;
 }
 
 .skin-green .sidebar a {
-	color: white;
+    color: white;
 }
 
 .skin-purple .sidebar a {
-	color: white;
+    color: white;
 }
 
 .skin-yellow .sidebar a {
@@ -304,74 +335,74 @@ hr {
 }
 
 .skin-black .sidebar a {
-	color: black;
+    color: black;
 }
 
 .skin-red .sidebar a {
-	color: white;
+    color: white;
 }
 
 .sidebar-picture {
-	position: fixed;
-	bottom: 0;
+    position: fixed;
+    bottom: 0;
 }
 
 .skin-blue .sidebar-menu li.active a,
 .skin-blue .sidebar-menu li:hover a {
-	background: var(--pennsylvania-sky);
-	color: black;
-	border-left-color: var(--nittany-navy);
+    background: var(--pennsylvania-sky);
+    color: black;
+    border-left-color: var(--nittany-navy);
 }
 
 .skin-green .sidebar-menu li.active a,
 .skin-green .sidebar-menu li:hover a {
-	background: var(--future-calling);
-	color: black;
-	border-left-color: var(--penn-forest);
+    background: var(--future-calling);
+    color: black;
+    border-left-color: var(--penn-forest);
 }
 
 .skin-purple .sidebar-menu li.active a,
 .skin-purple .sidebar-menu li:hover a {
-	background: var(--stately-atherton);
-	color: black;
-	border-left-color: var(--endless-potential);
+    background: var(--stately-atherton);
+    color: black;
+    border-left-color: var(--endless-potential);
 }
 
 .skin-yellow .sidebar-menu li.active a,
 .skin-yellow .sidebar-menu li:hover a {
-	background: var(--bright-keystone);
-	color: black;
-	border-left-color: var(--lion-roar);
+    background: var(--bright-keystone);
+    color: black;
+    border-left-color: var(--lion-roar);
 }
 
 .skin-black .sidebar-menu li.active a,
 .skin-black .sidebar-menu li:hover a {
-	background: var(--teal);
-	color: black;
-	border-left-color: var(--slate);
+    background: var(--teal);
+    color: black;
+    border-left-color: var(--slate);
 }
 
 .skin-red .sidebar-menu li.active a,
 .skin-red .sidebar-menu li:hover a {
-	background: var(--dawn-discovery);
-	color: black;
-	border-left-color: var(--land-grant);
+    background: var(--dawn-discovery);
+    color: black;
+    border-left-color: var(--land-grant);
 }
 
 /*Button Appearance*/
 .skin-blue .btn-default {
-	background-color: var(--beaver-blue);
-	color: white;
+    background-color: var(--beaver-blue);
+    color: white;
 }
 
 .skin-green .btn-default {
-	background-color: var(--green-opportunity);
-	color: white;
+    background-color: var(--green-opportunity);
+    color: white;
 }
 
 .skin-purple .btn-default {
-	background-color: var(--perpetual-wonder);
-	color: white;
+    background-color: var(--perpetual-wonder);
+    color: white;
 }
 
 .skin-yellow .btn-default {
@@ -380,81 +411,81 @@ hr {
 }
 
 .skin-black .btn-default {
-	background-color: var(--creek);
-	color: black;
+    background-color: var(--creek);
+    color: black;
 }
 
 .skin-red .btn-default {
-	background-color: var(--original-1887);
-	color: white;
+    background-color: var(--original-1887);
+    color: white;
 }
 
 .btn-game {
-	background-color:  white;
-	color: black;
-	font-size: 1.25rem;
-	text-align: left;
+    background-color: white;
+    color: black;
+    font-size: 1.25rem;
+    text-align: left;
 }
 
 .btn-textGame {
-	background-color:  white;
-	color: black;
-	font-size: 1.1rem;
-	text-align: left;
-	white-space: normal;
-	overflow-wrap: break-word;
+    background-color: white;
+    color: black;
+    font-size: 1.1rem;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 /*Hovertext/Rollover/Popover Title Controls*/
 .popover-title {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 700;
-	font-size: 1em;
-	color: black;
-	text-align: center;
-} 
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: black;
+    text-align: center;
+}
 
 .skin-blue .popover-title {
-	background-color: var(--pennsylvania-sky);
+    background-color: var(--pennsylvania-sky);
 }
 
 .skin-green .popover-title {
-	background-color: var(--future-calling);
+    background-color: var(--future-calling);
 }
 
 .skin-purple .popover-title {
-	background-color: var(--stately-atherton);
+    background-color: var(--stately-atherton);
 }
 
 .skin-yellow .popover-title {
-	background-color: var(--bright-keystone);
+    background-color: var(--bright-keystone);
 }
 
 .skin-black .popover-title {
-	background-color: var(--teal);
+    background-color: var(--teal);
 }
 
 .skin-red .popover-title {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 700;
-	font-size: 1em;
-	color: black;
-	text-align: center;
-	background-color: var(--original-1887);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: black;
+    text-align: center;
+    background-color: var(--original-1887);
 }
 
 /*Hovertext/Rollover/Popover content Controls*/
 .popover-content {
-	background-color: white;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-	font-size: 1em;
-	color: black;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: black;
 }
 
 label {
-	font: 100% 'Open Sans';
-	font-weight: 400 !important;
+    font: 100% 'Open Sans';
+    font-weight: 400 !important;
 }
 
 /*Slider Controls; note that .js-irs-# can be appended in front of the following to
@@ -462,187 +493,191 @@ create customized appearances. This is NOT recommended.*/
 
 /*Slider spacing*/
 .irs {
-	margin-top: 4px;
+    margin-top: 4px;
 }
 
 /*Ends of Slider Bar*/
 .skin-blue .irs-bar-edge {
-	border-color: var(--nittany-navy);
-	background: var(--pennsylvania-sky);
+    border-color: var(--nittany-navy);
+    background: var(--pennsylvania-sky);
 }
 
 .skin-green .irs-bar-edge {
-	border-color: var(--penn-forest);
-	background: var(--future-calling);
+    border-color: var(--penn-forest);
+    background: var(--future-calling);
 }
 
 .skin-purple .irs-bar-edge {
-	border-color: var(--endless-potential);
-	background: var(--stately-atherton);
+    border-color: var(--endless-potential);
+    background: var(--stately-atherton);
 }
 
 .skin-yellow .irs-bar-edge {
-	border-color: var(--lion-roar);
-	background: var(--bright-keystone);
+    border-color: var(--lion-roar);
+    background: var(--bright-keystone);
 }
 
 .skin-black .irs-bar-edge {
-	border-color: var(--slate);
-	background: var(--teal);
+    border-color: var(--slate);
+    background: var(--teal);
 }
 
 .skin-red .irs-bar-edge {
-	border-color: var(--land-grant);
-	background: var(--dawn-discovery);
+    border-color: var(--land-grant);
+    background: var(--dawn-discovery);
 }
 
 /*Middle Portion of Slider Bar*/
 .skin-blue .irs-bar {
-	border-top-color: var(--nittany-navy);
-	border-bottom-color: var(--nittany-navy);
-	background: var(--pennsylvania-sky);
-	color: black;
+    border-top-color: var(--nittany-navy);
+    border-bottom-color: var(--nittany-navy);
+    background: var(--pennsylvania-sky);
+    color: black;
 }
 
 .skin-green .irs-bar {
-	border-top-color: var(--penn-forest);
-	border-bottom-color: var(--penn-forest);
-	background: var(--future-calling);
-	color: black;
+    border-top-color: var(--penn-forest);
+    border-bottom-color: var(--penn-forest);
+    background: var(--future-calling);
+    color: black;
 }
 
 .skin-purple .irs-bar {
-	border-top-color: var(--endless-potential);
-	border-bottom-color: var(--endless-potential);
-	background: var(--stately-atherton);
-	color: black;
+    border-top-color: var(--endless-potential);
+    border-bottom-color: var(--endless-potential);
+    background: var(--stately-atherton);
+    color: black;
 }
 
 .skin-yellow .irs-bar {
-	border-top-color: var(--lion-roar);
-	border-bottom-color: var(--lion-roar);
-	background: var(--bright-keystone);
-	color: black;
+    border-top-color: var(--lion-roar);
+    border-bottom-color: var(--lion-roar);
+    background: var(--bright-keystone);
+    color: black;
 }
 
 .skin-black .irs-bar {
-	border-top-color: var(--slate);
-	border-bottom-color: var(--slate);
-	background: var(--teal);
-	color: black;
+    border-top-color: var(--slate);
+    border-bottom-color: var(--slate);
+    background: var(--teal);
+    color: black;
 }
 
 .skin-red .irs-bar {
-	border-top-color: var(--land-grant);
-	border-bottom-color: var(--land-grant);
-	background: var(--dawn-discovery);
-	color: black;
+    border-top-color: var(--land-grant);
+    border-bottom-color: var(--land-grant);
+    background: var(--dawn-discovery);
+    color: black;
 }
 
 /*Slider edges*/
 .irs-line {
-	border: 1px solid black;
+    border: 1px solid black;
 }
 
 /*Slider major tick marks*/
 .irs-grid-pol {
-	width: 1px;
-	height: 0.5rem;
-	background: black;
+    width: 1px;
+    height: 0.5rem;
+    background: black;
 }
 
 /*Slider minor tick marks*/
 .irs-grid-pol.small {
-	width: 1px;
-	height: 0.25rem;
-	background: black;
+    width: 1px;
+    height: 0.25rem;
+    background: black;
 }
 
 /*Slider Icon*/
 .irs-slider {
-	width: 0.5rem;
-	height: 1.25rem;
-	top: 1.1875rem;
+    width: 0.5rem;
+    height: 1.25rem;
+    top: 1.1875rem;
 }
 
 /*Slider Text bubble*/
-.irs-single, .irs-to, .irs-from {
-	font-weight: 700;
-	font-size: 0.875rem;
-	color: black;
-	padding: 0.1rem 0.4rem;
-	margin-top: -4px;
+.irs-single,
+.irs-to,
+.irs-from {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: black;
+    padding: 0.1rem 0.4rem;
+    margin-top: -4px;
 }
 
-.skin-blue .irs-single, 
+.skin-blue .irs-single,
 .skin-blue .irs-to,
-.skin-blue .irs-from  {
-	background: var(--pugh-blue);
+.skin-blue .irs-from {
+    background: var(--pugh-blue);
 }
 
-.skin-green .irs-single, 
+.skin-green .irs-single,
 .skin-green .irs-to,
-.skin-green .irs-from  {
-	background: var(--future-calling);
+.skin-green .irs-from {
+    background: var(--future-calling);
 }
 
-.skin-purple .irs-single, 
+.skin-purple .irs-single,
 .skin-purple .irs-to,
 .skin-purple .irs-from {
-	background: var(--stately-atherton);
+    background: var(--stately-atherton);
 }
 
 
-.skin-yellow .irs-single, 
+.skin-yellow .irs-single,
 .skin-yellow .irs-to,
-.skin-yellow .irs-from  {
-	background: var(--bright-keystone);
+.skin-yellow .irs-from {
+    background: var(--bright-keystone);
 }
 
-.skin-black .irs-single, 
+.skin-black .irs-single,
 .skin-black .irs-to,
-.skin-black .irs-from  {
-	background: var(--teal);
+.skin-black .irs-from {
+    background: var(--teal);
 }
 
-.skin-red .irs-single, 
+.skin-red .irs-single,
 .skin-red .irs-to,
-.skin-red .irs-from  {
-	background: var(--dawn-discovery);
+.skin-red .irs-from {
+    background: var(--dawn-discovery);
 }
 
 /*Slider Text controls*/
-.irs-min, .irs-max {
-	padding: 0.1rem 0.4rem;
+.irs-min,
+.irs-max {
+    padding: 0.1rem 0.4rem;
 }
 
 .irs-grid-text,
 .irs-min,
 .irs-max {
-	font-size: 0.875rem;
-	color: black;
-	background: white;
+    font-size: 0.875rem;
+    color: black;
+    background: white;
 }
 
 /*Sweet Alert controls*/
 /* From using shinyalert */
-.sweet-alert h2, .sweet-alert p {
-	color: black !important;
+.sweet-alert h2,
+.sweet-alert p {
+    color: black !important;
 }
 
 .skin-blue .sweet-alert button {
-	background-color: var(--beaver-blue) !important;
-	color: white;
+    background-color: var(--beaver-blue) !important;
+    color: white;
 }
 
 .skin-green .sweet-alert button {
-	background-color: var(--green-opportunity) !important;
-	color: white;
+    background-color: var(--green-opportunity) !important;
+    color: white;
 }
 
 .skin-purple .sweet-alert button {
-	background-color: var(--perpetual-wonder) !important;
-	color: white;
+    background-color: var(--perpetual-wonder) !important;
+    color: white;
 }
 
 .skin-yellow .sweet-alert button {
@@ -651,50 +686,50 @@ create customized appearances. This is NOT recommended.*/
 }
 
 .skin-black .sweet-alert button {
-	background-color: var(--creek) !important;
-	color: white;
+    background-color: var(--creek) !important;
+    color: white;
 }
 
 .skin-red .sweet-alert button {
-	background-color: var(--original-1887) !important;
-	color: white;
+    background-color: var(--original-1887) !important;
+    color: white;
 }
 
 .skin-blue .sweet-alert input {
-	border: 1pt solid var(--beaver-blue) !important;
+    border: 1pt solid var(--beaver-blue) !important;
 }
 
 .skin-green .sweet-alert input {
-	border: 1pt solid var(--green-opportunity) !important;
+    border: 1pt solid var(--green-opportunity) !important;
 }
 
 .skin-purple .sweet-alert input {
-	border: 1pt solid var(--perpetual-wonder) !important;
+    border: 1pt solid var(--perpetual-wonder) !important;
 }
 
 .skin-yellow .sweet-alert input {
-	border: 1pt solid var(--invent-orange) !important;
+    border: 1pt solid var(--invent-orange) !important;
 }
 
 .skin-black .sweet-alert input {
-	border: 1pt solid var(--teal) !important;
+    border: 1pt solid var(--teal) !important;
 }
 
 .skin-red .sweet-alert input {
-	border: 1pt solid var(--dawn-discovery) !important;
+    border: 1pt solid var(--dawn-discovery) !important;
 }
 
 /*Sweet Alert 2 Controls*/
 /*From Using shinyWidgets*/
 .swal2-title {
-	color: black !important;
-	font-size: 2rem !important;
+    color: black !important;
+    font-size: 2rem !important;
 }
 
 .swal2-content {
-	color: black !important;
-	font-size: 1.5rem !important;
-	text-align: left !important;
+    color: black !important;
+    font-size: 1.5rem !important;
+    text-align: left !important;
 }
 
 /* Icon sizing; works for info type, conflicts with others.*/
@@ -705,168 +740,186 @@ create customized appearances. This is NOT recommended.*/
 } */
 
 .swal2-icon.swal2-info {
-	color: var(--nittany-navy) !important;
-	border-color: var(--nittany-navy) !important;
+    color: var(--nittany-navy) !important;
+    border-color: var(--nittany-navy) !important;
 }
 
 .swal2-icon.swal2-error {
-	color: var(--original-1887) !important;
-	border-color: var(--original-1887) !important;
+    color: var(--original-1887) !important;
+    border-color: var(--original-1887) !important;
 }
 
 .swal2-icon.swal2-question {
-	color: var(--stately-atherton) !important;
-	border-color: var(--stately-atherton) !important;
+    color: var(--stately-atherton) !important;
+    border-color: var(--stately-atherton) !important;
 }
 
 .swal2-icon.swal2-warning {
-	color: var(--invent-orange) !important;
-	border-color: var(--invent-orange) !important;
+    color: var(--invent-orange) !important;
+    border-color: var(--invent-orange) !important;
 }
 
 .swal2-icon.swal2-success {
-	color: var(--green-opportunity) !important;
-	border-color: var(--green-opportunity) !important;
+    color: var(--green-opportunity) !important;
+    border-color: var(--green-opportunity) !important;
 }
 
 /*Collapsable Box Style Controls*/
 /*This needs updating for color schemes*/
-.skin-blue box, .skin-blue .box,
-.skin-blue box-primary, .skin-blue .box-primary,
-.skin-blue .box box-primary, .skin-blue .box.box-primary {
-	border-top-color: var(--pennsylvania-sky);
+.skin-blue box,
+.skin-blue .box,
+.skin-blue box-primary,
+.skin-blue .box-primary,
+.skin-blue .box box-primary,
+.skin-blue .box.box-primary {
+    border-top-color: var(--pennsylvania-sky);
 }
 
-.skin-green box, .skin-green .box,
-.skin-green box-primary, .skin-green .box-primary,
-.skin-green .box box-primary, .skin-green .box.box-primary {
-	border-top-color: var(--future-calling);
+.skin-green box,
+.skin-green .box,
+.skin-green box-primary,
+.skin-green .box-primary,
+.skin-green .box box-primary,
+.skin-green .box.box-primary {
+    border-top-color: var(--future-calling);
 }
 
-.skin-purple box, .skin-purple .box,
-.skin-purple box-primary, .skin-purple .box-primary,
-.skin-purple .box box-primary, .skin-purple .box.box-primary {
-	border-top-color: var(--stately-atherton);
+.skin-purple box,
+.skin-purple .box,
+.skin-purple box-primary,
+.skin-purple .box-primary,
+.skin-purple .box box-primary,
+.skin-purple .box.box-primary {
+    border-top-color: var(--stately-atherton);
 }
 
-.skin-yellow box, .skin-yellow .box,
-.skin-yellow box-primary, .skin-yellow .box-primary,
-.skin-yellow .box box-primary, .skin-yellow .box.box-primary {
-	border-top-color: var(--bright-keystone);
+.skin-yellow box,
+.skin-yellow .box,
+.skin-yellow box-primary,
+.skin-yellow .box-primary,
+.skin-yellow .box box-primary,
+.skin-yellow .box.box-primary {
+    border-top-color: var(--bright-keystone);
 }
 
-.skin-black box, .skin-black .box,
-.skin-black box-primary, .skin-black .box-primary,
-.skin-black .box box-primary, .skin-black .box.box-primary {
-	border-top-color: var(--teal);
+.skin-black box,
+.skin-black .box,
+.skin-black box-primary,
+.skin-black .box-primary,
+.skin-black .box box-primary,
+.skin-black .box.box-primary {
+    border-top-color: var(--teal);
 }
 
-.skin-red box, .skin-red .box,
-.skin-red box-primary, .skin-red .box-primary,
-.skin-red .box box-primary, .skin-red .box.box-primary {
-	border-top-color: var(--dawn-discovery);
+.skin-red box,
+.skin-red .box,
+.skin-red box-primary,
+.skin-red .box-primary,
+.skin-red .box box-primary,
+.skin-red .box.box-primary {
+    border-top-color: var(--dawn-discovery);
 }
 
 /* Grid-based Game Layouts */
 .game-board {
-  position: relative;
-  min-height: 425px;
+    position: relative;
+    min-height: 425px;
 }
 
 .grid-fill {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .grid-tile {
-  position: relative;
-  padding-top: 100%;
+    position: relative;
+    padding-top: 100%;
 }
 
 .grid-tile button {
-  border-radius: 0;
-  font-size: 3.75rem;
-  line-height: 1;
-  text-align: center;
+    border-radius: 0;
+    font-size: 3.75rem;
+    line-height: 1;
+    text-align: center;
 }
 
 .skin-blue .grid-tile button {
-  border: 0.25rem solid var(--nittany-navy);
+    border: 0.25rem solid var(--nittany-navy);
 }
 
 .skin-green .grid-tile button {
-  border: 0.25rem solid var(--penn-forest);
+    border: 0.25rem solid var(--penn-forest);
 }
 
 .skin-purple .grid-tile button {
-  border: 0.25rem solid var(--endless-potential);
+    border: 0.25rem solid var(--endless-potential);
 }
 
 .skin-yellow .grid-tile button {
-  border: 0.25rem solid var(--lion-roar);
+    border: 0.25rem solid var(--lion-roar);
 }
 
 .skin-black .grid-tile button {
-  border: 0.25rem solid var(--slate);
+    border: 0.25rem solid var(--slate);
 }
 
-.skin-blue .grid-tile button:active, 
+.skin-blue .grid-tile button:active,
 .skin-blue .grid-tile button:hover {
-  background-color: var(--pennsylvania-sky);
+    background-color: var(--pennsylvania-sky);
 }
 
 .skin-green .grid-tile button:active,
 .skin-green .grid-tile button:hover {
-  background-color: var(--future-calling);
+    background-color: var(--future-calling);
 }
 
 .skin-purple .grid-tile button:active,
 .skin-purple .grid-tile button:hover {
-  background-color: var(--stately-atherton);
+    background-color: var(--stately-atherton);
 }
 
 .skin-yellow .grid-tile button:active,
 .skin-yellow .grid-tile button:hover {
-  background-color: var(--bright-keystone);
+    background-color: var(--bright-keystone);
 }
 
 .skin-black .grid-tile button:active,
 .skin-black .grid-tile button:hover {
-  background-color: var(--teal);
+    background-color: var(--teal);
 }
 
 .skin-red .grid-tile button:active,
 .skin-red .grid-tile button:hover {
-  background-color: var(--dawn-discovery);
+    background-color: var(--dawn-discovery);
 }
 
 .grid-tile button:hover {
-  color: black;
+    color: black;
 }
 
 .grid-tile button[disabled] {
-  opacity: 1;
+    opacity: 1;
 }
 
 .skin-blue .grid-tile button[disabled]:hover {
-  background-color: var(--beaver-blue);
-  color: white;
+    background-color: var(--beaver-blue);
+    color: white;
 }
 
 .skin-green .grid-tile button[disabled]:hover {
-  background-color: var(--green-opportunity);
-  color: white;
+    background-color: var(--green-opportunity);
+    color: white;
 }
 
 .skin-purple .grid-tile button[disabled]:hover {
-  background-color: var(--perpetual-wonder);
-  color: white;
+    background-color: var(--perpetual-wonder);
+    color: white;
 }
 
 .skin-yellow .grid-tile button[disabled]:hover {
@@ -875,150 +928,234 @@ create customized appearances. This is NOT recommended.*/
 }
 
 .skin-black .grid-tile button[disabled]:hover {
-  background-color: var(--creek);
-  color: white;
+    background-color: var(--creek);
+    color: white;
 }
 
 .skin-red .grid-tile button[disabled]:hover {
-  background-color: var(--original-1887);
-  color: white;
+    background-color: var(--original-1887);
+    color: white;
 }
 
 .grid-board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0;
 
-  max-width: 400px;
-  width: 100%;
-  height: auto;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
 
-  border-radius: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .skin-blue .grid-board {
-  background-color: var(--beaver-blue);
-  border: 0.25rem solid var(--nittany-navy); 
+    background-color: var(--beaver-blue);
+    border: 0.25rem solid var(--nittany-navy);
 }
 
 .skin-green .grid-board {
-  background-color: var(--green-opportunity);
-  border: 0.25rem solid var(--penn-forest); 
+    background-color: var(--green-opportunity);
+    border: 0.25rem solid var(--penn-forest);
 }
 
 .skin-purple .grid-board {
-  background-color: var(--perpetual-wonder);
-  border: 0.25rem solid var(--endless-potential); 
+    background-color: var(--perpetual-wonder);
+    border: 0.25rem solid var(--endless-potential);
 }
 
 .skin-yellow .grid-board {
-  background-color: var(--invent-orange);
-  border: 0.25rem solid var(--lion-roar); 
+    background-color: var(--invent-orange);
+    border: 0.25rem solid var(--lion-roar);
 }
 
 .skin-black .grid-board {
-  background-color: var(--creek);
-  border: 0.25rem solid var(--slate); 
+    background-color: var(--creek);
+    border: 0.25rem solid var(--slate);
 }
 
 .skin-red .grid-board {
-  background-color: var(--original-1887);
-  border: 0.25rem solid var(--land-grant); 
+    background-color: var(--original-1887);
+    border: 0.25rem solid var(--land-grant);
 }
 
 .grid-1x1 {
-  grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 }
 
 .grid-2x2 {
-  grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .grid-4x4 {
-  grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .grid-5x5 {
-  grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 /*Tippy Controls*/
 .tippy {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /*Play/Pause Animation Controls*/
 .slider-animate-button {
-	opacity: 0.75;
-	color: black !important;
+    opacity: 0.75;
+    color: black !important;
 }
 
 .slider-animate-container {
-	padding-top: 5px;
+    padding-top: 5px;
 }
 
 /* tab panel controls */
-.nav-tabs > li > a {
-	color: black;
+.nav-tabs>li>a {
+    color: black;
 }
 
-.nav-tabs > li.active > a {
-	color: black;
+.nav-tabs>li.active>a {
+    color: black;
 }
 
 /* References Tab */
 .license {
-	background-color: #eef0f3;
-	padding: 0.25rem;
-	border-radius: 0.25rem;
-	max-width: 8rem;
+    background-color: #eef0f3;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    max-width: 8rem;
 }
 
 /*Group header for select groups*/
-.optgroup-header{
-	font-size: inherit !important;
-	line-height: inherit !important;
-	color: black !important;
-	border-bottom: solid #66666670 1px;
-	padding: 3px 5px !important;
+.optgroup-header {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    color: black !important;
+    border-bottom: solid #66666670 1px;
+    padding: 3px 5px !important;
 }
 
 /*Error Validation Message Style*/
 .shiny-output-error-validation {
-	color: var(--invent-orange);
-	padding-top: 5rem;
-	text-align: center;
-	font-weight: 700;
+    color: var(--invent-orange);
+    padding-top: 5rem;
+    text-align: center;
+    font-weight: 700;
 }
+
+/*DT Captions*/
+caption {
+    color: black;
+}
+
 
 /*Body links*/
 .bodylinks {
-	text-decoration: underline;
-	text-weight: 700;
+    text-decoration: underline;
+    text-weight: 700;
 }
 
-.skin-blue .bodylinks{
-	color: var(--beaver-blue);
+.skin-blue .bodylinks {
+    color: var(--beaver-blue);
 }
 
-.skin-green .bodylinks{
-	color: var(--green-opportunity);
+.skin-green .bodylinks {
+    color: var(--green-opportunity);
 }
 
-.skin-purple .bodylinks{
-	color: var(--perpetual-wonder);
+.skin-purple .bodylinks {
+    color: var(--perpetual-wonder);
 }
 
-.skin-yellow .bodylinks{
-	color: var(--lion-roar);
+.skin-yellow .bodylinks {
+    color: var(--lion-roar);
 }
 
-.skin-black .bodylinks{
-	color: var(--creek);
+.skin-black .bodylinks {
+    color: var(--creek);
 }
 
-.skin-red .bodylinks{
-	color: var(--original-1887);
+.skin-red .bodylinks {
+    color: var(--original-1887);
+}
+
+/* Image expansion utilities */
+.expand-img-btn {
+    position: absolute;
+    right: 50px;
+    background-color: rgba(85, 85, 85, 0.9);
+    color: white;
+    font-size: 16px;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.expand-img-btn[aria-expanded="true"]::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #8A8A8A;
+    z-index: 9998;
+}
+
+.expanded {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    padding: 10%;
+}
+
+/* Error Messages */
+.shiny-output-error-leftParagraphError {
+    text-align: left;
+    padding: 0;
+}
+
+/* Shiny Matrix Input Controls */
+.matrix-input-col-header-cell {
+    padding: 15px 0px 0px 5px;
+}
+
+.matrix-input-row-header-cell {
+    text-align: right;
+    padding-right: 5px;
+}
+
+.matrix-input-cell {
+    border: 1pt solid black;
+    background: white;
+    padding-left: 5px;
+}
+
+.matrix-input-table {
+    width: 75%;
+}
+
+/* Sidebar footer links */
+.sidebar-footer .list-inline {
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.sidebar-footer .list-inline li {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.sidebar-footer .list-inline li:after {
+    content: '|';
+}
+
+.sidebar-footer .list-inline li:last-child:after {
+    content: '';
 }
 
 /* Image expansion utilities */
