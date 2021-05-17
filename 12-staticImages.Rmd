@@ -1,0 +1,92 @@
+# Static Images {#staticImages}
+
+Static image refers to any image you're using in your App which is not produced by `R`. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.
+
+Within your App's folder/directory, there needs to be a sub-folder/directory called `www`. This is the place where you'll need to place ALL static image files.
+
+## Adding an Image
+
+To include the image in your App, you'll need to make use of the image tag, `img`. When you run your App, Shiny automatically knows to check the `www` folder any time the `img` tag gets called. 
+
+There are two main ways to add a static image: through a Figure Environment and In Line.
+
+### Figure Environment
+
+Here is example code for adding an image within a figure environment:
+
+```{r imageEx1, echo=TRUE, eval=FALSE}
+#[code omitted]
+tags$figure(
+  align = "center",
+  tags$img(
+    src = "astragalus.jpg",
+    width = 600,
+    alt = "Picture of an astragalus (bone die)"
+  ),
+  tags$figcaption("Image of Astragalus by Yaan, 2007")
+)
+#[code omitted]
+
+```
+
+In this first example, we've created a figure environment with the `tags$figure` call. The first argument we set in the figure environment sets whether the figure is left, center, or right aligned on the page. (Typically, we'll go with `align = "center"`.)
+
+The second part of the figure is the actual call to load the static image; `tags$img`. (Much the heading and paragraph HTML tags, you can omit `tags$` in this case; we would rather be safe than sorry, hence why we've left this in our code.) You will need to provide at least two arguments (`src` and `alt`) to this call. The `src` is the exact name of the file from the `www` folder you want to load while `alt` refers to the [Alt Text](#altStatic) for the image.
+
+The other argument (`width`) is one of two sizing arguments (along with `height`) that you can set to alter the size of your figure. Check out the [Sizing Section](#imageSize) section below.
+
+The last portion of the figure environment is the `tags$figcaption`. The figure caption is an opportunity to give a bit of information about the figure AND provide any credit. In our example, we've mentioned what the image is a picture of (an astragalus) as well as citing who the image belongs to (Yaan). Figure captions do not replace Alt Text and Alt Text does not replace figure captions; these are both complementary and distinct elements of static images.
+
+### In Line Images
+
+Sometimes you'll want to put an image within the line of text rather than as a separate figure environment. This is possible and you would use code similar to the following:
+
+```{r imageEx2, echo=TRUE, eval=FALSE}
+#[code omitted]
+p("Check your answer here -->",
+  tags$img(
+    src = "check.PNG",
+    alt = "Success, you are correct",
+    width = 25,
+    height = 25
+  ),
+  "<-- Check your answer here"
+),
+#[code omitted]
+
+```
+
+Notice that here we did not use either `tags$figure` nor `tags$figcaption`, rather we just used `tags$img` within a paragraph environment. The biggest caution we need to give here is to make sure you find an optimal size for your image.
+
+## Sizing Your Image (#imageSize)
+
+All image files have a native size that is part of that file. For instance, the check mark image is 270 x 250 pixels. However, we overrode that that sizing with the `width` and `height` arguments. 
+
+We recommend that you test out your app with the image's natural sizing (i.e., omit both `width` and `height` arguments) and see how that looks. From there, you can start a the testing process. Except in a few cases (like our checkmark example above), you will only want to set either `width` or `height` but not both. This will allow each user's browser to optimize the resolution of the image so that the image does not appear unduly stretched or compressed. Generally, go with changing the `width` argument.
+
+How did we decide on what size to use? We tested out various sizes until we found one that appeared to work well with our goals (i.e., not too large, not too small, but just right). This Goldilocks Zone of image size will change between every app as well as for different images within the same app. Try different sizes out and ask for specific feedback on image sizes. While finding an optimal size and position for your image can take some time, seeing bad settings is pretty obvious. Feel free to reach out to Neil and Bob for assistance.
+
+## Adding Alt Text to Static Images {#altStatic}
+
+Any graphical element you include in your App __MUST__ have an alternative (assistive) text description ("alt text"). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
+
+Here are several resources worth checking out:
+
++ [WebAIM Alternative Text Guide](https://webaim.org/techniques/alttext/#basics)
++ [Penn State's Image ALT Text Page](https://accessibility.psu.edu/images/alttext/)
++ [W3C's ALT Text Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
+
+In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:
+
+```{r altText1, echo=TRUE, eval=FALSE}
+#[code omitted]
+img(
+  src = "yourImage.PNG",
+  alt = "Short description of what's in the pic",
+  width = 25, height = 25
+)
+#[code omitted]
+
+```
+
+You MUST include *descriptive* alt text to each and every static image you include 

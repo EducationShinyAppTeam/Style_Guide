@@ -95,6 +95,10 @@ h6,
     font-size: 1.2rem;
 }
 
+.largerFont {
+	font-size: 1.2rem;
+}
+
 hr {
     border-top: 1px solid black;
     margin-top: 20px;
@@ -170,13 +174,13 @@ hr {
 }
 
 .bluetext {
-    color: blue;
-    margin-top: -0.5rem;
+	color: blue;
+	margin-top: -0.5rem; /* Slatted for removal*/
 }
 
 .redtext {
-    color: red;
-    margin-top: -0.5rem;
+	color: red;
+	margin-top: -0.5rem; /* Slatted for removal*/
 }
 
 .sidebarsection {
@@ -238,8 +242,8 @@ hr {
 }
 
 .skin-yellow .main-header .logo {
-    background-color: var(--invent-orange);
-    color: black;
+	background-color: var(--invent-orange);
+	color: black;
 }
 
 .skin-yellow .main-header .navbar .sidebar-toggle {
@@ -327,7 +331,7 @@ hr {
 }
 
 .skin-yellow .sidebar a {
-    color: black;
+	color: black;
 }
 
 .skin-black .sidebar a {
@@ -402,8 +406,8 @@ hr {
 }
 
 .skin-yellow .btn-default {
-    background-color: var(--invent-orange);
-    color: black;
+	background-color: var(--invent-orange);
+	color: black;
 }
 
 .skin-black .btn-default {
@@ -677,8 +681,8 @@ create customized appearances. This is NOT recommended.*/
 }
 
 .skin-yellow .sweet-alert button {
-    background-color: var(--invent-orange) !important;
-    color: black;
+	background-color: var(--invent-orange) !important;
+	color: black;
 }
 
 .skin-black .sweet-alert button {
@@ -919,8 +923,8 @@ create customized appearances. This is NOT recommended.*/
 }
 
 .skin-yellow .grid-tile button[disabled]:hover {
-    background-color: var(--invent-orange);
-    color: black;
+  background-color: var(--invent-orange);
+  color: black;
 }
 
 .skin-black .grid-tile button[disabled]:hover {
@@ -1152,4 +1156,63 @@ caption {
 
 .sidebar-footer .list-inline li:last-child:after {
     content: '';
+}
+
+/* Image expansion utilities */
+.expand-img-btn {
+  position: absolute;
+  right: 50px;
+  background-color: rgba(85, 85, 85, 0.9);
+  color: white;
+  font-size: 16px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.expand-img-btn[aria-expanded="true"]::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #8A8A8A;
+  z-index: 9998; 
+}
+
+.expanded {
+  position: fixed;
+  z-index: 9999; (for)
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  padding: 10%;
+}
+
+/* Error Messages */
+.shiny-output-error-leftParagraphError {
+	text-align: left;
+	padding: 0;
+}
+
+/* Shiny Matrix Input Controls */
+.matrix-input-col-header-cell{
+  padding: 15px 0px 0px 5px;
+}
+
+.matrix-input-row-header-cell{
+  text-align: right;
+  padding-right: 5px;
+}
+
+.matrix-input-cell{
+  border: 1pt solid black;
+  background: white;
+  padding-left: 5px;
+}
+
+.matrix-input-table{
+  width: 75%;
 }

@@ -1,5 +1,6 @@
 --- 
-title: "The BOAST Style Guide"
+title: "Building Shiny Apps the BOAST Way"
+subtitle: "A How To and Official Style Guide"
 author: 
   - Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)
 date: "`r format(Sys.time(), '%d %B %Y')`"
@@ -10,39 +11,117 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: educationshinyappteam/Style_Guide
-description: "This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)."
+description: "This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)."
 ---
 
 ```{r, echo = FALSE, eval = FALSE}
+# Required packages to build book
+install.packages(c("bookdown", "devtools", "palmerpenguins", "psych", "rstatix"))
+
+library(devtools)
+devtools::install_github("rstudio/fontawesome")
+
+# Required system library (pandoc-citeproc)
+#  => https://pandoc.org/installing.html
+
 # Rebuild book
 bookdown::render_book("index.Rmd", "bookdown::gitbook")
 ```
 
 # Welcome {-}
 
-This guide spells out the styling that should be used for all apps included in the [Book of Apps for Statistics Teaching (BOAST)](https://github.com/EducationShinyAppTeam/BOAST). 
+One of the biggest advantages of the modern era is computing power. This provides us with the ability to present statistical concepts in ways that allow students to explore and build their understandings in dynamic ways. A growing tool on this front are "Shiny Apps"--applications that may be run locally or on the web which are built using the the `R` language and the `shiny` package.
 
-There are several different aspects to what makes up styling including:
+We are not the first group to build online applications to help students learn ideas, nor will we be the last. In fact, we're not even the first group to build Shiny apps for Statistics Education. Thus, there are many different approaches to how people go about designing and coding Shiny apps. The primary goal of this document is to lay out the approach that we use to 1) formalize the approach for ourselves, and 2) share our approach with others who are wanting to build their own Shiny apps for teaching.
 
-  - Coding (how you write, organize, and comment the code that makes the app)
-  - Visual Appearance (how you make the app look including tabs, fonts, colors, icons, etc.)
-  - Wording (how you write information, instructions, and other messages to the users)
-  - Documentation (how you provide references, including code and data sources, and give credit)
+This guide spells out the recommended approach for building and the required styling to be used for all apps included in the [Book of Apps for Statistics Teaching (BOAST)](https://github.com/EducationShinyAppTeam/BOAST). You will need to follow this Style Guide to ensure that any app you create meets (or exceeds) our standards and is worthy of inclusion in BOAST. 
 
-In addition to these elements, we've provide information on ensuring that your App is accessible to all users and works well on mobile devices such as smart phones and tablets. 
+__Effective Date: May 17, 2021__  
+*All apps created and/or modified after the Effective Date are required to adhere to this version of the Style Guide. Apps which have not been modified since before the Effective Date will be brought into compliance on rolling basis.*
 
-Whenever possible, we've attempted to provide you with examples to help you see our standards in action as well as code that you can use as templates. For each code block, you should be able to place your cursor over the block and see a copy icon in the upper-right hand corner. This will allow you to copy the code. We've also included links to additional resources so that you can learn more about key topics.
+## Organization 
 
-You will need to follow this Style Guide to ensure that any app you create meets (or exceeds) our standards is worth of inclusion in BOAST. 
+We've laid out this document into several parts, each with their own chapters.
 
-This Style Guide is laid out in several parts:
++ Part 1: Getting Started
+    - Chapter 1---Using a Workflow
+    - Chapter 2---Explain Your Idea  
++ Part 2: Getting Ready to Code  
+    - Chapter 3---Setting Up Your Computer  
+    - Chapter 4---Exploring the Boast Template 
++ Part 3: Style Guide--Coding  
+    - Chapter 5---General BOAST Coding Style
+    - Chapter 6---Shiny (BOAST) Specific Coding Practices
+    - Chapter 7---HTML and CSS
+    - Chapter 8---Additional Coding Information
++ Part 4: Style Guide--App Layout
+    - Chapter 9---General Layout
+    - Chapter 10---Common/Reoccurring Elements
++ Part 5: Style Guide--Visual Style
+    - Chapter 11---Color
+    - Chapter 12---Static Images
+    - Chapter 13---R Plots
++ Part 6: Style Guide--Language
+    - Chapter 14--Wording
+    - Chapter 15--Documentation
++ Part 7: Accessibility and Mobile Devices
+    - Chapter 16--Accessibility
+    - Chapter 17--Mobile Friendliness
 
-+ Part 1 covers the basics for getting started
-+ Part 2 focuses on Coding Style
-+ Part 3 deals with the many aspects of Visual Styling
-+ Part 4 centers on Linguistic Styling
-+ Part 5 conveys important information on Accessibility and Mobile Friendliness
-+ Part 6 is where you can see an example of building an app from scratch
-+ The final part is where you can find some additional tools and information.
+Yes, this looks long but keep in mind the following:
 
-Please keep in mind that this Style Guide is a living document. As issues arise, we will update this guide to address those issues. Additionally, as we think of potential issues, we'll also update the guide to provide guidance before they occur. We also welcome any suggestions for improvements.
+<div style = "color: blue;">
++ Building an app is easy, but building an app that someone else can use effectively is a challenge. 
+
++ Building apps which support procedural conceptions is quick and easy to do. Building equitable apps which support users in developing productive meanings is much more difficult.
+</div>
+
+Our mission with BOAST is to achieve both with our entire collection. Thus, writing down all of the ins and outs of our process will take a significant amount of space.Whenever possible, we've attempted to provide you with examples where you can see our standards in action as well as code that you can use as templates. For each code block, you should be able to place your cursor over the block and see a copy icon in the upper-right hand corner. This will allow you to copy the code. We've also included links to additional resources so that you can learn more about key topics.
+
+Keep in mind that this guide is a living document. As issues arise, we will update this guide to address them. Additionally, as we think of potential issues, we'll also update the guide to provide guidance before they occur. We welcome any suggestions for improvements.
+
+## Why Our Approach?
+
+There are many different reasons for why we've developed this particular approach. THe most important of these reasons are 1) we're a team, 2) drawing upon research, 3) accessibility matters, and 4) a need to avoid the "shiny" problem. We will briefly discuss each one of these in turn.
+
+### We're a Team of Developers
+
+From the start, the [Book of Apps for Statistics Teaching (BOAST)](https://github.com/EducationShinyAppTeam/BOAST) has been the joint effort of faculty members and students. Having a clear articulation of how to make apps within our environment is critical to ensure that we have cohesiveness between the apps and through the years as the team changes. Our approach is meant to maximize the team's ability to adapt, maintain, and grow BOAST throughout the years. 
+
+### Research Driven
+
+We place a premium on drawing from what researchers have found about student thinking on various topics. And for those topics where the literature is thin or non-existent, we can fall back on the wealth of experience and expertise our faculty have. When we design apps, we focus on what the learning objectives are and work on how we might support students in developing meanings that are consistent with our targets.
+
+### Accesiblity Minded
+
+One of the key ways in which our approach differs from a vast majority of others is the level of accessibility thinking we go through. Shiny apps are __not__ very accessible by default and are extremely easy to make even more inaccessible. 
+
+For example, consider the following entries in the [2020 Shiny app competition](https://blog.rstudio.com/2020/07/13/winners-of-the-2nd-shiny-contest/), as of 10/15/2020:
+
++ [Blog Explorer by Stefan Schliebs](https://nz-stefan.shinyapps.io/blog-explorer/#data): This Grand Prize winner has 11 accessibility errors, 68 contrast errors, and 14 accessibility alerts.
++ [Life of Pi: A Monte Carlo Simulation by Zauad Shahereer Abeer](https://shahreyar-abeer.shinyapps.io/life_of_pi/): This Honorable mention has 17 accessibility errors, 13 contrast errors, and 9 accessibility alerts.
++ [OTS Beta Dashboard by Mauricio Vargas](https://pachamaltese.shinyapps.io/tradestatistics/): This Honorable mention generates 14 accessibility errors, 0 contrast errors, and 5 accessibility alerts.
++ [Probability of Normal Distribution by Aep Hidayatuloh](https://azures.shinyapps.io/normdist/): Produces 5 accessibility errors, 108 contrast errors, and 27 accessibility alerts.
++ [Didactic Modeling Process: Linear Regression by Daniel Rivera](https://shiny.rstudio.com/gallery/didacting-modeling.html): while not part of the Shiny contest, this is a currently featured app in [RStudio's Shiny User Showcase](https://shiny.rstudio.com/gallery/), which has 57 accessibility errors, 26 contrast errors, and 184 accessibility alerts.
+
+We used [WebAIM's Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/) to get these measurements. However, we must point out that the above numbers are *under-*estimates. The nature of a Shiny app interferes with WAVE's scanning tool (for example, non-displayed app pages aren't checked) as well as the fact that rendered R plots can only be checked for the presence of alt text/aria labels but not contrast errors, small font sizes, etc.
+
+Now, this isn't to say that our apps are problem free. However, our process ensures that the number of errors that exist are in the single digits. When we publish an app, most of the remaining errors are ones we inherent from the `shiny` package and we're striving to address.
+
+### Avoid the "Shiny" Problem 
+
+In Education, and particularly in the American system, we wrestle with the "silver bullet problem". This problem is the belief that some reform effort will function as a fix or cure-all for the issues facing the education system. These reforms never bare out.
+
+In design, people can get caught up with new (at least to them) tools such as a glitzy new system to do something. They will then start incorporating it everywhere they can. However, they often don't stop to think about whether this glittery new toy is appropriate or sound design. This is especially true for novice designers.
+
+When dealing with Shiny apps for teaching, we face both problems simultaneously, which we call "The Shiny Problem". We work hard to ensure that 
+
+1. Our apps aren't going to be viewed as silver bullets but as useful resources that can supplement instruction.
+2. Just because `R` can do something doesn't automatically mean that we're going to include it; there must be a sound educational and pedagogical reason for including it.
+3. Just because there's a fancy new package that's been released doesn't mean we'll blindly adopt it and use it wherever; there must be a sound educational and pedagogical reason.
+4. Just because someone else made an app that did such-and-such doesn't mean we're going to; there must be a sound educational and pedagogical reason.
+
+If you notice, ensuring that our apps are based in sound educational and pedagogical practices is key to our decision making. We strive for our Shiny apps to not become *shiny*.
+
+
+We hope that this Welcome has helped you develop an image for the basis for many of the decisions that we've laid out in this guide. Feel free to move through the guide sequentially or to jump to various sections as needed. 

@@ -1,0 +1,127 @@
+# The Exploring the BOAST Template {#template}
+
+Now that you've gotten your computer set up and you've made yourself a workflow, you're nearly ready to begin working on apps for BOAST. This Guide is the primary key to getting started but the BOAST Template is the secondary key to your success. 
+
+## Structure of the BOAST Template Repository {#templateRepo}
+
+To get started, you'll want to take a look at the [BOAST App Template Repository](https://github.com/EducationShinyAppTeam/App_Template) either online or clone the repository ("repo") to your computer. There are several key items in the repo that you'll need to be aware of:
+
++ `app.R`: this is where you will write the code for your app.
+    - Note: Older apps (i.e., non-compliant with this Style Guide) might have `ui.R` and `server.R` files instead. You'll need to convert them if you are doing an update.
++ `www` folder: this will be where you store image files and other non-data, non-R files for your app.
++ `docs` folder: this is where several key files are stored for your including the License, a Readme, and a screenshot.
++ `DESCRIPTION`: this file is where you'll need to place some key information about your app
++ Additional files and folders you may ignore: `.git`, `.gitignore`, `.lintr`.
+
+As you build your app (or work with existing apps), you'll add various files to the repo. For some of the older apps, part of the maintainer's job will be move the repo into alignment with this template (i.e., add anything missing and move files around as needed). However, the basics of the App Template are required elements for all apps; thus, you need to familiarize yourself with them.
+
+We will now briefly discuss the files which you will be editing.
+
+## The `app.R`  File{#appR}
+
+This is where you'll do the vast majority of your work. We will not spend too much time describing the ins and outs of this file at this time. However, we do want to mention the five components to any BOAST app.R file.
+
+1. __Loading Packages:__ the first part of any `app.R` file will be where you load all necessary packages for your app through a series of `library` calls. Only load those packages that you are actively using. 
+
+    For example, if you only need `ggplot2`, include `library(ggplot2)` in the list rather than loading all of the the Tidyverse (i.e., `library(tidyverse)`). 
+
+2. __Global Constants, Functions, and Data Sets:__ after you load all needed packages, you can now define any constants, custom functions, and data files. We call these elements "global" as by defining them here, you may call them any where in your code. If you were to only define them in the server section, then you can only call on them while you're in the server. Additionally, by defining them here, you allow for better resource sharing when we deploy your app and you start having hundreds of users.
+
+3. __The User Interface (UI):__ this next portion is where you will define all of the elements that will make up the user interface. The App Template will provide you with a skeleton, but it is up to you to make your sketches come to life.
+
+4. __The Server:__ after you create the UI, you now have to create the server which is where you'll define actions for your app. This is where you'll make use of any inputs or buttons you created in the UI to make things happen such as causing events to occur, plots to appear/change, score user's answers, etc.
+
+5. __The BOAST App Call:__ the final line of your code will be the BOAST app call (`boastUtils::boastApp(ui = ui, server= server)`). This is the line of code which takes your UI and server definitions and actually creates your app.
+
+## DESCRIPTION {#description}
+
+The DESCRIPTION file plays the role of metadata for your app. Formerly, we used to store some metadata inside of the apps. However, as our needs for managing app metadata have grown, we've gone a different route. Enter the DESCRIPTION file. If an existing app does not have a DESCRIPTION file, copy the DESCRIPTION file from the App Template and place that copy in the existing app's repo. Then edit the file. Be sure to push your changes to GitHub when finished.
+
+The DESCRIPTION contains several fields (typically, the first word of each line, to the left of a colon). You will be editing the following fields:
+
++ __Title:__ this is where you'll put the full title of your app.
++ __ShortName:__ this is where you'll put the short version of your app's title (you'll also use this in your app's header.)
++ __Date:__ this should reflect the date of the submission that was approved for deployment.
++ __Lifecycle:__ you'll put the one word mention of the lifecycle which will match what you place in the README; see [below](#lifecycle) for the words to put here.
++ __Authors:__ this is where you'll put information about who worked on the app; more on this [below](#authors).
++ __Chapter:__ this will be the primary chapter of BOAST where the app will live; e.g., Chapter 2.
++ __Description:__ you'll enter the description of the app here.
++ __LearningObjectives:__ you'll list all learning objectives for your app here; more details [below](#learningObjectives).
++ __BugReports:__ Replace `Sample_App` with your app's GitHub repo name
++ __Tags:__ list out all of the tags that go with your app; see [below](#tags).
+
+### Authors
+
+This is where you'll list each person who is involved with your app. You'll want to follow the two examples provided for how to add each person. Each person will get their own `person` call, on a line that is indented four (4) spaces.
+
+Within each person call, you'll need to provide their given (first) name, their family (last) name, their email, and their roles. Notice that you can give a person more than one role. Here is a brief explanation for the roles you can use:
+
++ __"aut"__ is for individuals who made substantial contributes to the app and should be include in any citations, i.e., they are authors of the app
++ __"cre"__ is for individuals who originally came up with the app; i.e., the original creators
++ __"ctb"__ is for individuals who contributed to the app in some way but those contributions are smaller than an author's
++ __"fnd"__ (RARE) if we receive additional funding from someone to create a specific app, we will list then as funder with this role
+
+### Learning Objectives{#learningObjectives}
+
+Each app will have one or more learning objectives. This information will be made available to instructors through the Instructor's App and is important for deciding whether to use the app. You will not have to come up with the wording of these objectives on your own. Rather the faculty will assist you. 
+
+Each objective will be entered as a character string enclosed in double quotation marks and indented four (4) spaces. If the description is rather long, simply break the line and continue. You'll place a comma between objectives.
+
+### Tags
+
+The Tags portion is where you'll enter all of the appropriate tags we use in BOAST (i.e., Simulation, Multilevel, Real Data, Game) for your app. As we go through the apps and create new ones, we might come up with new tags which we can then apply to the apps.
+
+## README.md {#readme}
+
+The `README.md` file is a fairly simple file which only contains four items:
+
+1) The app's [Full] Title
+2) The app's badges
+3) A link to a current screenshot of the app
+4) The app's description
+
+Three of these items (title, screenshot, and description) are self-explanatory. We will quickly mention that you will need to insure that you use the appropriate Title and Description not only here in the `README.md` but also in `DESCRIPTION`. You'll also need to use the full title inside the `app.R`.
+
+### Badges
+
+The second element of the `README.md` are the badges. These allow viewers to see (at a glance) some important information about the app. There are two main types of badges: lifecycle and year.
+
+Beneath each explanation, we've included the code you would place in the `README.md` file to make that badge appear.
+
+
+#### Lifecycle Badges {#lifecycle}
+
+Lifecycle badges act as a signifier of where in the cycle of development your app is at. Each badge conveys a particular meaning for us. The word that you'll put in the Lifecycle field of the DESCRIPTION file will be in __bold__.
+
++ ![stable](https://img.shields.io/badge/lifecycle-stable-brightgreen) An app is considered __stable__ when we've reached a point where there are no bugs left to fix, only minimal improvements can be made, and adding new features is not necessary a priority. This is where we want most apps to end up.
+    - `![stable](https://img.shields.io/badge/lifecycle-stable-brightgreen)`
+<br /> <br />
++ ![maturing](https://img.shields.io/badge/lifecycle-maturing-blue) A __maturing__ app is one that is nearing stability but we're still in the process of fine tuning or adding new features to the app.
+    - `![maturing](https://img.shields.io/badge/lifecycle-maturing-blue)`
+<br /> <br />
++ ![experimental](https://img.shields.io/badge/lifecycle-experimental-orange) The __experimental__ badge is for two types of apps: ones that we are still in the process of developing and ones which we've recently released and are actively refining. The common element here is that these apps can change much more drastically than a mature or stable app will.
+    - `![experimental](https://img.shields.io/badge/lifecycle-experimental-orange)`
+<br /> <br />
++ ![questioning](https://img.shields.io/badge/lifecycle-questioning-yellow) Labeling an app with the __questioning__ badge is a sign that we have doubts that the app (in it's current state) meets the educational/pedagogical goals intended. These are apps where we need to make a decision about whether to update the app, create a new app, or retire the app.
+    - `![questioning](https://img.shields.io/badge/lifecycle-questioning-yellow)`
+<br /> <br />
++ ![superseded](https://img.shields.io/badge/lifecycle-superseded-orange) A __superseded__ app is one where we've made the decision to create a brand new app which will ultimately replace this one. The new app will have its own repository and will be treated as a brand new app rather than an update of this app. In time, a superseded app will be downgraded and retired.
+    - `![superseded](https://img.shields.io/badge/lifecycle-superseded-orange)`
+<br /> <br />
++ ![retired](https://img.shields.io/badge/lifecycle-retired-red) Once an app has reached a point where we have chosen to no longer actively maintain it and feel that it does not serve a pedagogical purpose, we retire the app (__retired__). This includes removing the app from our shinyapps.io server. The code will be saved on GitHub for posterity but no development will take place.
+    - `![retired](https://img.shields.io/badge/lifecycle-retired-red)`
+
+#### Year Badges
+
+Year badges denote when the app was officially added to the BOAST shinyapps.io server (i.e., deployment). 
+
++ ![year](https://img.shields.io/badge/year-2018-lightgrey) Here the four digit year indicates in what calendar year we deployed the app.
+    - `![year](https://img.shields.io/badge/year-YYYY-lightgrey)`
+    - Replace YYYY with the appropriate year.
+<br /> <br />
++ ![new](https://img.shields.io/badge/lifecycle-newapp-brightgreen) This signifies that the app has just recently been added to our shinyapps.io server for the first time. We will drop this badge after one year.
+    - `![new](https://img.shields.io/badge/lifecycle-newapp-brightgreen)`
+
+## screenshot.png {#screenshot}
+
+You may see a file called `screenshot.png`. This is a placeholder file that adds a generic screenshot to the `readme.md`. After your app is deployed, we will update the `readme.md.` to link to the photo of your app used on the BOAST website. Thus, you do not have to do anything with this file.

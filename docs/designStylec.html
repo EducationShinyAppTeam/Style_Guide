@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 13 Design Style | Building Shiny Apps the BOAST Way</title>
+  <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 13 Design Style | Building Shiny Apps the BOAST Way" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 13 Design Style | Building Shiny Apps the BOAST Way" />
+  
+  <meta name="twitter:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  
+
+<meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
+
+
+<meta name="date" content="2021-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="staticImages.html"/>
+<link rel="next" href="wording.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BOAST Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#organization"><i class="fa fa-check"></i><b>0.1</b> Organization</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a>
+<ul>
+<li class="chapter" data-level="0.2.1" data-path="index.html"><a href="index.html#were-a-team-of-developers"><i class="fa fa-check"></i><b>0.2.1</b> We’re a Team of Developers</a></li>
+<li class="chapter" data-level="0.2.2" data-path="index.html"><a href="index.html#research-driven"><i class="fa fa-check"></i><b>0.2.2</b> Research Driven</a></li>
+<li class="chapter" data-level="0.2.3" data-path="index.html"><a href="index.html#accesiblity-minded"><i class="fa fa-check"></i><b>0.2.3</b> Accesiblity Minded</a></li>
+<li class="chapter" data-level="0.2.4" data-path="index.html"><a href="index.html#avoid-the-shiny-problem"><i class="fa fa-check"></i><b>0.2.4</b> Avoid the “Shiny” Problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>1</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps-worflow"><i class="fa fa-check"></i><b>1.1</b> Revising Existing Apps Worflow</a></li>
+<li class="chapter" data-level="1.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps-workflow"><i class="fa fa-check"></i><b>1.2</b> Creating New Apps Workflow</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>1.2.1</b> GitHub Repo Names</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>1.3.1</b> Set Up/Login to the VPN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>1.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
+<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>1.3.3</b> Publishing Your App for Testing</a></li>
+<li class="chapter" data-level="1.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>1.3.4</b> Configuring for Testing</a></li>
+<li class="chapter" data-level="1.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>1.3.5</b> Check the Logs</a></li>
+<li class="chapter" data-level="1.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>1.3.6</b> Problems?</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Getting Started</b></span></li>
+<li class="chapter" data-level="2" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>2</b> Making an App</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>2.1</b> Step 1: Read the Style Guide</a></li>
+<li class="chapter" data-level="2.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>2.2</b> Step 2: Identify a Topic</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>2.2.1</b> Your App’s Purpose</a></li>
+<li class="chapter" data-level="2.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>2.2.2</b> The Topic</a></li>
+<li class="chapter" data-level="2.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>2.2.3</b> Goals</a></li>
+<li class="chapter" data-level="2.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>2.2.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>2.3</b> Step 3: Sketch out plans</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="makingApp.html"><a href="makingApp.html#key-elements"><i class="fa fa-check"></i><b>2.3.1</b> Key Elements</a></li>
+<li class="chapter" data-level="2.3.2" data-path="makingApp.html"><a href="makingApp.html#example-cont."><i class="fa fa-check"></i><b>2.3.2</b> Example, cont.</a></li>
+<li class="chapter" data-level="2.3.3" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>2.3.3</b> Share Your Plan</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>2.4</b> Step 4: Create Repository</a></li>
+<li class="chapter" data-level="2.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>2.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
+<li class="chapter" data-level="2.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>2.6</b> Step 9: Larger Scale Testing</a></li>
+<li class="chapter" data-level="2.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>2.7</b> Steps 10-11: Pull Requests and Tweaks</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="makingApp.html"><a href="makingApp.html#appearance-review-part-of-large-scale-testing"><i class="fa fa-check"></i><b>2.7.1</b> Appearance Review (part of Large Scale Testing)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="makingApp.html"><a href="makingApp.html#coding-review"><i class="fa fa-check"></i><b>2.7.2</b> Coding Review</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Getting Ready to Code</b></span></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="basics.html"><a href="basics.html#useful-rstudio-settings"><i class="fa fa-check"></i><b>3.5</b> Useful RStudio Settings</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basics.html"><a href="basics.html#coding-margin"><i class="fa fa-check"></i><b>3.5.1</b> Coding Margin</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics.html"><a href="basics.html#line-numbers"><i class="fa fa-check"></i><b>3.5.2</b> Line Numbers</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basics.html"><a href="basics.html#whitespace-characters"><i class="fa fa-check"></i><b>3.5.3</b> Whitespace Characters</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basics.html"><a href="basics.html#rainbow-parentheses"><i class="fa fa-check"></i><b>3.5.4</b> Rainbow Parentheses</a></li>
+<li class="chapter" data-level="3.5.5" data-path="basics.html"><a href="basics.html#code-diagnostics"><i class="fa fa-check"></i><b>3.5.5</b> Code Diagnostics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
+<li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The <code>app.R</code> File</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="template.html"><a href="template.html#screenshot"><i class="fa fa-check"></i><b>4.5</b> screenshot.png</a></li>
+</ul></li>
+<li class="part"><span><b>III Style Guide-Coding</b></span></li>
+<li class="chapter" data-level="5" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>5</b> Coding Style</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>5.1</b> General Coding Style</a></li>
+<li class="chapter" data-level="5.2" data-path="coding.html"><a href="coding.html#readable"><i class="fa fa-check"></i><b>5.2</b> Make Your Code Readable</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="coding.html"><a href="coding.html#formatSpace"><i class="fa fa-check"></i><b>5.2.1</b> Formatting and Spacing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>5.2.2</b> Use Informative Names</a></li>
+<li class="chapter" data-level="5.2.3" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>5.2.3</b> Be Explicit</a></li>
+<li class="chapter" data-level="5.2.4" data-path="coding.html"><a href="coding.html#exceptions-to-readability"><i class="fa fa-check"></i><b>5.2.4</b> Exceptions to Readability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="coding.html"><a href="coding.html#efficient"><i class="fa fa-check"></i><b>5.3</b> Make Your Code Efficient</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="coding.html"><a href="coding.html#dry-coding"><i class="fa fa-check"></i><b>5.3.1</b> DRY Coding</a></li>
+<li class="chapter" data-level="5.3.2" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>5.3.2</b> Minimize Package Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="coding.html"><a href="coding.html#beKind"><i class="fa fa-check"></i><b>5.4</b> Be Kind to Future Coders</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>5.4.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="5.4.2" data-path="coding.html"><a href="coding.html#code-section-titlesjump-points"><i class="fa fa-check"></i><b>5.4.2</b> Code Section Titles/Jump Points</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="specificCoding.html"><a href="specificCoding.html"><i class="fa fa-check"></i><b>6</b> Shiny (BOAST) Specific Coding Practices</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specificCoding.html"><a href="specificCoding.html#orgCode"><i class="fa fa-check"></i><b>6.1</b> Overarching Organization</a></li>
+<li class="chapter" data-level="6.2" data-path="specificCoding.html"><a href="specificCoding.html#calling-inputs-and-outputs"><i class="fa fa-check"></i><b>6.2</b> Calling Inputs and Outputs</a></li>
+<li class="chapter" data-level="6.3" data-path="specificCoding.html"><a href="specificCoding.html#reactive-vs.-observe"><i class="fa fa-check"></i><b>6.3</b> Reactive vs. Observe</a></li>
+<li class="chapter" data-level="6.4" data-path="specificCoding.html"><a href="specificCoding.html#working-with-reactive-values"><i class="fa fa-check"></i><b>6.4</b> Working with Reactive Values</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="specificCoding.html"><a href="specificCoding.html#input"><i class="fa fa-check"></i><b>6.4.1</b> <code>input</code></a></li>
+<li class="chapter" data-level="6.4.2" data-path="specificCoding.html"><a href="specificCoding.html#reactiveval"><i class="fa fa-check"></i><b>6.4.2</b> <code>reactiveVal</code></a></li>
+<li class="chapter" data-level="6.4.3" data-path="specificCoding.html"><a href="specificCoding.html#reactivevalues"><i class="fa fa-check"></i><b>6.4.3</b> <code>reactiveValues</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="specificCoding.html"><a href="specificCoding.html#events"><i class="fa fa-check"></i><b>6.5</b> Events</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="specificCoding.html"><a href="specificCoding.html#eventreactive"><i class="fa fa-check"></i><b>6.5.1</b> <code>eventReactive</code></a></li>
+<li class="chapter" data-level="6.5.2" data-path="specificCoding.html"><a href="specificCoding.html#observeevent"><i class="fa fa-check"></i><b>6.5.2</b> <code>observeEvent</code></a></li>
+<li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="htmlCSS.html"><a href="htmlCSS.html#html"><i class="fa fa-check"></i><b>7.1</b> HTML Tags</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="htmlCSS.html"><a href="htmlCSS.html#paragraphs"><i class="fa fa-check"></i><b>7.1.1</b> Paragraphs</a></li>
+<li class="chapter" data-level="7.1.2" data-path="htmlCSS.html"><a href="htmlCSS.html#breaks"><i class="fa fa-check"></i><b>7.1.2</b> Breaks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="htmlCSS.html"><a href="htmlCSS.html#lists"><i class="fa fa-check"></i><b>7.1.3</b> Lists</a></li>
+<li class="chapter" data-level="7.1.4" data-path="htmlCSS.html"><a href="htmlCSS.html#headers"><i class="fa fa-check"></i><b>7.1.4</b> Headers</a></li>
+<li class="chapter" data-level="7.1.5" data-path="htmlCSS.html"><a href="htmlCSS.html#links-bodylinks"><i class="fa fa-check"></i><b>7.1.5</b> Links (#bodyLinks)</a></li>
+<li class="chapter" data-level="7.1.6" data-path="htmlCSS.html"><a href="htmlCSS.html#div"><i class="fa fa-check"></i><b>7.1.6</b> Divisions</a></li>
+<li class="chapter" data-level="7.1.7" data-path="htmlCSS.html"><a href="htmlCSS.html#horizontal-rule"><i class="fa fa-check"></i><b>7.1.7</b> Horizontal Rule</a></li>
+<li class="chapter" data-level="7.1.8" data-path="htmlCSS.html"><a href="htmlCSS.html#other-tags"><i class="fa fa-check"></i><b>7.1.8</b> Other Tags</a></li>
+<li class="chapter" data-level="7.1.9" data-path="htmlCSS.html"><a href="htmlCSS.html#stylingTags"><i class="fa fa-check"></i><b>7.1.9</b> Text Styling Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="htmlCSS.html"><a href="htmlCSS.html#htmlID"><i class="fa fa-check"></i><b>7.2</b> HTML <code>id</code></a></li>
+<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.3</b> CSS</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="htmlCSS.html"><a href="htmlCSS.html#cssProblems"><i class="fa fa-check"></i><b>7.3.1</b> Problematic CSS in Old Apps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.4</b> Using CSS</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="htmlCSS.html"><a href="htmlCSS.html#text-alignment"><i class="fa fa-check"></i><b>7.4.1</b> Text Alignment</a></li>
+<li class="chapter" data-level="7.4.2" data-path="htmlCSS.html"><a href="htmlCSS.html#classes"><i class="fa fa-check"></i><b>7.4.2</b> Classes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="additionalCoding.html"><a href="additionalCoding.html"><i class="fa fa-check"></i><b>8</b> Additional Coding Practices</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="additionalCoding.html"><a href="additionalCoding.html#plotCachec"><i class="fa fa-check"></i><b>8.1</b> Plot Caching</a></li>
+<li class="chapter" data-level="8.2" data-path="additionalCoding.html"><a href="additionalCoding.html#exFiles"><i class="fa fa-check"></i><b>8.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="8.3" data-path="additionalCoding.html"><a href="additionalCoding.html#metadatac"><i class="fa fa-check"></i><b>8.3</b> Metadata</a></li>
+<li class="chapter" data-level="8.4" data-path="additionalCoding.html"><a href="additionalCoding.html#otherLanguages"><i class="fa fa-check"></i><b>8.4</b> Other Languages (Python, JavaScript, etc.)</a></li>
+<li class="chapter" data-level="8.5" data-path="additionalCoding.html"><a href="additionalCoding.html#rlockerc"><i class="fa fa-check"></i><b>8.5</b> Using rLocker</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="additionalCoding.html"><a href="additionalCoding.html#installing"><i class="fa fa-check"></i><b>8.5.1</b> Installing</a></li>
+<li class="chapter" data-level="8.5.2" data-path="additionalCoding.html"><a href="additionalCoding.html#setup"><i class="fa fa-check"></i><b>8.5.2</b> Setup</a></li>
+<li class="chapter" data-level="8.5.3" data-path="additionalCoding.html"><a href="additionalCoding.html#usage"><i class="fa fa-check"></i><b>8.5.3</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
+<li class="chapter" data-level="" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i>App Layout</a></li>
+<li class="chapter" data-level="9" data-path="uiStructure.html"><a href="uiStructure.html"><i class="fa fa-check"></i><b>9</b> User Interface Structure</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="uiStructure.html"><a href="uiStructure.html#dashboard"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard"><i class="fa fa-check"></i><b>9.1.1</b> Creating the Dashboard</a></li>
+<li class="chapter" data-level="9.1.2" data-path="uiStructure.html"><a href="uiStructure.html#colorUI"><i class="fa fa-check"></i><b>9.1.2</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="9.1.3" data-path="uiStructure.html"><a href="uiStructure.html#chapterColor"><i class="fa fa-check"></i><b>9.1.3</b> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="uiStructure.html"><a href="uiStructure.html#header"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>9.2.1</b> Creating the Dashboard Header</a></li>
+<li class="chapter" data-level="9.2.2" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>9.2.2</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>9.3.1</b> Creating the Dashboard Sidebar</a></li>
+<li class="chapter" data-level="9.3.2" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-order"><i class="fa fa-check"></i><b>9.3.2</b> Sidebar Order</a></li>
+<li class="chapter" data-level="9.3.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-names"><i class="fa fa-check"></i><b>9.3.3</b> Sidebar Names</a></li>
+<li class="chapter" data-level="9.3.4" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-icons"><i class="fa fa-check"></i><b>9.3.4</b> Sidebar Icons</a></li>
+<li class="chapter" data-level="9.3.5" data-path="uiStructure.html"><a href="uiStructure.html#submenus"><i class="fa fa-check"></i><b>9.3.5</b> Submenus</a></li>
+<li class="chapter" data-level="9.3.6" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>9.3.6</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="uiStructure.html"><a href="uiStructure.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="uiStructure.html"><a href="uiStructure.html#the-overview-page"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Page</a></li>
+<li class="chapter" data-level="9.4.2" data-path="uiStructure.html"><a href="uiStructure.html#a-prerequisites-page"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Page</a></li>
+<li class="chapter" data-level="9.4.3" data-path="uiStructure.html"><a href="uiStructure.html#activity-pages"><i class="fa fa-check"></i><b>9.4.3</b> Activity Pages</a></li>
+<li class="chapter" data-level="9.4.4" data-path="uiStructure.html"><a href="uiStructure.html#refPage"><i class="fa fa-check"></i><b>9.4.4</b> References Page</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="uiStructure.html"><a href="uiStructure.html#activityLayout"><i class="fa fa-check"></i><b>9.5</b> Layout of Activity Pages</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="uiStructure.html"><a href="uiStructure.html#two-required-elements"><i class="fa fa-check"></i><b>9.5.1</b> Two Required Elements</a></li>
+<li class="chapter" data-level="9.5.2" data-path="uiStructure.html"><a href="uiStructure.html#the-classical-layout"><i class="fa fa-check"></i><b>9.5.2</b> The Classical Layout</a></li>
+<li class="chapter" data-level="9.5.3" data-path="uiStructure.html"><a href="uiStructure.html#visTabs"><i class="fa fa-check"></i><b>9.5.3</b> Visible Tabs</a></li>
+<li class="chapter" data-level="9.5.4" data-path="uiStructure.html"><a href="uiStructure.html#hiddenTabs"><i class="fa fa-check"></i><b>9.5.4</b> Hidden Tabs</a></li>
+<li class="chapter" data-level="9.5.5" data-path="uiStructure.html"><a href="uiStructure.html#sets-of-controls"><i class="fa fa-check"></i><b>9.5.5</b> Sets of Controls</a></li>
+<li class="chapter" data-level="9.5.6" data-path="uiStructure.html"><a href="uiStructure.html#tic-tac-toe"><i class="fa fa-check"></i><b>9.5.6</b> Tic-Tac-Toe</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="uiStructure.html"><a href="uiStructure.html#innerTabs"><i class="fa fa-check"></i><b>9.6</b> Tab Sets</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tab-set"><i class="fa fa-check"></i><b>9.6.1</b> Create the Tab Set</a></li>
+<li class="chapter" data-level="9.6.2" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tabs"><i class="fa fa-check"></i><b>9.6.2</b> Create the Tabs</a></li>
+<li class="chapter" data-level="9.6.3" data-path="uiStructure.html"><a href="uiStructure.html#moving-between-tabs"><i class="fa fa-check"></i><b>9.6.3</b> Moving Between Tabs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="commonElements.html"><a href="commonElements.html"><i class="fa fa-check"></i><b>10</b> Common Elements</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="commonElements.html"><a href="commonElements.html#rowsCols"><i class="fa fa-check"></i><b>10.1</b> Fluid Rows and Columns</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="commonElements.html"><a href="commonElements.html#nesting-fluidrow"><i class="fa fa-check"></i><b>10.1.1</b> Nesting <code>fluidRow</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="commonElements.html"><a href="commonElements.html#wellPanels"><i class="fa fa-check"></i><b>10.2</b> Well Panels</a></li>
+<li class="chapter" data-level="10.3" data-path="commonElements.html"><a href="commonElements.html#collapsible"><i class="fa fa-check"></i><b>10.3</b> Collapsible Boxes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="commonElements.html"><a href="commonElements.html#creating-collapsible-boxes"><i class="fa fa-check"></i><b>10.3.1</b> Creating Collapsible Boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="commonElements.html"><a href="commonElements.html#buttons"><i class="fa fa-check"></i><b>10.4</b> Buttons</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="commonElements.html"><a href="commonElements.html#main-type-of-button"><i class="fa fa-check"></i><b>10.4.1</b> Main Type of Button</a></li>
+<li class="chapter" data-level="10.4.2" data-path="commonElements.html"><a href="commonElements.html#labels"><i class="fa fa-check"></i><b>10.4.2</b> Labels</a></li>
+<li class="chapter" data-level="10.4.3" data-path="commonElements.html"><a href="commonElements.html#icons"><i class="fa fa-check"></i><b>10.4.3</b> Icons</a></li>
+<li class="chapter" data-level="10.4.4" data-path="commonElements.html"><a href="commonElements.html#style-color"><i class="fa fa-check"></i><b>10.4.4</b> Style (Color)</a></li>
+<li class="chapter" data-level="10.4.5" data-path="commonElements.html"><a href="commonElements.html#disabled"><i class="fa fa-check"></i><b>10.4.5</b> Disabled</a></li>
+<li class="chapter" data-level="10.4.6" data-path="commonElements.html"><a href="commonElements.html#updating-buttons"><i class="fa fa-check"></i><b>10.4.6</b> Updating Buttons</a></li>
+<li class="chapter" data-level="10.4.7" data-path="commonElements.html"><a href="commonElements.html#other-issues"><i class="fa fa-check"></i><b>10.4.7</b> Other Issues</a></li>
+<li class="chapter" data-level="10.4.8" data-path="commonElements.html"><a href="commonElements.html#listening-to-buttons"><i class="fa fa-check"></i><b>10.4.8</b> Listening to Buttons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="commonElements.html"><a href="commonElements.html#inputs"><i class="fa fa-check"></i><b>10.5</b> Inputs</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="commonElements.html"><a href="commonElements.html#types-of-inputs"><i class="fa fa-check"></i><b>10.5.1</b> Types of Inputs</a></li>
+<li class="chapter" data-level="10.5.2" data-path="commonElements.html"><a href="commonElements.html#animation-of-sliders"><i class="fa fa-check"></i><b>10.5.2</b> Animation of Sliders</a></li>
+<li class="chapter" data-level="10.5.3" data-path="commonElements.html"><a href="commonElements.html#ordering-inputs"><i class="fa fa-check"></i><b>10.5.3</b> Ordering Inputs</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="commonElements.html"><a href="commonElements.html#correctincorrect-marks"><i class="fa fa-check"></i><b>10.6</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="10.7" data-path="commonElements.html"><a href="commonElements.html#alerts-and-messages"><i class="fa fa-check"></i><b>10.7</b> Alerts and Messages</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="commonElements.html"><a href="commonElements.html#alert-types"><i class="fa fa-check"></i><b>10.7.1</b> Alert Types</a></li>
+<li class="chapter" data-level="10.7.2" data-path="commonElements.html"><a href="commonElements.html#alert-title-and-text"><i class="fa fa-check"></i><b>10.7.2</b> Alert Title and Text</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="commonElements.html"><a href="commonElements.html#popovers-and-tooltips"><i class="fa fa-check"></i><b>10.8</b> Popovers and Tooltips</a></li>
+<li class="chapter" data-level="10.9" data-path="commonElements.html"><a href="commonElements.html#progress-bars"><i class="fa fa-check"></i><b>10.9</b> Progress Bars</a></li>
+</ul></li>
+<li class="part"><span><b>V Style Guide-Design Style</b></span></li>
+<li class="chapter" data-level="" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i>Design Style</a></li>
+<li class="chapter" data-level="11" data-path="simpleDesign.html"><a href="simpleDesign.html"><i class="fa fa-check"></i><b>11</b> Branding, Color, and Text</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="simpleDesign.html"><a href="simpleDesign.html#logo"><i class="fa fa-check"></i><b>11.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="11.2" data-path="simpleDesign.html"><a href="simpleDesign.html#colors"><i class="fa fa-check"></i><b>11.2</b> Colors</a></li>
+<li class="chapter" data-level="11.3" data-path="simpleDesign.html"><a href="simpleDesign.html#styleText"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="simpleDesign.html"><a href="simpleDesign.html#headings"><i class="fa fa-check"></i><b>11.3.1</b> Headings</a></li>
+<li class="chapter" data-level="11.3.2" data-path="simpleDesign.html"><a href="simpleDesign.html#paragraph-text"><i class="fa fa-check"></i><b>11.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="11.3.3" data-path="simpleDesign.html"><a href="simpleDesign.html#mathematics"><i class="fa fa-check"></i><b>11.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="11.3.4" data-path="simpleDesign.html"><a href="simpleDesign.html#game-question-text"><i class="fa fa-check"></i><b>11.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="11.3.5" data-path="simpleDesign.html"><a href="simpleDesign.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>11.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="11.3.6" data-path="simpleDesign.html"><a href="simpleDesign.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>11.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="11.3.7" data-path="simpleDesign.html"><a href="simpleDesign.html#text-in-r-plots"><i class="fa fa-check"></i><b>11.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="11.3.8" data-path="simpleDesign.html"><a href="simpleDesign.html#text-case"><i class="fa fa-check"></i><b>11.3.8</b> Text Case</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>12</b> Static Images</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#logob"><i class="fa fa-check"></i><b>12.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#colors-1"><i class="fa fa-check"></i><b>12.2</b> Colors</a></li>
+<li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#styleTextb"><i class="fa fa-check"></i><b>12.3</b> Text Styling</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="staticImages.html"><a href="staticImages.html#headings-1"><i class="fa fa-check"></i><b>12.3.1</b> Headings</a></li>
+<li class="chapter" data-level="12.3.2" data-path="staticImages.html"><a href="staticImages.html#paragraph-text-1"><i class="fa fa-check"></i><b>12.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="12.3.3" data-path="staticImages.html"><a href="staticImages.html#mathematics-1"><i class="fa fa-check"></i><b>12.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="12.3.4" data-path="staticImages.html"><a href="staticImages.html#game-question-text-1"><i class="fa fa-check"></i><b>12.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="12.3.5" data-path="staticImages.html"><a href="staticImages.html#label-text-buttons-sliders-other-inputs-and-alerts-1"><i class="fa fa-check"></i><b>12.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="12.3.6" data-path="staticImages.html"><a href="staticImages.html#feedback-and-hint-text-1"><i class="fa fa-check"></i><b>12.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="12.3.7" data-path="staticImages.html"><a href="staticImages.html#text-in-r-plots-1"><i class="fa fa-check"></i><b>12.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="12.3.8" data-path="staticImages.html"><a href="staticImages.html#text-case-1"><i class="fa fa-check"></i><b>12.3.8</b> Text Case</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="staticImages.html"><a href="staticImages.html#graphicsb"><i class="fa fa-check"></i><b>12.4</b> Graphics</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="staticImages.html"><a href="staticImages.html#graphLabb"><i class="fa fa-check"></i><b>12.4.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="12.4.2" data-path="staticImages.html"><a href="staticImages.html#axes-and-scales"><i class="fa fa-check"></i><b>12.4.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="12.4.3" data-path="staticImages.html"><a href="staticImages.html#colorPlotsb"><i class="fa fa-check"></i><b>12.4.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="12.4.4" data-path="staticImages.html"><a href="staticImages.html#tables"><i class="fa fa-check"></i><b>12.4.4</b> Tables</a></li>
+<li class="chapter" data-level="12.4.5" data-path="staticImages.html"><a href="staticImages.html#static-images"><i class="fa fa-check"></i><b>12.4.5</b> Static Images</a></li>
+<li class="chapter" data-level="12.4.6" data-path="staticImages.html"><a href="staticImages.html#altTextb"><i class="fa fa-check"></i><b>12.4.6</b> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="designStylec.html"><a href="designStylec.html"><i class="fa fa-check"></i><b>13</b> Design Style</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="designStylec.html"><a href="designStylec.html#logoc"><i class="fa fa-check"></i><b>13.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="13.2" data-path="designStylec.html"><a href="designStylec.html#colors-2"><i class="fa fa-check"></i><b>13.2</b> Colors</a></li>
+<li class="chapter" data-level="13.3" data-path="designStylec.html"><a href="designStylec.html#styleTextc"><i class="fa fa-check"></i><b>13.3</b> Text Styling</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="designStylec.html"><a href="designStylec.html#headings-2"><i class="fa fa-check"></i><b>13.3.1</b> Headings</a></li>
+<li class="chapter" data-level="13.3.2" data-path="designStylec.html"><a href="designStylec.html#paragraph-text-2"><i class="fa fa-check"></i><b>13.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="13.3.3" data-path="designStylec.html"><a href="designStylec.html#mathematics-2"><i class="fa fa-check"></i><b>13.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="13.3.4" data-path="designStylec.html"><a href="designStylec.html#game-question-text-2"><i class="fa fa-check"></i><b>13.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="13.3.5" data-path="designStylec.html"><a href="designStylec.html#label-text-buttons-sliders-other-inputs-and-alerts-2"><i class="fa fa-check"></i><b>13.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="13.3.6" data-path="designStylec.html"><a href="designStylec.html#feedback-and-hint-text-2"><i class="fa fa-check"></i><b>13.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="13.3.7" data-path="designStylec.html"><a href="designStylec.html#text-in-r-plots-2"><i class="fa fa-check"></i><b>13.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="13.3.8" data-path="designStylec.html"><a href="designStylec.html#text-case-2"><i class="fa fa-check"></i><b>13.3.8</b> Text Case</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="designStylec.html"><a href="designStylec.html#graphicsc"><i class="fa fa-check"></i><b>13.4</b> Graphics</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="designStylec.html"><a href="designStylec.html#graphLabc"><i class="fa fa-check"></i><b>13.4.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="13.4.2" data-path="designStylec.html"><a href="designStylec.html#axes-and-scales-1"><i class="fa fa-check"></i><b>13.4.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="13.4.3" data-path="designStylec.html"><a href="designStylec.html#colorPlotsc"><i class="fa fa-check"></i><b>13.4.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="13.4.4" data-path="designStylec.html"><a href="designStylec.html#tables-1"><i class="fa fa-check"></i><b>13.4.4</b> Tables</a></li>
+<li class="chapter" data-level="13.4.5" data-path="designStylec.html"><a href="designStylec.html#static-images-1"><i class="fa fa-check"></i><b>13.4.5</b> Static Images</a></li>
+<li class="chapter" data-level="13.4.6" data-path="designStylec.html"><a href="designStylec.html#altTextc"><i class="fa fa-check"></i><b>13.4.6</b> Alt Text</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>VI Style Guide-Language</b></span></li>
+<li class="chapter" data-level="14" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>14</b> Wording</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>14.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="14.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>14.2</b> Popovers</a></li>
+<li class="chapter" data-level="14.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>14.3</b> Dealing with Differing Vocabularies</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>14.3.1</b> The Jingle/Jangle Problem</a></li>
+<li class="chapter" data-level="14.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>14.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
+<li class="chapter" data-level="14.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>14.3.3</b> Option 1: Hover Text</a></li>
+<li class="chapter" data-level="14.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>14.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>14.4</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>15</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>15.1</b> References</a></li>
+<li class="chapter" data-level="15.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>15.2</b> Plagiarism</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>15.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="15.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>15.2.2</b> In Code</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>15.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="15.4" data-path="documentation.html"><a href="documentation.html#graphics"><i class="fa fa-check"></i><b>15.4</b> Graphics</a></li>
+<li class="chapter" data-level="15.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>15.5</b> Data</a></li>
+</ul></li>
+<li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
+<li class="chapter" data-level="16" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>16</b> Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>16.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="16.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>16.2</b> Checking Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>16.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="16.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>16.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="16.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>16.2.3</b> Addressing Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>17</b> Mobile Friendliness</a></li>
+<li class="part"><span><b>VIII Final Thoughts</b></span></li>
+<li class="chapter" data-level="18" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>18</b> Additional Tools</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Building Shiny Apps the BOAST Way</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="designStylec" class="section level1" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Design Style</h1>
+<p>Design Style is the second side of the Visual Appearance of every app. Here, we deal with visual aspects that go beyond the layout of your App. This includes issues of branding, color, how you make text look (font, size, emphasis), and graphics (plots, tables, and images).</p>
+<div id="logoc" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> PSU Branding</h2>
+<p>Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.</p>
+<p>In your UI section of <code>app.R</code> (or the <code>ui.R</code> file), at the end of the <code>dashboardSidebar()</code> section, you will need to include the following:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="designStylec.html#cb97-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb97-2"><a href="designStylec.html#cb97-2" aria-hidden="true" tabindex="-1"></a>         boastUtils<span class="sc">::</span><span class="fu">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>))</span></code></pre></div>
+<p>Here’s how this code would look in context:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="designStylec.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardPage</span>(</span>
+<span id="cb98-2"><a href="designStylec.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb98-3"><a href="designStylec.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardHeader</span>(</span>
+<span id="cb98-4"><a href="designStylec.html#cb98-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;title&quot;</span>,</span>
+<span id="cb98-5"><a href="designStylec.html#cb98-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># [omitted code]</span></span>
+<span id="cb98-6"><a href="designStylec.html#cb98-6" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb98-7"><a href="designStylec.html#cb98-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb98-8"><a href="designStylec.html#cb98-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">300</span>,</span>
+<span id="cb98-9"><a href="designStylec.html#cb98-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarMenu</span>(</span>
+<span id="cb98-10"><a href="designStylec.html#cb98-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> <span class="st">&quot;tabs&quot;</span>,</span>
+<span id="cb98-11"><a href="designStylec.html#cb98-11" aria-hidden="true" tabindex="-1"></a>      <span class="co"># [omitted code],</span></span>
+<span id="cb98-12"><a href="designStylec.html#cb98-12" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">div</span>(</span>
+<span id="cb98-13"><a href="designStylec.html#cb98-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb98-14"><a href="designStylec.html#cb98-14" aria-hidden="true" tabindex="-1"></a>        boastUtils<span class="sc">::</span><span class="fu">psu_eberly_logo</span>(<span class="st">&quot;reversed&quot;</span>)</span>
+<span id="cb98-15"><a href="designStylec.html#cb98-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb98-16"><a href="designStylec.html#cb98-16" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb98-17"><a href="designStylec.html#cb98-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb98-18"><a href="designStylec.html#cb98-18" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">head</span>(</span>
+<span id="cb98-19"><a href="designStylec.html#cb98-19" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">link</span>(<span class="at">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="at">type =</span> <span class="st">&quot;text/css&quot;</span>,</span>
+<span id="cb98-20"><a href="designStylec.html#cb98-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</span>
+<span id="cb98-21"><a href="designStylec.html#cb98-21" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb98-22"><a href="designStylec.html#cb98-22" aria-hidden="true" tabindex="-1"></a>       <span class="co"># [omitted code]</span></span>
+<span id="cb98-23"><a href="designStylec.html#cb98-23" aria-hidden="true" tabindex="-1"></a>      )  )  )  )  )</span></code></pre></div>
+<p>This will ensure that the Penn State logo gets properly used.</p>
+</div>
+<div id="colors-2" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> Colors</h2>
+<p>Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a> Level AA. You can do so at the <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7">Coloring for Colorblindness</a> website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.</p>
+<p>See <a href="uiStructure.html#colorUI">Section <a href="uiStructure.html#colorUI">9.1.2</a></a> and <a href="#colorPlots">Section <a href="#colorPlots"><strong>??</strong></a></a> for additional information on the use of colors.</p>
+</div>
+<div id="styleTextc" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Text Styling</h2>
+<p>Text styling refers the non-content aspects of the text on the page, such as the use of italics, boldface, alignment, as well as font size and color.</p>
+<p>You should let the centralized CSS file do the heavy lifting for text styling. (Again, using <code>boastApp</code> will help you.) However, for this to work properly, you will need to tag content appropriately. (See the section on HTML, <a href="htmlCSS.html#html">Section <a href="htmlCSS.html#html">7.1</a></a>.)</p>
+<p>If you run into a situation where some element needs additional styling, <strong>talk to Neil or Bob for help</strong>. You might have come across an element that needs to get added the central CSS file or a bug.</p>
+<div id="headings-2" class="section level3" number="13.3.1">
+<h3><span class="header-section-number">13.3.1</span> Headings</h3>
+<p>Use the Heading Tags for the short fragments that define the structure of your App. If you find yourself enclosing a complete sentence in Heading tag, you ARE NOT using headings correctly. Notice how the headings in this Style Guide aren’t complete sentences; your App should mimic this. Full sentences appear as regular paragraph text (i.e., enclosed in <code>p()</code>) and not be a Heading.</p>
+</div>
+<div id="paragraph-text-2" class="section level3" number="13.3.2">
+<h3><span class="header-section-number">13.3.2</span> Paragraph Text</h3>
+<p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
+<p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
+<p>For example, this code:</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="designStylec.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb99-2"><a href="designStylec.html#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
+<span id="cb99-3"><a href="designStylec.html#cb99-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;t&quot;</span>),</span>
+<span id="cb99-4"><a href="designStylec.html#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
+<span id="cb99-5"><a href="designStylec.html#cb99-5" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
+<span id="cb99-6"><a href="designStylec.html#cb99-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
+<span id="cb99-7"><a href="designStylec.html#cb99-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Becomes:</p>
+<blockquote>
+<p>When dealing with the <em>t</em>-distribution, we only have one parameter, the <strong>degrees of freedom</strong> that we need to input.</p>
+</blockquote>
+<p>Use italics (emphasis), and boldface (strong) sparingly.</p>
+</div>
+<div id="mathematics-2" class="section level3" number="13.3.3">
+<h3><span class="header-section-number">13.3.3</span> Mathematics</h3>
+<p>For the most part, any mathematics you need displayed should be done using <a href="https://www.mathjax.org/">MathJax</a>. Default to using inline typesetting with the <code>\\(</code> and <code>\\)</code> delimiters. If you need to use display style, you can use <code>\\[</code> and <code>\\]</code>. For the vast majority of mathematics, you’ll wrap both inline and display style mathematics inside of a paragraph environment (<code>p()</code>).</p>
+<p>If you’re writing mathematics directly in your app, remember you’ll need to escape the LaTeX commands by putting an extra backslash (\) in front; e.g., <code>\frac{3}{4}</code> would need to be <code>\\frac{3}{4}</code>.</p>
+<p>If you’re reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.</p>
+<p>If you need assistance in figuring out how to type up mathematics, please talk to Neil, Matt, or Dennis.</p>
+<p><strong>Note:</strong> Double dollar sign delimiters are generally not recommended for displaying math as they can lead to unintended results. See: <a href="https://docs.mathjax.org/en/latest/basic/mathematics.html">Writing Mathematics for MathJax</a>.</p>
+</div>
+<div id="game-question-text-2" class="section level3" number="13.3.4">
+<h3><span class="header-section-number">13.3.4</span> [Game] Question Text</h3>
+<p>The text used as a question in a game should NOT be wrapped in a Heading tag; wrap the text in a paragraph tag.</p>
+</div>
+<div id="label-text-buttons-sliders-other-inputs-and-alerts-2" class="section level3" number="13.3.5">
+<h3><span class="header-section-number">13.3.5</span> Label Text (Buttons, Sliders, Other Inputs and Alerts)</h3>
+<p>By using the central CSS file, any text you included in/on buttons, dropdown menus, sliders, radio buttons, choices, and other inputs as well as alert messages and popups/rollovers, will automatically be styled correctly.</p>
+<p>Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong with input labels. Input labels should be written in sentence case (i.e., capitalize only the first word and any proper nouns).</p>
+<p>You may use these tags with popups/rollovers.</p>
+</div>
+<div id="feedback-and-hint-text-2" class="section level3" number="13.3.6">
+<h3><span class="header-section-number">13.3.6</span> Feedback and Hint Text</h3>
+<p>Again, let the central CSS file handle the styling of this type of text.</p>
+</div>
+<div id="text-in-r-plots-2" class="section level3" number="13.3.7">
+<h3><span class="header-section-number">13.3.7</span> Text in <code>R</code> Plots</h3>
+<p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the <code>grid</code> framework like <code>lattice</code>) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
+<p>Here is an example for how to do this:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="designStylec.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a ggplot2 object</span></span>
+<span id="cb100-2"><a href="designStylec.html#cb100-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>grp)) </span>
+<span id="cb100-3"><a href="designStylec.html#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your layers, for example</span></span>
+<span id="cb100-4"><a href="designStylec.html#cb100-4" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_point</span>()</span>
+<span id="cb100-5"><a href="designStylec.html#cb100-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use theme to control text size</span></span>
+<span id="cb100-6"><a href="designStylec.html#cb100-6" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb100-7"><a href="designStylec.html#cb100-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb100-8"><a href="designStylec.html#cb100-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>)</span>
+<span id="cb100-9"><a href="designStylec.html#cb100-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
+<p><strong>Note:</strong> The text in your plot might not behave well for dynamic re-sizing on different mobile devices.</p>
+</div>
+<div id="text-case-2" class="section level3" number="13.3.8">
+<h3><span class="header-section-number">13.3.8</span> Text Case</h3>
+<p>When writing text, you should use the appropriate case (i.e., which words you capitalize):</p>
+<ul>
+<li>Headings: use Title Case</li>
+<li>Paragraphs/Lists: use Sentence Case</li>
+<li>Input Labels: use Sentence Case</li>
+<li>Figure Captions: use Title Case</li>
+<li>Table Captions: use Title Case</li>
+<li>Graphs (see <a href="#graphLab">Section <a href="#graphLab"><strong>??</strong></a></a>)
+<ul>
+<li>Titles: use Title Case</li>
+<li>Axes: Use Sentence Case</li>
+<li>Legends: Use Sentence Case</li>
+</ul></li>
+<li>Default: Sentence Case</li>
+</ul>
+</div>
+</div>
+<div id="graphicsc" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Graphics</h2>
+<p>One of the most powerful tools we have in Statistics and Data Science is graphics. This includes images/pictures, graphs/plots, and tables. You will want to make sure that all graphical elements are appropriately sized in the Body. If there is text in a static image/picture, you’ll need to make sure that the text is legible on a variety of screen sizes.</p>
+<p>We’ve already discussed both issues of color and text size in plots. For additional considerations, please refer to the following readings (ordered from most important to least):</p>
+<ul>
+<li><a href="https://www.dropbox.com/s/hb52991v09p8q91/Tufte%20-%202006%20-%20The%20Fundamental%20principles%20of%20analytical%20design.pdf?dl=0">Tufte-Fundamental Principles of Analytical Design</a></li>
+<li><a href="https://www.dropbox.com/s/z8yrf4eqph6c2h4/Tufte%20-%202001%20-%20Chartjunk%20Vibrations%2C%20grids%2C%20and%20ducks.pdf?dl=0">Tufte-Chartjunk</a><br />
+</li>
+<li><a href="https://www.dropbox.com/s/62uegsribwdjtze/Kosslyn%20-%202006%20-%20Looking%20with%20the%20eye%20and%20mind.pdf?dl=0">Kosslyn-Looking with the Eye and Mind</a></li>
+</ul>
+<p>Remember, we always want to be modeling excellent graphing behaviors.</p>
+<blockquote>
+<p>All photographs can be fortified with words. –Dorothea Lange</p>
+</blockquote>
+<blockquote>
+<p>A picture is worth a thousand words…but which ones? –Unknown</p>
+</blockquote>
+<p>Both of these quotations highlight that you need to include some text with your plots to help the user construct their understanding of what you’re trying to show them.</p>
+<div id="graphLabc" class="section level3" number="13.4.1">
+<h3><span class="header-section-number">13.4.1</span> Titles and Labels</h3>
+<p>Graph and Table titles should follow Title Case. Capitalize each word unless the word is “small” (e.g., of, an, etc.). The <a href="https://titlecase.com/">Title Case website</a> can help you if you aren’t sure. (This website also does other types of case such as camel case.)</p>
+</div>
+<div id="axes-and-scales-1" class="section level3" number="13.4.2">
+<h3><span class="header-section-number">13.4.2</span> Axes and Scales</h3>
+<p><code>R</code>’s default axes are terrible. They often do not fully cover the data and the have gaps between the axes. All this impedes the user’s construction of meaning. Thus, you’ll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.</p>
+<p>To force <code>ggplot2</code> to place (0, 0) in the lower-left corner and to control the scales, you will need to include the following:</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="designStylec.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the ggplot2 object</span></span>
+<span id="cb101-2"><a href="designStylec.html#cb101-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(...)</span>
+<span id="cb101-3"><a href="designStylec.html#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your layer</span></span>
+<span id="cb101-4"><a href="designStylec.html#cb101-4" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_point</span>()</span>
+<span id="cb101-5"><a href="designStylec.html#cb101-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Control axes and scale</span></span>
+<span id="cb101-6"><a href="designStylec.html#cb101-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Multiplicative Scaling of the Horizontal (x) Axis</span></span>
+<span id="cb101-7"><a href="designStylec.html#cb101-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Additive Scaling of the Vertical (y) Axis</span></span>
+<span id="cb101-8"><a href="designStylec.html#cb101-8" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">add =</span> <span class="dv">0</span>)) <span class="sc">+</span> </span>
+<span id="cb101-9"><a href="designStylec.html#cb101-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))) </span></code></pre></div>
+</div>
+<div id="colorPlotsc" class="section level3" number="13.4.3">
+<h3><span class="header-section-number">13.4.3</span> Color and Plots in <code>R</code></h3>
+<p>In <code>R</code> you can set color theme which you use in <code>ggplot2</code>. Here are two custom color palettes that you can use in your App. Additionally, the package <code>viridis</code> provides several additional color palettes which are improvements upon the default color scheme.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="designStylec.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boastPalette is based on the Wong color blind set found at the above website.</span></span>
+<span id="cb102-2"><a href="designStylec.html#cb102-2" aria-hidden="true" tabindex="-1"></a>boastPalette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
+<span id="cb102-3"><a href="designStylec.html#cb102-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb102-4"><a href="designStylec.html#cb102-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-5"><a href="designStylec.html#cb102-5" aria-hidden="true" tabindex="-1"></a><span class="co"># psuPalette is based on Penn State&#39;s three official color palettes</span></span>
+<span id="cb102-6"><a href="designStylec.html#cb102-6" aria-hidden="true" tabindex="-1"></a><span class="co"># and checked at the above webite.</span></span>
+<span id="cb102-7"><a href="designStylec.html#cb102-7" aria-hidden="true" tabindex="-1"></a>psuPalette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#1E407C&quot;</span>,<span class="st">&quot;#BC204B&quot;</span>,<span class="st">&quot;#3EA39E&quot;</span>,<span class="st">&quot;#E98300&quot;</span>,</span>
+<span id="cb102-8"><a href="designStylec.html#cb102-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#AC8DCE&quot;</span>,<span class="st">&quot;#F2665E&quot;</span>,<span class="st">&quot;#99CC00&quot;</span>)</span>
+<span id="cb102-9"><a href="designStylec.html#cb102-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-10"><a href="designStylec.html#cb102-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Both palettes get used in the order of what is listed.</span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:boastPalettec"></span>
+<img src="BOAST_style_guide_files/figure-html/boastPalettec-1.png" alt="The Boast Palette" width="672" />
+<p class="caption">
+Figure 13.1: The Boast Palette
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:psuPalettec"></span>
+<img src="BOAST_style_guide_files/figure-html/psuPalettec-1.png" alt="The PSU Palette" width="672" />
+<p class="caption">
+Figure 13.2: The PSU Palette
+</p>
+</div>
+<p>To use these palettes (or ones from <code>viridis</code>) with a <code>ggplot2</code> object, you’ll need to do the following</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="designStylec.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You will need to first add whichever palette line from above to your code</span></span>
+<span id="cb103-2"><a href="designStylec.html#cb103-2" aria-hidden="true" tabindex="-1"></a>boastPalette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#0072B2&quot;</span>,<span class="st">&quot;#D55E00&quot;</span>,<span class="st">&quot;#009E73&quot;</span>,<span class="st">&quot;#CE77A8&quot;</span>,</span>
+<span id="cb103-3"><a href="designStylec.html#cb103-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#000000&quot;</span>,<span class="st">&quot;#E69F00&quot;</span>,<span class="st">&quot;#999999&quot;</span>,<span class="st">&quot;#56B4E9&quot;</span>,<span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb103-4"><a href="designStylec.html#cb103-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-5"><a href="designStylec.html#cb103-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create ggplot2 object</span></span>
+<span id="cb103-6"><a href="designStylec.html#cb103-6" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> df, </span>
+<span id="cb103-7"><a href="designStylec.html#cb103-7" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> grp, <span class="at">fill =</span> grp))</span>
+<span id="cb103-8"><a href="designStylec.html#cb103-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your layers</span></span>
+<span id="cb103-9"><a href="designStylec.html#cb103-9" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_points</span>()</span>
+<span id="cb103-10"><a href="designStylec.html#cb103-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Tell R to use your chosen palette</span></span>
+<span id="cb103-11"><a href="designStylec.html#cb103-11" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values=</span>boastPalette)  <span class="co"># If you use &quot;color&quot; in aes</span></span>
+<span id="cb103-12"><a href="designStylec.html#cb103-12" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">scale_fill_manual</span>(<span class="at">values=</span>boastPalette)  <span class="co"># If you use &quot;fill&quot; in aes</span></span></code></pre></div>
+<p>If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)</p>
+<p>With an eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.</p>
+</div>
+<div id="tables-1" class="section level3" number="13.4.4">
+<h3><span class="header-section-number">13.4.4</span> Tables</h3>
+<p>Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn’t conducive to helping a person understand what’s going on, neither is a wall of data values. Thus, we need to be extreme judicious (picky) about incorporating data tables into any of our apps.</p>
+<p>In web development there are two main types of tables: layout tables and data tables.</p>
+<ul>
+<li>Layout tables help control where different elements appear on the page.</li>
+<li>We need an additional distinction for data tables:
+<ul>
+<li>Summary Data Tables are tables that have summary information; typified by two-way tables (a.k.a. contingency tables or crosstabs) but might also include other things such as values of descriptive statistics stratified by groups.</li>
+<li>Data Sets are an entire data object, presented in tabular format</li>
+</ul></li>
+</ul>
+<p><strong>Layout Tables should never be used in a BOAST App.</strong></p>
+<p>Data Sets should be displayed <strong>as sparingly as possible</strong>. In order to include a Data Set display, you will need to have identified an explicit learning goal/objective that necessitates the user digging through a data frame. If you can’t identify such a learning goal, you should NOT include a data frame.</p>
+<p>If the goal is to allow the user to look through the data set OR to have access to the data, then <strong>give a link</strong> to either the original source of the data (<strong>preferred</strong>) or for them to download the file.</p>
+<p>Summary Data Tables can be used more often and can enrich the user’s experience with your app. However, these must still be constructed in an appropriate manner.</p>
+<p>Neither Data Sets nor Summary Data Tables should be inserted into your App as a picture. This is an big Accessibility violation. Use the directions below to create the appropriate type of data table.</p>
+<div id="displaying-data-tables-1" class="section level4" number="13.4.4.1">
+<h4><span class="header-section-number">13.4.4.1</span> Displaying Data Tables</h4>
+<p>Your first step is to create a data frame object in your <code>R</code> code.</p>
+<ul>
+<li>If you are displaying a data set (rare), then you will either need to read in the data or call that data frame. For this example, we’ll be using the <code>mtcars</code> data frame that is part of <code>R</code>.</li>
+<li>If you are making a Summary Data Table, you’ll need to either use <code>R</code> to calculate the values and store in a data frame or create a data frame yourself.</li>
+</ul>
+<p>In either case, be sure you identify what columns you’re going to use. If your original data file has 50 columns, but your App only makes use of 5, drop the other 45. Only display the columns that you actually use.</p>
+<p>Your next step is to decide on where to put this display (e.g., inside an Exploration Tab or as a separate page). This will help you identify where in your App’s UI section you need to put the appropriate code.</p>
+<p>To ensure that your data table is accessible and responsive (i.e., mobile friendly), you will need to use the <code>DT</code> package.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="designStylec.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span>
+<span id="cb104-2"><a href="designStylec.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Be sure to include this in your library call</span></span>
+<span id="cb104-3"><a href="designStylec.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span></code></pre></div>
+<p>In your UI section, you’ll need to use the following code, placed in the appropriate area:</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="designStylec.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb105-2"><a href="designStylec.html#cb105-2" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">DTOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;mtCars&quot;</span>)</span>
+<span id="cb105-3"><a href="designStylec.html#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>Then, in your Server section, you’ll need to use the following code:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="designStylec.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb106-2"><a href="designStylec.html#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare your data set with only the columns needed</span></span>
+<span id="cb106-3"><a href="designStylec.html#cb106-3" aria-hidden="true" tabindex="-1"></a>carData <span class="ot">&lt;-</span> mtcars[,<span class="fu">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;gear&quot;</span>, <span class="st">&quot;wt&quot;</span>)]</span>
+<span id="cb106-4"><a href="designStylec.html#cb106-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-5"><a href="designStylec.html#cb106-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Use Short but Meaningful Column Names</span></span>
+<span id="cb106-6"><a href="designStylec.html#cb106-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(carData) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;MPG&quot;</span>, <span class="st">&quot;# of Cylinders&quot;</span>, <span class="st">&quot;Horsepower&quot;</span>, <span class="st">&quot;# of Gears&quot;</span>, <span class="st">&quot;Weight&quot;</span>)</span>
+<span id="cb106-7"><a href="designStylec.html#cb106-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-8"><a href="designStylec.html#cb106-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the output data table</span></span>
+<span id="cb106-9"><a href="designStylec.html#cb106-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Be sure to use the same name as you did in the UI</span></span>
+<span id="cb106-10"><a href="designStylec.html#cb106-10" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>mtCars <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDT</span>(</span>
+<span id="cb106-11"><a href="designStylec.html#cb106-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">expr =</span> carData,</span>
+<span id="cb106-12"><a href="designStylec.html#cb106-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Motor Trend US Data, 1973-1974 Models&quot;</span>, <span class="co"># Add a caption to your table</span></span>
+<span id="cb106-13"><a href="designStylec.html#cb106-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, <span class="co"># You must use this style</span></span>
+<span id="cb106-14"><a href="designStylec.html#cb106-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb106-15"><a href="designStylec.html#cb106-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>( <span class="co"># You must use these options</span></span>
+<span id="cb106-16"><a href="designStylec.html#cb106-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">responsive =</span> <span class="cn">TRUE</span>, <span class="co"># allows the data table to be mobile friendly</span></span>
+<span id="cb106-17"><a href="designStylec.html#cb106-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">scrollX =</span> <span class="cn">TRUE</span>, <span class="co"># allows the user to scroll through a wide table</span></span>
+<span id="cb106-18"><a href="designStylec.html#cb106-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">columnDefs =</span> <span class="fu">list</span>(  <span class="co"># These will set alignment of data values</span></span>
+<span id="cb106-19"><a href="designStylec.html#cb106-19" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Notice the use of ncol on your data frame; leave the 1 as is.</span></span>
+<span id="cb106-20"><a href="designStylec.html#cb106-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(<span class="at">className =</span> <span class="st">&#39;dt-center&#39;</span>, <span class="at">targets =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(carData))</span>
+<span id="cb106-21"><a href="designStylec.html#cb106-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb106-22"><a href="designStylec.html#cb106-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb106-23"><a href="designStylec.html#cb106-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb106-24"><a href="designStylec.html#cb106-24" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>If you are making a Summary Data Table, you will need to follow the same process. If your data frame does not have row names, but instead a column with values acting as row names, you may replace the <code>rownames = TRUE</code> with <code>rownames = FALSE</code>; there should not be a column of sequential numbers on the left.</p>
+<p>Column names <strong>MUST</strong> be simple and <em>meaningful</em> to the user. To this end, you should rename any columns that might have poor choices for names, just as we have done with the <code>mtcars</code> data. This includes using Greek characters in isolation. You should not have any columns labeled <span class="math inline">\(\mu\)</span> or <span class="math inline">\(\sigma\)</span>. Rather you need to use English words.</p>
+<p><em>Note: getting mathematical expressions to render properly in graphical environments in <code>R</code> is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.</em></p>
+<p>Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, <strong>talk to Neil and Bob</strong>.</p>
+</div>
+<div id="additional-table-examples-1" class="section level4" number="13.4.4.2">
+<h4><span class="header-section-number">13.4.4.2</span> Additional Table Examples</h4>
+<p>We’re including some additional Summary Data Table examples. For these examples, I’m going to make use of the <code>palmerpenguins</code> package of data sets.</p>
+<div id="summary-data-table-of-descriptive-statistics-1" class="section level5" number="13.4.4.2.1">
+<h5><span class="header-section-number">13.4.4.2.1</span> Summary Data Table of Descriptive Statistics</h5>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="designStylec.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb107-2"><a href="designStylec.html#cb107-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb107-3"><a href="designStylec.html#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb107-4"><a href="designStylec.html#cb107-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb107-5"><a href="designStylec.html#cb107-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-6"><a href="designStylec.html#cb107-6" aria-hidden="true" tabindex="-1"></a>penStats <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">describeBy</span>(</span>
+<span id="cb107-7"><a href="designStylec.html#cb107-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> penguins<span class="sc">$</span>body_mass_g,</span>
+<span id="cb107-8"><a href="designStylec.html#cb107-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> penguins<span class="sc">$</span>species,</span>
+<span id="cb107-9"><a href="designStylec.html#cb107-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">mat =</span> <span class="cn">TRUE</span>, <span class="co"># Formats output appropriate for DT</span></span>
+<span id="cb107-10"><a href="designStylec.html#cb107-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">3</span> <span class="co"># sets the number of digits retained</span></span>
+<span id="cb107-11"><a href="designStylec.html#cb107-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb107-12"><a href="designStylec.html#cb107-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-13"><a href="designStylec.html#cb107-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Picking which columns to keep</span></span>
+<span id="cb107-14"><a href="designStylec.html#cb107-14" aria-hidden="true" tabindex="-1"></a>penStats <span class="ot">&lt;-</span> penStats[, <span class="fu">c</span>(<span class="st">&quot;group1&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="st">&quot;mean&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;mad&quot;</span>, <span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>, <span class="st">&quot;skew&quot;</span>,</span>
+<span id="cb107-15"><a href="designStylec.html#cb107-15" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;kurtosis&quot;</span>)]</span>
+<span id="cb107-16"><a href="designStylec.html#cb107-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the group1 column the row names</span></span>
+<span id="cb107-17"><a href="designStylec.html#cb107-17" aria-hidden="true" tabindex="-1"></a>penStats <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">remove_rownames</span>(penStats)</span>
+<span id="cb107-18"><a href="designStylec.html#cb107-18" aria-hidden="true" tabindex="-1"></a>penStats <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">column_to_rownames</span>(penStats,</span>
+<span id="cb107-19"><a href="designStylec.html#cb107-19" aria-hidden="true" tabindex="-1"></a>                          <span class="at">var =</span> <span class="st">&quot;group1&quot;</span>)</span>
+<span id="cb107-20"><a href="designStylec.html#cb107-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Improve column names</span></span>
+<span id="cb107-21"><a href="designStylec.html#cb107-21" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(penStats) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Count&quot;</span>, <span class="st">&quot;SAM (g/penguin)&quot;</span>, <span class="st">&quot;SASD (g)&quot;</span>, <span class="st">&quot;Median (g)&quot;</span>, <span class="st">&quot;MAD (g)&quot;</span>, <span class="st">&quot;Min (g)&quot;</span>,</span>
+<span id="cb107-22"><a href="designStylec.html#cb107-22" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Max (g)&quot;</span>, <span class="st">&quot;Sample Skewness (g^3)&quot;</span>, <span class="st">&quot;Sample Excess Kurtosis (g^4)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="designStylec.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the Table</span></span>
+<span id="cb108-2"><a href="designStylec.html#cb108-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>penguinSummary <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDT</span>(</span>
+<span id="cb108-3"><a href="designStylec.html#cb108-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">expr =</span> penStats,</span>
+<span id="cb108-4"><a href="designStylec.html#cb108-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Descriptive Stats for Palmer Penguins&quot;</span>, </span>
+<span id="cb108-5"><a href="designStylec.html#cb108-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, </span>
+<span id="cb108-6"><a href="designStylec.html#cb108-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb108-7"><a href="designStylec.html#cb108-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">autoHideNavigation =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb108-8"><a href="designStylec.html#cb108-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>( </span>
+<span id="cb108-9"><a href="designStylec.html#cb108-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">responsive =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb108-10"><a href="designStylec.html#cb108-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">scrollX =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb108-11"><a href="designStylec.html#cb108-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">paging =</span> <span class="cn">FALSE</span>, <span class="co"># Set to False for small tables</span></span>
+<span id="cb108-12"><a href="designStylec.html#cb108-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">columnDefs =</span> <span class="fu">list</span>(</span>
+<span id="cb108-13"><a href="designStylec.html#cb108-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">list</span>(<span class="at">className =</span> <span class="st">&#39;dt-center&#39;</span>,</span>
+<span id="cb108-14"><a href="designStylec.html#cb108-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">targets =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(penStats))</span>
+<span id="cb108-15"><a href="designStylec.html#cb108-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb108-16"><a href="designStylec.html#cb108-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb108-17"><a href="designStylec.html#cb108-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="summary-data-table-for-output-table-1" class="section level5" number="13.4.4.2.2">
+<h5><span class="header-section-number">13.4.4.2.2</span> Summary Data Table for Output Table</h5>
+<p>While this example is for an ANOVA table, you can build from this for other output tables. If you store the output of any call as an object, you can then use the structure function, <code>str</code> to investigate the output. Ultimately, you need something that is either a matrix or a data frame.</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="designStylec.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb109-2"><a href="designStylec.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb109-3"><a href="designStylec.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb109-4"><a href="designStylec.html#cb109-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb109-5"><a href="designStylec.html#cb109-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstatix)</span>
+<span id="cb109-6"><a href="designStylec.html#cb109-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-7"><a href="designStylec.html#cb109-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This bad practice but I&#39;m going to pretend that all assumptions are met</span></span>
+<span id="cb109-8"><a href="designStylec.html#cb109-8" aria-hidden="true" tabindex="-1"></a>penModel <span class="ot">&lt;-</span> <span class="fu">aov</span>(body_mass_g <span class="sc">~</span> species<span class="sc">*</span>sex, <span class="at">data =</span> penguins)</span>
+<span id="cb109-9"><a href="designStylec.html#cb109-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-10"><a href="designStylec.html#cb109-10" aria-hidden="true" tabindex="-1"></a>anovaPen <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">anova</span>(penModel), <span class="dv">3</span>)</span>
+<span id="cb109-11"><a href="designStylec.html#cb109-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Rounding to truncate decimals</span></span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="designStylec.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the Table</span></span>
+<span id="cb110-2"><a href="designStylec.html#cb110-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>penguinAnova <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDT</span>(</span>
+<span id="cb110-3"><a href="designStylec.html#cb110-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">expr =</span> anovaPen,</span>
+<span id="cb110-4"><a href="designStylec.html#cb110-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;(Classical) ANOVA Table for Palmer Pengins&quot;</span>, </span>
+<span id="cb110-5"><a href="designStylec.html#cb110-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bootstrap4&quot;</span>, </span>
+<span id="cb110-6"><a href="designStylec.html#cb110-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb110-7"><a href="designStylec.html#cb110-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>( </span>
+<span id="cb110-8"><a href="designStylec.html#cb110-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">responsive =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb110-9"><a href="designStylec.html#cb110-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">scrollX =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb110-10"><a href="designStylec.html#cb110-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">paging =</span> <span class="cn">FALSE</span>, <span class="co"># Set to False for small tables</span></span>
+<span id="cb110-11"><a href="designStylec.html#cb110-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">columnDefs =</span> <span class="fu">list</span>(</span>
+<span id="cb110-12"><a href="designStylec.html#cb110-12" aria-hidden="true" tabindex="-1"></a>       <span class="fu">list</span>(<span class="at">className =</span> <span class="st">&#39;dt-center&#39;</span>,</span>
+<span id="cb110-13"><a href="designStylec.html#cb110-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">targets =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(anovaPen))</span>
+<span id="cb110-14"><a href="designStylec.html#cb110-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb110-15"><a href="designStylec.html#cb110-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb110-16"><a href="designStylec.html#cb110-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="static-images-1" class="section level3" number="13.4.5">
+<h3><span class="header-section-number">13.4.5</span> Static Images</h3>
+<p>Static image refers to any image you’re using in your App which is not produced by <code>R</code>. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.</p>
+<p>Within your App’s folder/directory, there needs to be a sub-folder/directory called <code>www</code>. This is the place where you’ll need to place ALL static image files.</p>
+<div id="adding-an-image-1" class="section level4" number="13.4.5.1">
+<h4><span class="header-section-number">13.4.5.1</span> Adding an Image</h4>
+<p>To include the image in your App, you’ll need to make use of the image tag, <code>img</code>. When you run your App, Shiny automatically knows to check the <code>www</code> folder any time the <code>img</code> tag gets called. Here is an example supposing that the check mark image for correct answers is in the app’s <code>www</code> folder:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="designStylec.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb111-2"><a href="designStylec.html#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="fu">div</span>(<span class="at">align =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb111-3"><a href="designStylec.html#cb111-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">img</span>(<span class="at">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb111-4"><a href="designStylec.html#cb111-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb111-5"><a href="designStylec.html#cb111-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">25</span>, <span class="co">#these are in pixels</span></span>
+<span id="cb111-6"><a href="designStylec.html#cb111-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">height =</span> <span class="dv">25</span>,</span>
+<span id="cb111-7"><a href="designStylec.html#cb111-7" aria-hidden="true" tabindex="-1"></a>        ))</span>
+<span id="cb111-8"><a href="designStylec.html#cb111-8" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>You’ll notice that we’ve wrapped the <code>img</code> call in a <code>div</code> call. The <code>div</code> call allows us to specify that we want the image to be right aligned; you could also do left or center. You can replace the <code>div</code> call with the paragraph environment and include text on either side, effectively making your image part of the text.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="designStylec.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb112-2"><a href="designStylec.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb112-3"><a href="designStylec.html#cb112-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">img</span>(<span class="at">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb112-4"><a href="designStylec.html#cb112-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb112-5"><a href="designStylec.html#cb112-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">width =</span> <span class="dv">25</span>, <span class="at">height =</span> <span class="dv">25</span>),</span>
+<span id="cb112-6"><a href="designStylec.html#cb112-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span>),</span>
+<span id="cb112-7"><a href="designStylec.html#cb112-7" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+</div>
+<div id="sizing-and-positioning-your-image-1" class="section level4" number="13.4.5.2">
+<h4><span class="header-section-number">13.4.5.2</span> Sizing and Positioning Your Image</h4>
+<p>All image files have a native size that is part of that file. For instance, the check mark image is 270 x 250 pixels. However, we overrode that that sizing with the <code>width</code> and <code>height</code> arguments. How did we decide on 25 x 25? Honestly, through guessing and checking. You’ll need to think about how you’re using the image and let that guide your decision making. There is no one size fits all solution. While finding an optimal size and position for your image can take some time, seeing bad settings is pretty obvious. Feel free to reach out to Neil and Bob for assistance.</p>
+</div>
+</div>
+<div id="altTextc" class="section level3" number="13.4.6">
+<h3><span class="header-section-number">13.4.6</span> Alt Text</h3>
+<p>Any graphical element you include in your App <strong>MUST</strong> have an alternative (assistive) text description (“alt text”). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)</p>
+<p>Here are several resources worth checking out:</p>
+<ul>
+<li><a href="https://webaim.org/techniques/alttext/#basics">WebAIM Alternative Text Guide</a></li>
+<li><a href="https://accessibility.psu.edu/images/alttext/">Penn State’s Image ALT Text Page</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">W3C’s ALT Text Decision Tree</a></li>
+</ul>
+<div id="altStaticc" class="section level4" number="13.4.6.1">
+<h4><span class="header-section-number">13.4.6.1</span> Adding Alt Text to Static Images</h4>
+<p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="designStylec.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb113-2"><a href="designStylec.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">img</span>(<span class="at">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb113-3"><a href="designStylec.html#cb113-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb113-4"><a href="designStylec.html#cb113-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">25</span>, <span class="at">height =</span> <span class="dv">25</span>)</span>
+<span id="cb113-5"><a href="designStylec.html#cb113-5" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+</div>
+<div id="adding-alt-text-graphs-1" class="section level4" number="13.4.6.2">
+<h4><span class="header-section-number">13.4.6.2</span> Adding Alt Text Graphs</h4>
+<p>At this point in time (6/10/2020), adding alt text to plots generated in <code>R</code> is not as easy as for static pictures. While there are some potential changes coming down the pipe, there is not a firm time line for the addition of appropriate arguments to the existing <code>render*</code> functions. Therefore we will need to put in some (hopefully) temporary measures.</p>
+<p>In particular, we will use <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">Accessible Rich Internet Applications (ARIA)</a> to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="designStylec.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb114-2"><a href="designStylec.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI section, in the appropriate tabItem</span></span>
+<span id="cb114-3"><a href="designStylec.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plotOutput</span>(<span class="at">outputId =</span> plotID) <span class="co"># Look for lines like this </span></span>
+<span id="cb114-4"><a href="designStylec.html#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for adding the aria label</span></span>
+<span id="cb114-5"><a href="designStylec.html#cb114-5" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">script</span>(<span class="fu">HTML</span>(</span>
+<span id="cb114-6"><a href="designStylec.html#cb114-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;$(document).ready(function() {</span></span>
+<span id="cb114-7"><a href="designStylec.html#cb114-7" aria-hidden="true" tabindex="-1"></a><span class="st">  document.getElementById(&#39;plotId&#39;).setAttribute(&#39;aria-label&#39;,</span></span>
+<span id="cb114-8"><a href="designStylec.html#cb114-8" aria-hidden="true" tabindex="-1"></a><span class="st">  `General description of the plot`)</span></span>
+<span id="cb114-9"><a href="designStylec.html#cb114-9" aria-hidden="true" tabindex="-1"></a><span class="st">  })&quot;</span></span>
+<span id="cb114-10"><a href="designStylec.html#cb114-10" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb114-11"><a href="designStylec.html#cb114-11" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>Important things to note:</p>
+<ol style="list-style-type: decimal">
+<li>Place the <code>tags$script(HTML(...))</code> code right after each instance of <code>plotOutput</code>.</li>
+<li>Copy the above code as formatted</li>
+<li>Change the two (2) pieces for each particular plot
+<ol style="list-style-type: lower-alpha">
+<li>Replace <code>plotId</code> (keep the single quotation marks in the code)</li>
+<li>Replace <code>General description of the plot</code> (keep the single quotation marks in the code)</li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="staticImages.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wording.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["BOAST_style_guide.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -4,35 +4,36 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Coding Style | The BOAST Style Guide</title>
-  <meta name="description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>Chapter 5 Coding Style | Building Shiny Apps the BOAST Way</title>
+  <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Coding Style | The BOAST Style Guide" />
+  <meta property="og:title" content="Chapter 5 Coding Style | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Coding Style | The BOAST Style Guide" />
+  <meta name="twitter:title" content="Chapter 5 Coding Style | Building Shiny Apps the BOAST Way" />
   
-  <meta name="twitter:description" content="This is the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="twitter:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   
 
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2020-06-25" />
+<meta name="date" content="2021-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="workflow.html"/>
-<link rel="next" href="layout.html"/>
+<link rel="prev" href="template.html"/>
+<link rel="next" href="specificCoding.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,22 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -118,6 +119,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -134,173 +136,345 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">BOAST Style Guide</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#organization"><i class="fa fa-check"></i><b>0.1</b> Organization</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a>
+<ul>
+<li class="chapter" data-level="0.2.1" data-path="index.html"><a href="index.html#were-a-team-of-developers"><i class="fa fa-check"></i><b>0.2.1</b> We’re a Team of Developers</a></li>
+<li class="chapter" data-level="0.2.2" data-path="index.html"><a href="index.html#research-driven"><i class="fa fa-check"></i><b>0.2.2</b> Research Driven</a></li>
+<li class="chapter" data-level="0.2.3" data-path="index.html"><a href="index.html#accesiblity-minded"><i class="fa fa-check"></i><b>0.2.3</b> Accesiblity Minded</a></li>
+<li class="chapter" data-level="0.2.4" data-path="index.html"><a href="index.html#avoid-the-shiny-problem"><i class="fa fa-check"></i><b>0.2.4</b> Avoid the “Shiny” Problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>1</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps-worflow"><i class="fa fa-check"></i><b>1.1</b> Revising Existing Apps Worflow</a></li>
+<li class="chapter" data-level="1.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps-workflow"><i class="fa fa-check"></i><b>1.2</b> Creating New Apps Workflow</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>1.2.1</b> GitHub Repo Names</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>1.3.1</b> Set Up/Login to the VPN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>1.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
+<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>1.3.3</b> Publishing Your App for Testing</a></li>
+<li class="chapter" data-level="1.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>1.3.4</b> Configuring for Testing</a></li>
+<li class="chapter" data-level="1.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>1.3.5</b> Check the Logs</a></li>
+<li class="chapter" data-level="1.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>1.3.6</b> Problems?</a></li>
+</ul></li>
+</ul></li>
 <li class="part"><span><b>I Getting Started</b></span></li>
-<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> The Basics</a><ul>
-<li class="chapter" data-level="1.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>1.1</b> Getting Started Checklist</a></li>
-<li class="chapter" data-level="1.2" data-path="basics.html"><a href="basics.html#boastutils-package"><i class="fa fa-check"></i><b>1.2</b> <code>boastUtils</code> Package</a></li>
-<li class="chapter" data-level="1.3" data-path="basics.html"><a href="basics.html#sample-app"><i class="fa fa-check"></i><b>1.3</b> Sample App</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>1.3.1</b> Direct Download</a></li>
-<li class="chapter" data-level="1.3.2" data-path="basics.html"><a href="basics.html#github-desktop"><i class="fa fa-check"></i><b>1.3.2</b> GitHub Desktop</a></li>
-<li class="chapter" data-level="1.3.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>1.3.3</b> Command Line</a></li>
-<li class="chapter" data-level="1.3.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>1.3.4</b> RStudio Project</a></li>
+<li class="chapter" data-level="2" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>2</b> Making an App</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>2.1</b> Step 1: Read the Style Guide</a></li>
+<li class="chapter" data-level="2.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>2.2</b> Step 2: Identify a Topic</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>2.2.1</b> Your App’s Purpose</a></li>
+<li class="chapter" data-level="2.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>2.2.2</b> The Topic</a></li>
+<li class="chapter" data-level="2.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>2.2.3</b> Goals</a></li>
+<li class="chapter" data-level="2.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>2.2.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>2.3</b> Step 3: Sketch out plans</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="makingApp.html"><a href="makingApp.html#key-elements"><i class="fa fa-check"></i><b>2.3.1</b> Key Elements</a></li>
+<li class="chapter" data-level="2.3.2" data-path="makingApp.html"><a href="makingApp.html#example-cont."><i class="fa fa-check"></i><b>2.3.2</b> Example, cont.</a></li>
+<li class="chapter" data-level="2.3.3" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>2.3.3</b> Share Your Plan</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>2.4</b> Step 4: Create Repository</a></li>
+<li class="chapter" data-level="2.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>2.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
+<li class="chapter" data-level="2.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>2.6</b> Step 9: Larger Scale Testing</a></li>
+<li class="chapter" data-level="2.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>2.7</b> Steps 10-11: Pull Requests and Tweaks</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="makingApp.html"><a href="makingApp.html#appearance-review-part-of-large-scale-testing"><i class="fa fa-check"></i><b>2.7.1</b> Appearance Review (part of Large Scale Testing)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="makingApp.html"><a href="makingApp.html#coding-review"><i class="fa fa-check"></i><b>2.7.2</b> Coding Review</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>2</b> Workflow</a><ul>
-<li class="chapter" data-level="2.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps"><i class="fa fa-check"></i><b>2.1</b> Revising Existing Apps</a></li>
-<li class="chapter" data-level="2.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps"><i class="fa fa-check"></i><b>2.2</b> Creating New Apps</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>2.2.1</b> GitHub Repo Names</a></li>
+<li class="part"><span><b>II Getting Ready to Code</b></span></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>2.3</b> Testing Your App</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>2.3.1</b> Set Up/Login to the VPN</a></li>
-<li class="chapter" data-level="2.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>2.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
-<li class="chapter" data-level="2.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>2.3.3</b> Publishing Your App for Testing</a></li>
-<li class="chapter" data-level="2.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>2.3.4</b> Configuring for Testing</a></li>
-<li class="chapter" data-level="2.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>2.3.5</b> Check the Logs</a></li>
-<li class="chapter" data-level="2.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>2.3.6</b> Problems?</a></li>
-</ul></li>
-</ul></li>
-<li class="part"><span><b>II Writing Code</b></span></li>
-<li class="chapter" data-level="3" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>3</b> Coding Style</a><ul>
-<li class="chapter" data-level="3.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>3.1</b> General Coding Style</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>3.1.1</b> Leave Comments</a></li>
-<li class="chapter" data-level="3.1.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>3.1.2</b> Informative Names</a></li>
-<li class="chapter" data-level="3.1.3" data-path="coding.html"><a href="coding.html#formatCode"><i class="fa fa-check"></i><b>3.1.3</b> Format Your Code</a></li>
-<li class="chapter" data-level="3.1.4" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>3.1.4</b> Be Explicit</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="coding.html"><a href="coding.html#additional-coding-style"><i class="fa fa-check"></i><b>3.2</b> Additional Coding Style</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>3.2.1</b> Minimize Package Usage</a></li>
-<li class="chapter" data-level="3.2.2" data-path="coding.html"><a href="coding.html#exFiles"><i class="fa fa-check"></i><b>3.2.2</b> Minimize External Files</a></li>
-<li class="chapter" data-level="3.2.3" data-path="coding.html"><a href="coding.html#plotCache"><i class="fa fa-check"></i><b>3.2.3</b> Plot Caching</a></li>
-<li class="chapter" data-level="3.2.4" data-path="coding.html"><a href="coding.html#textStyle"><i class="fa fa-check"></i><b>3.2.4</b> Styling Text</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="coding.html"><a href="coding.html#orgCode"><i class="fa fa-check"></i><b>3.3</b> Organizing Your Code</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="coding.html"><a href="coding.html#using-app.r"><i class="fa fa-check"></i><b>3.3.1</b> Using <code>app.R</code></a></li>
-<li class="chapter" data-level="3.3.2" data-path="coding.html"><a href="coding.html#using-ui.r-and-server.r"><i class="fa fa-check"></i><b>3.3.2</b> Using <code>ui.R</code> and <code>server.R</code></a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="coding.html"><a href="coding.html#html"><i class="fa fa-check"></i><b>3.4</b> HTML</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="coding.html"><a href="coding.html#lists"><i class="fa fa-check"></i><b>3.4.1</b> Lists</a></li>
-<li class="chapter" data-level="3.4.2" data-path="coding.html"><a href="coding.html#headers"><i class="fa fa-check"></i><b>3.4.2</b> Headers</a></li>
-<li class="chapter" data-level="3.4.3" data-path="coding.html"><a href="coding.html#paragraphs"><i class="fa fa-check"></i><b>3.4.3</b> Paragraphs</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="coding.html"><a href="coding.html#css"><i class="fa fa-check"></i><b>3.5</b> CSS</a></li>
-<li class="chapter" data-level="3.6" data-path="coding.html"><a href="coding.html#metadata"><i class="fa fa-check"></i><b>3.6</b> Metadata</a></li>
-<li class="chapter" data-level="3.7" data-path="coding.html"><a href="coding.html#rlocker"><i class="fa fa-check"></i><b>3.7</b> Using rLocker</a><ul>
-<li class="chapter" data-level="3.7.1" data-path="coding.html"><a href="coding.html#installing"><i class="fa fa-check"></i><b>3.7.1</b> Installing</a></li>
-<li class="chapter" data-level="3.7.2" data-path="coding.html"><a href="coding.html#setup"><i class="fa fa-check"></i><b>3.7.2</b> Setup</a></li>
-<li class="chapter" data-level="3.7.3" data-path="coding.html"><a href="coding.html#usage"><i class="fa fa-check"></i><b>3.7.3</b> Usage</a></li>
+<li class="chapter" data-level="3.5" data-path="basics.html"><a href="basics.html#useful-rstudio-settings"><i class="fa fa-check"></i><b>3.5</b> Useful RStudio Settings</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basics.html"><a href="basics.html#coding-margin"><i class="fa fa-check"></i><b>3.5.1</b> Coding Margin</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics.html"><a href="basics.html#line-numbers"><i class="fa fa-check"></i><b>3.5.2</b> Line Numbers</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basics.html"><a href="basics.html#whitespace-characters"><i class="fa fa-check"></i><b>3.5.3</b> Whitespace Characters</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basics.html"><a href="basics.html#rainbow-parentheses"><i class="fa fa-check"></i><b>3.5.4</b> Rainbow Parentheses</a></li>
+<li class="chapter" data-level="3.5.5" data-path="basics.html"><a href="basics.html#code-diagnostics"><i class="fa fa-check"></i><b>3.5.5</b> Code Diagnostics</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>III Visual Appearance</b></span></li>
-<li class="chapter" data-level="4" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i><b>4</b> App Layout</a><ul>
-<li class="chapter" data-level="4.1" data-path="layout.html"><a href="layout.html#dashboard"><i class="fa fa-check"></i><b>4.1</b> Dashboard</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard"><i class="fa fa-check"></i><b>4.1.1</b> Creating the Dashboard</a></li>
-<li class="chapter" data-level="4.1.2" data-path="layout.html"><a href="layout.html#colorUI"><i class="fa fa-check"></i><b>4.1.2</b> Color in the User Interface</a></li>
-<li class="chapter" data-level="4.1.3" data-path="layout.html"><a href="layout.html#chapterColor"><i class="fa fa-check"></i><b>4.1.3</b> Current Chapter Color Assignments</a></li>
+<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
+<li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The <code>app.R</code> File</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="layout.html"><a href="layout.html#header"><i class="fa fa-check"></i><b>4.2</b> Dashboard Header</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>4.2.1</b> Creating the Dashboard Header</a></li>
-<li class="chapter" data-level="4.2.2" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>4.2.2</b> What’s Needed in the Server Definition</a></li>
+<li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="layout.html"><a href="layout.html#sidebar"><i class="fa fa-check"></i><b>4.3</b> Dashboard Sidebar</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>4.3.1</b> Creating the Dashboard Sidebar</a></li>
-<li class="chapter" data-level="4.3.2" data-path="layout.html"><a href="layout.html#sidebar-order"><i class="fa fa-check"></i><b>4.3.2</b> Sidebar Order</a></li>
-<li class="chapter" data-level="4.3.3" data-path="layout.html"><a href="layout.html#sidebar-names"><i class="fa fa-check"></i><b>4.3.3</b> Sidebar Names</a></li>
-<li class="chapter" data-level="4.3.4" data-path="layout.html"><a href="layout.html#sidebar-icons"><i class="fa fa-check"></i><b>4.3.4</b> Sidebar Icons</a></li>
-<li class="chapter" data-level="4.3.5" data-path="layout.html"><a href="layout.html#submenus"><i class="fa fa-check"></i><b>4.3.5</b> Submenus</a></li>
-<li class="chapter" data-level="4.3.6" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>4.3.6</b> What’s Needed in the Server Definition</a></li>
+<li class="chapter" data-level="4.5" data-path="template.html"><a href="template.html#screenshot"><i class="fa fa-check"></i><b>4.5</b> screenshot.png</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="layout.html"><a href="layout.html#body"><i class="fa fa-check"></i><b>4.4</b> Dashboard Body</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="layout.html"><a href="layout.html#the-overview-tab"><i class="fa fa-check"></i><b>4.4.1</b> The Overview Tab</a></li>
-<li class="chapter" data-level="4.4.2" data-path="layout.html"><a href="layout.html#a-prerequisites-tab"><i class="fa fa-check"></i><b>4.4.2</b> A Prerequisites Tab</a></li>
-<li class="chapter" data-level="4.4.3" data-path="layout.html"><a href="layout.html#activity-tabs"><i class="fa fa-check"></i><b>4.4.3</b> Activity Tab(s)</a></li>
-<li class="chapter" data-level="4.4.4" data-path="layout.html"><a href="layout.html#refTab"><i class="fa fa-check"></i><b>4.4.4</b> References</a></li>
-<li class="chapter" data-level="4.4.5" data-path="layout.html"><a href="layout.html#innerTabs"><i class="fa fa-check"></i><b>4.4.5</b> Tabs Inside the Body</a></li>
+<li class="part"><span><b>III Style Guide-Coding</b></span></li>
+<li class="chapter" data-level="5" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>5</b> Coding Style</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>5.1</b> General Coding Style</a></li>
+<li class="chapter" data-level="5.2" data-path="coding.html"><a href="coding.html#readable"><i class="fa fa-check"></i><b>5.2</b> Make Your Code Readable</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="coding.html"><a href="coding.html#formatSpace"><i class="fa fa-check"></i><b>5.2.1</b> Formatting and Spacing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>5.2.2</b> Use Informative Names</a></li>
+<li class="chapter" data-level="5.2.3" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>5.2.3</b> Be Explicit</a></li>
+<li class="chapter" data-level="5.2.4" data-path="coding.html"><a href="coding.html#exceptions-to-readability"><i class="fa fa-check"></i><b>5.2.4</b> Exceptions to Readability</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="layout.html"><a href="layout.html#common-elements"><i class="fa fa-check"></i><b>4.5</b> Common Elements</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="layout.html"><a href="layout.html#ordering-inputs"><i class="fa fa-check"></i><b>4.5.1</b> Ordering Inputs</a></li>
-<li class="chapter" data-level="4.5.2" data-path="layout.html"><a href="layout.html#buttons"><i class="fa fa-check"></i><b>4.5.2</b> Buttons</a></li>
-<li class="chapter" data-level="4.5.3" data-path="layout.html"><a href="layout.html#correctincorrect-marks"><i class="fa fa-check"></i><b>4.5.3</b> Correct/Incorrect Marks</a></li>
-<li class="chapter" data-level="4.5.4" data-path="layout.html"><a href="layout.html#animation-buttons"><i class="fa fa-check"></i><b>4.5.4</b> Animation Buttons</a></li>
-<li class="chapter" data-level="4.5.5" data-path="layout.html"><a href="layout.html#progress-bar"><i class="fa fa-check"></i><b>4.5.5</b> Progress Bar</a></li>
-<li class="chapter" data-level="4.5.6" data-path="layout.html"><a href="layout.html#collapsible"><i class="fa fa-check"></i><b>4.5.6</b> Collapsible Boxes</a></li>
-<li class="chapter" data-level="4.5.7" data-path="layout.html"><a href="layout.html#well-panels"><i class="fa fa-check"></i><b>4.5.7</b> Well Panels</a></li>
+<li class="chapter" data-level="5.3" data-path="coding.html"><a href="coding.html#efficient"><i class="fa fa-check"></i><b>5.3</b> Make Your Code Efficient</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="coding.html"><a href="coding.html#dry-coding"><i class="fa fa-check"></i><b>5.3.1</b> DRY Coding</a></li>
+<li class="chapter" data-level="5.3.2" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>5.3.2</b> Minimize Package Usage</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i><b>5</b> Design Style</a><ul>
-<li class="chapter" data-level="5.1" data-path="designStyle.html"><a href="designStyle.html#logo"><i class="fa fa-check"></i><b>5.1</b> PSU Branding</a></li>
-<li class="chapter" data-level="5.2" data-path="designStyle.html"><a href="designStyle.html#colors"><i class="fa fa-check"></i><b>5.2</b> Colors</a></li>
-<li class="chapter" data-level="5.3" data-path="designStyle.html"><a href="designStyle.html#styleText"><i class="fa fa-check"></i><b>5.3</b> Text Styling</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="designStyle.html"><a href="designStyle.html#headings"><i class="fa fa-check"></i><b>5.3.1</b> Headings</a></li>
-<li class="chapter" data-level="5.3.2" data-path="designStyle.html"><a href="designStyle.html#paragraph-text"><i class="fa fa-check"></i><b>5.3.2</b> Paragraph Text</a></li>
-<li class="chapter" data-level="5.3.3" data-path="designStyle.html"><a href="designStyle.html#mathematics"><i class="fa fa-check"></i><b>5.3.3</b> Mathematics</a></li>
-<li class="chapter" data-level="5.3.4" data-path="designStyle.html"><a href="designStyle.html#game-question-text"><i class="fa fa-check"></i><b>5.3.4</b> [Game] Question Text</a></li>
-<li class="chapter" data-level="5.3.5" data-path="designStyle.html"><a href="designStyle.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>5.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
-<li class="chapter" data-level="5.3.6" data-path="designStyle.html"><a href="designStyle.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>5.3.6</b> Feedback and Hint Text</a></li>
-<li class="chapter" data-level="5.3.7" data-path="designStyle.html"><a href="designStyle.html#text-in-r-plots"><i class="fa fa-check"></i><b>5.3.7</b> Text in <code>R</code> Plots</a></li>
-<li class="chapter" data-level="5.3.8" data-path="designStyle.html"><a href="designStyle.html#text-case"><i class="fa fa-check"></i><b>5.3.8</b> Text Case</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="designStyle.html"><a href="designStyle.html#graphics"><i class="fa fa-check"></i><b>5.4</b> Graphics</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="designStyle.html"><a href="designStyle.html#graphLab"><i class="fa fa-check"></i><b>5.4.1</b> Titles and Labels</a></li>
-<li class="chapter" data-level="5.4.2" data-path="designStyle.html"><a href="designStyle.html#axes-and-scales"><i class="fa fa-check"></i><b>5.4.2</b> Axes and Scales</a></li>
-<li class="chapter" data-level="5.4.3" data-path="designStyle.html"><a href="designStyle.html#colorPlots"><i class="fa fa-check"></i><b>5.4.3</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="5.4.4" data-path="designStyle.html"><a href="designStyle.html#tables"><i class="fa fa-check"></i><b>5.4.4</b> Tables</a></li>
-<li class="chapter" data-level="5.4.5" data-path="designStyle.html"><a href="designStyle.html#static-images"><i class="fa fa-check"></i><b>5.4.5</b> Static Images</a></li>
-<li class="chapter" data-level="5.4.6" data-path="designStyle.html"><a href="designStyle.html#altText"><i class="fa fa-check"></i><b>5.4.6</b> Alt Text</a></li>
+<li class="chapter" data-level="5.4" data-path="coding.html"><a href="coding.html#beKind"><i class="fa fa-check"></i><b>5.4</b> Be Kind to Future Coders</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>5.4.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="5.4.2" data-path="coding.html"><a href="coding.html#code-section-titlesjump-points"><i class="fa fa-check"></i><b>5.4.2</b> Code Section Titles/Jump Points</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>IV Linguistics</b></span></li>
-<li class="chapter" data-level="6" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>6</b> Wording</a><ul>
-<li class="chapter" data-level="6.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>6.1</b> General Guidelines</a></li>
-<li class="chapter" data-level="6.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>6.2</b> Popovers</a></li>
-<li class="chapter" data-level="6.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>6.3</b> Dealing with Differing Vocabularies</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>6.3.1</b> The Jingle/Jangle Problem</a></li>
-<li class="chapter" data-level="6.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>6.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
-<li class="chapter" data-level="6.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>6.3.3</b> Option 1: Hover Text</a></li>
-<li class="chapter" data-level="6.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>6.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+<li class="chapter" data-level="6" data-path="specificCoding.html"><a href="specificCoding.html"><i class="fa fa-check"></i><b>6</b> Shiny (BOAST) Specific Coding Practices</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specificCoding.html"><a href="specificCoding.html#orgCode"><i class="fa fa-check"></i><b>6.1</b> Overarching Organization</a></li>
+<li class="chapter" data-level="6.2" data-path="specificCoding.html"><a href="specificCoding.html#calling-inputs-and-outputs"><i class="fa fa-check"></i><b>6.2</b> Calling Inputs and Outputs</a></li>
+<li class="chapter" data-level="6.3" data-path="specificCoding.html"><a href="specificCoding.html#reactive-vs.-observe"><i class="fa fa-check"></i><b>6.3</b> Reactive vs. Observe</a></li>
+<li class="chapter" data-level="6.4" data-path="specificCoding.html"><a href="specificCoding.html#working-with-reactive-values"><i class="fa fa-check"></i><b>6.4</b> Working with Reactive Values</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="specificCoding.html"><a href="specificCoding.html#input"><i class="fa fa-check"></i><b>6.4.1</b> <code>input</code></a></li>
+<li class="chapter" data-level="6.4.2" data-path="specificCoding.html"><a href="specificCoding.html#reactiveval"><i class="fa fa-check"></i><b>6.4.2</b> <code>reactiveVal</code></a></li>
+<li class="chapter" data-level="6.4.3" data-path="specificCoding.html"><a href="specificCoding.html#reactivevalues"><i class="fa fa-check"></i><b>6.4.3</b> <code>reactiveValues</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>6.4</b> Footnotes</a></li>
+<li class="chapter" data-level="6.5" data-path="specificCoding.html"><a href="specificCoding.html#events"><i class="fa fa-check"></i><b>6.5</b> Events</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="specificCoding.html"><a href="specificCoding.html#eventreactive"><i class="fa fa-check"></i><b>6.5.1</b> <code>eventReactive</code></a></li>
+<li class="chapter" data-level="6.5.2" data-path="specificCoding.html"><a href="specificCoding.html#observeevent"><i class="fa fa-check"></i><b>6.5.2</b> <code>observeEvent</code></a></li>
+<li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>7</b> Documentation</a><ul>
-<li class="chapter" data-level="7.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>7.1</b> References</a></li>
-<li class="chapter" data-level="7.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>7.2</b> Plagiarism</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>7.2.1</b> Reference Tab</a></li>
-<li class="chapter" data-level="7.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>7.2.2</b> In Code</a></li>
+<li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>7.3</b> <code>R</code> Packages</a></li>
-<li class="chapter" data-level="7.4" data-path="designStyle.html"><a href="designStyle.html#graphics"><i class="fa fa-check"></i><b>7.4</b> Graphics</a></li>
-<li class="chapter" data-level="7.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>7.5</b> Data</a></li>
+<li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="htmlCSS.html"><a href="htmlCSS.html#html"><i class="fa fa-check"></i><b>7.1</b> HTML Tags</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="htmlCSS.html"><a href="htmlCSS.html#paragraphs"><i class="fa fa-check"></i><b>7.1.1</b> Paragraphs</a></li>
+<li class="chapter" data-level="7.1.2" data-path="htmlCSS.html"><a href="htmlCSS.html#breaks"><i class="fa fa-check"></i><b>7.1.2</b> Breaks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="htmlCSS.html"><a href="htmlCSS.html#lists"><i class="fa fa-check"></i><b>7.1.3</b> Lists</a></li>
+<li class="chapter" data-level="7.1.4" data-path="htmlCSS.html"><a href="htmlCSS.html#headers"><i class="fa fa-check"></i><b>7.1.4</b> Headers</a></li>
+<li class="chapter" data-level="7.1.5" data-path="htmlCSS.html"><a href="htmlCSS.html#links-bodylinks"><i class="fa fa-check"></i><b>7.1.5</b> Links (#bodyLinks)</a></li>
+<li class="chapter" data-level="7.1.6" data-path="htmlCSS.html"><a href="htmlCSS.html#div"><i class="fa fa-check"></i><b>7.1.6</b> Divisions</a></li>
+<li class="chapter" data-level="7.1.7" data-path="htmlCSS.html"><a href="htmlCSS.html#horizontal-rule"><i class="fa fa-check"></i><b>7.1.7</b> Horizontal Rule</a></li>
+<li class="chapter" data-level="7.1.8" data-path="htmlCSS.html"><a href="htmlCSS.html#other-tags"><i class="fa fa-check"></i><b>7.1.8</b> Other Tags</a></li>
+<li class="chapter" data-level="7.1.9" data-path="htmlCSS.html"><a href="htmlCSS.html#stylingTags"><i class="fa fa-check"></i><b>7.1.9</b> Text Styling Tags</a></li>
 </ul></li>
-<li class="part"><span><b>V Accessibility and Mobile Devices</b></span></li>
-<li class="chapter" data-level="8" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>8</b> Accessibility</a><ul>
-<li class="chapter" data-level="8.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>8.1</b> Making Your App Accessible</a></li>
-<li class="chapter" data-level="8.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>8.2</b> Checking Accessibility</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>8.2.1</b> Testing Accessibility</a></li>
-<li class="chapter" data-level="8.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>8.2.2</b> Reading a WAVE Report</a></li>
-<li class="chapter" data-level="8.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>8.2.3</b> Addressing Issues</a></li>
+<li class="chapter" data-level="7.2" data-path="htmlCSS.html"><a href="htmlCSS.html#htmlID"><i class="fa fa-check"></i><b>7.2</b> HTML <code>id</code></a></li>
+<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.3</b> CSS</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="htmlCSS.html"><a href="htmlCSS.html#cssProblems"><i class="fa fa-check"></i><b>7.3.1</b> Problematic CSS in Old Apps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.4</b> Using CSS</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="htmlCSS.html"><a href="htmlCSS.html#text-alignment"><i class="fa fa-check"></i><b>7.4.1</b> Text Alignment</a></li>
+<li class="chapter" data-level="7.4.2" data-path="htmlCSS.html"><a href="htmlCSS.html#classes"><i class="fa fa-check"></i><b>7.4.2</b> Classes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>9</b> Mobile Friendliness</a></li>
-<li class="part"><span><b>VI Examples</b></span></li>
-<li class="chapter" data-level="10" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>10</b> Making an App</a><ul>
-<li class="chapter" data-level="10.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>10.1</b> Step 1: Read the Style Guide</a></li>
-<li class="chapter" data-level="10.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>10.2</b> Step 2: Identify a Topic</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>10.2.1</b> Your App’s Purpose</a></li>
-<li class="chapter" data-level="10.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>10.2.2</b> The Topic</a></li>
-<li class="chapter" data-level="10.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>10.2.3</b> Goals</a></li>
-<li class="chapter" data-level="10.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>10.2.4</b> Example</a></li>
+<li class="chapter" data-level="8" data-path="additionalCoding.html"><a href="additionalCoding.html"><i class="fa fa-check"></i><b>8</b> Additional Coding Practices</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="additionalCoding.html"><a href="additionalCoding.html#plotCachec"><i class="fa fa-check"></i><b>8.1</b> Plot Caching</a></li>
+<li class="chapter" data-level="8.2" data-path="additionalCoding.html"><a href="additionalCoding.html#exFiles"><i class="fa fa-check"></i><b>8.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="8.3" data-path="additionalCoding.html"><a href="additionalCoding.html#metadatac"><i class="fa fa-check"></i><b>8.3</b> Metadata</a></li>
+<li class="chapter" data-level="8.4" data-path="additionalCoding.html"><a href="additionalCoding.html#otherLanguages"><i class="fa fa-check"></i><b>8.4</b> Other Languages (Python, JavaScript, etc.)</a></li>
+<li class="chapter" data-level="8.5" data-path="additionalCoding.html"><a href="additionalCoding.html#rlockerc"><i class="fa fa-check"></i><b>8.5</b> Using rLocker</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="additionalCoding.html"><a href="additionalCoding.html#installing"><i class="fa fa-check"></i><b>8.5.1</b> Installing</a></li>
+<li class="chapter" data-level="8.5.2" data-path="additionalCoding.html"><a href="additionalCoding.html#setup"><i class="fa fa-check"></i><b>8.5.2</b> Setup</a></li>
+<li class="chapter" data-level="8.5.3" data-path="additionalCoding.html"><a href="additionalCoding.html#usage"><i class="fa fa-check"></i><b>8.5.3</b> Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>10.3</b> Step 3: Sketch out plans</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="makingApp.html"><a href="makingApp.html#example-1"><i class="fa fa-check"></i><b>10.3.1</b> Example</a></li>
-<li class="chapter" data-level="10.3.2" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>10.3.2</b> Share Your Plan</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>10.4</b> Step 4: Create Repository</a></li>
-<li class="chapter" data-level="10.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>10.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
-<li class="chapter" data-level="10.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>10.6</b> Step 9: Larger Scale Testing</a></li>
-<li class="chapter" data-level="10.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>10.7</b> Steps 10-11: Pull Requestion and Tweaks</a></li>
+<li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
+<li class="chapter" data-level="" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i>App Layout</a></li>
+<li class="chapter" data-level="9" data-path="uiStructure.html"><a href="uiStructure.html"><i class="fa fa-check"></i><b>9</b> User Interface Structure</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="uiStructure.html"><a href="uiStructure.html#dashboard"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard"><i class="fa fa-check"></i><b>9.1.1</b> Creating the Dashboard</a></li>
+<li class="chapter" data-level="9.1.2" data-path="uiStructure.html"><a href="uiStructure.html#colorUI"><i class="fa fa-check"></i><b>9.1.2</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="9.1.3" data-path="uiStructure.html"><a href="uiStructure.html#chapterColor"><i class="fa fa-check"></i><b>9.1.3</b> Current Chapter Color Assignments</a></li>
 </ul></li>
-<li class="part"><span><b>VII Final Thoughts</b></span></li>
-<li class="chapter" data-level="11" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>11</b> Additional Tools</a></li>
+<li class="chapter" data-level="9.2" data-path="uiStructure.html"><a href="uiStructure.html#header"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>9.2.1</b> Creating the Dashboard Header</a></li>
+<li class="chapter" data-level="9.2.2" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>9.2.2</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>9.3.1</b> Creating the Dashboard Sidebar</a></li>
+<li class="chapter" data-level="9.3.2" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-order"><i class="fa fa-check"></i><b>9.3.2</b> Sidebar Order</a></li>
+<li class="chapter" data-level="9.3.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-names"><i class="fa fa-check"></i><b>9.3.3</b> Sidebar Names</a></li>
+<li class="chapter" data-level="9.3.4" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-icons"><i class="fa fa-check"></i><b>9.3.4</b> Sidebar Icons</a></li>
+<li class="chapter" data-level="9.3.5" data-path="uiStructure.html"><a href="uiStructure.html#submenus"><i class="fa fa-check"></i><b>9.3.5</b> Submenus</a></li>
+<li class="chapter" data-level="9.3.6" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>9.3.6</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="uiStructure.html"><a href="uiStructure.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="uiStructure.html"><a href="uiStructure.html#the-overview-page"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Page</a></li>
+<li class="chapter" data-level="9.4.2" data-path="uiStructure.html"><a href="uiStructure.html#a-prerequisites-page"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Page</a></li>
+<li class="chapter" data-level="9.4.3" data-path="uiStructure.html"><a href="uiStructure.html#activity-pages"><i class="fa fa-check"></i><b>9.4.3</b> Activity Pages</a></li>
+<li class="chapter" data-level="9.4.4" data-path="uiStructure.html"><a href="uiStructure.html#refPage"><i class="fa fa-check"></i><b>9.4.4</b> References Page</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="uiStructure.html"><a href="uiStructure.html#activityLayout"><i class="fa fa-check"></i><b>9.5</b> Layout of Activity Pages</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="uiStructure.html"><a href="uiStructure.html#two-required-elements"><i class="fa fa-check"></i><b>9.5.1</b> Two Required Elements</a></li>
+<li class="chapter" data-level="9.5.2" data-path="uiStructure.html"><a href="uiStructure.html#the-classical-layout"><i class="fa fa-check"></i><b>9.5.2</b> The Classical Layout</a></li>
+<li class="chapter" data-level="9.5.3" data-path="uiStructure.html"><a href="uiStructure.html#visTabs"><i class="fa fa-check"></i><b>9.5.3</b> Visible Tabs</a></li>
+<li class="chapter" data-level="9.5.4" data-path="uiStructure.html"><a href="uiStructure.html#hiddenTabs"><i class="fa fa-check"></i><b>9.5.4</b> Hidden Tabs</a></li>
+<li class="chapter" data-level="9.5.5" data-path="uiStructure.html"><a href="uiStructure.html#sets-of-controls"><i class="fa fa-check"></i><b>9.5.5</b> Sets of Controls</a></li>
+<li class="chapter" data-level="9.5.6" data-path="uiStructure.html"><a href="uiStructure.html#tic-tac-toe"><i class="fa fa-check"></i><b>9.5.6</b> Tic-Tac-Toe</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="uiStructure.html"><a href="uiStructure.html#innerTabs"><i class="fa fa-check"></i><b>9.6</b> Tab Sets</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tab-set"><i class="fa fa-check"></i><b>9.6.1</b> Create the Tab Set</a></li>
+<li class="chapter" data-level="9.6.2" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tabs"><i class="fa fa-check"></i><b>9.6.2</b> Create the Tabs</a></li>
+<li class="chapter" data-level="9.6.3" data-path="uiStructure.html"><a href="uiStructure.html#moving-between-tabs"><i class="fa fa-check"></i><b>9.6.3</b> Moving Between Tabs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="commonElements.html"><a href="commonElements.html"><i class="fa fa-check"></i><b>10</b> Common Elements</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="commonElements.html"><a href="commonElements.html#rowsCols"><i class="fa fa-check"></i><b>10.1</b> Fluid Rows and Columns</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="commonElements.html"><a href="commonElements.html#nesting-fluidrow"><i class="fa fa-check"></i><b>10.1.1</b> Nesting <code>fluidRow</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="commonElements.html"><a href="commonElements.html#wellPanels"><i class="fa fa-check"></i><b>10.2</b> Well Panels</a></li>
+<li class="chapter" data-level="10.3" data-path="commonElements.html"><a href="commonElements.html#collapsible"><i class="fa fa-check"></i><b>10.3</b> Collapsible Boxes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="commonElements.html"><a href="commonElements.html#creating-collapsible-boxes"><i class="fa fa-check"></i><b>10.3.1</b> Creating Collapsible Boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="commonElements.html"><a href="commonElements.html#buttons"><i class="fa fa-check"></i><b>10.4</b> Buttons</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="commonElements.html"><a href="commonElements.html#main-type-of-button"><i class="fa fa-check"></i><b>10.4.1</b> Main Type of Button</a></li>
+<li class="chapter" data-level="10.4.2" data-path="commonElements.html"><a href="commonElements.html#labels"><i class="fa fa-check"></i><b>10.4.2</b> Labels</a></li>
+<li class="chapter" data-level="10.4.3" data-path="commonElements.html"><a href="commonElements.html#icons"><i class="fa fa-check"></i><b>10.4.3</b> Icons</a></li>
+<li class="chapter" data-level="10.4.4" data-path="commonElements.html"><a href="commonElements.html#style-color"><i class="fa fa-check"></i><b>10.4.4</b> Style (Color)</a></li>
+<li class="chapter" data-level="10.4.5" data-path="commonElements.html"><a href="commonElements.html#disabled"><i class="fa fa-check"></i><b>10.4.5</b> Disabled</a></li>
+<li class="chapter" data-level="10.4.6" data-path="commonElements.html"><a href="commonElements.html#updating-buttons"><i class="fa fa-check"></i><b>10.4.6</b> Updating Buttons</a></li>
+<li class="chapter" data-level="10.4.7" data-path="commonElements.html"><a href="commonElements.html#other-issues"><i class="fa fa-check"></i><b>10.4.7</b> Other Issues</a></li>
+<li class="chapter" data-level="10.4.8" data-path="commonElements.html"><a href="commonElements.html#listening-to-buttons"><i class="fa fa-check"></i><b>10.4.8</b> Listening to Buttons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="commonElements.html"><a href="commonElements.html#inputs"><i class="fa fa-check"></i><b>10.5</b> Inputs</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="commonElements.html"><a href="commonElements.html#types-of-inputs"><i class="fa fa-check"></i><b>10.5.1</b> Types of Inputs</a></li>
+<li class="chapter" data-level="10.5.2" data-path="commonElements.html"><a href="commonElements.html#animation-of-sliders"><i class="fa fa-check"></i><b>10.5.2</b> Animation of Sliders</a></li>
+<li class="chapter" data-level="10.5.3" data-path="commonElements.html"><a href="commonElements.html#ordering-inputs"><i class="fa fa-check"></i><b>10.5.3</b> Ordering Inputs</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="commonElements.html"><a href="commonElements.html#correctincorrect-marks"><i class="fa fa-check"></i><b>10.6</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="10.7" data-path="commonElements.html"><a href="commonElements.html#alerts-and-messages"><i class="fa fa-check"></i><b>10.7</b> Alerts and Messages</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="commonElements.html"><a href="commonElements.html#alert-types"><i class="fa fa-check"></i><b>10.7.1</b> Alert Types</a></li>
+<li class="chapter" data-level="10.7.2" data-path="commonElements.html"><a href="commonElements.html#alert-title-and-text"><i class="fa fa-check"></i><b>10.7.2</b> Alert Title and Text</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="commonElements.html"><a href="commonElements.html#popovers-and-tooltips"><i class="fa fa-check"></i><b>10.8</b> Popovers and Tooltips</a></li>
+<li class="chapter" data-level="10.9" data-path="commonElements.html"><a href="commonElements.html#progress-bars"><i class="fa fa-check"></i><b>10.9</b> Progress Bars</a></li>
+</ul></li>
+<li class="part"><span><b>V Style Guide-Design Style</b></span></li>
+<li class="chapter" data-level="" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i>Design Style</a></li>
+<li class="chapter" data-level="11" data-path="simpleDesign.html"><a href="simpleDesign.html"><i class="fa fa-check"></i><b>11</b> Branding, Color, and Text</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="simpleDesign.html"><a href="simpleDesign.html#logo"><i class="fa fa-check"></i><b>11.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="11.2" data-path="simpleDesign.html"><a href="simpleDesign.html#colorChoices"><i class="fa fa-check"></i><b>11.2</b> Colors</a></li>
+<li class="chapter" data-level="11.3" data-path="simpleDesign.html"><a href="simpleDesign.html#styleText"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="simpleDesign.html"><a href="simpleDesign.html#headings"><i class="fa fa-check"></i><b>11.3.1</b> Headings</a></li>
+<li class="chapter" data-level="11.3.2" data-path="simpleDesign.html"><a href="simpleDesign.html#paragraph-text"><i class="fa fa-check"></i><b>11.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="11.3.3" data-path="simpleDesign.html"><a href="simpleDesign.html#mathematics"><i class="fa fa-check"></i><b>11.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="11.3.4" data-path="simpleDesign.html"><a href="simpleDesign.html#game-question-text"><i class="fa fa-check"></i><b>11.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="11.3.5" data-path="simpleDesign.html"><a href="simpleDesign.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>11.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="11.3.6" data-path="simpleDesign.html"><a href="simpleDesign.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>11.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="11.3.7" data-path="simpleDesign.html"><a href="simpleDesign.html#text-in-r-plots"><i class="fa fa-check"></i><b>11.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="11.3.8" data-path="simpleDesign.html"><a href="simpleDesign.html#text-case"><i class="fa fa-check"></i><b>11.3.8</b> Text Case</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>12</b> Static Images</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>12.1</b> Adding an Image</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
+<li class="chapter" data-level="12.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>12.1.2</b> In Line Images</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#sizing-your-image-imagesize"><i class="fa fa-check"></i><b>12.2</b> Sizing Your Image (#imageSize)</a></li>
+<li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>12.3</b> Adding Alt Text to Static Images</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.4</b> Tables</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.4.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.4.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.5</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.5.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.5.2</b> Alt Text via ARIA</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>VI Style Guide-Language</b></span></li>
+<li class="chapter" data-level="14" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>14</b> Wording</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>14.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="14.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>14.2</b> Popovers</a></li>
+<li class="chapter" data-level="14.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>14.3</b> Dealing with Differing Vocabularies</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>14.3.1</b> The Jingle/Jangle Problem</a></li>
+<li class="chapter" data-level="14.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>14.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
+<li class="chapter" data-level="14.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>14.3.3</b> Option 1: Hover Text</a></li>
+<li class="chapter" data-level="14.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>14.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>14.4</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>15</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>15.1</b> References</a></li>
+<li class="chapter" data-level="15.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>15.2</b> Plagiarism</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>15.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="15.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>15.2.2</b> In Code</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>15.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="15.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>15.4</b> Graphics</a></li>
+<li class="chapter" data-level="15.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>15.5</b> Data</a></li>
+</ul></li>
+<li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
+<li class="chapter" data-level="16" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>16</b> Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>16.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="16.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>16.2</b> Checking Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>16.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="16.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>16.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="16.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>16.2.3</b> Addressing Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>17</b> Mobile Friendliness</a></li>
+<li class="part"><span><b>VIII Final Thoughts</b></span></li>
+<li class="chapter" data-level="18" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>18</b> Additional Tools</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -313,7 +487,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The BOAST Style Guide</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Building Shiny Apps the BOAST Way</a>
           </h1>
         </div>
 
@@ -321,25 +495,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="coding" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Coding Style</h1>
-<p>Now that you’ve gone through the Getting Started chapters, we can turn our attention to the first part of the Style Guide: Coding. There are many aspects that fall under the heading of Coding Style.</p>
-<div id="genCode" class="section level2">
-<h2><span class="header-section-number">3.1</span> General Coding Style</h2>
-<p>Our general practice is to make use of the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. However, we do have some important departures and additional practices you need to follow:</p>
+<div id="coding" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Coding Style</h1>
+<p>Now that you’ve gone through the Getting Ready to Code chapters, we can turn our attention to the first portion of the Style Guide–Coding Style.</p>
+<div id="genCode" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> General Coding Style</h2>
+<p>Our Coding Style is based upon the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. However, we make some important departures and have some additional practices that you will need to follow.</p>
+<p>When it comes to our Coding Style we strive to adhere to the following principles:</p>
 <ul>
-<li><a href="coding.html#comments">Leave comments</a></li>
-<li><a href="coding.html#naming">Use informative names</a></li>
-<li><a href="coding.html#formatCode">Format your code</a></li>
-<li><a href="coding.html#explicit">Be explicit</a></li>
+<li>Make your code readable</li>
+<li>Make your code efficient</li>
+<li>Make your code readable</li>
+<li>Be kind to future coders</li>
+<li>Make your code readable</li>
 </ul>
-<div id="comments" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Leave Comments</h3>
-<p>At bare minimum, use a comment to break your code into sections. This helps you and others conceptualize the code into more manageable chunks. Your comments can provide others with potential keywords to search for when looking at your code later on.</p>
-<p>For particularly complex sections, use comments to summarize what you’re trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.</p>
+<p>Yes, we realize that we stated “Make your code readable” three times. Readable code is the <em><strong>MOST</strong></em> important thing you can do. Even if you don’t write the most efficient code, readable code will allow future students to examine your code and suggest improvements. Further, readable code will help you make sense of what <em>you</em> were trying to do when you come back to the app after several weeks or months. We will discuss all three of these principles in turn.</p>
 </div>
-<div id="naming" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> Informative Names</h3>
+<div id="readable" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Make Your Code Readable</h2>
+<p>For us, making code readable boils down to three major aspects: formatting and spacing, naming, and being explicit. By way of an example, consider the following code:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="coding.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad Code Example</span></span>
+<span id="cb4-2"><a href="coding.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(<span class="st">&quot;input1&quot;</span>,<span class="st">&quot;pick&quot;</span>,listA,<span class="cn">NULL</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="st">&quot;80%&quot;</span>,<span class="dv">2</span>)</span></code></pre></div>
+<p>Just looking at this code, do you have any idea what it does? Let’s look at a BOAST version of this code:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="coding.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good Code Example</span></span>
+<span id="cb5-2"><a href="coding.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(</span>
+<span id="cb5-3"><a href="coding.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;selectedPeople&quot;</span>,</span>
+<span id="cb5-4"><a href="coding.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Select who to contact&quot;</span>,</span>
+<span id="cb5-5"><a href="coding.html#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">choices =</span> nameList,</span>
+<span id="cb5-6"><a href="coding.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="cn">NULL</span>,</span>
+<span id="cb5-7"><a href="coding.html#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">multiple =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-8"><a href="coding.html#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">selectize =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-9"><a href="coding.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&quot;80%&quot;</span>,</span>
+<span id="cb5-10"><a href="coding.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">2</span></span>
+<span id="cb5-11"><a href="coding.html#cb5-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>While the above code takes more lines, it is infinitely more readable. Both sets of code call the same function, <code>selectInput</code>, to create a dropdown menu where the user can select individuals. In the Bad example, the user has to either 1) have the order of arguments memorized, or 2) guess what each argument does. In the Good example, each argument is listed out by name (e.g., <code>inputId</code> and <code>multiple</code>). While you might not know what each of these arguments controls (yet), you can at least see what values are being passed to each one. Further, you know that the choices are stored in the <code>nameList</code>, which is a much clearer name than <code>listA</code>.</p>
+<div id="formatSpace" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Formatting and Spacing</h3>
+<p>One of the most important aspects of making code readable is proper formatting and spacing. A common belief is that the fewer the lines of code, the better the program. However, what often happens when people attempt to follow this belief is that they wind up with indecipherable code…even to themselves. Thus, they violate not only our Readability principle but also our Be Kind principle.</p>
+<div id="line-length" class="section level4" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> Line Length</h4>
+<p>With only a few exceptions (e.g., URLs), we want to keep each line to no more than 80 characters long. RStudio has a built-in tool to help you with this.</p>
+<ol style="list-style-type: decimal">
+<li>Click on the Tools menu and select Global Options…</li>
+<li>Click on Code in the left menu that appears.</li>
+<li>Along the top of the window for Code, find and click on Display.</li>
+<li>Check the box for Show margin and ensure that 80 appears in the box labeled Margin column.</li>
+<li>Click Apply and OK.</li>
+</ol>
+<p>This will add a thin grey line to the editor window that marks where the 80 character limit occurs. While this won’t force you to a new line, this will serve as visual cue to you that your code line is too long and you should press return to move to a new line.</p>
+<p>If you only have a few characters left, then finishing the line and making a line just a few characters over 80 is acceptable. Just try to keep such exceptions few and far between.</p>
+</div>
+<div id="indentation" class="section level4" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> Indentation</h4>
+<p>Indenting your code is a great way to help with readability. RStudio will automatically do this for you. In the Good Example above, each of the arguments was indented 2 spaces; this helps convey that they are nested inside the object that was less indented.</p>
+<p>You can (and will) have nested indentation, for example:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="coding.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Indentation</span></span>
+<span id="cb6-2"><a href="coding.html#cb6-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb6-3"><a href="coding.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb6-4"><a href="coding.html#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
+<span id="cb6-5"><a href="coding.html#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb6-6"><a href="coding.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-7"><a href="coding.html#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb6-8"><a href="coding.html#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb6-9"><a href="coding.html#cb6-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-10"><a href="coding.html#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb6-11"><a href="coding.html#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb6-12"><a href="coding.html#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
+<span id="cb6-13"><a href="coding.html#cb6-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb6-14"><a href="coding.html#cb6-14" aria-hidden="true" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
+<span id="cb6-15"><a href="coding.html#cb6-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb6-16"><a href="coding.html#cb6-16" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb6-17"><a href="coding.html#cb6-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-18"><a href="coding.html#cb6-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-19"><a href="coding.html#cb6-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>We have several layers of indentation but by looking at the formatting, we can see which things are at which level and their relative ranks. For example, the Header, Sidebar, and Body are all at the same level (i.e., they are all aligned at the same indentation), while they are all subordinate to the Page and the user interface (“ui”). The tab called “overview” is part of the Body based on the indentation.</p>
+<p>One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4 brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)</p>
+<p>RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press Command + i; for Windows press Control + i. Keep in mind that this shortcut works only on one line at a time and always references the line just above the one you’re in.</p>
+</div>
+<div id="function-calls" class="section level4" number="5.2.1.3">
+<h4><span class="header-section-number">5.2.1.3</span> Function Calls</h4>
+<p>To format function calls, we will want to type the name of the function and the immediately put a open/left parenthesis–<code>functionName(</code>–what happens next depends on what you’re trying to do:</p>
+<ul>
+<li>If the function takes/needs no arguments, then immediately type the close/right parenthesis, e.g., <code>copyrightInfo()</code>, and return to a new line.</li>
+<li>If you can fit all of the arguments on that line without going beyond 80 characters, then you can do so. For example, <code>renderIcon(icon = "correct")</code>.</li>
+<li>In all other cases, press the return/enter key to move to a new line which should automatically indent. Enter each argument name and value followed by a comma on their own line. After you’ve typed the last argument’s value, omit the comma, return to a new line and put the close/right parenthesis. For example,</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="coding.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renderIcon has three arguments: icon, width, and html</span></span>
+<span id="cb7-2"><a href="coding.html#cb7-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>markProb1 <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(</span>
+<span id="cb7-3"><a href="coding.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb7-4"><a href="coding.html#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">test =</span> input<span class="sc">$</span>probVal1 <span class="sc">==</span> answer1,</span>
+<span id="cb7-5"><a href="coding.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">yes =</span> <span class="st">&quot;correct&quot;</span></span>
+<span id="cb7-6"><a href="coding.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">no =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb7-7"><a href="coding.html#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">test =</span> <span class="fu">abs</span>(input<span class="sc">$</span>probVal1 <span class="sc">-</span> answer1) <span class="sc">&lt;=</span> <span class="fl">0.05</span>,</span>
+<span id="cb7-8"><a href="coding.html#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">yes =</span> <span class="st">&quot;partial&quot;</span>,</span>
+<span id="cb7-9"><a href="coding.html#cb7-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">no =</span> <span class="st">&quot;incorrect&quot;</span></span>
+<span id="cb7-10"><a href="coding.html#cb7-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-11"><a href="coding.html#cb7-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb7-12"><a href="coding.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">60</span>,</span>
+<span id="cb7-13"><a href="coding.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">html =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-14"><a href="coding.html#cb7-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>If you’ve set up RStudio to automatically create pairs of grouping symbols, the close/right parentheses should automatically format themselves when you return to new lines.</p>
+</div>
+<div id="assignment-operator" class="section level4" number="5.2.1.4">
+<h4><span class="header-section-number">5.2.1.4</span> Assignment Operator</h4>
+<p>To store a value, define a function, etc., you need to use the assignment operator <code>&lt;-</code>. In the above examples, you’ll notice that we used this operator to create the UI (<code>ui &lt;- list()</code>) and to create the grading mark (<code>output$markProb1 &lt;- renderIcon()</code>). These are both appropriate usages of assignment. You should not use <code>=</code> in these cases.</p>
+<p>You’ll also notice that we used <code>=</code> with all of the argument names and their values. This is proper usage. You need to pass values to arguments through the <code>=</code> sign and not <code>&lt;-</code>.</p>
+</div>
+<div id="spacing" class="section level4" number="5.2.1.5">
+<h4><span class="header-section-number">5.2.1.5</span> Spacing</h4>
+<p>Spacing (or whitespace) refers to the portions of your line where you don’t put any characters. In the bad example above, there was no whitespace in the code; everything ran together. Spacing acts in code exactly like it does in written languages. Whileapersoncanreadasentencewithnospaces, the sentence is much easier to read when we use proper spacing.</p>
+<ul>
+<li>Put a space on both sides of <code>&lt;-</code> and <code>=</code>.</li>
+<li>Put a space after every comma, unless the comma ends a line.</li>
+<li>Put a space after <code>if</code>, <code>else</code>, <code>else if</code>, and <code>for</code> (but not <code>ifelse</code>).</li>
+<li>Put a space on both sides of comparison operators (e.g., <code>&lt;</code>, <code>&gt;=</code>, <code>!=</code>).</li>
+<li>Put a space on both sides of mathematical operators (e.g., <code>+</code>, <code>*</code>, <code>^</code>, <code>%%</code>, <code>~</code>).</li>
+<li>Put a space between the condition (what’s in parentheses) for an <code>if</code>/<code>for</code>/<code>else if</code> and the open/left curly brace <code>{</code>, then return to a new line.</li>
+<li>When closing a chunk of code with a curly brace, <code>}</code>, if you are moving into an <code>else</code> or <code>else if</code> chunk, place a space after the close brace and then type <code>else</code>. For example, <code>} else {</code> or <code>} else if (condition) {</code>. Otherwise, return to new line.</li>
+</ul>
+</div>
+</div>
+<div id="naming" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Use Informative Names</h3>
 <p>Use informative names for variables and functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,</p>
 <ul>
 <li><code>scoreMatrix</code> is a matrix that holds a set of scores<br />
@@ -349,409 +626,264 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Use <a href="https://en.wikipedia.org/wiki/Camel_case">camelCase</a> for variable names and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no spaces or underscores ( _ ) between them. (This is a departure from the tidyverse style.)</p>
 <p>Avoid using the variable names from code that you’re making use of from another app or script. For example, don’t use <code>waitTimes</code> to hold your data on the number of correct answers a user has given. It is also good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid <a href="https://en.wikipedia.org/wiki/Naming_collision">namespace collision</a>.</p>
 </div>
-<div id="formatCode" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> Format Your Code</h3>
-<p>See also <a href="coding.html#orgCode">Section <a href="coding.html#orgCode">3.3</a></a></p>
-<p>Use indentation spacing to help make your code readable. RStudio has a built-in tool that can help with this.</p>
-<ol style="list-style-type: decimal">
-<li>Select all of the code you want to reformat.
-<ul>
-<li>To select all code in a file, use Command-A (Mac) or Control-A (Windows).</li>
-</ul></li>
-<li>Press Command-Shift-A (Mac), Control-Shift-A (Windows), or click on the Code menu and select Reformat Code.</li>
-</ol>
-<p>NOTE: this tool is imperfect and can result in left parenthesis or curly braces moving up a line to where you might have an end-of-line comment, resulting in errors.</p>
-<p>Additionally, you can make use of the <code>styler</code> and <code>lintr</code> packages to help you perform formatting checks and to quickly reformat code.</p>
-</div>
-<div id="explicit" class="section level3">
-<h3><span class="header-section-number">3.1.4</span> Be Explicit</h3>
+<div id="explicit" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Be Explicit</h3>
 <p>One of the best practices a coder can do is to be explicit. And no, we don’t mean that type of explicit. This links back to <a href="coding.html#naming">Informative Naming</a> but goes a step beyond. <code>R</code> is a functional programming language. One of the important aspects of this is that functions in <code>R</code> obey the same rules as mathematical functions, especially multivariate functions.</p>
-<p>One implicit fact about functions that most students don’t realize is that the order of a function’s arguments are a matter of convention and are actually arbitrary. While we might define <em>f</em> as <span class="math inline">\(f(x,y) = x^2+3y\)</span>, we could call <span class="math inline">\(f(y=2,x=1)\)</span> and get the same output as <span class="math inline">\(f(1,2)\)</span> when we use the convention set up in the definition. This issue is exacerbated with functions in <code>R</code>.</p>
+<div id="function-arguments" class="section level4" number="5.2.3.1">
+<h4><span class="header-section-number">5.2.3.1</span> Function Arguments</h4>
+<p>One implicit fact about functions that most students don’t realize is that the order of a function’s arguments are a matter of convention and is actually arbitrary. While we might define <em>f</em> as <span class="math inline">\(f(x,y) = x^2+3y\)</span>, we could call <span class="math inline">\(f(y=2,x=1)\)</span> and get the same output as <span class="math inline">\(f(1,2)\)</span> when we use the convention set up in the definition. This issue is exacerbated with functions in <code>R</code>.</p>
 <p>Therefore, when you pass values to the arguments of a function in <code>R</code>, you should be explicit and include the argument name in your code. For example,</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="coding.html#cb4-1"></a><span class="kw">actionButton</span>(</span>
-<span id="cb4-2"><a href="coding.html#cb4-2"></a>  <span class="dt">inputId =</span> <span class="st">&quot;submit&quot;</span>,</span>
-<span id="cb4-3"><a href="coding.html#cb4-3"></a>  <span class="dt">label =</span> <span class="st">&quot;Submit&quot;</span>,</span>
-<span id="cb4-4"><a href="coding.html#cb4-4"></a>  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb4-5"><a href="coding.html#cb4-5"></a>  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
-<span id="cb4-6"><a href="coding.html#cb4-6"></a>  <span class="dt">class =</span> <span class="st">&quot;btn-ttt&quot;</span></span>
-<span id="cb4-7"><a href="coding.html#cb4-7"></a>)</span></code></pre></div>
-<p>There are a few exceptions to this:</p>
-<ul>
-<li>Formula Arguments (e.g., <code>response ~ factor1 + block</code>)</li>
-<li>Data Vectors/Frames (e.g., <code>dataFrame$response</code>)</li>
-<li>Functions from <code>shiny</code>, <code>shinydashboard</code>, <code>shinyBS</code>, etc.
-<ul>
-<li>E.g., you can call <code>dashboardHeader</code> rather than <code>shinydashboard::dashboardHeader</code></li>
-</ul></li>
-</ul>
-<p>General Advice:</p>
-<ul>
-<li>If you are calling a function from a package that is unique to your App or not commonly used, list the package in the function call.</li>
-<li>If you are using a common/central function (i.e., those from <code>shiny</code>, <code>ggplot2</code>), you can omit the package in the function call.</li>
-</ul>
-<p>Remember the following: the more proactive you are from the get go in commenting and organizing your code, the easier time you will have for debugging and improving your code down the road.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="coding.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
+<span id="cb8-2"><a href="coding.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;submit&quot;</span>,</span>
+<span id="cb8-3"><a href="coding.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Submit&quot;</span>,</span>
+<span id="cb8-4"><a href="coding.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb8-5"><a href="coding.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
+<span id="cb8-6"><a href="coding.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;btn-ttt&quot;</span></span>
+<span id="cb8-7"><a href="coding.html#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="function-definitions" class="section level4" number="5.2.3.2">
+<h4><span class="header-section-number">5.2.3.2</span> Function Definitions</h4>
+<p>When you are defining your own function, it is always a good idea to explicitly state what the function spits out. This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use <code>return</code> as shown below:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="coding.html#cb9-1" aria-hidden="true" tabindex="-1"></a>collatz <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">c =</span> <span class="dv">1</span>){</span>
+<span id="cb9-2"><a href="coding.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> x <span class="sc">!=</span> <span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">0</span>)) {</span>
+<span id="cb9-3"><a href="coding.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&quot;Error: x must be a positive integer.&quot;</span>)</span>
+<span id="cb9-4"><a href="coding.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb9-5"><a href="coding.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">&quot;You&#39;re at 1 in&quot;</span>, c, <span class="st">&quot;steps.&quot;</span>))</span>
+<span id="cb9-6"><a href="coding.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb9-7"><a href="coding.html#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> x <span class="sc">/</span> <span class="dv">2</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb9-8"><a href="coding.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb9-9"><a href="coding.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> <span class="dv">3</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">1</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb9-10"><a href="coding.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-11"><a href="coding.html#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>collatz</code> function above allows us to see the Collatz Conjecture in action (i.e., that starting with any positive integer, the sequence formed by taking half of an even value or 3 times an odd value plus 1 will always go to 1). The control logic is the series of <code>if, else if, else</code> statements.</p>
+<p>Even if you store the outputs in an internal variable (see the <code>gradeProb</code> function in the <a href="coding.html#dryGrading">DRY Grading Example</a>), you should still end your function definition with an explicit <code>return</code> call.</p>
+</div>
+<div id="why-is-being-explicit-important" class="section level4" number="5.2.3.3">
+<h4><span class="header-section-number">5.2.3.3</span> Why is being explicit important?</h4>
+<p>When you write explicit code, you not only improve your code’s readability and are automatically being kind to future coders, but you’re also guarding against certain forms of code breaking changes. When we build Shiny apps, we often call upon packages that other people have made. In those packages are functions that have a default ordering to them. For example, in one version of the package you might have <code>gradeThis(userInput, answerKey, partNumb)</code> but in the newest version you have <code>gradeThis(partNumb, userInput, answerKey)</code>. If you were not explicit by naming the arguments in calls of <code>gradeThis</code> updating the package will cause your app to break and throw errors.</p>
+<p>Further, being explicit also reduces the number of message printed to the console. For example, in <code>ggplot2</code>, if you call <code>geom_smooth(method = lm, se = false)</code> your code will execute properly. However, you will get a message in the console to the effect that <code>geom_smooth</code> used <code>y ~ x</code>. You can suppress this message simply by adding <code>formula = y ~ x</code> to the <code>geom_smooth</code> argument list. (Anything that gets printed to the console fills up your app’s log file. The more that’s in the log file, the harder they are to use to debug your app if/when it crashes. Thus, we want to keep the console as quiet as possible.)</p>
 </div>
 </div>
-<div id="additional-coding-style" class="section level2">
-<h2><span class="header-section-number">3.2</span> Additional Coding Style</h2>
-<p>In addition, we use the following coding practices.</p>
-<div id="minPackages" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Minimize Package Usage</h3>
+<div id="exceptions-to-readability" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Exceptions to Readability</h3>
+<p>There are few places where we make exceptions to the above formatting rules. These exceptions include the Dashboard Header and the Dashboard Sidebar. While we keep these lines readable, they follow a sightly different set of formatting to minimize their impact on the readability of the rest of the code. The App Template already has code in these sections for you to copy/paste for additional lines.</p>
+<p><strong>If you are ever unsure about how readable your code is, all you have to do is ask someone else. This is a great place for using Peer Reviews can help all students involved wither their coding skills.</strong></p>
+</div>
+</div>
+<div id="efficient" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Make Your Code Efficient</h2>
+<blockquote>
+I would have written a shorter letter, but I did not have the time.
+<div align="right">
+<p>— Blaise Pascal</p>
+</div>
+</blockquote>
+<p>Much like writing a short letter (paper or memo), writing efficient code takes time. Often coders first write <em>inefficient</em> code to translate their sketches into a working app. Then they can begin to make their code more efficient.</p>
+<p>As you write more code, you’ll get the hang of writing more efficient code from the start as well as seeing how to make existing code more efficient. Two ways that you can work towards efficient code is to practice DRY coding and to minimize your package usage.</p>
+<div id="dry-coding" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> DRY Coding</h3>
+<p>DRY coding is the principle of Don’t Repeat Yourself when coding. If you find yourself writing the same code several times, then you should DRY your code and look for a way to make things more efficient. There are several different situations where DRY might come into play. Here are just a few cases.</p>
+<div id="reoccuring-elements" class="section level4" number="5.3.1.1">
+<h4><span class="header-section-number">5.3.1.1</span> Reoccuring Elements</h4>
+<p>Suppose that you use the same list of choices for several different inputs. Rather than retyping the list each time, define the list as an object (e.g, <code>nameList</code>) and then you can call that list in each of the inputs (e.g., <code>choices = nameList</code>).</p>
+</div>
+<div id="dryGrading" class="section level4" number="5.3.1.2">
+<h4><span class="header-section-number">5.3.1.2</span> Grading User Responses</h4>
+<p>Rather than retyping the grading logic several times, you can define a single function and then call that function. For example,</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="coding.html#cb10-1" aria-hidden="true" tabindex="-1"></a>gradeProb <span class="ot">&lt;-</span> <span class="cf">function</span>(user, answer, <span class="at">tolerance =</span> <span class="fl">0.001</span>, <span class="at">partial =</span> <span class="fl">0.01</span>){</span>
+<span id="cb10-2"><a href="coding.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  outcome <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb10-3"><a href="coding.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> tolerance) {</span>
+<span id="cb10-4"><a href="coding.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are correct.&quot;</span></span>
+<span id="cb10-5"><a href="coding.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;correct&quot;</span></span>
+<span id="cb10-6"><a href="coding.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> partial) {</span>
+<span id="cb10-7"><a href="coding.html#cb10-7" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are almost correct.&quot;</span></span>
+<span id="cb10-8"><a href="coding.html#cb10-8" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;partial&quot;</span></span>
+<span id="cb10-9"><a href="coding.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb10-10"><a href="coding.html#cb10-10" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;Please try again.&quot;</span></span>
+<span id="cb10-11"><a href="coding.html#cb10-11" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;incorrect&quot;</span></span>
+<span id="cb10-12"><a href="coding.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-13"><a href="coding.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome)</span>
+<span id="cb10-14"><a href="coding.html#cb10-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>gradeProb</code> function defined above will grade a user’s [probability] value (i.e., <code>user</code>) against the answer key (<code>answer</code>) and return a list of two items: a feedback statement and the scoring mark to pass along to <code>renderIcon</code>. The following code shows us using the <code>gradeProb</code> function to generate the necessary outputs.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1" aria-hidden="true" tabindex="-1"></a>prob1 <span class="ot">&lt;-</span> <span class="fu">gradeProb</span>(</span>
+<span id="cb11-2"><a href="coding.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> input<span class="sc">$</span>problem1,</span>
+<span id="cb11-3"><a href="coding.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">answer =</span> answerKey[<span class="dv">1</span>]</span>
+<span id="cb11-4"><a href="coding.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Omitting the remaining two arguments will use the default values</span></span>
+<span id="cb11-5"><a href="coding.html#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-6"><a href="coding.html#cb11-6" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>problem1Feedback <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
+<span id="cb11-7"><a href="coding.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  prob1<span class="sc">$</span>feedback</span>
+<span id="cb11-8"><a href="coding.html#cb11-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb11-9"><a href="coding.html#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="coding.html#cb11-10" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>problem1Mark <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(<span class="at">icon =</span> prob1<span class="sc">$</span>mark)</span></code></pre></div>
+</div>
+<div id="graphs" class="section level4" number="5.3.1.3">
+<h4><span class="header-section-number">5.3.1.3</span> Graphs</h4>
+<p>If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph as an object is a good idea. For example,</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a basic data frame that will cover the majority of your cases</span></span>
+<span id="cb12-2"><a href="coding.html#cb12-2" aria-hidden="true" tabindex="-1"></a>baseGraph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb12-3"><a href="coding.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-4"><a href="coding.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb12-5"><a href="coding.html#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb12-6"><a href="coding.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-7"><a href="coding.html#cb12-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="coding.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="coding.html#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="coding.html#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb12-11"><a href="coding.html#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-12"><a href="coding.html#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb12-13"><a href="coding.html#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb12-14"><a href="coding.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>When we get to plotting our actual graphs, or updating the existing graph, we can call <code>baseGraph</code> and then add the elements we want, such as a scatter plot:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="coding.html#cb13-1" aria-hidden="true" tabindex="-1"></a>plotData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-2"><a href="coding.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">heights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="fl">3.5</span>),</span>
+<span id="cb13-3"><a href="coding.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">weights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">8</span>),</span>
+<span id="cb13-4"><a href="coding.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;I&quot;</span>), <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-5"><a href="coding.html#cb13-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-6"><a href="coding.html#cb13-6" aria-hidden="true" tabindex="-1"></a>baseGraph <span class="sc">+</span></span>
+<span id="cb13-7"><a href="coding.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb13-8"><a href="coding.html#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> plotData,</span>
+<span id="cb13-9"><a href="coding.html#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> heights, <span class="at">y =</span> weights, <span class="at">color =</span> sex, <span class="at">shape =</span> sex),</span>
+<span id="cb13-10"><a href="coding.html#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span></span>
+<span id="cb13-11"><a href="coding.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="coding.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb13-13"><a href="coding.html#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span></span>
+<span id="cb13-14"><a href="coding.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-15"><a href="coding.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Height (in)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-16"><a href="coding.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Weight (kg)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-17"><a href="coding.html#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
+<span id="cb13-18"><a href="coding.html#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb13-19"><a href="coding.html#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb13-20"><a href="coding.html#cb13-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
+<span id="cb13-21"><a href="coding.html#cb13-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
+<span id="cb13-22"><a href="coding.html#cb13-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
+<span id="cb13-23"><a href="coding.html#cb13-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-24"><a href="coding.html#cb13-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-25"><a href="coding.html#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_discrete</span>(</span>
+<span id="cb13-26"><a href="coding.html#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb13-27"><a href="coding.html#cb13-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb13-28"><a href="coding.html#cb13-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
+<span id="cb13-29"><a href="coding.html#cb13-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
+<span id="cb13-30"><a href="coding.html#cb13-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
+<span id="cb13-31"><a href="coding.html#cb13-31" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-32"><a href="coding.html#cb13-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-33"><a href="coding.html#cb13-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-34"><a href="coding.html#cb13-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Height and Weight by Sex&quot;</span></span>
+<span id="cb13-35"><a href="coding.html#cb13-35" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary.</p>
+<p>Another important feature of the above code is a <strong>key accessibility feature</strong>: combining color AND shape. Do not rely on just color alone as individuals who are color blind will struggle; always pair color usage with an additional aesthetic such as shape.</p>
+</div>
+<div id="repeating-yourself" class="section level4" number="5.3.1.4">
+<h4><span class="header-section-number">5.3.1.4</span> Repeating Yourself</h4>
+<p>There are many other cases where you might find yourself repeating. These are good cases for DRY-ing your code through the use of defining a new object/variable or a function.</p>
+</div>
+<div id="over-dry-ing-code" class="section level4" number="5.3.1.5">
+<h4><span class="header-section-number">5.3.1.5</span> Over DRY-ing Code</h4>
+<p>When you are building an app, there will be a certain amount of repetition in what you’re doing. For example, you’ll have to call the <code>bsButton</code> function each time you want to create a button. This is expected and appropriate for you to do. After all, the purpose of the <code>bsButton</code> function is to create a button.</p>
+<p>However, you can over do the DRY principle. For example, you don’t need to define a function for something that you’re only going to call once. Further, it isn’t necessary to define a new function that just changes a default value of an existing function. Here is a case where the user has over DRY-ed:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="coding.html#cb14-1" aria-hidden="true" tabindex="-1"></a>customButton <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId, label){</span>
+<span id="cb14-2"><a href="coding.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(</span>
+<span id="cb14-3"><a href="coding.html#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb14-4"><a href="coding.html#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> inputId,</span>
+<span id="cb14-5"><a href="coding.html#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label,</span>
+<span id="cb14-6"><a href="coding.html#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
+<span id="cb14-7"><a href="coding.html#cb14-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb14-8"><a href="coding.html#cb14-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;success&quot;</span></span>
+<span id="cb14-9"><a href="coding.html#cb14-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-10"><a href="coding.html#cb14-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-11"><a href="coding.html#cb14-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Rather than simply calling the <code>bsButton</code> function in their code and passing the appropriate arguments, this user has defined a brand new function that does the same thing but sets the values for <code>icon</code>, <code>size</code>, and <code>style</code> to new defaults. This type of programming should be avoided.</p>
+</div>
+</div>
+<div id="minPackages" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Minimize Package Usage</h3>
+<p>A second way to make your code more efficient is through the use of packages. When you load a package you want to be sure that</p>
+<ol style="list-style-type: decimal">
+<li>the package you’re loading is absolutely necessary, and</li>
+<li>you maximize your usage of what packages you do load.</li>
+</ol>
 <p>Make sure that you absolutely have to use a particular package before you do. Check to see if what you’re trying to do can be done in a package you’re already using or in base R.</p>
+<p>A previous student loaded the <code>scales</code> package to use the <code>percent</code> function to convert a decimal into a percentage. This was problematic for a couple reasons: the <code>percent</code> function has been depreciated (i.e., the package developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: <code>paste0(0.1 * 100, "%")</code>. If needed in several places, they could have written their own function:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="coding.html#cb15-1" aria-hidden="true" tabindex="-1"></a>makePercent <span class="ot">&lt;-</span> <span class="cf">function</span>(proportion){</span>
+<span id="cb15-2"><a href="coding.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">paste0</span>(proportion <span class="sc">*</span> <span class="dv">100</span>, <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb15-3"><a href="coding.html#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>This is not to say that you can’t make use of a new package. This guideline’s purpose is to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.</p>
-<p>To help you avoid name masking (i.e., <a href="coding.html#explicit">Section <a href="coding.html#explicit">3.1.4</a></a>), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use <code>dplyr::filter([arguments])</code> instead of just <code>filter([arguments])</code>.</p>
-<p>You can also run a <code>funchir::stale_package_check</code> on your <code>app.R</code>, <code>ui.R</code>, and <code>sever.R</code> files to see which packages you’re loading but might not actually use in your code. These stale packages may then be deleted out from your library call.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="coding.html#cb5-1"></a><span class="co"># Check working directory</span></span>
-<span id="cb5-2"><a href="coding.html#cb5-2"></a><span class="kw">getwd</span>()</span>
-<span id="cb5-3"><a href="coding.html#cb5-3"></a><span class="co"># Does the output match the folder path to where you app lives?</span></span>
-<span id="cb5-4"><a href="coding.html#cb5-4"></a><span class="co"># If not, then you need to set that. For example,</span></span>
-<span id="cb5-5"><a href="coding.html#cb5-5"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/GitHub/shiny-apps/Sample_App&quot;</span>)</span>
-<span id="cb5-6"><a href="coding.html#cb5-6"></a></span>
-<span id="cb5-7"><a href="coding.html#cb5-7"></a><span class="co"># Run a stale package check on app.R, ui.R, and server.R</span></span>
-<span id="cb5-8"><a href="coding.html#cb5-8"></a>funchir<span class="op">::</span><span class="kw">stale_package_check</span>(<span class="st">&quot;app.R&quot;</span>)</span></code></pre></div>
-<p>Be aware that while <code>stale_package_check</code> is useful, it doesn’t always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from <code>ggplot2</code> or <code>tippy</code>. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might some more misses.</p>
+<p>To help you avoid name masking (i.e., <a href="coding.html#explicit">Section <a href="coding.html#explicit">5.2.3</a></a>), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use <code>dplyr::filter([arguments])</code> instead of just <code>filter([arguments])</code>. If you are using a common package and have no risk of name masking, you can dispense with this. For example, you can use <code>ggplot([arguments])</code> rather than <code>ggplot2::ggplot([arugments])</code>.</p>
+<p>You can also run a <code>funchir::stale_package_check</code> on your <code>app.R</code> file to see which packages you’re loading but might not actually use in your code. These stale packages may then be deleted out from your library call.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="coding.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check working directory</span></span>
+<span id="cb16-2"><a href="coding.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb16-3"><a href="coding.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Does the output match the folder path to where you app lives?</span></span>
+<span id="cb16-4"><a href="coding.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># If not, then you need to set that. For example,</span></span>
+<span id="cb16-5"><a href="coding.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/GitHub/shiny-apps/Sample_App&quot;</span>)</span>
+<span id="cb16-6"><a href="coding.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="coding.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a stale package check on app.R, ui.R, and server.R</span></span>
+<span id="cb16-8"><a href="coding.html#cb16-8" aria-hidden="true" tabindex="-1"></a>funchir<span class="sc">::</span><span class="fu">stale_package_check</span>(<span class="st">&quot;app.R&quot;</span>)</span></code></pre></div>
+<p>Be aware that while <code>stale_package_check</code> is useful, it doesn’t always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from <code>ggplot2</code> or <code>tippy</code>. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might be more misses.</p>
 <p>Once you’re sure that a package isn’t being used, remove the <code>library</code> call for that package from your code.</p>
-<p>If you are dealing with a <code>ui.R</code>/<code>server.R</code> pair, make sure that the appropriate packages are loaded in the right file. For example, <code>ggplot2</code> only needs to be loaded in the <code>server.R</code> file.</p>
-</div>
-<div id="exFiles" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Minimize External Files</h3>
-<p>Try to minimize the number and size of external files you’re attaching to your App. If you’re working on an existing app, remove any external files that are no longer necessary.</p>
-<p>Wherever possible try to place external files into the <code>www</code> directory/folder that is at the same level as your <code>app.R</code> or <code>ui.R</code>/<code>server.R</code> files.</p>
-<p>If there are any external files (e.g., <code>*.csv</code>, <code>*.txt</code>, <code>*.dat</code>, <code>*.jpg</code>) that are not being used, delete them from the repository.</p>
-</div>
-<div id="plotCache" class="section level3">
-<h3><span class="header-section-number">3.2.3</span> Plot Caching</h3>
-<p>There are cases when your app will include a plot that falls into any of the following categories:</p>
-<ol style="list-style-type: decimal">
-<li>a plot that all users will see (i.e., static data set),</li>
-<li>is a computationally intense plot (i.e., lots of data and/or layers),</li>
-<li>might be a dynamic graph that the user explores and needs to move back and forth between various states.</li>
-</ol>
-<p>Each of these cases represents a place where the performance of your app can suffer. To improve performance, you should consider using the <code>renderCachePlot</code> function rather than <code>renderPlot</code>. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).</p>
-</div>
-<div id="textStyle" class="section level3">
-<h3><span class="header-section-number">3.2.4</span> Styling Text</h3>
-<p>The styling of text (including font size, font weight (i.e., boldface), font family, color, etc.) is something that we began standardizing in Fall 2019. This is centrally managed by Neil and Bob to ensure 1) consistency across apps, 2) to cut down on the extraneous coding you need to do (this way you can focus on the apps), and 3) ensures that our apps are accessible and mobile friendly. To this end:</p>
-<p>The styling of text will be controlled using an <strong>external</strong> CSS (Cascading Style Sheet) file. You will implement this depending on what approach you use:</p>
-<ul>
-<li>If you’re using the <code>boastApp</code> function from <code>boastUtils</code> (<strong>recommended for all new apps</strong>), you don’t need to do anything as the appropriate calls will automatically be done for you.</li>
-<li>If you are using the <code>ui.R</code> and <code>server.R</code> format (i.e., apps from prior years), place the following code in the <code>tags$head( )</code> portion at the top of the <code>dashboardBody</code> section of the <code>ui.R</code> file :
-<!-- end list --></li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="coding.html#cb6-1"></a><span class="kw">dashboardPage</span>(</span>
-<span id="cb6-2"><a href="coding.html#cb6-2"></a>  <span class="dt">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb6-3"><a href="coding.html#cb6-3"></a>  <span class="kw">dashboardHeader</span>(</span>
-<span id="cb6-4"><a href="coding.html#cb6-4"></a>    <span class="dt">title =</span> <span class="st">&quot;title&quot;</span>,</span>
-<span id="cb6-5"><a href="coding.html#cb6-5"></a>    <span class="dt">titleWidth =</span> <span class="dv">300</span>,</span>
-<span id="cb6-6"><a href="coding.html#cb6-6"></a>    <span class="co"># [omitted code]</span></span>
-<span id="cb6-7"><a href="coding.html#cb6-7"></a>  ),</span>
-<span id="cb6-8"><a href="coding.html#cb6-8"></a>  <span class="co"># [omitted code],</span></span>
-<span id="cb6-9"><a href="coding.html#cb6-9"></a>  <span class="kw">dashboardBody</span>(</span>
-<span id="cb6-10"><a href="coding.html#cb6-10"></a>    tags<span class="op">$</span><span class="kw">head</span>(</span>
-<span id="cb6-11"><a href="coding.html#cb6-11"></a>      tags<span class="op">$</span><span class="kw">link</span>(<span class="dt">rel =</span> <span class="st">&quot;stylesheet&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;text/css&quot;</span>,</span>
-<span id="cb6-12"><a href="coding.html#cb6-12"></a>        <span class="dt">href =</span> <span class="st">&quot;https://educationshinyappteam.github.io/Style_Guide/theme/boast.css&quot;</span>),</span>
-<span id="cb6-13"><a href="coding.html#cb6-13"></a>      <span class="kw">tabItems</span>(</span>
-<span id="cb6-14"><a href="coding.html#cb6-14"></a>       <span class="co"># [omitted code]</span></span>
-<span id="cb6-15"><a href="coding.html#cb6-15"></a>      )  )  )  )</span></code></pre></div>
-<p>There times when you might need some additional text styling that is not already defined. In these cases, <strong>you’ll need to talk to Neil or Bob to determine what is the best course of action</strong>. This could entail an addition to the central CSS file or the inclusion of an additional CSS file unique to your App.</p>
-<p>The central CSS file should only be altered by Neil or Bob and covers many aspects. However, this is a living file meaning that we will add to/alter the file as needed to improve the whole set of BOAST apps.</p>
-<p>See also <a href="coding.html#css">Section <a href="coding.html#css">3.5</a></a>.</p>
 </div>
 </div>
-<div id="orgCode" class="section level2">
-<h2><span class="header-section-number">3.3</span> Organizing Your Code</h2>
-<p>There is a fixed order in which you should write your code. This will depend on if you are using a singular <code>app.R</code> file or the pair <code>ui.r</code> and <code>server.r</code>.</p>
-<div id="using-app.r" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Using <code>app.R</code></h3>
-<p>The order for your code will be as follows:</p>
-<ol style="list-style-type: decimal">
-<li>Packages to be loaded</li>
-<li>App Metadata (see below)</li>
-<li>Any additional source files and custom functions</li>
-<li>UI definition (see <a href="layout.html#layout">Chapter <a href="layout.html#layout">4</a></a>)</li>
-<li>Server definition</li>
-<li><code>boastApp</code> call</li>
-</ol>
+<div id="beKind" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Be Kind to Future Coders</h2>
+<p>Keep in mind that we have a high coder turnover with a new group of students each summer. Thus, we need to ensure that we go out of our way now to help those students out. Strive to write the quality of code you wish you would have wanted to start with. If you follow the Readability and Efficiency Principles, you’ll be well on your way to being kind to future coders. The best way to go above and beyond is through comments and titling code sections (making jump points).</p>
+<div id="comments" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Leave Comments</h3>
+<p>At bare minimum, use a comment to break your code into sections. This helps you and others conceptualize the code into more manageable chunks. Your comments can provide others with potential keywords to search for when looking at your code later on.</p>
+<p>For particularly complex sections, use comments to summarize what you’re trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.</p>
+<p>Keep in mind that being kind is not only for other people, but also for yourself. When you come back to an app even after a couple days away, comments in addition to the readability and efficiency steps will help you see where you left off.</p>
 </div>
-<div id="using-ui.r-and-server.r" class="section level3">
-<h3><span class="header-section-number">3.3.2</span> Using <code>ui.R</code> and <code>server.R</code></h3>
-<p>The order for your code in the <code>ui.R</code> file:</p>
-<ol style="list-style-type: decimal">
-<li>Packages to be loaded</li>
-<li>App Metadata (see below)</li>
-<li>Any additional source files and custom functions</li>
-<li>UI definition (see <a href="layout.html#layout">Chapter <a href="layout.html#layout">4</a></a>)</li>
-</ol>
-<p>The order for your code in the <code>server.R</code> file:</p>
-<ol style="list-style-type: decimal">
-<li>Packages to be loaded</li>
-<li>Any additional source files and custom functions</li>
-<li>Server definition</li>
-</ol>
-</div>
-</div>
-<div id="html" class="section level2">
-<h2><span class="header-section-number">3.4</span> HTML</h2>
-<p>Our Shiny apps live on the internet and are thus going to be wrapped in HTML even though we are writing them in <code>R</code>. When you run a Shiny app, <code>R</code> and the <code>shiny</code> packages actually convert all of the <code>R</code> code into an HTML document which is served up to the user. While you will not have to directly write HTML for your apps, you should become aware of HTML tags that you will need to deal with when coding/writing your App. Further, you need to learn how to use these tags correctly as failure to do so becomes an <strong>Accessibility Issue</strong>.</p>
-<p>HTML Tags should not be used without some basic understanding of what that tag is for. Using the tags without such an understanding can not only lead to problems with your code running properly or looking like what you intended, but can interfere with how accessible your app is to a wider audience. Here are the most common HTML tags that you’ll encounter when making a Shiny App.</p>
-<div id="lists" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Lists</h3>
-<p>There are two aspects to lists: the items in the list and the environment those items live in.</p>
-<p>The two list environments are Ordered Lists and Unordered Lists.</p>
-<ul>
-<li>The Ordered List environment is for when you require that a user works through the items in a particular order. You call this environment in your App by using <code>tags$ol( [your list] )</code>. These lists are sequentially numbered/lettered.</li>
-<li>The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using <code>tags$ul( [your list] )</code>. These lists will appear with bullets.</li>
-</ul>
-<p>Once you’ve created the list environment, you create items for your list in the same way: <code>tags$li([content])</code>. You do not need to and should <strong>NOT</strong> use any header or paragraph tags with your list items; our Style Sheet will take care of the formatting. You can use emphasis/italics or strong/boldface on portions of the content as appropriate.</p>
-<p>Here is an example of how you might create a list:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="coding.html#cb7-1"></a>tags<span class="op">$</span><span class="kw">ul</span>(</span>
-<span id="cb7-2"><a href="coding.html#cb7-2"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;This is my first item.&quot;</span>),</span>
-<span id="cb7-3"><a href="coding.html#cb7-3"></a>  tags<span class="op">$</span><span class="kw">li</span>(<span class="st">&quot;A second item with a&quot;</span>, tags<span class="op">$</span><span class="kw">strong</span>(<span class="st">&quot;boldface&quot;</span>), <span class="st">&quot;word.&quot;</span>)</span>
-<span id="cb7-4"><a href="coding.html#cb7-4"></a>)</span></code></pre></div>
-<p>which turns into</p>
-<ul>
-<li>This is my first item.</li>
-<li>A second item with a <strong>boldface</strong> word.</li>
-</ul>
-<p>There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in listing environment and thus you will jump straight to <code>tags$li()</code> when in that section.</p>
-</div>
-<div id="headers" class="section level3">
-<h3><span class="header-section-number">3.4.2</span> Headers</h3>
-<p>Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. In fact, if you look at the Table of Contents to the left (provided you haven’t hidden it), everything you see there is actually tied to a Header in this document.</p>
-<p>No matter how much new coders want, Heading Tags are <strong>NOT</strong> for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content. Just like the Table of Contents for this Style Guide.</p>
-<p>There is a specific ordering to the Header tags that is critical to ensure your App is accessible by screen readers.</p>
-<ol style="list-style-type: decimal">
-<li><code>h1()</code> is for the Title of your App and should be ONCE at the top of the first page that appears when you load the app (i.e., the Overview).</li>
-<li><code>h2()</code> is for Tab/Page titles within the App. These would correspond with the tab links you place in the dashboard’s left side panel.</li>
-<li><code>h3()</code> is for titling Sections within a Tab/Page of the App. These might title the portion of the page that is for a game board, questions, answers, and graphs/plots.</li>
-<li><code>h4()</code> is for a Subsection within a section. You might use this to distinguish different sets of controls in a Controls section.</li>
-<li><code>h5()</code> and <code>h6()</code> should be used sparingly. These might be used for different levels of a game. When you call these in your App, you just call them as listed here; i.e., <code>h1()</code>, <code>h2()</code>, etc.</li>
-</ol>
-<p><strong>Avoid skipping heading levels</strong> as this will get your App flagged for an Accessibility Violation. That is to say don’t start at <code>h2</code> with no <code>h1</code> and don’t go from <code>h1</code> to <code>h3</code> without an <code>h2</code>. Again, think of these as the layers of your table of contents or the outline of a paper; you wouldn’t skip whole sections in either of those.</p>
-<p>Here are few more things to NOT do with the heading tags:</p>
-<ul>
-<li>DO NOT USE headings to style text (We cannot stress this enough.)</li>
-<li>Do not wrap a header tag around a list element (e.g., <code>h3(tags$li("here is my list item"))</code>) nor the reverse (e.g., <code>tags$li(h3("here is my list item"))</code>)</li>
-<li>Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(“Introduction to”, p(“my game”)))</li>
-</ul>
-<p>For more information check out</p>
-<ul>
-<li><a href="https://www.w3.org/WAI/tutorials/page-structure/headings/">W3C’s Tutorial</a></li>
-<li><a href="https://accessibility.psu.edu/headings/">Penn State’s Headings and Subheadings Accessibility</a></li>
-</ul>
-</div>
-<div id="paragraphs" class="section level3">
-<h3><span class="header-section-number">3.4.3</span> Paragraphs</h3>
-<p>Your content should be enclosed in the paragraph tag, <code>p()</code>. Even if your content is relatively brief or a mathematical expression, the paragraph tag will ensure that the content is sized correctly and readable. This tag tells screen readers and browsers what your content actually is.</p>
-</div>
-</div>
-<div id="css" class="section level2">
-<h2><span class="header-section-number">3.5</span> CSS</h2>
-<p>Cascading Style Sheets (CSS) will be the way to control the visual appearance of all elements of the app. To ensure that we have consistent we will make use of the BOAST CSS throughout. This is relatively new (Winter 2019/Spring 2020), so many of the older apps will need to have this added to their code. This allows us to centralize and dynamically update all apps at once.</p>
-<p>There are a few key elements at play for CSS:</p>
-<ol style="list-style-type: decimal">
-<li>All apps need to have the appropriate reference to the CSS file (See <a href="coding.html#textStyle">Section <a href="coding.html#textStyle">3.2.4</a></a>).
-<ol style="list-style-type: lower-alpha">
-<li>Please register any issues, bugs, enhancements, new styling to the Style Guide repository of GitHub.</li>
-</ol></li>
-<li>Any App specific styling needs to as be in a CSS file and approved.</li>
-<li>There should not be any styling code in the <code>app.R</code>, <code>ui.R</code>, or <code>server.R</code> files (a.k.a. in-line CSS). Styling code would look like this:
-<ul>
-<li><code>tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: orange}"))</code><br />
-</li>
-<li><code>style="color: #fff; background-color: #337ab7; border-color: #2e6da4"</code></li>
-</ul></li>
-<li>For objects that need to have a particular styling invoked, we will make use of the <code>class</code> attribute. These will invoked through the HTML tags or through the function calls.</li>
-</ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="coding.html#cb8-1"></a><span class="co"># HTML Tag Example 1</span></span>
-<span id="cb8-2"><a href="coding.html#cb8-2"></a><span class="kw">p</span>(</span>
-<span id="cb8-3"><a href="coding.html#cb8-3"></a>  <span class="dt">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb8-4"><a href="coding.html#cb8-4"></a>  <span class="st">&quot;Attali, D. and Edwards, T. (2018). shinyalert: Easily create</span></span>
-<span id="cb8-5"><a href="coding.html#cb8-5"></a><span class="st">  pretty popup messages (modals) in &#39;Shiny&#39;. (v1.0). [R package].</span></span>
-<span id="cb8-6"><a href="coding.html#cb8-6"></a><span class="st">  Available from https://CRAN.R-project.org/package=shinyalert&quot;</span></span>
-<span id="cb8-7"><a href="coding.html#cb8-7"></a>)</span>
-<span id="cb8-8"><a href="coding.html#cb8-8"></a></span>
-<span id="cb8-9"><a href="coding.html#cb8-9"></a><span class="co"># HTML Tag Example 2</span></span>
-<span id="cb8-10"><a href="coding.html#cb8-10"></a><span class="kw">div</span>(<span class="dt">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 12/2/2019 by NJH.&quot;</span>)</span>
-<span id="cb8-11"><a href="coding.html#cb8-11"></a></span>
-<span id="cb8-12"><a href="coding.html#cb8-12"></a><span class="co"># Function Call Example</span></span>
-<span id="cb8-13"><a href="coding.html#cb8-13"></a><span class="kw">actionButton</span>(</span>
-<span id="cb8-14"><a href="coding.html#cb8-14"></a>  <span class="dt">inputId =</span> <span class="kw">paste0</span>(<span class="st">&quot;grid-&quot;</span>, row, <span class="st">&quot;-&quot;</span>, column),</span>
-<span id="cb8-15"><a href="coding.html#cb8-15"></a>  <span class="dt">label =</span> <span class="st">&quot;?&quot;</span>,</span>
-<span id="cb8-16"><a href="coding.html#cb8-16"></a>  <span class="dt">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb8-17"><a href="coding.html#cb8-17"></a>  <span class="dt">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
-<span id="cb8-18"><a href="coding.html#cb8-18"></a>  <span class="dt">class =</span> <span class="st">&quot;grid-fill&quot;</span></span>
-<span id="cb8-19"><a href="coding.html#cb8-19"></a>)</span></code></pre></div>
-<p>There is an exception to #3: setting up alignment for a div section. This would look like <code>div(style = "text-align: center"...)</code> This type of styling is allowed in the R files (generally in the UI portions only).</p>
-<p>If you come across an app that has in-line CSS OR calls to a CSS file that isn’t <code>boast.css</code>, please log an issue and mention/assign Neil. (Most common external CSS files are <code>style.css</code> and <code>Feature(s).css</code>.)</p>
-</div>
-<div id="metadata" class="section level2">
-<h2><span class="header-section-number">3.6</span> Metadata</h2>
-<p>Your App will need the following metadata in either the <code>app.R</code> or the <code>ui.R</code> file. For long lines, use the <code>paste</code> function to allow you to break code lines apart but end up with a cohesive string for printing. This data is used to teach the Learning Management Systems (LMS) and Learning Record Stores (LRS) what your App does. More formats will be supported in the future.</p>
-<p>For now, use the following format:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="coding.html#cb9-1"></a><span class="co">## App Meta Data----------------------------------------------------------------</span></span>
-<span id="cb9-2"><a href="coding.html#cb9-2"></a>APP_TITLE  &lt;&lt;-<span class="st"> &quot;Title of the app&quot;</span></span>
-<span id="cb9-3"><a href="coding.html#cb9-3"></a>APP_DESCP  &lt;&lt;-<span class="st"> </span><span class="kw">paste</span>(</span>
-<span id="cb9-4"><a href="coding.html#cb9-4"></a>  <span class="st">&quot;Description of the app&quot;</span>,</span>
-<span id="cb9-5"><a href="coding.html#cb9-5"></a>  <span class="st">&quot;use multiple lines to keep the description legible.&quot;</span></span>
-<span id="cb9-6"><a href="coding.html#cb9-6"></a>)</span>
-<span id="cb9-7"><a href="coding.html#cb9-7"></a><span class="co">## End App Meta Data------------------------------------------------------------</span></span></code></pre></div>
-<p>Notice two important things:</p>
-<ul>
-<li>Both <code>APP_TITLE</code> and <code>APP_DESCP</code> do not follow camelCase. This is by intent to denote global <code>constants</code>.</li>
-<li>The use of <code>&lt;&lt;-</code> rather than <code>&lt;-</code>. This is again to deal with a global aspect.</li>
-</ul>
-</div>
-<div id="rlocker" class="section level2">
-<h2><span class="header-section-number">3.7</span> Using rLocker</h2>
-<p>Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The <a href="https://github.com/rpc5102/rlocker">rlocker</a> package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.</p>
-<div id="installing" class="section level3">
-<h3><span class="header-section-number">3.7.1</span> Installing</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="coding.html#cb10-1"></a><span class="kw">library</span>(devtools)</span>
-<span id="cb10-2"><a href="coding.html#cb10-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;rpc5102/rlocker&quot;</span>)</span></code></pre></div>
-<p><a href="https://github.com/rpc5102/rlocker#Installation">View Documentation</a></p>
-</div>
-<div id="setup" class="section level3">
-<h3><span class="header-section-number">3.7.2</span> Setup</h3>
-<p>Core configuration is included in the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package. Simply use the boastApp wrapper function instead of shinyApp and you’re done! See <a href="https://github.com/EducationShinyAppTeam/boastUtils#creating-an-app">Creating an App</a> for more information on how to use boastApp.</p>
-</div>
-<div id="usage" class="section level3">
-<h3><span class="header-section-number">3.7.3</span> Usage</h3>
-<p>The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the “Who did what, where did they do it, and when did they do it?” in your App. Statements are often structured as Actor, Verb, and Object that can also Result in something. For more on xAPI, check out <a href="https://xapi.com/overview/">What is the Experience API?</a> or experiment with Statements in the <a href="https://adlnet.github.io/xapi-lab/">xAPI Lab</a>.</p>
-<p><strong>For example:</strong></p>
-<blockquote>
-<p><strong>Bob</strong> (Actor) <strong>clicked</strong> (Verb) <strong>submit</strong> (Object).</p>
-</blockquote>
-<p><strong>In assessments:</strong></p>
-<blockquote>
-<p><strong>Neil</strong> (Actor) <strong>answered</strong> (Verb) <strong>Question 1</strong> (Object) <strong>correctly</strong> with the answer <strong>true</strong> (Result).</p>
-</blockquote>
-<p>This is a good way to think about it when beginning to write collection functions. Which brings us to our next part, writing collection functions.</p>
-<p>Out of the box, <code>rlocker</code> does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like <a href="https://www.ht2labs.com/learning-locker-community/overview/">Learning Locker</a>, it is important to transform it in a way that makes sense.</p>
-<p><strong>boastUtils</strong></p>
-<p>If using the <code>boastApp</code> wrapper for your project, your App will automatically generate and store a few of the more typical Statements. Please refrain from creating additional versions of the following statement descriptions:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Statement</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">launched</td>
-<td align="left">User has started the app.</td>
-</tr>
-<tr class="even">
-<td align="left">experienced</td>
-<td align="left">User has visited a tab (page) within the app.</td>
-</tr>
-<tr class="odd">
-<td align="left">exited *</td>
-<td align="left">User has left the app.</td>
-</tr>
-</tbody>
-</table>
-<p>An App should only have one <code>launched</code> and <code>exited</code> event but can have multiple experiences per session. Therefore, you may use <code>experienced</code> in other places within your App.</p>
-<p>* Requires <code>boastUtils &gt;= 0.1.5</code>.</p>
-<p><strong>Sample generator function</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1"></a>.generateStatement &lt;-<span class="st"> </span><span class="cf">function</span>(</span>
-<span id="cb11-2"><a href="coding.html#cb11-2"></a>  session,</span>
-<span id="cb11-3"><a href="coding.html#cb11-3"></a>  <span class="dt">verb =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-4"><a href="coding.html#cb11-4"></a>  <span class="dt">object =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-5"><a href="coding.html#cb11-5"></a>  <span class="dt">description =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-6"><a href="coding.html#cb11-6"></a>  <span class="dt">interactionType =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-7"><a href="coding.html#cb11-7"></a>  <span class="dt">response =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-8"><a href="coding.html#cb11-8"></a>  <span class="dt">success =</span> <span class="ot">NA</span>,</span>
-<span id="cb11-9"><a href="coding.html#cb11-9"></a>  <span class="dt">completion =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb11-10"><a href="coding.html#cb11-10"></a>{</span>
-<span id="cb11-11"><a href="coding.html#cb11-11"></a>  statement &lt;-<span class="st"> </span>rlocker<span class="op">::</span><span class="kw">createStatement</span>(<span class="kw">list</span>(</span>
-<span id="cb11-12"><a href="coding.html#cb11-12"></a>    <span class="dt">verb =</span> verb,</span>
-<span id="cb11-13"><a href="coding.html#cb11-13"></a>    <span class="dt">object =</span> <span class="kw">list</span>(</span>
-<span id="cb11-14"><a href="coding.html#cb11-14"></a>      <span class="dt">id =</span> <span class="kw">paste0</span>(<span class="kw">getCurrentAddress</span>(session), <span class="st">&quot;#&quot;</span>, object),</span>
-<span id="cb11-15"><a href="coding.html#cb11-15"></a>      <span class="dt">name =</span> <span class="kw">paste0</span>(APP_TITLE),</span>
-<span id="cb11-16"><a href="coding.html#cb11-16"></a>      <span class="dt">description =</span> <span class="kw">paste0</span>(<span class="st">&quot;Question &quot;</span>, activeQuestion, <span class="st">&quot;: &quot;</span>, description),</span>
-<span id="cb11-17"><a href="coding.html#cb11-17"></a>      <span class="dt">interactionType =</span> interactionType</span>
-<span id="cb11-18"><a href="coding.html#cb11-18"></a>    ),</span>
-<span id="cb11-19"><a href="coding.html#cb11-19"></a>    <span class="dt">result =</span> <span class="kw">list</span>(</span>
-<span id="cb11-20"><a href="coding.html#cb11-20"></a>      <span class="dt">success =</span> success,</span>
-<span id="cb11-21"><a href="coding.html#cb11-21"></a>      <span class="dt">response =</span> response,</span>
-<span id="cb11-22"><a href="coding.html#cb11-22"></a>      <span class="dt">completion =</span> completion</span>
-<span id="cb11-23"><a href="coding.html#cb11-23"></a>    )</span>
-<span id="cb11-24"><a href="coding.html#cb11-24"></a>  ))</span>
-<span id="cb11-25"><a href="coding.html#cb11-25"></a>  <span class="kw">return</span>(rlocker<span class="op">::</span><span class="kw">store</span>(session, statement))   </span>
-<span id="cb11-26"><a href="coding.html#cb11-26"></a>}</span></code></pre></div>
-<p><strong>Sample event observer</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1"></a><span class="kw">observeEvent</span>(session<span class="op">$</span>input[[id]], {</span>
-<span id="cb12-2"><a href="coding.html#cb12-2"></a>  </span>
-<span id="cb12-3"><a href="coding.html#cb12-3"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
-<span id="cb12-4"><a href="coding.html#cb12-4"></a>  <span class="co"># </span><span class="re">BEGIN</span><span class="co"> VALIDATION                                                          #</span></span>
-<span id="cb12-5"><a href="coding.html#cb12-5"></a>  <span class="co">#                                                                           #</span></span>
-<span id="cb12-6"><a href="coding.html#cb12-6"></a>  <span class="co"># For this example,                                                         #</span></span>
-<span id="cb12-7"><a href="coding.html#cb12-7"></a>  <span class="co">#   We will check if someone answered a question in our game correctly.     #</span></span>
-<span id="cb12-8"><a href="coding.html#cb12-8"></a>  <span class="co">#   Your code should be different here!                                     #</span></span>
-<span id="cb12-9"><a href="coding.html#cb12-9"></a>  <span class="co">#                                                                           #</span></span>
-<span id="cb12-10"><a href="coding.html#cb12-10"></a>    </span>
-<span id="cb12-11"><a href="coding.html#cb12-11"></a>  <span class="co"># The input element we&#39;re observing.                                        #</span></span>
-<span id="cb12-12"><a href="coding.html#cb12-12"></a>  object &lt;-<span class="st"> </span>id</span>
-<span id="cb12-13"><a href="coding.html#cb12-13"></a>  </span>
-<span id="cb12-14"><a href="coding.html#cb12-14"></a>  <span class="co"># The user&#39;s action verb. Most likely going to be answered in this case.    #</span></span>
-<span id="cb12-15"><a href="coding.html#cb12-15"></a>  <span class="co"># Run rlocker::getVerbList() if you are unsure of the options.              #</span></span>
-<span id="cb12-16"><a href="coding.html#cb12-16"></a>  verb &lt;-<span class="st"> &quot;answered&quot;</span></span>
-<span id="cb12-17"><a href="coding.html#cb12-17"></a>  </span>
-<span id="cb12-18"><a href="coding.html#cb12-18"></a>  <span class="co"># The correct answer to the question.                                       #</span></span>
-<span id="cb12-19"><a href="coding.html#cb12-19"></a>  answer &lt;-<span class="st"> </span>gameSet[id, <span class="st">&quot;answer&quot;</span>]</span>
-<span id="cb12-20"><a href="coding.html#cb12-20"></a>  </span>
-<span id="cb12-21"><a href="coding.html#cb12-21"></a>  <span class="co"># The user&#39;s answer to the question.                                        #</span></span>
-<span id="cb12-22"><a href="coding.html#cb12-22"></a>  response &lt;-<span class="st"> </span>input<span class="op">$</span>ans</span>
-<span id="cb12-23"><a href="coding.html#cb12-23"></a>  </span>
-<span id="cb12-24"><a href="coding.html#cb12-24"></a>  <span class="co"># A description of the question or the full question itself (if short).     #</span></span>
-<span id="cb12-25"><a href="coding.html#cb12-25"></a>  description &lt;-<span class="st"> </span>gameSet[id,]<span class="op">$</span>question</span>
-<span id="cb12-26"><a href="coding.html#cb12-26"></a>  </span>
-<span id="cb12-27"><a href="coding.html#cb12-27"></a>  <span class="co"># The type of question it is.                                               #</span></span>
-<span id="cb12-28"><a href="coding.html#cb12-28"></a>  <span class="co"># Run rlocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
-<span id="cb12-29"><a href="coding.html#cb12-29"></a>  interactionType &lt;-<span class="st"> </span><span class="kw">ifelse</span>(</span>
-<span id="cb12-30"><a href="coding.html#cb12-30"></a>    gameSet[id,]<span class="op">$</span>format <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span></span>
-<span id="cb12-31"><a href="coding.html#cb12-31"></a>  )</span>
-<span id="cb12-32"><a href="coding.html#cb12-32"></a></span>
-<span id="cb12-33"><a href="coding.html#cb12-33"></a>  <span class="co"># Was the question answered successfully?                                   #</span></span>
-<span id="cb12-34"><a href="coding.html#cb12-34"></a>  success &lt;-<span class="st"> </span>input<span class="op">$</span>ans <span class="op">==</span><span class="st"> </span>answer</span>
-<span id="cb12-35"><a href="coding.html#cb12-35"></a>  </span>
-<span id="cb12-36"><a href="coding.html#cb12-36"></a>  <span class="co"># Did this event trigger the completion of your activity?                   #</span></span>
-<span id="cb12-37"><a href="coding.html#cb12-37"></a>  completion &lt;-<span class="st"> </span><span class="kw">ifelse</span>(.appState <span class="op">==</span><span class="st"> &quot;continue&quot;</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span>
-<span id="cb12-38"><a href="coding.html#cb12-38"></a>  </span>
-<span id="cb12-39"><a href="coding.html#cb12-39"></a>  <span class="co">#                                                                           #  </span></span>
-<span id="cb12-40"><a href="coding.html#cb12-40"></a>  <span class="co"># </span><span class="re">END</span><span class="co"> VALIDATION                                                            # </span></span>
-<span id="cb12-41"><a href="coding.html#cb12-41"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
-<span id="cb12-42"><a href="coding.html#cb12-42"></a>  </span>
-<span id="cb12-43"><a href="coding.html#cb12-43"></a>  <span class="kw">.generateStatement</span>(</span>
-<span id="cb12-44"><a href="coding.html#cb12-44"></a>    session,</span>
-<span id="cb12-45"><a href="coding.html#cb12-45"></a>    <span class="dt">object =</span> object,</span>
-<span id="cb12-46"><a href="coding.html#cb12-46"></a>    <span class="dt">verb =</span> verb,</span>
-<span id="cb12-47"><a href="coding.html#cb12-47"></a>    <span class="dt">description =</span> description,</span>
-<span id="cb12-48"><a href="coding.html#cb12-48"></a>    <span class="dt">response =</span> response,</span>
-<span id="cb12-49"><a href="coding.html#cb12-49"></a>    <span class="dt">interactionType =</span> interactionType,</span>
-<span id="cb12-50"><a href="coding.html#cb12-50"></a>    <span class="dt">success =</span> success,</span>
-<span id="cb12-51"><a href="coding.html#cb12-51"></a>    <span class="dt">completion =</span> completion</span>
-<span id="cb12-52"><a href="coding.html#cb12-52"></a>  )</span>
-<span id="cb12-53"><a href="coding.html#cb12-53"></a>}</span></code></pre></div>
-<p>Additional code can be found in the <a href="https://github.com/rpc5102/rlocker/tree/master/inst/examples">examples</a> folder as well as the main <a href="https://github.com/rpc5102/rlocker/blob/master/README.md">README</a> of the rLocker project; apps such as the <a href="https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game">Hypothesis_Testing_Game</a> have already been outfitted with rlocker. The statement generator above will eventually make its way into <code>boastUtils</code> once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
-<p><strong>Did you know?</strong></p>
-<p>You can run <code>help(package = "rlocker")</code> to view the help files for this package or press <code>F1</code> while typing a function name to see the documentation for that specific function.</p>
+<div id="code-section-titlesjump-points" class="section level3" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Code Section Titles/Jump Points</h3>
+<p>Another way to be kind to future coders is to title sections of your code and create points which allow for them to jump to different sections of your code without having to scroll through each and every line. Remember, you also count as a future coder, so titling sections of code will help you navigate your code.</p>
+<p>To title a section of code and make a jump point, start by making a comment in R. Then type a word/phrase that explains what the section is. Finally, type (at least) four dashes, <code>-</code>, (alternatively, you could use four equal signs, <code>=</code>, or four hashtags/pound signs, <code>#</code>) without spaces. This will create a title/jump point which people can use through the Code-Jump To… menu. You can vary the number of hashtags/pound signs at the start of comment to reflect where in the hierarchy of your app you are. Here’s an example.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="coding.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Packages ----</span></span>
+<span id="cb17-2"><a href="coding.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb17-3"><a href="coding.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="coding.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define gloabl constants, functions, data ----</span></span>
+<span id="cb17-5"><a href="coding.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="do">## None for this example</span></span>
+<span id="cb17-6"><a href="coding.html#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="coding.html#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the UI ----</span></span>
+<span id="cb17-8"><a href="coding.html#cb17-8" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb17-9"><a href="coding.html#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb17-10"><a href="coding.html#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Header ----</span></span>
+<span id="cb17-11"><a href="coding.html#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
+<span id="cb17-12"><a href="coding.html#cb17-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb17-13"><a href="coding.html#cb17-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb17-14"><a href="coding.html#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Sidebar ----</span></span>
+<span id="cb17-15"><a href="coding.html#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb17-16"><a href="coding.html#cb17-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb17-17"><a href="coding.html#cb17-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb17-18"><a href="coding.html#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Body ----</span></span>
+<span id="cb17-19"><a href="coding.html#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb17-20"><a href="coding.html#cb17-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb17-21"><a href="coding.html#cb17-21" aria-hidden="true" tabindex="-1"></a>        <span class="do">### Overview ----</span></span>
+<span id="cb17-22"><a href="coding.html#cb17-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
+<span id="cb17-23"><a href="coding.html#cb17-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb17-24"><a href="coding.html#cb17-24" aria-hidden="true" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
+<span id="cb17-25"><a href="coding.html#cb17-25" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb17-26"><a href="coding.html#cb17-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># code omitted</span></span>
+<span id="cb17-27"><a href="coding.html#cb17-27" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb17-28"><a href="coding.html#cb17-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-29"><a href="coding.html#cb17-29" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb17-30"><a href="coding.html#cb17-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-31"><a href="coding.html#cb17-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-32"><a href="coding.html#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the server ----</span></span>
+<span id="cb17-33"><a href="coding.html#cb17-33" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb17-34"><a href="coding.html#cb17-34" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Info button ----</span></span>
+<span id="cb17-35"><a href="coding.html#cb17-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># code omitted</span></span>
+<span id="cb17-36"><a href="coding.html#cb17-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-37"><a href="coding.html#cb17-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-38"><a href="coding.html#cb17-38" aria-hidden="true" tabindex="-1"></a><span class="co"># boastApp Call ----</span></span>
+<span id="cb17-39"><a href="coding.html#cb17-39" aria-hidden="true" tabindex="-1"></a>boastUtils<span class="sc">::</span><span class="fu">boastApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
 
 </div>
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="layout.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="template.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="specificCoding.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -774,6 +906,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -790,7 +923,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["BOAST_style_guide.pdf", "BOAST_style_guide.epub"],
+"download": ["BOAST_style_guide.epub"],
 "toc": {
 "collapse": "subsection"
 }

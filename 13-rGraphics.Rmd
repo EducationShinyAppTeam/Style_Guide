@@ -1,0 +1,372 @@
+# Graphics {#graphics}
+
+One of the most powerful tools we have in Statistics and Data Science is graphics. This includes images/pictures, graphs/plots, and tables. You will want to make sure that all graphical elements are appropriately sized in the Body. If there is text in a static image/picture, you'll need to make sure that the text is legible on a variety of screen sizes.
+
+We've already discussed both issues of color and text size in plots. For additional considerations, please refer to the following readings (ordered from most important to least):
+
+  - [Tufte-Fundamental Principles of Analytical Design](https://www.dropbox.com/s/hb52991v09p8q91/Tufte%20-%202006%20-%20The%20Fundamental%20principles%20of%20analytical%20design.pdf?dl=0)
+  - [Tufte-Chartjunk](https://www.dropbox.com/s/z8yrf4eqph6c2h4/Tufte%20-%202001%20-%20Chartjunk%20Vibrations%2C%20grids%2C%20and%20ducks.pdf?dl=0)  
+  - [Kosslyn-Looking with the Eye and Mind](https://www.dropbox.com/s/62uegsribwdjtze/Kosslyn%20-%202006%20-%20Looking%20with%20the%20eye%20and%20mind.pdf?dl=0)
+
+Remember, we always want to be modeling excellent graphing behaviors.
+
+> All photographs can be fortified with words. --Dorothea Lange
+
+> A picture is worth a thousand words...but which ones? --Unknown
+
+Both of these quotations highlight that you need to include some text with your plots to help the user construct their understanding of what you're trying to show them.
+
+## Titles and Labels {#graphLab}
+
+Graph and Table titles should follow Title Case. Capitalize each word unless the word is "small" (e.g., of, an, etc.). The [Title Case website](https://titlecase.com/) can help you if you aren't sure. (This website also does other types of case such as camel case.)
+
+Axis and Legend Labels will follow Sentence Case. That is to say only the first word of each axis label and the legend will be capitalized. The remaining words will be lower case with two exceptions (proper nouns and unit abbreviations).
+
+When dealing with quantities on axes, you need to include the unit of measurement in the label. Typically, the unit will be placed in parentheses at the end of the label and use appropriate abbreviations. For example, "Height (in)", "Air pressure (mmHg)", "Resting heart rate (bpm)", etc. If the unit of measure is for a count, change the label to be along the followings lines: "Number of siblings", "Number of bikes owned", etc.
+
+Labels should be informative without getting in the way of reading the graph.
+
+## Axes and Scales
+
+The default axes for `R`'s base graphics are, well, absolutely terrible. The algorithms for axes in `ggplot2` while better than base `R` are still in need of improvement. The default axes often do not fully cover the data as well as having gaps between the axes and the data. All this impedes the user's construction of meaning. Thus, you'll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.
+
+To force `ggplot2` to place (0, 0) in the lower-left corner and to control the scales, you will need to include the following:
+
+```{r axesControl1, echo=TRUE, eval=FALSE}
+# Create the ggplot2 object
+g1 <- ggplot2::ggplot(...)
+# Add your layer
+g1 + ggplot2::geom_point()
+# Control axes and scale
+## Multiplicative Scaling of the Horizontal (x) Axis
+## Additive Scaling of the Vertical (y) Axis
+g1 + ggplot2::scale_x_continuous(
+  expand = expansion(mult = c(1,2), add = 0)
+) + 
+  scale_y_continuous(
+    expand = expansion(mult = 0, add = c(0,0.05))
+  ) 
+```
+
+## Color and Plots in `R` {#colorPlots}
+
+In `R` you can set color theme which you use in `ggplot2`. Additionally, the package `viridis` provides several additional color palettes which are improvements upon the default color scheme.
+
+We have developed two custom palettes for you to use with BOAST apps. These palettes are the `boastPalette` and the `psuPalette` and are part of the `boastUtils` package. We have worked hard to ensure that these palettes are consistent with color blindness and web standards as well as consistent with our color themes.
+
+```{r customPalettes, echo=TRUE, eval=FALSE}
+# To call a color from the boastPalette use
+boastUtils::boastPalette[1]
+## Numbers go 1 through 9
+
+# To call a color from the psuPalette use
+boastUtils::psuPalette[1]
+## Numbers go 1 through 8
+
+# Both palettes get used in the order of what is listed.
+```
+
+```{r boastPalette, fig.cap="The Boast Palette", fig.align="center", fig.width=7, fig.height=4, echo=FALSE}
+par(mar = c(0.25, 10, 0.75, 9.5))
+boastUtils::showPalette(
+  palette = boastUtils::boastPalette
+)
+
+```
+
+```{r psuPalette, fig.cap="The PSU Palette", fig.align='center', fig.width=7, fig.height=4, echo=FALSE}
+par(mar = c(0.25, 10, 0.75, 9.5))
+boastUtils::showPalette(
+  palette = boastUtils::psuPalette
+)
+
+```
+
+To use these palettes (or ones from `viridis`) with a `ggplot2` object, you'll need to do the following
+
+```{r examplePalette, echo=TRUE, eval=FALSE}
+# Create ggplot2 object
+g1 <- ggplot(
+  data = df, 
+  mapping = aes(x = x, y = y, color = grp, fill = grp)
+) + 
+  geom_point() +
+# Tell R to use your chosen palette
+  scale_color_manual( # If you use "color" in aes
+    values = boastUtils::boastPalette
+  ) + 
+  scale_fill_manual( # If you use "fill" in aes
+    values = boastUtils::boastPalette
+  )  
+
+# You can also call colors individually
+ggplot(
+  data = data,
+  mapping = aes(x = x, y = y)
+) +
+  geom_point(
+    fill = boastUtils::psuPalette[2]
+  )
+
+```
+
+If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)
+
+With an eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
+
+## Tables {#tables}
+
+Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn't conducive to helping a person understand what's going on, neither is a wall of data values. Thus, we need to be extreme judicious (picky) about incorporating data tables into any of our apps.
+
+In web development there are two main types of tables: layout tables and data tables. 
+
++ Layout tables help control where different elements appear on the page. 
++ We need an additional distinction for data tables:
+    - Summary Data Tables are tables that have summary information; typified by two-way tables (a.k.a. contingency tables or crosstabs) but might also include other things such as values of descriptive statistics stratified by groups. 
+    - Data Sets are an entire data object, presented in tabular format
+
+__Layout Tables should never be used in a BOAST App.__
+
+Data Sets should be displayed __as sparingly as possible__. In order to include a Data Set display, you will need to have identified an explicit learning goal/objective that necessitates the user digging through a data frame. If you can't identify such a learning goal, you should NOT include a data frame.
+
+If the goal is to allow the user to look through the data set OR to have access to the data, then __give a link__ to either the original source of the data (__preferred__) or for them to download the file.
+
+Summary Data Tables can be used more often and can enrich the user's experience with your app. However, these must still be constructed in an appropriate manner.
+
+Neither Data Sets nor Summary Data Tables should be inserted into your App as a picture. This is an big Accessibility violation. Use the directions below to create the appropriate type of data table.
+
+### Displaying Data Tables
+
+Your first step is to create a data frame object in your `R` code. 
+
++ If you are displaying a data set (rare), then you will either need to read in the data or call that data frame. For this example, we'll be using the `mtcars` data frame that is part of `R`. 
++ If you are making a Summary Data Table, you'll need to either use `R` to calculate the values and store in a data frame or create a data frame yourself.
+
+In either case, be sure you identify what columns you're going to use. If your original data file has 50 columns, but your App only makes use of 5, drop the other 45. Only display the columns that you actually use.
+
+Your next step is to decide on where to put this display (e.g., inside an Exploration Tab or as a separate page). This will help you identify where in your App's UI section you need to put the appropriate code. 
+
+To ensure that your data table is accessible and responsive (i.e., mobile friendly), you will need to use the `DT` package.
+
+```{r installDT, echo=TRUE, eval=FALSE}
+install.packages("DT")
+# Be sure to include this in your library call
+library(DT)
+```
+
+In your UI section, you'll need to use the following code, placed in the appropriate area:
+```{r dtUICode1, echo=TRUE, eval=FALSE}
+# [code omitted]
+DT::DTOutput(outputId = "mtCars")
+# [code omitted]
+```
+
+Then, in your Server section, you'll need to use the following code:
+```{r dtServerCode1, echo=TRUE, eval=FALSE}
+# [code omitted]
+# Prepare your data set with only the columns needed
+carData <- mtcars[,c("mpg", "cyl", "hp", "gear", "wt")]
+
+## Use Short but Meaningful Column Names
+names(carData) <- c("MPG", "# of Cylinders", "Horsepower", "# of Gears", "Weight")
+
+# Create the output data table
+# Be sure to use the same name as you did in the UI
+output$mtCars <- DT::renderDT(
+  expr = carData,
+  caption = "Motor Trend US Data, 1973-1974 Models", # Add a caption to your table
+  style = "bootstrap4", # You must use this style
+  rownames = TRUE,
+  options = list( # You must use these options
+    responsive = TRUE, # allows the data table to be mobile friendly
+    scrollX = TRUE, # allows the user to scroll through a wide table
+    columnDefs = list(  # These will set alignment of data values
+      # Notice the use of ncol on your data frame; leave the 1 as is.
+      list(className = 'dt-center', targets = 1:ncol(carData))
+    )
+  )
+)
+# [code omitted]
+```
+
+If you are making a Summary Data Table, you will need to follow the same process. If your data frame does not have row names, but instead a column with values acting as row names, you may replace the `rownames = TRUE` with `rownames = FALSE`; there should not be a column of sequential numbers on the left.
+
+Column names __MUST__ be simple and *meaningful* to the user. To this end, you should rename any columns that might have poor choices for names, just as we have done with the `mtcars` data. This includes using Greek characters in isolation. You should not have any columns labeled \(\mu\) or \(\sigma\). Rather you need to use English words.
+
+*Note: getting mathematical expressions to render properly in graphical environments in `R` is not as easy as in the paragraphs or headers of an app. Only certain graphing packages support limited mathematical expressions. The same is true for table generation packages.* 
+
+Again, try to use tables as infrequently as possible. Poorly constructed tables can create accessibility issues causing screen readers to poorly communicate tables to your users. If you run into problems and/or have questions, __talk to Neil and Bob__. 
+
+### Additional Table Examples
+
+Neil built a [Data Table Examples app](https://rstudio-connect.tlt.psu.edu:3939/content/249) that you should reference when you're building data tables for display. (Note: you will need to connect to PSU's VPN in order to access this app.)
+
+We're including some additional Summary Data Table examples. For these examples, I'm going to make use of the `palmerpenguins` package of data sets.
+
+#### Summary Data Table of Descriptive Statistics
+
+```{r dtSummary1Setup, echo=TRUE, eval=TRUE}
+library(palmerpenguins)
+library(psych)
+library(DT)
+library(tibble)
+
+penStats <- psych::describeBy(
+  x = penguins$body_mass_g,
+  group = penguins$species,
+  mat = TRUE, # Formats output appropriate for DT
+  digits = 3 # sets the number of digits retained
+)
+
+# Picking which columns to keep
+penStats <- penStats[, c("group1", "n", "mean", "sd", "median", "mad", "min", "max", "skew",
+                         "kurtosis")]
+# Make the group1 column the row names
+penStats <- tibble::remove_rownames(penStats)
+penStats <- tibble::column_to_rownames(penStats,
+                          var = "group1")
+# Improve column names
+names(penStats) <- c("Count", "SAM (g/penguin)", "SASD (g)", "Median (g)", "MAD (g)", "Min (g)",
+                     "Max (g)", "Sample Skewness (g^3)", "Sample Excess Kurtosis (g^4)")
+```
+
+```{r dtSummary1Shiny, echo=TRUE, eval=FALSE}
+# Make the Table
+output$penguinSummary <- DT::renderDT(
+  expr = penStats,
+  caption = "Descriptive Stats for Palmer Penguins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  autoHideNavigation = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE, # Set to False for small tables
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(penStats))
+    )
+  )
+)
+```
+
+```{r dtSummary1Target, echo=FALSE, eval=FALSE}
+DT::datatable(
+  data = penStats,
+  caption = "Descriptive Stats for Palmer Penguins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  autoHideNavigation = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE,
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(penStats))
+    )
+  )
+)
+
+```
+
+#### Summary Data Table for Output Table
+
+While this example is for an ANOVA table, you can build from this for other output tables. If you store the output of any call as an object, you can then use the structure function, `str` to investigate the output. Ultimately, you need something that is either a matrix or a data frame. 
+
+```{r dtSummary2Setup, echo=TRUE, eval=TRUE}
+library(palmerpenguins)
+library(psych)
+library(DT)
+library(tibble)
+library(rstatix)
+
+# This bad practice but I'm going to pretend that all assumptions are met
+penModel <- aov(body_mass_g ~ species*sex, data = penguins)
+
+anovaPen <- round(anova(penModel), 3)
+# Rounding to truncate decimals
+
+```
+
+```{r dtSummary2Shiny, echo=TRUE, eval=FALSE}
+# Make the Table
+output$penguinAnova <- DT::renderDT(
+  expr = anovaPen,
+  caption = "(Classical) ANOVA Table for Palmer Pengins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE, # Set to False for small tables
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(anovaPen))
+    )
+  )
+)
+```
+
+```{r dtSummary2Target, echo=FALSE, eval=FALSE}
+DT::datatable(
+  data = anovaPen,
+  caption = "(Classical) ANOVA Table for Palmer Penguins", 
+  style = "bootstrap4", 
+  rownames = TRUE,
+  options = list( 
+    responsive = TRUE, 
+    scrollX = TRUE,
+    paging = FALSE,
+     columnDefs = list(
+       list(className = 'dt-center',
+            targets = 1:ncol(anovaPen))
+    )
+  )
+)
+```
+
+
+## Alt Text, Again {#altText2}
+
+Any graphical element you include in your App __MUST__ have an alternative (assistive) text description ("alt text"). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
+
+
+Here are several resources worth checking out:
+
++ [WebAIM Alternative Text Guide](https://webaim.org/techniques/alttext/#basics)
++ [Penn State's Image ALT Text Page](https://accessibility.psu.edu/images/alttext/)
++ [W3C's ALT Text Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
+
+### Adding Alt Text Graphs--`alt` Argument
+
+With the release of `Shiny` version 1.6.0, the `renderPlot` function got a vital upgrade: there is now an `alt` argument that will allow you put alt text on your plots. The `alt` argument functions just like the matching argument in the `tags$img` call for static images.
+
+Use this approach as your first choice method.
+
+### Alt Text via ARIA
+
+If a graph is particularly complicated or if you want to do some dynamic changes to the alt text, you might want to consider using [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:
+
+```{r plotsAltTextc, echo=TRUE, eval=FALSE}
+# [code omitted]
+# In the UI section, in the appropriate tabItem
+plotOutput(outputId = plotID) # Look for lines like this 
+# Code for adding the aria label
+tags$script(HTML(
+  "$(document).ready(function() {
+  document.getElementById('plotId').setAttribute('aria-label',
+  `General description of the plot`)
+  })"
+))
+# [code omitted]
+```
+
+Important things to note:
+
+1. Place the `tags$script(HTML(...))` code right after each instance of `plotOutput`.
+2. Copy the above code as formatted
+3. Change the two (2) pieces for each particular plot
+    a. Replace `plotId` (keep the single quotation marks in the code)
+    b. Replace `General description of the plot` (keep the single quotation marks in the code)
+

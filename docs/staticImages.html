@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 12 Static Images | Building Shiny Apps the BOAST Way</title>
+  <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 12 Static Images | Building Shiny Apps the BOAST Way" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 12 Static Images | Building Shiny Apps the BOAST Way" />
+  
+  <meta name="twitter:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  
+
+<meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
+
+
+<meta name="date" content="2021-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="simpleDesign.html"/>
+<link rel="next" href="graphics.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BOAST Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#organization"><i class="fa fa-check"></i><b>0.1</b> Organization</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a>
+<ul>
+<li class="chapter" data-level="0.2.1" data-path="index.html"><a href="index.html#were-a-team-of-developers"><i class="fa fa-check"></i><b>0.2.1</b> We’re a Team of Developers</a></li>
+<li class="chapter" data-level="0.2.2" data-path="index.html"><a href="index.html#research-driven"><i class="fa fa-check"></i><b>0.2.2</b> Research Driven</a></li>
+<li class="chapter" data-level="0.2.3" data-path="index.html"><a href="index.html#accesiblity-minded"><i class="fa fa-check"></i><b>0.2.3</b> Accesiblity Minded</a></li>
+<li class="chapter" data-level="0.2.4" data-path="index.html"><a href="index.html#avoid-the-shiny-problem"><i class="fa fa-check"></i><b>0.2.4</b> Avoid the “Shiny” Problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>1</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps-worflow"><i class="fa fa-check"></i><b>1.1</b> Revising Existing Apps Worflow</a></li>
+<li class="chapter" data-level="1.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps-workflow"><i class="fa fa-check"></i><b>1.2</b> Creating New Apps Workflow</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>1.2.1</b> GitHub Repo Names</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>1.3.1</b> Set Up/Login to the VPN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>1.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
+<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>1.3.3</b> Publishing Your App for Testing</a></li>
+<li class="chapter" data-level="1.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>1.3.4</b> Configuring for Testing</a></li>
+<li class="chapter" data-level="1.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>1.3.5</b> Check the Logs</a></li>
+<li class="chapter" data-level="1.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>1.3.6</b> Problems?</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Getting Started</b></span></li>
+<li class="chapter" data-level="2" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>2</b> Making an App</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>2.1</b> Step 1: Read the Style Guide</a></li>
+<li class="chapter" data-level="2.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>2.2</b> Step 2: Identify a Topic</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>2.2.1</b> Your App’s Purpose</a></li>
+<li class="chapter" data-level="2.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>2.2.2</b> The Topic</a></li>
+<li class="chapter" data-level="2.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>2.2.3</b> Goals</a></li>
+<li class="chapter" data-level="2.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>2.2.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>2.3</b> Step 3: Sketch out plans</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="makingApp.html"><a href="makingApp.html#key-elements"><i class="fa fa-check"></i><b>2.3.1</b> Key Elements</a></li>
+<li class="chapter" data-level="2.3.2" data-path="makingApp.html"><a href="makingApp.html#example-cont."><i class="fa fa-check"></i><b>2.3.2</b> Example, cont.</a></li>
+<li class="chapter" data-level="2.3.3" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>2.3.3</b> Share Your Plan</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>2.4</b> Step 4: Create Repository</a></li>
+<li class="chapter" data-level="2.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>2.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
+<li class="chapter" data-level="2.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>2.6</b> Step 9: Larger Scale Testing</a></li>
+<li class="chapter" data-level="2.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>2.7</b> Steps 10-11: Pull Requests and Tweaks</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="makingApp.html"><a href="makingApp.html#appearance-review-part-of-large-scale-testing"><i class="fa fa-check"></i><b>2.7.1</b> Appearance Review (part of Large Scale Testing)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="makingApp.html"><a href="makingApp.html#coding-review"><i class="fa fa-check"></i><b>2.7.2</b> Coding Review</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Getting Ready to Code</b></span></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="basics.html"><a href="basics.html#useful-rstudio-settings"><i class="fa fa-check"></i><b>3.5</b> Useful RStudio Settings</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basics.html"><a href="basics.html#coding-margin"><i class="fa fa-check"></i><b>3.5.1</b> Coding Margin</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics.html"><a href="basics.html#line-numbers"><i class="fa fa-check"></i><b>3.5.2</b> Line Numbers</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basics.html"><a href="basics.html#whitespace-characters"><i class="fa fa-check"></i><b>3.5.3</b> Whitespace Characters</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basics.html"><a href="basics.html#rainbow-parentheses"><i class="fa fa-check"></i><b>3.5.4</b> Rainbow Parentheses</a></li>
+<li class="chapter" data-level="3.5.5" data-path="basics.html"><a href="basics.html#code-diagnostics"><i class="fa fa-check"></i><b>3.5.5</b> Code Diagnostics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
+<li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The <code>app.R</code> File</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="template.html"><a href="template.html#screenshot"><i class="fa fa-check"></i><b>4.5</b> screenshot.png</a></li>
+</ul></li>
+<li class="part"><span><b>III Style Guide-Coding</b></span></li>
+<li class="chapter" data-level="5" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>5</b> Coding Style</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>5.1</b> General Coding Style</a></li>
+<li class="chapter" data-level="5.2" data-path="coding.html"><a href="coding.html#readable"><i class="fa fa-check"></i><b>5.2</b> Make Your Code Readable</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="coding.html"><a href="coding.html#formatSpace"><i class="fa fa-check"></i><b>5.2.1</b> Formatting and Spacing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>5.2.2</b> Use Informative Names</a></li>
+<li class="chapter" data-level="5.2.3" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>5.2.3</b> Be Explicit</a></li>
+<li class="chapter" data-level="5.2.4" data-path="coding.html"><a href="coding.html#exceptions-to-readability"><i class="fa fa-check"></i><b>5.2.4</b> Exceptions to Readability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="coding.html"><a href="coding.html#efficient"><i class="fa fa-check"></i><b>5.3</b> Make Your Code Efficient</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="coding.html"><a href="coding.html#dry-coding"><i class="fa fa-check"></i><b>5.3.1</b> DRY Coding</a></li>
+<li class="chapter" data-level="5.3.2" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>5.3.2</b> Minimize Package Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="coding.html"><a href="coding.html#beKind"><i class="fa fa-check"></i><b>5.4</b> Be Kind to Future Coders</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>5.4.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="5.4.2" data-path="coding.html"><a href="coding.html#code-section-titlesjump-points"><i class="fa fa-check"></i><b>5.4.2</b> Code Section Titles/Jump Points</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="specificCoding.html"><a href="specificCoding.html"><i class="fa fa-check"></i><b>6</b> Shiny (BOAST) Specific Coding Practices</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specificCoding.html"><a href="specificCoding.html#orgCode"><i class="fa fa-check"></i><b>6.1</b> Overarching Organization</a></li>
+<li class="chapter" data-level="6.2" data-path="specificCoding.html"><a href="specificCoding.html#calling-inputs-and-outputs"><i class="fa fa-check"></i><b>6.2</b> Calling Inputs and Outputs</a></li>
+<li class="chapter" data-level="6.3" data-path="specificCoding.html"><a href="specificCoding.html#reactive-vs.-observe"><i class="fa fa-check"></i><b>6.3</b> Reactive vs. Observe</a></li>
+<li class="chapter" data-level="6.4" data-path="specificCoding.html"><a href="specificCoding.html#working-with-reactive-values"><i class="fa fa-check"></i><b>6.4</b> Working with Reactive Values</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="specificCoding.html"><a href="specificCoding.html#input"><i class="fa fa-check"></i><b>6.4.1</b> <code>input</code></a></li>
+<li class="chapter" data-level="6.4.2" data-path="specificCoding.html"><a href="specificCoding.html#reactiveval"><i class="fa fa-check"></i><b>6.4.2</b> <code>reactiveVal</code></a></li>
+<li class="chapter" data-level="6.4.3" data-path="specificCoding.html"><a href="specificCoding.html#reactivevalues"><i class="fa fa-check"></i><b>6.4.3</b> <code>reactiveValues</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="specificCoding.html"><a href="specificCoding.html#events"><i class="fa fa-check"></i><b>6.5</b> Events</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="specificCoding.html"><a href="specificCoding.html#eventreactive"><i class="fa fa-check"></i><b>6.5.1</b> <code>eventReactive</code></a></li>
+<li class="chapter" data-level="6.5.2" data-path="specificCoding.html"><a href="specificCoding.html#observeevent"><i class="fa fa-check"></i><b>6.5.2</b> <code>observeEvent</code></a></li>
+<li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="htmlCSS.html"><a href="htmlCSS.html#html"><i class="fa fa-check"></i><b>7.1</b> HTML Tags</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="htmlCSS.html"><a href="htmlCSS.html#paragraphs"><i class="fa fa-check"></i><b>7.1.1</b> Paragraphs</a></li>
+<li class="chapter" data-level="7.1.2" data-path="htmlCSS.html"><a href="htmlCSS.html#breaks"><i class="fa fa-check"></i><b>7.1.2</b> Breaks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="htmlCSS.html"><a href="htmlCSS.html#lists"><i class="fa fa-check"></i><b>7.1.3</b> Lists</a></li>
+<li class="chapter" data-level="7.1.4" data-path="htmlCSS.html"><a href="htmlCSS.html#headers"><i class="fa fa-check"></i><b>7.1.4</b> Headers</a></li>
+<li class="chapter" data-level="7.1.5" data-path="htmlCSS.html"><a href="htmlCSS.html#links-bodylinks"><i class="fa fa-check"></i><b>7.1.5</b> Links (#bodyLinks)</a></li>
+<li class="chapter" data-level="7.1.6" data-path="htmlCSS.html"><a href="htmlCSS.html#div"><i class="fa fa-check"></i><b>7.1.6</b> Divisions</a></li>
+<li class="chapter" data-level="7.1.7" data-path="htmlCSS.html"><a href="htmlCSS.html#horizontal-rule"><i class="fa fa-check"></i><b>7.1.7</b> Horizontal Rule</a></li>
+<li class="chapter" data-level="7.1.8" data-path="htmlCSS.html"><a href="htmlCSS.html#other-tags"><i class="fa fa-check"></i><b>7.1.8</b> Other Tags</a></li>
+<li class="chapter" data-level="7.1.9" data-path="htmlCSS.html"><a href="htmlCSS.html#stylingTags"><i class="fa fa-check"></i><b>7.1.9</b> Text Styling Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="htmlCSS.html"><a href="htmlCSS.html#htmlID"><i class="fa fa-check"></i><b>7.2</b> HTML <code>id</code></a></li>
+<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.3</b> CSS</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="htmlCSS.html"><a href="htmlCSS.html#cssProblems"><i class="fa fa-check"></i><b>7.3.1</b> Problematic CSS in Old Apps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.4</b> Using CSS</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="htmlCSS.html"><a href="htmlCSS.html#text-alignment"><i class="fa fa-check"></i><b>7.4.1</b> Text Alignment</a></li>
+<li class="chapter" data-level="7.4.2" data-path="htmlCSS.html"><a href="htmlCSS.html#classes"><i class="fa fa-check"></i><b>7.4.2</b> Classes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="additionalCoding.html"><a href="additionalCoding.html"><i class="fa fa-check"></i><b>8</b> Additional Coding Practices</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="additionalCoding.html"><a href="additionalCoding.html#plotCachec"><i class="fa fa-check"></i><b>8.1</b> Plot Caching</a></li>
+<li class="chapter" data-level="8.2" data-path="additionalCoding.html"><a href="additionalCoding.html#exFiles"><i class="fa fa-check"></i><b>8.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="8.3" data-path="additionalCoding.html"><a href="additionalCoding.html#metadatac"><i class="fa fa-check"></i><b>8.3</b> Metadata</a></li>
+<li class="chapter" data-level="8.4" data-path="additionalCoding.html"><a href="additionalCoding.html#otherLanguages"><i class="fa fa-check"></i><b>8.4</b> Other Languages (Python, JavaScript, etc.)</a></li>
+<li class="chapter" data-level="8.5" data-path="additionalCoding.html"><a href="additionalCoding.html#rlockerc"><i class="fa fa-check"></i><b>8.5</b> Using rLocker</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="additionalCoding.html"><a href="additionalCoding.html#installing"><i class="fa fa-check"></i><b>8.5.1</b> Installing</a></li>
+<li class="chapter" data-level="8.5.2" data-path="additionalCoding.html"><a href="additionalCoding.html#setup"><i class="fa fa-check"></i><b>8.5.2</b> Setup</a></li>
+<li class="chapter" data-level="8.5.3" data-path="additionalCoding.html"><a href="additionalCoding.html#usage"><i class="fa fa-check"></i><b>8.5.3</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
+<li class="chapter" data-level="" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i>App Layout</a></li>
+<li class="chapter" data-level="9" data-path="uiStructure.html"><a href="uiStructure.html"><i class="fa fa-check"></i><b>9</b> User Interface Structure</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="uiStructure.html"><a href="uiStructure.html#dashboard"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard"><i class="fa fa-check"></i><b>9.1.1</b> Creating the Dashboard</a></li>
+<li class="chapter" data-level="9.1.2" data-path="uiStructure.html"><a href="uiStructure.html#colorUI"><i class="fa fa-check"></i><b>9.1.2</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="9.1.3" data-path="uiStructure.html"><a href="uiStructure.html#chapterColor"><i class="fa fa-check"></i><b>9.1.3</b> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="uiStructure.html"><a href="uiStructure.html#header"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>9.2.1</b> Creating the Dashboard Header</a></li>
+<li class="chapter" data-level="9.2.2" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>9.2.2</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>9.3.1</b> Creating the Dashboard Sidebar</a></li>
+<li class="chapter" data-level="9.3.2" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-order"><i class="fa fa-check"></i><b>9.3.2</b> Sidebar Order</a></li>
+<li class="chapter" data-level="9.3.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-names"><i class="fa fa-check"></i><b>9.3.3</b> Sidebar Names</a></li>
+<li class="chapter" data-level="9.3.4" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-icons"><i class="fa fa-check"></i><b>9.3.4</b> Sidebar Icons</a></li>
+<li class="chapter" data-level="9.3.5" data-path="uiStructure.html"><a href="uiStructure.html#submenus"><i class="fa fa-check"></i><b>9.3.5</b> Submenus</a></li>
+<li class="chapter" data-level="9.3.6" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>9.3.6</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="uiStructure.html"><a href="uiStructure.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="uiStructure.html"><a href="uiStructure.html#the-overview-page"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Page</a></li>
+<li class="chapter" data-level="9.4.2" data-path="uiStructure.html"><a href="uiStructure.html#a-prerequisites-page"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Page</a></li>
+<li class="chapter" data-level="9.4.3" data-path="uiStructure.html"><a href="uiStructure.html#activity-pages"><i class="fa fa-check"></i><b>9.4.3</b> Activity Pages</a></li>
+<li class="chapter" data-level="9.4.4" data-path="uiStructure.html"><a href="uiStructure.html#refPage"><i class="fa fa-check"></i><b>9.4.4</b> References Page</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="uiStructure.html"><a href="uiStructure.html#activityLayout"><i class="fa fa-check"></i><b>9.5</b> Layout of Activity Pages</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="uiStructure.html"><a href="uiStructure.html#two-required-elements"><i class="fa fa-check"></i><b>9.5.1</b> Two Required Elements</a></li>
+<li class="chapter" data-level="9.5.2" data-path="uiStructure.html"><a href="uiStructure.html#the-classical-layout"><i class="fa fa-check"></i><b>9.5.2</b> The Classical Layout</a></li>
+<li class="chapter" data-level="9.5.3" data-path="uiStructure.html"><a href="uiStructure.html#visTabs"><i class="fa fa-check"></i><b>9.5.3</b> Visible Tabs</a></li>
+<li class="chapter" data-level="9.5.4" data-path="uiStructure.html"><a href="uiStructure.html#hiddenTabs"><i class="fa fa-check"></i><b>9.5.4</b> Hidden Tabs</a></li>
+<li class="chapter" data-level="9.5.5" data-path="uiStructure.html"><a href="uiStructure.html#sets-of-controls"><i class="fa fa-check"></i><b>9.5.5</b> Sets of Controls</a></li>
+<li class="chapter" data-level="9.5.6" data-path="uiStructure.html"><a href="uiStructure.html#tic-tac-toe"><i class="fa fa-check"></i><b>9.5.6</b> Tic-Tac-Toe</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="uiStructure.html"><a href="uiStructure.html#innerTabs"><i class="fa fa-check"></i><b>9.6</b> Tab Sets</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tab-set"><i class="fa fa-check"></i><b>9.6.1</b> Create the Tab Set</a></li>
+<li class="chapter" data-level="9.6.2" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tabs"><i class="fa fa-check"></i><b>9.6.2</b> Create the Tabs</a></li>
+<li class="chapter" data-level="9.6.3" data-path="uiStructure.html"><a href="uiStructure.html#moving-between-tabs"><i class="fa fa-check"></i><b>9.6.3</b> Moving Between Tabs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="commonElements.html"><a href="commonElements.html"><i class="fa fa-check"></i><b>10</b> Common Elements</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="commonElements.html"><a href="commonElements.html#rowsCols"><i class="fa fa-check"></i><b>10.1</b> Fluid Rows and Columns</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="commonElements.html"><a href="commonElements.html#nesting-fluidrow"><i class="fa fa-check"></i><b>10.1.1</b> Nesting <code>fluidRow</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="commonElements.html"><a href="commonElements.html#wellPanels"><i class="fa fa-check"></i><b>10.2</b> Well Panels</a></li>
+<li class="chapter" data-level="10.3" data-path="commonElements.html"><a href="commonElements.html#collapsible"><i class="fa fa-check"></i><b>10.3</b> Collapsible Boxes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="commonElements.html"><a href="commonElements.html#creating-collapsible-boxes"><i class="fa fa-check"></i><b>10.3.1</b> Creating Collapsible Boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="commonElements.html"><a href="commonElements.html#buttons"><i class="fa fa-check"></i><b>10.4</b> Buttons</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="commonElements.html"><a href="commonElements.html#main-type-of-button"><i class="fa fa-check"></i><b>10.4.1</b> Main Type of Button</a></li>
+<li class="chapter" data-level="10.4.2" data-path="commonElements.html"><a href="commonElements.html#labels"><i class="fa fa-check"></i><b>10.4.2</b> Labels</a></li>
+<li class="chapter" data-level="10.4.3" data-path="commonElements.html"><a href="commonElements.html#icons"><i class="fa fa-check"></i><b>10.4.3</b> Icons</a></li>
+<li class="chapter" data-level="10.4.4" data-path="commonElements.html"><a href="commonElements.html#style-color"><i class="fa fa-check"></i><b>10.4.4</b> Style (Color)</a></li>
+<li class="chapter" data-level="10.4.5" data-path="commonElements.html"><a href="commonElements.html#disabled"><i class="fa fa-check"></i><b>10.4.5</b> Disabled</a></li>
+<li class="chapter" data-level="10.4.6" data-path="commonElements.html"><a href="commonElements.html#updating-buttons"><i class="fa fa-check"></i><b>10.4.6</b> Updating Buttons</a></li>
+<li class="chapter" data-level="10.4.7" data-path="commonElements.html"><a href="commonElements.html#other-issues"><i class="fa fa-check"></i><b>10.4.7</b> Other Issues</a></li>
+<li class="chapter" data-level="10.4.8" data-path="commonElements.html"><a href="commonElements.html#listening-to-buttons"><i class="fa fa-check"></i><b>10.4.8</b> Listening to Buttons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="commonElements.html"><a href="commonElements.html#inputs"><i class="fa fa-check"></i><b>10.5</b> Inputs</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="commonElements.html"><a href="commonElements.html#types-of-inputs"><i class="fa fa-check"></i><b>10.5.1</b> Types of Inputs</a></li>
+<li class="chapter" data-level="10.5.2" data-path="commonElements.html"><a href="commonElements.html#animation-of-sliders"><i class="fa fa-check"></i><b>10.5.2</b> Animation of Sliders</a></li>
+<li class="chapter" data-level="10.5.3" data-path="commonElements.html"><a href="commonElements.html#ordering-inputs"><i class="fa fa-check"></i><b>10.5.3</b> Ordering Inputs</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="commonElements.html"><a href="commonElements.html#correctincorrect-marks"><i class="fa fa-check"></i><b>10.6</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="10.7" data-path="commonElements.html"><a href="commonElements.html#alerts-and-messages"><i class="fa fa-check"></i><b>10.7</b> Alerts and Messages</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="commonElements.html"><a href="commonElements.html#alert-types"><i class="fa fa-check"></i><b>10.7.1</b> Alert Types</a></li>
+<li class="chapter" data-level="10.7.2" data-path="commonElements.html"><a href="commonElements.html#alert-title-and-text"><i class="fa fa-check"></i><b>10.7.2</b> Alert Title and Text</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="commonElements.html"><a href="commonElements.html#popovers-and-tooltips"><i class="fa fa-check"></i><b>10.8</b> Popovers and Tooltips</a></li>
+<li class="chapter" data-level="10.9" data-path="commonElements.html"><a href="commonElements.html#progress-bars"><i class="fa fa-check"></i><b>10.9</b> Progress Bars</a></li>
+</ul></li>
+<li class="part"><span><b>V Style Guide-Design Style</b></span></li>
+<li class="chapter" data-level="" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i>Design Style</a></li>
+<li class="chapter" data-level="11" data-path="simpleDesign.html"><a href="simpleDesign.html"><i class="fa fa-check"></i><b>11</b> Branding, Color, and Text</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="simpleDesign.html"><a href="simpleDesign.html#logo"><i class="fa fa-check"></i><b>11.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="11.2" data-path="simpleDesign.html"><a href="simpleDesign.html#colorChoices"><i class="fa fa-check"></i><b>11.2</b> Colors</a></li>
+<li class="chapter" data-level="11.3" data-path="simpleDesign.html"><a href="simpleDesign.html#styleText"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="simpleDesign.html"><a href="simpleDesign.html#headings"><i class="fa fa-check"></i><b>11.3.1</b> Headings</a></li>
+<li class="chapter" data-level="11.3.2" data-path="simpleDesign.html"><a href="simpleDesign.html#paragraph-text"><i class="fa fa-check"></i><b>11.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="11.3.3" data-path="simpleDesign.html"><a href="simpleDesign.html#mathematics"><i class="fa fa-check"></i><b>11.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="11.3.4" data-path="simpleDesign.html"><a href="simpleDesign.html#game-question-text"><i class="fa fa-check"></i><b>11.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="11.3.5" data-path="simpleDesign.html"><a href="simpleDesign.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>11.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="11.3.6" data-path="simpleDesign.html"><a href="simpleDesign.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>11.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="11.3.7" data-path="simpleDesign.html"><a href="simpleDesign.html#text-in-r-plots"><i class="fa fa-check"></i><b>11.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="11.3.8" data-path="simpleDesign.html"><a href="simpleDesign.html#text-case"><i class="fa fa-check"></i><b>11.3.8</b> Text Case</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>12</b> Static Images</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>12.1</b> Adding an Image</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
+<li class="chapter" data-level="12.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>12.1.2</b> In Line Images</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#sizing-your-image-imagesize"><i class="fa fa-check"></i><b>12.2</b> Sizing Your Image (#imageSize)</a></li>
+<li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>12.3</b> Adding Alt Text to Static Images</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.4</b> Tables</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.4.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.4.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.5</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.5.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.5.2</b> Alt Text via ARIA</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>VI Style Guide-Language</b></span></li>
+<li class="chapter" data-level="14" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>14</b> Wording</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>14.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="14.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>14.2</b> Popovers</a></li>
+<li class="chapter" data-level="14.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>14.3</b> Dealing with Differing Vocabularies</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>14.3.1</b> The Jingle/Jangle Problem</a></li>
+<li class="chapter" data-level="14.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>14.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
+<li class="chapter" data-level="14.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>14.3.3</b> Option 1: Hover Text</a></li>
+<li class="chapter" data-level="14.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>14.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>14.4</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>15</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>15.1</b> References</a></li>
+<li class="chapter" data-level="15.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>15.2</b> Plagiarism</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>15.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="15.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>15.2.2</b> In Code</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>15.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="15.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>15.4</b> Graphics</a></li>
+<li class="chapter" data-level="15.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>15.5</b> Data</a></li>
+</ul></li>
+<li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
+<li class="chapter" data-level="16" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>16</b> Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>16.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="16.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>16.2</b> Checking Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>16.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="16.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>16.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="16.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>16.2.3</b> Addressing Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>17</b> Mobile Friendliness</a></li>
+<li class="part"><span><b>VIII Final Thoughts</b></span></li>
+<li class="chapter" data-level="18" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>18</b> Additional Tools</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Building Shiny Apps the BOAST Way</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="staticImages" class="section level1" number="12">
+<h1><span class="header-section-number">Chapter 12</span> Static Images</h1>
+<p>Static image refers to any image you’re using in your App which is not produced by <code>R</code>. These are usually PNG or JPG/JPEG files which you end up calling in the UI portion of your code.</p>
+<p>Within your App’s folder/directory, there needs to be a sub-folder/directory called <code>www</code>. This is the place where you’ll need to place ALL static image files.</p>
+<div id="adding-an-image" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Adding an Image</h2>
+<p>To include the image in your App, you’ll need to make use of the image tag, <code>img</code>. When you run your App, Shiny automatically knows to check the <code>www</code> folder any time the <code>img</code> tag gets called.</p>
+<p>There are two main ways to add a static image: through a Figure Environment and In Line.</p>
+<div id="figure-environment" class="section level3" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Figure Environment</h3>
+<p>Here is example code for adding an image within a figure environment:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="staticImages.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb68-2"><a href="staticImages.html#cb68-2" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">figure</span>(</span>
+<span id="cb68-3"><a href="staticImages.html#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">&quot;center&quot;</span>,</span>
+<span id="cb68-4"><a href="staticImages.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
+<span id="cb68-5"><a href="staticImages.html#cb68-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;astragalus.jpg&quot;</span>,</span>
+<span id="cb68-6"><a href="staticImages.html#cb68-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">600</span>,</span>
+<span id="cb68-7"><a href="staticImages.html#cb68-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Picture of an astragalus (bone die)&quot;</span></span>
+<span id="cb68-8"><a href="staticImages.html#cb68-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb68-9"><a href="staticImages.html#cb68-9" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">figcaption</span>(<span class="st">&quot;Image of Astragalus by Yaan, 2007&quot;</span>)</span>
+<span id="cb68-10"><a href="staticImages.html#cb68-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb68-11"><a href="staticImages.html#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>In this first example, we’ve created a figure environment with the <code>tags$figure</code> call. The first argument we set in the figure environment sets whether the figure is left, center, or right aligned on the page. (Typically, we’ll go with <code>align = "center"</code>.)</p>
+<p>The second part of the figure is the actual call to load the static image; <code>tags$img</code>. (Much the heading and paragraph HTML tags, you can omit <code>tags$</code> in this case; we would rather be safe than sorry, hence why we’ve left this in our code.) You will need to provide at least two arguments (<code>src</code> and <code>alt</code>) to this call. The <code>src</code> is the exact name of the file from the <code>www</code> folder you want to load while <code>alt</code> refers to the <a href="staticImages.html#altStatic">Alt Text</a> for the image.</p>
+<p>The other argument (<code>width</code>) is one of two sizing arguments (along with <code>height</code>) that you can set to alter the size of your figure. Check out the <a href="#imageSize">Sizing Section</a> section below.</p>
+<p>The last portion of the figure environment is the <code>tags$figcaption</code>. The figure caption is an opportunity to give a bit of information about the figure AND provide any credit. In our example, we’ve mentioned what the image is a picture of (an astragalus) as well as citing who the image belongs to (Yaan). Figure captions do not replace Alt Text and Alt Text does not replace figure captions; these are both complementary and distinct elements of static images.</p>
+</div>
+<div id="in-line-images" class="section level3" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> In Line Images</h3>
+<p>Sometimes you’ll want to put an image within the line of text rather than as a separate figure environment. This is possible and you would use code similar to the following:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="staticImages.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb69-2"><a href="staticImages.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb69-3"><a href="staticImages.html#cb69-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
+<span id="cb69-4"><a href="staticImages.html#cb69-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb69-5"><a href="staticImages.html#cb69-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb69-6"><a href="staticImages.html#cb69-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">25</span>,</span>
+<span id="cb69-7"><a href="staticImages.html#cb69-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">25</span></span>
+<span id="cb69-8"><a href="staticImages.html#cb69-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb69-9"><a href="staticImages.html#cb69-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span></span>
+<span id="cb69-10"><a href="staticImages.html#cb69-10" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb69-11"><a href="staticImages.html#cb69-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>Notice that here we did not use either <code>tags$figure</code> nor <code>tags$figcaption</code>, rather we just used <code>tags$img</code> within a paragraph environment. The biggest caution we need to give here is to make sure you find an optimal size for your image.</p>
+</div>
+</div>
+<div id="sizing-your-image-imagesize" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Sizing Your Image (#imageSize)</h2>
+<p>All image files have a native size that is part of that file. For instance, the check mark image is 270 x 250 pixels. However, we overrode that that sizing with the <code>width</code> and <code>height</code> arguments.</p>
+<p>We recommend that you test out your app with the image’s natural sizing (i.e., omit both <code>width</code> and <code>height</code> arguments) and see how that looks. From there, you can start a the testing process. Except in a few cases (like our checkmark example above), you will only want to set either <code>width</code> or <code>height</code> but not both. This will allow each user’s browser to optimize the resolution of the image so that the image does not appear unduly stretched or compressed. Generally, go with changing the <code>width</code> argument.</p>
+<p>How did we decide on what size to use? We tested out various sizes until we found one that appeared to work well with our goals (i.e., not too large, not too small, but just right). This Goldilocks Zone of image size will change between every app as well as for different images within the same app. Try different sizes out and ask for specific feedback on image sizes. While finding an optimal size and position for your image can take some time, seeing bad settings is pretty obvious. Feel free to reach out to Neil and Bob for assistance.</p>
+</div>
+<div id="altStatic" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Adding Alt Text to Static Images</h2>
+<p>Any graphical element you include in your App <strong>MUST</strong> have an alternative (assistive) text description (“alt text”). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)</p>
+<p>Here are several resources worth checking out:</p>
+<ul>
+<li><a href="https://webaim.org/techniques/alttext/#basics">WebAIM Alternative Text Guide</a></li>
+<li><a href="https://accessibility.psu.edu/images/alttext/">Penn State’s Image ALT Text Page</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">W3C’s ALT Text Decision Tree</a></li>
+</ul>
+<p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="staticImages.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb70-2"><a href="staticImages.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">img</span>(</span>
+<span id="cb70-3"><a href="staticImages.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb70-4"><a href="staticImages.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb70-5"><a href="staticImages.html#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">25</span>, <span class="at">height =</span> <span class="dv">25</span></span>
+<span id="cb70-6"><a href="staticImages.html#cb70-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb70-7"><a href="staticImages.html#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>You MUST include <em>descriptive</em> alt text to each and every static image you include</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="simpleDesign.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="graphics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["BOAST_style_guide.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

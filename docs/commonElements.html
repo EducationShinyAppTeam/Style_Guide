@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Common Elements | Building Shiny Apps the BOAST Way</title>
+  <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Common Elements | Building Shiny Apps the BOAST Way" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Common Elements | Building Shiny Apps the BOAST Way" />
+  
+  <meta name="twitter:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
+  
+
+<meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
+
+
+<meta name="date" content="2021-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="uiStructure.html"/>
+<link rel="next" href="designStyle.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BOAST Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#organization"><i class="fa fa-check"></i><b>0.1</b> Organization</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-our-approach"><i class="fa fa-check"></i><b>0.2</b> Why Our Approach?</a>
+<ul>
+<li class="chapter" data-level="0.2.1" data-path="index.html"><a href="index.html#were-a-team-of-developers"><i class="fa fa-check"></i><b>0.2.1</b> We’re a Team of Developers</a></li>
+<li class="chapter" data-level="0.2.2" data-path="index.html"><a href="index.html#research-driven"><i class="fa fa-check"></i><b>0.2.2</b> Research Driven</a></li>
+<li class="chapter" data-level="0.2.3" data-path="index.html"><a href="index.html#accesiblity-minded"><i class="fa fa-check"></i><b>0.2.3</b> Accesiblity Minded</a></li>
+<li class="chapter" data-level="0.2.4" data-path="index.html"><a href="index.html#avoid-the-shiny-problem"><i class="fa fa-check"></i><b>0.2.4</b> Avoid the “Shiny” Problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>1</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="workflow.html"><a href="workflow.html#revising-existing-apps-worflow"><i class="fa fa-check"></i><b>1.1</b> Revising Existing Apps Worflow</a></li>
+<li class="chapter" data-level="1.2" data-path="workflow.html"><a href="workflow.html#creating-new-apps-workflow"><i class="fa fa-check"></i><b>1.2</b> Creating New Apps Workflow</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="workflow.html"><a href="workflow.html#repo-naming"><i class="fa fa-check"></i><b>1.2.1</b> GitHub Repo Names</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>1.3.1</b> Set Up/Login to the VPN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>1.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
+<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>1.3.3</b> Publishing Your App for Testing</a></li>
+<li class="chapter" data-level="1.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>1.3.4</b> Configuring for Testing</a></li>
+<li class="chapter" data-level="1.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>1.3.5</b> Check the Logs</a></li>
+<li class="chapter" data-level="1.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>1.3.6</b> Problems?</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Getting Started</b></span></li>
+<li class="chapter" data-level="2" data-path="makingApp.html"><a href="makingApp.html"><i class="fa fa-check"></i><b>2</b> Making an App</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="makingApp.html"><a href="makingApp.html#step1"><i class="fa fa-check"></i><b>2.1</b> Step 1: Read the Style Guide</a></li>
+<li class="chapter" data-level="2.2" data-path="makingApp.html"><a href="makingApp.html#step2"><i class="fa fa-check"></i><b>2.2</b> Step 2: Identify a Topic</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="makingApp.html"><a href="makingApp.html#step2a"><i class="fa fa-check"></i><b>2.2.1</b> Your App’s Purpose</a></li>
+<li class="chapter" data-level="2.2.2" data-path="makingApp.html"><a href="makingApp.html#step2b"><i class="fa fa-check"></i><b>2.2.2</b> The Topic</a></li>
+<li class="chapter" data-level="2.2.3" data-path="makingApp.html"><a href="makingApp.html#step2c"><i class="fa fa-check"></i><b>2.2.3</b> Goals</a></li>
+<li class="chapter" data-level="2.2.4" data-path="makingApp.html"><a href="makingApp.html#example"><i class="fa fa-check"></i><b>2.2.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="makingApp.html"><a href="makingApp.html#step3"><i class="fa fa-check"></i><b>2.3</b> Step 3: Sketch out plans</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="makingApp.html"><a href="makingApp.html#key-elements"><i class="fa fa-check"></i><b>2.3.1</b> Key Elements</a></li>
+<li class="chapter" data-level="2.3.2" data-path="makingApp.html"><a href="makingApp.html#example-cont."><i class="fa fa-check"></i><b>2.3.2</b> Example, cont.</a></li>
+<li class="chapter" data-level="2.3.3" data-path="makingApp.html"><a href="makingApp.html#share-your-plan"><i class="fa fa-check"></i><b>2.3.3</b> Share Your Plan</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="makingApp.html"><a href="makingApp.html#step4"><i class="fa fa-check"></i><b>2.4</b> Step 4: Create Repository</a></li>
+<li class="chapter" data-level="2.5" data-path="makingApp.html"><a href="makingApp.html#steps5-8"><i class="fa fa-check"></i><b>2.5</b> Steps 5-8: Write, Edit, Test, Debug</a></li>
+<li class="chapter" data-level="2.6" data-path="makingApp.html"><a href="makingApp.html#step9"><i class="fa fa-check"></i><b>2.6</b> Step 9: Larger Scale Testing</a></li>
+<li class="chapter" data-level="2.7" data-path="makingApp.html"><a href="makingApp.html#steps10-11"><i class="fa fa-check"></i><b>2.7</b> Steps 10-11: Pull Requests and Tweaks</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="makingApp.html"><a href="makingApp.html#appearance-review-part-of-large-scale-testing"><i class="fa fa-check"></i><b>2.7.1</b> Appearance Review (part of Large Scale Testing)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="makingApp.html"><a href="makingApp.html#coding-review"><i class="fa fa-check"></i><b>2.7.2</b> Coding Review</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Getting Ready to Code</b></span></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#checklist"><i class="fa fa-check"></i><b>3.1</b> Getting Started Checklist</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#boastUtils"><i class="fa fa-check"></i><b>3.2</b> <code>boastUtils</code> Package</a></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#a-quick-note-on-packages-and-r"><i class="fa fa-check"></i><b>3.3</b> A Quick Note on Packages (and R)</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#templateApp"><i class="fa fa-check"></i><b>3.4</b> BOAST Template App</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="basics.html"><a href="basics.html#direct-download"><i class="fa fa-check"></i><b>3.4.1</b> Direct Download</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basics.html"><a href="basics.html#github-desktop-strongly-recommended"><i class="fa fa-check"></i><b>3.4.2</b> GitHub Desktop (STRONGLY RECOMMENDED)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basics.html"><a href="basics.html#command-line"><i class="fa fa-check"></i><b>3.4.3</b> Command Line</a></li>
+<li class="chapter" data-level="3.4.4" data-path="basics.html"><a href="basics.html#rstudio-project"><i class="fa fa-check"></i><b>3.4.4</b> RStudio Project</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="basics.html"><a href="basics.html#useful-rstudio-settings"><i class="fa fa-check"></i><b>3.5</b> Useful RStudio Settings</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basics.html"><a href="basics.html#coding-margin"><i class="fa fa-check"></i><b>3.5.1</b> Coding Margin</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics.html"><a href="basics.html#line-numbers"><i class="fa fa-check"></i><b>3.5.2</b> Line Numbers</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basics.html"><a href="basics.html#whitespace-characters"><i class="fa fa-check"></i><b>3.5.3</b> Whitespace Characters</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basics.html"><a href="basics.html#rainbow-parentheses"><i class="fa fa-check"></i><b>3.5.4</b> Rainbow Parentheses</a></li>
+<li class="chapter" data-level="3.5.5" data-path="basics.html"><a href="basics.html#code-diagnostics"><i class="fa fa-check"></i><b>3.5.5</b> Code Diagnostics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> The Exploring the BOAST Template</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#templateRepo"><i class="fa fa-check"></i><b>4.1</b> Structure of the BOAST Template Repository</a></li>
+<li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#appR"><i class="fa fa-check"></i><b>4.2</b> The <code>app.R</code> File</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#description"><i class="fa fa-check"></i><b>4.3</b> DESCRIPTION</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#authors"><i class="fa fa-check"></i><b>4.3.1</b> Authors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#learningObjectives"><i class="fa fa-check"></i><b>4.3.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.3.3" data-path="template.html"><a href="template.html#tags"><i class="fa fa-check"></i><b>4.3.3</b> Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="template.html"><a href="template.html#readme"><i class="fa fa-check"></i><b>4.4</b> README.md</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="template.html"><a href="template.html#badges"><i class="fa fa-check"></i><b>4.4.1</b> Badges</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="template.html"><a href="template.html#screenshot"><i class="fa fa-check"></i><b>4.5</b> screenshot.png</a></li>
+</ul></li>
+<li class="part"><span><b>III Style Guide-Coding</b></span></li>
+<li class="chapter" data-level="5" data-path="coding.html"><a href="coding.html"><i class="fa fa-check"></i><b>5</b> Coding Style</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="coding.html"><a href="coding.html#genCode"><i class="fa fa-check"></i><b>5.1</b> General Coding Style</a></li>
+<li class="chapter" data-level="5.2" data-path="coding.html"><a href="coding.html#readable"><i class="fa fa-check"></i><b>5.2</b> Make Your Code Readable</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="coding.html"><a href="coding.html#formatSpace"><i class="fa fa-check"></i><b>5.2.1</b> Formatting and Spacing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="coding.html"><a href="coding.html#naming"><i class="fa fa-check"></i><b>5.2.2</b> Use Informative Names</a></li>
+<li class="chapter" data-level="5.2.3" data-path="coding.html"><a href="coding.html#explicit"><i class="fa fa-check"></i><b>5.2.3</b> Be Explicit</a></li>
+<li class="chapter" data-level="5.2.4" data-path="coding.html"><a href="coding.html#exceptions-to-readability"><i class="fa fa-check"></i><b>5.2.4</b> Exceptions to Readability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="coding.html"><a href="coding.html#efficient"><i class="fa fa-check"></i><b>5.3</b> Make Your Code Efficient</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="coding.html"><a href="coding.html#dry-coding"><i class="fa fa-check"></i><b>5.3.1</b> DRY Coding</a></li>
+<li class="chapter" data-level="5.3.2" data-path="coding.html"><a href="coding.html#minPackages"><i class="fa fa-check"></i><b>5.3.2</b> Minimize Package Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="coding.html"><a href="coding.html#beKind"><i class="fa fa-check"></i><b>5.4</b> Be Kind to Future Coders</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="coding.html"><a href="coding.html#comments"><i class="fa fa-check"></i><b>5.4.1</b> Leave Comments</a></li>
+<li class="chapter" data-level="5.4.2" data-path="coding.html"><a href="coding.html#code-section-titlesjump-points"><i class="fa fa-check"></i><b>5.4.2</b> Code Section Titles/Jump Points</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="specificCoding.html"><a href="specificCoding.html"><i class="fa fa-check"></i><b>6</b> Shiny (BOAST) Specific Coding Practices</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specificCoding.html"><a href="specificCoding.html#orgCode"><i class="fa fa-check"></i><b>6.1</b> Overarching Organization</a></li>
+<li class="chapter" data-level="6.2" data-path="specificCoding.html"><a href="specificCoding.html#calling-inputs-and-outputs"><i class="fa fa-check"></i><b>6.2</b> Calling Inputs and Outputs</a></li>
+<li class="chapter" data-level="6.3" data-path="specificCoding.html"><a href="specificCoding.html#reactive-vs.-observe"><i class="fa fa-check"></i><b>6.3</b> Reactive vs. Observe</a></li>
+<li class="chapter" data-level="6.4" data-path="specificCoding.html"><a href="specificCoding.html#working-with-reactive-values"><i class="fa fa-check"></i><b>6.4</b> Working with Reactive Values</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="specificCoding.html"><a href="specificCoding.html#input"><i class="fa fa-check"></i><b>6.4.1</b> <code>input</code></a></li>
+<li class="chapter" data-level="6.4.2" data-path="specificCoding.html"><a href="specificCoding.html#reactiveval"><i class="fa fa-check"></i><b>6.4.2</b> <code>reactiveVal</code></a></li>
+<li class="chapter" data-level="6.4.3" data-path="specificCoding.html"><a href="specificCoding.html#reactivevalues"><i class="fa fa-check"></i><b>6.4.3</b> <code>reactiveValues</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="specificCoding.html"><a href="specificCoding.html#events"><i class="fa fa-check"></i><b>6.5</b> Events</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="specificCoding.html"><a href="specificCoding.html#eventreactive"><i class="fa fa-check"></i><b>6.5.1</b> <code>eventReactive</code></a></li>
+<li class="chapter" data-level="6.5.2" data-path="specificCoding.html"><a href="specificCoding.html#observeevent"><i class="fa fa-check"></i><b>6.5.2</b> <code>observeEvent</code></a></li>
+<li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="htmlCSS.html"><a href="htmlCSS.html#html"><i class="fa fa-check"></i><b>7.1</b> HTML Tags</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="htmlCSS.html"><a href="htmlCSS.html#paragraphs"><i class="fa fa-check"></i><b>7.1.1</b> Paragraphs</a></li>
+<li class="chapter" data-level="7.1.2" data-path="htmlCSS.html"><a href="htmlCSS.html#breaks"><i class="fa fa-check"></i><b>7.1.2</b> Breaks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="htmlCSS.html"><a href="htmlCSS.html#lists"><i class="fa fa-check"></i><b>7.1.3</b> Lists</a></li>
+<li class="chapter" data-level="7.1.4" data-path="htmlCSS.html"><a href="htmlCSS.html#headers"><i class="fa fa-check"></i><b>7.1.4</b> Headers</a></li>
+<li class="chapter" data-level="7.1.5" data-path="htmlCSS.html"><a href="htmlCSS.html#links-bodylinks"><i class="fa fa-check"></i><b>7.1.5</b> Links (#bodyLinks)</a></li>
+<li class="chapter" data-level="7.1.6" data-path="htmlCSS.html"><a href="htmlCSS.html#div"><i class="fa fa-check"></i><b>7.1.6</b> Divisions</a></li>
+<li class="chapter" data-level="7.1.7" data-path="htmlCSS.html"><a href="htmlCSS.html#horizontal-rule"><i class="fa fa-check"></i><b>7.1.7</b> Horizontal Rule</a></li>
+<li class="chapter" data-level="7.1.8" data-path="htmlCSS.html"><a href="htmlCSS.html#other-tags"><i class="fa fa-check"></i><b>7.1.8</b> Other Tags</a></li>
+<li class="chapter" data-level="7.1.9" data-path="htmlCSS.html"><a href="htmlCSS.html#stylingTags"><i class="fa fa-check"></i><b>7.1.9</b> Text Styling Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="htmlCSS.html"><a href="htmlCSS.html#htmlID"><i class="fa fa-check"></i><b>7.2</b> HTML <code>id</code></a></li>
+<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.3</b> CSS</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="htmlCSS.html"><a href="htmlCSS.html#cssProblems"><i class="fa fa-check"></i><b>7.3.1</b> Problematic CSS in Old Apps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.4</b> Using CSS</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="htmlCSS.html"><a href="htmlCSS.html#text-alignment"><i class="fa fa-check"></i><b>7.4.1</b> Text Alignment</a></li>
+<li class="chapter" data-level="7.4.2" data-path="htmlCSS.html"><a href="htmlCSS.html#classes"><i class="fa fa-check"></i><b>7.4.2</b> Classes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="additionalCoding.html"><a href="additionalCoding.html"><i class="fa fa-check"></i><b>8</b> Additional Coding Practices</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="additionalCoding.html"><a href="additionalCoding.html#plotCachec"><i class="fa fa-check"></i><b>8.1</b> Plot Caching</a></li>
+<li class="chapter" data-level="8.2" data-path="additionalCoding.html"><a href="additionalCoding.html#exFiles"><i class="fa fa-check"></i><b>8.2</b> Minimize External Files</a></li>
+<li class="chapter" data-level="8.3" data-path="additionalCoding.html"><a href="additionalCoding.html#metadatac"><i class="fa fa-check"></i><b>8.3</b> Metadata</a></li>
+<li class="chapter" data-level="8.4" data-path="additionalCoding.html"><a href="additionalCoding.html#otherLanguages"><i class="fa fa-check"></i><b>8.4</b> Other Languages (Python, JavaScript, etc.)</a></li>
+<li class="chapter" data-level="8.5" data-path="additionalCoding.html"><a href="additionalCoding.html#rlockerc"><i class="fa fa-check"></i><b>8.5</b> Using rLocker</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="additionalCoding.html"><a href="additionalCoding.html#installing"><i class="fa fa-check"></i><b>8.5.1</b> Installing</a></li>
+<li class="chapter" data-level="8.5.2" data-path="additionalCoding.html"><a href="additionalCoding.html#setup"><i class="fa fa-check"></i><b>8.5.2</b> Setup</a></li>
+<li class="chapter" data-level="8.5.3" data-path="additionalCoding.html"><a href="additionalCoding.html#usage"><i class="fa fa-check"></i><b>8.5.3</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
+<li class="chapter" data-level="" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i>App Layout</a></li>
+<li class="chapter" data-level="9" data-path="uiStructure.html"><a href="uiStructure.html"><i class="fa fa-check"></i><b>9</b> User Interface Structure</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="uiStructure.html"><a href="uiStructure.html#dashboard"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard"><i class="fa fa-check"></i><b>9.1.1</b> Creating the Dashboard</a></li>
+<li class="chapter" data-level="9.1.2" data-path="uiStructure.html"><a href="uiStructure.html#colorUI"><i class="fa fa-check"></i><b>9.1.2</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="9.1.3" data-path="uiStructure.html"><a href="uiStructure.html#chapterColor"><i class="fa fa-check"></i><b>9.1.3</b> Current Chapter Color Assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="uiStructure.html"><a href="uiStructure.html#header"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>9.2.1</b> Creating the Dashboard Header</a></li>
+<li class="chapter" data-level="9.2.2" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>9.2.2</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>9.3.1</b> Creating the Dashboard Sidebar</a></li>
+<li class="chapter" data-level="9.3.2" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-order"><i class="fa fa-check"></i><b>9.3.2</b> Sidebar Order</a></li>
+<li class="chapter" data-level="9.3.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-names"><i class="fa fa-check"></i><b>9.3.3</b> Sidebar Names</a></li>
+<li class="chapter" data-level="9.3.4" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-icons"><i class="fa fa-check"></i><b>9.3.4</b> Sidebar Icons</a></li>
+<li class="chapter" data-level="9.3.5" data-path="uiStructure.html"><a href="uiStructure.html#submenus"><i class="fa fa-check"></i><b>9.3.5</b> Submenus</a></li>
+<li class="chapter" data-level="9.3.6" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>9.3.6</b> What’s Needed in the Server Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="uiStructure.html"><a href="uiStructure.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="uiStructure.html"><a href="uiStructure.html#the-overview-page"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Page</a></li>
+<li class="chapter" data-level="9.4.2" data-path="uiStructure.html"><a href="uiStructure.html#a-prerequisites-page"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Page</a></li>
+<li class="chapter" data-level="9.4.3" data-path="uiStructure.html"><a href="uiStructure.html#activity-pages"><i class="fa fa-check"></i><b>9.4.3</b> Activity Pages</a></li>
+<li class="chapter" data-level="9.4.4" data-path="uiStructure.html"><a href="uiStructure.html#refPage"><i class="fa fa-check"></i><b>9.4.4</b> References Page</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="uiStructure.html"><a href="uiStructure.html#activityLayout"><i class="fa fa-check"></i><b>9.5</b> Layout of Activity Pages</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="uiStructure.html"><a href="uiStructure.html#two-required-elements"><i class="fa fa-check"></i><b>9.5.1</b> Two Required Elements</a></li>
+<li class="chapter" data-level="9.5.2" data-path="uiStructure.html"><a href="uiStructure.html#the-classical-layout"><i class="fa fa-check"></i><b>9.5.2</b> The Classical Layout</a></li>
+<li class="chapter" data-level="9.5.3" data-path="uiStructure.html"><a href="uiStructure.html#visTabs"><i class="fa fa-check"></i><b>9.5.3</b> Visible Tabs</a></li>
+<li class="chapter" data-level="9.5.4" data-path="uiStructure.html"><a href="uiStructure.html#hiddenTabs"><i class="fa fa-check"></i><b>9.5.4</b> Hidden Tabs</a></li>
+<li class="chapter" data-level="9.5.5" data-path="uiStructure.html"><a href="uiStructure.html#sets-of-controls"><i class="fa fa-check"></i><b>9.5.5</b> Sets of Controls</a></li>
+<li class="chapter" data-level="9.5.6" data-path="uiStructure.html"><a href="uiStructure.html#tic-tac-toe"><i class="fa fa-check"></i><b>9.5.6</b> Tic-Tac-Toe</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="uiStructure.html"><a href="uiStructure.html#innerTabs"><i class="fa fa-check"></i><b>9.6</b> Tab Sets</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tab-set"><i class="fa fa-check"></i><b>9.6.1</b> Create the Tab Set</a></li>
+<li class="chapter" data-level="9.6.2" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tabs"><i class="fa fa-check"></i><b>9.6.2</b> Create the Tabs</a></li>
+<li class="chapter" data-level="9.6.3" data-path="uiStructure.html"><a href="uiStructure.html#moving-between-tabs"><i class="fa fa-check"></i><b>9.6.3</b> Moving Between Tabs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="commonElements.html"><a href="commonElements.html"><i class="fa fa-check"></i><b>10</b> Common Elements</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="commonElements.html"><a href="commonElements.html#rowsCols"><i class="fa fa-check"></i><b>10.1</b> Fluid Rows and Columns</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="commonElements.html"><a href="commonElements.html#nesting-fluidrow"><i class="fa fa-check"></i><b>10.1.1</b> Nesting <code>fluidRow</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="commonElements.html"><a href="commonElements.html#wellPanels"><i class="fa fa-check"></i><b>10.2</b> Well Panels</a></li>
+<li class="chapter" data-level="10.3" data-path="commonElements.html"><a href="commonElements.html#collapsible"><i class="fa fa-check"></i><b>10.3</b> Collapsible Boxes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="commonElements.html"><a href="commonElements.html#creating-collapsible-boxes"><i class="fa fa-check"></i><b>10.3.1</b> Creating Collapsible Boxes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="commonElements.html"><a href="commonElements.html#buttons"><i class="fa fa-check"></i><b>10.4</b> Buttons</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="commonElements.html"><a href="commonElements.html#main-type-of-button"><i class="fa fa-check"></i><b>10.4.1</b> Main Type of Button</a></li>
+<li class="chapter" data-level="10.4.2" data-path="commonElements.html"><a href="commonElements.html#labels"><i class="fa fa-check"></i><b>10.4.2</b> Labels</a></li>
+<li class="chapter" data-level="10.4.3" data-path="commonElements.html"><a href="commonElements.html#icons"><i class="fa fa-check"></i><b>10.4.3</b> Icons</a></li>
+<li class="chapter" data-level="10.4.4" data-path="commonElements.html"><a href="commonElements.html#style-color"><i class="fa fa-check"></i><b>10.4.4</b> Style (Color)</a></li>
+<li class="chapter" data-level="10.4.5" data-path="commonElements.html"><a href="commonElements.html#disabled"><i class="fa fa-check"></i><b>10.4.5</b> Disabled</a></li>
+<li class="chapter" data-level="10.4.6" data-path="commonElements.html"><a href="commonElements.html#updating-buttons"><i class="fa fa-check"></i><b>10.4.6</b> Updating Buttons</a></li>
+<li class="chapter" data-level="10.4.7" data-path="commonElements.html"><a href="commonElements.html#other-issues"><i class="fa fa-check"></i><b>10.4.7</b> Other Issues</a></li>
+<li class="chapter" data-level="10.4.8" data-path="commonElements.html"><a href="commonElements.html#listening-to-buttons"><i class="fa fa-check"></i><b>10.4.8</b> Listening to Buttons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="commonElements.html"><a href="commonElements.html#inputs"><i class="fa fa-check"></i><b>10.5</b> Inputs</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="commonElements.html"><a href="commonElements.html#types-of-inputs"><i class="fa fa-check"></i><b>10.5.1</b> Types of Inputs</a></li>
+<li class="chapter" data-level="10.5.2" data-path="commonElements.html"><a href="commonElements.html#animation-of-sliders"><i class="fa fa-check"></i><b>10.5.2</b> Animation of Sliders</a></li>
+<li class="chapter" data-level="10.5.3" data-path="commonElements.html"><a href="commonElements.html#ordering-inputs"><i class="fa fa-check"></i><b>10.5.3</b> Ordering Inputs</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="commonElements.html"><a href="commonElements.html#correctincorrect-marks"><i class="fa fa-check"></i><b>10.6</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="10.7" data-path="commonElements.html"><a href="commonElements.html#alerts-and-messages"><i class="fa fa-check"></i><b>10.7</b> Alerts and Messages</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="commonElements.html"><a href="commonElements.html#alert-types"><i class="fa fa-check"></i><b>10.7.1</b> Alert Types</a></li>
+<li class="chapter" data-level="10.7.2" data-path="commonElements.html"><a href="commonElements.html#alert-title-and-text"><i class="fa fa-check"></i><b>10.7.2</b> Alert Title and Text</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="commonElements.html"><a href="commonElements.html#popovers-and-tooltips"><i class="fa fa-check"></i><b>10.8</b> Popovers and Tooltips</a></li>
+<li class="chapter" data-level="10.9" data-path="commonElements.html"><a href="commonElements.html#progress-bars"><i class="fa fa-check"></i><b>10.9</b> Progress Bars</a></li>
+</ul></li>
+<li class="part"><span><b>V Style Guide-Design Style</b></span></li>
+<li class="chapter" data-level="" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i>Design Style</a></li>
+<li class="chapter" data-level="11" data-path="simpleDesign.html"><a href="simpleDesign.html"><i class="fa fa-check"></i><b>11</b> Branding, Color, and Text</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="simpleDesign.html"><a href="simpleDesign.html#logo"><i class="fa fa-check"></i><b>11.1</b> PSU Branding</a></li>
+<li class="chapter" data-level="11.2" data-path="simpleDesign.html"><a href="simpleDesign.html#colorChoices"><i class="fa fa-check"></i><b>11.2</b> Colors</a></li>
+<li class="chapter" data-level="11.3" data-path="simpleDesign.html"><a href="simpleDesign.html#styleText"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="simpleDesign.html"><a href="simpleDesign.html#headings"><i class="fa fa-check"></i><b>11.3.1</b> Headings</a></li>
+<li class="chapter" data-level="11.3.2" data-path="simpleDesign.html"><a href="simpleDesign.html#paragraph-text"><i class="fa fa-check"></i><b>11.3.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="11.3.3" data-path="simpleDesign.html"><a href="simpleDesign.html#mathematics"><i class="fa fa-check"></i><b>11.3.3</b> Mathematics</a></li>
+<li class="chapter" data-level="11.3.4" data-path="simpleDesign.html"><a href="simpleDesign.html#game-question-text"><i class="fa fa-check"></i><b>11.3.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="11.3.5" data-path="simpleDesign.html"><a href="simpleDesign.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>11.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="11.3.6" data-path="simpleDesign.html"><a href="simpleDesign.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>11.3.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="11.3.7" data-path="simpleDesign.html"><a href="simpleDesign.html#text-in-r-plots"><i class="fa fa-check"></i><b>11.3.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="11.3.8" data-path="simpleDesign.html"><a href="simpleDesign.html#text-case"><i class="fa fa-check"></i><b>11.3.8</b> Text Case</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>12</b> Static Images</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>12.1</b> Adding an Image</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
+<li class="chapter" data-level="12.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>12.1.2</b> In Line Images</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#sizing-your-image-imagesize"><i class="fa fa-check"></i><b>12.2</b> Sizing Your Image (#imageSize)</a></li>
+<li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>12.3</b> Adding Alt Text to Static Images</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
+<li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.4</b> Tables</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.4.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.4.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.5</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.5.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.5.2</b> Alt Text via ARIA</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>VI Style Guide-Language</b></span></li>
+<li class="chapter" data-level="14" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>14</b> Wording</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>14.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="14.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>14.2</b> Popovers</a></li>
+<li class="chapter" data-level="14.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>14.3</b> Dealing with Differing Vocabularies</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>14.3.1</b> The Jingle/Jangle Problem</a></li>
+<li class="chapter" data-level="14.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>14.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
+<li class="chapter" data-level="14.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>14.3.3</b> Option 1: Hover Text</a></li>
+<li class="chapter" data-level="14.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>14.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>14.4</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>15</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>15.1</b> References</a></li>
+<li class="chapter" data-level="15.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>15.2</b> Plagiarism</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>15.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="15.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>15.2.2</b> In Code</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>15.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="15.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>15.4</b> Graphics</a></li>
+<li class="chapter" data-level="15.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>15.5</b> Data</a></li>
+</ul></li>
+<li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
+<li class="chapter" data-level="16" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>16</b> Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>16.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="16.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>16.2</b> Checking Accessibility</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>16.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="16.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>16.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="16.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>16.2.3</b> Addressing Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>17</b> Mobile Friendliness</a></li>
+<li class="part"><span><b>VIII Final Thoughts</b></span></li>
+<li class="chapter" data-level="18" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>18</b> Additional Tools</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Building Shiny Apps the BOAST Way</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="commonElements" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Common Elements</h1>
+<p>This second part of the App Layout deals with the coding and set up of elements that are common across many of the apps in BOAST. We strive to use consistent coding for these elements as this will improve the user experience.</p>
+<p>We anticipate that this chapter will be one of the chapters you most heavily reference as you work on developing your apps. Over time, you’ll become more proficient at coding and will not need to rely on this chapter as much.</p>
+<div id="rowsCols" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Fluid Rows and Columns</h2>
+<p>HTML is a linear language, by this we mean that as browsers interpret each line of HTML, the rendered elements appear one after the other vertically, from top to bottom. Since Shiny takes your R code and translate all of it to HTML, our apps also get rendered in this linear format. Thus, the way you order your code should reflect a top-down construction of your page.</p>
+<p>This linear flow works well in many cases…until you want to put two (or more) elements side-by-side. To make elements appear next to one another horizontally, we need to make use of two important functions: <code>fluidRow</code> and <code>column</code>.</p>
+<p>The <code>fluidRow</code> function tells R/Shiny that you want to put multiple elements into the same row of the page. The “fluid” aspect refers to the fact that this function will automatically adjust the row by wrapping the content to fit the size of the screen. This is important to ensure that your app can respond to being on a mobile device like a phone or a tablet. (Regular elements such as the dashboard environment, paragraphs, etc. will automatically adjust.)</p>
+<p>Using <code>fluidRow</code> is fairly straightforward. Simply call the function and list all of the elements that you want in the same row as separate (unnamed) arguments. The elements will get listed in the order you code them, left to right, in the displayed row. For example, <code>fluidRow(objectA, objectB, objectC)</code>.</p>
+<p>Our practice is to be a bit more precise with how we want to divide up the space in a <code>fluidRow</code> call. This is where the <code>column</code> function comes into play. Each <code>fluidRow</code> is internally divided into twelve (12) columns. The <code>column</code> function allows us to say how many of those columns to give to a particular element (the <code>width</code> argument) as well as how many empty columns we want to put between the left edge or the previous filled column (the <code>offset</code> argument).</p>
+<p>For example, say that we want to make a row that has two buttons: one at the left edge and one at the right edge. We can use <code>fluidRow</code> and <code>column</code> calls to achieve this:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="commonElements.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the page layout portion of UI code</span></span>
+<span id="cb57-2"><a href="commonElements.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fluidRow</span>(</span>
+<span id="cb57-3"><a href="commonElements.html#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb57-4"><a href="commonElements.html#cb57-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb57-5"><a href="commonElements.html#cb57-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>,</span>
+<span id="cb57-6"><a href="commonElements.html#cb57-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb57-7"><a href="commonElements.html#cb57-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;button1&quot;</span>,</span>
+<span id="cb57-8"><a href="commonElements.html#cb57-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;Left button&quot;</span>,</span>
+<span id="cb57-9"><a href="commonElements.html#cb57-9" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb57-10"><a href="commonElements.html#cb57-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb57-11"><a href="commonElements.html#cb57-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb57-12"><a href="commonElements.html#cb57-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb57-13"><a href="commonElements.html#cb57-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb57-14"><a href="commonElements.html#cb57-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">8</span>,</span>
+<span id="cb57-15"><a href="commonElements.html#cb57-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb57-16"><a href="commonElements.html#cb57-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;button2&quot;</span>,</span>
+<span id="cb57-17"><a href="commonElements.html#cb57-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;Right button&quot;</span>,</span>
+<span id="cb57-18"><a href="commonElements.html#cb57-18" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb57-19"><a href="commonElements.html#cb57-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb57-20"><a href="commonElements.html#cb57-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb57-21"><a href="commonElements.html#cb57-21" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>By using <code>offset = 8</code> in the second <code>column</code> call, we placed 8 empty columns between the first button and the second button. Further, each button gets to take up two columns of space (i.e., 2/12ths of the row) to appear (<code>width = 2</code>).</p>
+<p>The most common coding problems to arise with <code>fluidRow</code> and <code>column</code> are:</p>
+<ul>
+<li>Forgetting to place <code>column</code> inside of the <code>fluidRow</code>. This won’t be a fatal crash of your app, but your app won’t look right.</li>
+<li>Not setting <code>width</code> to an integer between 1 and 12. You must provide a value for <code>width</code> in each <code>column</code> call.</li>
+<li>Not checking that all <code>width</code> and <code>offset</code> totals add to 12 within a single <code>fluidRow</code>. Look through your <code>fluidRow</code> and add up all of the <code>width</code> and <code>offset</code> values. You want that sum to be 12 so that you know that everything will be appropriately arranged. If you go over 12, you might get an error and/or your app might scale/wrap elements in strange ways. Similarly for if you are under 12.</li>
+</ul>
+<div id="nesting-fluidrow" class="section level3" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Nesting <code>fluidRow</code></h3>
+<p>While it is technically possible to nest <code>fluidRow</code> calls, we do not recommend doing so. This could look something like <code>fluidRow(column(width = 3, fluidRow(...)),...)</code>. This can create serious navigational problems for any users who rely on using their keyboard rather than a mouse to move through and interact with your App. If you find yourself wanting to nest <code>fluidRow</code>, stop yourself and reach out to Neil and Bob for alternative ideas.</p>
+</div>
+</div>
+<div id="wellPanels" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Well Panels</h2>
+<p>Well panels are visual styling that we use to help offset user controls (i.e., inputs) from both context and graphs (i.e., outputs).</p>
+<p>To place something inside of a well panel, all you need to do is wrap that object in the <code>wellPanel</code> function. However, the placement of the <code>wellPanel</code> call matters.</p>
+<p>If you wrap each individual element in <code>wellPanel</code> you’ll get a separate well panel for each call. If you place <code>wellPanel</code> too high up in your code, you’ll end up putting everything into the well panel.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="commonElements.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb58-2"><a href="commonElements.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb58-3"><a href="commonElements.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside a tabItem</span></span>
+<span id="cb58-4"><a href="commonElements.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fluidRow</span>(</span>
+<span id="cb58-5"><a href="commonElements.html#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb58-6"><a href="commonElements.html#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">4</span>, </span>
+<span id="cb58-7"><a href="commonElements.html#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>, </span>
+<span id="cb58-8"><a href="commonElements.html#cb58-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wellPanel</span>( <span class="co"># Placing the wellPanel call here will wrap around all controls</span></span>
+<span id="cb58-9"><a href="commonElements.html#cb58-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h3</span>(<span class="st">&quot;Controls&quot;</span>),</span>
+<span id="cb58-10"><a href="commonElements.html#cb58-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sliderInput</span>(</span>
+<span id="cb58-11"><a href="commonElements.html#cb58-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
+<span id="cb58-12"><a href="commonElements.html#cb58-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">alpha_{UT}</span><span class="sc">\\</span><span class="st">):&quot;</span>,</span>
+<span id="cb58-13"><a href="commonElements.html#cb58-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">min =</span> <span class="fl">0.01</span>,</span>
+<span id="cb58-14"><a href="commonElements.html#cb58-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">max =</span> <span class="fl">0.25</span>,</span>
+<span id="cb58-15"><a href="commonElements.html#cb58-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">value =</span> <span class="fl">0.1</span>,</span>
+<span id="cb58-16"><a href="commonElements.html#cb58-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">step =</span> <span class="fl">0.01</span>,</span>
+<span id="cb58-17"><a href="commonElements.html#cb58-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">animate =</span> <span class="fu">animationOptions</span>(<span class="at">interval =</span> <span class="dv">1000</span>, <span class="at">loop =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb58-18"><a href="commonElements.html#cb58-18" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb58-19"><a href="commonElements.html#cb58-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">br</span>(), <span class="co"># creating vertical space between sliders</span></span>
+<span id="cb58-20"><a href="commonElements.html#cb58-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sliderInput</span>(</span>
+<span id="cb58-21"><a href="commonElements.html#cb58-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">inputId =</span> <span class="st">&quot;mtcTests&quot;</span>,</span>
+<span id="cb58-22"><a href="commonElements.html#cb58-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">&quot;Set the number of hypothesis tests conducted:&quot;</span>,</span>
+<span id="cb58-23"><a href="commonElements.html#cb58-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">min =</span> <span class="dv">0</span>,</span>
+<span id="cb58-24"><a href="commonElements.html#cb58-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">max =</span> <span class="dv">500</span>,</span>
+<span id="cb58-25"><a href="commonElements.html#cb58-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">value =</span> <span class="dv">5</span>,</span>
+<span id="cb58-26"><a href="commonElements.html#cb58-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">step =</span> <span class="dv">5</span></span>
+<span id="cb58-27"><a href="commonElements.html#cb58-27" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb58-28"><a href="commonElements.html#cb58-28" aria-hidden="true" tabindex="-1"></a>      ) <span class="co"># this closes the wellPanel</span></span>
+<span id="cb58-29"><a href="commonElements.html#cb58-29" aria-hidden="true" tabindex="-1"></a>    ), <span class="co"># this closes the first column</span></span>
+<span id="cb58-30"><a href="commonElements.html#cb58-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb58-31"><a href="commonElements.html#cb58-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">8</span>,</span>
+<span id="cb58-32"><a href="commonElements.html#cb58-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>,</span>
+<span id="cb58-33"><a href="commonElements.html#cb58-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">&quot;Plot&quot;</span>),</span>
+<span id="cb58-34"><a href="commonElements.html#cb58-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plotOutput</span>(<span class="st">&quot;pplotMTC&quot;</span>),</span>
+<span id="cb58-35"><a href="commonElements.html#cb58-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsPopover</span>(</span>
+<span id="cb58-36"><a href="commonElements.html#cb58-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> <span class="st">&quot;pplotMTC&quot;</span>,</span>
+<span id="cb58-37"><a href="commonElements.html#cb58-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Investigate!&quot;</span>,</span>
+<span id="cb58-38"><a href="commonElements.html#cb58-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">content =</span> <span class="st">&quot;What happens to the number of statistically significant tests when you</span></span>
+<span id="cb58-39"><a href="commonElements.html#cb58-39" aria-hidden="true" tabindex="-1"></a><span class="st">      increase the number of tests?&quot;</span>,</span>
+<span id="cb58-40"><a href="commonElements.html#cb58-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">placement =</span> <span class="st">&quot;top&quot;</span></span>
+<span id="cb58-41"><a href="commonElements.html#cb58-41" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb58-42"><a href="commonElements.html#cb58-42" aria-hidden="true" tabindex="-1"></a>    ) <span class="co"># closes second column</span></span>
+<span id="cb58-43"><a href="commonElements.html#cb58-43" aria-hidden="true" tabindex="-1"></a>  ), <span class="co">#closes the fluid row</span></span></code></pre></div>
+<p>The above code highlights using the <code>wellPanel</code> to place all of the controls into a well panel as well as placing that well panel into the first column of a fluid row.</p>
+</div>
+<div id="collapsible" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Collapsible Boxes</h2>
+<p>One technique that we can make use of to cut down on the amount of visible text on a page is through the use of collapsible boxes. Collapsible boxes are preferred than other methods in that 1) the content remains on the page and thereby accessible, and 2) the user retains control for when to show/hide this information.</p>
+<p>Two great places to consider using collapsible boxes include the Prerequisites Tab and <strong>static</strong> Context Information across the top of an Activity Tab.</p>
+<p><em>Note: if the context information changes (e.g., can be switched due to user actions), then collapsible boxes should <strong>NOT</strong> be used. The context in these cases should <strong>always</strong> remain visible.</em></p>
+<div id="creating-collapsible-boxes" class="section level3" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Creating Collapsible Boxes</h3>
+<p>To create a Collapsible Box, you’ll need to work in th UI section of your code:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="commonElements.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb59-2"><a href="commonElements.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">box</span>(</span>
+<span id="cb59-3"><a href="commonElements.html#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Title for the Box&quot;</span>), <span class="co"># Use the strong tag</span></span>
+<span id="cb59-4"><a href="commonElements.html#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Give either the title of the review concept or &quot;Context&quot;</span></span>
+<span id="cb59-5"><a href="commonElements.html#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>, <span class="co"># Leave as primary</span></span>
+<span id="cb59-6"><a href="commonElements.html#cb59-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">collapsible =</span> <span class="cn">TRUE</span>, <span class="co"># This allows collapsing</span></span>
+<span id="cb59-7"><a href="commonElements.html#cb59-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">collapsed =</span> <span class="cn">FALSE</span>, <span class="co"># Initial value</span></span>
+<span id="cb59-8"><a href="commonElements.html#cb59-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If the only collapsible item, use FALSE</span></span>
+<span id="cb59-9"><a href="commonElements.html#cb59-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If there are multiple, the first one is FALSE, others can be set to TRUE.</span></span>
+<span id="cb59-10"><a href="commonElements.html#cb59-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>, <span class="co"># use this setting</span></span>
+<span id="cb59-11"><a href="commonElements.html#cb59-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;The text that will &#39;disappear&#39; goes here.&quot;</span></span>
+<span id="cb59-12"><a href="commonElements.html#cb59-12" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb59-13"><a href="commonElements.html#cb59-13" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<p>Given the static nature of the information in a collapsible box, you should not need to add anything to the server definition.</p>
+<p>The styling of Collapsible Boxes is controlled by the central CSS file. If you use the above code as your template, the coloring will automatically match your App’s assigned color theme.</p>
+</div>
+</div>
+<div id="buttons" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Buttons</h2>
+<p>One of the key ways in which users will interact with apps is by clicking on buttons. While there are two different functions for creating buttons, our primary choice is the <code>shinyBS::bsButton</code> function. The <code>shiny::actionButton</code> option will only be used in certain circumstances (e.g., Tic-Tac-Toe boards).</p>
+<div id="main-type-of-button" class="section level3" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Main Type of Button</h3>
+<p>Let’s talk about the particulars of the <code>bsButton</code> function which is the call you should use to create buttons.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="commonElements.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You must have library(shinyBS) loaded in your app</span></span>
+<span id="cb60-2"><a href="commonElements.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
+<span id="cb60-3"><a href="commonElements.html#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;meaningfulName&quot;</span>,</span>
+<span id="cb60-4"><a href="commonElements.html#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Words to display on button&quot;</span>,</span>
+<span id="cb60-5"><a href="commonElements.html#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>), <span class="co"># Optional</span></span>
+<span id="cb60-6"><a href="commonElements.html#cb60-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;default&quot;</span>,</span>
+<span id="cb60-7"><a href="commonElements.html#cb60-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb60-8"><a href="commonElements.html#cb60-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">disabled =</span> <span class="cn">FALSE</span></span>
+<span id="cb60-9"><a href="commonElements.html#cb60-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Of the listed arguments only three are absolutely required: <code>inputId</code> (you must give each button a unique, meaningful name so that you can reference the button in your server definition), <code>label</code> (you must put text on the button so your user knows what to click and what the button does), and <code>size</code> (we will use “large” in all but the rarest of cases).</p>
+</div>
+<div id="labels" class="section level3" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Labels</h3>
+<p>As we’ve just mentioned, every button must have something listed for the <code>label</code> argument. If you submit an app for review and your buttons have empty values for this argument (i.e., <code>label = ""</code>), your code will be rejected. Button labels must be text (you can’t rely on a picture/icon alone) to ensure that all users can use the button. This is a critical design and accessibility issue.</p>
+<p>Here are some guidelines for the text to use as your label:</p>
+<ul>
+<li>All buttons must have some text.</li>
+<li>Do not include extra spaces (e.g., between letters or words) or extraneous symbols</li>
+<li>Generally speaking, the text should be relatively brief and clear.
+<ul>
+<li>Don’t use “Go to the next page” when you could use “Next”</li>
+</ul></li>
+<li>The text should make sense with the action of the button; for example,
+<ul>
+<li>“Reset” if the button resets something (a game, a plot, inputs)</li>
+<li>“Submit” if the button triggers the app to grab and process input values</li>
+<li>“Make Graph” if button causes a graph to be generated</li>
+<li>“Show/Hide Graph” if a button makes a graph object appear/disappear</li>
+<li>“Next” if a button moves the user along some path.</li>
+</ul></li>
+<li>If the button references something like a particular tab (prerequisites, exploration, etc.), the text should reflect this.
+<ul>
+<li>“Explore!” for a button that takes a user to an Exploration tab.</li>
+<li>“Prerequisites” for a button that takes a user to a Prerequisites tab.</li>
+<li>“Challenge Yourself!” for a button takes a user to a Challenge tab.</li>
+<li>“Play!” for a button that takes a user to Game tab.</li>
+</ul></li>
+<li>If a button references an object like an activity packet or a download prompt the text should refer to that
+<ul>
+<li>“Activity Packet” for a button that would open up and/or download a packet for the user</li>
+<li>“Download Data” for a button that would download a data file.</li>
+</ul></li>
+<li>Clarity is essential. If there are multiple buttons on the page, make sure that you use clear text for what button does and/or references.</li>
+</ul>
+</div>
+<div id="icons" class="section level3" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Icons</h3>
+<p>One option you can include in your button is an icon. The icon will always appear to the left of your <code>label</code>. Keep in mind that not all buttons need an icon and you don’t want to over-rely on the icon to communicate what the button does to your user.</p>
+<p>If you do decide to use an icon, you will want to make sure that the icon is consistent and supportive of your button’s <code>label</code> and goal. That is to say, don’t use an eraser icon if the button’s job is automatically fill in a bunch of fields. Additionally, we have developed the following guidelines for using icons on buttons:</p>
+<ul>
+<li>Game buttons (e.g., “Submit”) generally do not have any icons.</li>
+<li>Direction Buttons (e.g., “Next” or “Previous”) may or may not have icons,
+<ul>
+<li>“Next” buttons can use <code>icon("forward")</code> call, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M500.5 231.4l-192-160C287.9 54.3 256 68.6 256 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2zm-256 0l-192-160C31.9 54.3 0 68.6 0 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2z"/></svg></li>
+<li>“Back” buttons can use <code>icon("backward")</code> call, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M11.5 280.6l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2zm256 0l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2z"/></svg></li>
+<li>You should not used text based “icons” such as “&lt;&lt;” or “&gt;&gt;” as part of the <code>label</code></li>
+</ul></li>
+<li>A “Prerequisites” button will use the <code>icon("book")</code>, <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:25px;width:21.88px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg></li>
+<li>Buttons that send users to other pages (except Prerequisites) will use <code>icon("bolt")</code> , <svg aria-hidden="true" role="img" viewBox="0 0 320 512" style="height:25px;width:15.62px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z"/></svg></li>
+<li>A reset button that clears just the current page should use <code>icon("eraser")</code>, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M497.941 273.941c18.745-18.745 18.745-49.137 0-67.882l-160-160c-18.745-18.745-49.136-18.746-67.883 0l-256 256c-18.745 18.745-18.745 49.137 0 67.882l96 96A48.004 48.004 0 0 0 144 480h356c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12H355.883l142.058-142.059zm-302.627-62.627l137.373 137.373L265.373 416H150.628l-80-80 124.686-124.686z"/></svg></li>
+<li>A button that will clear everything (e.g., Start Over) should use <code>icon("exclamation-triangle")</code>, <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:25px;width:28.12px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></li>
+<li>A button to save or store user values should use <code>icon("save")</code>, <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:25px;width:21.88px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"/></svg></li>
+<li>A download button will use <code>icon("cloud-download-alt")</code>, <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:25px;width:31.25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4zm-132.9 88.7L299.3 420.7c-6.2 6.2-16.4 6.2-22.6 0L171.3 315.3c-10.1-10.1-2.9-27.3 11.3-27.3H248V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v112h65.4c14.2 0 21.4 17.2 11.3 27.3z"/></svg></li>
+</ul>
+</div>
+<div id="style-color" class="section level3" number="10.4.4">
+<h3><span class="header-section-number">10.4.4</span> Style (Color)</h3>
+<p>The <code>style</code> argument helps determine the coloring that gets used with your button. To ensure that you buttons’ coloration works within the theme of your App, we’ve already set the colors through the central CSS file. Thus, the vast majority of the time, you may omit the <code>style</code> argument entirely OR if you want to write more complete code, use <code>style = "default"</code>.</p>
+<p>Now, there are some times when we will encourage you to use a different key word with the <code>style</code> argument. You’ll see these key words in several sections:</p>
+<ul>
+<li><code>warning</code>: Good for when you want the user to proceed with caution; for example a Reset page button.</li>
+<li><code>danger</code>: Good for when you want the user to think twice before clicking; for example, a Start over button.</li>
+<li><code>success</code>: Good for when you want to convey that the user can proceed safely; for example, a button that advances the user from an answer message to the next question in the game</li>
+<li><code>info</code>: Good for when you want to give some additional information; for example, a button that triggers game instructions popping up, a button that gives a hint, or a button that might filter a question pool.</li>
+</ul>
+</div>
+<div id="disabled" class="section level3" number="10.4.5">
+<h3><span class="header-section-number">10.4.5</span> Disabled</h3>
+<p>The <code>disabled</code> argument allows you to create a button that users can not click on (<code>disabled = TRUE</code>) until certain conditions are met. Check out the next section on how to change aspects of your buttons while the app is running.</p>
+</div>
+<div id="updating-buttons" class="section level3" number="10.4.6">
+<h3><span class="header-section-number">10.4.6</span> Updating Buttons</h3>
+<p>One of the things that you can do while the app is running, is to change aspects of buttons based upon certain user actions. This would include changing the label, the icon, the style, and even whether the button is disabled. To update a button you’ll need to use the <code>updateButton</code> function:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="commonElements.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In your Server Code,</span></span>
+<span id="cb61-2"><a href="commonElements.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Inside the handlerExpr of some observeEvent</span></span>
+<span id="cb61-3"><a href="commonElements.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">updateButton</span>(</span>
+<span id="cb61-4"><a href="commonElements.html#cb61-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">session =</span> session,</span>
+<span id="cb61-5"><a href="commonElements.html#cb61-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;buttonName&quot;</span>,</span>
+<span id="cb61-6"><a href="commonElements.html#cb61-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;newValue&quot;</span>,</span>
+<span id="cb61-7"><a href="commonElements.html#cb61-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;newIcon&quot;</span>),</span>
+<span id="cb61-8"><a href="commonElements.html#cb61-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;newStyle&quot;</span>,</span>
+<span id="cb61-9"><a href="commonElements.html#cb61-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">disabled =</span> <span class="cn">TRUE</span> <span class="co"># or FALSE</span></span>
+<span id="cb61-10"><a href="commonElements.html#cb61-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The first two arguments (<code>session</code> and <code>inputId</code>) are required. However, the rest are the ones that you might want to change. IMPORTANT: only list the arguments you actually want to change here. Thus, if you only wanted to disable a button, you would ONLY list <code>session</code>, <code>inputId</code>, and <code>disabled = TRUE</code>. If you were to list any of the others, you would also change them.</p>
+<p>The <code>updateButton</code> function is especially important if you are using the <code>disabeled</code> argument of <code>bsButton</code>. You need to allow your users to click on buttons, when conditions are met. That is to say, if you have a button that is permanently disabled, then you should get rid of the button.</p>
+</div>
+<div id="other-issues" class="section level3" number="10.4.7">
+<h3><span class="header-section-number">10.4.7</span> Other Issues</h3>
+<p>There are a few other issues we wish to bring up in relation to buttons.</p>
+<div id="shape" class="section level4" number="10.4.7.1">
+<h4><span class="header-section-number">10.4.7.1</span> Shape</h4>
+<p>All of our buttons should have a rectangluar shape with sharp or barely rounded corners. (Tic-Tac-Toe buttons will appear square.) If you come across any buttons that are a different shape (circular, elliptical) flag the app as needing fixing. If you come across any buttons that are rectangular but have heavily rounded corners, also flag the app.</p>
+<p>We do not allow for buttons to be any other shape.</p>
+</div>
+<div id="animation" class="section level4" number="10.4.7.2">
+<h4><span class="header-section-number">10.4.7.2</span> Animation</h4>
+<p>Some of the older apps will “animate” the buttons. That is to say, they will look rectangular until you move your cursor/mouse over the button or click on them. At which point in time their shape and/or color will change. These apps should be flagged for fixing.</p>
+<p>Any you put your cursor/mouse over a button, you should see only the following:
++ a slight thicking of the outer border,
++ a slight darkening of the button,
++ for a disabled button, the background should flash white</p>
+<p>The three allowed are built-in behaviors of the <code>bsButton</code>. The other animations, especially the shape changing, are custom coding that we would like to remove (typically through inline CSS).</p>
+</div>
+<div id="linking-out" class="section level4" number="10.4.7.3">
+<h4><span class="header-section-number">10.4.7.3</span> Linking Out</h4>
+<p>Occasionally, you might need a button to do something that would be external to the app. For example, download an activity file that is not part of the app or open a new browser tab to a particular place. In these cases, you won’t code any actions in your server definition for button. Rather, you’ll make use the <code>actionbutton</code> instead of the <code>bsButton</code>.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="commonElements.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb62-2"><a href="commonElements.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">actionButton</span>(</span>
+<span id="cb62-3"><a href="commonElements.html#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;ap1&quot;</span>,</span>
+<span id="cb62-4"><a href="commonElements.html#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Activity Packet&quot;</span>,</span>
+<span id="cb62-5"><a href="commonElements.html#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;cloud-download&quot;</span>),</span>
+<span id="cb62-6"><a href="commonElements.html#cb62-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">onclick =</span> <span class="st">&quot;window.open(&#39;../../ActivityPackets/Caveats/&#39;)&quot;</span></span>
+<span id="cb62-7"><a href="commonElements.html#cb62-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Notice that the <code>onclick</code> argument is what creates the action for button and references a relative path to a particular file. In this case a R Markdown file that lives the in directory called. (The actual file name isn’t listed to ensure that the processed/rendered version of the RMD is what the users see.)</p>
+<p>These cases are extremely rare. Consult with Neil and Bob before you use this type of method.</p>
+</div>
+</div>
+<div id="listening-to-buttons" class="section level3" number="10.4.8">
+<h3><span class="header-section-number">10.4.8</span> Listening to Buttons</h3>
+<p>Creating buttons in your UI is one thing; setting up portions of your server defintion to listen to buttons is another thing. Whether you’re using an <code>eventReactive</code> or <code>observeEvent</code>, you can use any button as the value of the <code>eventExpr</code>.</p>
+<p>All buttons are part of the automatically generated <code>input</code> object. To reference a button you’ll need to use the character string that you set as the button’s <code>inputId</code> and call the <code>input</code> object. For example, if we had a button with <code>inputId = "submitGuess"</code>, we would set <code>eventExpr = input$submitGuess</code> in an <code>observeEvent</code> call. This would allow us to use the user’s click on the submit button to carry out actions such as grading/scoring and displaying feedback.</p>
+</div>
+</div>
+<div id="inputs" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Inputs</h2>
+<p>In addition to buttons, users will often interact with your App through the use of inputs. There are a variety of different kinds of inputs that you can make use of; some will be part of the base Shiny packages, others will come from some additional packages.</p>
+<p>Generally speaking, use the simpliest style of input as you can as that will be easier for your users.</p>
+<p>No matter what type of input you’re using, there are two absolutely required arguments you must include with non-empty, non-null values: <code>inputId</code> and <code>label</code>. As we’ve explained, these two arguments are vital to create the input field, reference their values, and make the input accessible.</p>
+<div id="types-of-inputs" class="section level3" number="10.5.1">
+<h3><span class="header-section-number">10.5.1</span> Types of Inputs</h3>
+<p>Here is a listing of the most common inputs in BOAST.</p>
+<p>Basic Inputs, part of the <code>shiny</code> package:</p>
+<ul>
+<li><code>checkboxInput</code>: create a single checkbox</li>
+<li><code>checkboxGroupInput</code>: create a set of related checkboxes (users may select one or more)</li>
+<li><code>radioButtons</code>: create a set of radio buttons where users may only select ONE of the options at a time</li>
+<li><code>sliderInput</code>: create a numeric slider bar (can have one or two knobs)</li>
+<li><code>numericInput</code>: create a field where users can enter a number</li>
+<li><code>textInput</code>: create a field where users enter text</li>
+<li><code>selectInput</code>: create a dropdown menu where users select one (or more) options</li>
+</ul>
+<p>Inputs from the <code>shinyWidgets</code> package:</p>
+<ul>
+<li><code>switchInput</code>: create a toggle/switch between two options</li>
+<li><code>checkboxGroupButtons</code>: create a set of buttons that act like a set of checkboxes.</li>
+<li><code>sliderTextInput</code>: creates a slider with text labels (use sparingly and use this instead of <code>sliderInput</code> with extra CSS)</li>
+</ul>
+<p>Input from the <code>shinyMatrix</code> package:</p>
+<ul>
+<li><code>matrixInput</code>: creates a matrix of either character or numeric inputs</li>
+</ul>
+<p>Each of these inputs have different arguments that you will need to attend to as you code your App.</p>
+</div>
+<div id="animation-of-sliders" class="section level3" number="10.5.2">
+<h3><span class="header-section-number">10.5.2</span> Animation of Sliders</h3>
+<p>One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable.</p>
+<p>To enable this, you’ll need to make use of the <code>animate</code> argument:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="commonElements.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb63-2"><a href="commonElements.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(</span>
+<span id="cb63-3"><a href="commonElements.html#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
+<span id="cb63-4"><a href="commonElements.html#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">alpha_{UT}</span><span class="sc">\\</span><span class="st">):&quot;</span>,</span>
+<span id="cb63-5"><a href="commonElements.html#cb63-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">min =</span> <span class="fl">0.01</span>,</span>
+<span id="cb63-6"><a href="commonElements.html#cb63-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">max =</span> <span class="fl">0.25</span>,</span>
+<span id="cb63-7"><a href="commonElements.html#cb63-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fl">0.1</span>,</span>
+<span id="cb63-8"><a href="commonElements.html#cb63-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">step =</span> <span class="fl">0.01</span>,</span>
+<span id="cb63-9"><a href="commonElements.html#cb63-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">animate =</span> <span class="fu">animationOptions</span>(</span>
+<span id="cb63-10"><a href="commonElements.html#cb63-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval =</span> <span class="dv">1000</span>, <span class="at">loop =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb63-11"><a href="commonElements.html#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>You can set <code>animate=TRUE</code>, <code>animate=FALSE</code> or invoke the <code>animationOptions</code> function as we’ve done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (<code>interval</code>, in milliseconds) and should the animation start over once the slider reaches the maximum (<code>loop</code>).</p>
+<p>The <code>interval</code> is going to the most challenging value to figure out. This timer <em><strong>ignores</strong></em> everything else; that is, it doesn’t wait to see whether your plot has updated. Remember, the more complicated the process that generates your plot is, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While <code>renderCachePlot</code> can help speed things up, keep in mind that you still might need to play around with the <code>interval</code> value to ensure smooth functionality.</p>
+<p>Make sure when you’re testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.</p>
+<p>The styling of the play/pause button will be controlled by the BOAST CSS file.</p>
+</div>
+<div id="ordering-inputs" class="section level3" number="10.5.3">
+<h3><span class="header-section-number">10.5.3</span> Ordering Inputs</h3>
+<p>One of the most powerful aspects of Shiny apps is that the user interacts with them. Thus, we need to consider not only the ways in which user interact (e.g., buttons, sliders, text entry, etc.) but also the order in which you want the user to manipulate the inputs. Coming up with a single declaration for how to order inputs in all cases is not necessarily feasible. However, we can set up general guidelines for how to make decisions on ordering your inputs.</p>
+<p>Please use the following guidelines for determining the order of inputs in the User Interface (UI):</p>
+<ol style="list-style-type: decimal">
+<li>In general, if you want your user to do things in certain order, make your inputs appear in that order. For example, If you want them to pick a data set, then an unusualness threshold/significance level, what attribute to test, and then set a parameter value, then your inputs should appear in that order.</li>
+<li>Make use of how we read the English language (i.e., Top-to-Bottom and Left-to-Right) to provide an implicit ordering for your user.</li>
+<li>If a user needs to carry out steps in particular sequence for your App to run properly, then place your inputs inside of an Ordered List environment with explicit text on what they should do. For example,
+<ol style="list-style-type: decimal">
+<li>Choose your data set: [dropdown]<br />
+</li>
+<li>Set your unusualness threshold/significance level<br />
+[slider]<br />
+</li>
+<li>Which attribute do you want to test: [dropdown]<br />
+</li>
+<li>What parameter value do you want to use: [numeric input]</li>
+</ol></li>
+<li>If an input is going to reset other inputs you should either:
+<ol style="list-style-type: lower-alpha">
+<li>Warn the user before hand<br />
+</li>
+<li>Move the input to the top of the list<br />
+</li>
+<li>Program the input to not reset other inputs, or<br />
+</li>
+<li>Some combination of the above<br />
+</li>
+</ol></li>
+<li>If the inputs are not dynamically linked to the output (e.g., plots automatically update with a change in the input’s value), then you should include a button that says “Make Plot” at the end of the inputs.</li>
+</ol>
+</div>
+</div>
+<div id="correctincorrect-marks" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Correct/Incorrect Marks</h2>
+<p>In games, you can give the user a visual cue as to whether they are correct or incorrect through the use of three images:</p>
+<div class="figure" style="text-align: center"><span id="fig:marksb"></span>
+<img src="images/scoringMarks/right-07.png" alt="Correct, Partially Correct, and Incorrect Marks" width="110" /><img src="images/scoringMarks/part-right-08.png" alt="Correct, Partially Correct, and Incorrect Marks" width="110" /><img src="images/scoringMarks/wrong-09.png" alt="Correct, Partially Correct, and Incorrect Marks" width="110" />
+<p class="caption">
+Figure 10.1: Correct, Partially Correct, and Incorrect Marks
+</p>
+</div>
+<p>To display these marks you’ll use the <code>renderIcon</code> funtion from the <code>boastUtils</code> package. There are two key arguments to the <code>renderIcon</code> fuction:</p>
+<ul>
+<li><code>icon</code>: you’ll need to use either <code>"correct"</code>, <code>"partial"</code>, or <code>"incorrect"</code></li>
+<li><code>width</code>: this will be the number of pixels you want the icon to be. The default is 36, which is good in most cases.</li>
+</ul>
+<p>To turn off/hide these marks you can use <code>renderIcon()</code> without any arguments.</p>
+<p>It is important that you only access these marks through <code>renderIcon</code> as we’ve pre-programmed consistent and appropriate alt text for these marks.</p>
+<p>Their placement in your App will depend upon what makes the most sense.</p>
+</div>
+<div id="alerts-and-messages" class="section level2" number="10.7">
+<h2><span class="header-section-number">10.7</span> Alerts and Messages</h2>
+<p>A universal rule to keep in mind when building Apps is that users will do things that you did not intend for them to do. This can cause your App to crash. While we can’t anticipate every possible way a user might inadvertently break your App, we can program ways to handle some of those actions. This is where sending alerts comes into play.</p>
+<p>The most common type of message revolves around the inclusion of an Information button (the <svg aria-hidden="true" role="img" viewBox="0 0 192 512" style="height:25px;width:9.38px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"/></svg> button in the Dashboard Header). This Information button provides a quick reminder of general instructions for the app.</p>
+<p>For both alerts and messages, we will turn to the <code>sendSweetAlert</code> function from the <code>shinyWidgets</code> package.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="commonElements.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In your server definition</span></span>
+<span id="cb64-2"><a href="commonElements.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
+<span id="cb64-3"><a href="commonElements.html#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>exampleTrigger,</span>
+<span id="cb64-4"><a href="commonElements.html#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
+<span id="cb64-5"><a href="commonElements.html#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sendSweetAlert</span>(</span>
+<span id="cb64-6"><a href="commonElements.html#cb64-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">session =</span> session,</span>
+<span id="cb64-7"><a href="commonElements.html#cb64-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;info&quot;</span>,</span>
+<span id="cb64-8"><a href="commonElements.html#cb64-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Title of Message&quot;</span>,</span>
+<span id="cb64-9"><a href="commonElements.html#cb64-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> <span class="st">&quot;message to user&quot;</span></span>
+<span id="cb64-10"><a href="commonElements.html#cb64-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb64-11"><a href="commonElements.html#cb64-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb64-12"><a href="commonElements.html#cb64-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Notice that we need to place the <code>sendSweetAlert</code> function inside of an <code>observeEvent</code>. The four arguments we’ve listed are the four basic aspects you must program any time you want to send an alert or a message to your users.</p>
+<p>The <code>session = session</code> argument does not need to change and ensures that the correct user gets the message.</p>
+<div id="alert-types" class="section level3" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> Alert Types</h3>
+<p>The <code>type</code> argument acts much like the <code>style</code> argument for <code>bsButtons</code>. You may use any one of the following types:</p>
+<ul>
+<li><code>info</code>: This is the default type and is used for passing a message to the user.</li>
+<li><code>success</code>: This is when your message is related to the user reaching some achievement. For example, they have logged in, they have won a game, etc. This is NOT appropriate for getting individual questions correct.</li>
+<li><code>warning</code>: This is for when the user might have done something that could create a problem later on. Their action isn’t necessarily a problem now, but could become one in the future.</li>
+<li><code>error</code>: This is for when the user has done something that will result in an error or App crash unless they take some other action.</li>
+</ul>
+<p>As you build error checking into your app, using <code>error</code> and <code>warning</code> for alert types will be important.</p>
+</div>
+<div id="alert-title-and-text" class="section level3" number="10.7.2">
+<h3><span class="header-section-number">10.7.2</span> Alert Title and Text</h3>
+<p>All alerts and messages should include a short <code>title</code> that be rendered with the actual message. (Any formatting of the title will automatically be taken care of.)</p>
+<p>These titles should not be overly long or complicated. For <code>info</code> and <code>success</code> types of alerts using <code>"Information"</code> and <code>"Success!"</code> are often sufficient.</p>
+<p>While you could do something similar for both <code>warning</code> and <code>error</code> types, you might want to consider including a bit more information. For example, rather than using <code>title = "Error!"</code>, you might want to use <code>title = "Error: Invalid Sample Size"</code> instead. Notice that the title helps direct the user to what they need to fix.</p>
+<p>You can’t put everything into the alert’s <code>title</code> argument. This is where the <code>text</code> argument comes into play. Give more details <strong>AND</strong> ways in which the user can fix the error with the <code>text</code> value.</p>
+<p>Your message can be rather simple text (the previous example), or you can use HTML tags to make the message more structured:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="commonElements.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
+<span id="cb65-2"><a href="commonElements.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>info,</span>
+<span id="cb65-3"><a href="commonElements.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
+<span id="cb65-4"><a href="commonElements.html#cb65-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sendSweetAlert</span>(</span>
+<span id="cb65-5"><a href="commonElements.html#cb65-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">session =</span> session,</span>
+<span id="cb65-6"><a href="commonElements.html#cb65-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;info&quot;</span>,</span>
+<span id="cb65-7"><a href="commonElements.html#cb65-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Information&quot;</span>,</span>
+<span id="cb65-8"><a href="commonElements.html#cb65-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> tags<span class="sc">$</span><span class="fu">div</span>(</span>
+<span id="cb65-9"><a href="commonElements.html#cb65-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Use the app in two ways:&quot;</span>,</span>
+<span id="cb65-10"><a href="commonElements.html#cb65-10" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">ol</span>(</span>
+<span id="cb65-11"><a href="commonElements.html#cb65-11" aria-hidden="true" tabindex="-1"></a>          tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb65-12"><a href="commonElements.html#cb65-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Click on the &quot;</span>, tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Explore&quot;</span>), <span class="st">&quot; page to explore how to</span></span>
+<span id="cb65-13"><a href="commonElements.html#cb65-13" aria-hidden="true" tabindex="-1"></a><span class="st">              read Hasse Diagrams and how to use them to figure out the proper</span></span>
+<span id="cb65-14"><a href="commonElements.html#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="st">              denominator to use to test a give node/term.&quot;</span></span>
+<span id="cb65-15"><a href="commonElements.html#cb65-15" aria-hidden="true" tabindex="-1"></a>          ),</span>
+<span id="cb65-16"><a href="commonElements.html#cb65-16" aria-hidden="true" tabindex="-1"></a>          tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb65-17"><a href="commonElements.html#cb65-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Click on the &quot;</span>, tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Diagram Wizard&quot;</span>), <span class="st">&quot; page to use the</span></span>
+<span id="cb65-18"><a href="commonElements.html#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="st">              app to build your own Hasse diagram. The wizard will walk you through</span></span>
+<span id="cb65-19"><a href="commonElements.html#cb65-19" aria-hidden="true" tabindex="-1"></a><span class="st">              the necessary steps and then produce a diagram you can save as well</span></span>
+<span id="cb65-20"><a href="commonElements.html#cb65-20" aria-hidden="true" tabindex="-1"></a><span class="st">              as the R code to re-create the diagram.&quot;</span></span>
+<span id="cb65-21"><a href="commonElements.html#cb65-21" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb65-22"><a href="commonElements.html#cb65-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb65-23"><a href="commonElements.html#cb65-23" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb65-24"><a href="commonElements.html#cb65-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">html =</span> <span class="cn">TRUE</span> <span class="co"># you must include this new argument</span></span>
+<span id="cb65-25"><a href="commonElements.html#cb65-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb65-26"><a href="commonElements.html#cb65-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb65-27"><a href="commonElements.html#cb65-27" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Notice that we had to include the <code>html = TRUE</code> argument to <code>sendSweetAlert</code>. You will need to do this any time you include HTML tags in the <code>text</code> argument.</p>
+<div class="figure" style="text-align: center"><span id="fig:sweetAlert3"></span>
+<img src="images/sweetAlert1.png" alt="Example of HTML Tagged Message" width="436" />
+<p class="caption">
+Figure 10.2: Example of HTML Tagged Message
+</p>
+</div>
+</div>
+</div>
+<div id="popovers-and-tooltips" class="section level2" number="10.8">
+<h2><span class="header-section-number">10.8</span> Popovers and Tooltips</h2>
+<p>Have you ever been on a website and as you move your mouse over different elements on the page, a bubble of text appears? What you’ve experienced is an example of a Popover or Tooltip. While these can be useful tools, more often than not, they are abused as they lend themselves to the “shiny” problem.</p>
+<p>For information about popovers, rollovers, hover text, or tool tips, please see <a href="wording.html#popovers">Section <a href="wording.html#popovers">14.2</a></a>.</p>
+</div>
+<div id="progress-bars" class="section level2" number="10.9">
+<h2><span class="header-section-number">10.9</span> Progress Bars</h2>
+<p>Consider adding a loading bar to show the process for intense computations; this will help the user understand that your App is processing and not frozen/broken.</p>
+<p>We will there are a couple of different methods out there for adding a progress bar.</p>
+<ul>
+<li>Use the <code>shinyWidgets</code> with their <code>progressBar</code>, <code>progressSweetAlert</code>, and <code>updateProgressBar</code> functions.</li>
+<li>Use the <code>shinycssloaders</code> package’s <code>withSpinner</code> function.</li>
+</ul>
+<p>At this point in time we do not have a strong preference on which method to use. Make sure you discuss your needs with others and get plenty of feedback.</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="uiStructure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="designStyle.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["BOAST_style_guide.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
