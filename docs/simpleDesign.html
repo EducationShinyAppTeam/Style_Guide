@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-05-15" />
+<meta name="date" content="2021-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,6 +268,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
+<li class="chapter" data-level="6.7" data-path="specificCoding.html"><a href="specificCoding.html#connecting-the-user-interface-and-the-server"><i class="fa fa-check"></i><b>6.7</b> Connecting the User Interface and the Server</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="specificCoding.html"><a href="specificCoding.html#table-of-render-and-output-companions"><i class="fa fa-check"></i><b>6.7.1</b> Table of <code>render*</code> and <code>*Output</code> Companions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
 <ul>
@@ -424,15 +428,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.4</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.4</b> Histograms</a></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.5</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.4.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.4.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.5.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.5.2</b> Additional Table Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.5</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.6</b> Alt Text, Again</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.5.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.5.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.6.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.6.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -522,13 +527,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
 <p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
 <p>For example, this code:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="simpleDesign.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
-<span id="cb66-2"><a href="simpleDesign.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
-<span id="cb66-3"><a href="simpleDesign.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;t&quot;</span>),</span>
-<span id="cb66-4"><a href="simpleDesign.html#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
-<span id="cb66-5"><a href="simpleDesign.html#cb66-5" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
-<span id="cb66-6"><a href="simpleDesign.html#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
-<span id="cb66-7"><a href="simpleDesign.html#cb66-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="simpleDesign.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb67-2"><a href="simpleDesign.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
+<span id="cb67-3"><a href="simpleDesign.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;t&quot;</span>),</span>
+<span id="cb67-4"><a href="simpleDesign.html#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
+<span id="cb67-5"><a href="simpleDesign.html#cb67-5" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
+<span id="cb67-6"><a href="simpleDesign.html#cb67-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
+<span id="cb67-7"><a href="simpleDesign.html#cb67-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Becomes:</p>
 <blockquote>
 <p>When dealing with the <em>t</em>-distribution, we only have one parameter, the <strong>degrees of freedom</strong> that we need to input.</p>
@@ -561,15 +566,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">11.3.7</span> Text in <code>R</code> Plots</h3>
 <p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the <code>grid</code> framework like <code>lattice</code>) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
 <p>Here is an example for how to do this:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="simpleDesign.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a ggplot2 object</span></span>
-<span id="cb67-2"><a href="simpleDesign.html#cb67-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>grp)) </span>
-<span id="cb67-3"><a href="simpleDesign.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your layers, for example</span></span>
-<span id="cb67-4"><a href="simpleDesign.html#cb67-4" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_point</span>()</span>
-<span id="cb67-5"><a href="simpleDesign.html#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use theme to control text size</span></span>
-<span id="cb67-6"><a href="simpleDesign.html#cb67-6" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
-<span id="cb67-7"><a href="simpleDesign.html#cb67-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
-<span id="cb67-8"><a href="simpleDesign.html#cb67-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>)</span>
-<span id="cb67-9"><a href="simpleDesign.html#cb67-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="simpleDesign.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a ggplot2 object</span></span>
+<span id="cb68-2"><a href="simpleDesign.html#cb68-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>grp)) </span>
+<span id="cb68-3"><a href="simpleDesign.html#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your layers, for example</span></span>
+<span id="cb68-4"><a href="simpleDesign.html#cb68-4" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_point</span>()</span>
+<span id="cb68-5"><a href="simpleDesign.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use theme to control text size</span></span>
+<span id="cb68-6"><a href="simpleDesign.html#cb68-6" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb68-7"><a href="simpleDesign.html#cb68-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb68-8"><a href="simpleDesign.html#cb68-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>)</span>
+<span id="cb68-9"><a href="simpleDesign.html#cb68-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
 <p><strong>Note:</strong> The text in your plot might not behave well for dynamic re-sizing on different mobile devices.</p>
 </div>

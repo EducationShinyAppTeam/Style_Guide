@@ -146,6 +146,8 @@ eventreactive
 observeevent
 ignorenull-and-ignoreinit
 validation
+connecting-the-user-interface-and-the-server
+table-of-render-and-output-companions
 htmlCSS
 html
 paragraphs
@@ -277,6 +279,7 @@ graphics
 graphLab
 axes-and-scales
 colorPlots
+histograms
 tables
 displaying-data-tables
 additional-table-examples

@@ -8,11 +8,11 @@ As mentioned in the section on the [Template App](#appR), the format of your app
 
 1. Load packages through `library` calls
 2. Define any global constants and functions; load data sets. (If you have written any functions into  other R files, use `source` calls here to load them.)
-3. User Interface definition
+3. User Interface (UI) definition
 4. Server definition
 5. `boastApp` call
 
-The User Interface will always be of the format
+The User Interface (UI) will always be of the format
 ```{r userInterface1, echo=TRUE, eval=FALSE}
 # Define the UI ----
 ui <- list(
@@ -241,4 +241,116 @@ output$scatterPlot <- renderPlot(
 There is one named argument for `validate` and that is `errorClass`. This would be where you put extra text to fully specify which CSS class this error message should belong to. For more details on this, see the section on [CSS](#css). In most cases, you can omit this argument thereby just using the default.
 
 Within the `need` function, you must specify two arguments: `expr` which is where you will define each validation check and `message` which is the text you want displayed for the user. For the `message` you should put something that will help the user fix the error.
+
+## Connecting the User Interface and the Server
+
+If you go back and look at some of the examples in the preceding sections you'll notice a reoccurring pattern when referencing outputs (e.g., `output$scatterPlot`, `output$dataPlot`, `output$dataTable`):
+
++ They all start with `output$` and immediately followed by a (semi-)descriptive name,
++ They all have the assignment operator, `<-`, and
++ They all are followed by a function whose name begins with `render*`
+
+While accessing inputs from the UI is straightforward when you're in a reactive environment (e.g., `input$nameOfInput`), working the other direction (i.e., accessing the outputs) takes a bit more work. This is where the `render*` functions come into play. These functions will take whatever you place in them and prepare those objects so that they be placed into your UI.
+
+In your UI you'll need to create a placeholder object in your code. For example, you'll need to have a line of code such as `plotOutput("histogram")`. This creates the space in your app for the `render*` functions to send the output. For each `render*` function there is a companion `*Output` function. Here is an example for displaying a histogram:
+
+```{r renderExample1, echo=TRUE, eval=FALSE}
+# UI Portion
+ui <- list(
+  dashboardPage(
+    # code omitted
+    dashboardBody(
+      tabItems(
+        tabItem(
+          tabName = "example",
+          p("Here's an example of histogram"),
+          selectInput(
+            inputId = "variable",
+            label = "Select variable to plot",
+            choices = c(
+              "Miles/Gallon" = "mpg",
+              "Quarter Mile Time" = "qsec",
+              "Displacement" = "disp",
+              "Weight" = "wt"
+            )
+          ),
+          plotOutput("histogram")
+        )
+      )
+    )
+  )
+)
+
+# Server Portion
+server <- function(input, output, session) {
+  observeEvent(
+    eventExpr = input$variable,
+    handlerExpr = {
+      niceLabel <- switch(
+        EXPR = input$variable,
+        "mpg" = "Miles/Gallon",
+        "qsec" = "Quarter Mile Time (seconds)",
+        "disp" = "Displacement (cubic inches)",
+        "wt" = "Vehicle Weight (tons)"
+      )
+      output$histogram <- renderPlot(
+        expr = {
+          ggplot(
+            data = mtcars,
+            mapping = aes_string(x = input$variable)
+          ) +
+            geom_histogram(
+              binwidth = function(x){ifelse(IQR(x) == 0, 0.1, 2 * IQR(x) / (length(x)^(1/3)))},
+              color = "black",
+              fill = "blue"
+            ) +
+            theme_bw() +
+            xlab(niceLabel) +
+            scale_y_continuous(
+              expand = expansion(mult = 0, add = c(0,1))
+            ) +
+            theme(
+              text = element_text(size = 18)
+            )
+        },
+        alt = paste("Histogram of", niceLabel)
+      )
+    }
+  )
+}
+
+```
+
+There are a few things to notice in this code example:
+
++ The `selectInput` call makes use of "Named" Values which follow the pattern `"Text User Sees" = "textServerSees"`
+    - This is useful so you can make human friendly display text but can still use the computer set names without having to rename/recode options elsewhere
++ We needed to include `plotOutput` in the UI so that R/Shiny knows where to send the histogram
++ We're using an `observeEvent` so that the plot automatically updates when the user changes `input$variable` (i.e., the `selectInput`)
++ There are TWO components `handlerExpr`:
+    - The `niceLabel` object uses `switch` to prepare a human friendly label for our plot
+    - We're using `renderPlot` to send the plot to the UI
++ Within the `renderPlot` we have another two __REQUIRED__ elements:
+    - The `expr` is where you'll write the code to make the histogram
+    - The `alt` provides alt text for your plot.
+    - Not all `render*` functions will have the `alt` argument; `renderPlot` does and you are required to fill this argument in with meaningful text; see [Section \@ref(altText2)](#altText2) for more information.
+
+(You might have also noticed some of the coding that is part of the `ggplot` calls such as the `theme_bw` and `scale_y_continuous`. Check out [Chapter \@ref(graphics)](#graphics) for more information.)
+
+### Table of `render*` and `*Output` Companions
+
+The following table contains the main pairings of functions that you'll need to use, from most to least common:
+
+| Type of Object | In the UI | In the Server |
+|:---------------|:----------:|:------------:|
+| Plots | `plotOutput` <br /> *alt required | `renderPlot` |
+| Tables <br /> Requires the `DT` package| `DT::dataTableOutput` | `DT::renderDataTable` |
+| Grading Icons <br /> Requires the `boastUtils` package | `uiOutput` | `boastUtils::renderIcon`|
+| User Interface Elements | `uiOutput` | `renderUI` |
+| Text | `textOutput` | `renderText` |
+| Raw Output | `verbatimTextOutput` | `renderPrint` |
+
+There is some flexibility between the last three items that will depend upon what exactly you're trying to do. We'll handle those on a case-by-case basis. 
+
+We do want to note here that sometimes you will see `htmlOutput` instead of `uiOutput`. We would like to use `uiOutput` as your primary choice.
 

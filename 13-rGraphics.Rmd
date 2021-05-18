@@ -114,6 +114,30 @@ If you have more groups than eight/nine colors listed in the two palettes, consi
 
 With an eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
 
+## Histograms
+
+When dealing with histograms, especially when using `ggplot`, we need to think about what to use as the width of the bins (or alternatively, the number of bins). The `ggplot2` approach has a default of 30 bins but is also complains when you use this setting:
+
+<div style = "color: red;">
+>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+</div>
+
+To avoid this message from getting placed into your log as well as getting displayed to your users, you can either find an optimal number of bins (or bin width) OR you can invoke the Freedman-Diaconis Rule to set the value of `binwidth`:
+
+```{r fdRule, echo=TRUE, eval=FALSE}
+ggplot(
+  data = data,
+  mapping = aes(x = x)
+) +
+  geom_histogram(
+    binwidth = function(x){ifelse(IQR(x) == 0, 0.1, 2 * IQR(x) / (length(x)^(1/3)))}
+  )
+
+```
+
+
+
 ## Tables {#tables}
 
 Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn't conducive to helping a person understand what's going on, neither is a wall of data values. Thus, we need to be extreme judicious (picky) about incorporating data tables into any of our apps.

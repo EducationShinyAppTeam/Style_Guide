@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-05-15" />
+<meta name="date" content="2021-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,6 +268,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
+<li class="chapter" data-level="6.7" data-path="specificCoding.html"><a href="specificCoding.html#connecting-the-user-interface-and-the-server"><i class="fa fa-check"></i><b>6.7</b> Connecting the User Interface and the Server</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="specificCoding.html"><a href="specificCoding.html#table-of-render-and-output-companions"><i class="fa fa-check"></i><b>6.7.1</b> Table of <code>render*</code> and <code>*Output</code> Companions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
 <ul>
@@ -424,15 +428,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.4</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.4</b> Histograms</a></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.5</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.4.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.4.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.5.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.5.2</b> Additional Table Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.5</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.6</b> Alt Text, Again</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.5.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.5.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.6.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.6.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -520,26 +525,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.3</span> Metadata</h2>
 <p>As of boastUtils <code>v0.1.10</code>, your App will need the following metadata in a file named <a href="https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION">DESCRIPTION</a> (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased). See also our section on the <a href="template.html#description">DESCRIPTION</a> file in our chapter on the <a href="template.html#template">App Template</a></p>
 <p><strong>DESCRIPTION</strong></p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="additionalCoding.html#cb41-1" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> Sample App <span class="sc">-</span> A Lengthy Title</span>
-<span id="cb41-2"><a href="additionalCoding.html#cb41-2" aria-hidden="true" tabindex="-1"></a>ShortName<span class="sc">:</span> Sample App</span>
-<span id="cb41-3"><a href="additionalCoding.html#cb41-3" aria-hidden="true" tabindex="-1"></a>Date<span class="sc">:</span> <span class="dv">2021-05-13</span></span>
-<span id="cb41-4"><a href="additionalCoding.html#cb41-4" aria-hidden="true" tabindex="-1"></a>Lifecycle<span class="sc">:</span> experimental</span>
-<span id="cb41-5"><a href="additionalCoding.html#cb41-5" aria-hidden="true" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> <span class="fu">c</span>(</span>
-<span id="cb41-6"><a href="additionalCoding.html#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;Neil&quot;</span>, <span class="at">family =</span> <span class="st">&quot;Hatfield&quot;</span>, <span class="at">email =</span> <span class="st">&quot;neil.hatfield@psu.edu&quot;</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>)),</span>
-<span id="cb41-7"><a href="additionalCoding.html#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;Robert&quot;</span>, <span class="at">family =</span> <span class="st">&quot;Carey&quot;</span>, <span class="at">email =</span> <span class="st">&quot;rpc5102@psu.edu&quot;</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>))</span>
-<span id="cb41-8"><a href="additionalCoding.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb41-9"><a href="additionalCoding.html#cb41-9" aria-hidden="true" tabindex="-1"></a>Chapter<span class="sc">:</span> Sample Chapter</span>
-<span id="cb41-10"><a href="additionalCoding.html#cb41-10" aria-hidden="true" tabindex="-1"></a>Description<span class="sc">:</span> This app is focused on the common types of xyz.</span>
-<span id="cb41-11"><a href="additionalCoding.html#cb41-11" aria-hidden="true" tabindex="-1"></a>LearningObjectives<span class="sc">:</span> <span class="fu">c</span>(</span>
-<span id="cb41-12"><a href="additionalCoding.html#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The student will learn to understand Concept A in way z.&quot;</span>,</span>
-<span id="cb41-13"><a href="additionalCoding.html#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The student will learn to understand Concept B as description y.&quot;</span></span>
-<span id="cb41-14"><a href="additionalCoding.html#cb41-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb41-15"><a href="additionalCoding.html#cb41-15" aria-hidden="true" tabindex="-1"></a>DisplayMode<span class="sc">:</span> Normal</span>
-<span id="cb41-16"><a href="additionalCoding.html#cb41-16" aria-hidden="true" tabindex="-1"></a>URL<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>psu<span class="sc">-</span>eberly.shinyapps.io<span class="sc">/</span>Sample_App</span>
-<span id="cb41-17"><a href="additionalCoding.html#cb41-17" aria-hidden="true" tabindex="-1"></a>BugReports<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>EducationShinyAppTeam<span class="sc">/</span>Sample_App<span class="sc">/</span>issues</span>
-<span id="cb41-18"><a href="additionalCoding.html#cb41-18" aria-hidden="true" tabindex="-1"></a>License<span class="sc">:</span> CC<span class="sc">-</span>BY<span class="sc">-</span>NC<span class="sc">-</span>SA<span class="fl">-4.0</span></span>
-<span id="cb41-19"><a href="additionalCoding.html#cb41-19" aria-hidden="true" tabindex="-1"></a>Tags<span class="sc">:</span> simulation</span>
-<span id="cb41-20"><a href="additionalCoding.html#cb41-20" aria-hidden="true" tabindex="-1"></a>Type<span class="sc">:</span> Shiny</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="additionalCoding.html#cb42-1" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> Sample App <span class="sc">-</span> A Lengthy Title</span>
+<span id="cb42-2"><a href="additionalCoding.html#cb42-2" aria-hidden="true" tabindex="-1"></a>ShortName<span class="sc">:</span> Sample App</span>
+<span id="cb42-3"><a href="additionalCoding.html#cb42-3" aria-hidden="true" tabindex="-1"></a>Date<span class="sc">:</span> <span class="dv">2021-05-13</span></span>
+<span id="cb42-4"><a href="additionalCoding.html#cb42-4" aria-hidden="true" tabindex="-1"></a>Lifecycle<span class="sc">:</span> experimental</span>
+<span id="cb42-5"><a href="additionalCoding.html#cb42-5" aria-hidden="true" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> <span class="fu">c</span>(</span>
+<span id="cb42-6"><a href="additionalCoding.html#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;Neil&quot;</span>, <span class="at">family =</span> <span class="st">&quot;Hatfield&quot;</span>, <span class="at">email =</span> <span class="st">&quot;neil.hatfield@psu.edu&quot;</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>)),</span>
+<span id="cb42-7"><a href="additionalCoding.html#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;Robert&quot;</span>, <span class="at">family =</span> <span class="st">&quot;Carey&quot;</span>, <span class="at">email =</span> <span class="st">&quot;rpc5102@psu.edu&quot;</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>))</span>
+<span id="cb42-8"><a href="additionalCoding.html#cb42-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb42-9"><a href="additionalCoding.html#cb42-9" aria-hidden="true" tabindex="-1"></a>Chapter<span class="sc">:</span> Sample Chapter</span>
+<span id="cb42-10"><a href="additionalCoding.html#cb42-10" aria-hidden="true" tabindex="-1"></a>Description<span class="sc">:</span> This app is focused on the common types of xyz.</span>
+<span id="cb42-11"><a href="additionalCoding.html#cb42-11" aria-hidden="true" tabindex="-1"></a>LearningObjectives<span class="sc">:</span> <span class="fu">c</span>(</span>
+<span id="cb42-12"><a href="additionalCoding.html#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The student will learn to understand Concept A in way z.&quot;</span>,</span>
+<span id="cb42-13"><a href="additionalCoding.html#cb42-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The student will learn to understand Concept B as description y.&quot;</span></span>
+<span id="cb42-14"><a href="additionalCoding.html#cb42-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb42-15"><a href="additionalCoding.html#cb42-15" aria-hidden="true" tabindex="-1"></a>DisplayMode<span class="sc">:</span> Normal</span>
+<span id="cb42-16"><a href="additionalCoding.html#cb42-16" aria-hidden="true" tabindex="-1"></a>URL<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>psu<span class="sc">-</span>eberly.shinyapps.io<span class="sc">/</span>Sample_App</span>
+<span id="cb42-17"><a href="additionalCoding.html#cb42-17" aria-hidden="true" tabindex="-1"></a>BugReports<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>EducationShinyAppTeam<span class="sc">/</span>Sample_App<span class="sc">/</span>issues</span>
+<span id="cb42-18"><a href="additionalCoding.html#cb42-18" aria-hidden="true" tabindex="-1"></a>License<span class="sc">:</span> CC<span class="sc">-</span>BY<span class="sc">-</span>NC<span class="sc">-</span>SA<span class="fl">-4.0</span></span>
+<span id="cb42-19"><a href="additionalCoding.html#cb42-19" aria-hidden="true" tabindex="-1"></a>Tags<span class="sc">:</span> simulation</span>
+<span id="cb42-20"><a href="additionalCoding.html#cb42-20" aria-hidden="true" tabindex="-1"></a>Type<span class="sc">:</span> Shiny</span></code></pre></div>
 </div>
 <div id="otherLanguages" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Other Languages (Python, JavaScript, etc.)</h2>
@@ -552,8 +557,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you are following the directions we’ve laid out in this Style Guide, there is no additional action that you have to take. We provide the following information just for those individuals who would like to learn more about <code>rLocker</code>.</p>
 <div id="installing" class="section level3" number="8.5.1">
 <h3><span class="header-section-number">8.5.1</span> Installing</h3>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="additionalCoding.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb42-2"><a href="additionalCoding.html#cb42-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rpc5102/rlocker&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="additionalCoding.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb43-2"><a href="additionalCoding.html#cb43-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rpc5102/rlocker&quot;</span>)</span></code></pre></div>
 <p><a href="https://github.com/rpc5102/rlocker#Installation">View Documentation</a></p>
 </div>
 <div id="setup" class="section level3" number="8.5.2">
@@ -600,86 +605,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>An App should only have one <code>launched</code> and <code>exited</code> event but can have multiple experiences per session. Therefore, you may use <code>experienced</code> in other places within your App.</p>
 <p>* Requires <code>boastUtils &gt;= 0.1.5</code>.</p>
 <p><strong>Sample generator function</strong></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="additionalCoding.html#cb43-1" aria-hidden="true" tabindex="-1"></a>.generateStatement <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
-<span id="cb43-2"><a href="additionalCoding.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  session,</span>
-<span id="cb43-3"><a href="additionalCoding.html#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">verb =</span> <span class="cn">NA</span>,</span>
-<span id="cb43-4"><a href="additionalCoding.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> <span class="cn">NA</span>,</span>
-<span id="cb43-5"><a href="additionalCoding.html#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="cn">NA</span>,</span>
-<span id="cb43-6"><a href="additionalCoding.html#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactionType =</span> <span class="cn">NA</span>,</span>
-<span id="cb43-7"><a href="additionalCoding.html#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">response =</span> <span class="cn">NA</span>,</span>
-<span id="cb43-8"><a href="additionalCoding.html#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">success =</span> <span class="cn">NA</span>,</span>
-<span id="cb43-9"><a href="additionalCoding.html#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">completion =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb43-10"><a href="additionalCoding.html#cb43-10" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb43-11"><a href="additionalCoding.html#cb43-11" aria-hidden="true" tabindex="-1"></a>  statement <span class="ot">&lt;-</span> rlocker<span class="sc">::</span><span class="fu">createStatement</span>(<span class="fu">list</span>(</span>
-<span id="cb43-12"><a href="additionalCoding.html#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">verb =</span> verb,</span>
-<span id="cb43-13"><a href="additionalCoding.html#cb43-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> <span class="fu">list</span>(</span>
-<span id="cb43-14"><a href="additionalCoding.html#cb43-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> <span class="fu">paste0</span>(<span class="fu">getCurrentAddress</span>(session), <span class="st">&quot;#&quot;</span>, object),</span>
-<span id="cb43-15"><a href="additionalCoding.html#cb43-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="fu">paste0</span>(APP_TITLE),</span>
-<span id="cb43-16"><a href="additionalCoding.html#cb43-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">description =</span> <span class="fu">paste0</span>(<span class="st">&quot;Question &quot;</span>, activeQuestion, <span class="st">&quot;: &quot;</span>, description),</span>
-<span id="cb43-17"><a href="additionalCoding.html#cb43-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">interactionType =</span> interactionType</span>
-<span id="cb43-18"><a href="additionalCoding.html#cb43-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb43-19"><a href="additionalCoding.html#cb43-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">result =</span> <span class="fu">list</span>(</span>
-<span id="cb43-20"><a href="additionalCoding.html#cb43-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">success =</span> success,</span>
-<span id="cb43-21"><a href="additionalCoding.html#cb43-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">response =</span> response,</span>
-<span id="cb43-22"><a href="additionalCoding.html#cb43-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">completion =</span> completion</span>
-<span id="cb43-23"><a href="additionalCoding.html#cb43-23" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb43-24"><a href="additionalCoding.html#cb43-24" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb43-25"><a href="additionalCoding.html#cb43-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rlocker<span class="sc">::</span><span class="fu">store</span>(session, statement))   </span>
-<span id="cb43-26"><a href="additionalCoding.html#cb43-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="additionalCoding.html#cb44-1" aria-hidden="true" tabindex="-1"></a>.generateStatement <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb44-2"><a href="additionalCoding.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  session,</span>
+<span id="cb44-3"><a href="additionalCoding.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">verb =</span> <span class="cn">NA</span>,</span>
+<span id="cb44-4"><a href="additionalCoding.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> <span class="cn">NA</span>,</span>
+<span id="cb44-5"><a href="additionalCoding.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="cn">NA</span>,</span>
+<span id="cb44-6"><a href="additionalCoding.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactionType =</span> <span class="cn">NA</span>,</span>
+<span id="cb44-7"><a href="additionalCoding.html#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">response =</span> <span class="cn">NA</span>,</span>
+<span id="cb44-8"><a href="additionalCoding.html#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">success =</span> <span class="cn">NA</span>,</span>
+<span id="cb44-9"><a href="additionalCoding.html#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">completion =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb44-10"><a href="additionalCoding.html#cb44-10" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb44-11"><a href="additionalCoding.html#cb44-11" aria-hidden="true" tabindex="-1"></a>  statement <span class="ot">&lt;-</span> rlocker<span class="sc">::</span><span class="fu">createStatement</span>(<span class="fu">list</span>(</span>
+<span id="cb44-12"><a href="additionalCoding.html#cb44-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">verb =</span> verb,</span>
+<span id="cb44-13"><a href="additionalCoding.html#cb44-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> <span class="fu">list</span>(</span>
+<span id="cb44-14"><a href="additionalCoding.html#cb44-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> <span class="fu">paste0</span>(<span class="fu">getCurrentAddress</span>(session), <span class="st">&quot;#&quot;</span>, object),</span>
+<span id="cb44-15"><a href="additionalCoding.html#cb44-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="fu">paste0</span>(APP_TITLE),</span>
+<span id="cb44-16"><a href="additionalCoding.html#cb44-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">description =</span> <span class="fu">paste0</span>(<span class="st">&quot;Question &quot;</span>, activeQuestion, <span class="st">&quot;: &quot;</span>, description),</span>
+<span id="cb44-17"><a href="additionalCoding.html#cb44-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">interactionType =</span> interactionType</span>
+<span id="cb44-18"><a href="additionalCoding.html#cb44-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb44-19"><a href="additionalCoding.html#cb44-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">result =</span> <span class="fu">list</span>(</span>
+<span id="cb44-20"><a href="additionalCoding.html#cb44-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">success =</span> success,</span>
+<span id="cb44-21"><a href="additionalCoding.html#cb44-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">response =</span> response,</span>
+<span id="cb44-22"><a href="additionalCoding.html#cb44-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">completion =</span> completion</span>
+<span id="cb44-23"><a href="additionalCoding.html#cb44-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb44-24"><a href="additionalCoding.html#cb44-24" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb44-25"><a href="additionalCoding.html#cb44-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rlocker<span class="sc">::</span><span class="fu">store</span>(session, statement))   </span>
+<span id="cb44-26"><a href="additionalCoding.html#cb44-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p><strong>Sample event observer</strong></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="additionalCoding.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(session<span class="sc">$</span>input[[id]], {</span>
-<span id="cb44-2"><a href="additionalCoding.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-3"><a href="additionalCoding.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
-<span id="cb44-4"><a href="additionalCoding.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span><span class="re">BEGIN</span><span class="co"> VALIDATION                                                          #</span></span>
-<span id="cb44-5"><a href="additionalCoding.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                                                           #</span></span>
-<span id="cb44-6"><a href="additionalCoding.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># For this example,                                                         #</span></span>
-<span id="cb44-7"><a href="additionalCoding.html#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   We will check if someone answered a question in our game correctly.     #</span></span>
-<span id="cb44-8"><a href="additionalCoding.html#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   Your code should be different here!                                     #</span></span>
-<span id="cb44-9"><a href="additionalCoding.html#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                                                           #</span></span>
-<span id="cb44-10"><a href="additionalCoding.html#cb44-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb44-11"><a href="additionalCoding.html#cb44-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The input element we&#39;re observing.                                        #</span></span>
-<span id="cb44-12"><a href="additionalCoding.html#cb44-12" aria-hidden="true" tabindex="-1"></a>  object <span class="ot">&lt;-</span> id</span>
-<span id="cb44-13"><a href="additionalCoding.html#cb44-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-14"><a href="additionalCoding.html#cb44-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The user&#39;s action verb. Most likely going to be answered in this case.    #</span></span>
-<span id="cb44-15"><a href="additionalCoding.html#cb44-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rlocker::getVerbList() if you are unsure of the options.              #</span></span>
-<span id="cb44-16"><a href="additionalCoding.html#cb44-16" aria-hidden="true" tabindex="-1"></a>  verb <span class="ot">&lt;-</span> <span class="st">&quot;answered&quot;</span></span>
-<span id="cb44-17"><a href="additionalCoding.html#cb44-17" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-18"><a href="additionalCoding.html#cb44-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The correct answer to the question.                                       #</span></span>
-<span id="cb44-19"><a href="additionalCoding.html#cb44-19" aria-hidden="true" tabindex="-1"></a>  answer <span class="ot">&lt;-</span> gameSet[id, <span class="st">&quot;answer&quot;</span>]</span>
-<span id="cb44-20"><a href="additionalCoding.html#cb44-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-21"><a href="additionalCoding.html#cb44-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The user&#39;s answer to the question.                                        #</span></span>
-<span id="cb44-22"><a href="additionalCoding.html#cb44-22" aria-hidden="true" tabindex="-1"></a>  response <span class="ot">&lt;-</span> input<span class="sc">$</span>ans</span>
-<span id="cb44-23"><a href="additionalCoding.html#cb44-23" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-24"><a href="additionalCoding.html#cb44-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A description of the question or the full question itself (if short).     #</span></span>
-<span id="cb44-25"><a href="additionalCoding.html#cb44-25" aria-hidden="true" tabindex="-1"></a>  description <span class="ot">&lt;-</span> gameSet[id,]<span class="sc">$</span>question</span>
-<span id="cb44-26"><a href="additionalCoding.html#cb44-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-27"><a href="additionalCoding.html#cb44-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The type of question it is.                                               #</span></span>
-<span id="cb44-28"><a href="additionalCoding.html#cb44-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rlocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
-<span id="cb44-29"><a href="additionalCoding.html#cb44-29" aria-hidden="true" tabindex="-1"></a>  interactionType <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
-<span id="cb44-30"><a href="additionalCoding.html#cb44-30" aria-hidden="true" tabindex="-1"></a>    gameSet[id,]<span class="sc">$</span>format <span class="sc">==</span> <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span></span>
-<span id="cb44-31"><a href="additionalCoding.html#cb44-31" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb44-32"><a href="additionalCoding.html#cb44-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-33"><a href="additionalCoding.html#cb44-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Was the question answered successfully?                                   #</span></span>
-<span id="cb44-34"><a href="additionalCoding.html#cb44-34" aria-hidden="true" tabindex="-1"></a>  success <span class="ot">&lt;-</span> input<span class="sc">$</span>ans <span class="sc">==</span> answer</span>
-<span id="cb44-35"><a href="additionalCoding.html#cb44-35" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-36"><a href="additionalCoding.html#cb44-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Did this event trigger the completion of your activity?                   #</span></span>
-<span id="cb44-37"><a href="additionalCoding.html#cb44-37" aria-hidden="true" tabindex="-1"></a>  completion <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(.appState <span class="sc">==</span> <span class="st">&quot;continue&quot;</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb44-38"><a href="additionalCoding.html#cb44-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-39"><a href="additionalCoding.html#cb44-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                                                           #  </span></span>
-<span id="cb44-40"><a href="additionalCoding.html#cb44-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span><span class="re">END</span><span class="co"> VALIDATION                                                            # </span></span>
-<span id="cb44-41"><a href="additionalCoding.html#cb44-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
-<span id="cb44-42"><a href="additionalCoding.html#cb44-42" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-43"><a href="additionalCoding.html#cb44-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.generateStatement</span>(</span>
-<span id="cb44-44"><a href="additionalCoding.html#cb44-44" aria-hidden="true" tabindex="-1"></a>    session,</span>
-<span id="cb44-45"><a href="additionalCoding.html#cb44-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> object,</span>
-<span id="cb44-46"><a href="additionalCoding.html#cb44-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">verb =</span> verb,</span>
-<span id="cb44-47"><a href="additionalCoding.html#cb44-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">description =</span> description,</span>
-<span id="cb44-48"><a href="additionalCoding.html#cb44-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">response =</span> response,</span>
-<span id="cb44-49"><a href="additionalCoding.html#cb44-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">interactionType =</span> interactionType,</span>
-<span id="cb44-50"><a href="additionalCoding.html#cb44-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">success =</span> success,</span>
-<span id="cb44-51"><a href="additionalCoding.html#cb44-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">completion =</span> completion</span>
-<span id="cb44-52"><a href="additionalCoding.html#cb44-52" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb44-53"><a href="additionalCoding.html#cb44-53" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="additionalCoding.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(session<span class="sc">$</span>input[[id]], {</span>
+<span id="cb45-2"><a href="additionalCoding.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-3"><a href="additionalCoding.html#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
+<span id="cb45-4"><a href="additionalCoding.html#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span><span class="re">BEGIN</span><span class="co"> VALIDATION                                                          #</span></span>
+<span id="cb45-5"><a href="additionalCoding.html#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                                                           #</span></span>
+<span id="cb45-6"><a href="additionalCoding.html#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># For this example,                                                         #</span></span>
+<span id="cb45-7"><a href="additionalCoding.html#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   We will check if someone answered a question in our game correctly.     #</span></span>
+<span id="cb45-8"><a href="additionalCoding.html#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   Your code should be different here!                                     #</span></span>
+<span id="cb45-9"><a href="additionalCoding.html#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                                                           #</span></span>
+<span id="cb45-10"><a href="additionalCoding.html#cb45-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-11"><a href="additionalCoding.html#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The input element we&#39;re observing.                                        #</span></span>
+<span id="cb45-12"><a href="additionalCoding.html#cb45-12" aria-hidden="true" tabindex="-1"></a>  object <span class="ot">&lt;-</span> id</span>
+<span id="cb45-13"><a href="additionalCoding.html#cb45-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-14"><a href="additionalCoding.html#cb45-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The user&#39;s action verb. Most likely going to be answered in this case.    #</span></span>
+<span id="cb45-15"><a href="additionalCoding.html#cb45-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rlocker::getVerbList() if you are unsure of the options.              #</span></span>
+<span id="cb45-16"><a href="additionalCoding.html#cb45-16" aria-hidden="true" tabindex="-1"></a>  verb <span class="ot">&lt;-</span> <span class="st">&quot;answered&quot;</span></span>
+<span id="cb45-17"><a href="additionalCoding.html#cb45-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-18"><a href="additionalCoding.html#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The correct answer to the question.                                       #</span></span>
+<span id="cb45-19"><a href="additionalCoding.html#cb45-19" aria-hidden="true" tabindex="-1"></a>  answer <span class="ot">&lt;-</span> gameSet[id, <span class="st">&quot;answer&quot;</span>]</span>
+<span id="cb45-20"><a href="additionalCoding.html#cb45-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-21"><a href="additionalCoding.html#cb45-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The user&#39;s answer to the question.                                        #</span></span>
+<span id="cb45-22"><a href="additionalCoding.html#cb45-22" aria-hidden="true" tabindex="-1"></a>  response <span class="ot">&lt;-</span> input<span class="sc">$</span>ans</span>
+<span id="cb45-23"><a href="additionalCoding.html#cb45-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-24"><a href="additionalCoding.html#cb45-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A description of the question or the full question itself (if short).     #</span></span>
+<span id="cb45-25"><a href="additionalCoding.html#cb45-25" aria-hidden="true" tabindex="-1"></a>  description <span class="ot">&lt;-</span> gameSet[id,]<span class="sc">$</span>question</span>
+<span id="cb45-26"><a href="additionalCoding.html#cb45-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-27"><a href="additionalCoding.html#cb45-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The type of question it is.                                               #</span></span>
+<span id="cb45-28"><a href="additionalCoding.html#cb45-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rlocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
+<span id="cb45-29"><a href="additionalCoding.html#cb45-29" aria-hidden="true" tabindex="-1"></a>  interactionType <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
+<span id="cb45-30"><a href="additionalCoding.html#cb45-30" aria-hidden="true" tabindex="-1"></a>    gameSet[id,]<span class="sc">$</span>format <span class="sc">==</span> <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span></span>
+<span id="cb45-31"><a href="additionalCoding.html#cb45-31" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb45-32"><a href="additionalCoding.html#cb45-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-33"><a href="additionalCoding.html#cb45-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Was the question answered successfully?                                   #</span></span>
+<span id="cb45-34"><a href="additionalCoding.html#cb45-34" aria-hidden="true" tabindex="-1"></a>  success <span class="ot">&lt;-</span> input<span class="sc">$</span>ans <span class="sc">==</span> answer</span>
+<span id="cb45-35"><a href="additionalCoding.html#cb45-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-36"><a href="additionalCoding.html#cb45-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Did this event trigger the completion of your activity?                   #</span></span>
+<span id="cb45-37"><a href="additionalCoding.html#cb45-37" aria-hidden="true" tabindex="-1"></a>  completion <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(.appState <span class="sc">==</span> <span class="st">&quot;continue&quot;</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb45-38"><a href="additionalCoding.html#cb45-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-39"><a href="additionalCoding.html#cb45-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                                                           #  </span></span>
+<span id="cb45-40"><a href="additionalCoding.html#cb45-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span><span class="re">END</span><span class="co"> VALIDATION                                                            # </span></span>
+<span id="cb45-41"><a href="additionalCoding.html#cb45-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span></span>
+<span id="cb45-42"><a href="additionalCoding.html#cb45-42" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-43"><a href="additionalCoding.html#cb45-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.generateStatement</span>(</span>
+<span id="cb45-44"><a href="additionalCoding.html#cb45-44" aria-hidden="true" tabindex="-1"></a>    session,</span>
+<span id="cb45-45"><a href="additionalCoding.html#cb45-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> object,</span>
+<span id="cb45-46"><a href="additionalCoding.html#cb45-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">verb =</span> verb,</span>
+<span id="cb45-47"><a href="additionalCoding.html#cb45-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">description =</span> description,</span>
+<span id="cb45-48"><a href="additionalCoding.html#cb45-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">response =</span> response,</span>
+<span id="cb45-49"><a href="additionalCoding.html#cb45-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">interactionType =</span> interactionType,</span>
+<span id="cb45-50"><a href="additionalCoding.html#cb45-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">success =</span> success,</span>
+<span id="cb45-51"><a href="additionalCoding.html#cb45-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">completion =</span> completion</span>
+<span id="cb45-52"><a href="additionalCoding.html#cb45-52" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb45-53"><a href="additionalCoding.html#cb45-53" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Additional code can be found in the <a href="https://github.com/rpc5102/rlocker/tree/master/inst/examples">examples</a> folder as well as the main <a href="https://github.com/rpc5102/rlocker/blob/master/README.md">README</a> of the rLocker project; apps such as the <a href="https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game">Hypothesis_Testing_Game</a> have already been outfitted with rlocker. The statement generator above will eventually make its way into <code>boastUtils</code> once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
 <p><strong>Did you know?</strong></p>
 <p>You can run <code>help(package = "rlocker")</code> to view the help files for this package or press <code>F1</code> while typing a function name to see the documentation for that specific function.</p>

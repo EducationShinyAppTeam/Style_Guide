@@ -82,7 +82,7 @@ Keep in mind that this guide is a living document. As issues arise, we will upda
 
 ## Why Our Approach?
 
-There are many different reasons for why we've developed this particular approach. THe most important of these reasons are 1) we're a team, 2) drawing upon research, 3) accessibility matters, and 4) a need to avoid the "shiny" problem. We will briefly discuss each one of these in turn.
+There are many different reasons for why we've developed this particular approach. The most important of these reasons are 1) we're a team, 2) drawing upon research, 3) accessibility matters, and 4) a need to avoid the "shiny" problem. We will briefly discuss each one of these in turn.
 
 ### We're a Team of Developers
 

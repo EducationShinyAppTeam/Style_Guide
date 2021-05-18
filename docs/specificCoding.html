@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-05-15" />
+<meta name="date" content="2021-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,6 +268,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
+<li class="chapter" data-level="6.7" data-path="specificCoding.html"><a href="specificCoding.html#connecting-the-user-interface-and-the-server"><i class="fa fa-check"></i><b>6.7</b> Connecting the User Interface and the Server</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="specificCoding.html"><a href="specificCoding.html#table-of-render-and-output-companions"><i class="fa fa-check"></i><b>6.7.1</b> Table of <code>render*</code> and <code>*Output</code> Companions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
 <ul>
@@ -424,15 +428,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.4</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.4</b> Histograms</a></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.5</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.4.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.4.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.5.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.5.2</b> Additional Table Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.5</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.6</b> Alt Text, Again</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.5.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.5.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.6.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.6.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -504,11 +509,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Load packages through <code>library</code> calls</li>
 <li>Define any global constants and functions; load data sets. (If you have written any functions into other R files, use <code>source</code> calls here to load them.)</li>
-<li>User Interface definition</li>
+<li>User Interface (UI) definition</li>
 <li>Server definition</li>
 <li><code>boastApp</code> call</li>
 </ol>
-<p>The User Interface will always be of the format</p>
+<p>The User Interface (UI) will always be of the format</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="specificCoding.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the UI ----</span></span>
 <span id="cb18-2"><a href="specificCoding.html#cb18-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb18-3"><a href="specificCoding.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The code to create the interface</span></span>
@@ -725,7 +730,154 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-16"><a href="specificCoding.html#cb25-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>There is one named argument for <code>validate</code> and that is <code>errorClass</code>. This would be where you put extra text to fully specify which CSS class this error message should belong to. For more details on this, see the section on <a href="htmlCSS.html#css">CSS</a>. In most cases, you can omit this argument thereby just using the default.</p>
 <p>Within the <code>need</code> function, you must specify two arguments: <code>expr</code> which is where you will define each validation check and <code>message</code> which is the text you want displayed for the user. For the <code>message</code> you should put something that will help the user fix the error.</p>
+</div>
+<div id="connecting-the-user-interface-and-the-server" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Connecting the User Interface and the Server</h2>
+<p>If you go back and look at some of the examples in the preceding sections you’ll notice a reoccurring pattern when referencing outputs (e.g., <code>output$scatterPlot</code>, <code>output$dataPlot</code>, <code>output$dataTable</code>):</p>
+<ul>
+<li>They all start with <code>output$</code> and immediately followed by a (semi-)descriptive name,</li>
+<li>They all have the assignment operator, <code>&lt;-</code>, and</li>
+<li>They all are followed by a function whose name begins with <code>render*</code></li>
+</ul>
+<p>While accessing inputs from the UI is straightforward when you’re in a reactive environment (e.g., <code>input$nameOfInput</code>), working the other direction (i.e., accessing the outputs) takes a bit more work. This is where the <code>render*</code> functions come into play. These functions will take whatever you place in them and prepare those objects so that they be placed into your UI.</p>
+<p>In your UI you’ll need to create a placeholder object in your code. For example, you’ll need to have a line of code such as <code>plotOutput("histogram")</code>. This creates the space in your app for the <code>render*</code> functions to send the output. For each <code>render*</code> function there is a companion <code>*Output</code> function. Here is an example for displaying a histogram:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="specificCoding.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI Portion</span></span>
+<span id="cb26-2"><a href="specificCoding.html#cb26-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb26-3"><a href="specificCoding.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb26-4"><a href="specificCoding.html#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code omitted</span></span>
+<span id="cb26-5"><a href="specificCoding.html#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb26-6"><a href="specificCoding.html#cb26-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb26-7"><a href="specificCoding.html#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
+<span id="cb26-8"><a href="specificCoding.html#cb26-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;example&quot;</span>,</span>
+<span id="cb26-9"><a href="specificCoding.html#cb26-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">p</span>(<span class="st">&quot;Here&#39;s an example of histogram&quot;</span>),</span>
+<span id="cb26-10"><a href="specificCoding.html#cb26-10" aria-hidden="true" tabindex="-1"></a>          <span class="fu">selectInput</span>(</span>
+<span id="cb26-11"><a href="specificCoding.html#cb26-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">inputId =</span> <span class="st">&quot;variable&quot;</span>,</span>
+<span id="cb26-12"><a href="specificCoding.html#cb26-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="st">&quot;Select variable to plot&quot;</span>,</span>
+<span id="cb26-13"><a href="specificCoding.html#cb26-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">choices =</span> <span class="fu">c</span>(</span>
+<span id="cb26-14"><a href="specificCoding.html#cb26-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;Miles/Gallon&quot;</span> <span class="ot">=</span> <span class="st">&quot;mpg&quot;</span>,</span>
+<span id="cb26-15"><a href="specificCoding.html#cb26-15" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;Quarter Mile Time&quot;</span> <span class="ot">=</span> <span class="st">&quot;qsec&quot;</span>,</span>
+<span id="cb26-16"><a href="specificCoding.html#cb26-16" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;Displacement&quot;</span> <span class="ot">=</span> <span class="st">&quot;disp&quot;</span>,</span>
+<span id="cb26-17"><a href="specificCoding.html#cb26-17" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;Weight&quot;</span> <span class="ot">=</span> <span class="st">&quot;wt&quot;</span></span>
+<span id="cb26-18"><a href="specificCoding.html#cb26-18" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb26-19"><a href="specificCoding.html#cb26-19" aria-hidden="true" tabindex="-1"></a>          ),</span>
+<span id="cb26-20"><a href="specificCoding.html#cb26-20" aria-hidden="true" tabindex="-1"></a>          <span class="fu">plotOutput</span>(<span class="st">&quot;histogram&quot;</span>)</span>
+<span id="cb26-21"><a href="specificCoding.html#cb26-21" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb26-22"><a href="specificCoding.html#cb26-22" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb26-23"><a href="specificCoding.html#cb26-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-24"><a href="specificCoding.html#cb26-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb26-25"><a href="specificCoding.html#cb26-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-26"><a href="specificCoding.html#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="specificCoding.html#cb26-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Server Portion</span></span>
+<span id="cb26-28"><a href="specificCoding.html#cb26-28" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb26-29"><a href="specificCoding.html#cb26-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
+<span id="cb26-30"><a href="specificCoding.html#cb26-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>variable,</span>
+<span id="cb26-31"><a href="specificCoding.html#cb26-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">handlerExpr =</span> {</span>
+<span id="cb26-32"><a href="specificCoding.html#cb26-32" aria-hidden="true" tabindex="-1"></a>      niceLabel <span class="ot">&lt;-</span> <span class="cf">switch</span>(</span>
+<span id="cb26-33"><a href="specificCoding.html#cb26-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">EXPR =</span> input<span class="sc">$</span>variable,</span>
+<span id="cb26-34"><a href="specificCoding.html#cb26-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;mpg&quot;</span> <span class="ot">=</span> <span class="st">&quot;Miles/Gallon&quot;</span>,</span>
+<span id="cb26-35"><a href="specificCoding.html#cb26-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;qsec&quot;</span> <span class="ot">=</span> <span class="st">&quot;Quarter Mile Time (seconds)&quot;</span>,</span>
+<span id="cb26-36"><a href="specificCoding.html#cb26-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;disp&quot;</span> <span class="ot">=</span> <span class="st">&quot;Displacement (cubic inches)&quot;</span>,</span>
+<span id="cb26-37"><a href="specificCoding.html#cb26-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;wt&quot;</span> <span class="ot">=</span> <span class="st">&quot;Vehicle Weight (tons)&quot;</span></span>
+<span id="cb26-38"><a href="specificCoding.html#cb26-38" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb26-39"><a href="specificCoding.html#cb26-39" aria-hidden="true" tabindex="-1"></a>      output<span class="sc">$</span>histogram <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>(</span>
+<span id="cb26-40"><a href="specificCoding.html#cb26-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">expr =</span> {</span>
+<span id="cb26-41"><a href="specificCoding.html#cb26-41" aria-hidden="true" tabindex="-1"></a>          <span class="fu">ggplot</span>(</span>
+<span id="cb26-42"><a href="specificCoding.html#cb26-42" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> mtcars,</span>
+<span id="cb26-43"><a href="specificCoding.html#cb26-43" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes_string</span>(<span class="at">x =</span> input<span class="sc">$</span>variable)</span>
+<span id="cb26-44"><a href="specificCoding.html#cb26-44" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">+</span></span>
+<span id="cb26-45"><a href="specificCoding.html#cb26-45" aria-hidden="true" tabindex="-1"></a>            <span class="fu">geom_histogram</span>(</span>
+<span id="cb26-46"><a href="specificCoding.html#cb26-46" aria-hidden="true" tabindex="-1"></a>              <span class="at">binwidth =</span> <span class="cf">function</span>(x){<span class="fu">ifelse</span>(<span class="fu">IQR</span>(x) <span class="sc">==</span> <span class="dv">0</span>, <span class="fl">0.1</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fu">IQR</span>(x) <span class="sc">/</span> (<span class="fu">length</span>(x)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>)))},</span>
+<span id="cb26-47"><a href="specificCoding.html#cb26-47" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb26-48"><a href="specificCoding.html#cb26-48" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span></span>
+<span id="cb26-49"><a href="specificCoding.html#cb26-49" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
+<span id="cb26-50"><a href="specificCoding.html#cb26-50" aria-hidden="true" tabindex="-1"></a>            <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb26-51"><a href="specificCoding.html#cb26-51" aria-hidden="true" tabindex="-1"></a>            <span class="fu">xlab</span>(niceLabel) <span class="sc">+</span></span>
+<span id="cb26-52"><a href="specificCoding.html#cb26-52" aria-hidden="true" tabindex="-1"></a>            <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb26-53"><a href="specificCoding.html#cb26-53" aria-hidden="true" tabindex="-1"></a>              <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb26-54"><a href="specificCoding.html#cb26-54" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
+<span id="cb26-55"><a href="specificCoding.html#cb26-55" aria-hidden="true" tabindex="-1"></a>            <span class="fu">theme</span>(</span>
+<span id="cb26-56"><a href="specificCoding.html#cb26-56" aria-hidden="true" tabindex="-1"></a>              <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>)</span>
+<span id="cb26-57"><a href="specificCoding.html#cb26-57" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb26-58"><a href="specificCoding.html#cb26-58" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb26-59"><a href="specificCoding.html#cb26-59" aria-hidden="true" tabindex="-1"></a>        <span class="at">alt =</span> <span class="fu">paste</span>(<span class="st">&quot;Histogram of&quot;</span>, niceLabel)</span>
+<span id="cb26-60"><a href="specificCoding.html#cb26-60" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb26-61"><a href="specificCoding.html#cb26-61" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-62"><a href="specificCoding.html#cb26-62" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb26-63"><a href="specificCoding.html#cb26-63" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>There are a few things to notice in this code example:</p>
+<ul>
+<li>The <code>selectInput</code> call makes use of “Named” Values which follow the pattern <code>"Text User Sees" = "textServerSees"</code>
+<ul>
+<li>This is useful so you can make human friendly display text but can still use the computer set names without having to rename/recode options elsewhere</li>
+</ul></li>
+<li>We needed to include <code>plotOutput</code> in the UI so that R/Shiny knows where to send the histogram</li>
+<li>We’re using an <code>observeEvent</code> so that the plot automatically updates when the user changes <code>input$variable</code> (i.e., the <code>selectInput</code>)</li>
+<li>There are TWO components <code>handlerExpr</code>:
+<ul>
+<li>The <code>niceLabel</code> object uses <code>switch</code> to prepare a human friendly label for our plot</li>
+<li>We’re using <code>renderPlot</code> to send the plot to the UI</li>
+</ul></li>
+<li>Within the <code>renderPlot</code> we have another two <strong>REQUIRED</strong> elements:
+<ul>
+<li>The <code>expr</code> is where you’ll write the code to make the histogram</li>
+<li>The <code>alt</code> provides alt text for your plot.</li>
+<li>Not all <code>render*</code> functions will have the <code>alt</code> argument; <code>renderPlot</code> does and you are required to fill this argument in with meaningful text; see <a href="graphics.html#altText2">Section <a href="graphics.html#altText2">13.6</a></a> for more information.</li>
+</ul></li>
+</ul>
+<p>(You might have also noticed some of the coding that is part of the <code>ggplot</code> calls such as the <code>theme_bw</code> and <code>scale_y_continuous</code>. Check out <a href="graphics.html#graphics">Chapter <a href="graphics.html#graphics">13</a></a> for more information.)</p>
+<div id="table-of-render-and-output-companions" class="section level3" number="6.7.1">
+<h3><span class="header-section-number">6.7.1</span> Table of <code>render*</code> and <code>*Output</code> Companions</h3>
+<p>The following table contains the main pairings of functions that you’ll need to use, from most to least common:</p>
+<table>
+<colgroup>
+<col width="38%" />
+<col width="28%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Type of Object</th>
+<th align="center">In the UI</th>
+<th align="center">In the Server</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Plots</td>
+<td align="center"><code>plotOutput</code> <br /> *alt required</td>
+<td align="center"><code>renderPlot</code></td>
+</tr>
+<tr class="even">
+<td align="left">Tables <br /> Requires the <code>DT</code> package</td>
+<td align="center"><code>DT::dataTableOutput</code></td>
+<td align="center"><code>DT::renderDataTable</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Grading Icons <br /> Requires the <code>boastUtils</code> package</td>
+<td align="center"><code>uiOutput</code></td>
+<td align="center"><code>boastUtils::renderIcon</code></td>
+</tr>
+<tr class="even">
+<td align="left">User Interface Elements</td>
+<td align="center"><code>uiOutput</code></td>
+<td align="center"><code>renderUI</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Text</td>
+<td align="center"><code>textOutput</code></td>
+<td align="center"><code>renderText</code></td>
+</tr>
+<tr class="even">
+<td align="left">Raw Output</td>
+<td align="center"><code>verbatimTextOutput</code></td>
+<td align="center"><code>renderPrint</code></td>
+</tr>
+</tbody>
+</table>
+<p>There is some flexibility between the last three items that will depend upon what exactly you’re trying to do. We’ll handle those on a case-by-case basis.</p>
+<p>We do want to note here that sometimes you will see <code>htmlOutput</code> instead of <code>uiOutput</code>. We would like to use <code>uiOutput</code> as your primary choice.</p>
 
+</div>
 </div>
 </div>
             </section>

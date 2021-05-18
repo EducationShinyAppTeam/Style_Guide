@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-05-15" />
+<meta name="date" content="2021-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,6 +268,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.3" data-path="specificCoding.html"><a href="specificCoding.html#ignorenull-and-ignoreinit"><i class="fa fa-check"></i><b>6.5.3</b> <code>ignoreNULL</code> and <code>ignoreInit</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="specificCoding.html"><a href="specificCoding.html#validation"><i class="fa fa-check"></i><b>6.6</b> Validation</a></li>
+<li class="chapter" data-level="6.7" data-path="specificCoding.html"><a href="specificCoding.html#connecting-the-user-interface-and-the-server"><i class="fa fa-check"></i><b>6.7</b> Connecting the User Interface and the Server</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="specificCoding.html"><a href="specificCoding.html#table-of-render-and-output-companions"><i class="fa fa-check"></i><b>6.7.1</b> Table of <code>render*</code> and <code>*Output</code> Companions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="htmlCSS.html"><a href="htmlCSS.html"><i class="fa fa-check"></i><b>7</b> HTML and CSS</a>
 <ul>
@@ -424,15 +428,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.4</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.4</b> Histograms</a></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.5</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.4.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.4.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.5.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.5.2</b> Additional Table Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.5</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.6</b> Alt Text, Again</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.5.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.5.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.6.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.6.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -512,16 +517,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-the-dashboard" class="section level3" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Creating the Dashboard</h3>
 <p>Creating the overarching Dashboard layout in your App is actually quit easy:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="uiStructure.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required package</span></span>
-<span id="cb45-2"><a href="uiStructure.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
-<span id="cb45-3"><a href="uiStructure.html#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-4"><a href="uiStructure.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb45-5"><a href="uiStructure.html#cb45-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb45-6"><a href="uiStructure.html#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
-<span id="cb45-7"><a href="uiStructure.html#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb45-8"><a href="uiStructure.html#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># [code omitted]</span></span>
-<span id="cb45-9"><a href="uiStructure.html#cb45-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb45-10"><a href="uiStructure.html#cb45-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="uiStructure.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required package</span></span>
+<span id="cb46-2"><a href="uiStructure.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
+<span id="cb46-3"><a href="uiStructure.html#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="uiStructure.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb46-5"><a href="uiStructure.html#cb46-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb46-6"><a href="uiStructure.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb46-7"><a href="uiStructure.html#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb46-8"><a href="uiStructure.html#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># [code omitted]</span></span>
+<span id="cb46-9"><a href="uiStructure.html#cb46-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb46-10"><a href="uiStructure.html#cb46-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>The <code>dashboardPage</code> function will wrap around the rest of your UI element, thereby establishing the overarching structure. Three of this function’s arguments (<code>header</code>, <code>sidebar</code>, and <code>body</code>) will be covered in following sections. We do not need to worry about the <code>title</code> argument as this will be controlled by the Dashboard Header.</p>
 <p>The one argument that you must explicitly set for the <code>dashboardPage</code> is the <code>skin</code> argument. This argument sets the overall color theme for your App. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout.</p>
 </div>
@@ -751,25 +756,25 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-the-dashboard-header" class="section level3" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Creating the Dashboard Header</h3>
 <p>You will use the same structure regardless if you are using <code>app.R</code> or <code>ui.R</code>.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="uiStructure.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb46-2"><a href="uiStructure.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardHeader</span>(</span>
-<span id="cb46-3"><a href="uiStructure.html#cb46-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;App Template&quot;</span>, <span class="co"># You may use a shortened form of the title here</span></span>
-<span id="cb46-4"><a href="uiStructure.html#cb46-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">titleWidth =</span> <span class="dv">250</span>,</span>
-<span id="cb46-5"><a href="uiStructure.html#cb46-5" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(<span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="fu">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="fu">icon</span>(<span class="st">&quot;info&quot;</span>))), <span class="co"># Optional</span></span>
-<span id="cb46-6"><a href="uiStructure.html#cb46-6" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The next two are required</span></span>
-<span id="cb46-7"><a href="uiStructure.html#cb46-7" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
-<span id="cb46-8"><a href="uiStructure.html#cb46-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
-<span id="cb46-9"><a href="uiStructure.html#cb46-9" aria-hidden="true" tabindex="-1"></a>        boastUtils<span class="sc">::</span><span class="fu">surveyLink</span>(<span class="at">name =</span> <span class="st">&quot;App_Template&quot;</span>) <span class="co"># Replace App_Template with the repo name for your app </span></span>
-<span id="cb46-10"><a href="uiStructure.html#cb46-10" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb46-11"><a href="uiStructure.html#cb46-11" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
-<span id="cb46-12"><a href="uiStructure.html#cb46-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
-<span id="cb46-13"><a href="uiStructure.html#cb46-13" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">a</span>(<span class="at">href =</span> <span class="st">&#39;https://shinyapps.science.psu.edu/&#39;</span>,</span>
-<span id="cb46-14"><a href="uiStructure.html#cb46-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">icon</span>(<span class="st">&quot;home&quot;</span>)</span>
-<span id="cb46-15"><a href="uiStructure.html#cb46-15" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb46-16"><a href="uiStructure.html#cb46-16" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb46-17"><a href="uiStructure.html#cb46-17" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb46-18"><a href="uiStructure.html#cb46-18" aria-hidden="true" tabindex="-1"></a><span class="er">)</span></span>
-<span id="cb46-19"><a href="uiStructure.html#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="uiStructure.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb47-2"><a href="uiStructure.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardHeader</span>(</span>
+<span id="cb47-3"><a href="uiStructure.html#cb47-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;App Template&quot;</span>, <span class="co"># You may use a shortened form of the title here</span></span>
+<span id="cb47-4"><a href="uiStructure.html#cb47-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">titleWidth =</span> <span class="dv">250</span>,</span>
+<span id="cb47-5"><a href="uiStructure.html#cb47-5" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(<span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="fu">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="fu">icon</span>(<span class="st">&quot;info&quot;</span>))), <span class="co"># Optional</span></span>
+<span id="cb47-6"><a href="uiStructure.html#cb47-6" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The next two are required</span></span>
+<span id="cb47-7"><a href="uiStructure.html#cb47-7" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb47-8"><a href="uiStructure.html#cb47-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
+<span id="cb47-9"><a href="uiStructure.html#cb47-9" aria-hidden="true" tabindex="-1"></a>        boastUtils<span class="sc">::</span><span class="fu">surveyLink</span>(<span class="at">name =</span> <span class="st">&quot;App_Template&quot;</span>) <span class="co"># Replace App_Template with the repo name for your app </span></span>
+<span id="cb47-10"><a href="uiStructure.html#cb47-10" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb47-11"><a href="uiStructure.html#cb47-11" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb47-12"><a href="uiStructure.html#cb47-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
+<span id="cb47-13"><a href="uiStructure.html#cb47-13" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">a</span>(<span class="at">href =</span> <span class="st">&#39;https://shinyapps.science.psu.edu/&#39;</span>,</span>
+<span id="cb47-14"><a href="uiStructure.html#cb47-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">icon</span>(<span class="st">&quot;home&quot;</span>)</span>
+<span id="cb47-15"><a href="uiStructure.html#cb47-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb47-16"><a href="uiStructure.html#cb47-16" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb47-17"><a href="uiStructure.html#cb47-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb47-18"><a href="uiStructure.html#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="er">)</span></span>
+<span id="cb47-19"><a href="uiStructure.html#cb47-19" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>A couple of things to notice:</p>
 <ul>
 <li>The <code>dashboardHeader</code> acts as a list environment, so it is safe to use <code>tags$li</code> here even though there isn’t a <code>tags$ol</code> or <code>tags$ul</code>.</li>
@@ -791,24 +796,24 @@ Figure 9.24: Sliders Using the Red Palette
 <h3><span class="header-section-number">9.2.2</span> What’s Needed in the Server Definition</h3>
 <p>If you just have a bare bones Header (i.e., title, survey link, and home button), you do not need to add anything special to your server definition.</p>
 <p>If you have anything else (e.g., an Info button), you will need to add additional code to your server definition. The code you add will depend upon the element. In general, for alert messages, we recommend that you use <code>shinyWidgets::sendSweetAlert</code>. Here’s a generic example of what could be used for the Info button.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="uiStructure.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required Packages</span></span>
-<span id="cb47-2"><a href="uiStructure.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyWidgets)</span>
-<span id="cb47-3"><a href="uiStructure.html#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="uiStructure.html#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Move to your server definition</span></span>
-<span id="cb47-5"><a href="uiStructure.html#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Either look for server &lt;- function(input, output, session) or open the server.R file.</span></span>
-<span id="cb47-6"><a href="uiStructure.html#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-7"><a href="uiStructure.html#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb47-8"><a href="uiStructure.html#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-9"><a href="uiStructure.html#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(input<span class="sc">$</span>info, { <span class="co"># Replace &quot;info&quot; with the appropriate id</span></span>
-<span id="cb47-10"><a href="uiStructure.html#cb47-10" aria-hidden="true" tabindex="-1"></a>  shinyWidgets<span class="sc">::</span><span class="fu">sendSweetAlert</span>(</span>
-<span id="cb47-11"><a href="uiStructure.html#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">session =</span> session, <span class="co"># This should stay as is</span></span>
-<span id="cb47-12"><a href="uiStructure.html#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;App Information&quot;</span>,</span>
-<span id="cb47-13"><a href="uiStructure.html#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
-<span id="cb47-14"><a href="uiStructure.html#cb47-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
-<span id="cb47-15"><a href="uiStructure.html#cb47-15" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;improve code reability.&quot;</span>),</span>
-<span id="cb47-16"><a href="uiStructure.html#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;info&quot;</span> <span class="co"># This option will depend upon the nature of your message</span></span>
-<span id="cb47-17"><a href="uiStructure.html#cb47-17" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb47-18"><a href="uiStructure.html#cb47-18" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="uiStructure.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required Packages</span></span>
+<span id="cb48-2"><a href="uiStructure.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyWidgets)</span>
+<span id="cb48-3"><a href="uiStructure.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="uiStructure.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Move to your server definition</span></span>
+<span id="cb48-5"><a href="uiStructure.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Either look for server &lt;- function(input, output, session) or open the server.R file.</span></span>
+<span id="cb48-6"><a href="uiStructure.html#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="uiStructure.html#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb48-8"><a href="uiStructure.html#cb48-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-9"><a href="uiStructure.html#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(input<span class="sc">$</span>info, { <span class="co"># Replace &quot;info&quot; with the appropriate id</span></span>
+<span id="cb48-10"><a href="uiStructure.html#cb48-10" aria-hidden="true" tabindex="-1"></a>  shinyWidgets<span class="sc">::</span><span class="fu">sendSweetAlert</span>(</span>
+<span id="cb48-11"><a href="uiStructure.html#cb48-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">session =</span> session, <span class="co"># This should stay as is</span></span>
+<span id="cb48-12"><a href="uiStructure.html#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;App Information&quot;</span>,</span>
+<span id="cb48-13"><a href="uiStructure.html#cb48-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
+<span id="cb48-14"><a href="uiStructure.html#cb48-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
+<span id="cb48-15"><a href="uiStructure.html#cb48-15" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;improve code reability.&quot;</span>),</span>
+<span id="cb48-16"><a href="uiStructure.html#cb48-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;info&quot;</span> <span class="co"># This option will depend upon the nature of your message</span></span>
+<span id="cb48-17"><a href="uiStructure.html#cb48-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb48-18"><a href="uiStructure.html#cb48-18" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 <p>The <code>type</code> argument will take one of several options. use the one that best aligns with your purposes.</p>
 <ul>
 <li><code>info</code>: If you are just conveying some general information to your user, you’ll use this value. This is the value that we will use in the vast majority of cases.</li>
@@ -828,30 +833,30 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-the-dashboard-sidebar" class="section level3" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Creating the Dashboard Sidebar</h3>
 <p>You’ll need to use the following code as a template for creating the Sidebar. You will need to customize this to match your app’s goals and design.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="uiStructure.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb48-2"><a href="uiStructure.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardSidebar</span>(</span>
-<span id="cb48-3"><a href="uiStructure.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">250</span>,</span>
-<span id="cb48-4"><a href="uiStructure.html#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarMenu</span>(</span>
-<span id="cb48-5"><a href="uiStructure.html#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># Use &quot;pages&quot; to name the menu</span></span>
-<span id="cb48-6"><a href="uiStructure.html#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Overivew is REQUIRED</span></span>
-<span id="cb48-7"><a href="uiStructure.html#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;dashboard&quot;</span>)),</span>
-<span id="cb48-8"><a href="uiStructure.html#cb48-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prerequisites is optional</span></span>
-<span id="cb48-9"><a href="uiStructure.html#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Prerequisites&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book&quot;</span>)),</span>
-<span id="cb48-10"><a href="uiStructure.html#cb48-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># At least one of the next four is REQUIRED</span></span>
-<span id="cb48-11"><a href="uiStructure.html#cb48-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;explore&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
-<span id="cb48-12"><a href="uiStructure.html#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;challenge&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
-<span id="cb48-13"><a href="uiStructure.html#cb48-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;game&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
-<span id="cb48-14"><a href="uiStructure.html#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Wizard&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;hat-wizard&quot;</span>)),</span>
-<span id="cb48-15"><a href="uiStructure.html#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># References is REQUIRED</span></span>
-<span id="cb48-16"><a href="uiStructure.html#cb48-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
-<span id="cb48-17"><a href="uiStructure.html#cb48-17" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb48-18"><a href="uiStructure.html#cb48-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The sidebar must end with the following code, exactly</span></span>
-<span id="cb48-19"><a href="uiStructure.html#cb48-19" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">div</span>(</span>
-<span id="cb48-20"><a href="uiStructure.html#cb48-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
-<span id="cb48-21"><a href="uiStructure.html#cb48-21" aria-hidden="true" tabindex="-1"></a>    boastUtils<span class="sc">::</span><span class="fu">sidebarFooter</span>()</span>
-<span id="cb48-22"><a href="uiStructure.html#cb48-22" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb48-23"><a href="uiStructure.html#cb48-23" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb48-24"><a href="uiStructure.html#cb48-24" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="uiStructure.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb49-2"><a href="uiStructure.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardSidebar</span>(</span>
+<span id="cb49-3"><a href="uiStructure.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">250</span>,</span>
+<span id="cb49-4"><a href="uiStructure.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarMenu</span>(</span>
+<span id="cb49-5"><a href="uiStructure.html#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># Use &quot;pages&quot; to name the menu</span></span>
+<span id="cb49-6"><a href="uiStructure.html#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Overivew is REQUIRED</span></span>
+<span id="cb49-7"><a href="uiStructure.html#cb49-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;dashboard&quot;</span>)),</span>
+<span id="cb49-8"><a href="uiStructure.html#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prerequisites is optional</span></span>
+<span id="cb49-9"><a href="uiStructure.html#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Prerequisites&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book&quot;</span>)),</span>
+<span id="cb49-10"><a href="uiStructure.html#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># At least one of the next four is REQUIRED</span></span>
+<span id="cb49-11"><a href="uiStructure.html#cb49-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;explore&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
+<span id="cb49-12"><a href="uiStructure.html#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;challenge&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
+<span id="cb49-13"><a href="uiStructure.html#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;game&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
+<span id="cb49-14"><a href="uiStructure.html#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Wizard&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;hat-wizard&quot;</span>)),</span>
+<span id="cb49-15"><a href="uiStructure.html#cb49-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># References is REQUIRED</span></span>
+<span id="cb49-16"><a href="uiStructure.html#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
+<span id="cb49-17"><a href="uiStructure.html#cb49-17" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb49-18"><a href="uiStructure.html#cb49-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The sidebar must end with the following code, exactly</span></span>
+<span id="cb49-19"><a href="uiStructure.html#cb49-19" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">div</span>(</span>
+<span id="cb49-20"><a href="uiStructure.html#cb49-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb49-21"><a href="uiStructure.html#cb49-21" aria-hidden="true" tabindex="-1"></a>    boastUtils<span class="sc">::</span><span class="fu">sidebarFooter</span>()</span>
+<span id="cb49-22"><a href="uiStructure.html#cb49-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb49-23"><a href="uiStructure.html#cb49-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-24"><a href="uiStructure.html#cb49-24" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>Notice that after setting the <code>width</code> of the Sidebar, you will need to call the <code>sidebarMenu</code> function. This will create the appropriate structure for your Sidebar.</p>
 </div>
 <div id="sidebar-order" class="section level3" number="9.3.2">
@@ -966,23 +971,23 @@ Figure 9.24: Sliders Using the Red Palette
 <p>Once you have set the value for <code>tabName</code>, you can choose to include the code <code>withMathJax()</code>. This line of code is needed if you plan to include any mathematical formulas. You can omit this line if you are not going to. We will note that a safe default is to go ahead and include this line of code. We must stress that you have to include <code>withMathJax()</code> on each page of your app.</p>
 <p>What comes after these two lines of code will be all of the code necessary to bring the page of your App to life. However, the most important thing to remember while you’re coding in this section are <strong><em>commas</em></strong>. After you finish each bit of code and before you move on to the next item on the page, you must place a comma and then return to a new line.</p>
 <p>The following code can serve as an example to help you get started:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="uiStructure.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb49-2"><a href="uiStructure.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
-<span id="cb49-3"><a href="uiStructure.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabItems</span>(</span>
-<span id="cb49-4"><a href="uiStructure.html#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
-<span id="cb49-5"><a href="uiStructure.html#cb49-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,<span class="co"># needs to match the names you used in the Sidebar</span></span>
-<span id="cb49-6"><a href="uiStructure.html#cb49-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">withMathJax</span>(),<span class="co"># if you need to display mathematics, include this line</span></span>
-<span id="cb49-7"><a href="uiStructure.html#cb49-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), </span>
-<span id="cb49-8"><a href="uiStructure.html#cb49-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
-<span id="cb49-9"><a href="uiStructure.html#cb49-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
-<span id="cb49-10"><a href="uiStructure.html#cb49-10" aria-hidden="true" tabindex="-1"></a>      <span class="co"># [code for the page continues]</span></span>
-<span id="cb49-11"><a href="uiStructure.html#cb49-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb49-12"><a href="uiStructure.html#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
-<span id="cb49-13"><a href="uiStructure.html#cb49-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># repeat tabItem chunk for each subsequent page</span></span>
-<span id="cb49-14"><a href="uiStructure.html#cb49-14" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb49-15"><a href="uiStructure.html#cb49-15" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb49-16"><a href="uiStructure.html#cb49-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb49-17"><a href="uiStructure.html#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="uiStructure.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb50-2"><a href="uiStructure.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
+<span id="cb50-3"><a href="uiStructure.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabItems</span>(</span>
+<span id="cb50-4"><a href="uiStructure.html#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
+<span id="cb50-5"><a href="uiStructure.html#cb50-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,<span class="co"># needs to match the names you used in the Sidebar</span></span>
+<span id="cb50-6"><a href="uiStructure.html#cb50-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">withMathJax</span>(),<span class="co"># if you need to display mathematics, include this line</span></span>
+<span id="cb50-7"><a href="uiStructure.html#cb50-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), </span>
+<span id="cb50-8"><a href="uiStructure.html#cb50-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
+<span id="cb50-9"><a href="uiStructure.html#cb50-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
+<span id="cb50-10"><a href="uiStructure.html#cb50-10" aria-hidden="true" tabindex="-1"></a>      <span class="co"># [code for the page continues]</span></span>
+<span id="cb50-11"><a href="uiStructure.html#cb50-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb50-12"><a href="uiStructure.html#cb50-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
+<span id="cb50-13"><a href="uiStructure.html#cb50-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># repeat tabItem chunk for each subsequent page</span></span>
+<span id="cb50-14"><a href="uiStructure.html#cb50-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb50-15"><a href="uiStructure.html#cb50-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb50-16"><a href="uiStructure.html#cb50-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb50-17"><a href="uiStructure.html#cb50-17" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>The following subsections explain the purposes of each type of Page.</p>
 <div id="the-overview-page" class="section level3" number="9.4.1">
 <h3><span class="header-section-number">9.4.1</span> The Overview Page</h3>
@@ -1002,48 +1007,48 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-the-overview-page" class="section level4" number="9.4.1.1">
 <h4><span class="header-section-number">9.4.1.1</span> Creating the Overview Page</h4>
 <p>Here’s an example of making an Overview Page:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="uiStructure.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb50-2"><a href="uiStructure.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside the Dashboard Body</span></span>
-<span id="cb50-3"><a href="uiStructure.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="do">#### Set up the Overview Page ----</span></span>
-<span id="cb50-4"><a href="uiStructure.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb50-5"><a href="uiStructure.html#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
-<span id="cb50-6"><a href="uiStructure.html#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
-<span id="cb50-7"><a href="uiStructure.html#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
-<span id="cb50-8"><a href="uiStructure.html#cb50-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
-<span id="cb50-9"><a href="uiStructure.html#cb50-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
-<span id="cb50-10"><a href="uiStructure.html#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This information will change depending on what you want to do.&quot;</span>),</span>
-<span id="cb50-11"><a href="uiStructure.html#cb50-11" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ol</span>(</span>
-<span id="cb50-12"><a href="uiStructure.html#cb50-12" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review any prerequiste ideas using the Prerequistes tab.&quot;</span>),</span>
-<span id="cb50-13"><a href="uiStructure.html#cb50-13" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Explore the Exploration Tab.&quot;</span>),</span>
-<span id="cb50-14"><a href="uiStructure.html#cb50-14" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Challenge yourself.&quot;</span>),</span>
-<span id="cb50-15"><a href="uiStructure.html#cb50-15" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Play the game to test how far you&#39;ve come.&quot;</span>)</span>
-<span id="cb50-16"><a href="uiStructure.html#cb50-16" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb50-17"><a href="uiStructure.html#cb50-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">##### Go Button--location will depend on your goals ----</span></span>
-<span id="cb50-18"><a href="uiStructure.html#cb50-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">div</span>(</span>
-<span id="cb50-19"><a href="uiStructure.html#cb50-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;text-align: center&quot;</span>,</span>
-<span id="cb50-20"><a href="uiStructure.html#cb50-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
-<span id="cb50-21"><a href="uiStructure.html#cb50-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;go1&quot;</span>,</span>
-<span id="cb50-22"><a href="uiStructure.html#cb50-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;GO!&quot;</span>,</span>
-<span id="cb50-23"><a href="uiStructure.html#cb50-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
-<span id="cb50-24"><a href="uiStructure.html#cb50-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
-<span id="cb50-25"><a href="uiStructure.html#cb50-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;default&quot;</span></span>
-<span id="cb50-26"><a href="uiStructure.html#cb50-26" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb50-27"><a href="uiStructure.html#cb50-27" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb50-28"><a href="uiStructure.html#cb50-28" aria-hidden="true" tabindex="-1"></a>  <span class="do">##### Create two lines of space ----</span></span>
-<span id="cb50-29"><a href="uiStructure.html#cb50-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb50-30"><a href="uiStructure.html#cb50-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb50-31"><a href="uiStructure.html#cb50-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Acknowledgements&quot;</span>),</span>
-<span id="cb50-32"><a href="uiStructure.html#cb50-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb50-33"><a href="uiStructure.html#cb50-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;This version of the app was developed and coded by Neil J. Hatfield</span></span>
-<span id="cb50-34"><a href="uiStructure.html#cb50-34" aria-hidden="true" tabindex="-1"></a><span class="st">    and Robert P. Carey, III.&quot;</span>,</span>
-<span id="cb50-35"><a href="uiStructure.html#cb50-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb50-36"><a href="uiStructure.html#cb50-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;We would like to extend a special thanks to the Shiny Program Students.&quot;</span>,</span>
-<span id="cb50-37"><a href="uiStructure.html#cb50-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb50-38"><a href="uiStructure.html#cb50-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb50-39"><a href="uiStructure.html#cb50-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb50-40"><a href="uiStructure.html#cb50-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/14/2021 by NJH.&quot;</span>)</span>
-<span id="cb50-41"><a href="uiStructure.html#cb50-41" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb50-42"><a href="uiStructure.html#cb50-42" aria-hidden="true" tabindex="-1"></a>),</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="uiStructure.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb51-2"><a href="uiStructure.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside the Dashboard Body</span></span>
+<span id="cb51-3"><a href="uiStructure.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="do">#### Set up the Overview Page ----</span></span>
+<span id="cb51-4"><a href="uiStructure.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb51-5"><a href="uiStructure.html#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb51-6"><a href="uiStructure.html#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
+<span id="cb51-7"><a href="uiStructure.html#cb51-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
+<span id="cb51-8"><a href="uiStructure.html#cb51-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
+<span id="cb51-9"><a href="uiStructure.html#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
+<span id="cb51-10"><a href="uiStructure.html#cb51-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This information will change depending on what you want to do.&quot;</span>),</span>
+<span id="cb51-11"><a href="uiStructure.html#cb51-11" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ol</span>(</span>
+<span id="cb51-12"><a href="uiStructure.html#cb51-12" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review any prerequiste ideas using the Prerequistes tab.&quot;</span>),</span>
+<span id="cb51-13"><a href="uiStructure.html#cb51-13" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Explore the Exploration Tab.&quot;</span>),</span>
+<span id="cb51-14"><a href="uiStructure.html#cb51-14" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Challenge yourself.&quot;</span>),</span>
+<span id="cb51-15"><a href="uiStructure.html#cb51-15" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Play the game to test how far you&#39;ve come.&quot;</span>)</span>
+<span id="cb51-16"><a href="uiStructure.html#cb51-16" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb51-17"><a href="uiStructure.html#cb51-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">##### Go Button--location will depend on your goals ----</span></span>
+<span id="cb51-18"><a href="uiStructure.html#cb51-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">div</span>(</span>
+<span id="cb51-19"><a href="uiStructure.html#cb51-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;text-align: center&quot;</span>,</span>
+<span id="cb51-20"><a href="uiStructure.html#cb51-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb51-21"><a href="uiStructure.html#cb51-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;go1&quot;</span>,</span>
+<span id="cb51-22"><a href="uiStructure.html#cb51-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;GO!&quot;</span>,</span>
+<span id="cb51-23"><a href="uiStructure.html#cb51-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb51-24"><a href="uiStructure.html#cb51-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
+<span id="cb51-25"><a href="uiStructure.html#cb51-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;default&quot;</span></span>
+<span id="cb51-26"><a href="uiStructure.html#cb51-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb51-27"><a href="uiStructure.html#cb51-27" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb51-28"><a href="uiStructure.html#cb51-28" aria-hidden="true" tabindex="-1"></a>  <span class="do">##### Create two lines of space ----</span></span>
+<span id="cb51-29"><a href="uiStructure.html#cb51-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb51-30"><a href="uiStructure.html#cb51-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb51-31"><a href="uiStructure.html#cb51-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Acknowledgements&quot;</span>),</span>
+<span id="cb51-32"><a href="uiStructure.html#cb51-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb51-33"><a href="uiStructure.html#cb51-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;This version of the app was developed and coded by Neil J. Hatfield</span></span>
+<span id="cb51-34"><a href="uiStructure.html#cb51-34" aria-hidden="true" tabindex="-1"></a><span class="st">    and Robert P. Carey, III.&quot;</span>,</span>
+<span id="cb51-35"><a href="uiStructure.html#cb51-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb51-36"><a href="uiStructure.html#cb51-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;We would like to extend a special thanks to the Shiny Program Students.&quot;</span>,</span>
+<span id="cb51-37"><a href="uiStructure.html#cb51-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb51-38"><a href="uiStructure.html#cb51-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb51-39"><a href="uiStructure.html#cb51-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb51-40"><a href="uiStructure.html#cb51-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/14/2021 by NJH.&quot;</span>)</span>
+<span id="cb51-41"><a href="uiStructure.html#cb51-41" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb51-42"><a href="uiStructure.html#cb51-42" aria-hidden="true" tabindex="-1"></a>),</span></code></pre></div>
 <p>A few things to notice:</p>
 <ul>
 <li>If you need a new line but not a new paragraph, you use the <code>br()</code> tag.</li>
@@ -1057,17 +1062,17 @@ Figure 9.24: Sliders Using the Red Palette
 <h4><span class="header-section-number">9.4.1.2</span> What’s Needed in the Server Defintion</h4>
 <p>At bare minimum you will need to have one element in your server definition: the action for your button. If you have multiple buttons, you might need to have several more code chunks.</p>
 <p>Here is a generic example for the button on the Overview Page that moves the user to the appropriate next page:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="uiStructure.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In your server section</span></span>
-<span id="cb51-2"><a href="uiStructure.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb51-3"><a href="uiStructure.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
-<span id="cb51-4"><a href="uiStructure.html#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>go1, <span class="co">#append the button&#39;s inputId to input$ as the event expression</span></span>
-<span id="cb51-5"><a href="uiStructure.html#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">handlerExpr =</span> { <span class="co"># This is the action portion of your button and must be in { }</span></span>
-<span id="cb51-6"><a href="uiStructure.html#cb51-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">updateTabItems</span>(</span>
-<span id="cb51-7"><a href="uiStructure.html#cb51-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">session =</span> session, <span class="co"># This allows the user to move pages</span></span>
-<span id="cb51-8"><a href="uiStructure.html#cb51-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># the id of your Sidebar</span></span>
-<span id="cb51-9"><a href="uiStructure.html#cb51-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">selected =</span> <span class="st">&quot;explore&quot;</span> <span class="co"># Name of page to go to</span></span>
-<span id="cb51-10"><a href="uiStructure.html#cb51-10" aria-hidden="true" tabindex="-1"></a>    ) </span>
-<span id="cb51-11"><a href="uiStructure.html#cb51-11" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="uiStructure.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In your server section</span></span>
+<span id="cb52-2"><a href="uiStructure.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb52-3"><a href="uiStructure.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
+<span id="cb52-4"><a href="uiStructure.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>go1, <span class="co">#append the button&#39;s inputId to input$ as the event expression</span></span>
+<span id="cb52-5"><a href="uiStructure.html#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">handlerExpr =</span> { <span class="co"># This is the action portion of your button and must be in { }</span></span>
+<span id="cb52-6"><a href="uiStructure.html#cb52-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">updateTabItems</span>(</span>
+<span id="cb52-7"><a href="uiStructure.html#cb52-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">session =</span> session, <span class="co"># This allows the user to move pages</span></span>
+<span id="cb52-8"><a href="uiStructure.html#cb52-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># the id of your Sidebar</span></span>
+<span id="cb52-9"><a href="uiStructure.html#cb52-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">selected =</span> <span class="st">&quot;explore&quot;</span> <span class="co"># Name of page to go to</span></span>
+<span id="cb52-10"><a href="uiStructure.html#cb52-10" aria-hidden="true" tabindex="-1"></a>    ) </span>
+<span id="cb52-11"><a href="uiStructure.html#cb52-11" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 <p>In the rare case where you have other things happening on the Overview page, you’ll need to include the appropriate calls in your server section to carry out those actions for you.</p>
 </div>
 </div>
@@ -1093,81 +1098,81 @@ Figure 9.24: Sliders Using the Red Palette
 <p>*Note: not all requests for anchors may be fulfilled and not all course notes have anchors.</p>
 <p>The styling of the link will be managed by the BOAST CSS file. See the following examples as well as <a href="#bodyLinks">HTML-Links</a> section.</p>
 <p>Here’s are two examples of how you would code a text link:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="uiStructure.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb52-2"><a href="uiStructure.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Working in the UI section</span></span>
-<span id="cb52-3"><a href="uiStructure.html#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="uiStructure.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: in a paragraph</span></span>
-<span id="cb52-5"><a href="uiStructure.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some of the basic shapes</span></span>
-<span id="cb52-6"><a href="uiStructure.html#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="st">  of graphs in statistics. A good resource for this would be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb52-7"><a href="uiStructure.html#cb52-7" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="cb52-8"><a href="uiStructure.html#cb52-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb52-9"><a href="uiStructure.html#cb52-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
-<span id="cb52-10"><a href="uiStructure.html#cb52-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
-<span id="cb52-11"><a href="uiStructure.html#cb52-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb52-12"><a href="uiStructure.html#cb52-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
-<span id="cb52-13"><a href="uiStructure.html#cb52-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
-<span id="cb52-14"><a href="uiStructure.html#cb52-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb52-15"><a href="uiStructure.html#cb52-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-16"><a href="uiStructure.html#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: in a list item</span></span>
-<span id="cb52-17"><a href="uiStructure.html#cb52-17" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
-<span id="cb52-18"><a href="uiStructure.html#cb52-18" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb52-19"><a href="uiStructure.html#cb52-19" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="cb52-20"><a href="uiStructure.html#cb52-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb52-21"><a href="uiStructure.html#cb52-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
-<span id="cb52-22"><a href="uiStructure.html#cb52-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
-<span id="cb52-23"><a href="uiStructure.html#cb52-23" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb52-24"><a href="uiStructure.html#cb52-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
-<span id="cb52-25"><a href="uiStructure.html#cb52-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Be consistent; either all items do or none.</span></span>
-<span id="cb52-26"><a href="uiStructure.html#cb52-26" aria-hidden="true" tabindex="-1"></a>  ) </span>
-<span id="cb52-27"><a href="uiStructure.html#cb52-27" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb52-28"><a href="uiStructure.html#cb52-28" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="uiStructure.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb53-2"><a href="uiStructure.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Working in the UI section</span></span>
+<span id="cb53-3"><a href="uiStructure.html#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="uiStructure.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: in a paragraph</span></span>
+<span id="cb53-5"><a href="uiStructure.html#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some of the basic shapes</span></span>
+<span id="cb53-6"><a href="uiStructure.html#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="st">  of graphs in statistics. A good resource for this would be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb53-7"><a href="uiStructure.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="cb53-8"><a href="uiStructure.html#cb53-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb53-9"><a href="uiStructure.html#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
+<span id="cb53-10"><a href="uiStructure.html#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
+<span id="cb53-11"><a href="uiStructure.html#cb53-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb53-12"><a href="uiStructure.html#cb53-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
+<span id="cb53-13"><a href="uiStructure.html#cb53-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
+<span id="cb53-14"><a href="uiStructure.html#cb53-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb53-15"><a href="uiStructure.html#cb53-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-16"><a href="uiStructure.html#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: in a list item</span></span>
+<span id="cb53-17"><a href="uiStructure.html#cb53-17" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb53-18"><a href="uiStructure.html#cb53-18" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb53-19"><a href="uiStructure.html#cb53-19" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="cb53-20"><a href="uiStructure.html#cb53-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb53-21"><a href="uiStructure.html#cb53-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
+<span id="cb53-22"><a href="uiStructure.html#cb53-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
+<span id="cb53-23"><a href="uiStructure.html#cb53-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb53-24"><a href="uiStructure.html#cb53-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
+<span id="cb53-25"><a href="uiStructure.html#cb53-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Be consistent; either all items do or none.</span></span>
+<span id="cb53-26"><a href="uiStructure.html#cb53-26" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb53-27"><a href="uiStructure.html#cb53-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb53-28"><a href="uiStructure.html#cb53-28" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 </div>
 <div id="creating-a-prerequisites-page" class="section level4" number="9.4.2.3">
 <h4><span class="header-section-number">9.4.2.3</span> Creating a Prerequisites Page</h4>
 <p>Here’s an example of the code needed to create the Prerequisites Page in the UI:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="uiStructure.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb53-2"><a href="uiStructure.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb53-3"><a href="uiStructure.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>,</span>
-<span id="cb53-4"><a href="uiStructure.html#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># this line only need if you display mathematics</span></span>
-<span id="cb53-5"><a href="uiStructure.html#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Prerequisites&quot;</span>),</span>
-<span id="cb53-6"><a href="uiStructure.html#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;In order to get the most out of this app, please review the following:&quot;</span>),</span>
-<span id="cb53-7"><a href="uiStructure.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ul</span>(</span>
-<span id="cb53-8"><a href="uiStructure.html#cb53-8" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 1&quot;</span>),</span>
-<span id="cb53-9"><a href="uiStructure.html#cb53-9" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 2&quot;</span>),</span>
-<span id="cb53-10"><a href="uiStructure.html#cb53-10" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 3&quot;</span>),</span>
-<span id="cb53-11"><a href="uiStructure.html#cb53-11" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 4&quot;</span>)</span>
-<span id="cb53-12"><a href="uiStructure.html#cb53-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb53-13"><a href="uiStructure.html#cb53-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list any way they wish.&quot;</span>),</span>
-<span id="cb53-14"><a href="uiStructure.html#cb53-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
-<span id="cb53-15"><a href="uiStructure.html#cb53-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
-<span id="cb53-16"><a href="uiStructure.html#cb53-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
-<span id="cb53-17"><a href="uiStructure.html#cb53-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb53-18"><a href="uiStructure.html#cb53-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb53-19"><a href="uiStructure.html#cb53-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb53-20"><a href="uiStructure.html#cb53-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb53-21"><a href="uiStructure.html#cb53-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance tests serve as a</span></span>
-<span id="cb53-22"><a href="uiStructure.html#cb53-22" aria-hidden="true" tabindex="-1"></a><span class="st">    critical tool to confirm that a particular theoretical model describes our data and to make a</span></span>
-<span id="cb53-23"><a href="uiStructure.html#cb53-23" aria-hidden="true" tabindex="-1"></a><span class="st">    generalization from our sample to the broader population (i.e., make an inference). The null</span></span>
-<span id="cb53-24"><a href="uiStructure.html#cb53-24" aria-hidden="true" tabindex="-1"></a><span class="st">    hypothesis often reflects the simpler of two models (e.g., &#39;no statistical difference&#39;,</span></span>
-<span id="cb53-25"><a href="uiStructure.html#cb53-25" aria-hidden="true" tabindex="-1"></a><span class="st">    &#39;there is an additive difference of 1&#39;, etc.) that we will use to build a sampling</span></span>
-<span id="cb53-26"><a href="uiStructure.html#cb53-26" aria-hidden="true" tabindex="-1"></a><span class="st">    distribution for our chosen estimator. These methods let us test whether our sample data are</span></span>
-<span id="cb53-27"><a href="uiStructure.html#cb53-27" aria-hidden="true" tabindex="-1"></a><span class="st">    consistent with this simple model (null hypothesis).&quot;</span></span>
-<span id="cb53-28"><a href="uiStructure.html#cb53-28" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb53-29"><a href="uiStructure.html#cb53-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
-<span id="cb53-30"><a href="uiStructure.html#cb53-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
-<span id="cb53-31"><a href="uiStructure.html#cb53-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb53-32"><a href="uiStructure.html#cb53-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb53-33"><a href="uiStructure.html#cb53-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb53-34"><a href="uiStructure.html#cb53-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb53-35"><a href="uiStructure.html#cb53-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as extreme as what we</span></span>
-<span id="cb53-36"><a href="uiStructure.html#cb53-36" aria-hidden="true" tabindex="-1"></a><span class="st">    observed given our null hypothesis. If we were to carry out our study infinitely many times</span></span>
-<span id="cb53-37"><a href="uiStructure.html#cb53-37" aria-hidden="true" tabindex="-1"></a><span class="st">    and the null hypothesis accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
-<span id="cb53-38"><a href="uiStructure.html#cb53-38" aria-hidden="true" tabindex="-1"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen 100*(p-value)% of the</span></span>
-<span id="cb53-39"><a href="uiStructure.html#cb53-39" aria-hidden="true" tabindex="-1"></a><span class="st">    time. The larger the p-value, the more often we would expect our estimator to take on a value</span></span>
-<span id="cb53-40"><a href="uiStructure.html#cb53-40" aria-hidden="true" tabindex="-1"></a><span class="st">    at least as extreme as what we&#39;ve seen; the smaller, the less often.&quot;</span></span>
-<span id="cb53-41"><a href="uiStructure.html#cb53-41" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb53-42"><a href="uiStructure.html#cb53-42" aria-hidden="true" tabindex="-1"></a>),</span>
-<span id="cb53-43"><a href="uiStructure.html#cb53-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="uiStructure.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb54-2"><a href="uiStructure.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb54-3"><a href="uiStructure.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>,</span>
+<span id="cb54-4"><a href="uiStructure.html#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># this line only need if you display mathematics</span></span>
+<span id="cb54-5"><a href="uiStructure.html#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Prerequisites&quot;</span>),</span>
+<span id="cb54-6"><a href="uiStructure.html#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;In order to get the most out of this app, please review the following:&quot;</span>),</span>
+<span id="cb54-7"><a href="uiStructure.html#cb54-7" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb54-8"><a href="uiStructure.html#cb54-8" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 1&quot;</span>),</span>
+<span id="cb54-9"><a href="uiStructure.html#cb54-9" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 2&quot;</span>),</span>
+<span id="cb54-10"><a href="uiStructure.html#cb54-10" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 3&quot;</span>),</span>
+<span id="cb54-11"><a href="uiStructure.html#cb54-11" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 4&quot;</span>)</span>
+<span id="cb54-12"><a href="uiStructure.html#cb54-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb54-13"><a href="uiStructure.html#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list any way they wish.&quot;</span>),</span>
+<span id="cb54-14"><a href="uiStructure.html#cb54-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
+<span id="cb54-15"><a href="uiStructure.html#cb54-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
+<span id="cb54-16"><a href="uiStructure.html#cb54-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
+<span id="cb54-17"><a href="uiStructure.html#cb54-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb54-18"><a href="uiStructure.html#cb54-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb54-19"><a href="uiStructure.html#cb54-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb54-20"><a href="uiStructure.html#cb54-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb54-21"><a href="uiStructure.html#cb54-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance tests serve as a</span></span>
+<span id="cb54-22"><a href="uiStructure.html#cb54-22" aria-hidden="true" tabindex="-1"></a><span class="st">    critical tool to confirm that a particular theoretical model describes our data and to make a</span></span>
+<span id="cb54-23"><a href="uiStructure.html#cb54-23" aria-hidden="true" tabindex="-1"></a><span class="st">    generalization from our sample to the broader population (i.e., make an inference). The null</span></span>
+<span id="cb54-24"><a href="uiStructure.html#cb54-24" aria-hidden="true" tabindex="-1"></a><span class="st">    hypothesis often reflects the simpler of two models (e.g., &#39;no statistical difference&#39;,</span></span>
+<span id="cb54-25"><a href="uiStructure.html#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="st">    &#39;there is an additive difference of 1&#39;, etc.) that we will use to build a sampling</span></span>
+<span id="cb54-26"><a href="uiStructure.html#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="st">    distribution for our chosen estimator. These methods let us test whether our sample data are</span></span>
+<span id="cb54-27"><a href="uiStructure.html#cb54-27" aria-hidden="true" tabindex="-1"></a><span class="st">    consistent with this simple model (null hypothesis).&quot;</span></span>
+<span id="cb54-28"><a href="uiStructure.html#cb54-28" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb54-29"><a href="uiStructure.html#cb54-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
+<span id="cb54-30"><a href="uiStructure.html#cb54-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
+<span id="cb54-31"><a href="uiStructure.html#cb54-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb54-32"><a href="uiStructure.html#cb54-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb54-33"><a href="uiStructure.html#cb54-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb54-34"><a href="uiStructure.html#cb54-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb54-35"><a href="uiStructure.html#cb54-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as extreme as what we</span></span>
+<span id="cb54-36"><a href="uiStructure.html#cb54-36" aria-hidden="true" tabindex="-1"></a><span class="st">    observed given our null hypothesis. If we were to carry out our study infinitely many times</span></span>
+<span id="cb54-37"><a href="uiStructure.html#cb54-37" aria-hidden="true" tabindex="-1"></a><span class="st">    and the null hypothesis accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
+<span id="cb54-38"><a href="uiStructure.html#cb54-38" aria-hidden="true" tabindex="-1"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen 100*(p-value)% of the</span></span>
+<span id="cb54-39"><a href="uiStructure.html#cb54-39" aria-hidden="true" tabindex="-1"></a><span class="st">    time. The larger the p-value, the more often we would expect our estimator to take on a value</span></span>
+<span id="cb54-40"><a href="uiStructure.html#cb54-40" aria-hidden="true" tabindex="-1"></a><span class="st">    at least as extreme as what we&#39;ve seen; the smaller, the less often.&quot;</span></span>
+<span id="cb54-41"><a href="uiStructure.html#cb54-41" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb54-42"><a href="uiStructure.html#cb54-42" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb54-43"><a href="uiStructure.html#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>For more information on collapsible boxes, see <a href="commonElements.html#collapsible">Section <a href="commonElements.html#collapsible">10.3</a></a>.</p>
 </div>
 <div id="whats-needed-in-the-server-definition-2" class="section level4" number="9.4.2.4">
@@ -1230,49 +1235,49 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-a-references-page" class="section level4" number="9.4.4.1">
 <h4><span class="header-section-number">9.4.4.1</span> Creating a References Page</h4>
 <p>Creating a References Page mimics both the Overview and Prerequisites Pages’ structure and is done in the UI section:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="uiStructure.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb54-2"><a href="uiStructure.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb54-3"><a href="uiStructure.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb54-4"><a href="uiStructure.html#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;references&quot;</span>,</span>
-<span id="cb54-5"><a href="uiStructure.html#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># Rarely, if ever, will you need MathJax in the references</span></span>
-<span id="cb54-6"><a href="uiStructure.html#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb54-7"><a href="uiStructure.html#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>( <span class="co"># Each reference is in its own paragraph</span></span>
-<span id="cb54-8"><a href="uiStructure.html#cb54-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>, <span class="co"># you must set this class argument</span></span>
-<span id="cb54-9"><a href="uiStructure.html#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bailey, E. (2015), shinyBS: Twitter bootstrap components for shiny, R package. Available</span></span>
-<span id="cb54-10"><a href="uiStructure.html#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="st">    from https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
-<span id="cb54-11"><a href="uiStructure.html#cb54-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb54-12"><a href="uiStructure.html#cb54-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb54-13"><a href="uiStructure.html#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb54-14"><a href="uiStructure.html#cb54-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Carey, R. (2019), boastUtils: BOAST Utilities, R Package. Available from</span></span>
-<span id="cb54-15"><a href="uiStructure.html#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyAppTeam/boastUtils&quot;</span></span>
-<span id="cb54-16"><a href="uiStructure.html#cb54-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb54-17"><a href="uiStructure.html#cb54-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb54-18"><a href="uiStructure.html#cb54-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb54-19"><a href="uiStructure.html#cb54-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with &#39;Shiny&#39;, R</span></span>
-<span id="cb54-20"><a href="uiStructure.html#cb54-20" aria-hidden="true" tabindex="-1"></a><span class="st">    Package. Available from https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
-<span id="cb54-21"><a href="uiStructure.html#cb54-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb54-22"><a href="uiStructure.html#cb54-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb54-23"><a href="uiStructure.html#cb54-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb54-24"><a href="uiStructure.html#cb54-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J., Xie, Y., and McPherson, J. (2019),  shiny: Web </span></span>
-<span id="cb54-25"><a href="uiStructure.html#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="st">    application framework for R, R Package. Available from </span></span>
-<span id="cb54-26"><a href="uiStructure.html#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
-<span id="cb54-27"><a href="uiStructure.html#cb54-27" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb54-28"><a href="uiStructure.html#cb54-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb54-29"><a href="uiStructure.html#cb54-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb54-30"><a href="uiStructure.html#cb54-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web App. Available from</span></span>
-<span id="cb54-31"><a href="uiStructure.html#cb54-31" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyAppTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
-<span id="cb54-32"><a href="uiStructure.html#cb54-32" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb54-33"><a href="uiStructure.html#cb54-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb54-34"><a href="uiStructure.html#cb54-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb54-35"><a href="uiStructure.html#cb54-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Wickham, H. (2016), ggplot2: Elegant graphics for data analysis, R Package, New York:</span></span>
-<span id="cb54-36"><a href="uiStructure.html#cb54-36" aria-hidden="true" tabindex="-1"></a><span class="st">    Springer-Verlag. Available from https://ggplot2.tidyverse.org&quot;</span></span>
-<span id="cb54-37"><a href="uiStructure.html#cb54-37" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb54-38"><a href="uiStructure.html#cb54-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(), <span class="co"># Three blank spaces</span></span>
-<span id="cb54-39"><a href="uiStructure.html#cb54-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb54-40"><a href="uiStructure.html#cb54-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb54-41"><a href="uiStructure.html#cb54-41" aria-hidden="true" tabindex="-1"></a>  boastUtils<span class="sc">::</span><span class="fu">copyrightInfo</span>()</span>
-<span id="cb54-42"><a href="uiStructure.html#cb54-42" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb54-43"><a href="uiStructure.html#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="uiStructure.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb55-2"><a href="uiStructure.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb55-3"><a href="uiStructure.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb55-4"><a href="uiStructure.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;references&quot;</span>,</span>
+<span id="cb55-5"><a href="uiStructure.html#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># Rarely, if ever, will you need MathJax in the references</span></span>
+<span id="cb55-6"><a href="uiStructure.html#cb55-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
+<span id="cb55-7"><a href="uiStructure.html#cb55-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>( <span class="co"># Each reference is in its own paragraph</span></span>
+<span id="cb55-8"><a href="uiStructure.html#cb55-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>, <span class="co"># you must set this class argument</span></span>
+<span id="cb55-9"><a href="uiStructure.html#cb55-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bailey, E. (2015), shinyBS: Twitter bootstrap components for shiny, R package. Available</span></span>
+<span id="cb55-10"><a href="uiStructure.html#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="st">    from https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
+<span id="cb55-11"><a href="uiStructure.html#cb55-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb55-12"><a href="uiStructure.html#cb55-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb55-13"><a href="uiStructure.html#cb55-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb55-14"><a href="uiStructure.html#cb55-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Carey, R. (2019), boastUtils: BOAST Utilities, R Package. Available from</span></span>
+<span id="cb55-15"><a href="uiStructure.html#cb55-15" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyAppTeam/boastUtils&quot;</span></span>
+<span id="cb55-16"><a href="uiStructure.html#cb55-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb55-17"><a href="uiStructure.html#cb55-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb55-18"><a href="uiStructure.html#cb55-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb55-19"><a href="uiStructure.html#cb55-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with &#39;Shiny&#39;, R</span></span>
+<span id="cb55-20"><a href="uiStructure.html#cb55-20" aria-hidden="true" tabindex="-1"></a><span class="st">    Package. Available from https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
+<span id="cb55-21"><a href="uiStructure.html#cb55-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb55-22"><a href="uiStructure.html#cb55-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb55-23"><a href="uiStructure.html#cb55-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb55-24"><a href="uiStructure.html#cb55-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J., Xie, Y., and McPherson, J. (2019),  shiny: Web </span></span>
+<span id="cb55-25"><a href="uiStructure.html#cb55-25" aria-hidden="true" tabindex="-1"></a><span class="st">    application framework for R, R Package. Available from </span></span>
+<span id="cb55-26"><a href="uiStructure.html#cb55-26" aria-hidden="true" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
+<span id="cb55-27"><a href="uiStructure.html#cb55-27" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb55-28"><a href="uiStructure.html#cb55-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb55-29"><a href="uiStructure.html#cb55-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb55-30"><a href="uiStructure.html#cb55-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web App. Available from</span></span>
+<span id="cb55-31"><a href="uiStructure.html#cb55-31" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyAppTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
+<span id="cb55-32"><a href="uiStructure.html#cb55-32" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb55-33"><a href="uiStructure.html#cb55-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb55-34"><a href="uiStructure.html#cb55-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb55-35"><a href="uiStructure.html#cb55-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Wickham, H. (2016), ggplot2: Elegant graphics for data analysis, R Package, New York:</span></span>
+<span id="cb55-36"><a href="uiStructure.html#cb55-36" aria-hidden="true" tabindex="-1"></a><span class="st">    Springer-Verlag. Available from https://ggplot2.tidyverse.org&quot;</span></span>
+<span id="cb55-37"><a href="uiStructure.html#cb55-37" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb55-38"><a href="uiStructure.html#cb55-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(), <span class="co"># Three blank spaces</span></span>
+<span id="cb55-39"><a href="uiStructure.html#cb55-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb55-40"><a href="uiStructure.html#cb55-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb55-41"><a href="uiStructure.html#cb55-41" aria-hidden="true" tabindex="-1"></a>  boastUtils<span class="sc">::</span><span class="fu">copyrightInfo</span>()</span>
+<span id="cb55-42"><a href="uiStructure.html#cb55-42" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb55-43"><a href="uiStructure.html#cb55-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 </div>
 <div id="whats-needed-in-the-server-definition-3" class="section level4" number="9.4.4.2">
 <h4><span class="header-section-number">9.4.4.2</span> What’s Needed in the Server Definition</h4>
@@ -1404,25 +1409,25 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
 <h3><span class="header-section-number">9.6.1</span> Create the Tab Set</h3>
 <p>Once you’ve decided to create a set of tabs on a page of your app, you’ll need to start coding the page as you would any other (see <a href="uiStructure.html#body">Dashboard Body</a> for more information) page. However, once you get to the point of wanting to create the tab set, you’ll need to use the <code>tabsetPanel</code> function and set the value of two arguments and potentially a third.</p>
 <p>Here is the code that creates the tab set panel in the Hasse Diagram app:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="uiStructure.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We&#39;re in the Dashboard Body of the UI</span></span>
-<span id="cb55-2"><a href="uiStructure.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb55-3"><a href="uiStructure.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>,</span>
-<span id="cb55-4"><a href="uiStructure.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
-<span id="cb55-5"><a href="uiStructure.html#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Hasse Diagram Wizard&quot;</span>),</span>
-<span id="cb55-6"><a href="uiStructure.html#cb55-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;Follow the prompts to create a Hasse Diagram.&quot;</span>),</span>
-<span id="cb55-7"><a href="uiStructure.html#cb55-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
-<span id="cb55-8"><a href="uiStructure.html#cb55-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;diagramWiz&quot;</span>,</span>
-<span id="cb55-9"><a href="uiStructure.html#cb55-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;hidden&quot;</span>,</span>
-<span id="cb55-10"><a href="uiStructure.html#cb55-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">##### Step 1-Action and Measurement Units ----</span></span>
-<span id="cb55-11"><a href="uiStructure.html#cb55-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(</span>
-<span id="cb55-12"><a href="uiStructure.html#cb55-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;First Step&quot;</span>,</span>
-<span id="cb55-13"><a href="uiStructure.html#cb55-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">value =</span> <span class="st">&quot;S1&quot;</span>,</span>
-<span id="cb55-14"><a href="uiStructure.html#cb55-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h3</span>(<span class="st">&quot;Response&quot;</span>),</span>
-<span id="cb55-15"><a href="uiStructure.html#cb55-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;Please provide/describe the the primary/surogate response for your study.&quot;</span>),</span>
-<span id="cb55-16"><a href="uiStructure.html#cb55-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb55-17"><a href="uiStructure.html#cb55-17" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb55-18"><a href="uiStructure.html#cb55-18" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb55-19"><a href="uiStructure.html#cb55-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="uiStructure.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We&#39;re in the Dashboard Body of the UI</span></span>
+<span id="cb56-2"><a href="uiStructure.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb56-3"><a href="uiStructure.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>,</span>
+<span id="cb56-4"><a href="uiStructure.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
+<span id="cb56-5"><a href="uiStructure.html#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Hasse Diagram Wizard&quot;</span>),</span>
+<span id="cb56-6"><a href="uiStructure.html#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;Follow the prompts to create a Hasse Diagram.&quot;</span>),</span>
+<span id="cb56-7"><a href="uiStructure.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb56-8"><a href="uiStructure.html#cb56-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;diagramWiz&quot;</span>,</span>
+<span id="cb56-9"><a href="uiStructure.html#cb56-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;hidden&quot;</span>,</span>
+<span id="cb56-10"><a href="uiStructure.html#cb56-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">##### Step 1-Action and Measurement Units ----</span></span>
+<span id="cb56-11"><a href="uiStructure.html#cb56-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(</span>
+<span id="cb56-12"><a href="uiStructure.html#cb56-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;First Step&quot;</span>,</span>
+<span id="cb56-13"><a href="uiStructure.html#cb56-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">value =</span> <span class="st">&quot;S1&quot;</span>,</span>
+<span id="cb56-14"><a href="uiStructure.html#cb56-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h3</span>(<span class="st">&quot;Response&quot;</span>),</span>
+<span id="cb56-15"><a href="uiStructure.html#cb56-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;Please provide/describe the the primary/surogate response for your study.&quot;</span>),</span>
+<span id="cb56-16"><a href="uiStructure.html#cb56-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb56-17"><a href="uiStructure.html#cb56-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb56-18"><a href="uiStructure.html#cb56-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb56-19"><a href="uiStructure.html#cb56-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>The two arguments of <code>tabsetPanel</code> you need to provide are the <code>id</code> and <code>type</code>. The <code>id</code> allows for you to reference the tab set from anywhere in the app, which is useful for navigation. Make sure you use a meaningful and unique name here. The <code>type</code> argument will take one of two values: <code>tabs</code> or <code>hidden</code>. (At this time we do not allow for any other choices in BOAST.) The choice will come from Question 4 in the decision tree above.</p>
 <p>The optional third argument you can set is the <code>selected</code> argument (e.g., <code>selected = "S1"</code>). This will let you set the initial tab displayed be something specific. However, our recommendation is that you should put the tabs into an order that makes the most natural progression. The first tab displayed should be the first tab you create within the set. Thus, you don’t really need to set the <code>selected</code> argument here.</p>
 </div>
@@ -1435,14 +1440,14 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
 <h3><span class="header-section-number">9.6.3</span> Moving Between Tabs</h3>
 <p>You can create navigation buttons to move between the various tabs in a tab set. This is especially important if you are using Hidden Tabs.</p>
 <p>Within the <code>handlerExpr</code> of your button’s <code>observeEvent</code> call, you’ll need to include code similar to the following:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="uiStructure.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the server definition</span></span>
-<span id="cb56-2"><a href="uiStructure.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="do">## In the observeEvent for a particular button</span></span>
-<span id="cb56-3"><a href="uiStructure.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="do">### In the handlerExpr for that button</span></span>
-<span id="cb56-4"><a href="uiStructure.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">updateTabsetPanel</span>(</span>
-<span id="cb56-5"><a href="uiStructure.html#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">session =</span> session,</span>
-<span id="cb56-6"><a href="uiStructure.html#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;diagramWiz&quot;</span>, <span class="co"># From the tabsetPanel</span></span>
-<span id="cb56-7"><a href="uiStructure.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="st">&quot;S2&quot;</span> <span class="co"># from the tabPanel</span></span>
-<span id="cb56-8"><a href="uiStructure.html#cb56-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="uiStructure.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the server definition</span></span>
+<span id="cb57-2"><a href="uiStructure.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="do">## In the observeEvent for a particular button</span></span>
+<span id="cb57-3"><a href="uiStructure.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="do">### In the handlerExpr for that button</span></span>
+<span id="cb57-4"><a href="uiStructure.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">updateTabsetPanel</span>(</span>
+<span id="cb57-5"><a href="uiStructure.html#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">session =</span> session,</span>
+<span id="cb57-6"><a href="uiStructure.html#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;diagramWiz&quot;</span>, <span class="co"># From the tabsetPanel</span></span>
+<span id="cb57-7"><a href="uiStructure.html#cb57-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="st">&quot;S2&quot;</span> <span class="co"># from the tabPanel</span></span>
+<span id="cb57-8"><a href="uiStructure.html#cb57-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>You’ll need to use the <code>updateTabsetPanel</code> function to tell R that you’re wanting to move the user to a new tab. The <code>inputId</code> argument will need to be set to the <code>id</code> value of the <code>tabsetPanel</code> you created and want to be working with. The <code>selected</code> argument will need to be the <code>value</code> from the <code>tabPanel</code> that you want to send the user to.</p>
 
 </div>
