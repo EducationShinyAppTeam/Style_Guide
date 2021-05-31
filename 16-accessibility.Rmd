@@ -4,6 +4,10 @@
 
 We need to make sure that our Apps are accessible. If you have been adhering to the style guide, your App should be in a decent position. When you're ready to test the accessibility of your App, you'll need to deploy the App to a sever and then use the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). Enter the URL of your App in the noted box to run an evaluation. See what accessibility issues your App has and then address them.
 
+If you are testing an app you've deployed to the TLT Server, the PSU VPN will block the WAVE tool from scanning. However, you can use the [WAVE Browser Extensions](https://wave.webaim.org/extension/) to test your app. After installing the browser extension (and connecting to the VPN), open your app in a new browser tab and then activate the browser extensions. Look through to see what errors and warnings get listed. Deactivate the extension, and navigate to a different page of your app and then re-activate the WAVE extension. Similarly, you'll want to make sure that any objects that might initially be hidden are actually showing before you activate the WAVE browser extension. The nature of Shiny apps can impede the WAVE tool, thus you'll want to check each page of your app separately.
+
+
+
 __See also:__
 
   - [Accessibility and Usability at Penn State](https://accessibility.psu.edu/)
