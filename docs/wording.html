@@ -24,7 +24,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-05-30" />
+<meta name="date" content="2021-06-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -426,18 +426,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
-<li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.2</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.3</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.4</b> Histograms</a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.5</b> Tables</a>
+<li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
+<li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.5.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.5.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.5.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.6</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.6.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.6.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -567,28 +568,28 @@ conciseness/brevity.</strong> While we don’t necessarily want a wall of text, 
 <h3><span class="header-section-number">14.3.3</span> Option 1: Hover Text</h3>
 <p>The more immediate solution to differing vocabularies is for us to make use of hover text. This approach is appealing in that the user doesn’t have to leave your App (like going to a dictionary/thesaurus) and the content of these tips is not critical to using your App. That is to say, the information is available for those who might need a quick reminder but does not take up permanent screen space.</p>
 <p>To use this tool you’ll need to make sure that you install and load the <code>tippy</code> package.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="wording.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="wording.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
 <p>Suppose that we want to add the hover text to the the word “positive” in the following sentence:</p>
 <blockquote>
 <p>A positively skewed histogram will hoave potential outliers that are larger than the main modal clump(s).</p>
 </blockquote>
 <p>We would need to do the following in our <code>app.R</code> (or <code>ui.R</code>) file:</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="wording.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required Library</span></span>
-<span id="cb94-2"><a href="wording.html#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tippy)</span>
-<span id="cb94-3"><a href="wording.html#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="co"># In UI Section</span></span>
-<span id="cb94-4"><a href="wording.html#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb94-5"><a href="wording.html#cb94-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
-<span id="cb94-6"><a href="wording.html#cb94-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb94-7"><a href="wording.html#cb94-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabItem</span>(</span>
-<span id="cb94-8"><a href="wording.html#cb94-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
-<span id="cb94-9"><a href="wording.html#cb94-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
-<span id="cb94-10"><a href="wording.html#cb94-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;A &quot;</span>,</span>
-<span id="cb94-11"><a href="wording.html#cb94-11" aria-hidden="true" tabindex="-1"></a>      tippy<span class="sc">::</span><span class="fu">tippy</span>(<span class="at">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
-<span id="cb94-12"><a href="wording.html#cb94-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
-<span id="cb94-13"><a href="wording.html#cb94-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">arrow =</span> <span class="cn">TRUE</span>, <span class="at">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
-<span id="cb94-14"><a href="wording.html#cb94-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
-<span id="cb94-15"><a href="wording.html#cb94-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb94-16"><a href="wording.html#cb94-16" aria-hidden="true" tabindex="-1"></a>)) </span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="wording.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required Library</span></span>
+<span id="cb96-2"><a href="wording.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tippy)</span>
+<span id="cb96-3"><a href="wording.html#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="co"># In UI Section</span></span>
+<span id="cb96-4"><a href="wording.html#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb96-5"><a href="wording.html#cb96-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
+<span id="cb96-6"><a href="wording.html#cb96-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb96-7"><a href="wording.html#cb96-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabItem</span>(</span>
+<span id="cb96-8"><a href="wording.html#cb96-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
+<span id="cb96-9"><a href="wording.html#cb96-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
+<span id="cb96-10"><a href="wording.html#cb96-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;A &quot;</span>,</span>
+<span id="cb96-11"><a href="wording.html#cb96-11" aria-hidden="true" tabindex="-1"></a>      tippy<span class="sc">::</span><span class="fu">tippy</span>(<span class="at">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
+<span id="cb96-12"><a href="wording.html#cb96-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
+<span id="cb96-13"><a href="wording.html#cb96-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">arrow =</span> <span class="cn">TRUE</span>, <span class="at">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
+<span id="cb96-14"><a href="wording.html#cb96-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
+<span id="cb96-15"><a href="wording.html#cb96-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb96-16"><a href="wording.html#cb96-16" aria-hidden="true" tabindex="-1"></a>)) </span></code></pre></div>
 <p>There are several things to notice in the example:</p>
 <ol style="list-style-type: decimal">
 <li>The <code>tippy</code> call is part of the paragraph environment. If the text is going to be part of a list, then the <code>tippy</code> call should be part of a list item.</li>

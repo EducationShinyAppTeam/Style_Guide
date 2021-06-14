@@ -277,6 +277,7 @@ sizing-your-image-imagesize
 altStatic
 graphics
 graphLab
+font-sizes
 axes-and-scales
 colorPlots
 histograms

@@ -26,6 +26,44 @@ When dealing with quantities on axes, you need to include the unit of measuremen
 
 Labels should be informative without getting in the way of reading the graph.
 
+## Font Sizes
+
+A common area for adjustment in R graphics is that font size. Many times, we might need to adjust the size of the text used in a plot so that the axis labels and titles are easier to read. There are a couple of different approaches you can use to effect this: change the base font size or change the font size for particular elements.
+
+The easiest approach is to change the base font size and then let `ggplot` do the necessary alterations. To go this route, you will need to do the following:
+
+```{r fontSize1, echo=TRUE, eval=FALSE}
+# Letting examplePlot be an already created ggplot object
+examplePlot +
+  theme(
+    text = element_text(size = 18)
+  )
+
+```
+
+The above code should set the default font size for the entire plot to be 18 pt will potentially scale from there.
+
+If instead you wish to be a bit more precise with the font size for different elements, you would need to something like the following:
+
+```{r fontSize2, echo=TRUE, eval=FALSE}
+# Letting examplePlot be an already created ggplot object
+examplePlot +
+  theme(
+    axis.title = element_text(size = 18),
+    axis.text.x = element_text(size = 14),
+    legend.title = element_text(size = 18),
+    legend.text = element_text(size = 14),
+    plot.title = element_text(size = 24)
+  )
+
+```
+
+In this example code, we're instructing R to use size 18 font for the labels on both axes and the legend title. We're also using size 14 font for the text that occurs in the legend as well as along the horizontal axis. (The vertical axis's text will be the default size.) The plot's title will be 24 point.
+
+There are many different aspects of size that you can adjust with the `theme` function; these are just a few. To see the full list, look at the Help documentation for theme (`?ggplot2::theme`). For each of the elements, you will need to use `element_text` with a `size` argument to dictate what font size should be used.
+
+You will need to play around with the font sizes to find one that will work well in a wide variety of situations. Keep in mind, that the font __will not dynamically scale__ when you stretch/shrink the window or when you move between using a computer and mobile device.
+
 ## Axes and Scales
 
 The default axes for `R`'s base graphics are, well, absolutely terrible. The algorithms for axes in `ggplot2` while better than base `R` are still in need of improvement. The default axes often do not fully cover the data as well as having gaps between the axes and the data. All this impedes the user's construction of meaning. Thus, you'll want to take control and stipulate the axes and scales to optimize what users get out of the plot. If you are providing multiple plots that the user is supposed to compare, make sure that they all use the same scaling and axes.
