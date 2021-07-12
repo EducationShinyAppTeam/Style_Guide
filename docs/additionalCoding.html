@@ -554,13 +554,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="rlockerc" class="section level2" number="8.5">
 <h2><span class="header-section-number">8.5</span> Using rLocker</h2>
-<p>Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The <a href="https://github.com/rpc5102/rlocker">rlocker</a> package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.</p>
+<p>Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The <a href="https://github.com/EducationShinyAppTeam/rLocker">rLocker</a> package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.</p>
 <p>If you are following the directions we’ve laid out in this Style Guide, there is no additional action that you have to take. We provide the following information just for those individuals who would like to learn more about <code>rLocker</code>.</p>
 <div id="installing" class="section level3" number="8.5.1">
 <h3><span class="header-section-number">8.5.1</span> Installing</h3>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="additionalCoding.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb43-2"><a href="additionalCoding.html#cb43-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rpc5102/rlocker&quot;</span>)</span></code></pre></div>
-<p><a href="https://github.com/rpc5102/rlocker#Installation">View Documentation</a></p>
+<span id="cb43-2"><a href="additionalCoding.html#cb43-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/rLocker&quot;</span>)</span></code></pre></div>
+<p><a href="https://github.com/EducationShinyAppTeam/rLocker#Installation">View Documentation</a></p>
 </div>
 <div id="setup" class="section level3" number="8.5.2">
 <h3><span class="header-section-number">8.5.2</span> Setup</h3>
@@ -578,7 +578,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Neil</strong> (Actor) <strong>answered</strong> (Verb) <strong>Question 1</strong> (Object) <strong>correctly</strong> with the answer <strong>true</strong> (Result).</p>
 </blockquote>
 <p>This is a good way to think about it when beginning to write collection functions. Which brings us to our next part, writing collection functions.</p>
-<p>Out of the box, <code>rlocker</code> does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like <a href="https://www.ht2labs.com/learning-locker-community/overview/">Learning Locker</a>, it is important to transform it in a way that makes sense.</p>
+<p>Out of the box, <code>rLocker</code> does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like <a href="https://www.ht2labs.com/learning-locker-community/overview/">Learning Locker</a>, it is important to transform it in a way that makes sense.</p>
 <p><strong>boastUtils</strong></p>
 <p>If using the <code>boastApp</code> wrapper for your project, your App will automatically generate and store a few of the more typical Statements. Please refrain from creating additional versions of the following statement descriptions:</p>
 <table>
@@ -616,7 +616,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb44-8"><a href="additionalCoding.html#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">success =</span> <span class="cn">NA</span>,</span>
 <span id="cb44-9"><a href="additionalCoding.html#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">completion =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb44-10"><a href="additionalCoding.html#cb44-10" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb44-11"><a href="additionalCoding.html#cb44-11" aria-hidden="true" tabindex="-1"></a>  statement <span class="ot">&lt;-</span> rlocker<span class="sc">::</span><span class="fu">createStatement</span>(<span class="fu">list</span>(</span>
+<span id="cb44-11"><a href="additionalCoding.html#cb44-11" aria-hidden="true" tabindex="-1"></a>  statement <span class="ot">&lt;-</span> rLocker<span class="sc">::</span><span class="fu">createStatement</span>(<span class="fu">list</span>(</span>
 <span id="cb44-12"><a href="additionalCoding.html#cb44-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">verb =</span> verb,</span>
 <span id="cb44-13"><a href="additionalCoding.html#cb44-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> <span class="fu">list</span>(</span>
 <span id="cb44-14"><a href="additionalCoding.html#cb44-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> <span class="fu">paste0</span>(<span class="fu">getCurrentAddress</span>(session), <span class="st">&quot;#&quot;</span>, object),</span>
@@ -630,7 +630,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb44-22"><a href="additionalCoding.html#cb44-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">completion =</span> completion</span>
 <span id="cb44-23"><a href="additionalCoding.html#cb44-23" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb44-24"><a href="additionalCoding.html#cb44-24" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb44-25"><a href="additionalCoding.html#cb44-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rlocker<span class="sc">::</span><span class="fu">store</span>(session, statement))   </span>
+<span id="cb44-25"><a href="additionalCoding.html#cb44-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rLocker<span class="sc">::</span><span class="fu">store</span>(session, statement))   </span>
 <span id="cb44-26"><a href="additionalCoding.html#cb44-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p><strong>Sample event observer</strong></p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="additionalCoding.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(session<span class="sc">$</span>input[[id]], {</span>
@@ -647,7 +647,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb45-12"><a href="additionalCoding.html#cb45-12" aria-hidden="true" tabindex="-1"></a>  object <span class="ot">&lt;-</span> id</span>
 <span id="cb45-13"><a href="additionalCoding.html#cb45-13" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb45-14"><a href="additionalCoding.html#cb45-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The user&#39;s action verb. Most likely going to be answered in this case.    #</span></span>
-<span id="cb45-15"><a href="additionalCoding.html#cb45-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rlocker::getVerbList() if you are unsure of the options.              #</span></span>
+<span id="cb45-15"><a href="additionalCoding.html#cb45-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rLocker::getVerbList() if you are unsure of the options.              #</span></span>
 <span id="cb45-16"><a href="additionalCoding.html#cb45-16" aria-hidden="true" tabindex="-1"></a>  verb <span class="ot">&lt;-</span> <span class="st">&quot;answered&quot;</span></span>
 <span id="cb45-17"><a href="additionalCoding.html#cb45-17" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb45-18"><a href="additionalCoding.html#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The correct answer to the question.                                       #</span></span>
@@ -660,7 +660,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb45-25"><a href="additionalCoding.html#cb45-25" aria-hidden="true" tabindex="-1"></a>  description <span class="ot">&lt;-</span> gameSet[id,]<span class="sc">$</span>question</span>
 <span id="cb45-26"><a href="additionalCoding.html#cb45-26" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb45-27"><a href="additionalCoding.html#cb45-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The type of question it is.                                               #</span></span>
-<span id="cb45-28"><a href="additionalCoding.html#cb45-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rlocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
+<span id="cb45-28"><a href="additionalCoding.html#cb45-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run rLocker::getInteractionTypes() if you are unsure of the options.      #</span></span>
 <span id="cb45-29"><a href="additionalCoding.html#cb45-29" aria-hidden="true" tabindex="-1"></a>  interactionType <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
 <span id="cb45-30"><a href="additionalCoding.html#cb45-30" aria-hidden="true" tabindex="-1"></a>    gameSet[id,]<span class="sc">$</span>format <span class="sc">==</span> <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;choice&quot;</span></span>
 <span id="cb45-31"><a href="additionalCoding.html#cb45-31" aria-hidden="true" tabindex="-1"></a>  )</span>
@@ -686,9 +686,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb45-51"><a href="additionalCoding.html#cb45-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">completion =</span> completion</span>
 <span id="cb45-52"><a href="additionalCoding.html#cb45-52" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb45-53"><a href="additionalCoding.html#cb45-53" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Additional code can be found in the <a href="https://github.com/rpc5102/rlocker/tree/master/inst/examples">examples</a> folder as well as the main <a href="https://github.com/rpc5102/rlocker/blob/master/README.md">README</a> of the rLocker project; apps such as the <a href="https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game">Hypothesis_Testing_Game</a> have already been outfitted with rlocker. The statement generator above will eventually make its way into <code>boastUtils</code> once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
+<p>Additional code can be found in the <a href="https://github.com/EducationShinyAppTeam/rLocker/tree/master/inst/examples">examples</a> folder as well as the main <a href="https://github.com/EducationShinyAppTeam/rLocker/blob/master/README.md">README</a> of the rLocker project; apps such as the <a href="https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game">Hypothesis_Testing_Game</a> have already been outfitted with rLocker. The statement generator above will eventually make its way into <code>boastUtils</code> once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).</p>
 <p><strong>Did you know?</strong></p>
-<p>You can run <code>help(package = "rlocker")</code> to view the help files for this package or press <code>F1</code> while typing a function name to see the documentation for that specific function.</p>
+<p>You can run <code>help(package = "rLocker")</code> to view the help files for this package or press <code>F1</code> while typing a function name to see the documentation for that specific function.</p>
 
 </div>
 </div>
