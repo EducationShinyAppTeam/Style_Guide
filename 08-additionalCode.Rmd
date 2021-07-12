@@ -63,7 +63,7 @@ See if what you're trying to do can first be done in R. If not, set up a time to
 
 ## Using rLocker {#rlockerc}
 
-Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The [rlocker](https://github.com/rpc5102/rlocker) package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
+Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The [rLocker](https://github.com/EducationShinyAppTeam/rLocker) package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.
 
 If you are following the directions we've laid out in this Style Guide, there is no additional action that you have to take. We provide the following information just for those individuals who would like to learn more about `rLocker`.
 
@@ -71,9 +71,9 @@ If you are following the directions we've laid out in this Style Guide, there is
 
 ```{r, eval = FALSE}
 library(devtools)
-devtools::install_github("rpc5102/rlocker")
+devtools::install_github("EducationShinyAppTeam/rLocker")
 ```
-[View Documentation](https://github.com/rpc5102/rlocker#Installation)
+[View Documentation](https://github.com/EducationShinyAppTeam/rLocker#Installation)
 
 ### Setup
 
@@ -93,7 +93,7 @@ The main purpose of this package is to help create meaningful- structured- xAPI 
 
 This is a good way to think about it when beginning to write collection functions. Which brings us to our next part, writing collection functions.
 
-Out of the box, `rlocker` does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like [Learning Locker](https://www.ht2labs.com/learning-locker-community/overview/), it is important to transform it in a way that makes sense.
+Out of the box, `rocker` does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like [Learning Locker](https://www.ht2labs.com/learning-locker-community/overview/), it is important to transform it in a way that makes sense.
 
 **boastUtils**
 
@@ -122,7 +122,7 @@ An App should only have one `launched` and `exited` event but can have multiple 
   success = NA,
   completion = FALSE)
 {
-  statement <- rlocker::createStatement(list(
+  statement <- rLocker::createStatement(list(
     verb = verb,
     object = list(
       id = paste0(getCurrentAddress(session), "#", object),
@@ -136,7 +136,7 @@ An App should only have one `launched` and `exited` event but can have multiple 
       completion = completion
     )
   ))
-  return(rlocker::store(session, statement))   
+  return(rLocker::store(session, statement))   
 }
 ```
 
@@ -157,7 +157,7 @@ observeEvent(session$input[[id]], {
   object <- id
   
   # The user's action verb. Most likely going to be answered in this case.    #
-  # Run rlocker::getVerbList() if you are unsure of the options.              #
+  # Run rLocker::getVerbList() if you are unsure of the options.              #
   verb <- "answered"
   
   # The correct answer to the question.                                       #
@@ -170,7 +170,7 @@ observeEvent(session$input[[id]], {
   description <- gameSet[id,]$question
   
   # The type of question it is.                                               #
-  # Run rlocker::getInteractionTypes() if you are unsure of the options.      #
+  # Run rLocker::getInteractionTypes() if you are unsure of the options.      #
   interactionType <- ifelse(
     gameSet[id,]$format == "numeric", "numeric", "choice"
   )
@@ -198,8 +198,8 @@ observeEvent(session$input[[id]], {
 }
 ```
 
-Additional code can be found in the [examples](https://github.com/rpc5102/rlocker/tree/master/inst/examples) folder as well as the main [README](https://github.com/rpc5102/rlocker/blob/master/README.md) of the rLocker project; apps such as the [Hypothesis_Testing_Game](https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game) have already been outfitted with rlocker. The statement generator above will eventually make its way into `boastUtils` once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob ([rpc5102](mailto:rpc5102@psu.edu)).
+Additional code can be found in the [examples](https://github.com/EducationShinyAppTeam/rLocker/tree/master/inst/examples) folder as well as the main [README](https://github.com/EducationShinyAppTeam/rLocker/blob/master/README.md) of the rLocker project; apps such as the [Hypothesis_Testing_Game](https://github.com/EducationShinyAppTeam/Hypothesis_Testing_Game) have already been outfitted with rLocker. The statement generator above will eventually make its way into `boastUtils` once enough feedback is collected. If you are ever confused about how it works, feel free to reach out to Bob ([rpc5102](mailto:rpc5102@psu.edu)).
 
 **Did you know?**
 
-You can run `help(package = "rlocker")` to view the help files for this package or press `F1` while typing a function name to see the documentation for that specific function.
+You can run `help(package = "rLocker")` to view the help files for this package or press `F1` while typing a function name to see the documentation for that specific function.
