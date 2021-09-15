@@ -193,6 +193,11 @@ hr {
 }
 
 /*Non-title portion of dashboard header*/
+.navbar-static-top .dropdown a {
+    line-height: 50px;
+    display: inline;
+}
+
 .skin-blue .main-header>.navbar {
     background-color: var(--beaver-blue);
     color: black;
