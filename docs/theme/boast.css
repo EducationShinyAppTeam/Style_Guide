@@ -1222,3 +1222,14 @@ caption {
 .matrix-input-table{
   width: 75%;
 }
+
+/*Center Figure Class*/
+.centerFigure img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centerFigure figcaption{
+  text-align: center;
+}
