@@ -1184,7 +1184,7 @@ caption {
   top: 0;
   left: 0;
   background: #8A8A8A;
-  z-index: 9998; 
+  z-index: 9998;
 }
 
 .expanded {
@@ -1232,4 +1232,10 @@ caption {
 
 .centerFigure figcaption{
   text-align: center;
+}
+
+/*Table Padding*/
+th, td {
+  padding-left: 5px;
+  padding-right: 5px;
 }
