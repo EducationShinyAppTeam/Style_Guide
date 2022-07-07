@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 The Exploring the BOAST Template | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 The Exploring the BOAST Template | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="basics.html"/>
 <link rel="next" href="coding.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,11 +506,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="template" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> The Exploring the BOAST Template</h1>
+<div id="template" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> The Exploring the BOAST Template<a href="template.html#template" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Now that you’ve gotten your computer set up and you’ve made yourself a workflow, you’re nearly ready to begin working on apps for BOAST. This Guide is the primary key to getting started but the BOAST Template is the secondary key to your success.</p>
-<div id="templateRepo" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Structure of the BOAST Template Repository</h2>
+<div id="templateRepo" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Structure of the BOAST Template Repository<a href="template.html#templateRepo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To get started, you’ll want to take a look at the <a href="https://github.com/EducationShinyAppTeam/App_Template">BOAST App Template Repository</a> either online or clone the repository (“repo”) to your computer. There are several key items in the repo that you’ll need to be aware of:</p>
 <ul>
 <li><code>app.R</code>: this is where you will write the code for your app.
@@ -520,8 +525,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>As you build your app (or work with existing apps), you’ll add various files to the repo. For some of the older apps, part of the maintainer’s job will be move the repo into alignment with this template (i.e., add anything missing and move files around as needed). However, the basics of the App Template are required elements for all apps; thus, you need to familiarize yourself with them.</p>
 <p>We will now briefly discuss the files which you will be editing.</p>
 </div>
-<div id="appR" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> The <code>app.R</code> File</h2>
+<div id="appR" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> The <code>app.R</code> File<a href="template.html#appR" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is where you’ll do the vast majority of your work. We will not spend too much time describing the ins and outs of this file at this time. However, we do want to mention the five components to any BOAST app.R file.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Loading Packages:</strong> the first part of any <code>app.R</code> file will be where you load all necessary packages for your app through a series of <code>library</code> calls. Only load those packages that you are actively using.</p>
@@ -532,8 +537,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>The BOAST App Call:</strong> the final line of your code will be the BOAST app call (<code>boastUtils::boastApp(ui = ui, server= server)</code>). This is the line of code which takes your UI and server definitions and actually creates your app.</p></li>
 </ol>
 </div>
-<div id="description" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> DESCRIPTION</h2>
+<div id="description" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> DESCRIPTION<a href="template.html#description" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The DESCRIPTION file plays the role of metadata for your app. Formerly, we used to store some metadata inside of the apps. However, as our needs for managing app metadata have grown, we’ve gone a different route. Enter the DESCRIPTION file. If an existing app does not have a DESCRIPTION file, copy the DESCRIPTION file from the App Template and place that copy in the existing app’s repo. Then edit the file. Be sure to push your changes to GitHub when finished.</p>
 <p>The DESCRIPTION contains several fields (typically, the first word of each line, to the left of a colon). You will be editing the following fields:</p>
 <ul>
@@ -548,8 +553,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>BugReports:</strong> Replace <code>Sample_App</code> with your app’s GitHub repo name</li>
 <li><strong>Tags:</strong> list out all of the tags that go with your app; see <a href="template.html#tags">below</a>.</li>
 </ul>
-<div id="authors" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Authors</h3>
+<div id="authors" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Authors<a href="template.html#authors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This is where you’ll list each person who is involved with your app. You’ll want to follow the two examples provided for how to add each person. Each person will get their own <code>person</code> call, on a line that is indented four (4) spaces.</p>
 <p>Within each person call, you’ll need to provide their given (first) name, their family (last) name, their email, and their roles. Notice that you can give a person more than one role. Here is a brief explanation for the roles you can use:</p>
 <ul>
@@ -559,18 +564,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>“fnd”</strong> (RARE) if we receive additional funding from someone to create a specific app, we will list then as funder with this role</li>
 </ul>
 </div>
-<div id="learningObjectives" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Learning Objectives</h3>
+<div id="learningObjectives" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Learning Objectives<a href="template.html#learningObjectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Each app will have one or more learning objectives. This information will be made available to instructors through the Instructor’s App and is important for deciding whether to use the app. You will not have to come up with the wording of these objectives on your own. Rather the faculty will assist you.</p>
 <p>Each objective will be entered as a character string enclosed in double quotation marks and indented four (4) spaces. If the description is rather long, simply break the line and continue. You’ll place a comma between objectives.</p>
 </div>
-<div id="tags" class="section level3" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> Tags</h3>
+<div id="tags" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Tags<a href="template.html#tags" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Tags portion is where you’ll enter all of the appropriate tags we use in BOAST (i.e., Simulation, Multilevel, Real Data, Game) for your app. As we go through the apps and create new ones, we might come up with new tags which we can then apply to the apps.</p>
 </div>
 </div>
-<div id="readme" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> README.md</h2>
+<div id="readme" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> README.md<a href="template.html#readme" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <code>README.md</code> file is a fairly simple file which only contains four items:</p>
 <ol style="list-style-type: decimal">
 <li>The app’s [Full] Title</li>
@@ -579,12 +584,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The app’s description</li>
 </ol>
 <p>Three of these items (title, screenshot, and description) are self-explanatory. We will quickly mention that you will need to insure that you use the appropriate Title and Description not only here in the <code>README.md</code> but also in <code>DESCRIPTION</code>. You’ll also need to use the full title inside the <code>app.R</code>.</p>
-<div id="badges" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Badges</h3>
+<div id="badges" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Badges<a href="template.html#badges" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The second element of the <code>README.md</code> are the badges. These allow viewers to see (at a glance) some important information about the app. There are two main types of badges: lifecycle and year.</p>
 <p>Beneath each explanation, we’ve included the code you would place in the <code>README.md</code> file to make that badge appear.</p>
-<div id="lifecycle" class="section level4" number="4.4.1.1">
-<h4><span class="header-section-number">4.4.1.1</span> Lifecycle Badges</h4>
+<div id="lifecycle" class="section level4 hasAnchor" number="4.4.1.1">
+<h4><span class="header-section-number">4.4.1.1</span> Lifecycle Badges<a href="template.html#lifecycle" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Lifecycle badges act as a signifier of where in the cycle of development your app is at. Each badge conveys a particular meaning for us. The word that you’ll put in the Lifecycle field of the DESCRIPTION file will be in <strong>bold</strong>.</p>
 <ul>
 <li><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen" alt="stable" /> An app is considered <strong>stable</strong> when we’ve reached a point where there are no bugs left to fix, only minimal improvements can be made, and adding new features is not necessary a priority. This is where we want most apps to end up.
@@ -618,8 +623,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="year-badges" class="section level4" number="4.4.1.2">
-<h4><span class="header-section-number">4.4.1.2</span> Year Badges</h4>
+<div id="year-badges" class="section level4 hasAnchor" number="4.4.1.2">
+<h4><span class="header-section-number">4.4.1.2</span> Year Badges<a href="template.html#year-badges" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Year badges denote when the app was officially added to the BOAST shinyapps.io server (i.e., deployment).</p>
 <ul>
 <li><img src="https://img.shields.io/badge/year-2018-lightgrey" alt="year" /> Here the four digit year indicates in what calendar year we deployed the app.
@@ -636,8 +641,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="screenshot" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> screenshot.png</h2>
+<div id="screenshot" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> screenshot.png<a href="template.html#screenshot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You may see a file called <code>screenshot.png</code>. This is a placeholder file that adds a generic screenshot to the <code>readme.md</code>. After your app is deployed, we will update the <code>readme.md.</code> to link to the photo of your app used on the BOAST website. Thus, you do not have to do anything with this file.</p>
 
 </div>
@@ -655,7 +660,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -692,6 +696,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 15 Documentation | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 15 Documentation | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="wording.html"/>
 <link rel="next" href="accessibility.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,30 +506,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="documentation" class="section level1" number="15">
-<h1><span class="header-section-number">Chapter 15</span> Documentation</h1>
+<div id="documentation" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Chapter 15</span> Documentation<a href="documentation.html#documentation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>These apps are the product of your hard work and are part of your academic record. Thus, you need to adhere to <a href="https://undergrad.psu.edu/aappm/G-9-academic-integrity.html">Penn State’s Academic Integrity Policy</a>. This is especially important as we are making the apps available through a Creative Commons Attribution-NonCommerical-ShareAlike 4.0 International license (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>). If you have used code, pictures, data, or other materials from outside of the BOAST team, you <strong>MUST</strong> give proper credit. These references will then be included on the App’s References Tab.</p>
-<div id="references" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> References</h2>
+<div id="references" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> References<a href="documentation.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgments.</p>
 <p><strong>NOTE:</strong> listing something in the Acknowledgments DOES NOT waive this requirement.</p>
 <p>We will make use of the <a href="https://amstat.tfjournals.com/asa-style-guide/">American Statistical Association’s</a> reference style. Please check with Neil, Matt, and Dennis for getting assistance. You can see this style in action, with the <a href="#refTab">Reference Tab</a> example of <a href="layout.html#layout">Chapter <a href="layout.html#layout"><strong>??</strong></a></a>. Here is a starting code block for you to use:</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="documentation.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[omitted code]</span></span>
-<span id="cb97-2"><a href="documentation.html#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb97-3"><a href="documentation.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
-<span id="cb97-4"><a href="documentation.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
-<span id="cb97-5"><a href="documentation.html#cb97-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb97-6"><a href="documentation.html#cb97-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb97-7"><a href="documentation.html#cb97-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
-<span id="cb97-8"><a href="documentation.html#cb97-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb97-9"><a href="documentation.html#cb97-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
-<span id="cb97-10"><a href="documentation.html#cb97-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Repeat as needed</span></span>
-<span id="cb97-11"><a href="documentation.html#cb97-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="documentation.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[omitted code]</span></span>
+<span id="cb98-2"><a href="documentation.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb98-3"><a href="documentation.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
+<span id="cb98-4"><a href="documentation.html#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
+<span id="cb98-5"><a href="documentation.html#cb98-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
+<span id="cb98-6"><a href="documentation.html#cb98-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb98-7"><a href="documentation.html#cb98-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
+<span id="cb98-8"><a href="documentation.html#cb98-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb98-9"><a href="documentation.html#cb98-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
+<span id="cb98-10"><a href="documentation.html#cb98-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Repeat as needed</span></span>
+<span id="cb98-11"><a href="documentation.html#cb98-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Notice the use of <code>class = "hangingindent"</code>. You must include this with each reference as this will ensure the proper styling of your references.</p>
 <p>If you need assistance with this section, please talk to Neil.</p>
 </div>
-<div id="plagiarism" class="section level2" number="15.2">
-<h2><span class="header-section-number">15.2</span> Plagiarism</h2>
+<div id="plagiarism" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Plagiarism<a href="documentation.html#plagiarism" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>You MAY NOT use blocks of code you’ve found online without giving proper attribution.</strong></p>
 <p>There is a difference between looking at example code online to see how to do something and copying that code directly. The former is permissible, the later is plagiarism.</p>
 <ul>
@@ -532,8 +537,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you use someone else’s code and make modifications, you need to give credit to where you got the code, and potentially ask for permission.</li>
 </ul>
 <p>You will need to place citations in <em><strong>two</strong></em> places: in the References Tab and in your code. You might want to also consider adding an acknowledgement to the Overview tab.</p>
-<div id="reference-tab" class="section level3" number="15.2.1">
-<h3><span class="header-section-number">15.2.1</span> Reference Tab</h3>
+<div id="reference-tab" class="section level3 hasAnchor" number="15.2.1">
+<h3><span class="header-section-number">15.2.1</span> Reference Tab<a href="documentation.html#reference-tab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use the following format:</p>
 <blockquote>
 <p>Author. (Date), Title of program/source code, [type of code]. Available from &lt; URL &gt;.</p>
@@ -543,42 +548,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Hatfield, N. J. (2017), First day activity, Netlogo. Available from <a href="https://neilhatfield.github.io/statApps/Day1Activity.html" class="uri">https://neilhatfield.github.io/statApps/Day1Activity.html</a>.</p>
 </blockquote>
 </div>
-<div id="in-code" class="section level3" number="15.2.2">
-<h3><span class="header-section-number">15.2.2</span> In Code</h3>
+<div id="in-code" class="section level3 hasAnchor" number="15.2.2">
+<h3><span class="header-section-number">15.2.2</span> In Code<a href="documentation.html#in-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use the following format in your code to cite where you got the code from.</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="documentation.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb98-2"><a href="documentation.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
-<span id="cb98-3"><a href="documentation.html#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
-<span id="cb98-4"><a href="documentation.html#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Date: &lt;date&gt;</span></span>
-<span id="cb98-5"><a href="documentation.html#cb98-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
-<span id="cb98-6"><a href="documentation.html#cb98-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
-<span id="cb98-7"><a href="documentation.html#cb98-7" aria-hidden="true" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb98-8"><a href="documentation.html#cb98-8" aria-hidden="true" tabindex="-1"></a><span class="co"># [borrowed code then follows]</span></span>
-<span id="cb98-9"><a href="documentation.html#cb98-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb98-10"><a href="documentation.html#cb98-10" aria-hidden="true" tabindex="-1"></a><span class="co"># [last line of borrowed code]      </span></span>
-<span id="cb98-11"><a href="documentation.html#cb98-11" aria-hidden="true" tabindex="-1"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="documentation.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb99-2"><a href="documentation.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
+<span id="cb99-3"><a href="documentation.html#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
+<span id="cb99-4"><a href="documentation.html#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Date: &lt;date&gt;</span></span>
+<span id="cb99-5"><a href="documentation.html#cb99-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
+<span id="cb99-6"><a href="documentation.html#cb99-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
+<span id="cb99-7"><a href="documentation.html#cb99-7" aria-hidden="true" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb99-8"><a href="documentation.html#cb99-8" aria-hidden="true" tabindex="-1"></a><span class="co"># [borrowed code then follows]</span></span>
+<span id="cb99-9"><a href="documentation.html#cb99-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb99-10"><a href="documentation.html#cb99-10" aria-hidden="true" tabindex="-1"></a><span class="co"># [last line of borrowed code]      </span></span>
+<span id="cb99-11"><a href="documentation.html#cb99-11" aria-hidden="true" tabindex="-1"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
 </div>
 </div>
-<div id="r-packages" class="section level2" number="15.3">
-<h2><span class="header-section-number">15.3</span> <code>R</code> Packages</h2>
+<div id="r-packages" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> <code>R</code> Packages<a href="documentation.html#r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you made use of any packages in <code>R</code>, then you will need to add these to the Reference tab. Fortunately, there is a built-in tool that will help you: the <code>citation</code> function. In R (RStudio) simply type <code>citation("packageName")</code> and you’ll get the appropriate citation information for the package you used. For example, <code>citation("shinydashboard")</code> and <code>citation("plyr")</code> will give the information needed for the following citations:</p>
 <blockquote>
-<p>Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with ‘Shiny,’ R Package. Available from <a href="https://CRAN.R-project.org/package=shinydashboard" class="uri">https://CRAN.R-project.org/package=shinydashboard</a></p>
+<p>Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with ‘Shiny’, R Package. Available from <a href="https://CRAN.R-project.org/package=shinydashboard" class="uri">https://CRAN.R-project.org/package=shinydashboard</a></p>
 </blockquote>
 <blockquote>
-<p>Wickham, H. (2011), “The Split-apply-combine strategy for data analysis.” <em>Journal of Statistical Software</em>, 40, pp. 1-29. Available at <a href="http://www.jstatsoft.org/v40/i01/" class="uri">http://www.jstatsoft.org/v40/i01/</a>.</p>
+<p>Wickham, H. (2011), “The Split-apply-combine strategy for data analysis”. <em>Journal of Statistical Software</em>, 40, pp. 1-29. Available at <a href="http://www.jstatsoft.org/v40/i01/" class="uri">http://www.jstatsoft.org/v40/i01/</a>.</p>
 </blockquote>
 <p>Notice, that the format of the R package will depend on whether there is an article published for the package. The <code>shinydashboard</code> package is not associated with an article while the <code>plyr</code> package is associated with Wickham’s article.</p>
 </div>
-<div id="graphics-1" class="section level2" number="15.4">
-<h2><span class="header-section-number">15.4</span> Graphics</h2>
+<div id="graphics-1" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> Graphics<a href="documentation.html#graphics-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Pictures, drawings, photographs, images, etc. are typically copyrighted. When you’re selecting images, make sure that the images are Open Source/Copyright Free/Royalty Free/Public Domain. Additionally, include a reference to where the pictures came from in the Overview Page. The basic format to use is:</p>
 <blockquote>
 <p>LastName, First Initial. (Year), Title of artwork. Retrieved from &lt; URL &gt; (if available).</p>
 </blockquote>
 </div>
-<div id="data" class="section level2" number="15.5">
-<h2><span class="header-section-number">15.5</span> Data</h2>
+<div id="data" class="section level2 hasAnchor" number="15.5">
+<h2><span class="header-section-number">15.5</span> Data<a href="documentation.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you are using any data files, you need to attribute where those files are coming from in the References tab. You might also want to add an acknowledgment on the Overview tab. A suggested format to use is:</p>
 <blockquote>
 <p>Author/Rightsholder. (Year), Title of data set, [Description of form], Location: Name of producer.</p>
@@ -603,7 +608,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -640,6 +644,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

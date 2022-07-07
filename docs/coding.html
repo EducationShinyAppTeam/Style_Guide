@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Coding Style | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Coding Style | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="template.html"/>
 <link rel="next" href="specificCoding.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,11 +506,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="coding" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Coding Style</h1>
+<div id="coding" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Coding Style<a href="coding.html#coding" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Now that you’ve gone through the Getting Ready to Code chapters, we can turn our attention to the first portion of the Style Guide–Coding Style.</p>
-<div id="genCode" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> General Coding Style</h2>
+<div id="genCode" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> General Coding Style<a href="coding.html#genCode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Our Coding Style is based upon the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. However, we make some important departures and have some additional practices that you will need to follow.</p>
 <p>When it comes to our Coding Style we strive to adhere to the following principles:</p>
 <ul>
@@ -517,8 +522,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Yes, we realize that we stated “Make your code readable” three times. Readable code is the <em><strong>MOST</strong></em> important thing you can do. Even if you don’t write the most efficient code, readable code will allow future students to examine your code and suggest improvements. Further, readable code will help you make sense of what <em>you</em> were trying to do when you come back to the app after several weeks or months. We will discuss all three of these principles in turn.</p>
 </div>
-<div id="readable" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Make Your Code Readable</h2>
+<div id="readable" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Make Your Code Readable<a href="coding.html#readable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For us, making code readable boils down to three major aspects: formatting and spacing, naming, and being explicit. By way of an example, consider the following code:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="coding.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad Code Example</span></span>
 <span id="cb4-2"><a href="coding.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(<span class="st">&quot;input1&quot;</span>,<span class="st">&quot;pick&quot;</span>,listA,<span class="cn">NULL</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="st">&quot;80%&quot;</span>,<span class="dv">2</span>)</span></code></pre></div>
@@ -535,11 +540,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-10"><a href="coding.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">2</span></span>
 <span id="cb5-11"><a href="coding.html#cb5-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>While the above code takes more lines, it is infinitely more readable. Both sets of code call the same function, <code>selectInput</code>, to create a dropdown menu where the user can select individuals. In the Bad example, the user has to either 1) have the order of arguments memorized, or 2) guess what each argument does. In the Good example, each argument is listed out by name (e.g., <code>inputId</code> and <code>multiple</code>). While you might not know what each of these arguments controls (yet), you can at least see what values are being passed to each one. Further, you know that the choices are stored in the <code>nameList</code>, which is a much clearer name than <code>listA</code>.</p>
-<div id="formatSpace" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Formatting and Spacing</h3>
+<div id="formatSpace" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Formatting and Spacing<a href="coding.html#formatSpace" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One of the most important aspects of making code readable is proper formatting and spacing. A common belief is that the fewer the lines of code, the better the program. However, what often happens when people attempt to follow this belief is that they wind up with indecipherable code…even to themselves. Thus, they violate not only our Readability principle but also our Be Kind principle.</p>
-<div id="line-length" class="section level4" number="5.2.1.1">
-<h4><span class="header-section-number">5.2.1.1</span> Line Length</h4>
+<div id="line-length" class="section level4 hasAnchor" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> Line Length<a href="coding.html#line-length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>With only a few exceptions (e.g., URLs), we want to keep each line to no more than 80 characters long. RStudio has a built-in tool to help you with this.</p>
 <ol style="list-style-type: decimal">
 <li>Click on the Tools menu and select Global Options…</li>
@@ -551,8 +556,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This will add a thin grey line to the editor window that marks where the 80 character limit occurs. While this won’t force you to a new line, this will serve as visual cue to you that your code line is too long and you should press return to move to a new line.</p>
 <p>If you only have a few characters left, then finishing the line and making a line just a few characters over 80 is acceptable. Just try to keep such exceptions few and far between.</p>
 </div>
-<div id="indentation" class="section level4" number="5.2.1.2">
-<h4><span class="header-section-number">5.2.1.2</span> Indentation</h4>
+<div id="indentation" class="section level4 hasAnchor" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> Indentation<a href="coding.html#indentation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Indenting your code is a great way to help with readability. RStudio will automatically do this for you. In the Good Example above, each of the arguments was indented 2 spaces; this helps convey that they are nested inside the object that was less indented.</p>
 <p>You can (and will) have nested indentation, for example:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="coding.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Indentation</span></span>
@@ -578,8 +583,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4 brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)</p>
 <p>RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press Command + i; for Windows press Control + i. Keep in mind that this shortcut works only on one line at a time and always references the line just above the one you’re in.</p>
 </div>
-<div id="function-calls" class="section level4" number="5.2.1.3">
-<h4><span class="header-section-number">5.2.1.3</span> Function Calls</h4>
+<div id="function-calls" class="section level4 hasAnchor" number="5.2.1.3">
+<h4><span class="header-section-number">5.2.1.3</span> Function Calls<a href="coding.html#function-calls" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To format function calls, we will want to type the name of the function and the immediately put a open/left parenthesis–<code>functionName(</code>–what happens next depends on what you’re trying to do:</p>
 <ul>
 <li>If the function takes/needs no arguments, then immediately type the close/right parenthesis, e.g., <code>copyrightInfo()</code>, and return to a new line.</li>
@@ -602,13 +607,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-14"><a href="coding.html#cb7-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>If you’ve set up RStudio to automatically create pairs of grouping symbols, the close/right parentheses should automatically format themselves when you return to new lines.</p>
 </div>
-<div id="assignment-operator" class="section level4" number="5.2.1.4">
-<h4><span class="header-section-number">5.2.1.4</span> Assignment Operator</h4>
+<div id="assignment-operator" class="section level4 hasAnchor" number="5.2.1.4">
+<h4><span class="header-section-number">5.2.1.4</span> Assignment Operator<a href="coding.html#assignment-operator" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To store a value, define a function, etc., you need to use the assignment operator <code>&lt;-</code>. In the above examples, you’ll notice that we used this operator to create the UI (<code>ui &lt;- list()</code>) and to create the grading mark (<code>output$markProb1 &lt;- renderIcon()</code>). These are both appropriate usages of assignment. You should not use <code>=</code> in these cases.</p>
 <p>You’ll also notice that we used <code>=</code> with all of the argument names and their values. This is proper usage. You need to pass values to arguments through the <code>=</code> sign and not <code>&lt;-</code>.</p>
 </div>
-<div id="spacing" class="section level4" number="5.2.1.5">
-<h4><span class="header-section-number">5.2.1.5</span> Spacing</h4>
+<div id="spacing" class="section level4 hasAnchor" number="5.2.1.5">
+<h4><span class="header-section-number">5.2.1.5</span> Spacing<a href="coding.html#spacing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Spacing (or whitespace) refers to the portions of your line where you don’t put any characters. In the bad example above, there was no whitespace in the code; everything ran together. Spacing acts in code exactly like it does in written languages. Whileapersoncanreadasentencewithnospaces, the sentence is much easier to read when we use proper spacing.</p>
 <ul>
 <li>Put a space on both sides of <code>&lt;-</code> and <code>=</code>.</li>
@@ -621,8 +626,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="naming" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Use Informative Names</h3>
+<div id="naming" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Use Informative Names<a href="coding.html#naming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use informative names for variables and functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,</p>
 <ul>
 <li><code>scoreMatrix</code> is a matrix that holds a set of scores<br />
@@ -632,11 +637,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Use <a href="https://en.wikipedia.org/wiki/Camel_case">camelCase</a> for variable names and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no spaces or underscores ( _ ) between them. (This is a departure from the tidyverse style.)</p>
 <p>Avoid using the variable names from code that you’re making use of from another app or script. For example, don’t use <code>waitTimes</code> to hold your data on the number of correct answers a user has given. It is also good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid <a href="https://en.wikipedia.org/wiki/Naming_collision">namespace collision</a>.</p>
 </div>
-<div id="explicit" class="section level3" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> Be Explicit</h3>
+<div id="explicit" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Be Explicit<a href="coding.html#explicit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One of the best practices a coder can do is to be explicit. And no, we don’t mean that type of explicit. This links back to <a href="coding.html#naming">Informative Naming</a> but goes a step beyond. <code>R</code> is a functional programming language. One of the important aspects of this is that functions in <code>R</code> obey the same rules as mathematical functions, especially multivariate functions.</p>
-<div id="function-arguments" class="section level4" number="5.2.3.1">
-<h4><span class="header-section-number">5.2.3.1</span> Function Arguments</h4>
+<div id="function-arguments" class="section level4 hasAnchor" number="5.2.3.1">
+<h4><span class="header-section-number">5.2.3.1</span> Function Arguments<a href="coding.html#function-arguments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>One implicit fact about functions that most students don’t realize is that the order of a function’s arguments are a matter of convention and is actually arbitrary. While we might define <em>f</em> as <span class="math inline">\(f(x,y) = x^2+3y\)</span>, we could call <span class="math inline">\(f(y=2,x=1)\)</span> and get the same output as <span class="math inline">\(f(1,2)\)</span> when we use the convention set up in the definition. This issue is exacerbated with functions in <code>R</code>.</p>
 <p>Therefore, when you pass values to the arguments of a function in <code>R</code>, you should be explicit and include the argument name in your code. For example,</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="coding.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
@@ -647,8 +652,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-6"><a href="coding.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;btn-ttt&quot;</span></span>
 <span id="cb8-7"><a href="coding.html#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="function-definitions" class="section level4" number="5.2.3.2">
-<h4><span class="header-section-number">5.2.3.2</span> Function Definitions</h4>
+<div id="function-definitions" class="section level4 hasAnchor" number="5.2.3.2">
+<h4><span class="header-section-number">5.2.3.2</span> Function Definitions<a href="coding.html#function-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you are defining your own function, it is always a good idea to explicitly state what the function spits out. This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use <code>return</code> as shown below:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="coding.html#cb9-1" aria-hidden="true" tabindex="-1"></a>collatz <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">c =</span> <span class="dv">1</span>){</span>
 <span id="cb9-2"><a href="coding.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> x <span class="sc">!=</span> <span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">0</span>)) {</span>
@@ -664,20 +669,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <code>collatz</code> function above allows us to see the Collatz Conjecture in action (i.e., that starting with any positive integer, the sequence formed by taking half of an even value or 3 times an odd value plus 1 will always go to 1). The control logic is the series of <code>if, else if, else</code> statements.</p>
 <p>Even if you store the outputs in an internal variable (see the <code>gradeProb</code> function in the <a href="coding.html#dryGrading">DRY Grading Example</a>), you should still end your function definition with an explicit <code>return</code> call.</p>
 </div>
-<div id="why-is-being-explicit-important" class="section level4" number="5.2.3.3">
-<h4><span class="header-section-number">5.2.3.3</span> Why is being explicit important?</h4>
+<div id="why-is-being-explicit-important" class="section level4 hasAnchor" number="5.2.3.3">
+<h4><span class="header-section-number">5.2.3.3</span> Why is being explicit important?<a href="coding.html#why-is-being-explicit-important" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you write explicit code, you not only improve your code’s readability and are automatically being kind to future coders, but you’re also guarding against certain forms of code breaking changes. When we build Shiny apps, we often call upon packages that other people have made. In those packages are functions that have a default ordering to them. For example, in one version of the package you might have <code>gradeThis(userInput, answerKey, partNumb)</code> but in the newest version you have <code>gradeThis(partNumb, userInput, answerKey)</code>. If you were not explicit by naming the arguments in calls of <code>gradeThis</code> updating the package will cause your app to break and throw errors.</p>
 <p>Further, being explicit also reduces the number of message printed to the console. For example, in <code>ggplot2</code>, if you call <code>geom_smooth(method = lm, se = false)</code> your code will execute properly. However, you will get a message in the console to the effect that <code>geom_smooth</code> used <code>y ~ x</code>. You can suppress this message simply by adding <code>formula = y ~ x</code> to the <code>geom_smooth</code> argument list. (Anything that gets printed to the console fills up your app’s log file. The more that’s in the log file, the harder they are to use to debug your app if/when it crashes. Thus, we want to keep the console as quiet as possible.)</p>
 </div>
 </div>
-<div id="exceptions-to-readability" class="section level3" number="5.2.4">
-<h3><span class="header-section-number">5.2.4</span> Exceptions to Readability</h3>
+<div id="exceptions-to-readability" class="section level3 hasAnchor" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Exceptions to Readability<a href="coding.html#exceptions-to-readability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are few places where we make exceptions to the above formatting rules. These exceptions include the Dashboard Header and the Dashboard Sidebar. While we keep these lines readable, they follow a sightly different set of formatting to minimize their impact on the readability of the rest of the code. The App Template already has code in these sections for you to copy/paste for additional lines.</p>
 <p><strong>If you are ever unsure about how readable your code is, all you have to do is ask someone else. This is a great place for using Peer Reviews can help all students involved wither their coding skills.</strong></p>
 </div>
 </div>
-<div id="efficient" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Make Your Code Efficient</h2>
+<div id="efficient" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Make Your Code Efficient<a href="coding.html#efficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 I would have written a shorter letter, but I did not have the time.
 <div align="right">
@@ -686,15 +691,15 @@ I would have written a shorter letter, but I did not have the time.
 </blockquote>
 <p>Much like writing a short letter (paper or memo), writing efficient code takes time. Often coders first write <em>inefficient</em> code to translate their sketches into a working app. Then they can begin to make their code more efficient.</p>
 <p>As you write more code, you’ll get the hang of writing more efficient code from the start as well as seeing how to make existing code more efficient. Two ways that you can work towards efficient code is to practice DRY coding and to minimize your package usage.</p>
-<div id="dry-coding" class="section level3" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> DRY Coding</h3>
+<div id="dry-coding" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> DRY Coding<a href="coding.html#dry-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>DRY coding is the principle of Don’t Repeat Yourself when coding. If you find yourself writing the same code several times, then you should DRY your code and look for a way to make things more efficient. There are several different situations where DRY might come into play. Here are just a few cases.</p>
-<div id="reoccuring-elements" class="section level4" number="5.3.1.1">
-<h4><span class="header-section-number">5.3.1.1</span> Reoccuring Elements</h4>
+<div id="reoccuring-elements" class="section level4 hasAnchor" number="5.3.1.1">
+<h4><span class="header-section-number">5.3.1.1</span> Reoccuring Elements<a href="coding.html#reoccuring-elements" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Suppose that you use the same list of choices for several different inputs. Rather than retyping the list each time, define the list as an object (e.g, <code>nameList</code>) and then you can call that list in each of the inputs (e.g., <code>choices = nameList</code>).</p>
 </div>
-<div id="dryGrading" class="section level4" number="5.3.1.2">
-<h4><span class="header-section-number">5.3.1.2</span> Grading User Responses</h4>
+<div id="dryGrading" class="section level4 hasAnchor" number="5.3.1.2">
+<h4><span class="header-section-number">5.3.1.2</span> Grading User Responses<a href="coding.html#dryGrading" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Rather than retyping the grading logic several times, you can define a single function and then call that function. For example,</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="coding.html#cb10-1" aria-hidden="true" tabindex="-1"></a>gradeProb <span class="ot">&lt;-</span> <span class="cf">function</span>(user, answer, <span class="at">tolerance =</span> <span class="fl">0.001</span>, <span class="at">partial =</span> <span class="fl">0.01</span>){</span>
 <span id="cb10-2"><a href="coding.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  outcome <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
@@ -722,8 +727,8 @@ I would have written a shorter letter, but I did not have the time.
 <span id="cb11-9"><a href="coding.html#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-10"><a href="coding.html#cb11-10" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>problem1Mark <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(<span class="at">icon =</span> prob1<span class="sc">$</span>mark)</span></code></pre></div>
 </div>
-<div id="graphs" class="section level4" number="5.3.1.3">
-<h4><span class="header-section-number">5.3.1.3</span> Graphs</h4>
+<div id="graphs" class="section level4 hasAnchor" number="5.3.1.3">
+<h4><span class="header-section-number">5.3.1.3</span> Graphs<a href="coding.html#graphs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph as an object is a good idea. For example,</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a basic data frame that will cover the majority of your cases</span></span>
 <span id="cb12-2"><a href="coding.html#cb12-2" aria-hidden="true" tabindex="-1"></a>baseGraph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
@@ -778,12 +783,12 @@ I would have written a shorter letter, but I did not have the time.
 <p>Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary.</p>
 <p>Another important feature of the above code is a <strong>key accessibility feature</strong>: combining color AND shape. Do not rely on just color alone as individuals who are color blind will struggle; always pair color usage with an additional aesthetic such as shape.</p>
 </div>
-<div id="repeating-yourself" class="section level4" number="5.3.1.4">
-<h4><span class="header-section-number">5.3.1.4</span> Repeating Yourself</h4>
+<div id="repeating-yourself" class="section level4 hasAnchor" number="5.3.1.4">
+<h4><span class="header-section-number">5.3.1.4</span> Repeating Yourself<a href="coding.html#repeating-yourself" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There are many other cases where you might find yourself repeating. These are good cases for DRY-ing your code through the use of defining a new object/variable or a function.</p>
 </div>
-<div id="over-dry-ing-code" class="section level4" number="5.3.1.5">
-<h4><span class="header-section-number">5.3.1.5</span> Over DRY-ing Code</h4>
+<div id="over-dry-ing-code" class="section level4 hasAnchor" number="5.3.1.5">
+<h4><span class="header-section-number">5.3.1.5</span> Over DRY-ing Code<a href="coding.html#over-dry-ing-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you are building an app, there will be a certain amount of repetition in what you’re doing. For example, you’ll have to call the <code>bsButton</code> function each time you want to create a button. This is expected and appropriate for you to do. After all, the purpose of the <code>bsButton</code> function is to create a button.</p>
 <p>However, you can over do the DRY principle. For example, you don’t need to define a function for something that you’re only going to call once. Further, it isn’t necessary to define a new function that just changes a default value of an existing function. Here is a case where the user has over DRY-ed:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="coding.html#cb14-1" aria-hidden="true" tabindex="-1"></a>customButton <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId, label){</span>
@@ -800,8 +805,8 @@ I would have written a shorter letter, but I did not have the time.
 <p>Rather than simply calling the <code>bsButton</code> function in their code and passing the appropriate arguments, this user has defined a brand new function that does the same thing but sets the values for <code>icon</code>, <code>size</code>, and <code>style</code> to new defaults. This type of programming should be avoided.</p>
 </div>
 </div>
-<div id="minPackages" class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Minimize Package Usage</h3>
+<div id="minPackages" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Minimize Package Usage<a href="coding.html#minPackages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A second way to make your code more efficient is through the use of packages. When you load a package you want to be sure that</p>
 <ol style="list-style-type: decimal">
 <li>the package you’re loading is absolutely necessary, and</li>
@@ -827,17 +832,17 @@ I would have written a shorter letter, but I did not have the time.
 <p>Once you’re sure that a package isn’t being used, remove the <code>library</code> call for that package from your code.</p>
 </div>
 </div>
-<div id="beKind" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Be Kind to Future Coders</h2>
+<div id="beKind" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Be Kind to Future Coders<a href="coding.html#beKind" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Keep in mind that we have a high coder turnover with a new group of students each summer. Thus, we need to ensure that we go out of our way now to help those students out. Strive to write the quality of code you wish you would have wanted to start with. If you follow the Readability and Efficiency Principles, you’ll be well on your way to being kind to future coders. The best way to go above and beyond is through comments and titling code sections (making jump points).</p>
-<div id="comments" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Leave Comments</h3>
+<div id="comments" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Leave Comments<a href="coding.html#comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>At bare minimum, use a comment to break your code into sections. This helps you and others conceptualize the code into more manageable chunks. Your comments can provide others with potential keywords to search for when looking at your code later on.</p>
 <p>For particularly complex sections, use comments to summarize what you’re trying to do. This can help you and others pick up the coding thread for what you are trying to do for troubleshooting, debugging, and future improvements.</p>
 <p>Keep in mind that being kind is not only for other people, but also for yourself. When you come back to an app even after a couple days away, comments in addition to the readability and efficiency steps will help you see where you left off.</p>
 </div>
-<div id="code-section-titlesjump-points" class="section level3" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> Code Section Titles/Jump Points</h3>
+<div id="code-section-titlesjump-points" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Code Section Titles/Jump Points<a href="coding.html#code-section-titlesjump-points" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another way to be kind to future coders is to title sections of your code and create points which allow for them to jump to different sections of your code without having to scroll through each and every line. Remember, you also count as a future coder, so titling sections of code will help you navigate your code.</p>
 <p>To title a section of code and make a jump point, start by making a comment in R. Then type a word/phrase that explains what the section is. Finally, type (at least) four dashes, <code>-</code>, (alternatively, you could use four equal signs, <code>=</code>, or four hashtags/pound signs, <code>#</code>) without spaces. This will create a title/jump point which people can use through the Code-Jump To… menu. You can vary the number of hashtags/pound signs at the start of comment to reflect where in the hierarchy of your app you are. Here’s an example.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="coding.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Packages ----</span></span>
@@ -893,7 +898,6 @@ I would have written a shorter letter, but I did not have the time.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -930,6 +934,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

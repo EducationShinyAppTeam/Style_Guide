@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Workflow | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Workflow | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="makingApp.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,13 +506,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="workflow" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Workflow</h1>
+<div id="workflow" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Workflow<a href="workflow.html#workflow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Before we get too far into designing, building, and maintaining BOAST apps, it is helpful to take a moment and talk about setting yourself up for success. One way to do this is through the notion of a workflow. In essence, you want to come up with a series of steps to follow. Writing this list out can provide you with something where you can take a step back and go “Wait. Where am I again? Oh yeah.” This is particularly important as there will be times when you find yourself lost in coding and losing track of your broader goals.</p>
 <p>We have two major workflows within BOAST: Revising existing apps and creating brand new apps.</p>
 <p>Something to keep in mind with these workflows is that they are not strictly linear. That is, just because you have moved into Step 3, doesn’t mean that you can’t go back to Step 2 and make revisions. Additionally, as you get into Steps 5-8, you might find yourself coming back to Step 3 (and possibly Step 2) and making changes. This said, sketching out your plans will help you as you move forward with developing.</p>
-<div id="revising-existing-apps-worflow" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Revising Existing Apps Worflow</h2>
+<div id="revising-existing-apps-worflow" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Revising Existing Apps Worflow<a href="workflow.html#revising-existing-apps-worflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Read the Style Guide.</li>
 <li>Explore the existing apps in the <a href="https://sites.psu.edu/shinyapps/">book</a> and their associated repositories on <a href="https://github.com/EducationShinyAppTeam">GitHub</a>.</li>
@@ -537,8 +542,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>If everything checks out, then we’ll merge your development branch with the master branch and schedule formal deployment of your App.</p>
 </div>
-<div id="creating-new-apps-workflow" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Creating New Apps Workflow</h2>
+<div id="creating-new-apps-workflow" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Creating New Apps Workflow<a href="workflow.html#creating-new-apps-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To see this workflow in action, check out <a href="makingApp.html#makingApp">Chapter <a href="makingApp.html#makingApp">2</a></a>.</p>
 <ol style="list-style-type: decimal">
 <li>Read the Style Guide.</li>
@@ -565,8 +570,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol></li>
 </ol>
 <p>If everything checks out, then we’ll merge your development branch with the master branch and schedule formal deployment of your App.</p>
-<div id="repo-naming" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> GitHub Repo Names</h3>
+<div id="repo-naming" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> GitHub Repo Names<a href="workflow.html#repo-naming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Each Shiny App has its own repository (repo) on GitHub. As you begin to create new apps, you’ll have to create a new repo on GitHub for each one. The name of that repo is extremely important as this will play a critical role in establishing the URL for your App. To this end, you need to adhere to following guidelines:</p>
 <ul>
 <li>Use <a href="https://en.wikipedia.org/wiki/Letter_case#Title_case">Title Case</a> (not camelCase)</li>
@@ -579,11 +584,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you come across a repo that is poorly named, please make an issue on the repo, and provide some suggestions for new names.</p>
 </div>
 </div>
-<div id="testing" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Testing Your App</h2>
+<div id="testing" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Testing Your App<a href="workflow.html#testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To test your App beyond your local machine, we will be making use of TLT’s RStudio Connect platform. You will need to follow these directions.</p>
-<div id="set-uplogin-to-the-vpn" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Set Up/Login to the VPN</h3>
+<div id="set-uplogin-to-the-vpn" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Set Up/Login to the VPN<a href="workflow.html#set-uplogin-to-the-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Please refer to the following PSU Knowledge Basis Articles:</p>
 <ul>
 <li><a href="https://pennstate.service-now.com/sp?id=kb_article_view&amp;sysparm_article=KB0013419">VPN for Windows</a></li>
@@ -595,13 +600,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>You MUST be logged into the PSU VPN to both upload and test your App on each device.</p>
 </div>
-<div id="connecting-your-rstudio-to-tlts-rstudio-connect" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Connecting Your RStudio to TLT’s RStudio Connect</h3>
+<div id="connecting-your-rstudio-to-tlts-rstudio-connect" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Connecting Your RStudio to TLT’s RStudio Connect<a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You only need to do this step once.</p>
 <ol style="list-style-type: decimal">
 <li>After you’ve logged into the PSU VPN, go to <a href="https://rstudio-connect.tlt.psu.edu:3939/connect">TLT’s RStudio Connect</a> and log in using your PSU ID.</li>
 <li>Once logged in, click on the Publish button as shown in the green box of <a href="workflow.html#fig:testing1">Figure <a href="workflow.html#fig:testing1">1.1</a></a>
-<div class="figure"><span id="fig:testing1"></span>
+<div class="figure"><span style="display:block;" id="fig:testing1"></span>
 <img src="images/publish1.png" alt="Click the Publish Button" width="442" />
 <p class="caption">
 Figure 1.1: Click the Publish Button
@@ -610,10 +615,10 @@ Figure 1.1: Click the Publish Button
 <li>Select Shiny App and a pop up window will appear.</li>
 <li>Follow the steps in this window (especially Step 4) to set up the connection.</li>
 </ol>
-<div id="checking-youve-connected" class="section level4" number="1.3.2.1">
-<h4><span class="header-section-number">1.3.2.1</span> Checking You’ve Connected</h4>
+<div id="checking-youve-connected" class="section level4 hasAnchor" number="1.3.2.1">
+<h4><span class="header-section-number">1.3.2.1</span> Checking You’ve Connected<a href="workflow.html#checking-youve-connected" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 You can check to see if you’ve connected by going into RStudio’s Options and looking at the Publishing tab. You should see a similar entry as what is in the green box of <a href="workflow.html#fig:testing2">Figure <a href="workflow.html#fig:testing2">1.2</a></a>:
-<div class="figure" style="text-align: center"><span id="fig:testing2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:testing2"></span>
 <img src="images/publish2.png" alt="Check Your Publishing Profile" width="640" />
 <p class="caption">
 Figure 1.2: Check Your Publishing Profile
@@ -621,15 +626,15 @@ Figure 1.2: Check Your Publishing Profile
 </div>
 </div>
 </div>
-<div id="publishing-your-app-for-testing" class="section level3" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> Publishing Your App for Testing</h3>
+<div id="publishing-your-app-for-testing" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Publishing Your App for Testing<a href="workflow.html#publishing-your-app-for-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Make sure that you are connected to PSU’s VPN and that you’ve already connected your RStudio to TLT’s server.</p>
 <p>Click on the Publishing Icon, located just to the right of the Run App button. Be sure to select the TLT Server.</p>
 </div>
-<div id="configuring-for-testing" class="section level3" number="1.3.4">
-<h3><span class="header-section-number">1.3.4</span> Configuring for Testing</h3>
+<div id="configuring-for-testing" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Configuring for Testing<a href="workflow.html#configuring-for-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once your App has been published, a new window should open in your browser that shows your App plus the optional controls.</p>
-<div class="figure" style="text-align: center"><span id="fig:testing3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:testing3"></span>
 <img src="images/publish3.png" alt="Successful Publish and Settings" width="672" />
 <p class="caption">
 Figure 1.3: Successful Publish and Settings
@@ -639,12 +644,12 @@ Figure 1.3: Successful Publish and Settings
 <p>We encourage you to add contributors as we did (orange box). Both Bob and I are the Go To people for tech issues and by adding us, you give us the ability to help you the best that we can. By adding us to the list of contributors on the TLT server, you will allow us to check the app’s log files as well as any particular settings. Ultimately, this help us troubleshoot any difficulty you might encounter.</p>
 <p>The most important piece is the Content URL (marked with the blue star). You’ll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device (e.g., computer, tablet, phone) they are using.</p>
 </div>
-<div id="check-the-logs" class="section level3" number="1.3.5">
-<h3><span class="header-section-number">1.3.5</span> Check the Logs</h3>
+<div id="check-the-logs" class="section level3 hasAnchor" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Check the Logs<a href="workflow.html#check-the-logs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As you test your App, you’ll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in <a href="workflow.html#fig:testing3">Figure <a href="workflow.html#fig:testing3">1.3</a></a>) to view.</p>
 </div>
-<div id="problems" class="section level3" number="1.3.6">
-<h3><span class="header-section-number">1.3.6</span> Problems?</h3>
+<div id="problems" class="section level3 hasAnchor" number="1.3.6">
+<h3><span class="header-section-number">1.3.6</span> Problems?<a href="workflow.html#problems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you run into problem either publishing your App or getting the App to launch on the TLT, please reach out to Neil and Bob.</p>
 
 </div>
@@ -663,7 +668,6 @@ Figure 1.3: Successful Publish and Settings
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -700,6 +704,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

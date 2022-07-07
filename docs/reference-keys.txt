@@ -280,6 +280,10 @@ graphLab
 font-sizes
 axes-and-scales
 colorPlots
+color-and-accessibility
+an-exception-to-line-types
+common-color-usage
+transparency
 histograms
 tables
 displaying-data-tables

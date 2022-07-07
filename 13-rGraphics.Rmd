@@ -150,7 +150,58 @@ ggplot(
 
 If you have more groups than eight/nine colors listed in the two palettes, consider reworking your examples as you could overwhelm the user with too many colors. (This also applies to using different shapes to plot points.)
 
-With an eye towards accessibility, try not to use only color to denote a particular piece of information. Rather you might want to use color and shape.
+### Color and Accessibility
+
+Color can be a great tool to help highlight different cases. While we have striven to create palettes which are friendly for color blindness, we can go beyond color to help all users. One key way to do this is to partner color with the shape of a points and/or the style of line used. This can be done easily in `ggplot` by using both the `color`/`fill` aesthetic as well as the `shape` and/or `linetype` aesthetics. For example,
+
+```{r colorShapeLine, echo=TRUE, eval=FALSE}
+ggplot(
+  data = exampleData,
+  mapping = aes(
+    x = height,
+    y = weight,
+    color = class, # color only stipulates the color for the border
+    fill = class, # fill will color the entire point 
+    shape = class,
+    linetype = class
+  )
+) +
+  geom_point(size = 1) +
+  geom_smooth(
+    formula = y ~ x,
+    method = "lm",
+    se = FALSE
+  ) +
+  theme_bw() +
+  theme(
+    text = element_text(size = 18)
+  )
+
+```
+
+The above code will produce a scatter plot. The color and shape of the points will depend upon the value of `class` for each observation. Additionally, the plot will contain linear trend lines for each level of `class` that repeats the color used for `class` on the points and uses different styles of lines (solid, dashed, dotted, etc.) 
+
+As with color, shape and line type can become taxing quickly. Thus, if you find yourself reaching multiple shapes/types (say 6 or more), we should reconsider the plot.
+
+#### An Exception to Line Types
+
+Currently, there is an exception to using different line types in conjunction with color. This is for the notion of creating multiple paths (e.g., see [Law of Large Numbers app](https://psu-eberly.shinyapps.io/Law_of_Large_Numbers/)). Here, it is not as important that a viewer can distinguish between the individual curves. What does matter is whether the individual sees how the various curves converge or diverge. Thus, for path type plots, we will not worry about using line type in conjunction with color.
+
+### Common Color Usage
+
+Throughout BOAST, we often have certain re-occurring elements in plots. These include elements such as estimates, null values, population parameters ("true value"), etc. To build consistency across the many apps, we use the following standardized colors for these elements:
+
++ Confidence Intervals
+  - Containing the true value: `psuPalette[1]`
+  - NOT containing the true value: `psuPalette[2]`
++ Population Parameter/true value: `psuPalette[3]`
++ Observed Estimate: `psuPalette[4]`
++ Null Value (Frequentist) or comparison value (Bayesian): "black"
++ Likelihood: "blue"
+
+## Transparency
+
+In different situations, we may want to set the transparency of a graph object to be something other than opaque. We can do this with the `alpha` aesthetic. The values for `alpha` go from 0 (transparent) to 1 (opaque). You may need to play with several different values to find the optimal setting for your plot.
 
 ## Histograms
 

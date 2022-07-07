@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Additional Coding Practices | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Additional Coding Practices | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="htmlCSS.html"/>
 <link rel="next" href="layout.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,11 +506,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="additionalCoding" class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Additional Coding Practices</h1>
+<div id="additionalCoding" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Additional Coding Practices<a href="additionalCoding.html#additionalCoding" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The following coding practices arise much less frequently than our <a href="specificCoding.html#specificCoding">Specific Coding Practices</a> and <a href="htmlCSS.html#htmlCSS">HTML/CSS</a>. However, being aware of them will help you out in the long run.</p>
-<div id="plotCachec" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Plot Caching</h2>
+<div id="plotCachec" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Plot Caching<a href="additionalCoding.html#plotCachec" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Of these less frequent practices, Plot Caching is perhaps the most useful. Plot caching refers to the practice of your app to generate a plot once, save it, and then quickly serve the plot again and again to users. In essence, this is a method for improving the efficiency of an app. However, this is not something that always needs to be used.</p>
 <p>The following cases represent some of the most common places where using plot caching is beneficial:</p>
 <ul>
@@ -516,14 +521,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are two key arguments to <code>renderCachedPlot</code>: <code>expr</code> and <code>cacheKeyExpr</code>. The <code>expr</code> is the code chunk which will generate the plot or the name of plot object you’ve created elsewhere.</p>
 <p>The <code>cacheKeyExpr</code> is the listing of all <code>reactive</code> elements that you want to tie the plot to. For example, if we set <code>cacheKeyExpr = { list(input$sampleSize, input$selectedData) }</code>, then the app will tie each saved version of the plot to the values of <code>sampleSize</code> and <code>selectedData</code>. The user sets these two inputs to a new pairing, your app would re-generate the plot. However, when the user sets them to a pairing that they’ve already looked at, your app immediately re-displays the saved plot. Plot caching also looks across all of the users, thus speeding up your app’s plotting.</p>
 </div>
-<div id="exFiles" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Minimize External Files</h2>
+<div id="exFiles" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Minimize External Files<a href="additionalCoding.html#exFiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Try to minimize the number and size of external files you’re attaching to your App. If you’re working on an existing app, remove any external files that are no longer necessary.</p>
 <p>Wherever possible try to place external files into the <code>www</code> directory/folder that is at the same level as your <code>app.R</code> or <code>ui.R</code>/<code>server.R</code> files.</p>
 <p>If there are any external files (e.g., <code>*.csv</code>, <code>*.txt</code>, <code>*.dat</code>, <code>*.jpg</code>) that are not being used, delete them from the repository.</p>
 </div>
-<div id="metadatac" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Metadata</h2>
+<div id="metadatac" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Metadata<a href="additionalCoding.html#metadatac" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As of boastUtils <code>v0.1.10</code>, your App will need the following metadata in a file named <a href="https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION">DESCRIPTION</a> (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased). See also our section on the <a href="template.html#description">DESCRIPTION</a> file in our chapter on the <a href="template.html#template">App Template</a></p>
 <p><strong>DESCRIPTION</strong></p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="additionalCoding.html#cb42-1" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> Sample App <span class="sc">-</span> A Lengthy Title</span>
@@ -547,27 +552,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb42-19"><a href="additionalCoding.html#cb42-19" aria-hidden="true" tabindex="-1"></a>Tags<span class="sc">:</span> simulation</span>
 <span id="cb42-20"><a href="additionalCoding.html#cb42-20" aria-hidden="true" tabindex="-1"></a>Type<span class="sc">:</span> Shiny</span></code></pre></div>
 </div>
-<div id="otherLanguages" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> Other Languages (Python, JavaScript, etc.)</h2>
+<div id="otherLanguages" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Other Languages (Python, JavaScript, etc.)<a href="additionalCoding.html#otherLanguages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Generally speaking, we want to keep the vast majority of our work within the R language (with the necessary HTML and CSS spots). Due to our turnover of coders, we won’t always be able to ensure that we get someone who is proficient in additional languages such as Python, Rust, Netlogo, JavaScript, etc.</p>
 <p>See if what you’re trying to do can first be done in R. If not, set up a time to speak with Bob and Neil to see about the appropriate way to go about using another language.</p>
 </div>
-<div id="rlockerc" class="section level2" number="8.5">
-<h2><span class="header-section-number">8.5</span> Using rLocker</h2>
+<div id="rlockerc" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Using rLocker<a href="additionalCoding.html#rlockerc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Because these apps are being developed for educational purposes, it is beneficial to collect data (logfiles) based on learning objectives and outcomes. The <a href="https://github.com/EducationShinyAppTeam/rLocker">rLocker</a> package was created to aid in this process. It is important to know that the package itself does not perform feats of magic and will require some tuning to get right.</p>
 <p>If you are following the directions we’ve laid out in this Style Guide, there is no additional action that you have to take. We provide the following information just for those individuals who would like to learn more about <code>rLocker</code>.</p>
-<div id="installing" class="section level3" number="8.5.1">
-<h3><span class="header-section-number">8.5.1</span> Installing</h3>
+<div id="installing" class="section level3 hasAnchor" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> Installing<a href="additionalCoding.html#installing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="additionalCoding.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
 <span id="cb43-2"><a href="additionalCoding.html#cb43-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/rLocker&quot;</span>)</span></code></pre></div>
 <p><a href="https://github.com/EducationShinyAppTeam/rLocker#Installation">View Documentation</a></p>
 </div>
-<div id="setup" class="section level3" number="8.5.2">
-<h3><span class="header-section-number">8.5.2</span> Setup</h3>
+<div id="setup" class="section level3 hasAnchor" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> Setup<a href="additionalCoding.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Core configuration is included in the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package. Simply use the boastApp wrapper function instead of shinyApp and you’re done! See <a href="https://github.com/EducationShinyAppTeam/boastUtils#creating-an-app">Creating an App</a> for more information on how to use boastApp.</p>
 </div>
-<div id="usage" class="section level3" number="8.5.3">
-<h3><span class="header-section-number">8.5.3</span> Usage</h3>
+<div id="usage" class="section level3 hasAnchor" number="8.5.3">
+<h3><span class="header-section-number">8.5.3</span> Usage<a href="additionalCoding.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The main purpose of this package is to help create meaningful- structured- xAPI data. xAPI (Experience API) can be thought of as the “Who did what, where did they do it, and when did they do it?” in your App. Statements are often structured as Actor, Verb, and Object that can also Result in something. For more on xAPI, check out <a href="https://xapi.com/overview/">What is the Experience API?</a> or experiment with Statements in the <a href="https://adlnet.github.io/xapi-lab/">xAPI Lab</a>.</p>
 <p><strong>For example:</strong></p>
 <blockquote>
@@ -578,7 +583,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Neil</strong> (Actor) <strong>answered</strong> (Verb) <strong>Question 1</strong> (Object) <strong>correctly</strong> with the answer <strong>true</strong> (Result).</p>
 </blockquote>
 <p>This is a good way to think about it when beginning to write collection functions. Which brings us to our next part, writing collection functions.</p>
-<p>Out of the box, <code>rLocker</code> does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like <a href="https://www.ht2labs.com/learning-locker-community/overview/">Learning Locker</a>, it is important to transform it in a way that makes sense.</p>
+<p>Out of the box, <code>rocker</code> does not provide any collection functions for apps, only creation and storage mechanisms. Why is this? Every app is different! You know your app the best and what interactions are possible. Before storing data in a Learning Record Store (LRS) like <a href="https://www.ht2labs.com/learning-locker-community/overview/">Learning Locker</a>, it is important to transform it in a way that makes sense.</p>
 <p><strong>boastUtils</strong></p>
 <p>If using the <code>boastApp</code> wrapper for your project, your App will automatically generate and store a few of the more typical Statements. Please refrain from creating additional versions of the following statement descriptions:</p>
 <table>
@@ -706,7 +711,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -743,6 +747,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 The Basics | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 The Basics | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="makingApp.html"/>
 <link rel="next" href="template.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,11 +506,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="basics" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> The Basics</h1>
+<div id="basics" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> The Basics<a href="basics.html#basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Before you get too far into this Guide and building apps, we would like for you to take a moment and ensure that you have the following tools at your disposal. This will help you start on a path to success.</p>
-<div id="checklist" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Getting Started Checklist</h2>
+<div id="checklist" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Getting Started Checklist<a href="basics.html#checklist" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Ensure that you have all of necessary accounts and if not, put in a request to Bob (<a href="mailto:rpc5102@psu.edu">rpc5102</a>).
 <ol style="list-style-type: lower-alpha">
@@ -534,23 +539,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The BOAST App Template (<a href="basics.html#templateApp">see below</a>)</li>
 </ol>
 </div>
-<div id="boastUtils" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> <code>boastUtils</code> Package</h2>
+<div id="boastUtils" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> <code>boastUtils</code> Package<a href="basics.html#boastUtils" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Bob created the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent. Additionally, we routinely add tools to this package that are indispensable for creating and maintaining BOAST apps.</p>
 <p><strong>Since Summer 2020, we require all apps to make use of this package.</strong></p>
 <p>Please check out the <a href="https://github.com/EducationShinyAppTeam/boastUtils">package’s GitHub page</a> for instructions on installing and usage. You may also copy the following code into your R console to install the <code>boastUtils</code> package.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="basics.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
 <span id="cb2-2"><a href="basics.html#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/boastUtils&quot;</span>)</span></code></pre></div>
 </div>
-<div id="a-quick-note-on-packages-and-r" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> A Quick Note on Packages (and R)</h2>
+<div id="a-quick-note-on-packages-and-r" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> A Quick Note on Packages (and R)<a href="basics.html#a-quick-note-on-packages-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All too often, people will install R and R packages and that is the end of it. However, both are living things: they change over time. To this end, we encourage you to get into the habit of checking for updates to R and packages on a regular basis (e.g., monthly). (You can also do the same with RStudio.) This will ensure that you are using the newest version of packages which can help mitagate errors.</p>
 <p>For updating R, you can type <code>version</code> in your R console to see what version you have and then compare that to current version posted to <a href="https://cran.r-project.org/">CRAN</a>.</p>
 <p>For checking for updates to R packages that are on CRAN, click on the Update button of RStudio’s packages window. (Typically found in the lower right quadrant.) You can also type <code>update.packages()</code> into your R console to run a check and then update packages. (You can also use <code>old.packages()</code> to see if you have any packages that have newer versions available.)</p>
 <p>To update <code>boastUtils</code> you’ll have to run the install command again.</p>
 </div>
-<div id="templateApp" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> BOAST Template App</h2>
+<div id="templateApp" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> BOAST Template App<a href="basics.html#templateApp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Bob and Neil have created a App_Template repository that you can use as a template for your own apps. To get started, clone the <a href="https://github.com/EducationShinyAppTeam/App_Template">App_Template</a> template repo found on GitHub. This will provide you with a skeleton for organizing your files as well as your code.</p>
 <p>There are several methods you can use:</p>
 <ul>
@@ -559,15 +564,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="basics.html#command-line">Command Line (Advanced)</a></li>
 <li><a href="basics.html#rstudio-project">RStudio Project</a></li>
 </ul>
-<div id="direct-download" class="section level3" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> Direct Download</h3>
+<div id="direct-download" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Direct Download<a href="basics.html#direct-download" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can download this repository directly by visiting:</p>
 <blockquote>
 <p><a href="https://github.com/EducationShinyAppTeam/App_Template/archive/master.zip" class="uri">https://github.com/EducationShinyAppTeam/App_Template/archive/master.zip</a></p>
 </blockquote>
 </div>
-<div id="github-desktop-strongly-recommended" class="section level3" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> GitHub Desktop (STRONGLY RECOMMENDED)</h3>
+<div id="github-desktop-strongly-recommended" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> GitHub Desktop (STRONGLY RECOMMENDED)<a href="basics.html#github-desktop-strongly-recommended" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you are using <a href="https://desktop.github.com/">GitHub Desktop</a> and have <a href="https://help.github.com/en/desktop/getting-started-with-github-desktop/authenticating-to-github">linked your account</a> that has access to the <a href="https://github.com/EducationShinyAppTeam">EducationShinyAppTeam</a> repository, you can do the following from inside GitHub Desktop:</p>
 <ol style="list-style-type: decimal">
 <li>Bring up the Clone Repository Menu (File -&gt; Clone Repository…)<br />
@@ -581,8 +586,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://help.github.com/en/desktop">GitHub Desktop Help</a></li>
 </ul>
 </div>
-<div id="command-line" class="section level3" number="3.4.3">
-<h3><span class="header-section-number">3.4.3</span> Command Line</h3>
+<div id="command-line" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Command Line<a href="basics.html#command-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Enter the following command in your terminal:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="basics.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/App_Template.git</span></code></pre></div>
 <p><strong>See also:</strong></p>
@@ -592,8 +597,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://happygitwithr.com/">Happy Git and GitHub for the userR</a></li>
 </ul>
 </div>
-<div id="rstudio-project" class="section level3" number="3.4.4">
-<h3><span class="header-section-number">3.4.4</span> RStudio Project</h3>
+<div id="rstudio-project" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> RStudio Project<a href="basics.html#rstudio-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can also use RStudio to connect to and copy repositories from GitHub. There are a few extra steps that you’ll need to go through compared to other methods. We recommend that you use GitHub Desktop.</p>
 <ol style="list-style-type: decimal">
 <li>In your browser, navigate to the repository you want to copy; in this case the <a href="https://github.com/EducationShinyAppTeam/App_Template">App_Template repo</a>.</li>
@@ -607,11 +612,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This method will ensure that you will be able to successfully push and pull changes to GitHub. For additional help, Neil has created a video “<a href="https://youtu.be/IK0SiEz5vjs">Using RStudio to Connect to GitHub</a>” which walks you through the process.</p>
 </div>
 </div>
-<div id="useful-rstudio-settings" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Useful RStudio Settings</h2>
+<div id="useful-rstudio-settings" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Useful RStudio Settings<a href="basics.html#useful-rstudio-settings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are a few settings in RStudio that can help make life much easier. While they aren’t required, we do encourage you to at least try them out.</p>
-<div id="coding-margin" class="section level3" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Coding Margin</h3>
+<div id="coding-margin" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Coding Margin<a href="basics.html#coding-margin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Generally speaking, you do not want your code to be on an overly long line. A cutoff of 80 characters works in the vast majority of cases. When your line gets beyond 80 characters, the entire line becomes much more difficult for people to read, including yourself. RStudio has the ability to add a thin grey line at the right hand side of your coding window to mark when 80 characters occurs.</p>
 <p>To enable this feature:</p>
 <ol style="list-style-type: decimal">
@@ -622,42 +627,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Click Apply and OK</li>
 </ol>
 </div>
-<div id="line-numbers" class="section level3" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> Line Numbers</h3>
+<div id="line-numbers" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Line Numbers<a href="basics.html#line-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the event that you RStudio does not automatically display line numbers for your code, you’ll want to enable their display. This is vital for looking at error messages or discussing code with others.</p>
 <ol style="list-style-type: decimal">
 <li>Enter the Global Options of RStudio (see the Tools menu),</li>
 <li>Click on Code in the left-hand menu,</li>
 <li>Select the Display tab across the top,</li>
-<li>Click the box next to “Show line numbers,”</li>
+<li>Click the box next to “Show line numbers”,</li>
 <li>Click Apply and OK</li>
 </ol>
 </div>
-<div id="whitespace-characters" class="section level3" number="3.5.3">
-<h3><span class="header-section-number">3.5.3</span> Whitespace Characters</h3>
+<div id="whitespace-characters" class="section level3 hasAnchor" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Whitespace Characters<a href="basics.html#whitespace-characters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This option takes a bit of getting used to. In essence, RStudio will display a “whitespace” character (e.g., a grey dot) in each bit of empty space as well as end of line characters (a grey dash with a downwards hook at the right-hand end). This option can help you make sure that you are improving the readability of your code by using appropriate spacing.</p>
 <ol style="list-style-type: decimal">
 <li>Enter the Global Options of RStudio (see the Tools menu),</li>
 <li>Click on Code in the left-hand menu,</li>
 <li>Select the Display tab across the top,</li>
-<li>Click the box next to “Show whitespace characters,”</li>
+<li>Click the box next to “Show whitespace characters”,</li>
 <li>Click Apply and OK</li>
 </ol>
 </div>
-<div id="rainbow-parentheses" class="section level3" number="3.5.4">
-<h3><span class="header-section-number">3.5.4</span> Rainbow Parentheses</h3>
+<div id="rainbow-parentheses" class="section level3 hasAnchor" number="3.5.4">
+<h3><span class="header-section-number">3.5.4</span> Rainbow Parentheses<a href="basics.html#rainbow-parentheses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One of the most common programming bugs is that of mismatched parentheses (), braces {}, or brackets []. RStudio can help out with this through the use of Rainbow Parentheses, which makes color matched sets of parentheses as well as automatically putting in both open and close versions.</p>
 <ol style="list-style-type: decimal">
 <li>Enter the Global Options of RStudio (see the Tools menu),</li>
 <li>Click on Code in the left-hand menu,</li>
 <li>From the Editing tab, make sure that “Insert matching parens/quotes” is checked,</li>
 <li>Select the Display tab across the top,</li>
-<li>Click the box next to “Rainbow parentheses,”</li>
+<li>Click the box next to “Rainbow parentheses”,</li>
 <li>Click Apply and OK</li>
 </ol>
 </div>
-<div id="code-diagnostics" class="section level3" number="3.5.5">
-<h3><span class="header-section-number">3.5.5</span> Code Diagnostics</h3>
+<div id="code-diagnostics" class="section level3 hasAnchor" number="3.5.5">
+<h3><span class="header-section-number">3.5.5</span> Code Diagnostics<a href="basics.html#code-diagnostics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Two useful Coding Diagnostics deal with the assignment operator, <code>&lt;-</code> and the putting the appropriate whitespace into your code. RStudio has tools to help you ensure that you adhere to the proper usages here.</p>
 <ol style="list-style-type: decimal">
 <li>Enter the Global Options of RStudio (see the Tools menu),</li>
@@ -688,7 +693,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -725,6 +729,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 User Interface Structure | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 User Interface Structure | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="layout.html"/>
 <link rel="next" href="commonElements.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,13 +506,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="uiStructure" class="section level1" number="9">
-<h1><span class="header-section-number">Chapter 9</span> User Interface Structure</h1>
+<div id="uiStructure" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> User Interface Structure<a href="uiStructure.html#uiStructure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter, we will be focusing on the layout aspect of how your App looks.</p>
 <p>A good number of the elements of the layout will have a direct consequence on your coding. For instance, in the section on <a href="specificCoding.html#orgCode">Organizing Your Code</a>, you saw that the UI definition needed to come before the Server definition. This section defines additional organizational structure to your code as it pertains to the layout of your App.</p>
 <p>As a reminder, one of the most important benefits of using the <code>boastApp</code> function from the <code>boastUtils</code> package is that is that certain aspects of Visual Appearance will be automatically handled for you. However, you still need to adhere to this Style Guide.</p>
-<div id="dashboard" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> Dashboard</h2>
+<div id="dashboard" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Dashboard<a href="uiStructure.html#dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All apps will make use of a Dashboard structure. This divides the visual appearance of each App into three main areas.</p>
 <ul>
 <li>Across the top of the App will be the Header</li>
@@ -515,8 +520,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The last area is the Body; this is where all content will appear</li>
 </ul>
 <p>Several of the older apps will have outdated UI calls including, but not limited to: <code>shinyUI</code> and <code>navbarPage</code>. These functions should no longer be used; apps that use them need to be updated to become compliant with this Style Guide.</p>
-<div id="creating-the-dashboard" class="section level3" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> Creating the Dashboard</h3>
+<div id="creating-the-dashboard" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Creating the Dashboard<a href="uiStructure.html#creating-the-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Creating the overarching Dashboard layout in your App is actually quit easy:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="uiStructure.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required package</span></span>
 <span id="cb46-2"><a href="uiStructure.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
@@ -531,8 +536,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <code>dashboardPage</code> function will wrap around the rest of your UI element, thereby establishing the overarching structure. Three of this function’s arguments (<code>header</code>, <code>sidebar</code>, and <code>body</code>) will be covered in following sections. We do not need to worry about the <code>title</code> argument as this will be controlled by the Dashboard Header.</p>
 <p>The one argument that you must explicitly set for the <code>dashboardPage</code> is the <code>skin</code> argument. This argument sets the overall color theme for your App. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout.</p>
 </div>
-<div id="colorUI" class="section level3" number="9.1.2">
-<h3><span class="header-section-number">9.1.2</span> Color in the User Interface</h3>
+<div id="colorUI" class="section level3 hasAnchor" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Color in the User Interface<a href="uiStructure.html#colorUI" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Within BOAST, we use color themes to help provide consistency for the elements of each app and to denote different chapters. Part of the standardization process of this Style Guide seeks to bring the many fractured color themes together into a cohesive, centrally managed set. This helps reduce the programming burden on the students, who should focus on the R side of the programming, not the CSS side.</p>
 <p>All aspects of color in the User Interface should be controlled through the CSS file(s). This includes all of the following:</p>
 <ul>
@@ -541,185 +546,185 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Coloring of Controls (including buttons, sliders, and other input fields)</li>
 </ul>
 <p>By using CSS, especially through <code>boastApp</code>, you’ll be able to ensure that there is consistent coloring throughout your App.</p>
-<div id="implementing-a-color-theme" class="section level4" number="9.1.2.1">
-<h4><span class="header-section-number">9.1.2.1</span> Implementing a Color Theme</h4>
+<div id="implementing-a-color-theme" class="section level4 hasAnchor" number="9.1.2.1">
+<h4><span class="header-section-number">9.1.2.1</span> Implementing a Color Theme<a href="uiStructure.html#implementing-a-color-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To activate a color theme is a simple process, especially if you are following this Style Guide and using the <code>boastUtils</code> package. (In the rare case where you are using separate ui.R and server.R files, make sure that the boast.css call is in the ui.R file.</p>
 <p>In your App’s code, go to where you first call the function <code>dashboardPage</code>. Then, as the first argument you’ll type <code>skin = "[theme]"</code> before moving on the next argument, <code>dashboardHeader</code>.</p>
 <p>You will replace <code>[theme]</code> with one of the following: <code>blue</code>, <code>green</code>, <code>purple</code>, <code>yellow</code>, <code>red</code> or <code>black</code>. The choice will be determined by the color assigned to that chapter. This is all you have to do.</p>
 <p>If you are unsure what color to put, use <code>blue</code> as the default.</p>
 </div>
-<div id="the-themes" class="section level4" number="9.1.2.2">
-<h4><span class="header-section-number">9.1.2.2</span> The Themes</h4>
+<div id="the-themes" class="section level4 hasAnchor" number="9.1.2.2">
+<h4><span class="header-section-number">9.1.2.2</span> The Themes<a href="uiStructure.html#the-themes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There are six color themes that we’ve currently made. The names of the themes are a general indication of coloring, with one exception. The <code>black</code> theme is not black but rather an aqua/teal set. The themes are typically three colors (four for <code>blue</code>) and based upon the Penn State Palettes. Non-Penn State colors will be denoted with asterisks.</p>
 <p>All of the themes have been checked against 8 different forms of color blindness.</p>
-<div id="blue" class="section level5" number="9.1.2.2.1">
-<h5><span class="header-section-number">9.1.2.2.1</span> Blue</h5>
+<div id="blue" class="section level5 hasAnchor" number="9.1.2.2.1">
+<h5><span class="header-section-number">9.1.2.2.1</span> Blue<a href="uiStructure.html#blue" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 The Blue Palette is our central palette and should be used by default. The Blue Palette looks like the following:
-<div class="figure" style="text-align: center"><span id="fig:bluePalette"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bluePalette"></span>
 <img src="BOAST_style_guide_files/figure-html/bluePalette-1.png" alt="The Blue Palette" width="576" />
 <p class="caption">
 Figure 9.1: The Blue Palette
 </p>
 </div>
 <p>Here is what the Blue Palette looks like in action:</p>
-<div class="figure" style="text-align: center"><span id="fig:blueAction1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blueAction1"></span>
 <img src="images/colorThemes/blueOverview.png" alt="Overview Page Using the Blue Palette" width="478" />
 <p class="caption">
 Figure 9.2: Overview Page Using the Blue Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:blueAction2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blueAction2"></span>
 <img src="images/colorThemes/blueCollapse.png" alt="Collapsible Boxes Using the Blue Palette" width="478" />
 <p class="caption">
 Figure 9.3: Collapsible Boxes Using the Blue Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:blueAction3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blueAction3"></span>
 <img src="images/colorThemes/blueSliders.png" alt="Sliders Using the Blue Palette"  />
 <p class="caption">
 Figure 9.4: Sliders Using the Blue Palette
 </p>
 </div>
 </div>
-<div id="green" class="section level5" number="9.1.2.2.2">
-<h5><span class="header-section-number">9.1.2.2.2</span> Green</h5>
+<div id="green" class="section level5 hasAnchor" number="9.1.2.2.2">
+<h5><span class="header-section-number">9.1.2.2.2</span> Green<a href="uiStructure.html#green" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 The Green Palette looks like the following:
-<div class="figure" style="text-align: center"><span id="fig:greenPalette"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:greenPalette"></span>
 <img src="BOAST_style_guide_files/figure-html/greenPalette-1.png" alt="The Green Palette" width="576" />
 <p class="caption">
 Figure 9.5: The Green Palette
 </p>
 </div>
 <p>Here is what the Green Palette looks like in action:</p>
-<div class="figure" style="text-align: center"><span id="fig:greenAction1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:greenAction1"></span>
 <img src="images/colorThemes/greenOverview.png" alt="Overview Page Using the Green Palette" width="504" />
 <p class="caption">
 Figure 9.6: Overview Page Using the Green Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:greenAction2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:greenAction2"></span>
 <img src="images/colorThemes/greenCollapse.png" alt="Collapsible Boxes Using the Green Palette" width="504" />
 <p class="caption">
 Figure 9.7: Collapsible Boxes Using the Green Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:greenAction3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:greenAction3"></span>
 <img src="images/colorThemes/greenSliders.png" alt="Sliders Using the Green Palette"  />
 <p class="caption">
 Figure 9.8: Sliders Using the Green Palette
 </p>
 </div>
 </div>
-<div id="purple" class="section level5" number="9.1.2.2.3">
-<h5><span class="header-section-number">9.1.2.2.3</span> Purple</h5>
+<div id="purple" class="section level5 hasAnchor" number="9.1.2.2.3">
+<h5><span class="header-section-number">9.1.2.2.3</span> Purple<a href="uiStructure.html#purple" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 The Purple Palette looks like the following:
-<div class="figure" style="text-align: center"><span id="fig:purplePalette"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:purplePalette"></span>
 <img src="BOAST_style_guide_files/figure-html/purplePalette-1.png" alt="The Purple Palette" width="576" />
 <p class="caption">
 Figure 9.9: The Purple Palette
 </p>
 </div>
 <p>Here is what the Purple Palette looks like in action:</p>
-<div class="figure" style="text-align: center"><span id="fig:purpleAction1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:purpleAction1"></span>
 <img src="images/colorThemes/purpleOverview.png" alt="Overview Page Using the Purple Palette" width="504" />
 <p class="caption">
 Figure 9.10: Overview Page Using the Purple Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:purpleAction2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:purpleAction2"></span>
 <img src="images/colorThemes/purpleCollapse.png" alt="Collapsible Boxes Using the Purple Palette" width="504" />
 <p class="caption">
 Figure 9.11: Collapsible Boxes Using the Purple Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:purpleAction3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:purpleAction3"></span>
 <img src="images/colorThemes/purpleSliders.png" alt="Sliders Using the Purple Palette"  />
 <p class="caption">
 Figure 9.12: Sliders Using the Purple Palette
 </p>
 </div>
 </div>
-<div id="black" class="section level5" number="9.1.2.2.4">
-<h5><span class="header-section-number">9.1.2.2.4</span> Black</h5>
+<div id="black" class="section level5 hasAnchor" number="9.1.2.2.4">
+<h5><span class="header-section-number">9.1.2.2.4</span> Black<a href="uiStructure.html#black" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 The “Black” Palette is not pegged to the color black, but rather teal/aqua colors. However, to call the theme in the Shiny dashboard, the user must use the value <code>black</code> for the the <code>skin</code> argument. Here’s what the “Black” Palette looks like:
-<div class="figure" style="text-align: center"><span id="fig:blackPalette"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blackPalette"></span>
 <img src="BOAST_style_guide_files/figure-html/blackPalette-1.png" alt="The 'Black' Palette" width="576" />
 <p class="caption">
 Figure 9.13: The ‘Black’ Palette
 </p>
 </div>
 <p>Here is what the “Black” Palette looks like in action:</p>
-<div class="figure" style="text-align: center"><span id="fig:blackAction1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blackAction1"></span>
 <img src="images/colorThemes/blackOverview.png" alt="Overview Page Using the 'Black' Palette" width="504" />
 <p class="caption">
 Figure 9.14: Overview Page Using the ‘Black’ Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:blackAction2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blackAction2"></span>
 <img src="images/colorThemes/blackCollapse.png" alt="Collapsible Boxes Using the 'Black' Palette" width="504" />
 <p class="caption">
 Figure 9.15: Collapsible Boxes Using the ‘Black’ Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:blackAction3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blackAction3"></span>
 <img src="images/colorThemes/blackSliders.png" alt="Sliders Using the 'Black' Palette"  />
 <p class="caption">
 Figure 9.16: Sliders Using the ‘Black’ Palette
 </p>
 </div>
 </div>
-<div id="yellow" class="section level5" number="9.1.2.2.5">
-<h5><span class="header-section-number">9.1.2.2.5</span> Yellow</h5>
+<div id="yellow" class="section level5 hasAnchor" number="9.1.2.2.5">
+<h5><span class="header-section-number">9.1.2.2.5</span> Yellow<a href="uiStructure.html#yellow" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 The Yellow Palette looks like the following:
-<div class="figure" style="text-align: center"><span id="fig:yellowPalette"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:yellowPalette"></span>
 <img src="BOAST_style_guide_files/figure-html/yellowPalette-1.png" alt="The Yellow Palette" width="576" />
 <p class="caption">
 Figure 9.17: The Yellow Palette
 </p>
 </div>
 <p>Here is what the Yellow Palette looks like in action:</p>
-<div class="figure" style="text-align: center"><span id="fig:yellowAction1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:yellowAction1"></span>
 <img src="images/colorThemes/yellowOverview.png" alt="Overview Page Using the Yellow Palette" width="504" />
 <p class="caption">
 Figure 9.18: Overview Page Using the Yellow Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:yellowAction2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:yellowAction2"></span>
 <img src="images/colorThemes/yellowCollapse.png" alt="Collapsible Boxes Using the Yellow Palette" width="504" />
 <p class="caption">
 Figure 9.19: Collapsible Boxes Using the Yellow Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:yellowAction3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:yellowAction3"></span>
 <img src="images/colorThemes/yellowSliders.png" alt="Sliders Using the Yellow Palette"  />
 <p class="caption">
 Figure 9.20: Sliders Using the Yellow Palette
 </p>
 </div>
 </div>
-<div id="red" class="section level5" number="9.1.2.2.6">
-<h5><span class="header-section-number">9.1.2.2.6</span> Red</h5>
+<div id="red" class="section level5 hasAnchor" number="9.1.2.2.6">
+<h5><span class="header-section-number">9.1.2.2.6</span> Red<a href="uiStructure.html#red" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 The Red Palette looks like the following:
-<div class="figure" style="text-align: center"><span id="fig:redPalette"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:redPalette"></span>
 <img src="BOAST_style_guide_files/figure-html/redPalette-1.png" alt="The Red Palette" width="576" />
 <p class="caption">
 Figure 9.21: The Red Palette
 </p>
 </div>
 <p>Here is what the Red Palette looks like in action:</p>
-<div class="figure" style="text-align: center"><span id="fig:redAction1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:redAction1"></span>
 <img src="images/colorThemes/redOverview.png" alt="Overview Page Using the Red Palette" width="504" />
 <p class="caption">
 Figure 9.22: Overview Page Using the Red Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:redAction2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:redAction2"></span>
 <img src="images/colorThemes/redCollapse.png" alt="Collapsible Boxes Using the Red Palette" width="504" />
 <p class="caption">
 Figure 9.23: Collapsible Boxes Using the Red Palette
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:redAction3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:redAction3"></span>
 <img src="images/colorThemes/redSliders.png" alt="Sliders Using the Red Palette"  />
 <p class="caption">
 Figure 9.24: Sliders Using the Red Palette
@@ -728,8 +733,8 @@ Figure 9.24: Sliders Using the Red Palette
 </div>
 </div>
 </div>
-<div id="chapterColor" class="section level3" number="9.1.3">
-<h3><span class="header-section-number">9.1.3</span> Current Chapter Color Assignments</h3>
+<div id="chapterColor" class="section level3 hasAnchor" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> Current Chapter Color Assignments<a href="uiStructure.html#chapterColor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here are the current (05/27/2020) color theme assignments for chapters:</p>
 <ul>
 <li>Chapter 1: Data Gathering RED</li>
@@ -748,14 +753,14 @@ Figure 9.24: Sliders Using the Red Palette
 </ul>
 </div>
 </div>
-<div id="header" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> Dashboard Header</h2>
+<div id="header" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Dashboard Header<a href="uiStructure.html#header" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon with a link to a user survey back towards the center.</p>
 <p>Additional icons might be included to the left of the Home and Survey icons. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.</p>
 <p>There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.</p>
 <p>The width of the Title component of the Header should be 250; <code>titleWidth = 250</code>.</p>
-<div id="creating-the-dashboard-header" class="section level3" number="9.2.1">
-<h3><span class="header-section-number">9.2.1</span> Creating the Dashboard Header</h3>
+<div id="creating-the-dashboard-header" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Creating the Dashboard Header<a href="uiStructure.html#creating-the-dashboard-header" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You will use the same structure regardless if you are using <code>app.R</code> or <code>ui.R</code>.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="uiStructure.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
 <span id="cb47-2"><a href="uiStructure.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardHeader</span>(</span>
@@ -793,8 +798,8 @@ Figure 9.24: Sliders Using the Red Palette
 <li>The last element of the Header (i.e., the rightmost) will always be the home icon which takes the user to the BOAST home page.</li>
 </ul>
 </div>
-<div id="whats-needed-in-the-server-definition" class="section level3" number="9.2.2">
-<h3><span class="header-section-number">9.2.2</span> What’s Needed in the Server Definition</h3>
+<div id="whats-needed-in-the-server-definition" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you just have a bare bones Header (i.e., title, survey link, and home button), you do not need to add anything special to your server definition.</p>
 <p>If you have anything else (e.g., an Info button), you will need to add additional code to your server definition. The code you add will depend upon the element. In general, for alert messages, we recommend that you use <code>shinyWidgets::sendSweetAlert</code>. Here’s a generic example of what could be used for the Info button.</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="uiStructure.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required Packages</span></span>
@@ -826,13 +831,13 @@ Figure 9.24: Sliders Using the Red Palette
 <p><em>Note: these buttons/links will throw an error when using the WAVE tool. This is expected at this time.</em></p>
 </div>
 </div>
-<div id="sidebar" class="section level2" number="9.3">
-<h2><span class="header-section-number">9.3</span> Dashboard Sidebar</h2>
+<div id="sidebar" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Dashboard Sidebar<a href="uiStructure.html#sidebar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. We refer to these as <a href="uiStructure.html#innerTabs">Tabs Inside the Body or Tabs</a> and are covered in their own section.</p>
 <p>The Sidebar should have a width of 250, (<code>width = 250</code>).</p>
 <p>For full descriptions of each type of Page, please refer to the <a href="uiStructure.html#body">Dashboard Body Section</a>.</p>
-<div id="creating-the-dashboard-sidebar" class="section level3" number="9.3.1">
-<h3><span class="header-section-number">9.3.1</span> Creating the Dashboard Sidebar</h3>
+<div id="creating-the-dashboard-sidebar" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Creating the Dashboard Sidebar<a href="uiStructure.html#creating-the-dashboard-sidebar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You’ll need to use the following code as a template for creating the Sidebar. You will need to customize this to match your app’s goals and design.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="uiStructure.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
 <span id="cb49-2"><a href="uiStructure.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardSidebar</span>(</span>
@@ -860,8 +865,8 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb49-24"><a href="uiStructure.html#cb49-24" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>Notice that after setting the <code>width</code> of the Sidebar, you will need to call the <code>sidebarMenu</code> function. This will create the appropriate structure for your Sidebar.</p>
 </div>
-<div id="sidebar-order" class="section level3" number="9.3.2">
-<h3><span class="header-section-number">9.3.2</span> Sidebar Order</h3>
+<div id="sidebar-order" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Sidebar Order<a href="uiStructure.html#sidebar-order" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To ensure consistency across all apps, the Sidebar needs to have the following order:</p>
 <ol style="list-style-type: decimal">
 <li>The Overview Tab should always come first.</li>
@@ -879,11 +884,11 @@ Figure 9.24: Sliders Using the Red Palette
 </ol>
 <p><em>Note: this order will also dictate how you should organize your code in the <a href="uiStructure.html#body">Dashboard Body</a>.</em></p>
 </div>
-<div id="sidebar-names" class="section level3" number="9.3.3">
-<h3><span class="header-section-number">9.3.3</span> Sidebar Names</h3>
+<div id="sidebar-names" class="section level3 hasAnchor" number="9.3.3">
+<h3><span class="header-section-number">9.3.3</span> Sidebar Names<a href="uiStructure.html#sidebar-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are three pages whose names are fixed (i.e., you can not change): the Overview, Prerequisites, and References. The rest of the pages should be named according to the following conventions:</p>
 <ul>
-<li><strong>Only One Page of Any Type</strong>: when you only have one Activity page of a particular type (e.g., one Explore, one Challenge), you can use the type of activity as the name. That is, you can call the pages “Explore,” “Challenge,” etc.</li>
+<li><strong>Only One Page of Any Type</strong>: when you only have one Activity page of a particular type (e.g., one Explore, one Challenge), you can use the type of activity as the name. That is, you can call the pages “Explore”, “Challenge”, etc.</li>
 <li><strong>Multiple Pages of the Same Type</strong>: when you have several pages that are all the same Activity type, you need to give each page an appropriate name. For example,
 <ul>
 <li>In the <a href="https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/">NHST Caveats App</a>, there are three Explore pages: the Multiple Testing Caution, the Large Sample Caution, and the Small Sample Caution.</li>
@@ -900,11 +905,16 @@ Figure 9.24: Sliders Using the Red Palette
 + If there are multiple Tabs of each type, you will need to rename each tab as appropriate. For example,
 -</p>
 </div>
-<div id="sidebar-icons" class="section level3" number="9.3.4">
-<h3><span class="header-section-number">9.3.4</span> Sidebar Icons</h3>
+<div id="sidebar-icons" class="section level3 hasAnchor" number="9.3.4">
+<h3><span class="header-section-number">9.3.4</span> Sidebar Icons<a href="uiStructure.html#sidebar-icons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For each type of Page in BOAST apps, we use a specific icon in the sidebar menu. This helps establish a common theme across all of the apps so that users can have some instant familiarity as they interact with new apps.</p>
 <p>In each <code>menuItem</code> call, you’ll want to use the following code <code>icon = icon("iconName")</code> to ensure that the appropriate icon is used. The listing of what you’ll use in place of <code>iconName</code> appears in the following table. Note: you’ll want to make sure that you keep the quotation marks when you code.</p>
 <table>
+<colgroup>
+<col width="39%" />
+<col width="39%" />
+<col width="21%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Page Type</th>
@@ -924,26 +934,31 @@ Figure 9.24: Sliders Using the Red Palette
 <td align="center"><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:25px;width:21.88px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg></td>
 </tr>
 <tr class="odd">
+<td align="left">Example</td>
+<td align="center"><code>"book-reader"</code></td>
+<td align="center"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zM233.59 241.1c-59.33-36.32-155.43-46.3-203.79-49.05C13.55 191.13 0 203.51 0 219.14v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87V252.56c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06V219.14c-.01-15.63-13.56-28.01-29.81-27.09z"/></svg></td>
+</tr>
+<tr class="even">
 <td align="left">Explore</td>
 <td align="center"><code>"wpexplorer"</code></td>
 <td align="center"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Challenge</td>
 <td align="center"><code>"cogs"</code></td>
 <td align="center"><svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:25px;width:31.25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"/></svg></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Game</td>
 <td align="center"><code>"gamepad"</code></td>
 <td align="center"><svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:25px;width:31.25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M480.07 96H160a160 160 0 1 0 114.24 272h91.52A160 160 0 1 0 480.07 96zM248 268a12 12 0 0 1-12 12h-52v52a12 12 0 0 1-12 12h-24a12 12 0 0 1-12-12v-52H84a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h52v-52a12 12 0 0 1 12-12h24a12 12 0 0 1 12 12v52h52a12 12 0 0 1 12 12zm216 76a40 40 0 1 1 40-40 40 40 0 0 1-40 40zm64-96a40 40 0 1 1 40-40 40 40 0 0 1-40 40z"/></svg></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Wizard</td>
 <td align="center"><code>"hat-wizard"</code></td>
 <td align="center"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M496 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h480c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zm-304-64l-64-32 64-32 32-64 32 64 64 32-64 32-16 32h208l-86.41-201.63a63.955 63.955 0 0 1-1.89-45.45L416 0 228.42 107.19a127.989 127.989 0 0 0-53.46 59.15L64 416h144l-16-32zm64-224l16-32 16 32 32 16-32 16-16 32-16-32-32-16 32-16z"/></svg></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">References</td>
 <td align="center"><code>"leanpub"</code></td>
 <td align="center"><svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:25px;width:28.12px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg></td>
@@ -953,18 +968,18 @@ Figure 9.24: Sliders Using the Red Palette
 <p>If you come across any of these types of pages that have a different icon or a missing icon, please create an issue in GitHub and/or fix.</p>
 <p>If there is a type of page that does fit these, please talk to Neil to see about what we need to add.</p>
 </div>
-<div id="submenus" class="section level3" number="9.3.5">
-<h3><span class="header-section-number">9.3.5</span> Submenus</h3>
+<div id="submenus" class="section level3 hasAnchor" number="9.3.5">
+<h3><span class="header-section-number">9.3.5</span> Submenus<a href="uiStructure.html#submenus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Given the nature of our Apps, there is <strong>NO</strong> reason for having submenus. If you come across an app that has submenus or you believe that a submenu is necessary, then that is a good sign that you are looking at a “bloated” app. These apps need to be marked for review to investigate re-designing the app and potentially splitting the app in to two or more apps.</p>
 </div>
-<div id="whats-needed-in-the-server-definition-1" class="section level3" number="9.3.6">
-<h3><span class="header-section-number">9.3.6</span> What’s Needed in the Server Definition</h3>
+<div id="whats-needed-in-the-server-definition-1" class="section level3 hasAnchor" number="9.3.6">
+<h3><span class="header-section-number">9.3.6</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you have followed the above specifications, you do not need to add anything special to your server definition. The <code>dashboardSidebar</code> function will automatically take care of everything that is needed.</p>
 <p>The most important thing is that you keep track of what you set for each <code>tabName</code> argument. When you build the pages in the <a href="uiStructure.html#body">Dashboard Body</a> or want to create a button that sends the user to a particular page, these are the values that will be crucial.</p>
 </div>
 </div>
-<div id="body" class="section level2" number="9.4">
-<h2><span class="header-section-number">9.4</span> Dashboard Body</h2>
+<div id="body" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Dashboard Body<a href="uiStructure.html#body" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Dashboard Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with. Thus, this is the most important part of the layout of your App.</p>
 <p>The order in which your code the Pages in the Dashboard body needs to mirror the order of the tabs in the Sidebar. This helps not only you keep track of where you’re at, but is kind to future readers of your code.</p>
 <p>The <code>dashboardBody</code> call will be the last element of the <code>dashboardPage</code> call inside of your User Interface (UI) list definition. Within the <code>dashboardBody</code> you will need to call the function <code>tabItems</code>. This will help your App make a connection between the menu items in your Sidebar and the pages that you make in the Body.</p>
@@ -990,9 +1005,9 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb50-16"><a href="uiStructure.html#cb50-16" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb50-17"><a href="uiStructure.html#cb50-17" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>The following subsections explain the purposes of each type of Page.</p>
-<div id="the-overview-page" class="section level3" number="9.4.1">
-<h3><span class="header-section-number">9.4.1</span> The Overview Page</h3>
-<p>This page is <strong>REQUIRED</strong> for all Apps. This is the main landing page of your App and should appear at the top of the Sidebar. The icon for this page must be “dashboard.”</p>
+<div id="the-overview-page" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> The Overview Page<a href="uiStructure.html#the-overview-page" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This page is <strong>REQUIRED</strong> for all Apps. This is the main landing page of your App and should appear at the top of the Sidebar. The icon for this page must be “dashboard”.</p>
 <p>The Overview Tab must contain <strong>ALL</strong> of the following elements:</p>
 <ol style="list-style-type: decimal">
 <li>“Long/Formal App Title” (as Heading 1; this will be the <strong>only</strong> instance of Heading 1 in your App)</li>
@@ -1005,8 +1020,8 @@ Figure 9.24: Sliders Using the Red Palette
 <li>Last Element: <code>div(class = "updated", "Last Update: mm/dd/yyyy by FL.")</code> with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.</li>
 </ol>
 <p>The purpose of the Overview Page is the act like the front/home page of any newspaper, magazine, or website. Set the stage for what you want the user to learn through your App.</p>
-<div id="creating-the-overview-page" class="section level4" number="9.4.1.1">
-<h4><span class="header-section-number">9.4.1.1</span> Creating the Overview Page</h4>
+<div id="creating-the-overview-page" class="section level4 hasAnchor" number="9.4.1.1">
+<h4><span class="header-section-number">9.4.1.1</span> Creating the Overview Page<a href="uiStructure.html#creating-the-overview-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here’s an example of making an Overview Page:</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="uiStructure.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
 <span id="cb51-2"><a href="uiStructure.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside the Dashboard Body</span></span>
@@ -1054,13 +1069,13 @@ Figure 9.24: Sliders Using the Red Palette
 <ul>
 <li>If you need a new line but not a new paragraph, you use the <code>br()</code> tag.</li>
 <li>The label for the button needs to be consistent with <a href="commonElements.html#buttons">Section <a href="commonElements.html#buttons">10.4</a></a>.</li>
-<li>There should <strong>NOT</strong> be any spaces between letters of a button label. This is a violation of Accessibility as this destroys the label. While we might read “G (space) O” as the word “go,” a screen reader reads out “gee” (pause) “oh” to the user.</li>
+<li>There should <strong>NOT</strong> be any spaces between letters of a button label. This is a violation of Accessibility as this destroys the label. While we might read “G (space) O” as the word “go”, a screen reader reads out “gee” (pause) “oh” to the user.</li>
 <li>There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, “Instructions:” does not follow this Style Guide.</li>
 <li>There should not be an “About” heading. The text between the Title of your App and the Instructions head serves as the description.</li>
 </ul>
 </div>
-<div id="whats-needed-in-the-server-defintion" class="section level4" number="9.4.1.2">
-<h4><span class="header-section-number">9.4.1.2</span> What’s Needed in the Server Defintion</h4>
+<div id="whats-needed-in-the-server-defintion" class="section level4 hasAnchor" number="9.4.1.2">
+<h4><span class="header-section-number">9.4.1.2</span> What’s Needed in the Server Defintion<a href="uiStructure.html#whats-needed-in-the-server-defintion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>At bare minimum you will need to have one element in your server definition: the action for your button. If you have multiple buttons, you might need to have several more code chunks.</p>
 <p>Here is a generic example for the button on the Overview Page that moves the user to the appropriate next page:</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="uiStructure.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In your server section</span></span>
@@ -1077,19 +1092,19 @@ Figure 9.24: Sliders Using the Red Palette
 <p>In the rare case where you have other things happening on the Overview page, you’ll need to include the appropriate calls in your server section to carry out those actions for you.</p>
 </div>
 </div>
-<div id="a-prerequisites-page" class="section level3" number="9.4.2">
-<h3><span class="header-section-number">9.4.2</span> A Prerequisites Page</h3>
+<div id="a-prerequisites-page" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> A Prerequisites Page<a href="uiStructure.html#a-prerequisites-page" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If your App needs to ensure that the user has the base understandings necessary to interact with your App, you’ll need to create a Prerequisites Page. Otherwise, you can omit this page.</p>
-<p>The icon for this Page must be “book.” Use the word “Prerequisites” rather than “Pre-reqs,” “Prereqs,” or “Pre-requisites.”</p>
-<div id="types-of-prerequisites" class="section level4" number="9.4.2.1">
-<h4><span class="header-section-number">9.4.2.1</span> Types of Prerequisites</h4>
+<p>The icon for this Page must be “book”. Use the word “Prerequisites” rather than “Pre-reqs”, “Prereqs”, or “Pre-requisites”.</p>
+<div id="types-of-prerequisites" class="section level4 hasAnchor" number="9.4.2.1">
+<h4><span class="header-section-number">9.4.2.1</span> Types of Prerequisites<a href="uiStructure.html#types-of-prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites Page.</p>
 <p>Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App’s statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.</p>
 <p>Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you’re using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus.</p>
-<p>Keep in mind that Contextual Prerequisites are different from the context which should be part of an Activity Page. If the information is necessary to interpret sliders/graphs and is <em>specific</em>, then you should include this information on the Activity Page. If the information helps the user say “Oh, that’s what they mean by [blank],” that is good sign of something to put in the Prerequisites Page.</p>
+<p>Keep in mind that Contextual Prerequisites are different from the context which should be part of an Activity Page. If the information is necessary to interpret sliders/graphs and is <em>specific</em>, then you should include this information on the Activity Page. If the information helps the user say “Oh, that’s what they mean by [blank]”, that is good sign of something to put in the Prerequisites Page.</p>
 </div>
-<div id="text-links-in-prerequisites-and-beyond" class="section level4" number="9.4.2.2">
-<h4><span class="header-section-number">9.4.2.2</span> Text Links in Prerequisites (and Beyond)</h4>
+<div id="text-links-in-prerequisites-and-beyond" class="section level4 hasAnchor" number="9.4.2.2">
+<h4><span class="header-section-number">9.4.2.2</span> Text Links in Prerequisites (and Beyond)<a href="uiStructure.html#text-links-in-prerequisites-and-beyond" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><em>Note: what appears here is applicable any time you want to link to an webpage that is beyond BOAST.</em></p>
 <p>In as many instances as possible, we would like to provide the user with a link to Online Notes of a World Campus Statistics course.</p>
 <p>The link that you provide must take the user to the appropriate location. Do not send the user to the home page for a course; rather, take them to the relevant page. To do this, you’ll need to explore the <a href="https://online.stat.psu.edu/statprogram/">Department of Statistics STAT ONLINE</a> page and look through the courses.</p>
@@ -1128,8 +1143,8 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb53-27"><a href="uiStructure.html#cb53-27" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb53-28"><a href="uiStructure.html#cb53-28" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 </div>
-<div id="creating-a-prerequisites-page" class="section level4" number="9.4.2.3">
-<h4><span class="header-section-number">9.4.2.3</span> Creating a Prerequisites Page</h4>
+<div id="creating-a-prerequisites-page" class="section level4 hasAnchor" number="9.4.2.3">
+<h4><span class="header-section-number">9.4.2.3</span> Creating a Prerequisites Page<a href="uiStructure.html#creating-a-prerequisites-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here’s an example of the code needed to create the Prerequisites Page in the UI:</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="uiStructure.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
 <span id="cb54-2"><a href="uiStructure.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
@@ -1176,16 +1191,22 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb54-43"><a href="uiStructure.html#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>For more information on collapsible boxes, see <a href="commonElements.html#collapsible">Section <a href="commonElements.html#collapsible">10.3</a></a>.</p>
 </div>
-<div id="whats-needed-in-the-server-definition-2" class="section level4" number="9.4.2.4">
-<h4><span class="header-section-number">9.4.2.4</span> What’s Needed in the Server Definition</h4>
+<div id="whats-needed-in-the-server-definition-2" class="section level4 hasAnchor" number="9.4.2.4">
+<h4><span class="header-section-number">9.4.2.4</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Generally speaking, the purpose of the Prerequisites Page is to convey key background information for the user to double check they understand before moving into the heart of your App. Thus, this page contains static text and images. Thus, it is rare that you would need to include anything in the server definition for this page.</p>
 </div>
 </div>
-<div id="activity-pages" class="section level3" number="9.4.3">
-<h3><span class="header-section-number">9.4.3</span> Activity Pages</h3>
+<div id="activity-pages" class="section level3 hasAnchor" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> Activity Pages<a href="uiStructure.html#activity-pages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The heart of your App is the one or more tabs where users interact with the App beyond simple navigation. These are the Activity Pages. Some apps will have a single activity, others several; deciding on how many is part of the design process.</p>
-<p>Currently, we have four types of Activities in BOAST:</p>
+<p>Currently, we have five types of Activities in BOAST:</p>
 <ul>
+<li>Example Pages, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zM233.59 241.1c-59.33-36.32-155.43-46.3-203.79-49.05C13.55 191.13 0 203.51 0 219.14v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87V252.56c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06V219.14c-.01-15.63-13.56-28.01-29.81-27.09z"/></svg>
+<ul>
+<li>These pages center around a user looking through a static/fixed example.</li>
+<li>Of all activity pages, these will have the most amount of text on the page and the least for them to do.</li>
+<li>The goal here is to provide a more solid foundation for the user so that they can more deeply engage with an exploration or challenge activity page.</li>
+</ul></li>
 <li>Exploration/Explore Pages, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg>
 <ul>
 <li>These pages center around the user exploring the target concept.</li>
@@ -1214,15 +1235,15 @@ Figure 9.24: Sliders Using the Red Palette
 </ul></li>
 </ul>
 <p>We will talk more about the layout of the Activity pages in <a href="uiStructure.html#activityLayout">Section <a href="uiStructure.html#activityLayout">9.5</a></a>.</p>
-<div id="ui-and-server-definitions" class="section level4" number="9.4.3.1">
-<h4><span class="header-section-number">9.4.3.1</span> UI and Server Definitions</h4>
+<div id="ui-and-server-definitions" class="section level4 hasAnchor" number="9.4.3.1">
+<h4><span class="header-section-number">9.4.3.1</span> UI and Server Definitions<a href="uiStructure.html#ui-and-server-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We’ve opted to not include any specific examples of the UI or server code for the Activity pages here. Partly, we don’t want to convey that there is only <em>one</em> way to code these pages by giving specific examples too early. Mostly though, we want to stress that the coding you do here depends almost entirely upon your goals for your App.</p>
 <p>We will be giving examples of how to code particular elements that you might need to include in your app throughout this Style Guide; draw upon those examples to help you with particular elements. Further, we encourage readers to spend time looking at the live versions of the apps in the <a href="https://sites.psu.edu/shinyapps/">Book of Apps for Statistics Teaching</a> and then looking at the matching code located at the <a href="https://github.com/EducationShinyAppTeam">GitHub Repository for BOAST</a>.</p>
 <p>Keep in mind that of all pages in your App, the Activity pages will demand the most of you for coding.</p>
 </div>
 </div>
-<div id="refPage" class="section level3" number="9.4.4">
-<h3><span class="header-section-number">9.4.4</span> References Page</h3>
+<div id="refPage" class="section level3 hasAnchor" number="9.4.4">
+<h3><span class="header-section-number">9.4.4</span> References Page<a href="uiStructure.html#refPage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The last page will be for your references. This Page is <strong>REQUIRED</strong> and is where you will place a reference list for all of the following items that you used in your app:</p>
 <ul>
 <li>All <code>R</code> packages you used</li>
@@ -1231,10 +1252,10 @@ Figure 9.24: Sliders Using the Red Palette
 <li>Data sets</li>
 <li>Refer to the <a href="documentation.html#documentation">Chapter <a href="documentation.html#documentation">15</a></a> <a href="documentation.html#documentation">on Documentation</a> of this Style Guide for more information.</li>
 </ul>
-<p>The icon for this Tab must be “leanpub,” <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:25px;width:28.12px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg>.</p>
+<p>The icon for this Tab must be “leanpub”, <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:25px;width:28.12px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg>.</p>
 <p>We will additionally place licensing information for your App at the bottom of the Reference page. We have created a function in <code>boastUtils</code> (version ≥ 0.1.6.1) that will automatically put the correct information on the page.</p>
-<div id="creating-a-references-page" class="section level4" number="9.4.4.1">
-<h4><span class="header-section-number">9.4.4.1</span> Creating a References Page</h4>
+<div id="creating-a-references-page" class="section level4 hasAnchor" number="9.4.4.1">
+<h4><span class="header-section-number">9.4.4.1</span> Creating a References Page<a href="uiStructure.html#creating-a-references-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Creating a References Page mimics both the Overview and Prerequisites Pages’ structure and is done in the UI section:</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="uiStructure.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
 <span id="cb55-2"><a href="uiStructure.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
@@ -1280,26 +1301,26 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb55-42"><a href="uiStructure.html#cb55-42" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb55-43"><a href="uiStructure.html#cb55-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 </div>
-<div id="whats-needed-in-the-server-definition-3" class="section level4" number="9.4.4.2">
-<h4><span class="header-section-number">9.4.4.2</span> What’s Needed in the Server Definition</h4>
+<div id="whats-needed-in-the-server-definition-3" class="section level4 hasAnchor" number="9.4.4.2">
+<h4><span class="header-section-number">9.4.4.2</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You do not need to place anything in the server definition for the References Page.</p>
 </div>
 </div>
 </div>
-<div id="activityLayout" class="section level2" number="9.5">
-<h2><span class="header-section-number">9.5</span> Layout of Activity Pages</h2>
+<div id="activityLayout" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Layout of Activity Pages<a href="uiStructure.html#activityLayout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now that we’ve discussed the more general layout of your App, we can turn our attention to the layout of your Activity pages. As previously mentioned, the layout you use here will need to support the goals of your App. While there are several possible styles, there is one firm constant that everyone must adhere to:</p>
 <p><strong>Each page should contain all information/instructions necessary for the user to be able to interact with the activity without having to switch to other pages.</strong></p>
 <p>In essence, if we were to give a person just the Activity page, they should be able to engage fully and completely with the activity without needing to refer to any other pages. This will ensure that you treating other pages as they are intended as well as ensuring your users can have success in using your App.</p>
-<div id="two-required-elements" class="section level3" number="9.5.1">
-<h3><span class="header-section-number">9.5.1</span> Two Required Elements</h3>
+<div id="two-required-elements" class="section level3 hasAnchor" number="9.5.1">
+<h3><span class="header-section-number">9.5.1</span> Two Required Elements<a href="uiStructure.html#two-required-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>No matter what layout you end up using, they all require the same two required first elements: a page title and some opening text.</p>
-<div id="page-title" class="section level4" number="9.5.1.1">
-<h4><span class="header-section-number">9.5.1.1</span> Page Title</h4>
-<p>The Page Title will be enclosed in the Header 2 tag, <code>h2</code>, and should be a meaningful title related to what the user will be doing. For an Exploration/Explore page, you can’t just say “Explore,” you need to say <em>what</em> they will be exploring. Similarly, for the other types of pages.</p>
+<div id="page-title" class="section level4 hasAnchor" number="9.5.1.1">
+<h4><span class="header-section-number">9.5.1.1</span> Page Title<a href="uiStructure.html#page-title" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Page Title will be enclosed in the Header 2 tag, <code>h2</code>, and should be a meaningful title related to what the user will be doing. For an Exploration/Explore page, you can’t just say “Explore”, you need to say <em>what</em> they will be exploring. Similarly, for the other types of pages.</p>
 </div>
-<div id="opening-text" class="section level4" number="9.5.1.2">
-<h4><span class="header-section-number">9.5.1.2</span> Opening Text</h4>
+<div id="opening-text" class="section level4 hasAnchor" number="9.5.1.2">
+<h4><span class="header-section-number">9.5.1.2</span> Opening Text<a href="uiStructure.html#opening-text" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Immediately after the Page Title, you’ll want to add some text, typically enclosed in the paragraph tag, <code>p</code>. This is where you’ll want to</p>
 <ul>
 <li>give any specific background information,</li>
@@ -1310,23 +1331,23 @@ Figure 9.24: Sliders Using the Red Palette
 <p>Keep in mind that this is beneficial to all users, but especially those who are using assistive technology such as screen readers. If you put your instructions on a separate page or hidden somewhere else, you are now requiring that your user memorize those instructions. This is already cognitively demanding for sighted individuals, but for users with vision impairments, even more so.</p>
 </div>
 </div>
-<div id="the-classical-layout" class="section level3" number="9.5.2">
-<h3><span class="header-section-number">9.5.2</span> The Classical Layout</h3>
+<div id="the-classical-layout" class="section level3 hasAnchor" number="9.5.2">
+<h3><span class="header-section-number">9.5.2</span> The Classical Layout<a href="uiStructure.html#the-classical-layout" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Classical Layout for Activity pages is our most common/main layout style. This is the layout that you’ll want to use unless there is a reason to use one of the others. Let’s look at an example of this layout from the <a href="https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/">Significance Testing Caveats app</a>:</p>
-<div class="figure" style="text-align: center"><span id="fig:classicalLayout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:classicalLayout"></span>
 <img src="images/activityLayouts/classic.png" alt="Classical Activity Page Layout" width="726" />
 <p class="caption">
 Figure 9.25: Classical Activity Page Layout
 </p>
 </div>
-<p>You can see the two required elements (Page Title and Opening Text) are labeled in blue (see Figure <a href="uiStructure.html#fig:classicalLayout">9.25</a>). After the opening text you’ll notice an orange colored box labeled “Fluid Row with 2 Columns.” Within that box, we have two visual columns: a portion of controls with a grey background and a portion of the plot.</p>
+<p>You can see the two required elements (Page Title and Opening Text) are labeled in blue (see Figure <a href="uiStructure.html#fig:classicalLayout">9.25</a>). After the opening text you’ll notice an orange colored box labeled “Fluid Row with 2 Columns”. Within that box, we have two visual columns: a portion of controls with a grey background and a portion of the plot.</p>
 <p>In this particular layout, we will always place controls such as sliders, number/text inputs, select options, buttons, etc. on the left and with a grey background. To the right, we will place any output results (e.g., plots, data tables, etc.) The split between the columns is typically 1/3 vs 2/3, although this can change to 1/2 vs 1/2.</p>
 <p>To create this layout, you’ll need to reference the next chapter; specifically, <a href="commonElements.html#rowsCols">Fluid Rows and Columns</a>, and <a href="commonElements.html#wellPanels">Well Panels</a>.</p>
 </div>
-<div id="visTabs" class="section level3" number="9.5.3">
-<h3><span class="header-section-number">9.5.3</span> Visible Tabs</h3>
+<div id="visTabs" class="section level3 hasAnchor" number="9.5.3">
+<h3><span class="header-section-number">9.5.3</span> Visible Tabs<a href="uiStructure.html#visTabs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One of the more common alternative layouts for Activity pages includes the usage of a set of tabs inside the page. For example, the <a href="https://psu-eberly.shinyapps.io/Assumptions_of_ANOVA/">Assumptions of ANOVA app</a> uses this type of layout:</p>
-<div class="figure" style="text-align: center"><span id="fig:visTabsLayout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:visTabsLayout"></span>
 <img src="images/activityLayouts/visibleTabs.png" alt="Visible Tabs Activity Page Layout" width="726" />
 <p class="caption">
 Figure 9.26: Visible Tabs Activity Page Layout
@@ -1336,10 +1357,10 @@ Figure 9.26: Visible Tabs Activity Page Layout
 <p>Depending on your needs/goals, you can blend the Visible Tab layout with the Classical Layout as we’ll see shortly. To build tab sets, you’ll want to check out <a href="uiStructure.html#innerTabs">Section <a href="uiStructure.html#innerTabs">9.6</a></a>.</p>
 <p><em>(I will note here that the Assumptions of ANOVA app could use several modifications.)</em></p>
 </div>
-<div id="hiddenTabs" class="section level3" number="9.5.4">
-<h3><span class="header-section-number">9.5.4</span> Hidden Tabs</h3>
+<div id="hiddenTabs" class="section level3 hasAnchor" number="9.5.4">
+<h3><span class="header-section-number">9.5.4</span> Hidden Tabs<a href="uiStructure.html#hiddenTabs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An alternate version of the Visible Tabs layout is the Hidden Tabs layout. There is still a set of tabs within the page but the user can no longer click on the tabs and move around at will. This is particularly useful if you have built a game where users need to progress through levels in a particular order (e.g., <a href="https://psu-eberly.shinyapps.io/Descriptive_Statistics/">Descriptive Statistics App</a>) or in a wizard environment (e.g., <a href="https://psu-eberly.shinyapps.io/Hasse_Diagrams/">Hasse Diagram App</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:hiddenTabsLayout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hiddenTabsLayout"></span>
 <img src="images/activityLayouts/hiddenTabs.png" alt="Hidden Tabs Activity Page Layout" width="730" />
 <p class="caption">
 Figure 9.27: Hidden Tabs Activity Page Layout
@@ -1347,15 +1368,15 @@ Figure 9.27: Hidden Tabs Activity Page Layout
 </div>
 <p>A key element that you must be sure to include when using the Hidden Tabs layout are some type of navigation controls for the user as shown in Figre <a href="uiStructure.html#fig:hiddenTabsLayout">9.27</a>.</p>
 </div>
-<div id="sets-of-controls" class="section level3" number="9.5.5">
-<h3><span class="header-section-number">9.5.5</span> Sets of Controls</h3>
+<div id="sets-of-controls" class="section level3 hasAnchor" number="9.5.5">
+<h3><span class="header-section-number">9.5.5</span> Sets of Controls<a href="uiStructure.html#sets-of-controls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another Activity Layout is a blending of several of the previous layouts and occurs when you have several sets of controls. In an upcoming release of the <a href="https://psu-eberly.shinyapps.io/Population_Growth">Population Growth Model app</a>, we’ve split the controls into three separate sets:</p>
 <ol style="list-style-type: decimal">
 <li>Initial values which apply to all models/situations (boxed in purple in Figure <a href="uiStructure.html#fig:setsLayout">9.28</a>),</li>
 <li>Model Type as a Visible Tab Set (top of orange box),</li>
 <li>Model Specific Controls (Classic Layout with grey background; also in the orange box)</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:setsLayout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:setsLayout"></span>
 <img src="images/activityLayouts/setsOfControls.png" alt="Sets of Controls Activity Page Layout" width="726" />
 <p class="caption">
 Figure 9.28: Sets of Controls Activity Page Layout
@@ -1363,10 +1384,10 @@ Figure 9.28: Sets of Controls Activity Page Layout
 </div>
 <p>This kind of layout is particularly useful for explorations where certain controls are getting used by several different aspects. This can also help to reduce the size of a Classical Layout’s control area. Typically, we don’t want the user to have to scroll far below the plot to change something.</p>
 </div>
-<div id="tic-tac-toe" class="section level3" number="9.5.6">
-<h3><span class="header-section-number">9.5.6</span> Tic-Tac-Toe</h3>
+<div id="tic-tac-toe" class="section level3 hasAnchor" number="9.5.6">
+<h3><span class="header-section-number">9.5.6</span> Tic-Tac-Toe<a href="uiStructure.html#tic-tac-toe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Games are a common area where you might need to use a different layout than the Classical one. A good example here would be any of our Tic-Tac-Toe games such as the <a href="https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/">Hypothesis Testing Game</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:tictactoeLayout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tictactoeLayout"></span>
 <img src="images/activityLayouts/tictactoe.png" alt="Tic-Tac-Toe Activity Page Layout" width="736" />
 <p class="caption">
 Figure 9.29: Tic-Tac-Toe Activity Page Layout
@@ -1374,8 +1395,8 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
 </div>
 </div>
 </div>
-<div id="innerTabs" class="section level2" number="9.6">
-<h2><span class="header-section-number">9.6</span> Tab Sets</h2>
+<div id="innerTabs" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Tab Sets<a href="uiStructure.html#innerTabs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are two types of tabs within the Shiny ecosystem: there is <code>tabItems</code> which connect the Pages of the <code>dashboardBody</code> to the menu items of the <code>dashboardSidebar</code> and there is <code>tabsetPanel</code> which allows you to create a set of tabs inside a particular page.</p>
 <p>The <a href="uiStructure.html#visTabs">Visible Tabs Layout</a> and the <a href="uiStructure.html#hiddenTabs">Hidden Tabs Layout</a> make use of this second type of tabs (i.e., <code>tabsetPanel</code>).</p>
 <p>Deciding on whether to use <code>tabsetPanel</code> is going to depend on several things:</p>
@@ -1406,8 +1427,8 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
 </ol></li>
 </ol>
 <p>When you go to make a set of tabs, you need to do two things: 1) you have to create the set of tabs and 2) you then have to create each tab.</p>
-<div id="create-the-tab-set" class="section level3" number="9.6.1">
-<h3><span class="header-section-number">9.6.1</span> Create the Tab Set</h3>
+<div id="create-the-tab-set" class="section level3 hasAnchor" number="9.6.1">
+<h3><span class="header-section-number">9.6.1</span> Create the Tab Set<a href="uiStructure.html#create-the-tab-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once you’ve decided to create a set of tabs on a page of your app, you’ll need to start coding the page as you would any other (see <a href="uiStructure.html#body">Dashboard Body</a> for more information) page. However, once you get to the point of wanting to create the tab set, you’ll need to use the <code>tabsetPanel</code> function and set the value of two arguments and potentially a third.</p>
 <p>Here is the code that creates the tab set panel in the Hasse Diagram app:</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="uiStructure.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We&#39;re in the Dashboard Body of the UI</span></span>
@@ -1432,13 +1453,13 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
 <p>The two arguments of <code>tabsetPanel</code> you need to provide are the <code>id</code> and <code>type</code>. The <code>id</code> allows for you to reference the tab set from anywhere in the app, which is useful for navigation. Make sure you use a meaningful and unique name here. The <code>type</code> argument will take one of two values: <code>tabs</code> or <code>hidden</code>. (At this time we do not allow for any other choices in BOAST.) The choice will come from Question 4 in the decision tree above.</p>
 <p>The optional third argument you can set is the <code>selected</code> argument (e.g., <code>selected = "S1"</code>). This will let you set the initial tab displayed be something specific. However, our recommendation is that you should put the tabs into an order that makes the most natural progression. The first tab displayed should be the first tab you create within the set. Thus, you don’t really need to set the <code>selected</code> argument here.</p>
 </div>
-<div id="create-the-tabs" class="section level3" number="9.6.2">
-<h3><span class="header-section-number">9.6.2</span> Create the Tabs</h3>
+<div id="create-the-tabs" class="section level3 hasAnchor" number="9.6.2">
+<h3><span class="header-section-number">9.6.2</span> Create the Tabs<a href="uiStructure.html#create-the-tabs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the above example code, you can see the first tab getting created with the <code>tabPanel</code> call. The <code>tabPanel</code> call acts much like the <code>tabItem</code> call that you use to create pages. The key difference are the <code>title</code> and <code>value</code> arguments.</p>
 <p>The <code>title</code> argument is the phrase that you want to appear in the tab that users click on. Notice you still must set this value even when you are using Hidden Tabs. The <code>value</code> argument provides an opportunity to give an abbreviation of the tab’s title for use with the <code>selected</code> argument. If you are including spaces or special characters in your tab’s <code>title</code>, we recommend setting something simpler for the <code>value</code>. (The default value for <code>value</code> will be whatever you set as the value of <code>title</code>.) You’ll use the <code>value</code> for any navigation controls.</p>
 </div>
-<div id="moving-between-tabs" class="section level3" number="9.6.3">
-<h3><span class="header-section-number">9.6.3</span> Moving Between Tabs</h3>
+<div id="moving-between-tabs" class="section level3 hasAnchor" number="9.6.3">
+<h3><span class="header-section-number">9.6.3</span> Moving Between Tabs<a href="uiStructure.html#moving-between-tabs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can create navigation buttons to move between the various tabs in a tab set. This is especially important if you are using Hidden Tabs.</p>
 <p>Within the <code>handlerExpr</code> of your button’s <code>observeEvent</code> call, you’ll need to include code similar to the following:</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="uiStructure.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the server definition</span></span>
@@ -1464,7 +1485,6 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1501,6 +1521,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

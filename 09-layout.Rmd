@@ -635,6 +635,7 @@ In each `menuItem` call, you'll want to use the following code `icon = icon("ico
 |:----------|:---------:|:----:|
 | Overview | `"tachometer-alt"` | `r fontawesome::fa(name = "fas fa-tachometer-alt", height = "25px")` |
 | Prerequisites | `"book"` | `r fontawesome::fa(name = "fas fa-book", height = "25px")` |
+| Example | `"book-reader"` | `r fontawesome::fa(name = "fas fa-book-reader", height = "25px")` |
 | Explore | `"wpexplorer"` | `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")` |
 | Challenge | `"cogs"` | `r fontawesome::fa(name = "fas fa-cogs", height = "25px")` |
 | Game | `"gamepad"` | `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")` |
@@ -914,8 +915,12 @@ Generally speaking, the purpose of the Prerequisites Page is to convey key backg
 
 The heart of your App is the one or more tabs where users interact with the App beyond simple navigation. These are the Activity Pages. Some apps will have a single activity, others several; deciding on how many is part of the design process.
 
-Currently, we have four types of Activities in BOAST:
+Currently, we have five types of Activities in BOAST:
 
++ Example Pages, `r fontawesome::fa(name = "fas fa-book-reader", height = "25px")`
+    - These pages center around a user looking through a static/fixed example.
+    - Of all activity pages, these will have the most amount of text on the page and the least for them to do.
+    - The goal here is to provide a more solid foundation for the user so that they can more deeply engage with an exploration or challenge activity page.
 + Exploration/Explore Pages, `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")`
     - These pages center around the user exploring the target concept.
     - These pages will generally have more text on the page here than other types of Activities.

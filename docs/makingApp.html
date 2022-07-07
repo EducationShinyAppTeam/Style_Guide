@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Making an App | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Making an App | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="workflow.html"/>
 <link rel="next" href="basics.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,8 +506,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="makingApp" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Making an App</h1>
+<div id="makingApp" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Making an App<a href="makingApp.html#makingApp" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Sooner or later, you’ll reach the point where it is time to make your own Shiny App for BOAST. Approaching your App’s construction in a systematic way will help you tremendously. The following suggested workflow is an abbreviated version of the one in <a href="workflow.html#workflow">Chapter <a href="workflow.html#workflow">1</a></a>:</p>
 <ol style="list-style-type: decimal">
 <li>Read the Style Guide</li>
@@ -518,24 +523,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Additional tweaks</li>
 </ol>
 <p>This workflow (both in the more expanded state and in the abbreviated one) leaves out a lot of the going-ons and decision making that goes into making an app. Our goal with this chapter is to walk you through this process as Neil makes an app from scratch.</p>
-<div id="step1" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Step 1: Read the Style Guide</h2>
+<div id="step1" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Step 1: Read the Style Guide<a href="makingApp.html#step1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is step is critical to making an app that is easy to debug (vital when programming) and is in-alignment with the Standards that we have set for BOAST. Please take your time going through the Style Guide and keep an eye on it for updates. You can access the published Bookdown version by clicking on the address link located at the Guide’s GitHub Repository.</p>
 <p>As you build your App, we recommend periodically checking the Style Guide to 1) ensure that you’re still adhering to it, 2) to stay up-to-date with the Guide, and 3) to see (and then use) any useful code chunks that are listed. Even as the authors of this Guide, we’re constantly looking things up in the guide. Thus, there is no shame in constantly referring to the Style Guide; after all, it is meant to be <em>the</em> Go-To Reference.</p>
 <p><em>Note:</em> While we’ve written the following steps from the perspective of making a new app, what we describe equally applies to existing apps. Thus, you’ll want to keep in mind both new and existing apps as you read through the remaining steps.</p>
 </div>
-<div id="step2" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Step 2: Identify a Topic</h2>
+<div id="step2" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Step 2: Identify a Topic<a href="makingApp.html#step2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is one of the more challenging tasks for anyone: deciding what to make an app about. The notion of “picking a topic” is a bit misleading as not only should you pick a <strong>topic</strong>, but you also need to pick the <strong>purpose</strong> of the app, and the <strong>goals</strong>. While all three go hand-in-hand with each other, the easiest decision of the three is purpose.</p>
-<div id="step2a" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Your App’s Purpose</h3>
+<div id="step2a" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Your App’s Purpose<a href="makingApp.html#step2a" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When we look across BOAST, we can categorize the apps into two major classes: apps whose purpose is to help students <strong>learn</strong> an idea/concept and apps whose purpose is to help students <strong>review</strong> an idea/concept. The <a href="https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/">NHST Caveats App</a> stands as a good example of an app whose purpose is to help students learn something. On the other hand, the <a href="https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/">[Null] Hypothesis Testing Game (Tic-tac-toe)</a> and the <a href="https://psu-eberly.shinyapps.io/Matching_Distributions/">Matching Distributions</a> are examples where the student is reviewing their understandings. There are some apps such as <a href="https://psu-eberly.shinyapps.io/ANCOVA/">ANCOVA</a> that are dual purpose, having both learning elements and reviewing elements.</p>
 <p>Generally speaking, apps whose purpose is <strong>learning</strong> are going to have Explorations and possibly Challenges for Activity Tabs. Apps whose purpose is <strong>reviewing</strong> will have just Games for Activity Tab(s).</p>
 <p>By identifying early on the purpose of your App, you’ll be able to better plan your app.</p>
 </div>
-<div id="step2b" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> The Topic</h3>
-<p>Here is where you’ll decide what statistical idea/concept your App is going to be centered around. While you should be as specific as possible here, <strong>apps for learning</strong> need to have much more specificity than <strong>apps for reviewing</strong>. Saying that you want your App “to deal with probability” is not going to be as useful as saying that you want your App “to help students recognize when probability is and is not appropriate for different contexts.”</p>
+<div id="step2b" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> The Topic<a href="makingApp.html#step2b" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here is where you’ll decide what statistical idea/concept your App is going to be centered around. While you should be as specific as possible here, <strong>apps for learning</strong> need to have much more specificity than <strong>apps for reviewing</strong>. Saying that you want your App “to deal with probability” is not going to be as useful as saying that you want your App “to help students recognize when probability is and is not appropriate for different contexts”.</p>
 <p>Don’t feel like you have to details down to the nanoscale from the start. As you continue developing and talking with people, you’ll add in more details.</p>
 <p>You can identify potential topics through any of the following:</p>
 <ul>
@@ -551,13 +556,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em><strong>Word of Caution #1</strong></em>: While it is okay to get ideas from other websites, please keep track of this. We need to give credit where credit is due. If you come across an app (whether in Shiny or some other program) somewhere and you think that it would be good to translate that into Shiny app for BOAST, we need to know the original.</p>
 <p><em><strong>Word of Caution #2</strong></em>: An unproductive place to begin is to say “Hey, I want to make a memory game” or “I saw this really cool animation and I want to make an app that does that.” Both of these (especially the second) place the educational aspect of the app as a secondary focus. <strong>This is not consistent with BOAST.</strong> All apps should place educational purposes and goals before anything else. Forcing a topic to make use of certain tool because that tool would be “cool” or “fun” does not further our goals.</p>
 </div>
-<div id="step2c" class="section level3" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Goals</h3>
+<div id="step2c" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Goals<a href="makingApp.html#step2c" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now, we’re sure that some people have already thought to themselves “hey, you’ve already had us identify purpose so isn’t this the same?” To which we reply “No.” We’ve used <strong>purpose</strong> to refer an overarching aim of your App. Here, <strong>goal</strong> refers to a much more contextualized aspect. While these goals will be less important for reviewing apps, you will need to identify specific learning goals for learning apps.</p>
 <p>For this step, you’re going to need to work with the faculty to identify the learning goals for your app. If you’re drawing from a past experience in a course, look to see if there were learning objectives listed. Those can be extremely useful starting places.</p>
 </div>
-<div id="example" class="section level3" number="2.2.4">
-<h3><span class="header-section-number">2.2.4</span> Example</h3>
+<div id="example" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Example<a href="makingApp.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>The following is a somewhat stream-of-consciousness narrative of how Neil tackled this step. We’ll place flags in parentheses.</em></p>
 <p>I would like to make an app that would help introductory students <strong>(<em>identifies an intended audience</em>)</strong> wrestling with some of the concepts of descriptive/incisive statistics <strong>(<em>Purpose: learning</em>)</strong>. Some ideas that I have are:</p>
 <ul>
@@ -570,11 +575,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>After using the app, a student should recognize that while for a many data collections that have skewness, the value of the <em>sample arithmetic mean</em> will be either greater (for positive skew) or less (for negative skew) than the value of the <em>sample median</em>, this is not an absolute rule. <strong>(<em>Learning Goal</em>)</strong> In other words, just because a histogram shows positive skewness doesn’t automatically mean that the value of the <em>sample arithmetic mean</em> is actually greater than the value of the <em>sample median</em>.</p>
 </div>
 </div>
-<div id="step3" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Step 3: Sketch out plans</h2>
-<p>In both workflows of <a href="workflow.html#workflow">Chapter <a href="workflow.html#workflow">1</a></a>, there was the phrase “ON PAPER.” Step 3 is where you need to take this phrase seriously.</p>
+<div id="step3" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Step 3: Sketch out plans<a href="makingApp.html#step3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In both workflows of <a href="workflow.html#workflow">Chapter <a href="workflow.html#workflow">1</a></a>, there was the phrase “ON PAPER”. Step 3 is where you need to take this phrase seriously.</p>
 <p>To assist you, use the following layout by copying into a Word program (you can fit four on a landscape oriented page) and printing OR by sketching your version on paper:</p>
-<div class="figure" style="text-align: center"><span id="fig:blankSketchLayout"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blankSketchLayout"></span>
 <img src="BOAST_style_guide_files/figure-html/blankSketchLayout-1.png" alt="Blank layout for sketching your ideas" width="672" />
 <p class="caption">
 Figure 2.1: Blank layout for sketching your ideas
@@ -582,8 +587,8 @@ Figure 2.1: Blank layout for sketching your ideas
 </div>
 <p>Figure <a href="makingApp.html#fig:blankSketchLayout">2.1</a> gives you a BOAST app canvas upon which you can sketch your ideas. You can copy this image into any number of programs for printing or digitally editing. In the examples below, you’ll see a hand-drawn version of this layout.</p>
 <p>We want to stress just how useful sketching your ideas is. Neil routinely makes use of sketches whenever he builds apps for BOAST (e.g., the <a href="https://psu-eberly.shinyapps.io/Hasse_Diagrams/">Hasse Diagram App</a>), for helping students working on BOAST apps (e.g., the <a href="https://rstudio-connect.tlt.psu.edu:3939/content/249">Data Table Examples app</a> on the TLT server), or for his own projects (e.g., a <a href="https://rstudio-connect.tlt.psu.edu:3939/content/330">Mastery Based Grading Progress</a> app also on the TLT server). Further, making sketches allows you to better share your ideas and will give you a goal for what to aim for as you actually begin to code.</p>
-<div id="key-elements" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Key Elements</h3>
+<div id="key-elements" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Key Elements<a href="makingApp.html#key-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are several things that you’ll want to be sure that you include in your sketch:</p>
 <ul>
 <li>A Suggested Title
@@ -623,10 +628,10 @@ Figure 2.1: Blank layout for sketching your ideas
 </ul>
 <p>The format of your sketches is up to you.</p>
 </div>
-<div id="example-cont." class="section level3" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Example, cont.</h3>
+<div id="example-cont." class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Example, cont.<a href="makingApp.html#example-cont." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As I start thinking about what this app might look like, I’m going to use a sheet of paper in quarters to organize some thoughts. Figure <a href="makingApp.html#fig:planSketchFull">2.2</a> shows the entire sheet of paper. The quadrants move left to right, top to bottom.</p>
-<div class="figure" style="text-align: center"><span id="fig:planSketchFull"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:planSketchFull"></span>
 <img src="images/planSketches/planSketch1.jpg" alt="Picture of My Plan" width="800" />
 <p class="caption">
 Figure 2.2: Picture of My Plan
@@ -634,20 +639,20 @@ Figure 2.2: Picture of My Plan
 </div>
 <p>In the first quadrant (Figure <a href="makingApp.html#fig:planSketchInfo">2.3</a>), I’ve listed a title (“Skewness’s Impact on the Values of the <em>Sample Median</em> and <em>Sample Arithmetic Mean</em>”), a possible short title (“Skew, Med, SAM”) as well as a restatement of my goal. I’ve then listed general aspects about the layout of my app, including what skin/theme color (yellow) I would need to use.</p>
 <p>I’ve additionally identified that I need to include the von Hippel article in my Reference Page as well as locating a version of the General Social Survey (GSS).</p>
-<div class="figure" style="text-align: center"><span id="fig:planSketchInfo"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:planSketchInfo"></span>
 <img src="images/planSketches/planSketch2-Info.jpg" alt="First Quadrant: General Information" width="800" />
 <p class="caption">
 Figure 2.3: First Quadrant: General Information
 </p>
 </div>
 <p>The second quadrant of my paper is the Overview Page sketch (Figure <a href="makingApp.html#fig:planSketchOverview">2.4</a>. I don’t have much information here.</p>
-<div class="figure" style="text-align: center"><span id="fig:planSketchOverview"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:planSketchOverview"></span>
 <img src="images/planSketches/planSketch3-Overview.jpg" alt="Second Quadrant: Overview Page" width="800" />
 <p class="caption">
 Figure 2.4: Second Quadrant: Overview Page
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:planSketchExplore"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:planSketchExplore"></span>
 <img src="images/planSketches/planSketch4-Explore.jpg" alt="Third Quadrant: Exploration Page" width="800" />
 <p class="caption">
 Figure 2.5: Third Quadrant: Exploration Page
@@ -656,7 +661,7 @@ Figure 2.5: Third Quadrant: Exploration Page
 <p>The next quadrant (Figure <a href="makingApp.html#fig:planSketchExplore">2.5</a>) is where I started detailing the first Activity Page of my app: the first Exploration. I’m imagining that in this exploration that the user would look through a variety of cases where the “rule” does and does not work. What I want the user to walk away from this page is that just because a histogram looks positively skewed does not imply that the value of the <em>sample arithmetic mean</em> is greater than the value of the <em>sample median</em>.</p>
 <p>I’m imagining a drop-down menu that would allow the user to move through a variety of data sets. Ideally, these data sets would be real data. The General Social Survey, has a variety of attributes that we could use, include several that demonstrate what I want. For example, the number of adults (18+ y.o.) living in a household is positively skewed but the value of the <em>sample median</em> is larger than than the value of the <em>sample arithmetic mean</em>. Which each choice of the user makes, the histogram on the right will update to show the appropriate data, plus reference lines for the values of the two statistics. I might want to add a numerical display as well. I also want there to be some context helping the user to understand each choice.</p>
 <p>I’ve left as an open question whether to enable a user to import/create their own data set on this page. I’m currently leaning towards not allowing this. Additionally, I’ve marked something for a punchline but this will need more thought.</p>
-<div class="figure" style="text-align: center"><span id="fig:planSketchChallenge"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:planSketchChallenge"></span>
 <img src="images/planSketches/planSketch5-Challenge.jpg" alt="Fourth Quadrant: Challenge Page" width="800" />
 <p class="caption">
 Figure 2.6: Fourth Quadrant: Challenge Page
@@ -665,31 +670,31 @@ Figure 2.6: Fourth Quadrant: Challenge Page
 <p>The fourth and final quadrant (Figure <a href="makingApp.html#fig:planSketchChallenge">2.6</a>) is an idea I’m still kicking around. This would depend on the specific audience and course goals for which users would go here. My idea is to extend the goal for the app to allow students to construct an understanding for what conditions might lead to <span class="math inline">\(Sample\;Median\left(\mathcal{X}\right)&lt;SAM\left(\mathcal{X}\right)\)</span>, <span class="math inline">\(Sample\;Median\left(\mathcal{X}\right)=SAM\left(\mathcal{X}\right)\)</span>, and <span class="math inline">\(Sample\;Median\left(\mathcal{X}\right)&gt;SAM\left(\mathcal{X}\right)\)</span>.</p>
 <p>At this moment, I’m leaning towards marking the Challenge Page as being a future improvement/addition rather than being part of the initial version of the app.</p>
 </div>
-<div id="share-your-plan" class="section level3" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> Share Your Plan</h3>
+<div id="share-your-plan" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Share Your Plan<a href="makingApp.html#share-your-plan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once you have a sketch, you’ll want to share this plan with others to get ideas for suggestions, modifications, etc. Different people might be able to point you to code snippets you can reuse from other apps. More importantly, they might be able to help you think about things that you glossed over/missed and/or thought about but didn’t articulate. By sharing these plans, we’ll make better apps.</p>
 <p>This is also the point in time in which the faculty will say whether you can go ahead and move to Step 4.</p>
 </div>
 </div>
-<div id="step4" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Step 4: Create Repository</h2>
+<div id="step4" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Step 4: Create Repository<a href="makingApp.html#step4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here you’ll want to reference Section <a href="workflow.html#repo-naming">1.2.1</a> on GitHub Repo Naming. You’ll need to make sure that there isn’t already a repository that has that name. When you get a name figured out for the repository, you can go ahead and create the repo.</p>
 <p>Be sure to use the App Template as the template for your new repository.</p>
 <p>Make sure to set Git Ignore to <code>R</code>.</p>
 <p>For the example, check out the <a href="https://github.com/EducationShinyAppTeam/Rethinking_Sample_Median_vs_Sample_Arithmetic_Mean/tree/development">Rethinking Sample Median vs Sample Arithmetic Mean Repo</a>. The repo name is 50 characters long (including the underscores), gets at the goal of the app, and was not already in use.</p>
 </div>
-<div id="steps5-8" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Steps 5-8: Write, Edit, Test, Debug</h2>
+<div id="steps5-8" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Steps 5-8: Write, Edit, Test, Debug<a href="makingApp.html#steps5-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I have not had the time to return to the <em>Rethinking</em> app for the purposes of this chapter. I ended up shifting to work on both the Hasse Diagram app as well as the Mastery Grading Progress apps. In both cases, I started with paper sketches for what I wanted and as I started coding to make the apps come to life, I needed to make changes. However, the paper sketches became an anchor that helped me stay focused on what I was doing.</p>
 <p>For the Hasse Diagram app, I’m sharing two images so that you can get a sense of the changes that occurred during the process. Be sure to check out the <a href="https://psu-eberly.shinyapps.io/Hasse_Diagrams/">Hasse Diagram App</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:hasseSketch"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hasseSketch"></span>
 <img src="images/planSketches/hasseSketch.jpg" alt="Hasse Diagram App Sketches" width="2304" />
 <p class="caption">
 Figure 2.7: Hasse Diagram App Sketches
 </p>
 </div>
 <p>In addition to the sketches which help with designing the visual appearance, you can also sketch out important coding aspects:</p>
-<div class="figure" style="text-align: center"><span id="fig:hasseNotes"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hasseNotes"></span>
 <img src="images/planSketches/hasseNotes.jpg" alt="Hasse Diagram App Coding Notes" width="1728" />
 <p class="caption">
 Figure 2.8: Hasse Diagram App Coding Notes
@@ -697,23 +702,23 @@ Figure 2.8: Hasse Diagram App Coding Notes
 </div>
 <p>(Please pardon the fuzzy nature of the photograph in Figure <a href="makingApp.html#fig:hasseNotes">2.8</a>.) Figure <a href="makingApp.html#fig:hasseNotes">2.8</a> is the “sketch” of important actions that need to happen in the Hasse Diagram app: from resetting a page to navigation, from tab specific actions to objects that persist across the various tabs. Ultimately, this sketch became a useful To Do list as built the app. I must stress that you’re seeing the final product. I built up this page as I went, I did not start out with this page filled out as you see here.</p>
 </div>
-<div id="step9" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Step 9: Larger Scale Testing</h2>
+<div id="step9" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Step 9: Larger Scale Testing<a href="makingApp.html#step9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once you’ve built your app and you’ve done some initial debugging on your own machine, you then need to test your app on a larger scale. This is when you’ll want to publish your app on the <a href="workflow.html#testing">TLT Server</a>.</p>
 <p>This is where you can get important feedback from people actually trying to use your app. This can help you improve the user interface as well as any behind the scenes coding that might be an issue.</p>
 <p>A common issue that occurs with Games is that when multiple people are playing the game, their game sessions might interact with each other. For example, one person might suddenly gain/lose points because of the actions of another player. This type of issue would only show up on servers when you have several people using the app at the same time. Make sure that during your testing, you try to have several people use the app at the same time.</p>
 </div>
-<div id="steps10-11" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Steps 10-11: Pull Requests and Tweaks</h2>
+<div id="steps10-11" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Steps 10-11: Pull Requests and Tweaks<a href="makingApp.html#steps10-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once you get to a certain point, you’ll want to make a Pull Request on GitHub. This will trigger a review process for your code.</p>
 <p>There are two parts to the Review Process: Appearance Review and Coding Review.</p>
-<div id="appearance-review-part-of-large-scale-testing" class="section level3" number="2.7.1">
-<h3><span class="header-section-number">2.7.1</span> Appearance Review (part of Large Scale Testing)</h3>
+<div id="appearance-review-part-of-large-scale-testing" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Appearance Review (part of Large Scale Testing)<a href="makingApp.html#appearance-review-part-of-large-scale-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You’ll need to post the TLT link to a common forum where you’ll receive feedback in terms of testing and design. You’ll want to attend to any feedback you get through this process. Faculty members will typically send you either an email with proposed changes or provide verbal feedback during a meeting.</p>
 </div>
-<div id="coding-review" class="section level3" number="2.7.2">
-<h3><span class="header-section-number">2.7.2</span> Coding Review</h3>
-<p>At least one other student team member will need to look through your code and make sure that 1) the code follows this Style Guide, 2) your app actually works, 3) any improvements that could still be made (including spelling and grammar). Each reviewer will need to leave their feedback as well as decision on GitHub. (The most common decision is “Request Changes.”)</p>
+<div id="coding-review" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Coding Review<a href="makingApp.html#coding-review" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>At least one other student team member will need to look through your code and make sure that 1) the code follows this Style Guide, 2) your app actually works, 3) any improvements that could still be made (including spelling and grammar). Each reviewer will need to leave their feedback as well as decision on GitHub. (The most common decision is “Request Changes”.)</p>
 <p>Once you get their feedback, you’ll need to do what you can to implement those changes. Once you’ve done so, push your updates and let the reviewer know. They will then need to perform a second review. If everything checks out, they will mark “Approve” as the decision.</p>
 <p>Once your Pull Request has been approved by your peers, there is one last review: a quality control check by a faculty member (typically Neil). This check will look at your coding and the appearance. Feedback and a decision will be posted on GitHub.</p>
 <p>After all of the issues have been taken care of, Neil and/or Bob will merge your development branch into the main branch of the repo and will then deploy the app to the world.</p>
@@ -735,7 +740,6 @@ Figure 2.8: Hasse Diagram App Coding Notes
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -772,6 +776,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Branding, Color, and Text | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Branding, Color, and Text | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="designStyle.html"/>
 <link rel="next" href="staticImages.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,30 +506,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="simpleDesign" class="section level1" number="11">
-<h1><span class="header-section-number">Chapter 11</span> Branding, Color, and Text</h1>
+<div id="simpleDesign" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Branding, Color, and Text<a href="simpleDesign.html#simpleDesign" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The “Simple” Design matters include <a href="simpleDesign.html#logo">PSU Branding</a>, <a href="simpleDesign.html#colorChoices">Color</a>, and <a href="simpleDesign.html#styleText">Text Styling</a>. We refer to these as “simple” matters for the fact that for the most part, there is very little for you to have do decide. Rather, you just need to make sure that you are attending to guidelines we’ve laid out in this Style Guide. In other words, we’ve done all of the hard work for you in these cases.</p>
-<div id="logo" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> PSU Branding</h2>
+<div id="logo" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> PSU Branding<a href="simpleDesign.html#logo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Given that we are all associated with Pennsylvania State University, we need to include the Penn State logo in each App. Rather than sticking the logo at the top of the Overview page, we are going to place the logo at the bottom of the sidebar. This has the benefit of having the logo appear throughout the entire App AND making the logo be as unobtrusive as possible.</p>
 <p>If you have followed the directions for the <a href="uiStructure.html#sidebar">Sidebar Layout</a>, then you don’t have much to worry about as those instructions will ensure that you have properly branded your App.</p>
 </div>
-<div id="colorChoices" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> Colors</h2>
+<div id="colorChoices" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Colors<a href="simpleDesign.html#colorChoices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Your App needs to have a consistent color scheme throughout. The color scheme should be checked against colorblindness to meet <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a> Level AA. You can do so at the <a href="https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7">Coloring for Colorblindness</a> website. If you are following this Style Guide (as you should be) then the vast majority of this section will be automatically handled for you.</p>
 <p>See <a href="uiStructure.html#colorUI">Section <a href="uiStructure.html#colorUI">9.1.2</a></a> and <a href="graphics.html#colorPlots">Section <a href="graphics.html#colorPlots">13.4</a></a> for additional information on the use of colors.</p>
 </div>
-<div id="styleText" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> Text Styling</h2>
+<div id="styleText" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Text Styling<a href="simpleDesign.html#styleText" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Text styling refers the non-content aspects of the text on the page, such as the use of italics, boldface, alignment, as well as font size and color.</p>
 <p>You should let the centralized CSS file do the heavy lifting for text styling. (Again, using <code>boastApp</code> will help you.) However, for this to work properly, you will need to tag content appropriately. (See the section on HTML, <a href="htmlCSS.html#html">Section <a href="htmlCSS.html#html">7.1</a></a>.)</p>
 <p>If you run into a situation where some element needs additional styling, <strong>talk to Neil or Bob for help</strong>. You might have come across an element that needs to get added the central CSS file or a bug.</p>
-<div id="headings" class="section level3" number="11.3.1">
-<h3><span class="header-section-number">11.3.1</span> Headings</h3>
+<div id="headings" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Headings<a href="simpleDesign.html#headings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use the Heading Tags for the short fragments that define the structure of your App. If you find yourself enclosing a complete sentence in Heading tag, you ARE NOT using headings correctly. Notice how the headings in this Style Guide aren’t complete sentences; your App should mimic this. Full sentences appear as regular paragraph text (i.e., enclosed in <code>p()</code>) and not be a Heading.</p>
 </div>
-<div id="paragraph-text" class="section level3" number="11.3.2">
-<h3><span class="header-section-number">11.3.2</span> Paragraph Text</h3>
+<div id="paragraph-text" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> Paragraph Text<a href="simpleDesign.html#paragraph-text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
 <p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
 <p>For example, this code:</p>
@@ -541,30 +546,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p>Use italics (emphasis), and boldface (strong) sparingly.</p>
 </div>
-<div id="mathematics" class="section level3" number="11.3.3">
-<h3><span class="header-section-number">11.3.3</span> Mathematics</h3>
+<div id="mathematics" class="section level3 hasAnchor" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> Mathematics<a href="simpleDesign.html#mathematics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For the most part, any mathematics you need displayed should be done using <a href="https://www.mathjax.org/">MathJax</a>. Default to using inline typesetting with the <code>\\(</code> and <code>\\)</code> delimiters. If you need to use display style, you can use <code>\\[</code> and <code>\\]</code>. For the vast majority of mathematics, you’ll wrap both inline and display style mathematics inside of a paragraph environment (<code>p()</code>).</p>
 <p>If you’re writing mathematics directly in your app, remember you’ll need to escape the LaTeX commands by putting an extra backslash (\) in front; e.g., <code>\frac{3}{4}</code> would need to be <code>\\frac{3}{4}</code>.</p>
 <p>If you’re reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.</p>
 <p>If you need assistance in figuring out how to type up mathematics, please talk to Neil, Matt, or Dennis.</p>
 <p><strong>Note:</strong> Double dollar sign delimiters are generally not recommended for displaying math as they can lead to unintended results. See: <a href="https://docs.mathjax.org/en/latest/basic/mathematics.html">Writing Mathematics for MathJax</a>.</p>
 </div>
-<div id="game-question-text" class="section level3" number="11.3.4">
-<h3><span class="header-section-number">11.3.4</span> [Game] Question Text</h3>
+<div id="game-question-text" class="section level3 hasAnchor" number="11.3.4">
+<h3><span class="header-section-number">11.3.4</span> [Game] Question Text<a href="simpleDesign.html#game-question-text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The text used as a question in a game should NOT be wrapped in a Heading tag; wrap the text in a paragraph tag.</p>
 </div>
-<div id="label-text-buttons-sliders-other-inputs-and-alerts" class="section level3" number="11.3.5">
-<h3><span class="header-section-number">11.3.5</span> Label Text (Buttons, Sliders, Other Inputs and Alerts)</h3>
+<div id="label-text-buttons-sliders-other-inputs-and-alerts" class="section level3 hasAnchor" number="11.3.5">
+<h3><span class="header-section-number">11.3.5</span> Label Text (Buttons, Sliders, Other Inputs and Alerts)<a href="simpleDesign.html#label-text-buttons-sliders-other-inputs-and-alerts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>By using the central CSS file, any text you included in/on buttons, dropdown menus, sliders, radio buttons, choices, and other inputs as well as alert messages and popups/rollovers, will automatically be styled correctly.</p>
 <p>Do not use heading tags, the paragraph tag, italics/emphasis, or boldface/strong with input labels. Input labels should be written in sentence case (i.e., capitalize only the first word and any proper nouns).</p>
 <p>You may use these tags with popups/rollovers.</p>
 </div>
-<div id="feedback-and-hint-text" class="section level3" number="11.3.6">
-<h3><span class="header-section-number">11.3.6</span> Feedback and Hint Text</h3>
+<div id="feedback-and-hint-text" class="section level3 hasAnchor" number="11.3.6">
+<h3><span class="header-section-number">11.3.6</span> Feedback and Hint Text<a href="simpleDesign.html#feedback-and-hint-text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Again, let the central CSS file handle the styling of this type of text.</p>
 </div>
-<div id="text-in-r-plots" class="section level3" number="11.3.7">
-<h3><span class="header-section-number">11.3.7</span> Text in <code>R</code> Plots</h3>
+<div id="text-in-r-plots" class="section level3 hasAnchor" number="11.3.7">
+<h3><span class="header-section-number">11.3.7</span> Text in <code>R</code> Plots<a href="simpleDesign.html#text-in-r-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the <code>grid</code> framework like <code>lattice</code>) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
 <p>Here is an example for how to do this:</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="simpleDesign.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a ggplot2 object</span></span>
@@ -579,8 +584,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
 <p><strong>Note:</strong> The text in your plot might not behave well for dynamic re-sizing on different mobile devices.</p>
 </div>
-<div id="text-case" class="section level3" number="11.3.8">
-<h3><span class="header-section-number">11.3.8</span> Text Case</h3>
+<div id="text-case" class="section level3 hasAnchor" number="11.3.8">
+<h3><span class="header-section-number">11.3.8</span> Text Case<a href="simpleDesign.html#text-case" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When writing text, you should use the appropriate case (i.e., which words you capitalize):</p>
 <ul>
 <li>Headings: Use Title Case</li>
@@ -610,7 +615,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -647,6 +651,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

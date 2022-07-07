@@ -96,6 +96,7 @@ ggplot(data = data.frame(x = rep(0, 50))) +
   scale_y_continuous(limits = c(0,100), expand = expansion(mult = 0, add = 0)) +
   scale_x_continuous(limits = c(0, 300), expand = expansion(mult = 0, add = 0)) +
   geom_text(mapping = aes(x = 56, y = 95, label = fontawesome("fa-bars")), family = "fontawesome-webfont", color = "black", size = 5) +
+  geom_text(mapping = aes(x = 270, y = 95, label = fontawesome("fa-info")), family = "fontawesome-webfont", color = "black", size = 6) +
   geom_text(mapping = aes(x = 280, y = 95, label = fontawesome("fa-comments")), family = "fontawesome-webfont", color = "black", size = 6) +
   geom_text(mapping = aes(x = 292, y = 95, label = fontawesome("fa-home")), family = "fontawesome-webfont", color = "black", size = 6) +
   theme_void() +

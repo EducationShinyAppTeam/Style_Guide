@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 HTML and CSS | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 HTML and CSS | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
   <meta name="github-repo" content="educationshinyappteam/Style_Guide" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2022-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="specificCoding.html"/>
 <link rel="next" href="additionalCoding.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,16 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -428,17 +428,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
 <li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
 <li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.5</b> Histograms</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.6</b> Tables</a>
+<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.6.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.6.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.6.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.7</b> Alt Text, Again</a>
+<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
+<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
+<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.7.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.7.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
@@ -501,17 +506,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="htmlCSS" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> HTML and CSS</h1>
+<div id="htmlCSS" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> HTML and CSS<a href="htmlCSS.html#htmlCSS" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Shiny apps are a blending of the R programming language and Hypertext Markup Language (HTML) which is the standard language of the web. When you run a Shiny app, <code>R</code> and the <code>shiny</code> packages actually convert all of the <code>R</code> code into an HTML document which is served up to the user.</p>
 <p>As you create the user interface, you will run into using HTML in two ways: functions for shiny (e.g., <code>bsButton</code>, <code>dashboardBody</code>, <code>selectInput</code>, <code>sendSweetAlert</code>, etc.) and HTML tags. In the case of the former, the functions you call will automatically write any necessary HTML when the app runs. For the later, you will have to take care to use tags appropriately.</p>
-<div id="html" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> HTML Tags</h2>
+<div id="html" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> HTML Tags<a href="htmlCSS.html#html" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>HTML tags are the way in which you tell browsers what type of element you are creating. For example, if you want to tell the browser that you passing along text for the user to read, you would use the paragraph tag, <code>p</code>. If instead, you were passing along a file for an image, you would use the image tag, <code>img</code>. Shiny has 110 HTML tags built in. However, you will not need to use the vast majority of them. Instead, we will cover the ones that you will be using the most often.</p>
 <p>One important word of caution here is that you need to pay close attention to the rules and guidelines in this chapter. If you don’t use HTML tags appropriately, then 1) your app might not look/function the way that you intended, and 2) you’ll make your app less accessible. Since our apps are to support students in their education, we need to do our best to ensure that all of our apps are as accessible as possible.</p>
-<div id="paragraphs" class="section level3" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Paragraphs</h3>
-<p>The most common HTML tag is that of paragraph. This is the tag that tells browsers “hey, here is some text content that I want you show the user.” In your app, you’ll encase the majority of any text in <code>p()</code> (more formally, <code>tags$p()</code>).</p>
+<div id="paragraphs" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Paragraphs<a href="htmlCSS.html#paragraphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The most common HTML tag is that of paragraph. This is the tag that tells browsers “hey, here is some text content that I want you show the user”. In your app, you’ll encase the majority of any text in <code>p()</code> (more formally, <code>tags$p()</code>).</p>
 <p>For example,</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="htmlCSS.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running this code produces a nice looking display of the text below.</span></span>
 <span id="cb27-2"><a href="htmlCSS.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
@@ -526,8 +531,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   society.</p>
 <p>No matter how short or long your content is, the paragraph tag should be your Go-To HTML tag. Treat the inputs of the paragraph tag exactly like you would write a document: separate paragraphs get their own instance of <code>p()</code>. Browsers will automatically put the appropriate space between them.</p>
 </div>
-<div id="breaks" class="section level3" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Breaks</h3>
+<div id="breaks" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Breaks<a href="htmlCSS.html#breaks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another useful HTML tag is the one for breaks. No, we don’t mean coffee/snack breaks. Rather we mean line breaks. These allow you end a line and move down to a new line (without an empty line between them) or even put a line of empty space between HTML elements. Thus, breaks are a great way to help with vertical spacing in your app.</p>
 <p>To place a break all you need to type is <code>br()</code> (formal, <code>tags$br()</code>). One nice thing is that breaks can be typed into your code on their own or as part of another HTML element (e.g., a paragraph).</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="htmlCSS.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
@@ -541,8 +546,8 @@ Here's an example where we're using a break
 inside of a paragraph tag.
 </p>
 </div>
-<div id="lists" class="section level3" number="7.1.3">
-<h3><span class="header-section-number">7.1.3</span> Lists</h3>
+<div id="lists" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Lists<a href="htmlCSS.html#lists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are two aspects to lists: what kind of list you want to make (known as the list environment) and the items that make up your list.</p>
 <p>The two list environments are Ordered Lists and Unordered Lists.</p>
 <ul>
@@ -573,8 +578,8 @@ inside of a paragraph tag.
 </ol>
 <p>There is one exception to the environment that you need to be aware of: the Dashboard Header has a built-in list environment and thus you will jump straight to <code>tags$li()</code> when in that section only.</p>
 </div>
-<div id="headers" class="section level3" number="7.1.4">
-<h3><span class="header-section-number">7.1.4</span> Headers</h3>
+<div id="headers" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Headers<a href="htmlCSS.html#headers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Heading tags provide a navigational structure to your app. Think of them as being the different levels of titles in a book. In fact, if you look at the Table of Contents to the left (provided you haven’t hidden it), everything you see there is actually tied to a Header in this document.</p>
 <p>No matter how much coders want, Heading Tags are <strong>NOT</strong> for making text larger, boldface, or other text styling. Think about the headings as laying out a Table of Contents for your app, rather than containing content. Just like the Table of Contents for this Style Guide.</p>
 <p>In fact, when you see different headers looking different (e.g., larger font size, boldface, etc.), this is <em>not</em> the due to the HTML heading tag; rather it is due to styling that is applied to the element through CSS. More on this later.</p>
@@ -591,7 +596,7 @@ inside of a paragraph tag.
 <ul>
 <li>DO NOT USE headings to style text (We cannot stress this enough.)</li>
 <li>Do not wrap a header tag around a list element (e.g., <code>h3(tags$li("here is my list item"))</code>) nor the reverse (e.g., <code>tags$li(h3("here is my list item"))</code>)</li>
-<li>Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(“Introduction to,” p(“my game”)))</li>
+<li>Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2(“Introduction to”, p(“my game”)))</li>
 </ul>
 <p>For more information check out</p>
 <ul>
@@ -599,8 +604,8 @@ inside of a paragraph tag.
 <li><a href="https://accessibility.psu.edu/headings/">Penn State’s Headings and Subheadings Accessibility</a></li>
 </ul>
 </div>
-<div id="links-bodylinks" class="section level3" number="7.1.5">
-<h3><span class="header-section-number">7.1.5</span> Links (#bodyLinks)</h3>
+<div id="links-bodylinks" class="section level3 hasAnchor" number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> Links (#bodyLinks)<a href="htmlCSS.html#links-bodylinks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You might find yourself wanting to include a link in your text. For example, you might want to allow the user to go read up on your app’s concept(s) before engaging further. To create a link you will need to use the HTML anchor tag, <code>tags$a()</code> and you’ll need the following information:</p>
 <ul>
 <li>The URL/web address that you want to reference (this is the Hypertext REFerence or HREF)</li>
@@ -621,8 +626,8 @@ Learn more about us at the
 </p>
 <p>You’ll notice that we added <code>class = "bodylinks"</code> to the anchor tag. Any time you’re adding a link to the body of your app, you’ll need to include this line. We’ll explain more in the <a href="#CSS">CSS Section</a>.</p>
 </div>
-<div id="div" class="section level3" number="7.1.6">
-<h3><span class="header-section-number">7.1.6</span> Divisions</h3>
+<div id="div" class="section level3 hasAnchor" number="7.1.6">
+<h3><span class="header-section-number">7.1.6</span> Divisions<a href="htmlCSS.html#div" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A useful HTML tag is division, <code>div()</code> (formal, <code>tags$div()</code>); this tag allows you mark a chunk of your app as having special things applied to it. This is particularly useful for changing the alignment of text. The division needs to wrap around all of the elements that you want to include.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="htmlCSS.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">div</span>(</span>
 <span id="cb32-2"><a href="htmlCSS.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;text-align: center;&quot;</span>,</span>
@@ -638,22 +643,22 @@ Learn more about us at the
     paragraphs and lists.</p>
 </div>
 </div>
-<div id="horizontal-rule" class="section level3" number="7.1.7">
-<h3><span class="header-section-number">7.1.7</span> Horizontal Rule</h3>
+<div id="horizontal-rule" class="section level3 hasAnchor" number="7.1.7">
+<h3><span class="header-section-number">7.1.7</span> Horizontal Rule<a href="htmlCSS.html#horizontal-rule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On the rare occasion, you might find yourself wanting to draw a line in your app to help separate two chunks on the same page. For example, you might want to use a line to separate paragraphs of overarching instructions from paragraphs explaining a particular data set the user happens to pick. This is possible through the use of a horizontal rule. To create a horizontal rule, you simply place <code>hr()</code> on it’s own line in your code (not inside of any other HTML tags).</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="htmlCSS.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hr</span>()</span></code></pre></div>
 <p><hr/></p>
 </div>
-<div id="other-tags" class="section level3" number="7.1.8">
-<h3><span class="header-section-number">7.1.8</span> Other Tags</h3>
+<div id="other-tags" class="section level3 hasAnchor" number="7.1.8">
+<h3><span class="header-section-number">7.1.8</span> Other Tags<a href="htmlCSS.html#other-tags" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are a few other tags which you might need to use, depending upon your app. These include the image tag, <code>img()</code>, and the figure caption tag, <code>figcaption()</code>. We will discuss these tags in the chapter on <a href="staticImages.html#staticImages">Static Images</a>.</p>
 <p>If you have questions about any other HTML tags, feel free to talk to Neil and/or Bob about them.</p>
 </div>
-<div id="stylingTags" class="section level3" number="7.1.9">
-<h3><span class="header-section-number">7.1.9</span> Text Styling Tags</h3>
+<div id="stylingTags" class="section level3 hasAnchor" number="7.1.9">
+<h3><span class="header-section-number">7.1.9</span> Text Styling Tags<a href="htmlCSS.html#stylingTags" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are also some HTML tags whose goal is to work inside of the paragraph and list item tags to brings some extra information to text. These tags have a very visual impact on the text, which is why we refer to the Text Styling Tags.</p>
-<div id="italicsemphasis" class="section level4" number="7.1.9.1">
-<h4><span class="header-section-number">7.1.9.1</span> Italics/Emphasis</h4>
+<div id="italicsemphasis" class="section level4 hasAnchor" number="7.1.9.1">
+<h4><span class="header-section-number">7.1.9.1</span> Italics/Emphasis<a href="htmlCSS.html#italicsemphasis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you want to <em>italicize</em> a word or phrase, you’ll need to use the emphasis tag, <code>tags$em()</code>. We want you to use the emphasis tag rather than the italics tag (<code>tags$i</code>) as emphasis is the <strong>accessible</strong> option. The emphasis tag notifies screen readers to announce that the author has placed emphasis on the word or phrase. If you just use the italics tag, the user will not be notified of any differences between the word/phrase and surrounding text.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="htmlCSS.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
 <span id="cb34-2"><a href="htmlCSS.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;You&quot;</span>, tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;must&quot;</span>), <span class="st">&quot;use the emphasis tag to ensure that your</span></span>
@@ -666,8 +671,8 @@ use the emphasis tag to ensure that your
   app is as accessible as possible.
 </p>
 </div>
-<div id="boldfacestrong" class="section level4" number="7.1.9.2">
-<h4><span class="header-section-number">7.1.9.2</span> Boldface/Strong</h4>
+<div id="boldfacestrong" class="section level4 hasAnchor" number="7.1.9.2">
+<h4><span class="header-section-number">7.1.9.2</span> Boldface/Strong<a href="htmlCSS.html#boldfacestrong" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you want to <strong>boldface</strong> a word or phrase, you’ll need to use the strong tag, <code>tags$strong()</code>. There is also a bold tag (<code>tags$b()</code>), but the same accessibility issues exist here. Thus, use <code>tags$strong()</code>.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="htmlCSS.html#cb35-1" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
 <span id="cb35-2"><a href="htmlCSS.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(</span>
@@ -688,8 +693,8 @@ guess the sample size AND set variance.
 </li>
 </ul>
 </div>
-<div id="code-and-pre-formatted" class="section level4" number="7.1.9.3">
-<h4><span class="header-section-number">7.1.9.3</span> Code and Pre-formatted</h4>
+<div id="code-and-pre-formatted" class="section level4 hasAnchor" number="7.1.9.3">
+<h4><span class="header-section-number">7.1.9.3</span> Code and Pre-formatted<a href="htmlCSS.html#code-and-pre-formatted" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you want to display a block of code in your app (e.g., to show what code the user would need to type in order to recreate something on their own), you should use the code HTML tag, <code>tags$code()</code>.</p>
 <p>The code tag can replace the paragraph tag and tells browsers (and screen readers) that the enclosed text should be treated and styled as non-executed computer code.</p>
 <p>To include a bit of code inside of a paragraph:</p>
@@ -727,8 +732,8 @@ function to create buttons in
 </div>
 </div>
 </div>
-<div id="htmlID" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> HTML <code>id</code></h2>
+<div id="htmlID" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> HTML <code>id</code><a href="htmlCSS.html#htmlID" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>No matter which HTML tag you use, you can always specify the identifier attribute (<code>id</code>) for each element. When you use a shiny function, e.g., <code>numericInput</code>, and you supply a value to the <code>inputId</code> argument, or when you define an output and set a value to the <code>outputId</code>, you are defining the HTML <code>id</code> attribute for that object. For the vast majority of cases, this will be your only method for interacting with HTML id’s.</p>
 <p>In the rare case where you do find yourself needing to assign an <code>id</code> to an HTML element, you simply include <code>id = "uniqueName"</code> inside the tag. Keep in mind the id must not be shared by any other element/object, including inputs and outputs.</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="htmlCSS.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
@@ -744,8 +749,8 @@ function to create buttons in
 <span id="cb38-11"><a href="htmlCSS.html#cb38-11" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb38-12"><a href="htmlCSS.html#cb38-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="css" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> CSS</h2>
+<div id="css" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> CSS<a href="htmlCSS.html#css" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Cascading Style Sheets (CSS) are one of the most common ways in which people style HTML web pages. We have opted to make use of CSS technologies in BOAST through a centralized file. This ensures that</p>
 <ol style="list-style-type: decimal">
 <li>we have a consistent feel across all of our apps,</li>
@@ -755,8 +760,8 @@ function to create buttons in
 </ol>
 <p>At this point in time, only Neil and Bob make edits to the BOAST CSS file. However, anyone is welcome to recommend changes and additions as need arises.</p>
 <p>One of the perks of using the <code>boastApp</code> function, is that the loading of the BOAST CSS file is automatically done for you. The only things that you have to do is 1) write your app code, 2) use HTML tags appropriately, and 3) make sure to set the appropriate <code>skin</code> color in your app. Our CSS file will then do the rest (except for R plots).</p>
-<div id="cssProblems" class="section level3" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> Problematic CSS in Old Apps</h3>
+<div id="cssProblems" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Problematic CSS in Old Apps<a href="htmlCSS.html#cssProblems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In many of the older apps, you will discover two highly problematic instances of CSS:</p>
 <ul>
 <li>Calls to Non-BOAST CSS files
@@ -777,16 +782,16 @@ function to create buttons in
 <p>In both cases, CSS of questionable quality is at play and needs to be rectified. In many cases, these bits of CSS are interfering with the BOAST CSS. <strong>We need to eliminate all of these instances.</strong></p>
 </div>
 </div>
-<div id="using-css" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Using CSS</h2>
+<div id="using-css" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Using CSS<a href="htmlCSS.html#using-css" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When we first began implementing our central CSS file, there was some push back in that students wouldn’t get any say in the styling of their apps. This is not necessarily true. What we have done is made a much more consistent and coherent set of options for the major elements. Each student still has the ability to put in place styling, as long as that styling adheres to our conventions and does not contradict the BOAST CSS file.</p>
-<div id="text-alignment" class="section level3" number="7.4.1">
-<h3><span class="header-section-number">7.4.1</span> Text Alignment</h3>
+<div id="text-alignment" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> Text Alignment<a href="htmlCSS.html#text-alignment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Students may use <code>style = "text-align: left/center/right;"</code> to impose styling choice of the alignment of elements. However, we do ask that students apply such styling to a division (<code>div()</code>) rather than to any other HTML tag. To see an example, see the <a href="htmlCSS.html#div">Division Tag example</a>.</p>
 <p>Other than text alignment, we <strong>discourage</strong> using the <code>style</code> argument with any CSS. (Note: some shiny functions like <code>bsButton</code> have a <code>style</code> argument which is different the <code>style</code> we’re discussing here.)</p>
 </div>
-<div id="classes" class="section level3" number="7.4.2">
-<h3><span class="header-section-number">7.4.2</span> Classes</h3>
+<div id="classes" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> Classes<a href="htmlCSS.html#classes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The key way that students can style elements is through the use of classes which live in the BOAST CSS file. A class refers a group of elements which should all have similar styling. Any CSS file essentially consists of class definitions. If you want to apply a particular styling to an app element, the preferred method is through a CSS class.</p>
 <p>To apply a class to an element, all you need to do is supply the <code>class = "className"</code> argument. Classes may be applied to divisions, paragraphs and even inputs/outputs. For example,</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="htmlCSS.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># HTML Tag Example 1</span></span>
@@ -808,8 +813,8 @@ function to create buttons in
 <span id="cb41-17"><a href="htmlCSS.html#cb41-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
 <span id="cb41-18"><a href="htmlCSS.html#cb41-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;grid-fill&quot;</span></span>
 <span id="cb41-19"><a href="htmlCSS.html#cb41-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<div id="existingCSS" class="section level4" number="7.4.2.1">
-<h4><span class="header-section-number">7.4.2.1</span> Existing Classes</h4>
+<div id="existingCSS" class="section level4 hasAnchor" number="7.4.2.1">
+<h4><span class="header-section-number">7.4.2.1</span> Existing Classes<a href="htmlCSS.html#existingCSS" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here is a list of the current classes you may use</p>
 <ul>
 <li><code>largerFont</code> (for paragraphs): makes font 20% larger than the base font, <strong>use sparingly</strong>.</li>
@@ -823,8 +828,8 @@ function to create buttons in
 <li><code>leftParagraphError</code> (for use with <code>validate</code>’s <code>errorClass</code> argument): displays the validation error message as left aligned.</li>
 </ul>
 </div>
-<div id="newCSS" class="section level4" number="7.4.2.2">
-<h4><span class="header-section-number">7.4.2.2</span> New Classes</h4>
+<div id="newCSS" class="section level4 hasAnchor" number="7.4.2.2">
+<h4><span class="header-section-number">7.4.2.2</span> New Classes<a href="htmlCSS.html#newCSS" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You might run into cases where you want an element styled in a new way or you might be the first person to use some new element (e.g., Fall 2020 was the first time someone used <code>matrixInput</code>) that needs BOAST styling. We can create new classes to handle these cases. However, we ask that you follow this process:</p>
 <ol style="list-style-type: decimal">
 <li>Get as many other bugs fixed in your app first.</li>
@@ -850,7 +855,6 @@ function to create buttons in
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -887,6 +891,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BOAST_style_guide.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
