@@ -1239,3 +1239,12 @@ th, td {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+/*Vertical Centring via Flex box*/
+.d-flex {
+  display: flex !important;
+}
+
+.align-self-center{
+  align-self: center !important;
+}
