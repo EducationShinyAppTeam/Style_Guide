@@ -1245,6 +1245,12 @@ th, td {
   display: flex !important;
 }
 
+/* Remove in Bootstrap 4+ */
+/* Tweak for radio button group dflex issue */
+.btn-group-justified.d-flex {
+  display: table !important;
+}
+
 .align-self-center{
   align-self: center !important;
 }
