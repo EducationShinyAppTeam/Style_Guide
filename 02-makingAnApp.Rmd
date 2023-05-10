@@ -101,7 +101,7 @@ ggplot(data = data.frame(x = rep(0, 50))) +
   geom_text(mapping = aes(x = 292, y = 95, label = fontawesome("fa-home")), family = "fontawesome-webfont", color = "black", size = 6) +
   theme_void() +
   theme(
-    panel.border = element_rect(color = "black", fill = NA, size = 2)
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 2)
   )
 
 ```

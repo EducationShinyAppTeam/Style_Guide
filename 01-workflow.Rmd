@@ -2,33 +2,34 @@
 
 Before we get too far into designing, building, and maintaining BOAST apps, it is helpful to take a moment and talk about setting yourself up for success. One way to do this is through the notion of a workflow. In essence, you want to come up with a series of steps to follow. Writing this list out can provide you with something where you can take a step back and go "Wait. Where am I again? Oh yeah." This is particularly important as there will be times when you find yourself lost in coding and losing track of your broader goals.
 
-We have two major workflows within BOAST: Revising existing apps and creating brand new apps.
+We have two major workflows within BOAST: Revising existing apps and Creating brand new apps.
 
 Something to keep in mind with these workflows is that they are not strictly linear. That is, just because you have moved into Step 3, doesn't mean that you can't go back to Step 2 and make revisions. Additionally, as you get into Steps 5-8, you might find yourself coming back to Step 3 (and possibly Step 2) and making changes. This said, sketching out your plans will help you as you move forward with developing.
 
 ## Revising Existing Apps Worflow
 
 1. Read the Style Guide.
-2. Explore the existing apps in the [book](https://sites.psu.edu/shinyapps/) and their associated repositories on [GitHub](https://github.com/EducationShinyAppTeam).
+2. Explore the existing apps in the [book](https://shinyapps.science.psu.edu/) and their associated repositories on [GitHub](https://github.com/EducationShinyAppTeam).
 3. When you identify an app you wish to work on,
     a. Go to that app's repository in [GitHub](https://github.com/EducationShinyAppTeam).
-    b. Look through the `README.md` and the `DESCRIPTION` files (if present) so that you can get a sense of what the aims of the app are.
+    b. Look through the `README.md`, `DESCRIPTION`, and the `ToDoList.txt` files (if present) so that you can get a sense of what the aims of the app are.
     c. Play with the app after going through 3b; ask yourself how the app demonstrates the aims. If the app doesn't, note this.
-    d. Create new issues on GitHub to log both bugs and suggestions for improvements.
+    d. Create new issues on GitHub to log bugs, issues, To Dos, as well as suggestions for improvements.
     e. Create an issue specifically if the App currently does not abide by this Style Guide.
     f. Optional---assign yourself to the issue.
-4. Download the current version of the app by using either GitHub Desktop or RStudio.
+4. Clone the current version of the app's repo by using either GitHub Desktop or RStudio.
 5. Create a new branch for your developments.
-6. Plan out your changes...ON PAPER.
+6. Plan out your changes __on paper__.
 7. Discuss your edits with others to get feedback and additional suggestions.
 8. Begin editing the code.
 9. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
-10. Periodically push your edits to your development branch; don't forget to add commit messages and reference any issues.
-11. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing)).
-12. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request
-    a. You will automatically get assigned at least one Reviewer (you will also be asked to review other people's code)
-    b. Make any requested changes and re-push to your development branch
-    c. Eventually, your code will get a final review before being formally approved.
+10. Periodically push your edits to your development branch; don't forget to add commit messages and reference any issues. (We recommend doing at least one commit a day to capture each day's work.)
+11. When you're ready to do larger scale testing, check out [Section \@ref(testing)](#testing)).
+12. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request.
+    a. In your Pull Request, be sure to document what you were aiming to achieve as well as link to any that would be addressed/fixed with a successful merge.
+    b. Once you create the Pull Request, click cog/gear next to Reviewers and select the EducationShinyAppTeam/work-group. This will automatically assign two of your peers to check your code.
+    c. Make any requested changes and re-push to your development branch.
+    d. Once your peers have approved your changes, add Neil to the Assignees field of your Pull Request. Neil will conduct a final check, potentially asking for changes before merging your work into the main/master branch.
 
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
 
@@ -38,7 +39,7 @@ To see this workflow in action, check out [Chapter \@ref(makingApp)](#makingApp)
 
 1. Read the Style Guide.
 2. Identify a topic for your new App.
-3. Sketch out your plans for the App...ON PAPER. __This should occur BEFORE you start coding.__ Be sure that you include:
+3. Sketch out your plans for the App on paper. __This should occur BEFORE you start coding.__ Be sure that you include:
     a. Suggested Full Title and Short Title
     b. Goal(s) of the app
     c. What will the user be doing (i.e., potential inputs)
@@ -49,11 +50,12 @@ To see this workflow in action, check out [Chapter \@ref(makingApp)](#makingApp)
 6. As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.
 7. When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.
 8. Periodically push your edits to your development branch. Don't forget to add commit messages and reference any issues.
-9. When you're ready to do larger scale testing you'll need to publish your App to the TLT RStudio Connect server (see [Section \@ref(testing)](#testing)).
+9. When you're ready to do larger scale testing, check out [Section \@ref(testing)](#testing)).
 10. When you've reached a point where you've finished editing, push your most recent commit to your development branch and then create a Pull Request.
-    a. You will automatically get assigned at least one Reviewer (you will also be asked to review other people's code)
-    b. Make any requested changes and re-push to your development branch
-    c. Eventually, your code will get a final review before being formally approved.
+    a. In your Pull Request, be sure to document what you were aiming to achieve as well as link to any that would be addressed/fixed with a successful merge.
+    b. Once you create the Pull Request, click cog/gear next to Reviewers and select the EducationShinyAppTeam/work-group. This will automatically assign two of your peers to check your code.
+    c. Make any requested changes and re-push to your development branch.
+    d. Once your peers have approved your changes, add Neil to the Assignees field of your Pull Request. Neil will conduct a final check, potentially asking for changes before merging your work into the main/master branch.
 
 If everything checks out, then we'll merge your development branch with the master branch and schedule formal deployment of your App.
 
@@ -74,9 +76,66 @@ If you come across a repo that is poorly named, please make an issue on the repo
 
 ## Testing Your App {#testing}
 
-To test your App beyond your local machine, we will be making use of TLT's RStudio Connect platform. You will need to follow these directions.
+There are several types of testing that you should apply to any Shiny app that you're working on: Self (local) Testing, Others (local) Testing, and Non-local Testing
 
-### Set Up/Login to the VPN
+### Self (Local) Testing
+
+This is the easiest form of testing your Shiny app. Clicking the Run App button in RStudio will trigger RStudio to run a check to ensure that your app will run (an important test to conduct). You will then have a version of the app running on your computer (hence the "local") where you can play around with your controls, make sure everything looks and functions as you intended.
+
+### Other (Local) Testing
+
+This form of testing works much the same way as Self (Local) Testing, but instead of you playing with the app, you let someone else be in control. This allows you to observe how others are interacting with the app and how the app responds to those users. This is extremely useful since these others don't necessarily know what you were trying to do. Thus, they can act in ways you didn't think of, uncovering problems that were lurking.
+
+### Non-local Testing
+
+This is the last stage of testing where instead of running your app on your computer, we move the app to a server and people interact with the app online. This is a critical step as this directly mimics how your app will be used. Thus, you can think of this as being our "beta testing". This allows us to have multiple people simultaneous interact with your app as well as check out your app on a mobile device.
+
+There are two ways that we can do non-local testing: via shinyapps.io and via TLT's RStudio Connect.
+
+#### Using shinyapps.io
+
+This is perhaps the easiest method for testing your app on a server. The shinyapps.io server is kept up-to-date.
+
+##### Make an Account
+
+You will need to make a free account at https://www.shinyapps.io/. Please note that the Free account does limit you to 5 apps and 25 active hours each month. 
+
+Alternatively, you can work with Neil and he can publish a beta version of your app on either the BOAST or his own shinyapps.io accounts.
+
+##### Connect RStudio to shinyapps.io
+
+Once you've made an account, you'll need to connect your RStudio to your account. To do this, 
+
+1. Bring up the Global Options of RStudio (under the Tools menu).
+2. In the left-hand icon menu, select Publishing.
+3. Click on the Connect... button.
+4. Select the ShinyApps.io option and follow the on-screen directions.
+5. Once you've finished all steps, click on the OK button to close the Options window.
+
+##### Deploy Your App
+
+To deploy your app, you'll need to click on the Publish icon, `r knitr::include_graphics("images/publishIcon.png")`. Select the appropriate account (if you have more than one) and then click the Publish button. You'll see the Console switch to the Deploy tab and a list of message will appear. If the deployment (publishing) fails, look at the messages in the Deploy tab as this can provide us with important information.
+
+Upon successful deployment (publishing), you should see your browser open up a new tab showing your running app. Copy the URL from the address bar so that you can share this with your testers. You can also get the URL for your app from your shinyapps.io account's dashboard.
+
+#### TLT's RStudio Connect
+
+We can also make use of TLT's RStudio Connect platform to do non-local testing. There are multiple steps to follow for this method. The TLT platform is out of date, which means that not all apps may be testable through this method. Work with Neil on this.
+
+##### Downgrade the `httpuv` package.
+
+First thing that you'll need to do is downgrade the `httpuv` package. You can use the following code to achieve this:
+
+```{r downgradePackage, echo=TRUE, eval=FALSE}
+# Downgrade httpuv
+devtools::install_version("httpuv", version = "1.6.1")
+```
+
+Once this code has finished running, be sure to restart R for the change to take effect.
+
+You will need to follow these directions.
+
+##### Set Up/Login to the VPN
 
 Please refer to the following PSU Knowledge Basis Articles:
 
@@ -89,7 +148,7 @@ Please refer to the following PSU Knowledge Basis Articles:
 
 You MUST be logged into the PSU VPN to both upload and test your App on each device.
 
-### Connecting Your RStudio to TLT's RStudio Connect
+##### Connecting Your RStudio to TLT's RStudio Connect
 
 You only need to do this step once.
 
@@ -101,20 +160,20 @@ knitr::include_graphics("images/publish1.png")
 3. Select Shiny App and a pop up window will appear.
 4. Follow the steps in this window (especially Step 4) to set up the connection.
 
-#### Checking You've Connected
+##### Checking You've Connected
 
 You can check to see if you've connected by going into RStudio's Options and looking at the Publishing tab. You should see a similar entry as what is in the green box of [Figure \@ref(fig:testing2)](#fig:testing2):
 ```{r testing2, fig.cap="Check Your Publishing Profile", fig.align='center', fig.width=6, fig.height=4, echo=FALSE}
 knitr::include_graphics("images/publish2.png")
 ```
 
-### Publishing Your App for Testing
+##### Publishing Your App for Testing
 
 Make sure that you are connected to PSU's VPN and that you've already connected your RStudio to TLT's server. 
 
 Click on the Publishing Icon, located just to the right of the Run App button. Be sure to select the TLT Server.
 
-### Configuring for Testing
+##### Configuring for Testing
 
 Once your App has been published, a new window should open in your browser that shows your App plus the optional controls. 
 
@@ -124,14 +183,14 @@ knitr::include_graphics("images/publish3.png")
 
 In [Figure \@ref(fig:testing3)](#fig:testing3), you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.
 
-We encourage you to add contributors as we did (orange box). Both Bob and I are the Go To people for tech issues and by adding us, you give us the ability to help you the best that we can. By adding us to the list of contributors on the TLT server, you will allow us to check the app's log files as well as any particular settings. Ultimately, this help us troubleshoot any difficulty you might encounter.
+We encourage you to add contributors (orange box). Put Neil as a Collaborator; this will give Neil the ability to help you the best that he can. By adding us to the list of contributors on the TLT server, you will allow us to check the app's log files as well as any particular settings. Ultimately, this help us troubleshoot any difficulty you might encounter.
 
 The most important piece is the Content URL (marked with the blue star). You'll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device (e.g., computer, tablet, phone) they are using.
 
-### Check the Logs
+##### Check the Logs
 
 As you test your App, you'll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in [Figure \@ref(fig:testing3)](#fig:testing3)) to view.
 
-### Problems?
+#### Problems?
 
 If you run into problem either publishing your App or getting the App to launch on the TLT, please reach out to Neil and Bob. 
