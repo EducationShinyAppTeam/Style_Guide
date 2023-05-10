@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2022-07-07" />
+<meta name="date" content="2023-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -312,180 +316,178 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Style Guide-App Layout</b></span></li>
-<li class="chapter" data-level="" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i>App Layout</a></li>
-<li class="chapter" data-level="9" data-path="uiStructure.html"><a href="uiStructure.html"><i class="fa fa-check"></i><b>9</b> User Interface Structure</a>
+<li class="chapter" data-level="" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i>App Layout</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="uiStructure.html"><a href="uiStructure.html#dashboard"><i class="fa fa-check"></i><b>9.1</b> Dashboard</a>
+<li class="chapter" data-level="8.6" data-path="layout.html"><a href="layout.html#dashboard"><i class="fa fa-check"></i><b>8.6</b> Dashboard</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard"><i class="fa fa-check"></i><b>9.1.1</b> Creating the Dashboard</a></li>
-<li class="chapter" data-level="9.1.2" data-path="uiStructure.html"><a href="uiStructure.html#colorUI"><i class="fa fa-check"></i><b>9.1.2</b> Color in the User Interface</a></li>
-<li class="chapter" data-level="9.1.3" data-path="uiStructure.html"><a href="uiStructure.html#chapterColor"><i class="fa fa-check"></i><b>9.1.3</b> Current Chapter Color Assignments</a></li>
+<li class="chapter" data-level="8.6.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard"><i class="fa fa-check"></i><b>8.6.1</b> Creating the Dashboard</a></li>
+<li class="chapter" data-level="8.6.2" data-path="layout.html"><a href="layout.html#colorUI"><i class="fa fa-check"></i><b>8.6.2</b> Color in the User Interface</a></li>
+<li class="chapter" data-level="8.6.3" data-path="layout.html"><a href="layout.html#chapterColor"><i class="fa fa-check"></i><b>8.6.3</b> Current Chapter Color Assignments</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="uiStructure.html"><a href="uiStructure.html#header"><i class="fa fa-check"></i><b>9.2</b> Dashboard Header</a>
+<li class="chapter" data-level="8.7" data-path="layout.html"><a href="layout.html#header"><i class="fa fa-check"></i><b>8.7</b> Dashboard Header</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>9.2.1</b> Creating the Dashboard Header</a></li>
-<li class="chapter" data-level="9.2.2" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>9.2.2</b> What’s Needed in the Server Definition</a></li>
+<li class="chapter" data-level="8.7.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-header"><i class="fa fa-check"></i><b>8.7.1</b> Creating the Dashboard Header</a></li>
+<li class="chapter" data-level="8.7.2" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition"><i class="fa fa-check"></i><b>8.7.2</b> What’s Needed in the Server Definition</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar"><i class="fa fa-check"></i><b>9.3</b> Dashboard Sidebar</a>
+<li class="chapter" data-level="8.8" data-path="layout.html"><a href="layout.html#sidebar"><i class="fa fa-check"></i><b>8.8</b> Dashboard Sidebar</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="uiStructure.html"><a href="uiStructure.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>9.3.1</b> Creating the Dashboard Sidebar</a></li>
-<li class="chapter" data-level="9.3.2" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-order"><i class="fa fa-check"></i><b>9.3.2</b> Sidebar Order</a></li>
-<li class="chapter" data-level="9.3.3" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-names"><i class="fa fa-check"></i><b>9.3.3</b> Sidebar Names</a></li>
-<li class="chapter" data-level="9.3.4" data-path="uiStructure.html"><a href="uiStructure.html#sidebar-icons"><i class="fa fa-check"></i><b>9.3.4</b> Sidebar Icons</a></li>
-<li class="chapter" data-level="9.3.5" data-path="uiStructure.html"><a href="uiStructure.html#submenus"><i class="fa fa-check"></i><b>9.3.5</b> Submenus</a></li>
-<li class="chapter" data-level="9.3.6" data-path="uiStructure.html"><a href="uiStructure.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>9.3.6</b> What’s Needed in the Server Definition</a></li>
+<li class="chapter" data-level="8.8.1" data-path="layout.html"><a href="layout.html#creating-the-dashboard-sidebar"><i class="fa fa-check"></i><b>8.8.1</b> Creating the Dashboard Sidebar</a></li>
+<li class="chapter" data-level="8.8.2" data-path="layout.html"><a href="layout.html#sidebar-order"><i class="fa fa-check"></i><b>8.8.2</b> Sidebar Order</a></li>
+<li class="chapter" data-level="8.8.3" data-path="layout.html"><a href="layout.html#sidebar-names"><i class="fa fa-check"></i><b>8.8.3</b> Sidebar Names</a></li>
+<li class="chapter" data-level="8.8.4" data-path="layout.html"><a href="layout.html#sidebar-icons"><i class="fa fa-check"></i><b>8.8.4</b> Sidebar Icons</a></li>
+<li class="chapter" data-level="8.8.5" data-path="layout.html"><a href="layout.html#submenus"><i class="fa fa-check"></i><b>8.8.5</b> Submenus</a></li>
+<li class="chapter" data-level="8.8.6" data-path="layout.html"><a href="layout.html#whats-needed-in-the-server-definition-1"><i class="fa fa-check"></i><b>8.8.6</b> What’s Needed in the Server Definition</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="uiStructure.html"><a href="uiStructure.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a>
+<li class="chapter" data-level="8.9" data-path="layout.html"><a href="layout.html#body"><i class="fa fa-check"></i><b>8.9</b> Dashboard Body</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="uiStructure.html"><a href="uiStructure.html#the-overview-page"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Page</a></li>
-<li class="chapter" data-level="9.4.2" data-path="uiStructure.html"><a href="uiStructure.html#a-prerequisites-page"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Page</a></li>
-<li class="chapter" data-level="9.4.3" data-path="uiStructure.html"><a href="uiStructure.html#activity-pages"><i class="fa fa-check"></i><b>9.4.3</b> Activity Pages</a></li>
-<li class="chapter" data-level="9.4.4" data-path="uiStructure.html"><a href="uiStructure.html#refPage"><i class="fa fa-check"></i><b>9.4.4</b> References Page</a></li>
+<li class="chapter" data-level="8.9.1" data-path="layout.html"><a href="layout.html#the-overview-page"><i class="fa fa-check"></i><b>8.9.1</b> The Overview Page</a></li>
+<li class="chapter" data-level="8.9.2" data-path="layout.html"><a href="layout.html#a-prerequisites-page"><i class="fa fa-check"></i><b>8.9.2</b> A Prerequisites Page</a></li>
+<li class="chapter" data-level="8.9.3" data-path="layout.html"><a href="layout.html#activity-pages"><i class="fa fa-check"></i><b>8.9.3</b> Activity Pages</a></li>
+<li class="chapter" data-level="8.9.4" data-path="layout.html"><a href="layout.html#refPage"><i class="fa fa-check"></i><b>8.9.4</b> References Page</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="uiStructure.html"><a href="uiStructure.html#activityLayout"><i class="fa fa-check"></i><b>9.5</b> Layout of Activity Pages</a>
+<li class="chapter" data-level="8.10" data-path="layout.html"><a href="layout.html#activityLayout"><i class="fa fa-check"></i><b>8.10</b> Layout of Activity Pages</a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="uiStructure.html"><a href="uiStructure.html#two-required-elements"><i class="fa fa-check"></i><b>9.5.1</b> Two Required Elements</a></li>
-<li class="chapter" data-level="9.5.2" data-path="uiStructure.html"><a href="uiStructure.html#the-classical-layout"><i class="fa fa-check"></i><b>9.5.2</b> The Classical Layout</a></li>
-<li class="chapter" data-level="9.5.3" data-path="uiStructure.html"><a href="uiStructure.html#visTabs"><i class="fa fa-check"></i><b>9.5.3</b> Visible Tabs</a></li>
-<li class="chapter" data-level="9.5.4" data-path="uiStructure.html"><a href="uiStructure.html#hiddenTabs"><i class="fa fa-check"></i><b>9.5.4</b> Hidden Tabs</a></li>
-<li class="chapter" data-level="9.5.5" data-path="uiStructure.html"><a href="uiStructure.html#sets-of-controls"><i class="fa fa-check"></i><b>9.5.5</b> Sets of Controls</a></li>
-<li class="chapter" data-level="9.5.6" data-path="uiStructure.html"><a href="uiStructure.html#tic-tac-toe"><i class="fa fa-check"></i><b>9.5.6</b> Tic-Tac-Toe</a></li>
+<li class="chapter" data-level="8.10.1" data-path="layout.html"><a href="layout.html#two-required-elements"><i class="fa fa-check"></i><b>8.10.1</b> Two Required Elements</a></li>
+<li class="chapter" data-level="8.10.2" data-path="layout.html"><a href="layout.html#the-classical-layout"><i class="fa fa-check"></i><b>8.10.2</b> The Classical Layout</a></li>
+<li class="chapter" data-level="8.10.3" data-path="layout.html"><a href="layout.html#visTabs"><i class="fa fa-check"></i><b>8.10.3</b> Visible Tabs</a></li>
+<li class="chapter" data-level="8.10.4" data-path="layout.html"><a href="layout.html#hiddenTabs"><i class="fa fa-check"></i><b>8.10.4</b> Hidden Tabs</a></li>
+<li class="chapter" data-level="8.10.5" data-path="layout.html"><a href="layout.html#sets-of-controls"><i class="fa fa-check"></i><b>8.10.5</b> Sets of Controls</a></li>
+<li class="chapter" data-level="8.10.6" data-path="layout.html"><a href="layout.html#tic-tac-toe"><i class="fa fa-check"></i><b>8.10.6</b> Tic-Tac-Toe</a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="uiStructure.html"><a href="uiStructure.html#innerTabs"><i class="fa fa-check"></i><b>9.6</b> Tab Sets</a>
+<li class="chapter" data-level="8.11" data-path="layout.html"><a href="layout.html#innerTabs"><i class="fa fa-check"></i><b>8.11</b> Tab Sets</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tab-set"><i class="fa fa-check"></i><b>9.6.1</b> Create the Tab Set</a></li>
-<li class="chapter" data-level="9.6.2" data-path="uiStructure.html"><a href="uiStructure.html#create-the-tabs"><i class="fa fa-check"></i><b>9.6.2</b> Create the Tabs</a></li>
-<li class="chapter" data-level="9.6.3" data-path="uiStructure.html"><a href="uiStructure.html#moving-between-tabs"><i class="fa fa-check"></i><b>9.6.3</b> Moving Between Tabs</a></li>
+<li class="chapter" data-level="8.11.1" data-path="layout.html"><a href="layout.html#create-the-tab-set"><i class="fa fa-check"></i><b>8.11.1</b> Create the Tab Set</a></li>
+<li class="chapter" data-level="8.11.2" data-path="layout.html"><a href="layout.html#create-the-tabs"><i class="fa fa-check"></i><b>8.11.2</b> Create the Tabs</a></li>
+<li class="chapter" data-level="8.11.3" data-path="layout.html"><a href="layout.html#moving-between-tabs"><i class="fa fa-check"></i><b>8.11.3</b> Moving Between Tabs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="commonElements.html"><a href="commonElements.html"><i class="fa fa-check"></i><b>10</b> Common Elements</a>
+<li class="chapter" data-level="9" data-path="commonElements.html"><a href="commonElements.html"><i class="fa fa-check"></i><b>9</b> Common Elements</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="commonElements.html"><a href="commonElements.html#rowsCols"><i class="fa fa-check"></i><b>10.1</b> Fluid Rows and Columns</a>
+<li class="chapter" data-level="9.1" data-path="commonElements.html"><a href="commonElements.html#rowsCols"><i class="fa fa-check"></i><b>9.1</b> Fluid Rows and Columns</a>
 <ul>
-<li class="chapter" data-level="10.1.1" data-path="commonElements.html"><a href="commonElements.html#nesting-fluidrow"><i class="fa fa-check"></i><b>10.1.1</b> Nesting <code>fluidRow</code></a></li>
+<li class="chapter" data-level="9.1.1" data-path="commonElements.html"><a href="commonElements.html#nesting-fluidrow"><i class="fa fa-check"></i><b>9.1.1</b> Nesting <code>fluidRow</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="commonElements.html"><a href="commonElements.html#wellPanels"><i class="fa fa-check"></i><b>10.2</b> Well Panels</a></li>
-<li class="chapter" data-level="10.3" data-path="commonElements.html"><a href="commonElements.html#collapsible"><i class="fa fa-check"></i><b>10.3</b> Collapsible Boxes</a>
+<li class="chapter" data-level="9.2" data-path="commonElements.html"><a href="commonElements.html#wellPanels"><i class="fa fa-check"></i><b>9.2</b> Well Panels</a></li>
+<li class="chapter" data-level="9.3" data-path="commonElements.html"><a href="commonElements.html#collapsible"><i class="fa fa-check"></i><b>9.3</b> Collapsible Boxes</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="commonElements.html"><a href="commonElements.html#creating-collapsible-boxes"><i class="fa fa-check"></i><b>10.3.1</b> Creating Collapsible Boxes</a></li>
+<li class="chapter" data-level="9.3.1" data-path="commonElements.html"><a href="commonElements.html#creating-collapsible-boxes"><i class="fa fa-check"></i><b>9.3.1</b> Creating Collapsible Boxes</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="commonElements.html"><a href="commonElements.html#buttons"><i class="fa fa-check"></i><b>10.4</b> Buttons</a>
+<li class="chapter" data-level="9.4" data-path="commonElements.html"><a href="commonElements.html#buttons"><i class="fa fa-check"></i><b>9.4</b> Buttons</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="commonElements.html"><a href="commonElements.html#main-type-of-button"><i class="fa fa-check"></i><b>10.4.1</b> Main Type of Button</a></li>
-<li class="chapter" data-level="10.4.2" data-path="commonElements.html"><a href="commonElements.html#labels"><i class="fa fa-check"></i><b>10.4.2</b> Labels</a></li>
-<li class="chapter" data-level="10.4.3" data-path="commonElements.html"><a href="commonElements.html#icons"><i class="fa fa-check"></i><b>10.4.3</b> Icons</a></li>
-<li class="chapter" data-level="10.4.4" data-path="commonElements.html"><a href="commonElements.html#style-color"><i class="fa fa-check"></i><b>10.4.4</b> Style (Color)</a></li>
-<li class="chapter" data-level="10.4.5" data-path="commonElements.html"><a href="commonElements.html#disabled"><i class="fa fa-check"></i><b>10.4.5</b> Disabled</a></li>
-<li class="chapter" data-level="10.4.6" data-path="commonElements.html"><a href="commonElements.html#updating-buttons"><i class="fa fa-check"></i><b>10.4.6</b> Updating Buttons</a></li>
-<li class="chapter" data-level="10.4.7" data-path="commonElements.html"><a href="commonElements.html#other-issues"><i class="fa fa-check"></i><b>10.4.7</b> Other Issues</a></li>
-<li class="chapter" data-level="10.4.8" data-path="commonElements.html"><a href="commonElements.html#listening-to-buttons"><i class="fa fa-check"></i><b>10.4.8</b> Listening to Buttons</a></li>
+<li class="chapter" data-level="9.4.1" data-path="commonElements.html"><a href="commonElements.html#main-type-of-button"><i class="fa fa-check"></i><b>9.4.1</b> Main Type of Button</a></li>
+<li class="chapter" data-level="9.4.2" data-path="commonElements.html"><a href="commonElements.html#labels"><i class="fa fa-check"></i><b>9.4.2</b> Labels</a></li>
+<li class="chapter" data-level="9.4.3" data-path="commonElements.html"><a href="commonElements.html#icons"><i class="fa fa-check"></i><b>9.4.3</b> Icons</a></li>
+<li class="chapter" data-level="9.4.4" data-path="commonElements.html"><a href="commonElements.html#style-color"><i class="fa fa-check"></i><b>9.4.4</b> Style (Color)</a></li>
+<li class="chapter" data-level="9.4.5" data-path="commonElements.html"><a href="commonElements.html#disabled"><i class="fa fa-check"></i><b>9.4.5</b> Disabled</a></li>
+<li class="chapter" data-level="9.4.6" data-path="commonElements.html"><a href="commonElements.html#updating-buttons"><i class="fa fa-check"></i><b>9.4.6</b> Updating Buttons</a></li>
+<li class="chapter" data-level="9.4.7" data-path="commonElements.html"><a href="commonElements.html#other-issues"><i class="fa fa-check"></i><b>9.4.7</b> Other Issues</a></li>
+<li class="chapter" data-level="9.4.8" data-path="commonElements.html"><a href="commonElements.html#listening-to-buttons"><i class="fa fa-check"></i><b>9.4.8</b> Listening to Buttons</a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path="commonElements.html"><a href="commonElements.html#inputs"><i class="fa fa-check"></i><b>10.5</b> Inputs</a>
+<li class="chapter" data-level="9.5" data-path="commonElements.html"><a href="commonElements.html#inputs"><i class="fa fa-check"></i><b>9.5</b> Inputs</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="commonElements.html"><a href="commonElements.html#types-of-inputs"><i class="fa fa-check"></i><b>10.5.1</b> Types of Inputs</a></li>
-<li class="chapter" data-level="10.5.2" data-path="commonElements.html"><a href="commonElements.html#animation-of-sliders"><i class="fa fa-check"></i><b>10.5.2</b> Animation of Sliders</a></li>
-<li class="chapter" data-level="10.5.3" data-path="commonElements.html"><a href="commonElements.html#ordering-inputs"><i class="fa fa-check"></i><b>10.5.3</b> Ordering Inputs</a></li>
+<li class="chapter" data-level="9.5.1" data-path="commonElements.html"><a href="commonElements.html#types-of-inputs"><i class="fa fa-check"></i><b>9.5.1</b> Types of Inputs</a></li>
+<li class="chapter" data-level="9.5.2" data-path="commonElements.html"><a href="commonElements.html#animation-of-sliders"><i class="fa fa-check"></i><b>9.5.2</b> Animation of Sliders</a></li>
+<li class="chapter" data-level="9.5.3" data-path="commonElements.html"><a href="commonElements.html#ordering-inputs"><i class="fa fa-check"></i><b>9.5.3</b> Ordering Inputs</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="commonElements.html"><a href="commonElements.html#correctincorrect-marks"><i class="fa fa-check"></i><b>10.6</b> Correct/Incorrect Marks</a></li>
-<li class="chapter" data-level="10.7" data-path="commonElements.html"><a href="commonElements.html#alerts-and-messages"><i class="fa fa-check"></i><b>10.7</b> Alerts and Messages</a>
+<li class="chapter" data-level="9.6" data-path="commonElements.html"><a href="commonElements.html#correctincorrect-marks"><i class="fa fa-check"></i><b>9.6</b> Correct/Incorrect Marks</a></li>
+<li class="chapter" data-level="9.7" data-path="commonElements.html"><a href="commonElements.html#alerts-and-messages"><i class="fa fa-check"></i><b>9.7</b> Alerts and Messages</a>
 <ul>
-<li class="chapter" data-level="10.7.1" data-path="commonElements.html"><a href="commonElements.html#alert-types"><i class="fa fa-check"></i><b>10.7.1</b> Alert Types</a></li>
-<li class="chapter" data-level="10.7.2" data-path="commonElements.html"><a href="commonElements.html#alert-title-and-text"><i class="fa fa-check"></i><b>10.7.2</b> Alert Title and Text</a></li>
+<li class="chapter" data-level="9.7.1" data-path="commonElements.html"><a href="commonElements.html#alert-types"><i class="fa fa-check"></i><b>9.7.1</b> Alert Types</a></li>
+<li class="chapter" data-level="9.7.2" data-path="commonElements.html"><a href="commonElements.html#alert-title-and-text"><i class="fa fa-check"></i><b>9.7.2</b> Alert Title and Text</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="commonElements.html"><a href="commonElements.html#popovers-and-tooltips"><i class="fa fa-check"></i><b>10.8</b> Popovers and Tooltips</a></li>
-<li class="chapter" data-level="10.9" data-path="commonElements.html"><a href="commonElements.html#progress-bars"><i class="fa fa-check"></i><b>10.9</b> Progress Bars</a></li>
+<li class="chapter" data-level="9.8" data-path="commonElements.html"><a href="commonElements.html#popovers-and-tooltips"><i class="fa fa-check"></i><b>9.8</b> Popovers and Tooltips</a></li>
+<li class="chapter" data-level="9.9" data-path="commonElements.html"><a href="commonElements.html#progress-bars"><i class="fa fa-check"></i><b>9.9</b> Progress Bars</a></li>
 </ul></li>
 <li class="part"><span><b>V Style Guide-Design Style</b></span></li>
-<li class="chapter" data-level="" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i>Design Style</a></li>
-<li class="chapter" data-level="11" data-path="simpleDesign.html"><a href="simpleDesign.html"><i class="fa fa-check"></i><b>11</b> Branding, Color, and Text</a>
+<li class="chapter" data-level="" data-path="designStyle.html"><a href="designStyle.html"><i class="fa fa-check"></i>Design Style</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="simpleDesign.html"><a href="simpleDesign.html#logo"><i class="fa fa-check"></i><b>11.1</b> PSU Branding</a></li>
-<li class="chapter" data-level="11.2" data-path="simpleDesign.html"><a href="simpleDesign.html#colorChoices"><i class="fa fa-check"></i><b>11.2</b> Colors</a></li>
-<li class="chapter" data-level="11.3" data-path="simpleDesign.html"><a href="simpleDesign.html#styleText"><i class="fa fa-check"></i><b>11.3</b> Text Styling</a>
+<li class="chapter" data-level="9.10" data-path="designStyle.html"><a href="designStyle.html#logo"><i class="fa fa-check"></i><b>9.10</b> PSU Branding</a></li>
+<li class="chapter" data-level="9.11" data-path="designStyle.html"><a href="designStyle.html#colorChoices"><i class="fa fa-check"></i><b>9.11</b> Colors</a></li>
+<li class="chapter" data-level="9.12" data-path="designStyle.html"><a href="designStyle.html#styleText"><i class="fa fa-check"></i><b>9.12</b> Text Styling</a>
 <ul>
-<li class="chapter" data-level="11.3.1" data-path="simpleDesign.html"><a href="simpleDesign.html#headings"><i class="fa fa-check"></i><b>11.3.1</b> Headings</a></li>
-<li class="chapter" data-level="11.3.2" data-path="simpleDesign.html"><a href="simpleDesign.html#paragraph-text"><i class="fa fa-check"></i><b>11.3.2</b> Paragraph Text</a></li>
-<li class="chapter" data-level="11.3.3" data-path="simpleDesign.html"><a href="simpleDesign.html#mathematics"><i class="fa fa-check"></i><b>11.3.3</b> Mathematics</a></li>
-<li class="chapter" data-level="11.3.4" data-path="simpleDesign.html"><a href="simpleDesign.html#game-question-text"><i class="fa fa-check"></i><b>11.3.4</b> [Game] Question Text</a></li>
-<li class="chapter" data-level="11.3.5" data-path="simpleDesign.html"><a href="simpleDesign.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>11.3.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
-<li class="chapter" data-level="11.3.6" data-path="simpleDesign.html"><a href="simpleDesign.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>11.3.6</b> Feedback and Hint Text</a></li>
-<li class="chapter" data-level="11.3.7" data-path="simpleDesign.html"><a href="simpleDesign.html#text-in-r-plots"><i class="fa fa-check"></i><b>11.3.7</b> Text in <code>R</code> Plots</a></li>
-<li class="chapter" data-level="11.3.8" data-path="simpleDesign.html"><a href="simpleDesign.html#text-case"><i class="fa fa-check"></i><b>11.3.8</b> Text Case</a></li>
+<li class="chapter" data-level="9.12.1" data-path="designStyle.html"><a href="designStyle.html#headings"><i class="fa fa-check"></i><b>9.12.1</b> Headings</a></li>
+<li class="chapter" data-level="9.12.2" data-path="designStyle.html"><a href="designStyle.html#paragraph-text"><i class="fa fa-check"></i><b>9.12.2</b> Paragraph Text</a></li>
+<li class="chapter" data-level="9.12.3" data-path="designStyle.html"><a href="designStyle.html#mathematics"><i class="fa fa-check"></i><b>9.12.3</b> Mathematics</a></li>
+<li class="chapter" data-level="9.12.4" data-path="designStyle.html"><a href="designStyle.html#game-question-text"><i class="fa fa-check"></i><b>9.12.4</b> [Game] Question Text</a></li>
+<li class="chapter" data-level="9.12.5" data-path="designStyle.html"><a href="designStyle.html#label-text-buttons-sliders-other-inputs-and-alerts"><i class="fa fa-check"></i><b>9.12.5</b> Label Text (Buttons, Sliders, Other Inputs and Alerts)</a></li>
+<li class="chapter" data-level="9.12.6" data-path="designStyle.html"><a href="designStyle.html#feedback-and-hint-text"><i class="fa fa-check"></i><b>9.12.6</b> Feedback and Hint Text</a></li>
+<li class="chapter" data-level="9.12.7" data-path="designStyle.html"><a href="designStyle.html#text-in-r-plots"><i class="fa fa-check"></i><b>9.12.7</b> Text in <code>R</code> Plots</a></li>
+<li class="chapter" data-level="9.12.8" data-path="designStyle.html"><a href="designStyle.html#text-case"><i class="fa fa-check"></i><b>9.12.8</b> Text Case</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>12</b> Static Images</a>
+<li class="chapter" data-level="10" data-path="staticImages.html"><a href="staticImages.html"><i class="fa fa-check"></i><b>10</b> Static Images</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>12.1</b> Adding an Image</a>
+<li class="chapter" data-level="10.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>10.1</b> Adding an Image</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
-<li class="chapter" data-level="12.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>12.1.2</b> In Line Images</a></li>
+<li class="chapter" data-level="10.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>10.1.1</b> Figure Environment</a></li>
+<li class="chapter" data-level="10.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>10.1.2</b> In Line Images</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#sizing-your-image-imagesize"><i class="fa fa-check"></i><b>12.2</b> Sizing Your Image (#imageSize)</a></li>
-<li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>12.3</b> Adding Alt Text to Static Images</a></li>
+<li class="chapter" data-level="10.2" data-path="staticImages.html"><a href="staticImages.html#sizing-your-image-imagesize"><i class="fa fa-check"></i><b>10.2</b> Sizing Your Image (#imageSize)</a></li>
+<li class="chapter" data-level="10.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>10.3</b> Adding Alt Text to Static Images</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
+<li class="chapter" data-level="11" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>11</b> Graphics</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>13.1</b> Titles and Labels</a></li>
-<li class="chapter" data-level="13.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>13.2</b> Font Sizes</a></li>
-<li class="chapter" data-level="13.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>13.3</b> Axes and Scales</a></li>
-<li class="chapter" data-level="13.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>13.4</b> Color and Plots in <code>R</code></a>
+<li class="chapter" data-level="11.1" data-path="graphics.html"><a href="graphics.html#graphLab"><i class="fa fa-check"></i><b>11.1</b> Titles and Labels</a></li>
+<li class="chapter" data-level="11.2" data-path="graphics.html"><a href="graphics.html#font-sizes"><i class="fa fa-check"></i><b>11.2</b> Font Sizes</a></li>
+<li class="chapter" data-level="11.3" data-path="graphics.html"><a href="graphics.html#axes-and-scales"><i class="fa fa-check"></i><b>11.3</b> Axes and Scales</a></li>
+<li class="chapter" data-level="11.4" data-path="graphics.html"><a href="graphics.html#colorPlots"><i class="fa fa-check"></i><b>11.4</b> Color and Plots in <code>R</code></a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>13.4.1</b> Color and Accessibility</a></li>
-<li class="chapter" data-level="13.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>13.4.2</b> Common Color Usage</a></li>
+<li class="chapter" data-level="11.4.1" data-path="graphics.html"><a href="graphics.html#color-and-accessibility"><i class="fa fa-check"></i><b>11.4.1</b> Color and Accessibility</a></li>
+<li class="chapter" data-level="11.4.2" data-path="graphics.html"><a href="graphics.html#common-color-usage"><i class="fa fa-check"></i><b>11.4.2</b> Common Color Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>13.5</b> Transparency</a></li>
-<li class="chapter" data-level="13.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>13.6</b> Histograms</a></li>
-<li class="chapter" data-level="13.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>13.7</b> Tables</a>
+<li class="chapter" data-level="11.5" data-path="graphics.html"><a href="graphics.html#transparency"><i class="fa fa-check"></i><b>11.5</b> Transparency</a></li>
+<li class="chapter" data-level="11.6" data-path="graphics.html"><a href="graphics.html#histograms"><i class="fa fa-check"></i><b>11.6</b> Histograms</a></li>
+<li class="chapter" data-level="11.7" data-path="graphics.html"><a href="graphics.html#tables"><i class="fa fa-check"></i><b>11.7</b> Tables</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>13.7.1</b> Displaying Data Tables</a></li>
-<li class="chapter" data-level="13.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>13.7.2</b> Additional Table Examples</a></li>
+<li class="chapter" data-level="11.7.1" data-path="graphics.html"><a href="graphics.html#displaying-data-tables"><i class="fa fa-check"></i><b>11.7.1</b> Displaying Data Tables</a></li>
+<li class="chapter" data-level="11.7.2" data-path="graphics.html"><a href="graphics.html#additional-table-examples"><i class="fa fa-check"></i><b>11.7.2</b> Additional Table Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="13.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>13.8</b> Alt Text, Again</a>
+<li class="chapter" data-level="11.8" data-path="graphics.html"><a href="graphics.html#altText2"><i class="fa fa-check"></i><b>11.8</b> Alt Text, Again</a>
 <ul>
-<li class="chapter" data-level="13.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>13.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
-<li class="chapter" data-level="13.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>13.8.2</b> Alt Text via ARIA</a></li>
+<li class="chapter" data-level="11.8.1" data-path="graphics.html"><a href="graphics.html#adding-alt-text-graphsalt-argument"><i class="fa fa-check"></i><b>11.8.1</b> Adding Alt Text Graphs–<code>alt</code> Argument</a></li>
+<li class="chapter" data-level="11.8.2" data-path="graphics.html"><a href="graphics.html#alt-text-via-aria"><i class="fa fa-check"></i><b>11.8.2</b> Alt Text via ARIA</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VI Style Guide-Language</b></span></li>
-<li class="chapter" data-level="14" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>14</b> Wording</a>
+<li class="chapter" data-level="12" data-path="wording.html"><a href="wording.html"><i class="fa fa-check"></i><b>12</b> Wording</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>14.1</b> General Guidelines</a></li>
-<li class="chapter" data-level="14.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>14.2</b> Popovers</a></li>
-<li class="chapter" data-level="14.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>14.3</b> Dealing with Differing Vocabularies</a>
+<li class="chapter" data-level="12.1" data-path="wording.html"><a href="wording.html#general-guidelines"><i class="fa fa-check"></i><b>12.1</b> General Guidelines</a></li>
+<li class="chapter" data-level="12.2" data-path="wording.html"><a href="wording.html#popovers"><i class="fa fa-check"></i><b>12.2</b> Popovers</a></li>
+<li class="chapter" data-level="12.3" data-path="wording.html"><a href="wording.html#dealing-with-differing-vocabularies"><i class="fa fa-check"></i><b>12.3</b> Dealing with Differing Vocabularies</a>
 <ul>
-<li class="chapter" data-level="14.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>14.3.1</b> The Jingle/Jangle Problem</a></li>
-<li class="chapter" data-level="14.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>14.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
-<li class="chapter" data-level="14.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>14.3.3</b> Option 1: Hover Text</a></li>
-<li class="chapter" data-level="14.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>14.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
+<li class="chapter" data-level="12.3.1" data-path="wording.html"><a href="wording.html#jingleJangle"><i class="fa fa-check"></i><b>12.3.1</b> The Jingle/Jangle Problem</a></li>
+<li class="chapter" data-level="12.3.2" data-path="wording.html"><a href="wording.html#option-0-dictionarythesaurus"><i class="fa fa-check"></i><b>12.3.2</b> Option 0: Dictionary/Thesaurus</a></li>
+<li class="chapter" data-level="12.3.3" data-path="wording.html"><a href="wording.html#hovertext"><i class="fa fa-check"></i><b>12.3.3</b> Option 1: Hover Text</a></li>
+<li class="chapter" data-level="12.3.4" data-path="wording.html"><a href="wording.html#option-2-entry-on-the-prerequisites-tabpage"><i class="fa fa-check"></i><b>12.3.4</b> Option 2: Entry on the Prerequisites Tab/Page</a></li>
 </ul></li>
-<li class="chapter" data-level="14.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>14.4</b> Footnotes</a></li>
+<li class="chapter" data-level="12.4" data-path="wording.html"><a href="wording.html#footnotes"><i class="fa fa-check"></i><b>12.4</b> Footnotes</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>15</b> Documentation</a>
+<li class="chapter" data-level="13" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>13</b> Documentation</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>15.1</b> References</a></li>
-<li class="chapter" data-level="15.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>15.2</b> Plagiarism</a>
+<li class="chapter" data-level="13.1" data-path="documentation.html"><a href="documentation.html#references"><i class="fa fa-check"></i><b>13.1</b> References</a></li>
+<li class="chapter" data-level="13.2" data-path="documentation.html"><a href="documentation.html#plagiarism"><i class="fa fa-check"></i><b>13.2</b> Plagiarism</a>
 <ul>
-<li class="chapter" data-level="15.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>15.2.1</b> Reference Tab</a></li>
-<li class="chapter" data-level="15.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>15.2.2</b> In Code</a></li>
+<li class="chapter" data-level="13.2.1" data-path="documentation.html"><a href="documentation.html#reference-tab"><i class="fa fa-check"></i><b>13.2.1</b> Reference Tab</a></li>
+<li class="chapter" data-level="13.2.2" data-path="documentation.html"><a href="documentation.html#in-code"><i class="fa fa-check"></i><b>13.2.2</b> In Code</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>15.3</b> <code>R</code> Packages</a></li>
-<li class="chapter" data-level="15.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>15.4</b> Graphics</a></li>
-<li class="chapter" data-level="15.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>15.5</b> Data</a></li>
+<li class="chapter" data-level="13.3" data-path="documentation.html"><a href="documentation.html#r-packages"><i class="fa fa-check"></i><b>13.3</b> <code>R</code> Packages</a></li>
+<li class="chapter" data-level="13.4" data-path="documentation.html"><a href="documentation.html#graphics-1"><i class="fa fa-check"></i><b>13.4</b> Graphics</a></li>
+<li class="chapter" data-level="13.5" data-path="documentation.html"><a href="documentation.html#data"><i class="fa fa-check"></i><b>13.5</b> Data</a></li>
 </ul></li>
 <li class="part"><span><b>VII Accessibility and Mobile Devices</b></span></li>
-<li class="chapter" data-level="16" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>16</b> Accessibility</a>
+<li class="chapter" data-level="14" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i><b>14</b> Accessibility</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>16.1</b> Making Your App Accessible</a></li>
-<li class="chapter" data-level="16.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>16.2</b> Checking Accessibility</a>
+<li class="chapter" data-level="14.1" data-path="accessibility.html"><a href="accessibility.html#making-your-app-accessible"><i class="fa fa-check"></i><b>14.1</b> Making Your App Accessible</a></li>
+<li class="chapter" data-level="14.2" data-path="accessibility.html"><a href="accessibility.html#checking-accessibility"><i class="fa fa-check"></i><b>14.2</b> Checking Accessibility</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>16.2.1</b> Testing Accessibility</a></li>
-<li class="chapter" data-level="16.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>16.2.2</b> Reading a WAVE Report</a></li>
-<li class="chapter" data-level="16.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>16.2.3</b> Addressing Issues</a></li>
+<li class="chapter" data-level="14.2.1" data-path="accessibility.html"><a href="accessibility.html#testing-accessibility"><i class="fa fa-check"></i><b>14.2.1</b> Testing Accessibility</a></li>
+<li class="chapter" data-level="14.2.2" data-path="accessibility.html"><a href="accessibility.html#reading-a-wave-report"><i class="fa fa-check"></i><b>14.2.2</b> Reading a WAVE Report</a></li>
+<li class="chapter" data-level="14.2.3" data-path="accessibility.html"><a href="accessibility.html#addressing-issues"><i class="fa fa-check"></i><b>14.2.3</b> Addressing Issues</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>17</b> Mobile Friendliness</a></li>
+<li class="chapter" data-level="15" data-path="mobile.html"><a href="mobile.html"><i class="fa fa-check"></i><b>15</b> Mobile Friendliness</a></li>
 <li class="part"><span><b>VIII Final Thoughts</b></span></li>
-<li class="chapter" data-level="18" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>18</b> Additional Tools</a></li>
+<li class="chapter" data-level="16" data-path="addTools.html"><a href="addTools.html"><i class="fa fa-check"></i><b>16</b> Additional Tools</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -510,7 +512,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Building Shiny Apps the BOAST Way</h1>
 <h2 class="subtitle"><em>A How To and Official Style Guide</em></h2>
 <p class="author"><em>Neil Hatfield (<a href="mailto:njh5464@psu.edu" class="email">njh5464@psu.edu</a>) and Robert Carey (<a href="mailto:rpc5102@psu.edu" class="email">rpc5102@psu.edu</a>)</em></p>
-<p class="date"><em>07 July 2022</em></p>
+<p class="date"><em>10 May 2023</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered hasAnchor">
 <h1>Welcome<a href="index.html#welcome" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -673,20 +675,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
