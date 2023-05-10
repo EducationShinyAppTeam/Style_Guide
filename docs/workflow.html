@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Workflow | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Workflow | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2022-07-07" />
+<meta name="date" content="2023-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -156,12 +160,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>1.3.1</b> Set Up/Login to the VPN</a></li>
-<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>1.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
-<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>1.3.3</b> Publishing Your App for Testing</a></li>
-<li class="chapter" data-level="1.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>1.3.4</b> Configuring for Testing</a></li>
-<li class="chapter" data-level="1.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>1.3.5</b> Check the Logs</a></li>
-<li class="chapter" data-level="1.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>1.3.6</b> Problems?</a></li>
+<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#self-local-testing"><i class="fa fa-check"></i><b>1.3.1</b> Self (Local) Testing</a></li>
+<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#other-local-testing"><i class="fa fa-check"></i><b>1.3.2</b> Other (Local) Testing</a></li>
+<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#non-local-testing"><i class="fa fa-check"></i><b>1.3.3</b> Non-local Testing</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>I Getting Started</b></span></li>
@@ -509,35 +510,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="workflow" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Workflow<a href="workflow.html#workflow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Before we get too far into designing, building, and maintaining BOAST apps, it is helpful to take a moment and talk about setting yourself up for success. One way to do this is through the notion of a workflow. In essence, you want to come up with a series of steps to follow. Writing this list out can provide you with something where you can take a step back and go “Wait. Where am I again? Oh yeah.” This is particularly important as there will be times when you find yourself lost in coding and losing track of your broader goals.</p>
-<p>We have two major workflows within BOAST: Revising existing apps and creating brand new apps.</p>
+<p>We have two major workflows within BOAST: Revising existing apps and Creating brand new apps.</p>
 <p>Something to keep in mind with these workflows is that they are not strictly linear. That is, just because you have moved into Step 3, doesn’t mean that you can’t go back to Step 2 and make revisions. Additionally, as you get into Steps 5-8, you might find yourself coming back to Step 3 (and possibly Step 2) and making changes. This said, sketching out your plans will help you as you move forward with developing.</p>
 <div id="revising-existing-apps-worflow" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Revising Existing Apps Worflow<a href="workflow.html#revising-existing-apps-worflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Read the Style Guide.</li>
-<li>Explore the existing apps in the <a href="https://sites.psu.edu/shinyapps/">book</a> and their associated repositories on <a href="https://github.com/EducationShinyAppTeam">GitHub</a>.</li>
+<li>Explore the existing apps in the <a href="https://shinyapps.science.psu.edu/">book</a> and their associated repositories on <a href="https://github.com/EducationShinyAppTeam">GitHub</a>.</li>
 <li>When you identify an app you wish to work on,
 <ol style="list-style-type: lower-alpha">
 <li>Go to that app’s repository in <a href="https://github.com/EducationShinyAppTeam">GitHub</a>.</li>
-<li>Look through the <code>README.md</code> and the <code>DESCRIPTION</code> files (if present) so that you can get a sense of what the aims of the app are.</li>
+<li>Look through the <code>README.md</code>, <code>DESCRIPTION</code>, and the <code>ToDoList.txt</code> files (if present) so that you can get a sense of what the aims of the app are.</li>
 <li>Play with the app after going through 3b; ask yourself how the app demonstrates the aims. If the app doesn’t, note this.</li>
-<li>Create new issues on GitHub to log both bugs and suggestions for improvements.</li>
+<li>Create new issues on GitHub to log bugs, issues, To Dos, as well as suggestions for improvements.</li>
 <li>Create an issue specifically if the App currently does not abide by this Style Guide.</li>
 <li>Optional—assign yourself to the issue.</li>
 </ol></li>
-<li>Download the current version of the app by using either GitHub Desktop or RStudio.</li>
+<li>Clone the current version of the app’s repo by using either GitHub Desktop or RStudio.</li>
 <li>Create a new branch for your developments.</li>
-<li>Plan out your changes…ON PAPER.</li>
+<li>Plan out your changes <strong>on paper</strong>.</li>
 <li>Discuss your edits with others to get feedback and additional suggestions.</li>
 <li>Begin editing the code.</li>
 <li>As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.</li>
-<li>Periodically push your edits to your development branch; don’t forget to add commit messages and reference any issues.</li>
-<li>When you’re ready to do larger scale testing you’ll need to publish your App to the TLT RStudio Connect server (see <a href="workflow.html#testing">Section <a href="workflow.html#testing">1.3</a></a>).</li>
-<li>When you’ve reached a point where you’ve finished editing, push your most recent commit to your development branch and then create a Pull Request
+<li>Periodically push your edits to your development branch; don’t forget to add commit messages and reference any issues. (We recommend doing at least one commit a day to capture each day’s work.)</li>
+<li>When you’re ready to do larger scale testing, check out <a href="workflow.html#testing">Section <a href="workflow.html#testing">1.3</a></a>).</li>
+<li>When you’ve reached a point where you’ve finished editing, push your most recent commit to your development branch and then create a Pull Request.
 <ol style="list-style-type: lower-alpha">
-<li>You will automatically get assigned at least one Reviewer (you will also be asked to review other people’s code)</li>
-<li>Make any requested changes and re-push to your development branch</li>
-<li>Eventually, your code will get a final review before being formally approved.</li>
+<li>In your Pull Request, be sure to document what you were aiming to achieve as well as link to any that would be addressed/fixed with a successful merge.</li>
+<li>Once you create the Pull Request, click cog/gear next to Reviewers and select the EducationShinyAppTeam/work-group. This will automatically assign two of your peers to check your code.</li>
+<li>Make any requested changes and re-push to your development branch.</li>
+<li>Once your peers have approved your changes, add Neil to the Assignees field of your Pull Request. Neil will conduct a final check, potentially asking for changes before merging your work into the main/master branch.</li>
 </ol></li>
 </ol>
 <p>If everything checks out, then we’ll merge your development branch with the master branch and schedule formal deployment of your App.</p>
@@ -548,7 +550,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Read the Style Guide.</li>
 <li>Identify a topic for your new App.</li>
-<li>Sketch out your plans for the App…ON PAPER. <strong>This should occur BEFORE you start coding.</strong> Be sure that you include:
+<li>Sketch out your plans for the App on paper. <strong>This should occur BEFORE you start coding.</strong> Be sure that you include:
 <ol style="list-style-type: lower-alpha">
 <li>Suggested Full Title and Short Title</li>
 <li>Goal(s) of the app</li>
@@ -561,12 +563,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>As you edit, be sure to reference this Style Guide and test your code locally via Run App in RStudio.</li>
 <li>When you get the basic structure of your App set up, push your code to GitHub and create a new development branch for your continued editing. You can open new issues on your app as you go.</li>
 <li>Periodically push your edits to your development branch. Don’t forget to add commit messages and reference any issues.</li>
-<li>When you’re ready to do larger scale testing you’ll need to publish your App to the TLT RStudio Connect server (see <a href="workflow.html#testing">Section <a href="workflow.html#testing">1.3</a></a>).</li>
+<li>When you’re ready to do larger scale testing, check out <a href="workflow.html#testing">Section <a href="workflow.html#testing">1.3</a></a>).</li>
 <li>When you’ve reached a point where you’ve finished editing, push your most recent commit to your development branch and then create a Pull Request.
 <ol style="list-style-type: lower-alpha">
-<li>You will automatically get assigned at least one Reviewer (you will also be asked to review other people’s code)</li>
-<li>Make any requested changes and re-push to your development branch</li>
-<li>Eventually, your code will get a final review before being formally approved.</li>
+<li>In your Pull Request, be sure to document what you were aiming to achieve as well as link to any that would be addressed/fixed with a successful merge.</li>
+<li>Once you create the Pull Request, click cog/gear next to Reviewers and select the EducationShinyAppTeam/work-group. This will automatically assign two of your peers to check your code.</li>
+<li>Make any requested changes and re-push to your development branch.</li>
+<li>Once your peers have approved your changes, add Neil to the Assignees field of your Pull Request. Neil will conduct a final check, potentially asking for changes before merging your work into the main/master branch.</li>
 </ol></li>
 </ol>
 <p>If everything checks out, then we’ll merge your development branch with the master branch and schedule formal deployment of your App.</p>
@@ -586,9 +589,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="testing" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Testing Your App<a href="workflow.html#testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To test your App beyond your local machine, we will be making use of TLT’s RStudio Connect platform. You will need to follow these directions.</p>
-<div id="set-uplogin-to-the-vpn" class="section level3 hasAnchor" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Set Up/Login to the VPN<a href="workflow.html#set-uplogin-to-the-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are several types of testing that you should apply to any Shiny app that you’re working on: Self (local) Testing, Others (local) Testing, and Non-local Testing</p>
+<div id="self-local-testing" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Self (Local) Testing<a href="workflow.html#self-local-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is the easiest form of testing your Shiny app. Clicking the Run App button in RStudio will trigger RStudio to run a check to ensure that your app will run (an important test to conduct). You will then have a version of the app running on your computer (hence the “local”) where you can play around with your controls, make sure everything looks and functions as you intended.</p>
+</div>
+<div id="other-local-testing" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Other (Local) Testing<a href="workflow.html#other-local-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This form of testing works much the same way as Self (Local) Testing, but instead of you playing with the app, you let someone else be in control. This allows you to observe how others are interacting with the app and how the app responds to those users. This is extremely useful since these others don’t necessarily know what you were trying to do. Thus, they can act in ways you didn’t think of, uncovering problems that were lurking.</p>
+</div>
+<div id="non-local-testing" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Non-local Testing<a href="workflow.html#non-local-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is the last stage of testing where instead of running your app on your computer, we move the app to a server and people interact with the app online. This is a critical step as this directly mimics how your app will be used. Thus, you can think of this as being our “beta testing”. This allows us to have multiple people simultaneous interact with your app as well as check out your app on a mobile device.</p>
+<p>There are two ways that we can do non-local testing: via shinyapps.io and via TLT’s RStudio Connect.</p>
+<div id="using-shinyapps.io" class="section level4 hasAnchor" number="1.3.3.1">
+<h4><span class="header-section-number">1.3.3.1</span> Using shinyapps.io<a href="workflow.html#using-shinyapps.io" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is perhaps the easiest method for testing your app on a server. The shinyapps.io server is kept up-to-date.</p>
+<div id="make-an-account" class="section level5 hasAnchor" number="1.3.3.1.1">
+<h5><span class="header-section-number">1.3.3.1.1</span> Make an Account<a href="workflow.html#make-an-account" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>You will need to make a free account at <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>. Please note that the Free account does limit you to 5 apps and 25 active hours each month.</p>
+<p>Alternatively, you can work with Neil and he can publish a beta version of your app on either the BOAST or his own shinyapps.io accounts.</p>
+</div>
+<div id="connect-rstudio-to-shinyapps.io" class="section level5 hasAnchor" number="1.3.3.1.2">
+<h5><span class="header-section-number">1.3.3.1.2</span> Connect RStudio to shinyapps.io<a href="workflow.html#connect-rstudio-to-shinyapps.io" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Once you’ve made an account, you’ll need to connect your RStudio to your account. To do this,</p>
+<ol style="list-style-type: decimal">
+<li>Bring up the Global Options of RStudio (under the Tools menu).</li>
+<li>In the left-hand icon menu, select Publishing.</li>
+<li>Click on the Connect… button.</li>
+<li>Select the ShinyApps.io option and follow the on-screen directions.</li>
+<li>Once you’ve finished all steps, click on the OK button to close the Options window.</li>
+</ol>
+</div>
+<div id="deploy-your-app" class="section level5 hasAnchor" number="1.3.3.1.3">
+<h5><span class="header-section-number">1.3.3.1.3</span> Deploy Your App<a href="workflow.html#deploy-your-app" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>To deploy your app, you’ll need to click on the Publish icon, <img src="images/publishIcon.png" width="40" />. Select the appropriate account (if you have more than one) and then click the Publish button. You’ll see the Console switch to the Deploy tab and a list of message will appear. If the deployment (publishing) fails, look at the messages in the Deploy tab as this can provide us with important information.</p>
+<p>Upon successful deployment (publishing), you should see your browser open up a new tab showing your running app. Copy the URL from the address bar so that you can share this with your testers. You can also get the URL for your app from your shinyapps.io account’s dashboard.</p>
+</div>
+</div>
+<div id="tlts-rstudio-connect" class="section level4 hasAnchor" number="1.3.3.2">
+<h4><span class="header-section-number">1.3.3.2</span> TLT’s RStudio Connect<a href="workflow.html#tlts-rstudio-connect" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can also make use of TLT’s RStudio Connect platform to do non-local testing. There are multiple steps to follow for this method. The TLT platform is out of date, which means that not all apps may be testable through this method. Work with Neil on this.</p>
+<div id="downgrade-the-httpuv-package." class="section level5 hasAnchor" number="1.3.3.2.1">
+<h5><span class="header-section-number">1.3.3.2.1</span> Downgrade the <code>httpuv</code> package.<a href="workflow.html#downgrade-the-httpuv-package." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>First thing that you’ll need to do is downgrade the <code>httpuv</code> package. You can use the following code to achieve this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="workflow.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Downgrade httpuv</span></span>
+<span id="cb1-2"><a href="workflow.html#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_version</span>(<span class="st">&quot;httpuv&quot;</span>, <span class="at">version =</span> <span class="st">&quot;1.6.1&quot;</span>)</span></code></pre></div>
+<p>Once this code has finished running, be sure to restart R for the change to take effect.</p>
+<p>You will need to follow these directions.</p>
+</div>
+<div id="set-uplogin-to-the-vpn" class="section level5 hasAnchor" number="1.3.3.2.2">
+<h5><span class="header-section-number">1.3.3.2.2</span> Set Up/Login to the VPN<a href="workflow.html#set-uplogin-to-the-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Please refer to the following PSU Knowledge Basis Articles:</p>
 <ul>
 <li><a href="https://pennstate.service-now.com/sp?id=kb_article_view&amp;sysparm_article=KB0013419">VPN for Windows</a></li>
@@ -600,8 +651,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>You MUST be logged into the PSU VPN to both upload and test your App on each device.</p>
 </div>
-<div id="connecting-your-rstudio-to-tlts-rstudio-connect" class="section level3 hasAnchor" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Connecting Your RStudio to TLT’s RStudio Connect<a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="connecting-your-rstudio-to-tlts-rstudio-connect" class="section level5 hasAnchor" number="1.3.3.2.3">
+<h5><span class="header-section-number">1.3.3.2.3</span> Connecting Your RStudio to TLT’s RStudio Connect<a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>You only need to do this step once.</p>
 <ol style="list-style-type: decimal">
 <li>After you’ve logged into the PSU VPN, go to <a href="https://rstudio-connect.tlt.psu.edu:3939/connect">TLT’s RStudio Connect</a> and log in using your PSU ID.</li>
@@ -615,8 +666,9 @@ Figure 1.1: Click the Publish Button
 <li>Select Shiny App and a pop up window will appear.</li>
 <li>Follow the steps in this window (especially Step 4) to set up the connection.</li>
 </ol>
-<div id="checking-youve-connected" class="section level4 hasAnchor" number="1.3.2.1">
-<h4><span class="header-section-number">1.3.2.1</span> Checking You’ve Connected<a href="workflow.html#checking-youve-connected" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="checking-youve-connected" class="section level5 hasAnchor" number="1.3.3.2.4">
+<h5><span class="header-section-number">1.3.3.2.4</span> Checking You’ve Connected<a href="workflow.html#checking-youve-connected" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 You can check to see if you’ve connected by going into RStudio’s Options and looking at the Publishing tab. You should see a similar entry as what is in the green box of <a href="workflow.html#fig:testing2">Figure <a href="workflow.html#fig:testing2">1.2</a></a>:
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:testing2"></span>
 <img src="images/publish2.png" alt="Check Your Publishing Profile" width="640" />
@@ -625,14 +677,13 @@ Figure 1.2: Check Your Publishing Profile
 </p>
 </div>
 </div>
-</div>
-<div id="publishing-your-app-for-testing" class="section level3 hasAnchor" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> Publishing Your App for Testing<a href="workflow.html#publishing-your-app-for-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="publishing-your-app-for-testing" class="section level5 hasAnchor" number="1.3.3.2.5">
+<h5><span class="header-section-number">1.3.3.2.5</span> Publishing Your App for Testing<a href="workflow.html#publishing-your-app-for-testing" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Make sure that you are connected to PSU’s VPN and that you’ve already connected your RStudio to TLT’s server.</p>
 <p>Click on the Publishing Icon, located just to the right of the Run App button. Be sure to select the TLT Server.</p>
 </div>
-<div id="configuring-for-testing" class="section level3 hasAnchor" number="1.3.4">
-<h3><span class="header-section-number">1.3.4</span> Configuring for Testing<a href="workflow.html#configuring-for-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="configuring-for-testing" class="section level5 hasAnchor" number="1.3.3.2.6">
+<h5><span class="header-section-number">1.3.3.2.6</span> Configuring for Testing<a href="workflow.html#configuring-for-testing" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Once your App has been published, a new window should open in your browser that shows your App plus the optional controls.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:testing3"></span>
 <img src="images/publish3.png" alt="Successful Publish and Settings" width="672" />
@@ -641,17 +692,19 @@ Figure 1.3: Successful Publish and Settings
 </p>
 </div>
 <p>In <a href="workflow.html#fig:testing3">Figure <a href="workflow.html#fig:testing3">1.3</a></a>, you will need to change a setting to enable others (people and devices) to test your app. Click on the Access tab and set Who can view this application to Anyone-no login required. (These are highlighted in the green boxes.) Keep in mind that all users/devices MUST first connect to the PSU VPN to access your app.</p>
-<p>We encourage you to add contributors as we did (orange box). Both Bob and I are the Go To people for tech issues and by adding us, you give us the ability to help you the best that we can. By adding us to the list of contributors on the TLT server, you will allow us to check the app’s log files as well as any particular settings. Ultimately, this help us troubleshoot any difficulty you might encounter.</p>
+<p>We encourage you to add contributors (orange box). Put Neil as a Collaborator; this will give Neil the ability to help you the best that he can. By adding us to the list of contributors on the TLT server, you will allow us to check the app’s log files as well as any particular settings. Ultimately, this help us troubleshoot any difficulty you might encounter.</p>
 <p>The most important piece is the Content URL (marked with the blue star). You’ll need to copy this URL and give that URL out to your testers. This will allow them easily access your app, regardless of the type of device (e.g., computer, tablet, phone) they are using.</p>
 </div>
-<div id="check-the-logs" class="section level3 hasAnchor" number="1.3.5">
-<h3><span class="header-section-number">1.3.5</span> Check the Logs<a href="workflow.html#check-the-logs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="check-the-logs" class="section level5 hasAnchor" number="1.3.3.2.7">
+<h5><span class="header-section-number">1.3.3.2.7</span> Check the Logs<a href="workflow.html#check-the-logs" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>As you test your App, you’ll want to look for any error messages and/or warnings that get generated. Click on the Logs tab (red box in <a href="workflow.html#fig:testing3">Figure <a href="workflow.html#fig:testing3">1.3</a></a>) to view.</p>
 </div>
-<div id="problems" class="section level3 hasAnchor" number="1.3.6">
-<h3><span class="header-section-number">1.3.6</span> Problems?<a href="workflow.html#problems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="problems" class="section level4 hasAnchor" number="1.3.3.3">
+<h4><span class="header-section-number">1.3.3.3</span> Problems?<a href="workflow.html#problems" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you run into problem either publishing your App or getting the App to launch on the TLT, please reach out to Neil and Bob.</p>
 
+</div>
 </div>
 </div>
 </div>
@@ -721,7 +774,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -56,6 +56,15 @@ revising-existing-apps-worflow
 creating-new-apps-workflow
 repo-naming
 testing
+self-local-testing
+other-local-testing
+non-local-testing
+using-shinyapps.io
+make-an-account
+connect-rstudio-to-shinyapps.io
+deploy-your-app
+tlts-rstudio-connect
+downgrade-the-httpuv-package.
 set-uplogin-to-the-vpn
 connecting-your-rstudio-to-tlts-rstudio-connect
 checking-youve-connected

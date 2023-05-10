@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Static Images | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Static Images | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2022-07-07" />
+<meta name="date" content="2023-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -156,12 +160,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="workflow.html"><a href="workflow.html#testing"><i class="fa fa-check"></i><b>1.3</b> Testing Your App</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#set-uplogin-to-the-vpn"><i class="fa fa-check"></i><b>1.3.1</b> Set Up/Login to the VPN</a></li>
-<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#connecting-your-rstudio-to-tlts-rstudio-connect"><i class="fa fa-check"></i><b>1.3.2</b> Connecting Your RStudio to TLT’s RStudio Connect</a></li>
-<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#publishing-your-app-for-testing"><i class="fa fa-check"></i><b>1.3.3</b> Publishing Your App for Testing</a></li>
-<li class="chapter" data-level="1.3.4" data-path="workflow.html"><a href="workflow.html#configuring-for-testing"><i class="fa fa-check"></i><b>1.3.4</b> Configuring for Testing</a></li>
-<li class="chapter" data-level="1.3.5" data-path="workflow.html"><a href="workflow.html#check-the-logs"><i class="fa fa-check"></i><b>1.3.5</b> Check the Logs</a></li>
-<li class="chapter" data-level="1.3.6" data-path="workflow.html"><a href="workflow.html#problems"><i class="fa fa-check"></i><b>1.3.6</b> Problems?</a></li>
+<li class="chapter" data-level="1.3.1" data-path="workflow.html"><a href="workflow.html#self-local-testing"><i class="fa fa-check"></i><b>1.3.1</b> Self (Local) Testing</a></li>
+<li class="chapter" data-level="1.3.2" data-path="workflow.html"><a href="workflow.html#other-local-testing"><i class="fa fa-check"></i><b>1.3.2</b> Other (Local) Testing</a></li>
+<li class="chapter" data-level="1.3.3" data-path="workflow.html"><a href="workflow.html#non-local-testing"><i class="fa fa-check"></i><b>1.3.3</b> Non-local Testing</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>I Getting Started</b></span></li>
@@ -517,17 +518,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="figure-environment" class="section level3 hasAnchor" number="12.1.1">
 <h3><span class="header-section-number">12.1.1</span> Figure Environment<a href="staticImages.html#figure-environment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here is example code for adding an image within a figure environment:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="staticImages.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb69-2"><a href="staticImages.html#cb69-2" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">figure</span>(</span>
-<span id="cb69-3"><a href="staticImages.html#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">&quot;center&quot;</span>,</span>
-<span id="cb69-4"><a href="staticImages.html#cb69-4" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
-<span id="cb69-5"><a href="staticImages.html#cb69-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;astragalus.jpg&quot;</span>,</span>
-<span id="cb69-6"><a href="staticImages.html#cb69-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">600</span>,</span>
-<span id="cb69-7"><a href="staticImages.html#cb69-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Picture of an astragalus (bone die)&quot;</span></span>
-<span id="cb69-8"><a href="staticImages.html#cb69-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb69-9"><a href="staticImages.html#cb69-9" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">figcaption</span>(<span class="st">&quot;Image of Astragalus by Yaan, 2007&quot;</span>)</span>
-<span id="cb69-10"><a href="staticImages.html#cb69-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb69-11"><a href="staticImages.html#cb69-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="staticImages.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb70-2"><a href="staticImages.html#cb70-2" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">figure</span>(</span>
+<span id="cb70-3"><a href="staticImages.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">&quot;center&quot;</span>,</span>
+<span id="cb70-4"><a href="staticImages.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
+<span id="cb70-5"><a href="staticImages.html#cb70-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;astragalus.jpg&quot;</span>,</span>
+<span id="cb70-6"><a href="staticImages.html#cb70-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">600</span>,</span>
+<span id="cb70-7"><a href="staticImages.html#cb70-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Picture of an astragalus (bone die)&quot;</span></span>
+<span id="cb70-8"><a href="staticImages.html#cb70-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb70-9"><a href="staticImages.html#cb70-9" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">figcaption</span>(<span class="st">&quot;Image of Astragalus by Yaan, 2007&quot;</span>)</span>
+<span id="cb70-10"><a href="staticImages.html#cb70-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb70-11"><a href="staticImages.html#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>In this first example, we’ve created a figure environment with the <code>tags$figure</code> call. The first argument we set in the figure environment sets whether the figure is left, center, or right aligned on the page. (Typically, we’ll go with <code>align = "center"</code>.)</p>
 <p>The second part of the figure is the actual call to load the static image; <code>tags$img</code>. (Much the heading and paragraph HTML tags, you can omit <code>tags$</code> in this case; we would rather be safe than sorry, hence why we’ve left this in our code.) You will need to provide at least two arguments (<code>src</code> and <code>alt</code>) to this call. The <code>src</code> is the exact name of the file from the <code>www</code> folder you want to load while <code>alt</code> refers to the <a href="staticImages.html#altStatic">Alt Text</a> for the image.</p>
 <p>The other argument (<code>width</code>) is one of two sizing arguments (along with <code>height</code>) that you can set to alter the size of your figure. Check out the <a href="#imageSize">Sizing Section</a> section below.</p>
@@ -536,17 +537,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="in-line-images" class="section level3 hasAnchor" number="12.1.2">
 <h3><span class="header-section-number">12.1.2</span> In Line Images<a href="staticImages.html#in-line-images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sometimes you’ll want to put an image within the line of text rather than as a separate figure environment. This is possible and you would use code similar to the following:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="staticImages.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb70-2"><a href="staticImages.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
-<span id="cb70-3"><a href="staticImages.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
-<span id="cb70-4"><a href="staticImages.html#cb70-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb70-5"><a href="staticImages.html#cb70-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb70-6"><a href="staticImages.html#cb70-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">25</span>,</span>
-<span id="cb70-7"><a href="staticImages.html#cb70-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">25</span></span>
-<span id="cb70-8"><a href="staticImages.html#cb70-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb70-9"><a href="staticImages.html#cb70-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span></span>
-<span id="cb70-10"><a href="staticImages.html#cb70-10" aria-hidden="true" tabindex="-1"></a>),</span>
-<span id="cb70-11"><a href="staticImages.html#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="staticImages.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb71-2"><a href="staticImages.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb71-3"><a href="staticImages.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
+<span id="cb71-4"><a href="staticImages.html#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb71-5"><a href="staticImages.html#cb71-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb71-6"><a href="staticImages.html#cb71-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">25</span>,</span>
+<span id="cb71-7"><a href="staticImages.html#cb71-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">25</span></span>
+<span id="cb71-8"><a href="staticImages.html#cb71-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb71-9"><a href="staticImages.html#cb71-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span></span>
+<span id="cb71-10"><a href="staticImages.html#cb71-10" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb71-11"><a href="staticImages.html#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>Notice that here we did not use either <code>tags$figure</code> nor <code>tags$figcaption</code>, rather we just used <code>tags$img</code> within a paragraph environment. The biggest caution we need to give here is to make sure you find an optimal size for your image.</p>
 </div>
 </div>
@@ -566,13 +567,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">W3C’s ALT Text Decision Tree</a></li>
 </ul>
 <p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="staticImages.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb71-2"><a href="staticImages.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">img</span>(</span>
-<span id="cb71-3"><a href="staticImages.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
-<span id="cb71-4"><a href="staticImages.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
-<span id="cb71-5"><a href="staticImages.html#cb71-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">25</span>, <span class="at">height =</span> <span class="dv">25</span></span>
-<span id="cb71-6"><a href="staticImages.html#cb71-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb71-7"><a href="staticImages.html#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="staticImages.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb72-2"><a href="staticImages.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">img</span>(</span>
+<span id="cb72-3"><a href="staticImages.html#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb72-4"><a href="staticImages.html#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb72-5"><a href="staticImages.html#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">25</span>, <span class="at">height =</span> <span class="dv">25</span></span>
+<span id="cb72-6"><a href="staticImages.html#cb72-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb72-7"><a href="staticImages.html#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>You MUST include <em>descriptive</em> alt text to each and every static image you include</p>
 
 </div>
@@ -640,7 +641,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

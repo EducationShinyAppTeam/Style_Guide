@@ -96,15 +96,13 @@ We place a premium on drawing from what researchers have found about student thi
 
 One of the key ways in which our approach differs from a vast majority of others is the level of accessibility thinking we go through. Shiny apps are __not__ very accessible by default and are extremely easy to make even more inaccessible. 
 
-For example, consider the following entries in the [2020 Shiny app competition](https://blog.rstudio.com/2020/07/13/winners-of-the-2nd-shiny-contest/), as of 10/15/2020:
+For example, consider the following entries in the [2020 Shiny app competition](https://blog.rstudio.com/2020/07/13/winners-of-the-2nd-shiny-contest/), as of May 10, 2023:
 
-+ [Blog Explorer by Stefan Schliebs](https://nz-stefan.shinyapps.io/blog-explorer/#data): This Grand Prize winner has 11 accessibility errors, 68 contrast errors, and 14 accessibility alerts.
-+ [Life of Pi: A Monte Carlo Simulation by Zauad Shahereer Abeer](https://shahreyar-abeer.shinyapps.io/life_of_pi/): This Honorable mention has 17 accessibility errors, 13 contrast errors, and 9 accessibility alerts.
-+ [OTS Beta Dashboard by Mauricio Vargas](https://pachamaltese.shinyapps.io/tradestatistics/): This Honorable mention generates 14 accessibility errors, 0 contrast errors, and 5 accessibility alerts.
-+ [Probability of Normal Distribution by Aep Hidayatuloh](https://azures.shinyapps.io/normdist/): Produces 5 accessibility errors, 108 contrast errors, and 27 accessibility alerts.
-+ [Didactic Modeling Process: Linear Regression by Daniel Rivera](https://shiny.rstudio.com/gallery/didacting-modeling.html): while not part of the Shiny contest, this is a currently featured app in [RStudio's Shiny User Showcase](https://shiny.rstudio.com/gallery/), which has 57 accessibility errors, 26 contrast errors, and 184 accessibility alerts.
++ [Blog Explorer by Stefan Schliebs](https://nz-stefan.shinyapps.io/blog-explorer/#data): This Grand Prize winner has 11 accessibility errors, 69 contrast errors, and 14 accessibility alerts.
++ [Life of Pi: A Monte Carlo Simulation by Zauad Shahereer Abeer](https://shahreyar-abeer.shinyapps.io/life_of_pi/): This Honorable mention has 15 accessibility errors, 13 contrast errors, and 8 accessibility alerts.
++ [One Source Indy](https://parmsam.shinyapps.io/one_source_indy/): This runner up has 26 accessibility errors, 6 contrast errors, and 11 accessibility alerts.
 
-We used [WebAIM's Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/) to get these measurements. However, we must point out that the above numbers are *under-*estimates. The nature of a Shiny app interferes with WAVE's scanning tool (for example, non-displayed app pages aren't checked) as well as the fact that rendered R plots can only be checked for the presence of alt text/aria labels but not contrast errors, small font sizes, etc.
+We used [WebAIM's Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/) to get these measurements. However, we must point out that the above numbers are *under-*estimates. The nature of a Shiny app interferes with WAVE's scanning tool (for example, non-displayed app pages aren't always checked) as well as the fact that rendered R plots can only be checked for the presence of alt text/aria labels but not contrast errors, small font sizes, etc.
 
 Now, this isn't to say that our apps are problem free. However, our process ensures that the number of errors that exist are in the single digits. When we publish an app, most of the remaining errors are ones we inherent from the `shiny` package and we're striving to address.
 
