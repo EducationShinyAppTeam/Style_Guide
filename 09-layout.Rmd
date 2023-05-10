@@ -633,13 +633,13 @@ In each `menuItem` call, you'll want to use the following code `icon = icon("ico
 
 | Page Type | `iconName` | Icon |
 |:----------|:---------:|:----:|
-| Overview | `"tachometer-alt"` | `r fontawesome::fa(name = "fas fa-tachometer-alt", height = "25px")` |
-| Prerequisites | `"book"` | `r fontawesome::fa(name = "fas fa-book", height = "25px")` |
-| Example | `"book-reader"` | `r fontawesome::fa(name = "fas fa-book-reader", height = "25px")` |
-| Explore | `"wpexplorer"` | `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")` |
-| Challenge | `"cogs"` | `r fontawesome::fa(name = "fas fa-cogs", height = "25px")` |
-| Game | `"gamepad"` | `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")` |
-| Wizard | `"hat-wizard"` | `r fontawesome::fa(name = "fas fa-hat-wizard", height = "25px")` |
+| Overview | `"gauge-high"` | `r fontawesome::fa(name = "gauge-high", height = "25px")` |
+| Prerequisites | `"book"` | `r fontawesome::fa(name = "book", height = "25px")` |
+| Example | `"book-open-reader"` | `r fontawesome::fa(name = "book-open-reader", height = "25px")` |
+| Explore | `"wpexplorer"` | `r fontawesome::fa(name = "wpexplorer", height = "25px")` |
+| Challenge | `"gears"` | `r fontawesome::fa(name = "gears", height = "25px")` |
+| Game | `"gamepad"` | `r fontawesome::fa(name = "gamepad", height = "25px")` |
+| Wizard | `"hat-wizard"` | `r fontawesome::fa(name = "hat-wizard", height = "25px")` |
 | References | `"leanpub"` | `r fontawesome::fa(name = "fab fa-leanpub", height = "25px")` |
 
 If you come across any of these types of pages that have a different icon or a missing icon, please create an issue in GitHub and/or fix.
@@ -917,25 +917,25 @@ The heart of your App is the one or more tabs where users interact with the App 
 
 Currently, we have five types of Activities in BOAST:
 
-+ Example Pages, `r fontawesome::fa(name = "fas fa-book-reader", height = "25px")`
++ Example Pages, `r fontawesome::fa(name = "book-open-reader", height = "25px")`
     - These pages center around a user looking through a static/fixed example.
     - Of all activity pages, these will have the most amount of text on the page and the least for them to do.
     - The goal here is to provide a more solid foundation for the user so that they can more deeply engage with an exploration or challenge activity page.
-+ Exploration/Explore Pages, `r fontawesome::fa(name = "fab fa-wpexplorer", height = "25px")`
++ Exploration/Explore Pages, `r fontawesome::fa(name = "wpexplorer", height = "25px")`
     - These pages center around the user exploring the target concept.
     - These pages will generally have more text on the page here than other types of Activities.
     - There are often guiding questions meant to help the user engage in productive explorations.
     - The goal is not to assess the user's understanding, but to support their construction of productive meanings for the concept.
-+ Challenge Pages, `r fontawesome::fa(name = "fas fa-cogs", height = "25px")`
++ Challenge Pages, `r fontawesome::fa(name = "gears", height = "25px")`
     - These pages center around a user challenging themselves by testing out their understanding of a concept.
     - While there might still be a fair amount of text on the page, there will be less than an Exploration page..
     - Questions here will be in-between a guiding question and an assessment question. 
     - The goal is to provide the user an opportunity to test and refine their understandings.
-+ Game Pages, `r fontawesome::fa(name = "fas fa-gamepad", height = "25px")`
++ Game Pages, `r fontawesome::fa(name = "gamepad", height = "25px")`
     - These pages center around the user reviewing a concept (or several) in a game like format.
     - These generally have the least amount of non-question text on the page (i.e., instructions).
     - The goal is to provide an opportunity for a student to review and practice one or more concepts.
-+ Wizard Pages, `r fontawesome::fa(name = "fas fa-hat-wizard", height = "25px")`
++ Wizard Pages, `r fontawesome::fa(name = "hat-wizard", height = "25px")`
     - This is the newest (and rarest) of the Activity Page types (currently only in the [Hasse Diagram App](https://psu-eberly.shinyapps.io/Hasse_Diagrams/))
     - This type of page centers on helping the student create something
     - The goal is to help students apply their understandings of a concept to create something, typically for a prompt external to the app.

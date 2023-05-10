@@ -199,15 +199,15 @@ If you do decide to use an icon, you will want to make sure that the icon is con
 
 + Game buttons (e.g., "Submit") generally do not have any icons.
 + Direction Buttons (e.g., "Next" or "Previous") may or may not have icons,
-    - "Next" buttons can use `icon("forward")` call, `r fontawesome::fa(name = "fas fa-forward", height = "25px")`
-    - "Back" buttons can use `icon("backward")` call, `r fontawesome::fa(name = "fas fa-backward", height = "25px")`
+    - "Next" buttons can use `icon("forward")` call, `r fontawesome::fa(name = "forward", height = "25px")`
+    - "Back" buttons can use `icon("backward")` call, `r fontawesome::fa(name = "backward", height = "25px")`
     - You should not used text based "icons" such as "<<" or ">>" as part of the `label`
-+ A "Prerequisites" button will use the `icon("book")`, `r fontawesome::fa(name = "fas fa-book", height = "25px")`
-+ Buttons that send users to other pages (except Prerequisites) will use `icon("bolt")` , `r fontawesome::fa(name = "fas fa-bolt", height = "25px")`
-+ A reset button that clears just the current page should use `icon("eraser")`, `r fontawesome::fa(name = "fas fa-eraser", height = "25px")`
-+ A button that will clear everything (e.g., Start Over) should use `icon("exclamation-triangle")`, `r fontawesome::fa(name = "fas fa-exclamation-triangle", height = "25px")`
-+ A button to save or store user values should use `icon("save")`, `r fontawesome::fa(name = "fas fa-save", height = "25px")`
-+ A download button will use `icon("cloud-download-alt")`, `r fontawesome::fa(name = "fas fa-cloud-download-alt", height = "25px")`
++ A "Prerequisites" button will use the `icon("book")`, `r fontawesome::fa(name = "book", height = "25px")`
++ Buttons that send users to other pages (except Prerequisites) will use `icon("bolt")` , `r fontawesome::fa(name = "bolt", height = "25px")`
++ A reset button that clears just the current page should use `icon("eraser")`, `r fontawesome::fa(name = "eraser", height = "25px")`
++ A button that will clear everything (e.g., Start Over) should use `icon("triangle-exclamation")`, `r fontawesome::fa(name = "triangle-exclamation", height = "25px")`
++ A button to save or store user values should use `icon("floppy-disk")`, `r fontawesome::fa(name = "floppy-disk", height = "25px")`
++ A download button will use `icon("cloud-arrow-down")`, `r fontawesome::fa(name = "cloud-arrow-down", height = "25px")`
 
 ### Style (Color)
 

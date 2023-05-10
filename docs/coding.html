@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Coding Style | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Coding Style | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2022-07-07" />
+<meta name="date" content="2023-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -525,20 +529,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="readable" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Make Your Code Readable<a href="coding.html#readable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For us, making code readable boils down to three major aspects: formatting and spacing, naming, and being explicit. By way of an example, consider the following code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="coding.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad Code Example</span></span>
-<span id="cb4-2"><a href="coding.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(<span class="st">&quot;input1&quot;</span>,<span class="st">&quot;pick&quot;</span>,listA,<span class="cn">NULL</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="st">&quot;80%&quot;</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="coding.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad Code Example</span></span>
+<span id="cb5-2"><a href="coding.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(<span class="st">&quot;input1&quot;</span>,<span class="st">&quot;pick&quot;</span>,listA,<span class="cn">NULL</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="st">&quot;80%&quot;</span>,<span class="dv">2</span>)</span></code></pre></div>
 <p>Just looking at this code, do you have any idea what it does? Let’s look at a BOAST version of this code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="coding.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good Code Example</span></span>
-<span id="cb5-2"><a href="coding.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(</span>
-<span id="cb5-3"><a href="coding.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;selectedPeople&quot;</span>,</span>
-<span id="cb5-4"><a href="coding.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Select who to contact&quot;</span>,</span>
-<span id="cb5-5"><a href="coding.html#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">choices =</span> nameList,</span>
-<span id="cb5-6"><a href="coding.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="cn">NULL</span>,</span>
-<span id="cb5-7"><a href="coding.html#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">multiple =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-8"><a href="coding.html#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">selectize =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-9"><a href="coding.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&quot;80%&quot;</span>,</span>
-<span id="cb5-10"><a href="coding.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">2</span></span>
-<span id="cb5-11"><a href="coding.html#cb5-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="coding.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good Code Example</span></span>
+<span id="cb6-2"><a href="coding.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(</span>
+<span id="cb6-3"><a href="coding.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;selectedPeople&quot;</span>,</span>
+<span id="cb6-4"><a href="coding.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Select who to contact&quot;</span>,</span>
+<span id="cb6-5"><a href="coding.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">choices =</span> nameList,</span>
+<span id="cb6-6"><a href="coding.html#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-7"><a href="coding.html#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">multiple =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-8"><a href="coding.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">selectize =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-9"><a href="coding.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&quot;80%&quot;</span>,</span>
+<span id="cb6-10"><a href="coding.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">2</span></span>
+<span id="cb6-11"><a href="coding.html#cb6-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>While the above code takes more lines, it is infinitely more readable. Both sets of code call the same function, <code>selectInput</code>, to create a dropdown menu where the user can select individuals. In the Bad example, the user has to either 1) have the order of arguments memorized, or 2) guess what each argument does. In the Good example, each argument is listed out by name (e.g., <code>inputId</code> and <code>multiple</code>). While you might not know what each of these arguments controls (yet), you can at least see what values are being passed to each one. Further, you know that the choices are stored in the <code>nameList</code>, which is a much clearer name than <code>listA</code>.</p>
 <div id="formatSpace" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Formatting and Spacing<a href="coding.html#formatSpace" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -560,25 +564,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">5.2.1.2</span> Indentation<a href="coding.html#indentation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Indenting your code is a great way to help with readability. RStudio will automatically do this for you. In the Good Example above, each of the arguments was indented 2 spaces; this helps convey that they are nested inside the object that was less indented.</p>
 <p>You can (and will) have nested indentation, for example:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="coding.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Indentation</span></span>
-<span id="cb6-2"><a href="coding.html#cb6-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb6-3"><a href="coding.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
-<span id="cb6-4"><a href="coding.html#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
-<span id="cb6-5"><a href="coding.html#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb6-6"><a href="coding.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-7"><a href="coding.html#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
-<span id="cb6-8"><a href="coding.html#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb6-9"><a href="coding.html#cb6-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-10"><a href="coding.html#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
-<span id="cb6-11"><a href="coding.html#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
-<span id="cb6-12"><a href="coding.html#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
-<span id="cb6-13"><a href="coding.html#cb6-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
-<span id="cb6-14"><a href="coding.html#cb6-14" aria-hidden="true" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
-<span id="cb6-15"><a href="coding.html#cb6-15" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb6-16"><a href="coding.html#cb6-16" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb6-17"><a href="coding.html#cb6-17" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-18"><a href="coding.html#cb6-18" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-19"><a href="coding.html#cb6-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="coding.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Indentation</span></span>
+<span id="cb7-2"><a href="coding.html#cb7-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb7-3"><a href="coding.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb7-4"><a href="coding.html#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
+<span id="cb7-5"><a href="coding.html#cb7-5" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb7-6"><a href="coding.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-7"><a href="coding.html#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb7-8"><a href="coding.html#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb7-9"><a href="coding.html#cb7-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-10"><a href="coding.html#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb7-11"><a href="coding.html#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb7-12"><a href="coding.html#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
+<span id="cb7-13"><a href="coding.html#cb7-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb7-14"><a href="coding.html#cb7-14" aria-hidden="true" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
+<span id="cb7-15"><a href="coding.html#cb7-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-16"><a href="coding.html#cb7-16" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb7-17"><a href="coding.html#cb7-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-18"><a href="coding.html#cb7-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-19"><a href="coding.html#cb7-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>We have several layers of indentation but by looking at the formatting, we can see which things are at which level and their relative ranks. For example, the Header, Sidebar, and Body are all at the same level (i.e., they are all aligned at the same indentation), while they are all subordinate to the Page and the user interface (“ui”). The tab called “overview” is part of the Body based on the indentation.</p>
 <p>One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4 brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)</p>
 <p>RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press Command + i; for Windows press Control + i. Keep in mind that this shortcut works only on one line at a time and always references the line just above the one you’re in.</p>
@@ -591,20 +595,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you can fit all of the arguments on that line without going beyond 80 characters, then you can do so. For example, <code>renderIcon(icon = "correct")</code>.</li>
 <li>In all other cases, press the return/enter key to move to a new line which should automatically indent. Enter each argument name and value followed by a comma on their own line. After you’ve typed the last argument’s value, omit the comma, return to a new line and put the close/right parenthesis. For example,</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="coding.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renderIcon has three arguments: icon, width, and html</span></span>
-<span id="cb7-2"><a href="coding.html#cb7-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>markProb1 <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(</span>
-<span id="cb7-3"><a href="coding.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">ifelse</span>(</span>
-<span id="cb7-4"><a href="coding.html#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">test =</span> input<span class="sc">$</span>probVal1 <span class="sc">==</span> answer1,</span>
-<span id="cb7-5"><a href="coding.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">yes =</span> <span class="st">&quot;correct&quot;</span></span>
-<span id="cb7-6"><a href="coding.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">no =</span> <span class="fu">ifelse</span>(</span>
-<span id="cb7-7"><a href="coding.html#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">test =</span> <span class="fu">abs</span>(input<span class="sc">$</span>probVal1 <span class="sc">-</span> answer1) <span class="sc">&lt;=</span> <span class="fl">0.05</span>,</span>
-<span id="cb7-8"><a href="coding.html#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">yes =</span> <span class="st">&quot;partial&quot;</span>,</span>
-<span id="cb7-9"><a href="coding.html#cb7-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">no =</span> <span class="st">&quot;incorrect&quot;</span></span>
-<span id="cb7-10"><a href="coding.html#cb7-10" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-11"><a href="coding.html#cb7-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-12"><a href="coding.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">60</span>,</span>
-<span id="cb7-13"><a href="coding.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">html =</span> <span class="cn">TRUE</span></span>
-<span id="cb7-14"><a href="coding.html#cb7-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="coding.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renderIcon has three arguments: icon, width, and html</span></span>
+<span id="cb8-2"><a href="coding.html#cb8-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>markProb1 <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(</span>
+<span id="cb8-3"><a href="coding.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb8-4"><a href="coding.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">test =</span> input<span class="sc">$</span>probVal1 <span class="sc">==</span> answer1,</span>
+<span id="cb8-5"><a href="coding.html#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">yes =</span> <span class="st">&quot;correct&quot;</span></span>
+<span id="cb8-6"><a href="coding.html#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">no =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb8-7"><a href="coding.html#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">test =</span> <span class="fu">abs</span>(input<span class="sc">$</span>probVal1 <span class="sc">-</span> answer1) <span class="sc">&lt;=</span> <span class="fl">0.05</span>,</span>
+<span id="cb8-8"><a href="coding.html#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">yes =</span> <span class="st">&quot;partial&quot;</span>,</span>
+<span id="cb8-9"><a href="coding.html#cb8-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">no =</span> <span class="st">&quot;incorrect&quot;</span></span>
+<span id="cb8-10"><a href="coding.html#cb8-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-11"><a href="coding.html#cb8-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb8-12"><a href="coding.html#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">60</span>,</span>
+<span id="cb8-13"><a href="coding.html#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">html =</span> <span class="cn">TRUE</span></span>
+<span id="cb8-14"><a href="coding.html#cb8-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>If you’ve set up RStudio to automatically create pairs of grouping symbols, the close/right parentheses should automatically format themselves when you return to new lines.</p>
 </div>
 <div id="assignment-operator" class="section level4 hasAnchor" number="5.2.1.4">
@@ -644,28 +648,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">5.2.3.1</span> Function Arguments<a href="coding.html#function-arguments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>One implicit fact about functions that most students don’t realize is that the order of a function’s arguments are a matter of convention and is actually arbitrary. While we might define <em>f</em> as <span class="math inline">\(f(x,y) = x^2+3y\)</span>, we could call <span class="math inline">\(f(y=2,x=1)\)</span> and get the same output as <span class="math inline">\(f(1,2)\)</span> when we use the convention set up in the definition. This issue is exacerbated with functions in <code>R</code>.</p>
 <p>Therefore, when you pass values to the arguments of a function in <code>R</code>, you should be explicit and include the argument name in your code. For example,</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="coding.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
-<span id="cb8-2"><a href="coding.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;submit&quot;</span>,</span>
-<span id="cb8-3"><a href="coding.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Submit&quot;</span>,</span>
-<span id="cb8-4"><a href="coding.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb8-5"><a href="coding.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
-<span id="cb8-6"><a href="coding.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;btn-ttt&quot;</span></span>
-<span id="cb8-7"><a href="coding.html#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="coding.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
+<span id="cb9-2"><a href="coding.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;submit&quot;</span>,</span>
+<span id="cb9-3"><a href="coding.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Submit&quot;</span>,</span>
+<span id="cb9-4"><a href="coding.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb9-5"><a href="coding.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
+<span id="cb9-6"><a href="coding.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;btn-ttt&quot;</span></span>
+<span id="cb9-7"><a href="coding.html#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="function-definitions" class="section level4 hasAnchor" number="5.2.3.2">
 <h4><span class="header-section-number">5.2.3.2</span> Function Definitions<a href="coding.html#function-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you are defining your own function, it is always a good idea to explicitly state what the function spits out. This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use <code>return</code> as shown below:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="coding.html#cb9-1" aria-hidden="true" tabindex="-1"></a>collatz <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">c =</span> <span class="dv">1</span>){</span>
-<span id="cb9-2"><a href="coding.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> x <span class="sc">!=</span> <span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">0</span>)) {</span>
-<span id="cb9-3"><a href="coding.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&quot;Error: x must be a positive integer.&quot;</span>)</span>
-<span id="cb9-4"><a href="coding.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb9-5"><a href="coding.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">&quot;You&#39;re at 1 in&quot;</span>, c, <span class="st">&quot;steps.&quot;</span>))</span>
-<span id="cb9-6"><a href="coding.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb9-7"><a href="coding.html#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> x <span class="sc">/</span> <span class="dv">2</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
-<span id="cb9-8"><a href="coding.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb9-9"><a href="coding.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> <span class="dv">3</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">1</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
-<span id="cb9-10"><a href="coding.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-11"><a href="coding.html#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="coding.html#cb10-1" aria-hidden="true" tabindex="-1"></a>collatz <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">c =</span> <span class="dv">1</span>){</span>
+<span id="cb10-2"><a href="coding.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> x <span class="sc">!=</span> <span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">0</span>)) {</span>
+<span id="cb10-3"><a href="coding.html#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&quot;Error: x must be a positive integer.&quot;</span>)</span>
+<span id="cb10-4"><a href="coding.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb10-5"><a href="coding.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">&quot;You&#39;re at 1 in&quot;</span>, c, <span class="st">&quot;steps.&quot;</span>))</span>
+<span id="cb10-6"><a href="coding.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb10-7"><a href="coding.html#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> x <span class="sc">/</span> <span class="dv">2</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb10-8"><a href="coding.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb10-9"><a href="coding.html#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> <span class="dv">3</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">1</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb10-10"><a href="coding.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-11"><a href="coding.html#cb10-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>collatz</code> function above allows us to see the Collatz Conjecture in action (i.e., that starting with any positive integer, the sequence formed by taking half of an even value or 3 times an odd value plus 1 will always go to 1). The control logic is the series of <code>if, else if, else</code> statements.</p>
 <p>Even if you store the outputs in an internal variable (see the <code>gradeProb</code> function in the <a href="coding.html#dryGrading">DRY Grading Example</a>), you should still end your function definition with an explicit <code>return</code> call.</p>
 </div>
@@ -701,85 +705,85 @@ I would have written a shorter letter, but I did not have the time.
 <div id="dryGrading" class="section level4 hasAnchor" number="5.3.1.2">
 <h4><span class="header-section-number">5.3.1.2</span> Grading User Responses<a href="coding.html#dryGrading" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Rather than retyping the grading logic several times, you can define a single function and then call that function. For example,</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="coding.html#cb10-1" aria-hidden="true" tabindex="-1"></a>gradeProb <span class="ot">&lt;-</span> <span class="cf">function</span>(user, answer, <span class="at">tolerance =</span> <span class="fl">0.001</span>, <span class="at">partial =</span> <span class="fl">0.01</span>){</span>
-<span id="cb10-2"><a href="coding.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  outcome <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb10-3"><a href="coding.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> tolerance) {</span>
-<span id="cb10-4"><a href="coding.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are correct.&quot;</span></span>
-<span id="cb10-5"><a href="coding.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;correct&quot;</span></span>
-<span id="cb10-6"><a href="coding.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> partial) {</span>
-<span id="cb10-7"><a href="coding.html#cb10-7" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are almost correct.&quot;</span></span>
-<span id="cb10-8"><a href="coding.html#cb10-8" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;partial&quot;</span></span>
-<span id="cb10-9"><a href="coding.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb10-10"><a href="coding.html#cb10-10" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;Please try again.&quot;</span></span>
-<span id="cb10-11"><a href="coding.html#cb10-11" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;incorrect&quot;</span></span>
-<span id="cb10-12"><a href="coding.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb10-13"><a href="coding.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome)</span>
-<span id="cb10-14"><a href="coding.html#cb10-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1" aria-hidden="true" tabindex="-1"></a>gradeProb <span class="ot">&lt;-</span> <span class="cf">function</span>(user, answer, <span class="at">tolerance =</span> <span class="fl">0.001</span>, <span class="at">partial =</span> <span class="fl">0.01</span>){</span>
+<span id="cb11-2"><a href="coding.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  outcome <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb11-3"><a href="coding.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> tolerance) {</span>
+<span id="cb11-4"><a href="coding.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are correct.&quot;</span></span>
+<span id="cb11-5"><a href="coding.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;correct&quot;</span></span>
+<span id="cb11-6"><a href="coding.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> partial) {</span>
+<span id="cb11-7"><a href="coding.html#cb11-7" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are almost correct.&quot;</span></span>
+<span id="cb11-8"><a href="coding.html#cb11-8" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;partial&quot;</span></span>
+<span id="cb11-9"><a href="coding.html#cb11-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb11-10"><a href="coding.html#cb11-10" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;Please try again.&quot;</span></span>
+<span id="cb11-11"><a href="coding.html#cb11-11" aria-hidden="true" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;incorrect&quot;</span></span>
+<span id="cb11-12"><a href="coding.html#cb11-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-13"><a href="coding.html#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome)</span>
+<span id="cb11-14"><a href="coding.html#cb11-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>gradeProb</code> function defined above will grade a user’s [probability] value (i.e., <code>user</code>) against the answer key (<code>answer</code>) and return a list of two items: a feedback statement and the scoring mark to pass along to <code>renderIcon</code>. The following code shows us using the <code>gradeProb</code> function to generate the necessary outputs.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1" aria-hidden="true" tabindex="-1"></a>prob1 <span class="ot">&lt;-</span> <span class="fu">gradeProb</span>(</span>
-<span id="cb11-2"><a href="coding.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> input<span class="sc">$</span>problem1,</span>
-<span id="cb11-3"><a href="coding.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">answer =</span> answerKey[<span class="dv">1</span>]</span>
-<span id="cb11-4"><a href="coding.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Omitting the remaining two arguments will use the default values</span></span>
-<span id="cb11-5"><a href="coding.html#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-6"><a href="coding.html#cb11-6" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>problem1Feedback <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
-<span id="cb11-7"><a href="coding.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  prob1<span class="sc">$</span>feedback</span>
-<span id="cb11-8"><a href="coding.html#cb11-8" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb11-9"><a href="coding.html#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="coding.html#cb11-10" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>problem1Mark <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(<span class="at">icon =</span> prob1<span class="sc">$</span>mark)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1" aria-hidden="true" tabindex="-1"></a>prob1 <span class="ot">&lt;-</span> <span class="fu">gradeProb</span>(</span>
+<span id="cb12-2"><a href="coding.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> input<span class="sc">$</span>problem1,</span>
+<span id="cb12-3"><a href="coding.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">answer =</span> answerKey[<span class="dv">1</span>]</span>
+<span id="cb12-4"><a href="coding.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Omitting the remaining two arguments will use the default values</span></span>
+<span id="cb12-5"><a href="coding.html#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-6"><a href="coding.html#cb12-6" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>problem1Feedback <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
+<span id="cb12-7"><a href="coding.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  prob1<span class="sc">$</span>feedback</span>
+<span id="cb12-8"><a href="coding.html#cb12-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-9"><a href="coding.html#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="coding.html#cb12-10" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>problem1Mark <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(<span class="at">icon =</span> prob1<span class="sc">$</span>mark)</span></code></pre></div>
 </div>
 <div id="graphs" class="section level4 hasAnchor" number="5.3.1.3">
 <h4><span class="header-section-number">5.3.1.3</span> Graphs<a href="coding.html#graphs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph as an object is a good idea. For example,</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a basic data frame that will cover the majority of your cases</span></span>
-<span id="cb12-2"><a href="coding.html#cb12-2" aria-hidden="true" tabindex="-1"></a>baseGraph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb12-3"><a href="coding.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">data.frame</span>(</span>
-<span id="cb12-4"><a href="coding.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb12-5"><a href="coding.html#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb12-6"><a href="coding.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-7"><a href="coding.html#cb12-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="coding.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb12-9"><a href="coding.html#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb12-10"><a href="coding.html#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb12-11"><a href="coding.html#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb12-12"><a href="coding.html#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
-<span id="cb12-13"><a href="coding.html#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
-<span id="cb12-14"><a href="coding.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="coding.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a basic data frame that will cover the majority of your cases</span></span>
+<span id="cb13-2"><a href="coding.html#cb13-2" aria-hidden="true" tabindex="-1"></a>baseGraph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb13-3"><a href="coding.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-4"><a href="coding.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb13-5"><a href="coding.html#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb13-6"><a href="coding.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-7"><a href="coding.html#cb13-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="coding.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="coding.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="coding.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-11"><a href="coding.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb13-12"><a href="coding.html#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb13-13"><a href="coding.html#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb13-14"><a href="coding.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>When we get to plotting our actual graphs, or updating the existing graph, we can call <code>baseGraph</code> and then add the elements we want, such as a scatter plot:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="coding.html#cb13-1" aria-hidden="true" tabindex="-1"></a>plotData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-2"><a href="coding.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">heights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="fl">3.5</span>),</span>
-<span id="cb13-3"><a href="coding.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">weights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">8</span>),</span>
-<span id="cb13-4"><a href="coding.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;I&quot;</span>), <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb13-5"><a href="coding.html#cb13-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-6"><a href="coding.html#cb13-6" aria-hidden="true" tabindex="-1"></a>baseGraph <span class="sc">+</span></span>
-<span id="cb13-7"><a href="coding.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb13-8"><a href="coding.html#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> plotData,</span>
-<span id="cb13-9"><a href="coding.html#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> heights, <span class="at">y =</span> weights, <span class="at">color =</span> sex, <span class="at">shape =</span> sex),</span>
-<span id="cb13-10"><a href="coding.html#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span></span>
-<span id="cb13-11"><a href="coding.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-12"><a href="coding.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb13-13"><a href="coding.html#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span></span>
-<span id="cb13-14"><a href="coding.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-15"><a href="coding.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Height (in)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-16"><a href="coding.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Weight (kg)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-17"><a href="coding.html#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
-<span id="cb13-18"><a href="coding.html#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb13-19"><a href="coding.html#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb13-20"><a href="coding.html#cb13-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
-<span id="cb13-21"><a href="coding.html#cb13-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
-<span id="cb13-22"><a href="coding.html#cb13-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
-<span id="cb13-23"><a href="coding.html#cb13-23" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-24"><a href="coding.html#cb13-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-25"><a href="coding.html#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_discrete</span>(</span>
-<span id="cb13-26"><a href="coding.html#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb13-27"><a href="coding.html#cb13-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb13-28"><a href="coding.html#cb13-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
-<span id="cb13-29"><a href="coding.html#cb13-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
-<span id="cb13-30"><a href="coding.html#cb13-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
-<span id="cb13-31"><a href="coding.html#cb13-31" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-32"><a href="coding.html#cb13-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-33"><a href="coding.html#cb13-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb13-34"><a href="coding.html#cb13-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Height and Weight by Sex&quot;</span></span>
-<span id="cb13-35"><a href="coding.html#cb13-35" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="coding.html#cb14-1" aria-hidden="true" tabindex="-1"></a>plotData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-2"><a href="coding.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">heights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="fl">3.5</span>),</span>
+<span id="cb14-3"><a href="coding.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">weights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">8</span>),</span>
+<span id="cb14-4"><a href="coding.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;I&quot;</span>), <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-5"><a href="coding.html#cb14-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-6"><a href="coding.html#cb14-6" aria-hidden="true" tabindex="-1"></a>baseGraph <span class="sc">+</span></span>
+<span id="cb14-7"><a href="coding.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb14-8"><a href="coding.html#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> plotData,</span>
+<span id="cb14-9"><a href="coding.html#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> heights, <span class="at">y =</span> weights, <span class="at">color =</span> sex, <span class="at">shape =</span> sex),</span>
+<span id="cb14-10"><a href="coding.html#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span></span>
+<span id="cb14-11"><a href="coding.html#cb14-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-12"><a href="coding.html#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-13"><a href="coding.html#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span></span>
+<span id="cb14-14"><a href="coding.html#cb14-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-15"><a href="coding.html#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Height (in)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-16"><a href="coding.html#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Weight (kg)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-17"><a href="coding.html#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
+<span id="cb14-18"><a href="coding.html#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb14-19"><a href="coding.html#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb14-20"><a href="coding.html#cb14-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
+<span id="cb14-21"><a href="coding.html#cb14-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
+<span id="cb14-22"><a href="coding.html#cb14-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
+<span id="cb14-23"><a href="coding.html#cb14-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-24"><a href="coding.html#cb14-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-25"><a href="coding.html#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_discrete</span>(</span>
+<span id="cb14-26"><a href="coding.html#cb14-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb14-27"><a href="coding.html#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb14-28"><a href="coding.html#cb14-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
+<span id="cb14-29"><a href="coding.html#cb14-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
+<span id="cb14-30"><a href="coding.html#cb14-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
+<span id="cb14-31"><a href="coding.html#cb14-31" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-32"><a href="coding.html#cb14-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-33"><a href="coding.html#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-34"><a href="coding.html#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Height and Weight by Sex&quot;</span></span>
+<span id="cb14-35"><a href="coding.html#cb14-35" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary.</p>
 <p>Another important feature of the above code is a <strong>key accessibility feature</strong>: combining color AND shape. Do not rely on just color alone as individuals who are color blind will struggle; always pair color usage with an additional aesthetic such as shape.</p>
 </div>
@@ -791,17 +795,17 @@ I would have written a shorter letter, but I did not have the time.
 <h4><span class="header-section-number">5.3.1.5</span> Over DRY-ing Code<a href="coding.html#over-dry-ing-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you are building an app, there will be a certain amount of repetition in what you’re doing. For example, you’ll have to call the <code>bsButton</code> function each time you want to create a button. This is expected and appropriate for you to do. After all, the purpose of the <code>bsButton</code> function is to create a button.</p>
 <p>However, you can over do the DRY principle. For example, you don’t need to define a function for something that you’re only going to call once. Further, it isn’t necessary to define a new function that just changes a default value of an existing function. Here is a case where the user has over DRY-ed:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="coding.html#cb14-1" aria-hidden="true" tabindex="-1"></a>customButton <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId, label){</span>
-<span id="cb14-2"><a href="coding.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(</span>
-<span id="cb14-3"><a href="coding.html#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
-<span id="cb14-4"><a href="coding.html#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> inputId,</span>
-<span id="cb14-5"><a href="coding.html#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label,</span>
-<span id="cb14-6"><a href="coding.html#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
-<span id="cb14-7"><a href="coding.html#cb14-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
-<span id="cb14-8"><a href="coding.html#cb14-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;success&quot;</span></span>
-<span id="cb14-9"><a href="coding.html#cb14-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb14-10"><a href="coding.html#cb14-10" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb14-11"><a href="coding.html#cb14-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="coding.html#cb15-1" aria-hidden="true" tabindex="-1"></a>customButton <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId, label){</span>
+<span id="cb15-2"><a href="coding.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(</span>
+<span id="cb15-3"><a href="coding.html#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb15-4"><a href="coding.html#cb15-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> inputId,</span>
+<span id="cb15-5"><a href="coding.html#cb15-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label,</span>
+<span id="cb15-6"><a href="coding.html#cb15-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
+<span id="cb15-7"><a href="coding.html#cb15-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb15-8"><a href="coding.html#cb15-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;success&quot;</span></span>
+<span id="cb15-9"><a href="coding.html#cb15-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-10"><a href="coding.html#cb15-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-11"><a href="coding.html#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Rather than simply calling the <code>bsButton</code> function in their code and passing the appropriate arguments, this user has defined a brand new function that does the same thing but sets the values for <code>icon</code>, <code>size</code>, and <code>style</code> to new defaults. This type of programming should be avoided.</p>
 </div>
 </div>
@@ -814,20 +818,20 @@ I would have written a shorter letter, but I did not have the time.
 </ol>
 <p>Make sure that you absolutely have to use a particular package before you do. Check to see if what you’re trying to do can be done in a package you’re already using or in base R.</p>
 <p>A previous student loaded the <code>scales</code> package to use the <code>percent</code> function to convert a decimal into a percentage. This was problematic for a couple reasons: the <code>percent</code> function has been depreciated (i.e., the package developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: <code>paste0(0.1 * 100, "%")</code>. If needed in several places, they could have written their own function:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="coding.html#cb15-1" aria-hidden="true" tabindex="-1"></a>makePercent <span class="ot">&lt;-</span> <span class="cf">function</span>(proportion){</span>
-<span id="cb15-2"><a href="coding.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">paste0</span>(proportion <span class="sc">*</span> <span class="dv">100</span>, <span class="st">&quot;%&quot;</span>))</span>
-<span id="cb15-3"><a href="coding.html#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="coding.html#cb16-1" aria-hidden="true" tabindex="-1"></a>makePercent <span class="ot">&lt;-</span> <span class="cf">function</span>(proportion){</span>
+<span id="cb16-2"><a href="coding.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">paste0</span>(proportion <span class="sc">*</span> <span class="dv">100</span>, <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb16-3"><a href="coding.html#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>This is not to say that you can’t make use of a new package. This guideline’s purpose is to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.</p>
 <p>To help you avoid name masking (i.e., <a href="coding.html#explicit">Section <a href="coding.html#explicit">5.2.3</a></a>), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use <code>dplyr::filter([arguments])</code> instead of just <code>filter([arguments])</code>. If you are using a common package and have no risk of name masking, you can dispense with this. For example, you can use <code>ggplot([arguments])</code> rather than <code>ggplot2::ggplot([arugments])</code>.</p>
 <p>You can also run a <code>funchir::stale_package_check</code> on your <code>app.R</code> file to see which packages you’re loading but might not actually use in your code. These stale packages may then be deleted out from your library call.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="coding.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check working directory</span></span>
-<span id="cb16-2"><a href="coding.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
-<span id="cb16-3"><a href="coding.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Does the output match the folder path to where you app lives?</span></span>
-<span id="cb16-4"><a href="coding.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># If not, then you need to set that. For example,</span></span>
-<span id="cb16-5"><a href="coding.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/GitHub/shiny-apps/Sample_App&quot;</span>)</span>
-<span id="cb16-6"><a href="coding.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="coding.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a stale package check on app.R, ui.R, and server.R</span></span>
-<span id="cb16-8"><a href="coding.html#cb16-8" aria-hidden="true" tabindex="-1"></a>funchir<span class="sc">::</span><span class="fu">stale_package_check</span>(<span class="st">&quot;app.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="coding.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check working directory</span></span>
+<span id="cb17-2"><a href="coding.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb17-3"><a href="coding.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Does the output match the folder path to where you app lives?</span></span>
+<span id="cb17-4"><a href="coding.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># If not, then you need to set that. For example,</span></span>
+<span id="cb17-5"><a href="coding.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/GitHub/shiny-apps/Sample_App&quot;</span>)</span>
+<span id="cb17-6"><a href="coding.html#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="coding.html#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a stale package check on app.R, ui.R, and server.R</span></span>
+<span id="cb17-8"><a href="coding.html#cb17-8" aria-hidden="true" tabindex="-1"></a>funchir<span class="sc">::</span><span class="fu">stale_package_check</span>(<span class="st">&quot;app.R&quot;</span>)</span></code></pre></div>
 <p>Be aware that while <code>stale_package_check</code> is useful, it doesn’t always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from <code>ggplot2</code> or <code>tippy</code>. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might be more misses.</p>
 <p>Once you’re sure that a package isn’t being used, remove the <code>library</code> call for that package from your code.</p>
 </div>
@@ -845,45 +849,45 @@ I would have written a shorter letter, but I did not have the time.
 <h3><span class="header-section-number">5.4.2</span> Code Section Titles/Jump Points<a href="coding.html#code-section-titlesjump-points" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another way to be kind to future coders is to title sections of your code and create points which allow for them to jump to different sections of your code without having to scroll through each and every line. Remember, you also count as a future coder, so titling sections of code will help you navigate your code.</p>
 <p>To title a section of code and make a jump point, start by making a comment in R. Then type a word/phrase that explains what the section is. Finally, type (at least) four dashes, <code>-</code>, (alternatively, you could use four equal signs, <code>=</code>, or four hashtags/pound signs, <code>#</code>) without spaces. This will create a title/jump point which people can use through the Code-Jump To… menu. You can vary the number of hashtags/pound signs at the start of comment to reflect where in the hierarchy of your app you are. Here’s an example.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="coding.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Packages ----</span></span>
-<span id="cb17-2"><a href="coding.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb17-3"><a href="coding.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="coding.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define gloabl constants, functions, data ----</span></span>
-<span id="cb17-5"><a href="coding.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="do">## None for this example</span></span>
-<span id="cb17-6"><a href="coding.html#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="coding.html#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the UI ----</span></span>
-<span id="cb17-8"><a href="coding.html#cb17-8" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb17-9"><a href="coding.html#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
-<span id="cb17-10"><a href="coding.html#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Header ----</span></span>
-<span id="cb17-11"><a href="coding.html#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
-<span id="cb17-12"><a href="coding.html#cb17-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb17-13"><a href="coding.html#cb17-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb17-14"><a href="coding.html#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Sidebar ----</span></span>
-<span id="cb17-15"><a href="coding.html#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
-<span id="cb17-16"><a href="coding.html#cb17-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb17-17"><a href="coding.html#cb17-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb17-18"><a href="coding.html#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Body ----</span></span>
-<span id="cb17-19"><a href="coding.html#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
-<span id="cb17-20"><a href="coding.html#cb17-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
-<span id="cb17-21"><a href="coding.html#cb17-21" aria-hidden="true" tabindex="-1"></a>        <span class="do">### Overview ----</span></span>
-<span id="cb17-22"><a href="coding.html#cb17-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
-<span id="cb17-23"><a href="coding.html#cb17-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
-<span id="cb17-24"><a href="coding.html#cb17-24" aria-hidden="true" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
-<span id="cb17-25"><a href="coding.html#cb17-25" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb17-26"><a href="coding.html#cb17-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># code omitted</span></span>
-<span id="cb17-27"><a href="coding.html#cb17-27" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb17-28"><a href="coding.html#cb17-28" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb17-29"><a href="coding.html#cb17-29" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb17-30"><a href="coding.html#cb17-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-31"><a href="coding.html#cb17-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-32"><a href="coding.html#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the server ----</span></span>
-<span id="cb17-33"><a href="coding.html#cb17-33" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
-<span id="cb17-34"><a href="coding.html#cb17-34" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Info button ----</span></span>
-<span id="cb17-35"><a href="coding.html#cb17-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># code omitted</span></span>
-<span id="cb17-36"><a href="coding.html#cb17-36" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-37"><a href="coding.html#cb17-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-38"><a href="coding.html#cb17-38" aria-hidden="true" tabindex="-1"></a><span class="co"># boastApp Call ----</span></span>
-<span id="cb17-39"><a href="coding.html#cb17-39" aria-hidden="true" tabindex="-1"></a>boastUtils<span class="sc">::</span><span class="fu">boastApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="coding.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Packages ----</span></span>
+<span id="cb18-2"><a href="coding.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb18-3"><a href="coding.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="coding.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define gloabl constants, functions, data ----</span></span>
+<span id="cb18-5"><a href="coding.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="do">## None for this example</span></span>
+<span id="cb18-6"><a href="coding.html#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="coding.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the UI ----</span></span>
+<span id="cb18-8"><a href="coding.html#cb18-8" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb18-9"><a href="coding.html#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb18-10"><a href="coding.html#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Header ----</span></span>
+<span id="cb18-11"><a href="coding.html#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
+<span id="cb18-12"><a href="coding.html#cb18-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb18-13"><a href="coding.html#cb18-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb18-14"><a href="coding.html#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Sidebar ----</span></span>
+<span id="cb18-15"><a href="coding.html#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb18-16"><a href="coding.html#cb18-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb18-17"><a href="coding.html#cb18-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb18-18"><a href="coding.html#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Body ----</span></span>
+<span id="cb18-19"><a href="coding.html#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb18-20"><a href="coding.html#cb18-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb18-21"><a href="coding.html#cb18-21" aria-hidden="true" tabindex="-1"></a>        <span class="do">### Overview ----</span></span>
+<span id="cb18-22"><a href="coding.html#cb18-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
+<span id="cb18-23"><a href="coding.html#cb18-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb18-24"><a href="coding.html#cb18-24" aria-hidden="true" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
+<span id="cb18-25"><a href="coding.html#cb18-25" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb18-26"><a href="coding.html#cb18-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># code omitted</span></span>
+<span id="cb18-27"><a href="coding.html#cb18-27" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb18-28"><a href="coding.html#cb18-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-29"><a href="coding.html#cb18-29" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-30"><a href="coding.html#cb18-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-31"><a href="coding.html#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-32"><a href="coding.html#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the server ----</span></span>
+<span id="cb18-33"><a href="coding.html#cb18-33" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb18-34"><a href="coding.html#cb18-34" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Info button ----</span></span>
+<span id="cb18-35"><a href="coding.html#cb18-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># code omitted</span></span>
+<span id="cb18-36"><a href="coding.html#cb18-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-37"><a href="coding.html#cb18-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-38"><a href="coding.html#cb18-38" aria-hidden="true" tabindex="-1"></a><span class="co"># boastApp Call ----</span></span>
+<span id="cb18-39"><a href="coding.html#cb18-39" aria-hidden="true" tabindex="-1"></a>boastUtils<span class="sc">::</span><span class="fu">boastApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
 
 </div>
 </div>
@@ -951,7 +955,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
