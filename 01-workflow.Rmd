@@ -86,7 +86,7 @@ This is the easiest form of testing your Shiny app. Clicking the Run App button 
 
 This form of testing works much the same way as Self (Local) Testing, but instead of you playing with the app, you let someone else be in control. This allows you to observe how others are interacting with the app and how the app responds to those users. This is extremely useful since these others don't necessarily know what you were trying to do. Thus, they can act in ways you didn't think of, uncovering problems that were lurking.
 
-### Non-local Testing
+### Non-local Testing {#nonLocalTesting}
 
 This is the last stage of testing where instead of running your app on your computer, we move the app to a server and people interact with the app online. This is a critical step as this directly mimics how your app will be used. Thus, you can think of this as being our "beta testing". This allows us to have multiple people simultaneous interact with your app as well as check out your app on a mobile device.
 
