@@ -2,25 +2,25 @@
 
 # The Basics {#basics}
 
-Before you get too far into this Guide and building apps, we would like for you to take a moment and ensure that you have the following tools at your disposal. This will help you start on a path to success.
+Before we go any further, let's take a moment and ensure that you have the following tools at your disposal. This will help you start on a path to success.
 
 ## Getting Started Checklist {#checklist}
 
-1. Ensure that you have all of necessary accounts and if not, put in a request to Bob ([rpc5102](mailto:rpc5102@psu.edu)).  
+1. Ensure that you have all of necessary accounts and if not, contact Neil ([njh5464](mailto:njh5464@psu.edu)).  
     a. [GitHub](https://github.com/)  
     b. [EducationShinyAppTeam](https://github.com/EducationShinyAppTeam) 
-    c. [BOAST](https://teams.microsoft.com/l/team/19%3a8423bc25992a4451952d8312b497324d%40thread.skype/conversations?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e) in Microsoft Teams (tied to your PSU AccessID)
+    c. [BOAST:SU23-Discussions Channel](https://teams.microsoft.com/l/channel/19%3aa4d06b7dceab41d6a219c43b192f9ce6%40thread.skype/SU23-Discussions?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e) in Microsoft Teams (tied to your PSU AccessID)
 2. Ensure that you have all of the required software  
-    a. [`R` (version 4.0.5 minimum)](https://cloud.r-project.org/) 
+    a. [`R` (version 4.3.0 minimum)](https://cran.r-project.org/) 
         - You can check your current version by starting `R` and seeing what version is listed at the start or by typing `version` into the console
-    b. [RStudio Desktop (version 1.4 or higher; most current version preferred)](https://rstudio.com/products/rstudio/download/#download)
+    b. [RStudio Desktop (version 2023.03.0 Build 386 or higher; most current version preferred)](https://posit.co/download/rstudio-desktop/)
     c. [GitHub Desktop](https://desktop.github.com/)
 3. `R` Packages from CRAN--here are some basic packages that everyone will need; be sure to install their dependencies. You may copy the following code into your R console to install the packages.
 
 ```{r packageInstall, echo = TRUE, eval = FALSE}
 install.packages(
-    pkgs = c("devtools", "tidyverse", "shiny", "shinyBS", 
-             "shinydashboard", "shinyWidgets")
+    pkgs = c("devtools", "shiny", "shinydashboard", "shinyBS", 
+              "shinyWidgets", "devtools", "ggplot2", "tidyverse")
 )
 ```
 
@@ -42,11 +42,11 @@ devtools::install_github("EducationShinyAppTeam/boastUtils")
 
 ## A Quick Note on Packages (and R)
 
-All too often, people will install R and R packages and that is the end of it. However, both are living things: they change over time. To this end, we encourage you to get into the habit of checking for updates to R and packages on a regular basis (e.g., monthly). (You can also do the same with RStudio.) This will ensure that you are using the newest version of packages which can help mitagate errors.
+All too often, people will install R and R packages and that is the end of it. However, both are living things: they change over time. To this end, we encourage you to get into the habit of checking for updates to R and packages on a regular basis (e.g., monthly). (You can also do the same with RStudio.) This will ensure that you are using the newest version of packages which can help mitigate errors.
 
 For updating R, you can type `version` in your R console to see what version you have and then compare that to current version posted to [CRAN](https://cran.r-project.org/).
 
-For checking for updates to R packages that are on CRAN, click on the Update button of RStudio's packages window. (Typically found in the lower right quadrant.) You can also type `update.packages()` into your R console to run a check and then update packages. (You can also use `old.packages()` to see if you have any packages that have newer versions available.)
+To check for updates to R packages that are on CRAN, click on the Update button of RStudio's packages window. (Typically found in the lower right quadrant.) You can also type `update.packages()` into your R console to run a check and then update packages. (You can also use `old.packages()` to see if you have any packages that have newer versions available.)
 
 To update `boastUtils` you'll have to run the install command again. 
 
@@ -163,7 +163,7 @@ Two useful Coding Diagnostics deal with the assignment operator, `<-` and the pu
 1) Enter the Global Options of RStudio (see the Tools menu),
 2) Click on Code in the left-hand menu,
 3) Select the Diagnostics tab across the top,
-4) Make sure there is a checkmark in the boxes next to each of the following
+4) Make sure there is a check mark in the boxes next to each of the following
     + Show diagnostics for R
     + Enable diagnostics within R function calls
     + Check arguments to R function calls

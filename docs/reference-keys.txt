@@ -58,7 +58,7 @@ repo-naming
 testing
 self-local-testing
 other-local-testing
-non-local-testing
+nonLocalTesting
 using-shinyapps.io
 make-an-account
 connect-rstudio-to-shinyapps.io
