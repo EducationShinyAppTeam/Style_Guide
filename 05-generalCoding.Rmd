@@ -2,7 +2,7 @@
 
 # Coding Style {#coding}
 
-Now that you've gone through the Getting Ready to Code chapters, we can turn our attention to the first portion of the Style Guide--Coding Style. 
+Now that you've gone through the Getting Ready to Code chapters, we can turn our attention to the Coding portion of the Style Guide. 
 
 ## General Coding Style {#genCode}
 
@@ -16,18 +16,18 @@ When it comes to our Coding Style we strive to adhere to the following principle
 + Be kind to future coders
 + Make your code readable
 
-Yes, we realize that we stated "Make your code readable" three times. Readable code is the *__MOST__* important thing you can do. Even if you don't write the most efficient code, readable code will allow future students to examine your code and suggest improvements. Further, readable code will help you make sense of what *you* were trying to do when you come back to the app after several weeks or months. We will discuss all three of these principles in turn.
+Yes, we realize that we stated "Make your code readable" three times. Readable code is the *__MOST__* important thing you can do. Even if you don't write the most efficient code, readable code will allow future students to examine your code and suggest improvements. Further, readable code will help *you* make sense of what you were trying to do when you come back to the app after several weeks or months. We will discuss all three of these principles in turn.
 
 ## Make Your Code Readable {#readable}
 
-For us, making code readable boils down to three major aspects: formatting and spacing, naming, and being explicit. By way of an example, consider the following code:
+Code is __readable__ when a person looks at the code and forms a mental image of what the code aims to accomplish that is consistent with what happens when they run the code. Thus, through readable code one programmer communicates their goals and intent to another programmer. This second programmer may be someone entirely different than the first programmer or might be the the same programmer several weeks/months later. As an example, consider the following example bit of code:
 
 ```{r badCodeExample1, echo=TRUE, eval=FALSE}
 # Bad Code Example
 selectInput("input1","pick",listA,NULL,TRUE,FALSE,"80%",2)
 ```
 
-Just looking at this code, do you have any idea what it does? Let's look at a BOAST version of this code:
+If you were to guess what this line of code *achieves* (i.e., what the code creates and for what purpose), you might have a hard time. This Bad Code Example highlights problematic implementations of three aspects of readable code: 1) formatting and spacing, 2) naming, and 3) being explicit. Let's now examine a more readable version would look like.
 
 ```{r goodCodeExample1, echo=TRUE, eval=FALSE}
 # Good Code Example
@@ -43,15 +43,17 @@ selectInput(
 )
 ```
 
-While the above code takes more lines, it is infinitely more readable. Both sets of code call the same function, `selectInput`, to create a dropdown menu where the user can select individuals. In the Bad example, the user has to either 1) have the order of arguments memorized, or 2) guess what each argument does. In the Good example, each argument is listed out by name (e.g., `inputId` and `multiple`). While you might not know what each of these arguments controls (yet), you can at least see what values are being passed to each one. Further, you know that the choices are stored in the `nameList`, which is a much clearer name than `listA`. 
+While the Good Code Example uses many more lines than the Bad Code Example, the Good Code Example is infinitely more readable. The intent behind each example was to create a drop-down or "select" menu for the user to identify which individual(s) (i.e., one or more) from a list should be contacted. In the Bad Code Example, all of the arguments are put into one line; which value is for which argument depends on whether the reader has memorized the order of arguments for the `selectInput` function. Further, this assumes that the original programmer put the arguments into the correct order. In the Good Code Example, each argument is listed out by name (e.g., `inputId` and `multiple`). While you might not know what each argument controls (yet), you can at least see what values are being passed to each one. Further, you know that the choices are stored in the `nameList`, which is a much clearer name than `listA`. 
+
+The Good Code Example highlights all three elements of readable code. This is what we want each of you to strive for. Let's unpack these elements in a bit more depth.
 
 ### Formatting and Spacing {#formatSpace}
 
-One of the most important aspects of making code readable is proper formatting and spacing. A common belief is that the fewer the lines of code, the better the program. However, what often happens when people attempt to follow this belief is that they wind up with indecipherable code...even to themselves. Thus, they violate not only our Readability principle but also our Be Kind principle. 
+One key aspect of making code readable is proper formatting and spacing. There's a common belief among programmers that the fewer the lines of code, the better the program. What this belief leaves hidden is all of the work that goes into making a short program. What often happens when people attempt to follow this belief is that they wind up with indecipherable code, even to themselves. Thus, they violate not only our Readability principle but also our Be Kind principle. 
 
 #### Line Length
 
-With only a few exceptions (e.g., URLs), we want to keep each line to no more than 80 characters long. RStudio has a built-in tool to help you with this.
+With only a few exceptions (e.g., URLs), __we want to keep each line to no more than 80 characters long__. RStudio has a built-in tool to help you with this.
 
 1. Click on the Tools menu and select Global Options...
 2. Click on Code in the left menu that appears.
@@ -65,7 +67,7 @@ If you only have a few characters left, then finishing the line and making a lin
 
 #### Indentation
 
-Indenting your code is a great way to help with readability. RStudio will automatically do this for you. In the Good Example above, each of the arguments was indented 2 spaces; this helps convey that they are nested inside the object that was less indented. 
+Indenting your code is a great way to help with readability. RStudio will automatically do this for you. In the Good Code Example above, each of the arguments was indented 2 spaces; this helps convey that they are nested inside the object that was less indented. 
 
 You can (and will) have nested indentation, for example:
 ```{r goodCodeExample2, echo=TRUE, eval=FALSE}
@@ -92,9 +94,9 @@ ui <- list(
 
 We have several layers of indentation but by looking at the formatting, we can see which things are at which level and their relative ranks. For example, the Header, Sidebar, and Body are all at the same level (i.e., they are all aligned at the same indentation), while they are all subordinate to the Page and the user interface ("ui"). The tab called "overview" is part of the Body based on the indentation.
 
-One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4 brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)
+One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4+ brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)
 
-RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press Command + i; for Windows press Control + i. Keep in mind that this shortcut works only on one line at a time and always references the line just above the one you're in.
+RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press `Command + i`; for Windows press `Control + i`. Keep in mind that this shortcut works only on one line at a time and always references the line just above the one you're in.
 
 #### Function Calls
 
@@ -106,10 +108,10 @@ To format function calls, we will want to type the name of the function and the 
 ```{r goodCodeExample3, echo=TRUE, eval=FALSE}
 # renderIcon has three arguments: icon, width, and html
 output$markProb1 <- renderIcon(
-  icon = ifelse(
+  icon = ifelse( # Check to see if the user entered the correct value
     test = input$probVal1 == answer1,
     yes = "correct"
-    no = ifelse(
+    no = ifelse( # Check to see if the user was almost correct
       test = abs(input$probVal1 - answer1) <= 0.05,
       yes = "partial",
       no = "incorrect"
@@ -130,36 +132,42 @@ You'll also notice that we used `=` with all of the argument names and their val
 
 #### Spacing
 
-Spacing (or whitespace) refers to the portions of your line where you don't put any characters. In the bad example above, there was no whitespace in the code; everything ran together. Spacing acts in code exactly like it does in written languages. Whileapersoncanreadasentencewithnospaces, the sentence is much easier to read when we use proper spacing. 
+Spacing (or whitespace) refers to the portions of your line where you don't put any characters. In the Bad Code Example above, there was no whitespace in the code; everything ran together. Spacing acts in code exactly like it does in written languages. Whileapersoncanreadasentencewithnospaces, the sentence is much easier to read when we use proper spacing. Here are the spacing rules of our [Coding] Style Guide:
 
 + Put a space on both sides of `<-` and `=`.
 + Put a space after every comma, unless the comma ends a line.
 + Put a space after `if`, `else`, `else if`, and `for` (but not `ifelse`).
 + Put a space on both sides of comparison operators (e.g., `<`, `>=`, `!=`).
 + Put a space on both sides of mathematical operators (e.g., `+`, `*`, `^`, `%%`, `~`).
-+ Put a space between the condition (what's in parentheses) for an `if`/`for`/`else if` and the open/left curly brace `{`, then return to a new line.
-+ When closing a chunk of code with a curly brace, `}`, if you are moving into an `else` or `else if` chunk, place a space after the close brace and then type `else`. For example, `} else {` or `} else if (condition) {`. Otherwise, return to new line.
++ Put a space between the condition (what's in parentheses) for an `if`/`for`/`else if` and the open/left curly brace `{`, then return to a new line. (E.g., `if (example == 2) {`)
++ When closing a chunk of code with a curly brace, `}`, if you are moving into an `else` or `else if` chunk, place a space after the close brace and then type `else`. For example, `} else {` or `} else if (condition) {`. Otherwise, return to new line after placing the closing curly brace.
 
 ### Use Informative Names {#naming}
 
-Use informative names for variables and functions in your code. Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,
+Another way to make your code more readable is by using __informative names__. In the two coding examples, the function name `selectInput` conveys some useful information: this function is designed to act as a user input field and is a select type of input. In the Bad Coding Example, the programmer gave the input field the name `input1` while in the Good Coding Example, the given name was `selectedPeople`. The name `input1` does not convey much, if any, information while `selectedPeople` does. Whenever we create objects, we want to do so using informative names. 
 
+Use names that give another person a sense of what that variable represents (nouns) or what the function is supposed to do (action verbs). For example,
+
+- `selectedPeople` holds the individuals the user has actively chosen
 - `scoreMatrix` is a matrix that holds a set of scores  
 - `checkGame` is a function that checks the state of the current game
 
-Use [camelCase](https://en.wikipedia.org/wiki/Camel_case) for variable names and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no spaces or underscores ( \_ ) between them. (This is a departure from the tidyverse style.)  
+We depart from tidyverse style in that __we use [camelCase](https://en.wikipedia.org/wiki/Camel_case)__ for variable names and functions. The first word begins with a lowercase letter and additional words start with Capital letters with no spaces or underscores ( \_ ) between them.
 
-Avoid using the variable names from code that you're making use of from another app or script. For example, don't use `waitTimes` to hold your data on the number of correct answers a user has given. It is also good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid [namespace collision](https://en.wikipedia.org/wiki/Naming_collision).
+As you work on naming objects, try to avoid using re-using names or using uninformative names. This is especially tempting to do when you re-use code from another place. As an example, I once saw someone use an object called `waitTimes` to hold the number of correct answers the user had given. They inherited the name `waitTimes` from the code they had copied for something they had wanted to do with the number of correct answers. Instead of keeping the name `waitTimes`, a better approach would have been to find a more informative name such as `numCorrect` and use this in-place of all instances of `waitTimes`. Keep in mind that RStudio has Find-and-Replaced capabilities.
+
+Additionally, it is good practice to avoid re-using function names that appear in other libraries that are currently loaded to avoid [namespace collision](https://en.wikipedia.org/wiki/Naming_collision).
 
 ### Be Explicit {#explicit}
 
-One of the best practices a coder can do is to be explicit. And no, we don't mean that type of explicit. This links back to [Informative Naming](#naming) but goes a step beyond. `R` is a functional programming language. One of the important aspects of this is that functions in `R` obey the same rules as mathematical functions, especially multivariate functions. 
+A great way to make your code readable is by being explicit. This links back to [Informative Naming](#naming) but goes a step beyond. `R` runs into the same linguistic problems of any language. There are many implicit aspects which can cause problems for you if you don't take the time to think critically about them from the start.
+
 
 #### Function Arguments
 
-One implicit fact about functions that most students don't realize is that the order of a function's arguments are a matter of convention and is actually arbitrary. While we might define *f* as \(f(x,y) = x^2+3y\), we could call \(f(y=2,x=1)\) and get the same output as \(f(1,2)\) when we use the convention set up in the definition. This issue is exacerbated with functions in `R`.
+`R` is a functional programming language that follows the model of mathematical functions. Something that many individuals don't realize about functions, is that the order of arguments is actually a matter of choice (i.e., convention). For example, we might define a function *f* as \(f(x,y)=x^2+3y\). If we follow the order set up in the definition, we'd find that \(f(1,2)=7\). However, we could also call \(f(y=2, x=1)\) and still get the result of 7. This flexibility in arguments granted to us by being explicit in the second case. All functions in `R` have this flexibility.
 
-Therefore, when you pass values to the arguments of a function in `R`, you should be explicit and include the argument name in your code. For example,
+Therefore, when you pass values to the arguments of a function in `R`, __you should be explicit and include the argument name in your code__. For example,
 
 ```{r explicit1, eval = FALSE}
 bsButton(
@@ -173,10 +181,10 @@ bsButton(
 
 #### Function Definitions
 
-When you are defining your own function, it is always a good idea to explicitly state what the function spits out. This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use `return` as shown below:
+When you are defining your own function, it is always a good idea to explicitly state what the function spits out (i.e., the output). This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use `return` as shown below:
 
 ```{r explictReturn, echo=TRUE, eval=FALSE}
-collatz <- function(x, c = 1){
+collatz <- function(x, c = 0){
   if (x < 0 || x != round(x, digits = 0)) {
     return("Error: x must be a positive integer.")
   } else if (x == 1) {
@@ -212,13 +220,13 @@ __If you are ever unsure about how readable your code is, all you have to do is 
 > --- Blaise Pascal
 </div>
 
-Much like writing a short letter (paper or memo), writing efficient code takes time. Often coders first write *inefficient* code to translate their sketches into a working app. Then they can begin to make their code more efficient.
+Much like writing a short letter (paper or memo), writing efficient code takes time. Often coders first write *inefficient* code to translate their sketches into a working app. Then they can begin to make their code more efficient. There is no problem with writing inefficient code when you first get started; we all do this. What matters is that you go back through your code and work on making improvements.
 
 As you write more code, you'll get the hang of writing more efficient code from the start as well as seeing how to make existing code more efficient. Two ways that you can work towards efficient code is to practice DRY coding and to minimize your package usage.
 
 ### DRY Coding
 
-DRY coding is the principle of Don't Repeat Yourself when coding. If you find yourself writing the same code several times, then you should DRY your code and look for a way to make things more efficient. There are several different situations where DRY might come into play. Here are just a few cases.
+DRY coding is the principle of __Don't Repeat Yourself__ when coding. If you find yourself writing the same code several times, then you should DRY your code and look for a way to make things more efficient. There are several different situations where DRY might come into play. Here are just a few cases.
 
 #### Reoccuring Elements 
 
@@ -228,35 +236,39 @@ Suppose that you use the same list of choices for several different inputs. Rath
 
 Rather than retyping the grading logic several times, you can define a single function and then call that function. For example,
 
-   ```{r dryCode1a, echo=TRUE, eval=FALSE}
-   gradeProb <- function(user, answer, tolerance = 0.001, partial = 0.01){
-     outcome <- list()
-     if (abs(user - answer) <= tolerance) {
-       outcome$feedback <- "You are correct."
-       outcome$mark <- "correct"
-     } else if (abs(user - answer) <= partial) {
-       outcome$feedback <- "You are almost correct."
-       outcome$mark <- "partial"
-     } else {
-       outcome$feedback <- "Please try again."
-       outcome$mark <- "incorrect"
-     }
-     return(outcome)
-   }
-   ```
+```{r dryCode1a, echo=TRUE, eval=FALSE}
+gradeProb <- function(user, answer, tolerance = 0.001, partial = 0.01){
+  outcome <- list()
+  if (abs(user - answer) <= tolerance) {
+    outcome$feedback <- "You are correct."
+    outcome$mark <- "correct"
+  } else if (abs(user - answer) <= partial) {
+    outcome$feedback <- "You are almost correct."
+    outcome$mark <- "partial"
+  } else {
+    outcome$feedback <- "Please try again."
+    outcome$mark <- "incorrect"
+  }
+  return(outcome)
+}
+```
 
 The `gradeProb` function defined above will grade a user's [probability] value (i.e., `user`) against the answer key (`answer`) and return a list of two items: a feedback statement and the scoring mark to pass along to `renderIcon`. The following code shows us using the `gradeProb` function to generate the necessary outputs.
 
 ```{r dryCode1b, echo=TRUE, eval=FALSE}
+# Call the gradeProb function
 prob1 <- gradeProb(
   user = input$problem1,
   answer = answerKey[1]
   ## Omitting the remaining two arguments will use the default values
 )
+
+# Display the feedback on the problem
 output$problem1Feedback <- renderUI({
   prob1$feedback
 })
 
+# Set the feedback icon
 output$problem1Mark <- renderIcon(icon = prob1$mark)
 ```
 
@@ -264,7 +276,7 @@ output$problem1Mark <- renderIcon(icon = prob1$mark)
 
 If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph as an object is a good idea. For example,
 
-  ```{r dryCode2, echo=TRUE, eval=FALSE}
+```{r dryCode2, echo=TRUE, eval=FALSE}
   # Create a basic data frame that will cover the majority of your cases
   baseGraph <- ggplot(
     data = data.frame(
@@ -279,47 +291,50 @@ If you are building multiple graphs which have the same basic graph or are going
       title = element_text(size = 18),
       text = element_text(size = 16)
     )
-  ```
+```
 
 When we get to plotting our actual graphs, or updating the existing graph, we can call `baseGraph` and then add the elements we want, such as a scatter plot:
 
-  ```{r dryCode3, echo=TRUE, eval=FALSE}
-  plotData <- data.frame(
-    heights = rnorm(n = 50, mean = 70, sd = 3.5),
-    weights = rnorm(n = 50, mean = 100, sd = 8),
-    sex = sample(x = c("M", "F", "I"), size = 50, replace = TRUE)
-  )
-  baseGraph +
-    geom_point(
-      data = plotData,
-      mapping = aes(x = heights, y = weights, color = sex, shape = sex),
-      size = 2
-    ) +
-    theme(
-      legend.position = "right"
-    ) +
-    xlab("Height (in)") +
-    ylab("Weight (kg)") +
-    scale_color_discrete(
-      name = "Sex",
-      labels = c(
-        "M" = "Male",
-        "F" = "Female",
-        "I" = "Intersex/Other"
-      )
-    ) +
-    scale_shape_discrete(
-      name = "Sex",
-      labels = c(
-        "M" = "Male",
-        "F" = "Female",
-        "I" = "Intersex/Other"
-      )
-    ) +
-    labs(
-      title = "Height and Weight by Sex"
+```{r dryCode3, echo=TRUE, eval=FALSE}
+# Plot Specific data
+plotData <- data.frame(
+  heights = rnorm(n = 50, mean = 70, sd = 3.5),
+  weights = rnorm(n = 50, mean = 100, sd = 8),
+  sex = sample(x = c("M", "F", "I"), size = 50, replace = TRUE)
+)
+
+# Build the new plot as layers on your base plot
+baseGraph +
+  geom_point(
+    data = plotData,
+    mapping = aes(x = heights, y = weights, color = sex, shape = sex),
+    size = 2
+  ) +
+  theme(
+    legend.position = "right"
+  ) +
+  xlab("Height (in)") +
+  ylab("Weight (kg)") +
+  scale_color_discrete(
+    name = "Sex",
+    labels = c(
+      "M" = "Male",
+      "F" = "Female",
+      "I" = "Intersex/Other"
     )
-  ```
+  ) +
+  scale_shape_discrete(
+    name = "Sex",
+    labels = c(
+      "M" = "Male",
+      "F" = "Female",
+      "I" = "Intersex/Other"
+    )
+  ) +
+  labs(
+    title = "Height and Weight by Sex"
+  )
+```
 
 Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary. 
 
@@ -356,9 +371,9 @@ Rather than simply calling the `bsButton` function in their code and passing the
 A second way to make your code more efficient is through the use of packages. When you load a package you want to be sure that 
 
 1. the package you're loading is absolutely necessary, and
-2. you maximize your usage of what packages you do load.
+2. you maximize your usage of what packages you load.
 
-Make sure that you absolutely have to use a particular package before you do. Check to see if what you're trying to do can be done in a package you're already using or in base R. 
+Each package you load in your app adds to the app's overhead. When we deploy (publish) each app, every called package (and their dependencies) has to get uploaded/built on the server in the app's dedicated space. Thus, make sure that you absolutely have to use each package you've listed. If possible, check to see if what you're trying to do can be done in a package you're already using or in base R. 
 
 A previous student loaded the `scales` package to use the `percent` function to convert a decimal into a percentage. This was problematic for a couple reasons: the `percent` function has been depreciated (i.e., the package developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: `paste0(0.1 * 100, "%")`. If needed in several places, they could have written their own function:
 
@@ -370,7 +385,7 @@ makePercent <- function(proportion){
 
 This is not to say that you can't make use of a new package. This guideline's purpose is to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.
 
-To help you avoid name masking (i.e., [Section \@ref(explicit)](#explicit)), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use `dplyr::filter([arguments])` instead of just `filter([arguments])`. If you are using a common package and have no risk of name masking, you can dispense with this. For example, you can use `ggplot([arguments])` rather than `ggplot2::ggplot([arugments])`.
+To help you avoid name masking (i.e., [Section \@ref(explicit)](#explicit)), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use `dplyr::select([arguments])` instead of just `select([arguments])`. If you are using a common package and have no risk of name masking, you can dispense with this. For example, you can use `ggplot([arguments])` rather than `ggplot2::ggplot([arugments])`.
 
 You can also run a `funchir::stale_package_check` on your `app.R` file to see which packages you're loading but might not actually use in your code. These stale packages may then be deleted out from your library call.
 
@@ -448,3 +463,7 @@ server <- function(input, output, session){
 # boastApp Call ----
 boastUtils::boastApp(ui = ui, server = server)
 ```
+
+This example has 11 jump points; can you list them all?
+
+Any time you define a custom function, a jump point to that function definition will automatically be created. Hence the line `server <- function(input, output, session){` becomes the 11th jump point.
