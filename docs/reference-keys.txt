@@ -38,6 +38,7 @@ fig:visTabsLayout
 fig:hiddenTabsLayout
 fig:setsLayout
 fig:tictactoeLayout
+fig:escapeRoomLayout
 fig:marksb
 fig:sweetAlert3
 fig:boastPalette
@@ -219,7 +220,7 @@ body
 the-overview-page
 creating-the-overview-page
 whats-needed-in-the-server-defintion
-a-prerequisites-page
+the-prerequisites-page
 types-of-prerequisites
 text-links-in-prerequisites-and-beyond
 creating-a-prerequisites-page
@@ -237,7 +238,7 @@ the-classical-layout
 visTabs
 hiddenTabs
 sets-of-controls
-tic-tac-toe
+other-layouts
 innerTabs
 create-the-tab-set
 create-the-tabs

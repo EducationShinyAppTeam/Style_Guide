@@ -51,6 +51,8 @@ The most common coding problems to arise with `fluidRow` and `column` are:
 + Not setting `width` to an integer between 1 and 12. You must provide a value for `width` in each `column` call.
 + Not checking that all `width` and `offset` totals add to 12 within a single `fluidRow`. Look through your `fluidRow` and add up all of the `width` and `offset` values. You want that sum to be 12 so that you know that everything will be appropriately arranged. If you go over 12, you might get an error and/or your app might scale/wrap elements in strange ways. Similarly for if you are under 12.
 
+Note: the dashboard environment automatically allows for `fluidRow` to be used. Thus, __you do not need to include any `fluidPage` calls in your app.__
+
 ### Nesting `fluidRow`
 
 While it is technically possible to nest `fluidRow` calls, we do not recommend doing so. This could look something like `fluidRow(column(width = 3, fluidRow(...)),...)`. This can create serious navigational problems for any users who rely on using their keyboard rather than a mouse to move through and interact with your App. If you find yourself wanting to nest `fluidRow`, stop yourself and reach out to Neil and Bob for alternative ideas.

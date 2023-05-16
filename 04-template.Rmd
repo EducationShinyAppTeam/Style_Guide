@@ -123,7 +123,7 @@ You may see a file called `screenshot.png`. This is a placeholder file that adds
 
 The final section of the `README.md` file is the App Description. You'll leave the line `# App Description` as is, and type up the description of your app in the space below. You'll want this description to be as accurate and as inviting as possible. This text will be used not only on your app's repo page, but also as the text in the Book. You will want to make sure that you keep this description and the one in the `DESCRIPTION` file consistent with each other.
 
-## The `app.R`  File{#appR}
+## The `app.R`  File {#appR}
 
 This is where you'll do the vast majority of your work. We will not spend too much time describing the ins and outs of this file here (we'll do so in later chapters). However, we do want to mention the five components to any BOAST `app.R` file.
 

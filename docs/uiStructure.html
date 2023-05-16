@@ -350,7 +350,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4" data-path="uiStructure.html"><a href="uiStructure.html#body"><i class="fa fa-check"></i><b>9.4</b> Dashboard Body</a>
 <ul>
 <li class="chapter" data-level="9.4.1" data-path="uiStructure.html"><a href="uiStructure.html#the-overview-page"><i class="fa fa-check"></i><b>9.4.1</b> The Overview Page</a></li>
-<li class="chapter" data-level="9.4.2" data-path="uiStructure.html"><a href="uiStructure.html#a-prerequisites-page"><i class="fa fa-check"></i><b>9.4.2</b> A Prerequisites Page</a></li>
+<li class="chapter" data-level="9.4.2" data-path="uiStructure.html"><a href="uiStructure.html#the-prerequisites-page"><i class="fa fa-check"></i><b>9.4.2</b> The Prerequisites Page</a></li>
 <li class="chapter" data-level="9.4.3" data-path="uiStructure.html"><a href="uiStructure.html#activity-pages"><i class="fa fa-check"></i><b>9.4.3</b> Activity Pages</a></li>
 <li class="chapter" data-level="9.4.4" data-path="uiStructure.html"><a href="uiStructure.html#refPage"><i class="fa fa-check"></i><b>9.4.4</b> References Page</a></li>
 </ul></li>
@@ -361,7 +361,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5.3" data-path="uiStructure.html"><a href="uiStructure.html#visTabs"><i class="fa fa-check"></i><b>9.5.3</b> Visible Tabs</a></li>
 <li class="chapter" data-level="9.5.4" data-path="uiStructure.html"><a href="uiStructure.html#hiddenTabs"><i class="fa fa-check"></i><b>9.5.4</b> Hidden Tabs</a></li>
 <li class="chapter" data-level="9.5.5" data-path="uiStructure.html"><a href="uiStructure.html#sets-of-controls"><i class="fa fa-check"></i><b>9.5.5</b> Sets of Controls</a></li>
-<li class="chapter" data-level="9.5.6" data-path="uiStructure.html"><a href="uiStructure.html#tic-tac-toe"><i class="fa fa-check"></i><b>9.5.6</b> Tic-Tac-Toe</a></li>
+<li class="chapter" data-level="9.5.6" data-path="uiStructure.html"><a href="uiStructure.html#other-layouts"><i class="fa fa-check"></i><b>9.5.6</b> Other Layouts</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="uiStructure.html"><a href="uiStructure.html#innerTabs"><i class="fa fa-check"></i><b>9.6</b> Tab Sets</a>
 <ul>
@@ -520,21 +520,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="uiStructure" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">Chapter 9</span> User Interface Structure<a href="uiStructure.html#uiStructure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we will be focusing on the layout aspect of how your App looks.</p>
-<p>A good number of the elements of the layout will have a direct consequence on your coding. For instance, in the section on <a href="#orgCode">Organizing Your Code</a>, you saw that the UI definition needed to come before the Server definition. This section defines additional organizational structure to your code as it pertains to the layout of your App.</p>
-<p>As a reminder, one of the most important benefits of using the <code>boastApp</code> function from the <code>boastUtils</code> package is that is that certain aspects of Visual Appearance will be automatically handled for you. However, you still need to adhere to this Style Guide.</p>
+<p>In this chapter, we will be focusing on the layout aspect of how your app looks.</p>
+<p>A good number of the elements of the layout will have a direct consequence on your coding. For instance, in the section on <a href="template.html#appR">the <code>app.R</code> file</a>, you saw that the UI definition comes before the Server definition. This section defines additional organizational structure to your code as it pertains to the layout of your app.</p>
+<p>As a reminder, one of the most important benefits of using the <code>boastapp</code> function from the <code>boastUtils</code> package is that is that certain aspects of Visual appearance will be automatically handled for you. However, you still need to adhere to this Style Guide.</p>
 <div id="dashboard" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Dashboard<a href="uiStructure.html#dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>All apps will make use of a Dashboard structure. This divides the visual appearance of each App into three main areas.</p>
+<p>All apps will make use of a Dashboard structure. This divides the visual appearance of each app into three main areas.</p>
 <ul>
-<li>Across the top of the App will be the Header</li>
-<li>Along the left side of the App will be the navigation list (the Sidebar) where you will list the various Pages of your App</li>
-<li>The last area is the Body; this is where all content will appear</li>
+<li>Across the top of the app will be the Header.</li>
+<li>Along the left side of the app will be the navigation list (the Sidebar) where you will list the various Pages of your app.</li>
+<li>The last area is the Body; this is where all content will appear.</li>
 </ul>
-<p>Several of the older apps will have outdated UI calls including, but not limited to: <code>shinyUI</code> and <code>navbarPage</code>. These functions should no longer be used; apps that use them need to be updated to become compliant with this Style Guide.</p>
+<p>Several of the older apps will have outdated UI calls including, but not limited to, <code>shinyUI</code>, <code>navbarPage</code>, and/or <code>fluidPage</code>. <strong>These functions should no longer be used</strong>; apps that use them need to be updated to become compliant with this Style Guide.</p>
 <div id="creating-the-dashboard" class="section level3 hasAnchor" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Creating the Dashboard<a href="uiStructure.html#creating-the-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Creating the overarching Dashboard layout in your App is actually quit easy:</p>
+<p>Creating the overarching Dashboard layout in your app is straightforward:</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="uiStructure.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required package</span></span>
 <span id="cb44-2"><a href="uiStructure.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
 <span id="cb44-3"><a href="uiStructure.html#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -546,7 +546,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb44-9"><a href="uiStructure.html#cb44-9" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb44-10"><a href="uiStructure.html#cb44-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>The <code>dashboardPage</code> function will wrap around the rest of your UI element, thereby establishing the overarching structure. Three of this function’s arguments (<code>header</code>, <code>sidebar</code>, and <code>body</code>) will be covered in following sections. We do not need to worry about the <code>title</code> argument as this will be controlled by the Dashboard Header.</p>
-<p>The one argument that you must explicitly set for the <code>dashboardPage</code> is the <code>skin</code> argument. This argument sets the overall color theme for your App. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout.</p>
+<p>The one argument that you must explicitly set for the <code>dashboardPage</code> is the <code>skin</code> argument. This argument sets the overall color theme for your app. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout.</p>
 </div>
 <div id="colorUI" class="section level3 hasAnchor" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Color in the User Interface<a href="uiStructure.html#colorUI" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -557,17 +557,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Text coloring</li>
 <li>Coloring of Controls (including buttons, sliders, and other input fields)</li>
 </ul>
-<p>By using CSS, especially through <code>boastApp</code>, you’ll be able to ensure that there is consistent coloring throughout your App.</p>
+<p>By using CSS, especially through <code>boastapp</code>, you’ll be able to ensure that there is consistent coloring throughout your app.</p>
 <div id="implementing-a-color-theme" class="section level4 hasAnchor" number="9.1.2.1">
 <h4><span class="header-section-number">9.1.2.1</span> Implementing a Color Theme<a href="uiStructure.html#implementing-a-color-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>To activate a color theme is a simple process, especially if you are following this Style Guide and using the <code>boastUtils</code> package. (In the rare case where you are using separate ui.R and server.R files, make sure that the boast.css call is in the ui.R file.</p>
-<p>In your App’s code, go to where you first call the function <code>dashboardPage</code>. Then, as the first argument you’ll type <code>skin = "[theme]"</code> before moving on the next argument, <code>dashboardHeader</code>.</p>
-<p>You will replace <code>[theme]</code> with one of the following: <code>blue</code>, <code>green</code>, <code>purple</code>, <code>yellow</code>, <code>red</code> or <code>black</code>. The choice will be determined by the color assigned to that chapter. This is all you have to do.</p>
-<p>If you are unsure what color to put, use <code>blue</code> as the default.</p>
+<p>To activate a color theme is a simple process, especially if you are following this Style Guide and using the <code>boastUtils</code> package.</p>
+<p>In your app’s code, go to where you first call the function <code>dashboardPage</code>. Then, as the first argument you’ll type <code>skin = "[theme]"</code> before moving on the next argument, <code>dashboardHeader</code>.</p>
+<p>You will replace <code>[theme]</code> with one of the following: <code>blue</code>, <code>green</code>, <code>purple</code>, <code>yellow</code>, <code>red</code> or <code>black</code>. The choice will be determined by the color assigned to that chapter. This is all you have to do. If you are unsure what color to put, use <code>blue</code> as the default.</p>
 </div>
 <div id="the-themes" class="section level4 hasAnchor" number="9.1.2.2">
 <h4><span class="header-section-number">9.1.2.2</span> The Themes<a href="uiStructure.html#the-themes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>There are six color themes that we’ve currently made. The names of the themes are a general indication of coloring, with one exception. The <code>black</code> theme is not black but rather an aqua/teal set. The themes are typically three colors (four for <code>blue</code>) and based upon the Penn State Palettes. Non-Penn State colors will be denoted with asterisks.</p>
+<p>We currently have six color themes. The names of the themes are a general indication of coloring, with one exception. The <code>black</code> theme is not black but rather an aqua/teal set. The themes are typically three or four colors based upon the Penn State Palettes. Non-Penn State colors will be denoted with asterisks.</p>
 <p>All of the themes have been checked against 8 different forms of color blindness.</p>
 <div id="blue" class="section level5 hasAnchor" number="9.1.2.2.1">
 <h5><span class="header-section-number">9.1.2.2.1</span> Blue<a href="uiStructure.html#blue" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -767,27 +766,27 @@ Figure 9.24: Sliders Using the Red Palette
 </div>
 <div id="header" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Dashboard Header<a href="uiStructure.html#header" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each Dashboard Header contains only a couple of elements. The most important of these will be a [shortened] Title of your App. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon with a link to a user survey back towards the center.</p>
-<p>Additional icons might be included to the left of the Home and Survey icons. However, these icons remain the same for all Tabs/pages of your App and are thus are not appropriate for Tab/page specific information.</p>
-<p>There should not be any additional elements in the Dashboard Header. Any links for navigate in your App should appear in the Sidebar on the left edge.</p>
+<p>Each Dashboard Header contains only a couple of elements. The most important of these will be a short title of your app. This will automatically be followed by the sidebar collapse/expand button. At the far right, you will then include a link to the home page of BOAST using the Home icon with a link to a user survey back towards the center.</p>
+<p>Additional icons might be included to the left of the Home and Survey icons. However, these icons remain the same for all Tabs/pages of your app and are thus are not appropriate for Tab/page specific information.</p>
+<p>There should not be any additional elements in the Dashboard Header. Any links for navigate in your app should appear in the Sidebar on the left edge.</p>
 <p>The width of the Title component of the Header should be 250; <code>titleWidth = 250</code>.</p>
 <div id="creating-the-dashboard-header" class="section level3 hasAnchor" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Creating the Dashboard Header<a href="uiStructure.html#creating-the-dashboard-header" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You will use the same structure regardless if you are using <code>app.R</code> or <code>ui.R</code>.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="uiStructure.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
 <span id="cb45-2"><a href="uiStructure.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardHeader</span>(</span>
-<span id="cb45-3"><a href="uiStructure.html#cb45-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;App Template&quot;</span>, <span class="co"># You may use a shortened form of the title here</span></span>
+<span id="cb45-3"><a href="uiStructure.html#cb45-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;app Template&quot;</span>, <span class="co"># Use a shortened form of the title here</span></span>
 <span id="cb45-4"><a href="uiStructure.html#cb45-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">titleWidth =</span> <span class="dv">250</span>,</span>
 <span id="cb45-5"><a href="uiStructure.html#cb45-5" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(<span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="fu">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="fu">icon</span>(<span class="st">&quot;info&quot;</span>))), <span class="co"># Optional</span></span>
 <span id="cb45-6"><a href="uiStructure.html#cb45-6" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The next two are required</span></span>
 <span id="cb45-7"><a href="uiStructure.html#cb45-7" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
 <span id="cb45-8"><a href="uiStructure.html#cb45-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
-<span id="cb45-9"><a href="uiStructure.html#cb45-9" aria-hidden="true" tabindex="-1"></a>        boastUtils<span class="sc">::</span><span class="fu">surveyLink</span>(<span class="at">name =</span> <span class="st">&quot;App_Template&quot;</span>) <span class="co"># Replace App_Template with the repo name for your app </span></span>
+<span id="cb45-9"><a href="uiStructure.html#cb45-9" aria-hidden="true" tabindex="-1"></a>        boastUtils<span class="sc">::</span><span class="fu">surveyLink</span>(<span class="at">name =</span> <span class="st">&quot;app_Template&quot;</span>) <span class="co"># Replace app_Template with the repo name for your app </span></span>
 <span id="cb45-10"><a href="uiStructure.html#cb45-10" aria-hidden="true" tabindex="-1"></a>      ),</span>
 <span id="cb45-11"><a href="uiStructure.html#cb45-11" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
 <span id="cb45-12"><a href="uiStructure.html#cb45-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
 <span id="cb45-13"><a href="uiStructure.html#cb45-13" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">a</span>(<span class="at">href =</span> <span class="st">&#39;https://shinyapps.science.psu.edu/&#39;</span>,</span>
-<span id="cb45-14"><a href="uiStructure.html#cb45-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">icon</span>(<span class="st">&quot;home&quot;</span>)</span>
+<span id="cb45-14"><a href="uiStructure.html#cb45-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">icon</span>(<span class="st">&quot;house&quot;</span>)</span>
 <span id="cb45-15"><a href="uiStructure.html#cb45-15" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb45-16"><a href="uiStructure.html#cb45-16" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb45-17"><a href="uiStructure.html#cb45-17" aria-hidden="true" tabindex="-1"></a>    )</span>
@@ -796,12 +795,12 @@ Figure 9.24: Sliders Using the Red Palette
 <p>A couple of things to notice:</p>
 <ul>
 <li>The <code>dashboardHeader</code> acts as a list environment, so it is safe to use <code>tags$li</code> here even though there isn’t a <code>tags$ol</code> or <code>tags$ul</code>.</li>
-<li>There are not a lot of elements to the Header. We only add additional elements here if it is something static (i.e., un-changing) that is necessary for all pages of your App.</li>
+<li>There are not a lot of elements to the Header. We only add additional elements here if it is something static (i.e., un-changing) that is necessary for all pages of your app.</li>
 <li>You will need to set <code>class = "dropdown"</code> for each element after the <code>title</code> and <code>titleWidth</code>.</li>
-<li>The <code>info</code> icon is optional; if you use this keep in mind two things:
+<li>The <code>info</code> icon has become a standard part of our apps
 <ul>
 <li>You will need to define what the link does in the <code>server</code> definition.</li>
-<li>This link’s action remains the same for all tabs of your app. Thus, you should not use this to store or be the main conveyance of critical information/instructions for using a particular tab of your App.</li>
+<li>This link’s action remains the same for all tabs of your app. Thus, you should not use this to store or be the main conveyance of critical information/instructions for using a particular tab of your app.</li>
 </ul></li>
 <li>The second to last element of the Header will always be the Survey link icon. This will take the user to a Qualtrics survey where they can provide us with feedback.
 <ul>
@@ -812,40 +811,42 @@ Figure 9.24: Sliders Using the Red Palette
 </div>
 <div id="whats-needed-in-the-server-definition" class="section level3 hasAnchor" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you just have a bare bones Header (i.e., title, survey link, and home button), you do not need to add anything special to your server definition.</p>
-<p>If you have anything else (e.g., an Info button), you will need to add additional code to your server definition. The code you add will depend upon the element. In general, for alert messages, we recommend that you use <code>shinyWidgets::sendSweetAlert</code>. Here’s a generic example of what could be used for the Info button.</p>
+<p>If you have the basic header, then the only thing that you’ll need to be sure to add in your app’s server definition, is code for the info button. For this we use the <code>sendSweetAlert</code> function from the <code>shinyWidgets</code> package. Here’s a generic example of what could be used for the Info button.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="uiStructure.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required Packages</span></span>
 <span id="cb46-2"><a href="uiStructure.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyWidgets)</span>
 <span id="cb46-3"><a href="uiStructure.html#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="uiStructure.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Move to your server definition</span></span>
-<span id="cb46-5"><a href="uiStructure.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Either look for server &lt;- function(input, output, session) or open the server.R file.</span></span>
-<span id="cb46-6"><a href="uiStructure.html#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-7"><a href="uiStructure.html#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb46-8"><a href="uiStructure.html#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-9"><a href="uiStructure.html#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="fu">observeEvent</span>(input<span class="sc">$</span>info, { <span class="co"># Replace &quot;info&quot; with the appropriate id</span></span>
-<span id="cb46-10"><a href="uiStructure.html#cb46-10" aria-hidden="true" tabindex="-1"></a>  shinyWidgets<span class="sc">::</span><span class="fu">sendSweetAlert</span>(</span>
-<span id="cb46-11"><a href="uiStructure.html#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">session =</span> session, <span class="co"># This should stay as is</span></span>
-<span id="cb46-12"><a href="uiStructure.html#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;App Information&quot;</span>,</span>
-<span id="cb46-13"><a href="uiStructure.html#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
-<span id="cb46-14"><a href="uiStructure.html#cb46-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
-<span id="cb46-15"><a href="uiStructure.html#cb46-15" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;improve code reability.&quot;</span>),</span>
-<span id="cb46-16"><a href="uiStructure.html#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;info&quot;</span> <span class="co"># This option will depend upon the nature of your message</span></span>
-<span id="cb46-17"><a href="uiStructure.html#cb46-17" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb46-18"><a href="uiStructure.html#cb46-18" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<span id="cb46-4"><a href="uiStructure.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb46-5"><a href="uiStructure.html#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="uiStructure.html#cb46-6" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb46-7"><a href="uiStructure.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Set up Info button ----</span></span>
+<span id="cb46-8"><a href="uiStructure.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
+<span id="cb46-9"><a href="uiStructure.html#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>info,</span>
+<span id="cb46-10"><a href="uiStructure.html#cb46-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">handlerExpr =</span> { </span>
+<span id="cb46-11"><a href="uiStructure.html#cb46-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sendSweetAlert</span>(</span>
+<span id="cb46-12"><a href="uiStructure.html#cb46-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">session =</span> session, <span class="co"># This should stay as is</span></span>
+<span id="cb46-13"><a href="uiStructure.html#cb46-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;info&quot;</span>, <span class="co"># This option will depend upon the nature of your message</span></span>
+<span id="cb46-14"><a href="uiStructure.html#cb46-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;app Information&quot;</span>,</span>
+<span id="cb46-15"><a href="uiStructure.html#cb46-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
+<span id="cb46-16"><a href="uiStructure.html#cb46-16" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
+<span id="cb46-17"><a href="uiStructure.html#cb46-17" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;improve code reability.&quot;</span>)</span>
+<span id="cb46-18"><a href="uiStructure.html#cb46-18" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb46-19"><a href="uiStructure.html#cb46-19" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb46-20"><a href="uiStructure.html#cb46-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb46-21"><a href="uiStructure.html#cb46-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>type</code> argument will take one of several options. use the one that best aligns with your purposes.</p>
 <ul>
 <li><code>info</code>: If you are just conveying some general information to your user, you’ll use this value. This is the value that we will use in the vast majority of cases.</li>
-<li><code>error</code>: Use this if your message tells the user that have committed some action that causes your App to fail.</li>
+<li><code>error</code>: Use this if your message tells the user that have committed some action that causes your app to fail.</li>
 <li><code>question</code>: Use with an alert where you are asking the user to respond to a question.</li>
 <li><code>warning</code>: If you want to give your user the opportunity to stop from doing something destructive (e.g., deleting data values), this would be appropriate.</li>
 <li><code>success</code>: Use this if your message let’s the user know that something worked correctly.</li>
 </ul>
-<p><em>Note: these buttons/links will throw an error when using the WAVE tool. This is expected at this time.</em></p>
+<p><em>Note: these buttons/links will throw an error (Empty Link text) when using the WAVE tool. This is expected at this time.</em></p>
 </div>
 </div>
 <div id="sidebar" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">9.3</span> Dashboard Sidebar<a href="uiStructure.html#sidebar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Exploration, Challenge, or Game. We refer to these as <a href="uiStructure.html#innerTabs">Tabs Inside the Body or Tabs</a> and are covered in their own section.</p>
+<p>The Sidebar is the main navigational tool for your users. Thus, if you want your user to access a certain tab/page, you must be sure to include this in the Sidebar. The only exception is if you are creating a series of levels inside the same Explore, Challenge, or Game. We refer to these as <a href="uiStructure.html#innerTabs">Tab Sets or Inner Tabs</a> and are covered in their own section.</p>
 <p>The Sidebar should have a width of 250, (<code>width = 250</code>).</p>
 <p>For full descriptions of each type of Page, please refer to the <a href="uiStructure.html#body">Dashboard Body Section</a>.</p>
 <div id="creating-the-dashboard-sidebar" class="section level3 hasAnchor" number="9.3.1">
@@ -856,55 +857,61 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb47-3"><a href="uiStructure.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">250</span>,</span>
 <span id="cb47-4"><a href="uiStructure.html#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarMenu</span>(</span>
 <span id="cb47-5"><a href="uiStructure.html#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># Use &quot;pages&quot; to name the menu</span></span>
-<span id="cb47-6"><a href="uiStructure.html#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Overivew is REQUIRED</span></span>
-<span id="cb47-7"><a href="uiStructure.html#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;dashboard&quot;</span>)),</span>
-<span id="cb47-8"><a href="uiStructure.html#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prerequisites is optional</span></span>
+<span id="cb47-6"><a href="uiStructure.html#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Overview is REQUIRED</span></span>
+<span id="cb47-7"><a href="uiStructure.html#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gauge-high&quot;</span>)),</span>
+<span id="cb47-8"><a href="uiStructure.html#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># A prerequisites page is standard</span></span>
 <span id="cb47-9"><a href="uiStructure.html#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Prerequisites&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book&quot;</span>)),</span>
-<span id="cb47-10"><a href="uiStructure.html#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># At least one of the next four is REQUIRED</span></span>
-<span id="cb47-11"><a href="uiStructure.html#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;explore&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
-<span id="cb47-12"><a href="uiStructure.html#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;challenge&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
-<span id="cb47-13"><a href="uiStructure.html#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;game&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
-<span id="cb47-14"><a href="uiStructure.html#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Wizard&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;hat-wizard&quot;</span>)),</span>
-<span id="cb47-15"><a href="uiStructure.html#cb47-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># References is REQUIRED</span></span>
-<span id="cb47-16"><a href="uiStructure.html#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
-<span id="cb47-17"><a href="uiStructure.html#cb47-17" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb47-18"><a href="uiStructure.html#cb47-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The sidebar must end with the following code, exactly</span></span>
-<span id="cb47-19"><a href="uiStructure.html#cb47-19" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">div</span>(</span>
-<span id="cb47-20"><a href="uiStructure.html#cb47-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
-<span id="cb47-21"><a href="uiStructure.html#cb47-21" aria-hidden="true" tabindex="-1"></a>    boastUtils<span class="sc">::</span><span class="fu">sidebarFooter</span>()</span>
-<span id="cb47-22"><a href="uiStructure.html#cb47-22" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb47-23"><a href="uiStructure.html#cb47-23" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb47-24"><a href="uiStructure.html#cb47-24" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<span id="cb47-10"><a href="uiStructure.html#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># An Example page is optional but should always be accompanied by another page</span></span>
+<span id="cb47-11"><a href="uiStructure.html#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Example&quot;</span>, <span class="at">tabname =</span> <span class="st">&quot;example&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book-open-reader&quot;</span>)),</span>
+<span id="cb47-12"><a href="uiStructure.html#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># At least one of the next four is REQUIRED</span></span>
+<span id="cb47-13"><a href="uiStructure.html#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;explore&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
+<span id="cb47-14"><a href="uiStructure.html#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;challenge&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
+<span id="cb47-15"><a href="uiStructure.html#cb47-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;game&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
+<span id="cb47-16"><a href="uiStructure.html#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Wizard&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;hat-wizard&quot;</span>)),</span>
+<span id="cb47-17"><a href="uiStructure.html#cb47-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># References is REQUIRED</span></span>
+<span id="cb47-18"><a href="uiStructure.html#cb47-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
+<span id="cb47-19"><a href="uiStructure.html#cb47-19" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb47-20"><a href="uiStructure.html#cb47-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The sidebar must end with the following code, exactly</span></span>
+<span id="cb47-21"><a href="uiStructure.html#cb47-21" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">div</span>(</span>
+<span id="cb47-22"><a href="uiStructure.html#cb47-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb47-23"><a href="uiStructure.html#cb47-23" aria-hidden="true" tabindex="-1"></a>    boastUtils<span class="sc">::</span><span class="fu">sidebarFooter</span>()</span>
+<span id="cb47-24"><a href="uiStructure.html#cb47-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb47-25"><a href="uiStructure.html#cb47-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb47-26"><a href="uiStructure.html#cb47-26" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>Notice that after setting the <code>width</code> of the Sidebar, you will need to call the <code>sidebarMenu</code> function. This will create the appropriate structure for your Sidebar.</p>
 </div>
 <div id="sidebar-order" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> Sidebar Order<a href="uiStructure.html#sidebar-order" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To ensure consistency across all apps, the Sidebar needs to have the following order:</p>
 <ol style="list-style-type: decimal">
-<li>The Overview Tab should always come first.</li>
-<li>If used, a Prerequisites Tab will come second.</li>
-<li>An Activity Tab (Explore, Challenge, Game, Wizard, etc.) will come next.</li>
-<li>If there are multiple Activity Tabs, then
+<li>The Overview page should always come first.</li>
+<li>The Prerequisites page will come second.</li>
+<li>Example pages, if present, should come before their associated activity pages.</li>
+<li>An Activity pages (Explore, Challenge, Game, Wizard, etc.) will come next.</li>
+<li>If there are multiple Activity pages, then
 <ol style="list-style-type: lower-alpha">
-<li>Order by Concept so that Tabs dealing with the same idea are together,</li>
+<li>Order by Concept so that pages dealing with the same idea are together,</li>
 <li>Then order by Explore, Challenge, then Game</li>
-<li>If a Game Tab covers multiple Explore/Challenge Tabs, place after the last of the Explore/Challenge Tabs</li>
-<li>For a set of Activity Tabs of the same type (e.g., three Explore Tabs), the order will be up to you and the learning goals for your App</li>
+<li>Wizard pages are typically stand alone pages and will come after the other type of Activity pages.</li>
+<li>If a Game covers multiple Explore/Challenge pages, place after the last of the related Explore/Challenge pages.</li>
+<li>For a set of Activity pages of the same type (e.g., three Explore pages), the order will be up to you and the learning goals for your app. (Be sure to give them unique names for <code>tabName</code>.)</li>
 </ol></li>
-<li>The References Tab will always come after the Activity Tabs and be the last element of the <code>sidebarMenu</code>.</li>
-<li>The last element of the Sidebar will always be the PSU Logo. To ensure that this element is consistent across all apps, we will use a special function, <code>boastUtils::sidebarFooter</code>. You will need to copy the above code, including the <code>div</code> and use that exactly in your App. You’ll place this code after (outside of) the <code>sidebarMenu</code> call but still inside the <code>dashboardSidebar</code> call. Please refer to the <a href="simpleDesign.html#logo">Section <a href="simpleDesign.html#logo">11.1</a></a>.</li>
+<li>The References page will always come after the Activity page and be the last element of the <code>sidebarMenu</code>.</li>
+<li>The last element of the Sidebar will always be the PSU Logo. To ensure that this element is consistent across all apps, we use a special function, <code>boastUtils::sidebarFooter</code>. You will need to copy the above code, including the <code>div</code> and use that exactly in your app. You’ll place this code after (outside of) the <code>sidebarMenu</code> call but still inside the <code>dashboardSidebar</code> call. Please refer to the <a href="simpleDesign.html#logo">Section <a href="simpleDesign.html#logo">11.1</a></a>.</li>
 </ol>
 <p><em>Note: this order will also dictate how you should organize your code in the <a href="uiStructure.html#body">Dashboard Body</a>.</em></p>
 </div>
 <div id="sidebar-names" class="section level3 hasAnchor" number="9.3.3">
 <h3><span class="header-section-number">9.3.3</span> Sidebar Names<a href="uiStructure.html#sidebar-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>There are three pages whose names are fixed (i.e., you can not change): the Overview, Prerequisites, and References. The rest of the pages should be named according to the following conventions:</p>
+<p>There are two names for each <code>menuItem</code>: the visually displayed name (the quoted name that appears as the first argument) and the <code>tabName</code>.</p>
+<p>There are three pages whose names are fixed (i.e., you can not change): the Overview, Prerequisites, and References. (You should also only have one of each of these pages.) The display names should be <code>"Overview"</code>, <code>"Prerequisites"</code>, and <code>"References"</code>. For their <code>tabName</code> values, you can use lower-case versions and/or shortened versions (e.g., <code>tabName = "prereqs"</code>).</p>
+<p>The rest of the pages should be named according to the following conventions:</p>
 <ul>
 <li><strong>Only One Page of Any Type</strong>: when you only have one Activity page of a particular type (e.g., one Explore, one Challenge), you can use the type of activity as the name. That is, you can call the pages “Explore”, “Challenge”, etc.</li>
 <li><strong>Multiple Pages of the Same Type</strong>: when you have several pages that are all the same Activity type, you need to give each page an appropriate name. For example,
 <ul>
-<li>In the <a href="https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/">NHST Caveats App</a>, there are three Explore pages: the Multiple Testing Caution, the Large Sample Caution, and the Small Sample Caution.</li>
-<li>In the <a href="https://psu-eberly.shinyapps.io/OneWay_ANOVA/">One-way ANOVA App</a> there are two Game pages: a Matching Game and a Fill in the Blank game.</li>
+<li>In the <a href="https://psu-eberly.shinyapps.io/Significance_Testing_Caveats/">NHST Caveats app</a>, there are three Explore pages: the Multiple Testing Caution, the Large Sample Caution, and the Small Sample Caution.</li>
+<li>In the <a href="https://psu-eberly.shinyapps.io/OneWay_ANOVA/">One-way ANOVA app</a> there are two Game pages: a Matching Game and a Fill in the Blank game.</li>
 </ul></li>
 <li><strong>Clarity Matters</strong>: The names of the pages need to be meaningful to others. Thus, you will need to ensure that
 <ul>
@@ -913,9 +920,7 @@ Figure 9.24: Sliders Using the Red Palette
 <li>Related to the last, you don’t set the user up to anticipate going to one activity but wind up at a different activity.</li>
 </ul></li>
 </ul>
-<p>ff there is only one Activity Tab of each type, you may use the names Explore, Challenge, and Game.
-+ If there are multiple Tabs of each type, you will need to rename each tab as appropriate. For example,
--</p>
+<p>Keep in mind that <code>tabName</code> values should be unique for every page. If you need to create a button that moves a person to a particular page, you will use that page’s value of <code>tabName</code>.</p>
 </div>
 <div id="sidebar-icons" class="section level3 hasAnchor" number="9.3.4">
 <h3><span class="header-section-number">9.3.4</span> Sidebar Icons<a href="uiStructure.html#sidebar-icons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -978,11 +983,11 @@ Figure 9.24: Sliders Using the Red Palette
 </tbody>
 </table>
 <p>If you come across any of these types of pages that have a different icon or a missing icon, please create an issue in GitHub and/or fix.</p>
-<p>If there is a type of page that does fit these, please talk to Neil to see about what we need to add.</p>
+<p>If there is a type of page that does fit these, please talk to Neil to see about what we need to add. Recently added page types include the Wizard (Spring 2021) and the Example page (Summer 2022).</p>
 </div>
 <div id="submenus" class="section level3 hasAnchor" number="9.3.5">
 <h3><span class="header-section-number">9.3.5</span> Submenus<a href="uiStructure.html#submenus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Given the nature of our Apps, there is <strong>NO</strong> reason for having submenus. If you come across an app that has submenus or you believe that a submenu is necessary, then that is a good sign that you are looking at a “bloated” app. These apps need to be marked for review to investigate re-designing the app and potentially splitting the app in to two or more apps.</p>
+<p>Given the nature of our apps, there is <strong>NO</strong> reason for having submenus. If you come across an app that has submenus or you believe that a submenu is necessary, then that is a good sign that you are looking at a “bloated” app. (That is, the app is trying to cover too many things.) These apps need to be marked for review to investigate re-designing the app and potentially splitting the app in to two or more apps.</p>
 </div>
 <div id="whats-needed-in-the-server-definition-1" class="section level3 hasAnchor" number="9.3.6">
 <h3><span class="header-section-number">9.3.6</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -992,20 +997,20 @@ Figure 9.24: Sliders Using the Red Palette
 </div>
 <div id="body" class="section level2 hasAnchor" number="9.4">
 <h2><span class="header-section-number">9.4</span> Dashboard Body<a href="uiStructure.html#body" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Dashboard Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with. Thus, this is the most important part of the layout of your App.</p>
+<p>The Dashboard Body is where all content (text, images, plots, buttons, etc.) exists for the user to read, view, and interact with. Thus, this is the most important part of the layout of your app.</p>
 <p>The order in which your code the Pages in the Dashboard body needs to mirror the order of the tabs in the Sidebar. This helps not only you keep track of where you’re at, but is kind to future readers of your code.</p>
-<p>The <code>dashboardBody</code> call will be the last element of the <code>dashboardPage</code> call inside of your User Interface (UI) list definition. Within the <code>dashboardBody</code> you will need to call the function <code>tabItems</code>. This will help your App make a connection between the menu items in your Sidebar and the pages that you make in the Body.</p>
+<p>The <code>dashboardBody</code> call will be the last element of the <code>dashboardPage</code> call inside of your User Interface (UI) list definition. Within the <code>dashboardBody</code> you will need to call the function <code>tabItems</code>. This will help your app make a connection between the menu items in your Sidebar and the pages that you make in the Body.</p>
 <p>Inside the <code>tabItems</code> call, you will then need to create separate <code>tabItem</code> calls–one for each Page you listed in your Sidebar menu. Each <code>tabItem</code> has a critical argument <strong>which you must explicitly set</strong>: <code>tabName</code>. The <code>tabName</code> argument needs to match the <code>tabName</code> you used in the Sidebar. (Remember <code>R</code> is case sensitive, thus “Overview” and “overview” are viewed as two distinct objects.)</p>
-<p>Once you have set the value for <code>tabName</code>, you can choose to include the code <code>withMathJax()</code>. This line of code is needed if you plan to include any mathematical formulas. You can omit this line if you are not going to. We will note that a safe default is to go ahead and include this line of code. We must stress that you have to include <code>withMathJax()</code> on each page of your app.</p>
-<p>What comes after these two lines of code will be all of the code necessary to bring the page of your App to life. However, the most important thing to remember while you’re coding in this section are <strong><em>commas</em></strong>. After you finish each bit of code and before you move on to the next item on the page, you must place a comma and then return to a new line.</p>
+<p>Once you have set the value for <code>tabName</code>, you can choose to include the command <code>withMathJax()</code>. This line of code is needed if you plan to include any mathematical formulas. You can omit this line if you have no mathematics to display. We will note that a safe default is to go ahead and include this line of code. We must stress that you have to include <code>withMathJax()</code> on each page of your app.</p>
+<p>What comes after these two lines will be all of the code necessary to bring the page of your app to life. However, the most important thing to remember while you’re coding in this section are <strong><em>commas</em></strong>. After you finish each bit of code and before you move on to the next item on the page, you must place a comma and then return to a new line.</p>
 <p>The following code can serve as an example to help you get started:</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="uiStructure.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
 <span id="cb48-2"><a href="uiStructure.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
 <span id="cb48-3"><a href="uiStructure.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabItems</span>(</span>
 <span id="cb48-4"><a href="uiStructure.html#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
-<span id="cb48-5"><a href="uiStructure.html#cb48-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,<span class="co"># needs to match the names you used in the Sidebar</span></span>
-<span id="cb48-6"><a href="uiStructure.html#cb48-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">withMathJax</span>(),<span class="co"># if you need to display mathematics, include this line</span></span>
-<span id="cb48-7"><a href="uiStructure.html#cb48-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), </span>
+<span id="cb48-5"><a href="uiStructure.html#cb48-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="co"># needs to match the name you used in the Sidebar</span></span>
+<span id="cb48-6"><a href="uiStructure.html#cb48-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">withMathJax</span>(), <span class="co"># if you need to display mathematics, include this line</span></span>
+<span id="cb48-7"><a href="uiStructure.html#cb48-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h1</span>(<span class="st">&quot;Sample application for BOAST apps&quot;</span>), </span>
 <span id="cb48-8"><a href="uiStructure.html#cb48-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
 <span id="cb48-9"><a href="uiStructure.html#cb48-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
 <span id="cb48-10"><a href="uiStructure.html#cb48-10" aria-hidden="true" tabindex="-1"></a>      <span class="co"># [code for the page continues]</span></span>
@@ -1019,19 +1024,20 @@ Figure 9.24: Sliders Using the Red Palette
 <p>The following subsections explain the purposes of each type of Page.</p>
 <div id="the-overview-page" class="section level3 hasAnchor" number="9.4.1">
 <h3><span class="header-section-number">9.4.1</span> The Overview Page<a href="uiStructure.html#the-overview-page" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This page is <strong>REQUIRED</strong> for all Apps. This is the main landing page of your App and should appear at the top of the Sidebar. The icon for this page must be “dashboard”.</p>
+<p>This page is <strong>REQUIRED</strong> for all apps. This is the main landing page of your app and should appear at the top of the Sidebar. The icon for this page must be “gauge-high”.</p>
 <p>The Overview Tab must contain <strong>ALL</strong> of the following elements:</p>
 <ol style="list-style-type: decimal">
-<li>“Long/Formal App Title” (as Heading 1; this will be the <strong>only</strong> instance of Heading 1 in your App)</li>
+<li>“Long/Formal app Title” (as Heading 1; this will be the <strong>only</strong> instance of Heading 1 in your app)</li>
 <li>A description of the app (as paragraph text under the title)</li>
 <li>“Instructions” (as Heading 2)</li>
-<li>General instructions for using the App (using an Ordered List environment)</li>
+<li>General instructions for using the app (using an Ordered List environment)</li>
 <li>A button that will take the user to the next page (see <a href="commonElements.html#buttons">Section <a href="commonElements.html#buttons">10.4</a></a> on buttons)</li>
 <li>“Acknowledgments” (as Heading 2)</li>
-<li>A listing of acknowledgments including, coders, content writers, etc. (as a paragraph)</li>
-<li>Last Element: <code>div(class = "updated", "Last Update: mm/dd/yyyy by FL.")</code> with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.</li>
+<li>A listing of acknowledge ments including, coders, content writers, etc. (as a paragraph)</li>
+<li>After the acknowledgements you’ll put two line breaks (<code>br()</code>) and then the text <code>"Cite this app as:"</code> followed by another line break. You’ll then call the <code>citeApp()</code> function (part of <code>boastUtils</code>). You’ll follow this command with two more line breaks.</li>
+<li>You’ll then end with <code>div(class = "updated", "Last Update: mm/dd/yyyy by FL.")</code> with mm/dd/yyyy replaced with the date of the update you pushed to the server and FL replaced with your initials.</li>
 </ol>
-<p>The purpose of the Overview Page is the act like the front/home page of any newspaper, magazine, or website. Set the stage for what you want the user to learn through your App.</p>
+<p>The purpose of the Overview Page is the act like the front/home page of any newspaper, magazine, or website. Set the stage for what you want the user to learn through your app.</p>
 <div id="creating-the-overview-page" class="section level4 hasAnchor" number="9.4.1.1">
 <h4><span class="header-section-number">9.4.1.1</span> Creating the Overview Page<a href="uiStructure.html#creating-the-overview-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here’s an example of making an Overview Page:</p>
@@ -1041,7 +1047,7 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb49-4"><a href="uiStructure.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
 <span id="cb49-5"><a href="uiStructure.html#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
 <span id="cb49-6"><a href="uiStructure.html#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
-<span id="cb49-7"><a href="uiStructure.html#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">&quot;Sample Application for BOAST Apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
+<span id="cb49-7"><a href="uiStructure.html#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">&quot;Sample application for BOAST apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
 <span id="cb49-8"><a href="uiStructure.html#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
 <span id="cb49-9"><a href="uiStructure.html#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
 <span id="cb49-10"><a href="uiStructure.html#cb49-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This information will change depending on what you want to do.&quot;</span>),</span>
@@ -1053,7 +1059,7 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb49-16"><a href="uiStructure.html#cb49-16" aria-hidden="true" tabindex="-1"></a>  ),</span>
 <span id="cb49-17"><a href="uiStructure.html#cb49-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">##### Go Button--location will depend on your goals ----</span></span>
 <span id="cb49-18"><a href="uiStructure.html#cb49-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">div</span>(</span>
-<span id="cb49-19"><a href="uiStructure.html#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;text-align: center&quot;</span>,</span>
+<span id="cb49-19"><a href="uiStructure.html#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;text-align: center;&quot;</span>,</span>
 <span id="cb49-20"><a href="uiStructure.html#cb49-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
 <span id="cb49-21"><a href="uiStructure.html#cb49-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;go1&quot;</span>,</span>
 <span id="cb49-22"><a href="uiStructure.html#cb49-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;GO!&quot;</span>,</span>
@@ -1073,17 +1079,21 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb49-36"><a href="uiStructure.html#cb49-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;We would like to extend a special thanks to the Shiny Program Students.&quot;</span>,</span>
 <span id="cb49-37"><a href="uiStructure.html#cb49-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
 <span id="cb49-38"><a href="uiStructure.html#cb49-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-39"><a href="uiStructure.html#cb49-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-40"><a href="uiStructure.html#cb49-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/14/2021 by NJH.&quot;</span>)</span>
-<span id="cb49-41"><a href="uiStructure.html#cb49-41" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb49-42"><a href="uiStructure.html#cb49-42" aria-hidden="true" tabindex="-1"></a>),</span></code></pre></div>
+<span id="cb49-39"><a href="uiStructure.html#cb49-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Cite this app as:&quot;</span>,</span>
+<span id="cb49-40"><a href="uiStructure.html#cb49-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb49-41"><a href="uiStructure.html#cb49-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">citeApp</span>(),</span>
+<span id="cb49-42"><a href="uiStructure.html#cb49-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb49-43"><a href="uiStructure.html#cb49-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb49-44"><a href="uiStructure.html#cb49-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/16/2023 by NJH.&quot;</span>)</span>
+<span id="cb49-45"><a href="uiStructure.html#cb49-45" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb49-46"><a href="uiStructure.html#cb49-46" aria-hidden="true" tabindex="-1"></a>),</span></code></pre></div>
 <p>A few things to notice:</p>
 <ul>
 <li>If you need a new line but not a new paragraph, you use the <code>br()</code> tag.</li>
 <li>The label for the button needs to be consistent with <a href="commonElements.html#buttons">Section <a href="commonElements.html#buttons">10.4</a></a>.</li>
 <li>There should <strong>NOT</strong> be any spaces between letters of a button label. This is a violation of Accessibility as this destroys the label. While we might read “G (space) O” as the word “go”, a screen reader reads out “gee” (pause) “oh” to the user.</li>
 <li>There is no need to use boldface or colons with the section headings when you properly use Heading tags. Thus, “Instructions:” does not follow this Style Guide.</li>
-<li>There should not be an “About” heading. The text between the Title of your App and the Instructions head serves as the description.</li>
+<li>There should not be an “About” heading. The text between the Title of your app and the Instructions head serves as the description.</li>
 </ul>
 </div>
 <div id="whats-needed-in-the-server-defintion" class="section level4 hasAnchor" number="9.4.1.2">
@@ -1104,14 +1114,13 @@ Figure 9.24: Sliders Using the Red Palette
 <p>In the rare case where you have other things happening on the Overview page, you’ll need to include the appropriate calls in your server section to carry out those actions for you.</p>
 </div>
 </div>
-<div id="a-prerequisites-page" class="section level3 hasAnchor" number="9.4.2">
-<h3><span class="header-section-number">9.4.2</span> A Prerequisites Page<a href="uiStructure.html#a-prerequisites-page" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If your App needs to ensure that the user has the base understandings necessary to interact with your App, you’ll need to create a Prerequisites Page. Otherwise, you can omit this page.</p>
-<p>The icon for this Page must be “book”. Use the word “Prerequisites” rather than “Pre-reqs”, “Prereqs”, or “Pre-requisites”.</p>
+<div id="the-prerequisites-page" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> The Prerequisites Page<a href="uiStructure.html#the-prerequisites-page" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If your app needs to ensure that the user has the base understandings necessary to interact with your app, you’ll need to create a Prerequisites Page. Due to the learning impact this page can have, we’ve adopted a standard of having a Prerequisites page for most apps. The icon for this Page must be “book”. Use the word “Prerequisites” rather than “Pre-reqs”, “Prereqs”, or “Pre-requisites” for the displayed name of the tab.</p>
 <div id="types-of-prerequisites" class="section level4 hasAnchor" number="9.4.2.1">
 <h4><span class="header-section-number">9.4.2.1</span> Types of Prerequisites<a href="uiStructure.html#types-of-prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There are two different types of prerequisites: technical/conceptual and contextual. Both of these go into the Prerequisites Page.</p>
-<p>Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your App’s statistical goal. For instance, if your App is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.</p>
+<p>Technical/Conceptual Prerequisites cover ideas that the user needs in order to fully engage with your app’s statistical goal. For instance, if your app is about ANCOVA, the ideas of ANOVA and building a linear model would be good candidates for technical/conceptual prerequisites.</p>
 <p>Contextual Prerequisites cover ideas that which are beneficial for the user to understand a context you’re using. For example, if you are referencing an astragalus, you should include a brief explanation and/or picture of an astragalus.</p>
 <p>Keep in mind that Contextual Prerequisites are different from the context which should be part of an Activity Page. If the information is necessary to interpret sliders/graphs and is <em>specific</em>, then you should include this information on the Activity Page. If the information helps the user say “Oh, that’s what they mean by [blank]”, that is good sign of something to put in the Prerequisites Page.</p>
 </div>
@@ -1130,30 +1139,31 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb51-2"><a href="uiStructure.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Working in the UI section</span></span>
 <span id="cb51-3"><a href="uiStructure.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-4"><a href="uiStructure.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: in a paragraph</span></span>
-<span id="cb51-5"><a href="uiStructure.html#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some of the basic shapes</span></span>
-<span id="cb51-6"><a href="uiStructure.html#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="st">  of graphs in statistics. A good resource for this would be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb51-7"><a href="uiStructure.html#cb51-7" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="cb51-8"><a href="uiStructure.html#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb51-9"><a href="uiStructure.html#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
-<span id="cb51-10"><a href="uiStructure.html#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
-<span id="cb51-11"><a href="uiStructure.html#cb51-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb51-12"><a href="uiStructure.html#cb51-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
-<span id="cb51-13"><a href="uiStructure.html#cb51-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
-<span id="cb51-14"><a href="uiStructure.html#cb51-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb51-15"><a href="uiStructure.html#cb51-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-16"><a href="uiStructure.html#cb51-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: in a list item</span></span>
-<span id="cb51-17"><a href="uiStructure.html#cb51-17" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
-<span id="cb51-18"><a href="uiStructure.html#cb51-18" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb51-19"><a href="uiStructure.html#cb51-19" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="cb51-20"><a href="uiStructure.html#cb51-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb51-21"><a href="uiStructure.html#cb51-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
-<span id="cb51-22"><a href="uiStructure.html#cb51-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
-<span id="cb51-23"><a href="uiStructure.html#cb51-23" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb51-24"><a href="uiStructure.html#cb51-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
-<span id="cb51-25"><a href="uiStructure.html#cb51-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Be consistent; either all items do or none.</span></span>
-<span id="cb51-26"><a href="uiStructure.html#cb51-26" aria-hidden="true" tabindex="-1"></a>  ) </span>
-<span id="cb51-27"><a href="uiStructure.html#cb51-27" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb51-28"><a href="uiStructure.html#cb51-28" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<span id="cb51-5"><a href="uiStructure.html#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some</span></span>
+<span id="cb51-6"><a href="uiStructure.html#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="st">  of the basic shapes of graphs in statistics. A good resource for this would</span></span>
+<span id="cb51-7"><a href="uiStructure.html#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="st">  be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb51-8"><a href="uiStructure.html#cb51-8" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="cb51-9"><a href="uiStructure.html#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb51-10"><a href="uiStructure.html#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
+<span id="cb51-11"><a href="uiStructure.html#cb51-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
+<span id="cb51-12"><a href="uiStructure.html#cb51-12" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb51-13"><a href="uiStructure.html#cb51-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
+<span id="cb51-14"><a href="uiStructure.html#cb51-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
+<span id="cb51-15"><a href="uiStructure.html#cb51-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-16"><a href="uiStructure.html#cb51-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-17"><a href="uiStructure.html#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: in a list item</span></span>
+<span id="cb51-18"><a href="uiStructure.html#cb51-18" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb51-19"><a href="uiStructure.html#cb51-19" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb51-20"><a href="uiStructure.html#cb51-20" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="cb51-21"><a href="uiStructure.html#cb51-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb51-22"><a href="uiStructure.html#cb51-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
+<span id="cb51-23"><a href="uiStructure.html#cb51-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
+<span id="cb51-24"><a href="uiStructure.html#cb51-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb51-25"><a href="uiStructure.html#cb51-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
+<span id="cb51-26"><a href="uiStructure.html#cb51-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Be consistent about punctuation--either all items do or none.</span></span>
+<span id="cb51-27"><a href="uiStructure.html#cb51-27" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb51-28"><a href="uiStructure.html#cb51-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-29"><a href="uiStructure.html#cb51-29" aria-hidden="true" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 </div>
 <div id="creating-a-prerequisites-page" class="section level4 hasAnchor" number="9.4.2.3">
 <h4><span class="header-section-number">9.4.2.3</span> Creating a Prerequisites Page<a href="uiStructure.html#creating-a-prerequisites-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1170,56 +1180,62 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb52-10"><a href="uiStructure.html#cb52-10" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 3&quot;</span>),</span>
 <span id="cb52-11"><a href="uiStructure.html#cb52-11" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 4&quot;</span>)</span>
 <span id="cb52-12"><a href="uiStructure.html#cb52-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb52-13"><a href="uiStructure.html#cb52-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list any way they wish.&quot;</span>),</span>
-<span id="cb52-14"><a href="uiStructure.html#cb52-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
-<span id="cb52-15"><a href="uiStructure.html#cb52-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
-<span id="cb52-16"><a href="uiStructure.html#cb52-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
-<span id="cb52-17"><a href="uiStructure.html#cb52-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb52-18"><a href="uiStructure.html#cb52-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-19"><a href="uiStructure.html#cb52-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-20"><a href="uiStructure.html#cb52-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb52-21"><a href="uiStructure.html#cb52-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance tests serve as a</span></span>
-<span id="cb52-22"><a href="uiStructure.html#cb52-22" aria-hidden="true" tabindex="-1"></a><span class="st">    critical tool to confirm that a particular theoretical model describes our data and to make a</span></span>
-<span id="cb52-23"><a href="uiStructure.html#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="st">    generalization from our sample to the broader population (i.e., make an inference). The null</span></span>
-<span id="cb52-24"><a href="uiStructure.html#cb52-24" aria-hidden="true" tabindex="-1"></a><span class="st">    hypothesis often reflects the simpler of two models (e.g., &#39;no statistical difference&#39;,</span></span>
-<span id="cb52-25"><a href="uiStructure.html#cb52-25" aria-hidden="true" tabindex="-1"></a><span class="st">    &#39;there is an additive difference of 1&#39;, etc.) that we will use to build a sampling</span></span>
-<span id="cb52-26"><a href="uiStructure.html#cb52-26" aria-hidden="true" tabindex="-1"></a><span class="st">    distribution for our chosen estimator. These methods let us test whether our sample data are</span></span>
-<span id="cb52-27"><a href="uiStructure.html#cb52-27" aria-hidden="true" tabindex="-1"></a><span class="st">    consistent with this simple model (null hypothesis).&quot;</span></span>
-<span id="cb52-28"><a href="uiStructure.html#cb52-28" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb52-29"><a href="uiStructure.html#cb52-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
-<span id="cb52-30"><a href="uiStructure.html#cb52-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
-<span id="cb52-31"><a href="uiStructure.html#cb52-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb52-32"><a href="uiStructure.html#cb52-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-33"><a href="uiStructure.html#cb52-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb52-34"><a href="uiStructure.html#cb52-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb52-35"><a href="uiStructure.html#cb52-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as extreme as what we</span></span>
-<span id="cb52-36"><a href="uiStructure.html#cb52-36" aria-hidden="true" tabindex="-1"></a><span class="st">    observed given our null hypothesis. If we were to carry out our study infinitely many times</span></span>
-<span id="cb52-37"><a href="uiStructure.html#cb52-37" aria-hidden="true" tabindex="-1"></a><span class="st">    and the null hypothesis accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
-<span id="cb52-38"><a href="uiStructure.html#cb52-38" aria-hidden="true" tabindex="-1"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen 100*(p-value)% of the</span></span>
-<span id="cb52-39"><a href="uiStructure.html#cb52-39" aria-hidden="true" tabindex="-1"></a><span class="st">    time. The larger the p-value, the more often we would expect our estimator to take on a value</span></span>
-<span id="cb52-40"><a href="uiStructure.html#cb52-40" aria-hidden="true" tabindex="-1"></a><span class="st">    at least as extreme as what we&#39;ve seen; the smaller, the less often.&quot;</span></span>
-<span id="cb52-41"><a href="uiStructure.html#cb52-41" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb52-42"><a href="uiStructure.html#cb52-42" aria-hidden="true" tabindex="-1"></a>),</span>
-<span id="cb52-43"><a href="uiStructure.html#cb52-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<span id="cb52-13"><a href="uiStructure.html#cb52-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list</span></span>
+<span id="cb52-14"><a href="uiStructure.html#cb52-14" aria-hidden="true" tabindex="-1"></a><span class="st">      any way they wish.&quot;</span>),</span>
+<span id="cb52-15"><a href="uiStructure.html#cb52-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
+<span id="cb52-16"><a href="uiStructure.html#cb52-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
+<span id="cb52-17"><a href="uiStructure.html#cb52-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
+<span id="cb52-18"><a href="uiStructure.html#cb52-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb52-19"><a href="uiStructure.html#cb52-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb52-20"><a href="uiStructure.html#cb52-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb52-21"><a href="uiStructure.html#cb52-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb52-22"><a href="uiStructure.html#cb52-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance</span></span>
+<span id="cb52-23"><a href="uiStructure.html#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="st">    tests serve as a critical tool to confirm that a particular theoretical</span></span>
+<span id="cb52-24"><a href="uiStructure.html#cb52-24" aria-hidden="true" tabindex="-1"></a><span class="st">    model describes our data and to make a generalization from our sample to</span></span>
+<span id="cb52-25"><a href="uiStructure.html#cb52-25" aria-hidden="true" tabindex="-1"></a><span class="st">    the broader population (i.e., make an inference). The null hypothesis</span></span>
+<span id="cb52-26"><a href="uiStructure.html#cb52-26" aria-hidden="true" tabindex="-1"></a><span class="st">    often reflects the simpler of two models (e.g., &#39;no statistical</span></span>
+<span id="cb52-27"><a href="uiStructure.html#cb52-27" aria-hidden="true" tabindex="-1"></a><span class="st">    difference&#39;, &#39;there is an additive difference of 1&#39;, etc.) that we will</span></span>
+<span id="cb52-28"><a href="uiStructure.html#cb52-28" aria-hidden="true" tabindex="-1"></a><span class="st">    use to build a sampling distribution for our chosen estimator. These</span></span>
+<span id="cb52-29"><a href="uiStructure.html#cb52-29" aria-hidden="true" tabindex="-1"></a><span class="st">    methods let us test whether our sample data are consistent with this</span></span>
+<span id="cb52-30"><a href="uiStructure.html#cb52-30" aria-hidden="true" tabindex="-1"></a><span class="st">    simple model (null hypothesis).&quot;</span></span>
+<span id="cb52-31"><a href="uiStructure.html#cb52-31" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb52-32"><a href="uiStructure.html#cb52-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>(</span>
+<span id="cb52-33"><a href="uiStructure.html#cb52-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
+<span id="cb52-34"><a href="uiStructure.html#cb52-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb52-35"><a href="uiStructure.html#cb52-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb52-36"><a href="uiStructure.html#cb52-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb52-37"><a href="uiStructure.html#cb52-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb52-38"><a href="uiStructure.html#cb52-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as</span></span>
+<span id="cb52-39"><a href="uiStructure.html#cb52-39" aria-hidden="true" tabindex="-1"></a><span class="st">    extreme as what we observed given our null hypothesis. If we were to</span></span>
+<span id="cb52-40"><a href="uiStructure.html#cb52-40" aria-hidden="true" tabindex="-1"></a><span class="st">    carry out our study infinitely many times and the null hypothesis</span></span>
+<span id="cb52-41"><a href="uiStructure.html#cb52-41" aria-hidden="true" tabindex="-1"></a><span class="st">    accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
+<span id="cb52-42"><a href="uiStructure.html#cb52-42" aria-hidden="true" tabindex="-1"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen</span></span>
+<span id="cb52-43"><a href="uiStructure.html#cb52-43" aria-hidden="true" tabindex="-1"></a><span class="st">    100*(p-value)% of the time. The larger the p-value, the more often we</span></span>
+<span id="cb52-44"><a href="uiStructure.html#cb52-44" aria-hidden="true" tabindex="-1"></a><span class="st">    would expect our estimator to take on a value at least as extreme as what</span></span>
+<span id="cb52-45"><a href="uiStructure.html#cb52-45" aria-hidden="true" tabindex="-1"></a><span class="st">    we&#39;ve seen; the smaller, the less often.&quot;</span></span>
+<span id="cb52-46"><a href="uiStructure.html#cb52-46" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb52-47"><a href="uiStructure.html#cb52-47" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb52-48"><a href="uiStructure.html#cb52-48" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>For more information on collapsible boxes, see <a href="commonElements.html#collapsible">Section <a href="commonElements.html#collapsible">10.3</a></a>.</p>
 </div>
 <div id="whats-needed-in-the-server-definition-2" class="section level4 hasAnchor" number="9.4.2.4">
 <h4><span class="header-section-number">9.4.2.4</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Generally speaking, the purpose of the Prerequisites Page is to convey key background information for the user to double check they understand before moving into the heart of your App. Thus, this page contains static text and images. Thus, it is rare that you would need to include anything in the server definition for this page.</p>
+<p>Generally speaking, the purpose of the Prerequisites Page is to convey key background information for the user to double check they understand before moving into the heart of your app. Thus, this page typically contains static text and images. Thus, it is rare that you would need to include anything in the server definition for this page.</p>
 </div>
 </div>
 <div id="activity-pages" class="section level3 hasAnchor" number="9.4.3">
 <h3><span class="header-section-number">9.4.3</span> Activity Pages<a href="uiStructure.html#activity-pages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The heart of your App is the one or more tabs where users interact with the App beyond simple navigation. These are the Activity Pages. Some apps will have a single activity, others several; deciding on how many is part of the design process.</p>
-<p>Currently, we have five types of Activities in BOAST:</p>
+<p>The heart of your app is the one or more tabs where users interact with the app beyond simple navigation. These are the Activity Pages. Some apps will have a single activity, others several; deciding on how many is part of the design process.</p>
+<p>Currently, we have five types of Activities pages in BOAST:</p>
 <ul>
 <li>Example Pages, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 96a96 96 0 1 1 192 0A96 96 0 1 1 160 96zm80 152V512l-48.4-24.2c-20.9-10.4-43.5-17-66.8-19.3l-96-9.6C12.5 457.2 0 443.5 0 427V224c0-17.7 14.3-32 32-32H62.3c63.6 0 125.6 19.6 177.7 56zm32 264V248c52.1-36.4 114.1-56 177.7-56H480c17.7 0 32 14.3 32 32V427c0 16.4-12.5 30.2-28.8 31.8l-96 9.6c-23.2 2.3-45.9 8.9-66.8 19.3L272 512z"/></svg>
 <ul>
 <li>These pages center around a user looking through a static/fixed example.</li>
-<li>Of all activity pages, these will have the most amount of text on the page and the least for them to do.</li>
+<li>This is the least “active” of the Activity pages as these will have the most amount of text on the page and the least for users to do.</li>
 <li>The goal here is to provide a more solid foundation for the user so that they can more deeply engage with an exploration or challenge activity page.</li>
+<li>Example pages should <strong>always</strong> be accompanied by at least one other non-Example Activity page.</li>
 </ul></li>
-<li>Exploration/Explore Pages, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg>
+<li>Explore Pages, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M512 256c0 141.2-114.7 256-256 256C114.8 512 0 397.3 0 256S114.7 0 256 0s256 114.7 256 256zm-32 0c0-123.2-100.3-224-224-224C132.5 32 32 132.5 32 256s100.5 224 224 224 224-100.5 224-224zM160.9 124.6l86.9 37.1-37.1 86.9-86.9-37.1 37.1-86.9zm110 169.1l46.6 94h-14.6l-50-100-48.9 100h-14l51.1-106.9-22.3-9.4 6-14 68.6 29.1-6 14.3-16.5-7.1zm-11.8-116.3l68.6 29.4-29.4 68.3L230 246l29.1-68.6zm80.3 42.9l54.6 23.1-23.4 54.3-54.3-23.1 23.1-54.3z"/></svg>
 <ul>
 <li>These pages center around the user exploring the target concept.</li>
 <li>These pages will generally have more text on the page here than other types of Activities.</li>
@@ -1241,7 +1257,7 @@ Figure 9.24: Sliders Using the Red Palette
 </ul></li>
 <li>Wizard Pages, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:25px;width:25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
 <ul>
-<li>This is the newest (and rarest) of the Activity Page types (currently only in the <a href="https://psu-eberly.shinyapps.io/Hasse_Diagrams/">Hasse Diagram App</a>)</li>
+<li>This is the newest (and rarest) of the Activity Page types (currently only in the <a href="https://psu-eberly.shinyapps.io/Hasse_Diagrams/">Hasse Diagram app</a>)</li>
 <li>This type of page centers on helping the student create something</li>
 <li>The goal is to help students apply their understandings of a concept to create something, typically for a prompt external to the app.</li>
 </ul></li>
@@ -1249,9 +1265,9 @@ Figure 9.24: Sliders Using the Red Palette
 <p>We will talk more about the layout of the Activity pages in <a href="uiStructure.html#activityLayout">Section <a href="uiStructure.html#activityLayout">9.5</a></a>.</p>
 <div id="ui-and-server-definitions" class="section level4 hasAnchor" number="9.4.3.1">
 <h4><span class="header-section-number">9.4.3.1</span> UI and Server Definitions<a href="uiStructure.html#ui-and-server-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We’ve opted to not include any specific examples of the UI or server code for the Activity pages here. Partly, we don’t want to convey that there is only <em>one</em> way to code these pages by giving specific examples too early. Mostly though, we want to stress that the coding you do here depends almost entirely upon your goals for your App.</p>
-<p>We will be giving examples of how to code particular elements that you might need to include in your app throughout this Style Guide; draw upon those examples to help you with particular elements. Further, we encourage readers to spend time looking at the live versions of the apps in the <a href="https://sites.psu.edu/shinyapps/">Book of Apps for Statistics Teaching</a> and then looking at the matching code located at the <a href="https://github.com/EducationShinyAppTeam">GitHub Repository for BOAST</a>.</p>
-<p>Keep in mind that of all pages in your App, the Activity pages will demand the most of you for coding.</p>
+<p>We’ve opted to not include any specific examples of the UI or server code for the Activity pages here. Partly, we don’t want to convey that there is only <em>one</em> way to code these pages by giving specific examples too early. Mostly though, we want to stress that the coding you do here depends almost entirely upon your goals for your app.</p>
+<p>We will be giving examples of how to code particular elements that you might need to include in your app throughout this Style Guide; draw upon those examples to help you with particular elements. Further, we encourage readers to spend time looking at the live versions of the apps in the <a href="https://shinyapps.science.psu.edu/">Book of Apps for Statistics Teaching</a> and then looking at the matching code located at the <a href="https://github.com/EducationShinyappTeam">GitHub Repository for BOAST</a>.</p>
+<p>Keep in mind that of all pages in your app, the Activity pages will demand the most of you for coding.</p>
 </div>
 </div>
 <div id="refPage" class="section level3 hasAnchor" number="9.4.4">
@@ -1259,13 +1275,13 @@ Figure 9.24: Sliders Using the Red Palette
 <p>The last page will be for your references. This Page is <strong>REQUIRED</strong> and is where you will place a reference list for all of the following items that you used in your app:</p>
 <ul>
 <li>All <code>R</code> packages you used</li>
-<li>Sources of any Code you used directly or drew heavily upon from other people</li>
+<li>Sources of any code you used directly or drew heavily upon from other people</li>
 <li>Pictures and/or other images</li>
 <li>Data sets</li>
 <li>Refer to the <a href="documentation.html#documentation">Chapter <a href="documentation.html#documentation">15</a></a> <a href="documentation.html#documentation">on Documentation</a> of this Style Guide for more information.</li>
 </ul>
 <p>The icon for this Tab must be “leanpub”, <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:25px;width:28.12px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M386.539 111.485l15.096 248.955-10.979-.275c-36.232-.824-71.64 8.783-102.657 27.997-31.016-19.214-66.424-27.997-102.657-27.997-45.564 0-82.07 10.705-123.516 27.723L93.117 129.6c28.546-11.803 61.484-18.115 92.226-18.115 41.173 0 73.836 13.175 102.657 42.544 27.723-28.271 59.013-41.721 98.539-42.544zM569.07 448c-25.526 0-47.485-5.215-70.542-15.645-34.31-15.645-69.993-24.978-107.871-24.978-38.977 0-74.934 12.901-102.657 40.623-27.723-27.723-63.68-40.623-102.657-40.623-37.878 0-73.561 9.333-107.871 24.978C55.239 442.236 32.731 448 8.303 448H6.93L49.475 98.859C88.726 76.626 136.486 64 181.775 64 218.83 64 256.984 71.685 288 93.095 319.016 71.685 357.17 64 394.225 64c45.289 0 93.049 12.626 132.3 34.859L569.07 448zm-43.368-44.741l-34.036-280.246c-30.742-13.999-67.248-21.41-101.009-21.41-38.428 0-74.385 12.077-102.657 38.702-28.272-26.625-64.228-38.702-102.657-38.702-33.761 0-70.267 7.411-101.009 21.41L50.298 403.259c47.211-19.487 82.894-33.486 135.045-33.486 37.604 0 70.817 9.606 102.657 29.644 31.84-20.038 65.052-29.644 102.657-29.644 52.151 0 87.834 13.999 135.045 33.486z"/></svg>.</p>
-<p>We will additionally place licensing information for your App at the bottom of the Reference page. We have created a function in <code>boastUtils</code> (version ≥ 0.1.6.1) that will automatically put the correct information on the page.</p>
+<p>We will additionally place licensing information for your app at the bottom of the Reference page. We have created a function (<code>copyrightInfo</code>) in <code>boastUtils</code> (version ≥ 0.1.6.1) that will automatically put the correct information on the page.</p>
 <div id="creating-a-references-page" class="section level4 hasAnchor" number="9.4.4.1">
 <h4><span class="header-section-number">9.4.4.1</span> Creating a References Page<a href="uiStructure.html#creating-a-references-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Creating a References Page mimics both the Overview and Prerequisites Pages’ structure and is done in the UI section:</p>
@@ -1277,41 +1293,46 @@ Figure 9.24: Sliders Using the Red Palette
 <span id="cb53-6"><a href="uiStructure.html#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
 <span id="cb53-7"><a href="uiStructure.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>( <span class="co"># Each reference is in its own paragraph</span></span>
 <span id="cb53-8"><a href="uiStructure.html#cb53-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>, <span class="co"># you must set this class argument</span></span>
-<span id="cb53-9"><a href="uiStructure.html#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bailey, E. (2015), shinyBS: Twitter bootstrap components for shiny, R package. Available</span></span>
-<span id="cb53-10"><a href="uiStructure.html#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="st">    from https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
-<span id="cb53-11"><a href="uiStructure.html#cb53-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb53-12"><a href="uiStructure.html#cb53-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-13"><a href="uiStructure.html#cb53-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-14"><a href="uiStructure.html#cb53-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Carey, R. (2019), boastUtils: BOAST Utilities, R Package. Available from</span></span>
-<span id="cb53-15"><a href="uiStructure.html#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyAppTeam/boastUtils&quot;</span></span>
-<span id="cb53-16"><a href="uiStructure.html#cb53-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb53-17"><a href="uiStructure.html#cb53-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-18"><a href="uiStructure.html#cb53-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-19"><a href="uiStructure.html#cb53-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2018), shinydashboard: Create dashboards with &#39;Shiny&#39;, R</span></span>
-<span id="cb53-20"><a href="uiStructure.html#cb53-20" aria-hidden="true" tabindex="-1"></a><span class="st">    Package. Available from https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
-<span id="cb53-21"><a href="uiStructure.html#cb53-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb53-22"><a href="uiStructure.html#cb53-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-23"><a href="uiStructure.html#cb53-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-24"><a href="uiStructure.html#cb53-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J., Xie, Y., and McPherson, J. (2019),  shiny: Web </span></span>
-<span id="cb53-25"><a href="uiStructure.html#cb53-25" aria-hidden="true" tabindex="-1"></a><span class="st">    application framework for R, R Package. Available from </span></span>
-<span id="cb53-26"><a href="uiStructure.html#cb53-26" aria-hidden="true" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
-<span id="cb53-27"><a href="uiStructure.html#cb53-27" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb53-28"><a href="uiStructure.html#cb53-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-29"><a href="uiStructure.html#cb53-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-30"><a href="uiStructure.html#cb53-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web App. Available from</span></span>
-<span id="cb53-31"><a href="uiStructure.html#cb53-31" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyAppTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
-<span id="cb53-32"><a href="uiStructure.html#cb53-32" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb53-33"><a href="uiStructure.html#cb53-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-34"><a href="uiStructure.html#cb53-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-35"><a href="uiStructure.html#cb53-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Wickham, H. (2016), ggplot2: Elegant graphics for data analysis, R Package, New York:</span></span>
-<span id="cb53-36"><a href="uiStructure.html#cb53-36" aria-hidden="true" tabindex="-1"></a><span class="st">    Springer-Verlag. Available from https://ggplot2.tidyverse.org&quot;</span></span>
-<span id="cb53-37"><a href="uiStructure.html#cb53-37" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb53-38"><a href="uiStructure.html#cb53-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(), <span class="co"># Three blank spaces</span></span>
-<span id="cb53-39"><a href="uiStructure.html#cb53-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb53-40"><a href="uiStructure.html#cb53-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb53-41"><a href="uiStructure.html#cb53-41" aria-hidden="true" tabindex="-1"></a>  boastUtils<span class="sc">::</span><span class="fu">copyrightInfo</span>()</span>
-<span id="cb53-42"><a href="uiStructure.html#cb53-42" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb53-43"><a href="uiStructure.html#cb53-43" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<span id="cb53-9"><a href="uiStructure.html#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bailey, E. (2022). shinyBS: Twitter bootstrap components for shiny.</span></span>
+<span id="cb53-10"><a href="uiStructure.html#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="st">    (v0.61.1). [R package]. Available from</span></span>
+<span id="cb53-11"><a href="uiStructure.html#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
+<span id="cb53-12"><a href="uiStructure.html#cb53-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb53-13"><a href="uiStructure.html#cb53-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb53-14"><a href="uiStructure.html#cb53-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb53-15"><a href="uiStructure.html#cb53-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Carey, R. and Hatfield., N. J. (2023). boastUtils: BOAST utilities. </span></span>
+<span id="cb53-16"><a href="uiStructure.html#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="st">    (v0.1.11.2). [R Package]. Available from</span></span>
+<span id="cb53-17"><a href="uiStructure.html#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyappTeam/boastUtils&quot;</span></span>
+<span id="cb53-18"><a href="uiStructure.html#cb53-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb53-19"><a href="uiStructure.html#cb53-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb53-20"><a href="uiStructure.html#cb53-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb53-21"><a href="uiStructure.html#cb53-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2021). shinydashboard: Create dashboards</span></span>
+<span id="cb53-22"><a href="uiStructure.html#cb53-22" aria-hidden="true" tabindex="-1"></a><span class="st">    with &#39;Shiny&#39;. (v0.7.2). [R Package]. Available from</span></span>
+<span id="cb53-23"><a href="uiStructure.html#cb53-23" aria-hidden="true" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
+<span id="cb53-24"><a href="uiStructure.html#cb53-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb53-25"><a href="uiStructure.html#cb53-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb53-26"><a href="uiStructure.html#cb53-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb53-27"><a href="uiStructure.html#cb53-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J.J., Sievert, C., Schloerke, B., Xie, Y.,</span></span>
+<span id="cb53-28"><a href="uiStructure.html#cb53-28" aria-hidden="true" tabindex="-1"></a><span class="st">    Allen, J., McPherson, J., Dipert, A., and Borges, B. (2022).  shiny: Web </span></span>
+<span id="cb53-29"><a href="uiStructure.html#cb53-29" aria-hidden="true" tabindex="-1"></a><span class="st">    application framework for R. (v1.7.4). [R Package]. Available from </span></span>
+<span id="cb53-30"><a href="uiStructure.html#cb53-30" aria-hidden="true" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
+<span id="cb53-31"><a href="uiStructure.html#cb53-31" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb53-32"><a href="uiStructure.html#cb53-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb53-33"><a href="uiStructure.html#cb53-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb53-34"><a href="uiStructure.html#cb53-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web app. Available from</span></span>
+<span id="cb53-35"><a href="uiStructure.html#cb53-35" aria-hidden="true" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyappTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
+<span id="cb53-36"><a href="uiStructure.html#cb53-36" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb53-37"><a href="uiStructure.html#cb53-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb53-38"><a href="uiStructure.html#cb53-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb53-39"><a href="uiStructure.html#cb53-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Wickham, H. (2016). ggplot2: Elegant graphics for data analysis. </span></span>
+<span id="cb53-40"><a href="uiStructure.html#cb53-40" aria-hidden="true" tabindex="-1"></a><span class="st">    (v3.4.2). [R Package]. New York:Springer-Verlag. Available from</span></span>
+<span id="cb53-41"><a href="uiStructure.html#cb53-41" aria-hidden="true" tabindex="-1"></a><span class="st">    https://ggplot2.tidyverse.org&quot;</span></span>
+<span id="cb53-42"><a href="uiStructure.html#cb53-42" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb53-43"><a href="uiStructure.html#cb53-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(), <span class="co"># Three blank spaces</span></span>
+<span id="cb53-44"><a href="uiStructure.html#cb53-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb53-45"><a href="uiStructure.html#cb53-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb53-46"><a href="uiStructure.html#cb53-46" aria-hidden="true" tabindex="-1"></a>  boastUtils<span class="sc">::</span><span class="fu">copyrightInfo</span>()</span>
+<span id="cb53-47"><a href="uiStructure.html#cb53-47" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb53-48"><a href="uiStructure.html#cb53-48" aria-hidden="true" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 </div>
 <div id="whats-needed-in-the-server-definition-3" class="section level4 hasAnchor" number="9.4.4.2">
 <h4><span class="header-section-number">9.4.4.2</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1321,15 +1342,15 @@ Figure 9.24: Sliders Using the Red Palette
 </div>
 <div id="activityLayout" class="section level2 hasAnchor" number="9.5">
 <h2><span class="header-section-number">9.5</span> Layout of Activity Pages<a href="uiStructure.html#activityLayout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now that we’ve discussed the more general layout of your App, we can turn our attention to the layout of your Activity pages. As previously mentioned, the layout you use here will need to support the goals of your App. While there are several possible styles, there is one firm constant that everyone must adhere to:</p>
+<p>Now that we’ve discussed the more general layout of your app, we can turn our attention to the layout of your Activity pages. As previously mentioned, the layout you use here will need to support the goals of your app. While there are several possible styles, there is one firm constant that everyone must adhere to:</p>
 <p><strong>Each page should contain all information/instructions necessary for the user to be able to interact with the activity without having to switch to other pages.</strong></p>
-<p>In essence, if we were to give a person just the Activity page, they should be able to engage fully and completely with the activity without needing to refer to any other pages. This will ensure that you treating other pages as they are intended as well as ensuring your users can have success in using your App.</p>
+<p>In essence, if we were to give a person just the Activity page, they should be able to engage fully and completely with the activity without needing to refer to any other pages. This will ensure that you are treating the other pages as they are intended as well as ensuring your users can have success in using your app.</p>
 <div id="two-required-elements" class="section level3 hasAnchor" number="9.5.1">
 <h3><span class="header-section-number">9.5.1</span> Two Required Elements<a href="uiStructure.html#two-required-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>No matter what layout you end up using, they all require the same two required first elements: a page title and some opening text.</p>
 <div id="page-title" class="section level4 hasAnchor" number="9.5.1.1">
 <h4><span class="header-section-number">9.5.1.1</span> Page Title<a href="uiStructure.html#page-title" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The Page Title will be enclosed in the Header 2 tag, <code>h2</code>, and should be a meaningful title related to what the user will be doing. For an Exploration/Explore page, you can’t just say “Explore”, you need to say <em>what</em> they will be exploring. Similarly, for the other types of pages.</p>
+<p>The Page Title will be enclosed in the Header 2 tag, <code>h2</code>, and should be a meaningful title related to what the user will be doing. For an Explore page, you can’t just say “Explore”, you need to say <em>what</em> they will be exploring. Similarly, for the other types of pages.</p>
 </div>
 <div id="opening-text" class="section level4 hasAnchor" number="9.5.1.2">
 <h4><span class="header-section-number">9.5.1.2</span> Opening Text<a href="uiStructure.html#opening-text" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1339,7 +1360,7 @@ Figure 9.24: Sliders Using the Red Palette
 <li>set up any particular contexts, and/or</li>
 <li>give instructions.</li>
 </ul>
-<p>There is nothing worse for the user than getting to an Activity page and not knowing what they are supposed to do. The Instructions on the Overview are for using the <em>entire</em> App, not any one particular page. Thus, you need to have specific page instructions somewhere on the page.</p>
+<p>There is nothing worse for the user than getting to an Activity page and not knowing what they are supposed to do. The Instructions on the Overview are for using the <em>entire</em> app, not any one particular page. Thus, you need to have specific page instructions somewhere on the page.</p>
 <p>Keep in mind that this is beneficial to all users, but especially those who are using assistive technology such as screen readers. If you put your instructions on a separate page or hidden somewhere else, you are now requiring that your user memorize those instructions. This is already cognitively demanding for sighted individuals, but for users with vision impairments, even more so.</p>
 </div>
 </div>
@@ -1367,11 +1388,11 @@ Figure 9.26: Visible Tabs Activity Page Layout
 </div>
 <p>The Visible Tab layout provides an opportunity for you to create a “parent” page that then houses several inter-related topics together. This type of layout is also useful if you want the user to flip through a variety of different plots while still referencing the same inputs.</p>
 <p>Depending on your needs/goals, you can blend the Visible Tab layout with the Classical Layout as we’ll see shortly. To build tab sets, you’ll want to check out <a href="uiStructure.html#innerTabs">Section <a href="uiStructure.html#innerTabs">9.6</a></a>.</p>
-<p><em>(I will note here that the Assumptions of ANOVA app could use several modifications.)</em></p>
+<p><em>(I will note here that the Assumptions of ANOVA app could use several modifications/improvements.)</em></p>
 </div>
 <div id="hiddenTabs" class="section level3 hasAnchor" number="9.5.4">
 <h3><span class="header-section-number">9.5.4</span> Hidden Tabs<a href="uiStructure.html#hiddenTabs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>An alternate version of the Visible Tabs layout is the Hidden Tabs layout. There is still a set of tabs within the page but the user can no longer click on the tabs and move around at will. This is particularly useful if you have built a game where users need to progress through levels in a particular order (e.g., <a href="https://psu-eberly.shinyapps.io/Descriptive_Statistics/">Descriptive Statistics App</a>) or in a wizard environment (e.g., <a href="https://psu-eberly.shinyapps.io/Hasse_Diagrams/">Hasse Diagram App</a>).</p>
+<p>An alternate version of the Visible Tabs layout is the Hidden Tabs layout. There is still a set of tabs within the page but the user can no longer click on the tabs and move around at will. This is particularly useful if you have built a game where users need to progress through levels in a particular order (e.g., <a href="https://psu-eberly.shinyapps.io/Descriptive_Statistics/">Descriptive Statistics app</a>) or in a wizard environment (e.g., <a href="https://psu-eberly.shinyapps.io/Hasse_Diagrams/">Hasse Diagram app</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:hiddenTabsLayout"></span>
 <img src="images/activityLayouts/hiddenTabs.png" alt="Hidden Tabs Activity Page Layout" width="730" />
 <p class="caption">
@@ -1396,13 +1417,19 @@ Figure 9.28: Sets of Controls Activity Page Layout
 </div>
 <p>This kind of layout is particularly useful for explorations where certain controls are getting used by several different aspects. This can also help to reduce the size of a Classical Layout’s control area. Typically, we don’t want the user to have to scroll far below the plot to change something.</p>
 </div>
-<div id="tic-tac-toe" class="section level3 hasAnchor" number="9.5.6">
-<h3><span class="header-section-number">9.5.6</span> Tic-Tac-Toe<a href="uiStructure.html#tic-tac-toe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Games are a common area where you might need to use a different layout than the Classical one. A good example here would be any of our Tic-Tac-Toe games such as the <a href="https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/">Hypothesis Testing Game</a>.</p>
+<div id="other-layouts" class="section level3 hasAnchor" number="9.5.6">
+<h3><span class="header-section-number">9.5.6</span> Other Layouts<a href="uiStructure.html#other-layouts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Games are a common area where you might need to use a different layout than the Classical one. A good example here would be any of our Tic-Tac-Toe games such as the <a href="https://psu-eberly.shinyapps.io/Hypothesis_Testing_Game/">Hypothesis Testing Game</a> or the Escape Room style games such as in the <a href="https://psu-eberly.shinyapps.io/Maximum_Likelihood_Estimation/">Maximum Likelihood Estiamtion</a> app.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:tictactoeLayout"></span>
 <img src="images/activityLayouts/tictactoe.png" alt="Tic-Tac-Toe Activity Page Layout" width="736" />
 <p class="caption">
 Figure 9.29: Tic-Tac-Toe Activity Page Layout
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:escapeRoomLayout"></span>
+<img src="images/activityLayouts/escapeRoom.png" alt="Escape Room Activity Page Layout" width="1872" />
+<p class="caption">
+Figure 9.30: Escape Room Activity Page Layout
 </p>
 </div>
 </div>
@@ -1413,7 +1440,7 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
 <p>The <a href="uiStructure.html#visTabs">Visible Tabs Layout</a> and the <a href="uiStructure.html#hiddenTabs">Hidden Tabs Layout</a> make use of this second type of tabs (i.e., <code>tabsetPanel</code>).</p>
 <p>Deciding on whether to use <code>tabsetPanel</code> is going to depend on several things:</p>
 <ol style="list-style-type: decimal">
-<li>Do you have two or more aspects that are related enough that they shouldn’t be their own separate tabs/pages of your App?
+<li>Do you have two or more aspects that are related enough that they shouldn’t be their own separate tabs/pages of your app?
 <ol style="list-style-type: lower-alpha">
 <li>If NO, then you shouldn’t use <code>tabsetPanel</code>.<br />
 </li>
@@ -1426,7 +1453,7 @@ Figure 9.29: Tic-Tac-Toe Activity Page Layout
 <li>If NO, continue.<br />
 </li>
 </ol></li>
-<li>Are the aspects independent enough that a person can skip a couple and still use the App successfully?
+<li>Are the aspects independent enough that a person can skip a couple and still use the app successfully?
 <ol style="list-style-type: lower-alpha">
 <li>If NO, then you should re-consider your design.<br />
 </li>
