@@ -288,21 +288,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.2" data-path="htmlCSS.html"><a href="htmlCSS.html#breaks"><i class="fa fa-check"></i><b>7.1.2</b> Breaks</a></li>
 <li class="chapter" data-level="7.1.3" data-path="htmlCSS.html"><a href="htmlCSS.html#lists"><i class="fa fa-check"></i><b>7.1.3</b> Lists</a></li>
 <li class="chapter" data-level="7.1.4" data-path="htmlCSS.html"><a href="htmlCSS.html#headers"><i class="fa fa-check"></i><b>7.1.4</b> Headers</a></li>
-<li class="chapter" data-level="7.1.5" data-path="htmlCSS.html"><a href="htmlCSS.html#links-bodylinks"><i class="fa fa-check"></i><b>7.1.5</b> Links (#bodyLinks)</a></li>
+<li class="chapter" data-level="7.1.5" data-path="htmlCSS.html"><a href="htmlCSS.html#bodyLinks"><i class="fa fa-check"></i><b>7.1.5</b> Links</a></li>
 <li class="chapter" data-level="7.1.6" data-path="htmlCSS.html"><a href="htmlCSS.html#div"><i class="fa fa-check"></i><b>7.1.6</b> Divisions</a></li>
 <li class="chapter" data-level="7.1.7" data-path="htmlCSS.html"><a href="htmlCSS.html#horizontal-rule"><i class="fa fa-check"></i><b>7.1.7</b> Horizontal Rule</a></li>
 <li class="chapter" data-level="7.1.8" data-path="htmlCSS.html"><a href="htmlCSS.html#other-tags"><i class="fa fa-check"></i><b>7.1.8</b> Other Tags</a></li>
-<li class="chapter" data-level="7.1.9" data-path="htmlCSS.html"><a href="htmlCSS.html#stylingTags"><i class="fa fa-check"></i><b>7.1.9</b> Text Styling Tags</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="htmlCSS.html"><a href="htmlCSS.html#htmlID"><i class="fa fa-check"></i><b>7.2</b> HTML <code>id</code></a></li>
-<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.3</b> CSS</a>
+<li class="chapter" data-level="7.2" data-path="htmlCSS.html"><a href="htmlCSS.html#stylingTags"><i class="fa fa-check"></i><b>7.2</b> Text Styling Tags</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="htmlCSS.html"><a href="htmlCSS.html#cssProblems"><i class="fa fa-check"></i><b>7.3.1</b> Problematic CSS in Old Apps</a></li>
+<li class="chapter" data-level="7.2.1" data-path="htmlCSS.html"><a href="htmlCSS.html#italicsemphasis"><i class="fa fa-check"></i><b>7.2.1</b> Italics/Emphasis</a></li>
+<li class="chapter" data-level="7.2.2" data-path="htmlCSS.html"><a href="htmlCSS.html#boldfacestrong"><i class="fa fa-check"></i><b>7.2.2</b> Boldface/Strong</a></li>
+<li class="chapter" data-level="7.2.3" data-path="htmlCSS.html"><a href="htmlCSS.html#code-and-pre-formatted"><i class="fa fa-check"></i><b>7.2.3</b> Code and Pre-formatted</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.4</b> Using CSS</a>
+<li class="chapter" data-level="7.3" data-path="htmlCSS.html"><a href="htmlCSS.html#htmlID"><i class="fa fa-check"></i><b>7.3</b> HTML <code>id</code></a></li>
+<li class="chapter" data-level="7.4" data-path="htmlCSS.html"><a href="htmlCSS.html#css"><i class="fa fa-check"></i><b>7.4</b> CSS</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="htmlCSS.html"><a href="htmlCSS.html#text-alignment"><i class="fa fa-check"></i><b>7.4.1</b> Text Alignment</a></li>
-<li class="chapter" data-level="7.4.2" data-path="htmlCSS.html"><a href="htmlCSS.html#classes"><i class="fa fa-check"></i><b>7.4.2</b> Classes</a></li>
+<li class="chapter" data-level="7.4.1" data-path="htmlCSS.html"><a href="htmlCSS.html#cssProblems"><i class="fa fa-check"></i><b>7.4.1</b> Problematic CSS in Old Apps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="htmlCSS.html"><a href="htmlCSS.html#using-css"><i class="fa fa-check"></i><b>7.5</b> Using CSS</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="htmlCSS.html"><a href="htmlCSS.html#text-alignment"><i class="fa fa-check"></i><b>7.5.1</b> Text Alignment</a></li>
+<li class="chapter" data-level="7.5.2" data-path="htmlCSS.html"><a href="htmlCSS.html#classes"><i class="fa fa-check"></i><b>7.5.2</b> Classes</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="additionalCoding.html"><a href="additionalCoding.html"><i class="fa fa-check"></i><b>8</b> Additional Coding Practices</a>
@@ -524,19 +529,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If your app includes a computationally intense plot (i.e., lots of data and/or layers) whose underlying data is fixed.</li>
 <li>If your app has a dynamic graph that the user explores and needs to move back and forth between various states.</li>
 </ul>
-<p>These cases represent a place where the performance of your app can suffer. To improve performance, you should consider using the <code>renderCachedPlot</code> function rather than <code>renderPlot</code>. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the third category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).</p>
+<p>These cases represent a place where the performance of your app can suffer. To improve performance, you should consider using the <code>renderCachedPlot</code> function rather than <code>renderPlot</code>. This function will store a copy of each plot on the sever and provide that stored copy to new instances of the app. This cuts down on server demands and speeds up your app. For the second category, this allows the users to move more quickly to a previously examined state (i.e., low to no hang time).</p>
 <p>There are two key arguments to <code>renderCachedPlot</code>: <code>expr</code> and <code>cacheKeyExpr</code>. The <code>expr</code> is the code chunk which will generate the plot or the name of plot object you’ve created elsewhere.</p>
-<p>The <code>cacheKeyExpr</code> is the listing of all <code>reactive</code> elements that you want to tie the plot to. For example, if we set <code>cacheKeyExpr = { list(input$sampleSize, input$selectedData) }</code>, then the app will tie each saved version of the plot to the values of <code>sampleSize</code> and <code>selectedData</code>. The user sets these two inputs to a new pairing, your app would re-generate the plot. However, when the user sets them to a pairing that they’ve already looked at, your app immediately re-displays the saved plot. Plot caching also looks across all of the users, thus speeding up your app’s plotting.</p>
+<p>The <code>cacheKeyExpr</code> is the listing of all <code>reactive</code> elements that you want to tie the plot to. For example, if we set <code>cacheKeyExpr = { list(input$sampleSize, input$selectedData) }</code>, then the app will tie each saved version of the plot to the values of <code>sampleSize</code> and <code>selectedData</code>. The user sets these two inputs to a new pairing, your app would re-generate the plot. However, when the user sets them to a pairing that they’ve already looked at, your app immediately re-displays the saved plot. Plot caching also looks across all of the users, thus speeding up your app’s plotting for all users.</p>
 </div>
 <div id="exFiles" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Minimize External Files<a href="additionalCoding.html#exFiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Try to minimize the number and size of external files you’re attaching to your App. If you’re working on an existing app, remove any external files that are no longer necessary.</p>
-<p>Wherever possible try to place external files into the <code>www</code> directory/folder that is at the same level as your <code>app.R</code> or <code>ui.R</code>/<code>server.R</code> files.</p>
+<p>Wherever possible try to place external files into the <code>www</code> directory/folder that is at the same level as your <code>app.R</code> file.</p>
 <p>If there are any external files (e.g., <code>*.csv</code>, <code>*.txt</code>, <code>*.dat</code>, <code>*.jpg</code>) that are not being used, delete them from the repository.</p>
 </div>
 <div id="metadatac" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Metadata<a href="additionalCoding.html#metadatac" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As of boastUtils <code>v0.1.10</code>, your App will need the following metadata in a file named <a href="https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION">DESCRIPTION</a> (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased). See also our section on the <a href="template.html#description">DESCRIPTION</a> file in our chapter on the <a href="template.html#template">App Template</a></p>
+<p>As of boastUtils <code>v0.1.10</code>, your App will need the following metadata in a file named <a href="https://github.com/EducationShinyAppTeam/App_Template/blob/master/DESCRIPTION">DESCRIPTION</a> (no file extension). This data is used to inform Learning Record Stores (LRS) about your App as well as provide information to instructors using the Instructor App (unreleased). See also our section on the <a href="template.html#description">DESCRIPTION</a> file in our chapter on the <a href="template.html#template">App Template</a>.</p>
 <p><strong>DESCRIPTION</strong></p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="additionalCoding.html#cb40-1" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> Sample App <span class="sc">-</span> A Lengthy Title</span>
 <span id="cb40-2"><a href="additionalCoding.html#cb40-2" aria-hidden="true" tabindex="-1"></a>ShortName<span class="sc">:</span> Sample App</span>
@@ -562,7 +567,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="otherLanguages" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Other Languages (Python, JavaScript, etc.)<a href="additionalCoding.html#otherLanguages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Generally speaking, we want to keep the vast majority of our work within the R language (with the necessary HTML and CSS spots). Due to our turnover of coders, we won’t always be able to ensure that we get someone who is proficient in additional languages such as Python, Rust, Netlogo, JavaScript, etc.</p>
-<p>See if what you’re trying to do can first be done in R. If not, set up a time to speak with Bob and Neil to see about the appropriate way to go about using another language.</p>
+<p>See if what you’re trying to do can first be done in R. If not, set up a time to speak with Neil to see about the appropriate way to go about using another language.</p>
 </div>
 <div id="rlockerc" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Using rLocker<a href="additionalCoding.html#rlockerc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
