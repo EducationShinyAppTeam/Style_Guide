@@ -146,8 +146,9 @@ beKind
 comments
 code-section-titlesjump-points
 specificCoding
-orgCode
-calling-inputs-and-outputs
+planning-interactions
+inputs
+outputs
 reactive-vs.-observe
 working-with-reactive-values
 input
@@ -158,7 +159,7 @@ eventreactive
 observeevent
 ignorenull-and-ignoreinit
 validation
-connecting-the-user-interface-and-the-server
+renderOutput
 table-of-render-and-output-companions
 htmlCSS
 html
@@ -259,7 +260,7 @@ shape
 animation
 linking-out
 listening-to-buttons
-inputs
+inputs-1
 types-of-inputs
 animation-of-sliders
 ordering-inputs
