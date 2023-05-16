@@ -38,6 +38,7 @@ fig:visTabsLayout
 fig:hiddenTabsLayout
 fig:setsLayout
 fig:tictactoeLayout
+fig:escapeRoomLayout
 fig:marksb
 fig:sweetAlert3
 fig:boastPalette
@@ -146,8 +147,9 @@ beKind
 comments
 code-section-titlesjump-points
 specificCoding
-orgCode
-calling-inputs-and-outputs
+planning-interactions
+inputs
+outputs
 reactive-vs.-observe
 working-with-reactive-values
 input
@@ -158,7 +160,7 @@ eventreactive
 observeevent
 ignorenull-and-ignoreinit
 validation
-connecting-the-user-interface-and-the-server
+renderOutput
 table-of-render-and-output-companions
 htmlCSS
 html
@@ -166,7 +168,7 @@ paragraphs
 breaks
 lists
 headers
-links-bodylinks
+bodyLinks
 div
 horizontal-rule
 other-tags
@@ -218,7 +220,7 @@ body
 the-overview-page
 creating-the-overview-page
 whats-needed-in-the-server-defintion
-a-prerequisites-page
+the-prerequisites-page
 types-of-prerequisites
 text-links-in-prerequisites-and-beyond
 creating-a-prerequisites-page
@@ -236,7 +238,7 @@ the-classical-layout
 visTabs
 hiddenTabs
 sets-of-controls
-tic-tac-toe
+other-layouts
 innerTabs
 create-the-tab-set
 create-the-tabs
@@ -259,7 +261,7 @@ shape
 animation
 linking-out
 listening-to-buttons
-inputs
+inputs-1
 types-of-inputs
 animation-of-sliders
 ordering-inputs

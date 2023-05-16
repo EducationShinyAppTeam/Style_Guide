@@ -12,7 +12,7 @@ One important word of caution here is that you need to pay close attention to th
 
 ### Paragraphs {#paragraphs}
 
-The most common HTML tag is that of paragraph. This is the tag that tells browsers "hey, here is some text content that I want you show the user". In your app, you'll encase the majority of any text in `p()` (more formally, `tags$p()`). 
+The most common HTML tag is that of paragraph. This is the tag that tells browsers "hey, here is some text content that I want you to show the user". In your app, you'll encase the majority of any text in `p()` (more formally, `tags$p()`). 
 
 For example,
 
@@ -30,11 +30,11 @@ p(
 )
 ```
 
-No matter how short or long your content is, the paragraph tag should be your Go-To HTML tag. Treat the inputs of the paragraph tag exactly like you would write a document: separate paragraphs get their own instance of `p()`. Browsers will automatically put the appropriate space between them.
+No matter how short or long your content is, the paragraph tag should be your go-to HTML tag. Treat the inputs of the paragraph tag exactly like you would write a document: separate paragraphs get their own instance of `p()`. Browsers will automatically put the appropriate space between them.
 
 ### Breaks
 
-Another useful HTML tag is the one for breaks. No, we don't mean coffee/snack breaks. Rather we mean line breaks. These allow you end a line and move down to a new line (without an empty line between them) or even put a line of empty space between HTML elements. Thus, breaks are a great way to help with vertical spacing in your app.
+Another useful HTML tag is the one for line breaks. These allow you end a line and move down to a new line (without an empty line between them) or even put a line of empty space between HTML elements. Thus, breaks are a great way to help with vertical spacing in your app.
 
 To place a break all you need to type is `br()` (formal, `tags$br()`). One nice thing is that breaks can be typed into your code on their own or as part of another HTML element (e.g., a paragraph).
 
@@ -48,14 +48,14 @@ p(
 
 ### Lists
 
-There are two aspects to lists: what kind of list you want to make (known as the list environment) and the items that make up your list. 
+When you want to organize your text as a marked listed of items, we can use the list HTML environment. There are two aspects to lists: what kind of list you want to make and the items that make up your list. 
 
 The two list environments are Ordered Lists and Unordered Lists.
 
 + The Ordered List environment is for when you require that a user works through the items in a particular order. You call this environment in your App by using `tags$ol( [your list] )`. These lists are sequentially numbered/lettered.
 + The Unordered List environment is for when you want to give the user a list where they can jump around between the items however they wish. You call this environment in your App by using `tags$ul( [your list] )`. These lists will appear with bullets.
 
-You must first set up the list environment by using the appropriate HTML tag. Here it is good practice to use the formal call: `tags$ol()` and `tags$li()`. Failure to do this makes orphaned items which is an __Accessibility Issue__ and will cause the list to not be formated appropriately. 
+You must first set up the list environment by using the appropriate HTML tag. Here it is good practice to use the formal call: `tags$ol()` and `tags$ul()`. Failure to do this makes orphaned items which is an __Accessibility Issue__ and will cause the list to not be formatted appropriately. 
 
 Once you've created the list environment, you then tell browsers what the items are through the HTML item tag: `tags$li()`. (Again, use the formal call for safety.) The text of your item should be enclosed in quotation marks (double or single). 
 
@@ -101,20 +101,20 @@ __Avoid skipping heading levels__ as this will get your App flagged for an Acces
 
 Here are few more things to NOT do with the heading tags:
 
-+ DO NOT USE headings to style text (We cannot stress this enough.)
-+ Do not wrap a header tag around a list element (e.g., `h3(tags$li("here is my list item"))`) nor the reverse (e.g., `tags$li(h3("here is my list item"))`)
-+ Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2("Introduction to", p("my game")))
++ DO NOT USE headings to style text. We cannot stress this enough.
++ Do not wrap a header tag around a list element (e.g., `h3(tags$li("here is my list item"))`) nor the reverse (e.g., `tags$li(h3("here is my list item"))`).
++ Do not mix header tags together in the same line or with the paragraph tag (e.g., `h2("Introduction to", p("my game"))`).
 
 For more information check out
 
 + [W3C's Tutorial](https://www.w3.org/WAI/tutorials/page-structure/headings/)
 + [Penn State's Headings and Subheadings Accessibility](https://accessibility.psu.edu/headings/)
 
-### Links (#bodyLinks)
+### Links {#bodyLinks}
 
 You might find yourself wanting to include a link in your text. For example, you might want to allow the user to go read up on your app's concept(s) before engaging further. To create a link you will need to use the HTML anchor tag, `tags$a()` and you'll need the following information:
 
-+ The URL/web address that you want to reference (this is the Hypertext REFerence or HREF)
++ the URL/web address that you want to reference (this is the Hypertext REFerence or HREF)
 + the text you want to be displayed. For accessibility, make the text descriptive of where you're sending the user (that is, don't use the phrase "click here").
 
 The anchor tag must be used within a paragraph tag (`p()`) or a list item tag (`tags$li()`). Here's an example of using the anchor tag to create a link to the PSU's Stat Department website:
@@ -159,13 +159,13 @@ hr()
 
 There are a few other tags which you might need to use, depending upon your app. These include the image tag, `img()`, and the figure caption tag, `figcaption()`. We will discuss these tags in the chapter on [Static Images](#staticImages).
 
-If you have questions about any other HTML tags, feel free to talk to Neil and/or Bob about them.
+If you have questions about any other HTML tags, feel free to talk to Neil about them.
 
-### Text Styling Tags {#stylingTags}
+## Text Styling Tags {#stylingTags}
 
-There are also some HTML tags whose goal is to work inside of the paragraph and list item tags to brings some extra information to text. These tags have a very visual impact on the text, which is why we refer to the Text Styling Tags. 
+There are also some HTML tags whose goal is to work inside of the paragraph and list item tags to brings some extra information to text. These tags have a very visual impact on the text, which is why we refer to them as Text Styling Tags. 
 
-#### Italics/Emphasis
+### Italics/Emphasis
 
 If you want to *italicize* a word or phrase, you'll need to use the emphasis tag, `tags$em()`. We want you to use the emphasis tag rather than the italics tag (`tags$i`) as emphasis is the __accessible__ option. The emphasis tag notifies screen readers to announce that the author has placed emphasis on the word or phrase. If you just use the italics tag, the user will not be notified of any differences between the word/phrase and surrounding text.
 
@@ -176,7 +176,7 @@ p(
 )
 ```
 
-#### Boldface/Strong
+### Boldface/Strong
 
 If you want to __boldface__ a word or phrase, you'll need to use the strong tag, `tags$strong()`. There is also a bold tag (`tags$b()`), but the same accessibility issues exist here. Thus, use `tags$strong()`.
 
@@ -191,7 +191,7 @@ tags$ul(
 )
 ```
 
-#### Code and Pre-formatted
+### Code and Pre-formatted
 
 If you want to display a block of code in your app (e.g., to show what code the user would need to type in order to recreate something on their own), you should use the code HTML tag, `tags$code()`. 
 
@@ -218,6 +218,22 @@ tags$pre(
 )'
   ) # Notice that the single quoted code doesn't match the usual coding alignment.
 ) # This is on purpose so that the we get the correct alignment in the rendered display below.
+```
+
+The pre-formatted HTML will ensure that any line styling is copied. If we were to have used the paragraph tag instead, we'd see the following:
+
+```{r code3, echo=FALSE, eval=TRUE}
+tags$p(
+  tags$code(
+'bsButton(
+  inputId = "resample",
+  label = "Generate new sample",
+  size = "large",
+  style = "default",
+  icon = icon("retweet")
+)'
+  ) 
+) 
 ```
 
 ## HTML `id` {#htmlID}
@@ -283,7 +299,7 @@ When we first began implementing our central CSS file, there was some push back 
 
 Students may use `style = "text-align: left/center/right;"` to impose styling choice of the alignment of elements. However, we do ask that students apply such styling to a division (`div()`) rather than to any other HTML tag. To see an example, see the [Division Tag example](#div).
 
-Other than text alignment, we __discourage__ using the `style` argument with any CSS. (Note: some shiny functions like `bsButton` have a `style` argument which is different the `style` we're discussing here.)
+Other than text alignment, we __discourage__ using the `style` argument with any other CSS commands without prior approval. (Note: some shiny functions like `bsButton` have a `style` argument which is different the style we're discussing here.) Instead, we encourage students to use the `class` argument.
 
 ### Classes {#classes}
 
@@ -315,7 +331,7 @@ actionButton(
 
 #### Existing Classes {#existingCSS}
 
-Here is a list of the current classes you may use
+Here is a list of the current classes you may use:
 
 + `largerFont` (for paragraphs): makes font 20% larger than the base font, __use sparingly__.
 + `updated` (for paragraphs): makes centered, smaller font size text for when the app was last updated.
@@ -333,10 +349,10 @@ You might run into cases where you want an element styled in a new way or you mi
 1. Get as many other bugs fixed in your app first.
 2. Identify the element(s) that need the styling.
 3. Write up at least one idea for what you're wanting.
-3. Set up a meeting with Neil or Bob to discuss (we'll need an up-to-date version of your app prior to the meeting).
-4. Meet with Neil/Bob to discuss and nail down what the new class will be called and do.
+3. Set up a meeting with Neil to discuss (we'll need an up-to-date version of your app prior to the meeting).
+4. Meet with Neil to discuss and nail down what the new class will be called and what elements of that class should look like.
 
-Be prepared for Neil/Bob to ask lots of questions about the intent of the styling during the meeting . We're doing this to make sure that the style decisions support the intent. By providing us with the most up-to-date version of your app, we can demo changes in real time for you. Once we get a class figured out, we'll add it to the BOAST CSS file and give you instructions on how to apply the class to the specific element(s).
+Be prepared for Neil to ask lots of questions about the intent of the styling during the meeting. We're doing this to make sure that the style decisions support the intent. By providing us with the most up-to-date version of your app, we can demo changes in real time for you. Once we get a class figured out, we'll add it to the BOAST CSS file and give you instructions on how to apply the class to the specific element(s).
 
 We must issue a caution: if you're requesting a change to a common element such as a `sliderInput` which could ripple throughout all of the apps, we are going to ask a lot of questions about the purpose of such a change. You will need to have justifications prepared.
 
