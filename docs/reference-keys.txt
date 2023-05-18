@@ -287,12 +287,13 @@ staticImages
 adding-an-image
 figure-environment
 in-line-images
-sizing-your-image-imagesize
+imageSize
 altStatic
 graphics
 graphLab
 font-sizes
 axes-and-scales
+legend-sizes
 colorPlots
 color-and-accessibility
 an-exception-to-line-types
