@@ -34,7 +34,7 @@ Text styling refers the non-content aspects of the text on the page, such as the
 
 You should let the centralized CSS file do the heavy lifting for text styling. (Again, using `boastApp` will help you.) However, for this to work properly, you will need to tag content appropriately. (See the section on HTML, [Section \@ref(html)](#html).)
 
-If you run into a situation where some element needs additional styling, __talk to Neil or Bob for help__. You might have come across an element that needs to get added the central CSS file or a bug.
+If you run into a situation where some element needs additional styling, __talk to Neil for help__. You might have come across an element that needs to get added the central CSS file or a bug.
 
 ### Headings
 
@@ -72,7 +72,7 @@ If you’re writing mathematics directly in your app, remember you’ll need to 
 
 If you’re reading in mathematical text from an external CSV file, you do not need the extra backslash in the CSV file.
 
-If you need assistance in figuring out how to type up mathematics, please talk to Neil, Matt, or Dennis.
+If you need assistance in figuring out how to type up mathematics, please talk to Neil or Dennis.
 
 __Note:__ Double dollar sign delimiters are generally not recommended for displaying math as they can lead to unintended results. See: [Writing Mathematics for MathJax](https://docs.mathjax.org/en/latest/basic/mathematics.html).
 

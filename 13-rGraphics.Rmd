@@ -86,6 +86,23 @@ g1 + ggplot2::scale_x_continuous(
   ) 
 ```
 
+## Legend Sizes
+
+If you find yourself needing to enlarge the size of the legend key, you can use the following argument with any `ggplot` object:
+
+```{r changeLengend, echo=TRUE, eval=FALSE}
+# Change the size of legend elements in ggplot
+g1 <- ggplot2::ggplot(...)
+
+g1 +
+  theme(
+    legend.key.size = unit(2, "cm")
+  )
+
+```
+
+The `unit` function takes two arguments: a numeric value that will be the measure and a unit of measure. In the above example, this will make legend examples 2 cm wide. You may need to experiment with this setting to find an optimal setting across a wide variety of screen sizes. That is, be sure to test your settings on both computers and mobile devices.
+
 ## Color and Plots in `R` {#colorPlots}
 
 In `R` you can set color theme which you use in `ggplot2`. Additionally, the package `viridis` provides several additional color palettes which are improvements upon the default color scheme.
@@ -225,8 +242,6 @@ ggplot(
 
 ```
 
-
-
 ## Tables {#tables}
 
 Data tables can pose a challenge for individuals to comprehend. Just as a wall of text isn't conducive to helping a person understand what's going on, neither is a wall of data values. Thus, we need to be extreme judicious (picky) about incorporating data tables into any of our apps.
@@ -318,7 +333,7 @@ We're including some additional Summary Data Table examples. For these examples,
 
 #### Summary Data Table of Descriptive Statistics
 
-```{r dtSummary1Setup, echo=TRUE, eval=TRUE}
+```{r dtSummary1Setup, echo=TRUE, eval=FALSE}
 library(palmerpenguins)
 library(psych)
 library(DT)
@@ -387,7 +402,7 @@ DT::datatable(
 
 While this example is for an ANOVA table, you can build from this for other output tables. If you store the output of any call as an object, you can then use the structure function, `str` to investigate the output. Ultimately, you need something that is either a matrix or a data frame. 
 
-```{r dtSummary2Setup, echo=TRUE, eval=TRUE}
+```{r dtSummary2Setup, echo=TRUE, eval=FALSE}
 library(palmerpenguins)
 library(psych)
 library(DT)
@@ -444,7 +459,6 @@ DT::datatable(
 
 Any graphical element you include in your App __MUST__ have an alternative (assistive) text description ("alt text"). This provides a short description of what is in the image or plot for users who are visual impaired. (Tables, when properly formatted will handle this automatically.)
 
-
 Here are several resources worth checking out:
 
 + [WebAIM Alternative Text Guide](https://webaim.org/techniques/alttext/#basics)
@@ -455,11 +469,13 @@ Here are several resources worth checking out:
 
 With the release of `Shiny` version 1.6.0, the `renderPlot` function got a vital upgrade: there is now an `alt` argument that will allow you put alt text on your plots. The `alt` argument functions just like the matching argument in the `tags$img` call for static images.
 
-Use this approach as your first choice method.
+__Use this approach as your first choice method.__ The `alt` argument of `renderPlot` can be dynamically updated using user inputs, if you use `renderPlot` inside a reactive environment such as `observeEvent`.
+
+Generally speaking, keep your alt text to __no more than 140 characters in length__. Be critical with your word choice and don't use waste words. For example, rather than setting alt text to "a picture of Neil Hatfield wearing a shirt and time", use "headshot of Neil Hatfield". Example of waste words include phrases such as "a plot of", "a histogram of", "a pie chart of", etc. Focus your alt text on describing the vital aspects of the plot.
 
 ### Alt Text via ARIA
 
-If a graph is particularly complicated or if you want to do some dynamic changes to the alt text, you might want to consider using [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:
+If a graph is particularly complicated and/or you need more than 140 characters, you might want to consider using [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) to assist us in writing some labels that will stand in place of formal alt text. To do this, you will need to make use of the following code:
 
 ```{r plotsAltTextc, echo=TRUE, eval=FALSE}
 # [code omitted]
@@ -483,3 +499,4 @@ Important things to note:
     a. Replace `plotId` (keep the single quotation marks in the code)
     b. Replace `General description of the plot` (keep the single quotation marks in the code)
 
+ARIA labels can be used in conjunction with alt text. Additionally, if you have a complex plot, you might want to type up a description of the plot that you'll place in your app for all users to see. We can use ARIA commands to direct screen readers to connect the plots to any paragraph elements as well. Keep in mind that thinking about accessibility improves your app for *all* users.

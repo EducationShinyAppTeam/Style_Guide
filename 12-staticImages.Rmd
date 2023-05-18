@@ -12,12 +12,12 @@ There are two main ways to add a static image: through a Figure Environment and 
 
 ### Figure Environment
 
-Here is example code for adding an image within a figure environment:
+This is our __preferred method__ for adding static images to a shiny app. Here is example code for adding an image within a figure environment:
 
 ```{r imageEx1, echo=TRUE, eval=FALSE}
 #[code omitted]
 tags$figure(
-  align = "center",
+  class = "centerFigure",
   tags$img(
     src = "astragalus.jpg",
     width = 600,
@@ -29,9 +29,9 @@ tags$figure(
 
 ```
 
-In this first example, we've created a figure environment with the `tags$figure` call. The first argument we set in the figure environment sets whether the figure is left, center, or right aligned on the page. (Typically, we'll go with `align = "center"`.)
+In this first example, we've created a figure environment with the `tags$figure` call. The `centerFigure` class (the first argument) will center your figure appropriately on the page. 
 
-The second part of the figure is the actual call to load the static image; `tags$img`. (Much the heading and paragraph HTML tags, you can omit `tags$` in this case; we would rather be safe than sorry, hence why we've left this in our code.) You will need to provide at least two arguments (`src` and `alt`) to this call. The `src` is the exact name of the file from the `www` folder you want to load while `alt` refers to the [Alt Text](#altStatic) for the image.
+The second part of the figure is the actual call to load the static image; `tags$img`. Much like the heading and paragraph HTML tags, you can omit `tags$` in this case. However, it doesn't hurt to be cautious, hence why we've left this in our code. You will need to provide at least two arguments (`src` and `alt`) to this call. The `src` ("source") refers to what file the image is in you want; the value of this argument should be file name of the image located in the `www` folder. The `alt` argument refers to the [Alt Text](#altStatic) for the image.
 
 The other argument (`width`) is one of two sizing arguments (along with `height`) that you can set to alter the size of your figure. Check out the [Sizing Section](#imageSize) section below.
 
@@ -39,7 +39,7 @@ The last portion of the figure environment is the `tags$figcaption`. The figure 
 
 ### In Line Images
 
-Sometimes you'll want to put an image within the line of text rather than as a separate figure environment. This is possible and you would use code similar to the following:
+In a rare case when you need to place an image inside of a line of text, you can use code similar to the following:
 
 ```{r imageEx2, echo=TRUE, eval=FALSE}
 #[code omitted]
@@ -58,7 +58,7 @@ p("Check your answer here -->",
 
 Notice that here we did not use either `tags$figure` nor `tags$figcaption`, rather we just used `tags$img` within a paragraph environment. The biggest caution we need to give here is to make sure you find an optimal size for your image.
 
-## Sizing Your Image (#imageSize)
+## Sizing Your Image {#imageSize}
 
 All image files have a native size that is part of that file. For instance, the check mark image is 270 x 250 pixels. However, we overrode that that sizing with the `width` and `height` arguments. 
 

@@ -485,7 +485,6 @@ Notice that we had to include the `html = TRUE` argument to `sendSweetAlert`. Yo
 knitr::include_graphics("images/sweetAlert1.png")
 ```
 
-
 ## Popovers and Tooltips
 
 Have you ever been on a website and as you move your mouse over different elements on the page, a bubble of text appears? What you've experienced is an example of a Popover or Tooltip. While these can be useful tools, more often than not, they are abused as they lend themselves to the "shiny" problem.
@@ -500,5 +499,4 @@ We will there are a couple of different methods out there for adding a progress 
 
 + Use the `shinyWidgets` with their `progressBar`, `progressSweetAlert`, and `updateProgressBar` functions.
 + Use the `shinycssloaders` package's `withSpinner` function. 
-
 At this point in time we do not have a strong preference on which method to use. Make sure you discuss your needs with others and get plenty of feedback.
