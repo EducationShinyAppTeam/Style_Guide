@@ -10,7 +10,7 @@ To include the image in your App, you'll need to make use of the image tag, `img
 
 There are two main ways to add a static image: through a Figure Environment and In Line.
 
-### Figure Environment
+### Figure Environment {#figEnv}
 
 This is our __preferred method__ for adding static images to a shiny app. Here is example code for adding an image within a figure environment:
 
@@ -89,4 +89,72 @@ img(
 
 ```
 
-You MUST include *descriptive* alt text to each and every static image you include 
+You MUST include *descriptive* alt text to each and every static image you include.
+
+## Getty Images
+
+A common/popular source of images online is [Getty Images](https://www.gettyimages.com/). As a general rule, Getty Images do require licensing to use. However, they do provide a way to use their images in non-commercial sites (like our apps). To do this, we need to embed the image within the app.
+
+### Finding the Image
+To get started, you'll need to search the Getty Images site, for the topic you're wanting to get an image of and specify that results should be restricted to embeddable images. The easiest way to do this is to use the search bar on [Getty Image's Embed page](https://www.gettyimages.com/resources/embed). Using this search bar will automatically ensure that the image can be used.
+
+Once you select the image you want to use, click on the image in the search results to open the image up. Just below the image you'll find a set of four buttons with the leftmost saying "Embed". Click this button. A popup window will appear titled "Embed an image or slideshow" with a field showing code below. Make sure that the field is set to "Standard code" and then copy __all__ of the code text. You should end up with something like the following:
+
+`<a id='rK3nO0ArRmNenhcm-f1w8Q' class='gie-single' href='http://www.gettyimages.com/detail/1165647019' target='_blank' style='color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;'>Embed from Getty Images</a><script>window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};gie(function(){gie.widgets.load({id:'rK3nO0ArRmNenhcm-f1w8Q',sig:'3eV7zRFdjS-0p2iNm4tob-3E1tRfxfCNjaXnJgiMueo=',w:'525px',h:'328px',items:'1165647019',caption: true ,tld:'com',is360: false })});</script><script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async></script>`
+
+### Placing in Your App
+
+Once you have the embed code, you can go into your app. You will need to use the [figure environment](#figEnv) with a some modifications.
+
+```{r imgEx3, echo=TRUE, eval=FALSE}
+# Getty Images Example
+#[code omitted]
+tags$figure(
+  class = "centerGettyImage",
+  HTML("<a id='rK3nO0ArRmNenhcm-f1w8Q' class='gie-single'
+       href='http://www.gettyimages.com/detail/1165647019' target='_blank'
+       style='color:#a7a7a7;text-decoration:none;font-weight:normal
+       !important;border:none;display:inline-block;'>Embed from Getty
+       Images</a>
+       <script>window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};
+       gie(function(){gie.widgets.load({id:'rK3nO0ArRmNenhcm-f1w8Q',
+       sig:'3eV7zRFdjS-0p2iNm4tob-3E1tRfxfCNjaXnJgiMueo=',w:'525px',h:'328px',
+       items:'1165647019',caption: true ,tld:'com',is360: false })});</script>
+       <script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async></script>"),
+  tags$figcaption("Rolling Two Dice")
+)
+#[code omitted]
+
+```
+
+The two key modifications are:
+
++ Use the `centerGettyImage` class instead of `centerFigure`
++ Replace the `tags$img` command with the `HTML` command.
+
+Within the `HTML` command you'll need to put a set of double quotation marks and then paste the embed code you copied from Getty Images. Be sure that you have the close double quotation marks and the close parenthesis for the `HTML` command. While you'll still need to provide a figure caption (via `tags$figcaption`), you will not need to provide an alt text argument. (Getty Images has provided alt text as part of their embedding process.)
+
+By following the process, you should end up with the Getty Image you want to use in your app, much like the example below. It is important to keep in mind that when you embed an image in your app, it will take a few moments for your app to load the image. Thus, try to see if there are other freely available images that we can use instead.
+
+```{css gettyStyle, echo=FALSE}
+.centerGettyImage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerGettyImage a{
+  color: #000000 !important;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Symbol";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem; 
+}
+
+```
+
+<figure class = "centerGettyImage">
+<a id='rK3nO0ArRmNenhcm-f1w8Q' class='gie-single' href='http://www.gettyimages.com/detail/1165647019' target='_blank' style='color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;'>Embed from Getty Images</a><script>window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};gie(function(){gie.widgets.load({id:'rK3nO0ArRmNenhcm-f1w8Q',sig:'3eV7zRFdjS-0p2iNm4tob-3E1tRfxfCNjaXnJgiMueo=',w:'525px',h:'328px',items:'1165647019',caption: true ,tld:'com',is360: false })});</script><script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async></script>
+<figcaption>Rolling Two Dice</figcaption>
+</figure>

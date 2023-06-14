@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2023-05-17" />
+<meta name="date" content="2023-06-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -429,11 +429,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>12.1</b> Adding an Image</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
+<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figEnv"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
 <li class="chapter" data-level="12.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>12.1.2</b> In Line Images</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#imageSize"><i class="fa fa-check"></i><b>12.2</b> Sizing Your Image</a></li>
 <li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>12.3</b> Adding Alt Text to Static Images</a></li>
+<li class="chapter" data-level="12.4" data-path="staticImages.html"><a href="staticImages.html#getty-images"><i class="fa fa-check"></i><b>12.4</b> Getty Images</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="staticImages.html"><a href="staticImages.html#finding-the-image"><i class="fa fa-check"></i><b>12.4.1</b> Finding the Image</a></li>
+<li class="chapter" data-level="12.4.2" data-path="staticImages.html"><a href="staticImages.html#placing-in-your-app"><i class="fa fa-check"></i><b>12.4.2</b> Placing in Your App</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
 <ul>
@@ -527,20 +532,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">12.1</span> Adding an Image<a href="staticImages.html#adding-an-image" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To include the image in your App, you’ll need to make use of the image tag, <code>img</code>. When you run your App, Shiny automatically knows to check the <code>www</code> folder any time the <code>img</code> tag gets called.</p>
 <p>There are two main ways to add a static image: through a Figure Environment and In Line.</p>
-<div id="figure-environment" class="section level3 hasAnchor" number="12.1.1">
-<h3><span class="header-section-number">12.1.1</span> Figure Environment<a href="staticImages.html#figure-environment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="figEnv" class="section level3 hasAnchor" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Figure Environment<a href="staticImages.html#figEnv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This is our <strong>preferred method</strong> for adding static images to a shiny app. Here is example code for adding an image within a figure environment:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="staticImages.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb67-2"><a href="staticImages.html#cb67-2" aria-hidden="true" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">figure</span>(</span>
-<span id="cb67-3"><a href="staticImages.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;centerFigure&quot;</span>,</span>
-<span id="cb67-4"><a href="staticImages.html#cb67-4" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
-<span id="cb67-5"><a href="staticImages.html#cb67-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;astragalus.jpg&quot;</span>,</span>
-<span id="cb67-6"><a href="staticImages.html#cb67-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">600</span>,</span>
-<span id="cb67-7"><a href="staticImages.html#cb67-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Picture of an astragalus (bone die)&quot;</span></span>
-<span id="cb67-8"><a href="staticImages.html#cb67-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb67-9"><a href="staticImages.html#cb67-9" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">figcaption</span>(<span class="st">&quot;Image of Astragalus by Yaan, 2007&quot;</span>)</span>
-<span id="cb67-10"><a href="staticImages.html#cb67-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb67-11"><a href="staticImages.html#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="staticImages.html#cb67-1" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb67-2"><a href="staticImages.html#cb67-2" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">figure</span>(</span>
+<span id="cb67-3"><a href="staticImages.html#cb67-3" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;centerFigure&quot;</span>,</span>
+<span id="cb67-4"><a href="staticImages.html#cb67-4" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
+<span id="cb67-5"><a href="staticImages.html#cb67-5" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;astragalus.jpg&quot;</span>,</span>
+<span id="cb67-6"><a href="staticImages.html#cb67-6" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">600</span>,</span>
+<span id="cb67-7"><a href="staticImages.html#cb67-7" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Picture of an astragalus (bone die)&quot;</span></span>
+<span id="cb67-8"><a href="staticImages.html#cb67-8" tabindex="-1"></a>  ),</span>
+<span id="cb67-9"><a href="staticImages.html#cb67-9" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">figcaption</span>(<span class="st">&quot;Image of Astragalus by Yaan, 2007&quot;</span>)</span>
+<span id="cb67-10"><a href="staticImages.html#cb67-10" tabindex="-1"></a>)</span>
+<span id="cb67-11"><a href="staticImages.html#cb67-11" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>In this first example, we’ve created a figure environment with the <code>tags$figure</code> call. The <code>centerFigure</code> class (the first argument) will center your figure appropriately on the page.</p>
 <p>The second part of the figure is the actual call to load the static image; <code>tags$img</code>. Much like the heading and paragraph HTML tags, you can omit <code>tags$</code> in this case. However, it doesn’t hurt to be cautious, hence why we’ve left this in our code. You will need to provide at least two arguments (<code>src</code> and <code>alt</code>) to this call. The <code>src</code> (“source”) refers to what file the image is in you want; the value of this argument should be file name of the image located in the <code>www</code> folder. The <code>alt</code> argument refers to the <a href="staticImages.html#altStatic">Alt Text</a> for the image.</p>
 <p>The other argument (<code>width</code>) is one of two sizing arguments (along with <code>height</code>) that you can set to alter the size of your figure. Check out the <a href="staticImages.html#imageSize">Sizing Section</a> section below.</p>
@@ -549,17 +554,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="in-line-images" class="section level3 hasAnchor" number="12.1.2">
 <h3><span class="header-section-number">12.1.2</span> In Line Images<a href="staticImages.html#in-line-images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In a rare case when you need to place an image inside of a line of text, you can use code similar to the following:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="staticImages.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb68-2"><a href="staticImages.html#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
-<span id="cb68-3"><a href="staticImages.html#cb68-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
-<span id="cb68-4"><a href="staticImages.html#cb68-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
-<span id="cb68-5"><a href="staticImages.html#cb68-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
-<span id="cb68-6"><a href="staticImages.html#cb68-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">25</span>,</span>
-<span id="cb68-7"><a href="staticImages.html#cb68-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">25</span></span>
-<span id="cb68-8"><a href="staticImages.html#cb68-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb68-9"><a href="staticImages.html#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span></span>
-<span id="cb68-10"><a href="staticImages.html#cb68-10" aria-hidden="true" tabindex="-1"></a>),</span>
-<span id="cb68-11"><a href="staticImages.html#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="staticImages.html#cb68-1" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb68-2"><a href="staticImages.html#cb68-2" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;Check your answer here --&gt;&quot;</span>,</span>
+<span id="cb68-3"><a href="staticImages.html#cb68-3" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">img</span>(</span>
+<span id="cb68-4"><a href="staticImages.html#cb68-4" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">&quot;check.PNG&quot;</span>,</span>
+<span id="cb68-5"><a href="staticImages.html#cb68-5" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Success, you are correct&quot;</span>,</span>
+<span id="cb68-6"><a href="staticImages.html#cb68-6" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">25</span>,</span>
+<span id="cb68-7"><a href="staticImages.html#cb68-7" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">25</span></span>
+<span id="cb68-8"><a href="staticImages.html#cb68-8" tabindex="-1"></a>  ),</span>
+<span id="cb68-9"><a href="staticImages.html#cb68-9" tabindex="-1"></a>  <span class="st">&quot;&lt;-- Check your answer here&quot;</span></span>
+<span id="cb68-10"><a href="staticImages.html#cb68-10" tabindex="-1"></a>),</span>
+<span id="cb68-11"><a href="staticImages.html#cb68-11" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>Notice that here we did not use either <code>tags$figure</code> nor <code>tags$figcaption</code>, rather we just used <code>tags$img</code> within a paragraph environment. The biggest caution we need to give here is to make sure you find an optimal size for your image.</p>
 </div>
 </div>
@@ -579,15 +584,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">W3C’s ALT Text Decision Tree</a></li>
 </ul>
 <p>In the prior section on static images, you saw exactly how to set the alt text; here is a generic example:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="staticImages.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb69-2"><a href="staticImages.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">img</span>(</span>
-<span id="cb69-3"><a href="staticImages.html#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
-<span id="cb69-4"><a href="staticImages.html#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
-<span id="cb69-5"><a href="staticImages.html#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">25</span>, <span class="at">height =</span> <span class="dv">25</span></span>
-<span id="cb69-6"><a href="staticImages.html#cb69-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb69-7"><a href="staticImages.html#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
-<p>You MUST include <em>descriptive</em> alt text to each and every static image you include</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="staticImages.html#cb69-1" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb69-2"><a href="staticImages.html#cb69-2" tabindex="-1"></a><span class="fu">img</span>(</span>
+<span id="cb69-3"><a href="staticImages.html#cb69-3" tabindex="-1"></a>  <span class="at">src =</span> <span class="st">&quot;yourImage.PNG&quot;</span>,</span>
+<span id="cb69-4"><a href="staticImages.html#cb69-4" tabindex="-1"></a>  <span class="at">alt =</span> <span class="st">&quot;Short description of what&#39;s in the pic&quot;</span>,</span>
+<span id="cb69-5"><a href="staticImages.html#cb69-5" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">25</span>, <span class="at">height =</span> <span class="dv">25</span></span>
+<span id="cb69-6"><a href="staticImages.html#cb69-6" tabindex="-1"></a>)</span>
+<span id="cb69-7"><a href="staticImages.html#cb69-7" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>You MUST include <em>descriptive</em> alt text to each and every static image you include.</p>
+</div>
+<div id="getty-images" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> Getty Images<a href="staticImages.html#getty-images" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A common/popular source of images online is <a href="https://www.gettyimages.com/">Getty Images</a>. As a general rule, Getty Images do require licensing to use. However, they do provide a way to use their images in non-commercial sites (like our apps). To do this, we need to embed the image within the app.</p>
+<div id="finding-the-image" class="section level3 hasAnchor" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> Finding the Image<a href="staticImages.html#finding-the-image" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To get started, you’ll need to search the Getty Images site, for the topic you’re wanting to get an image of and specify that results should be restricted to embeddable images. The easiest way to do this is to use the search bar on <a href="https://www.gettyimages.com/resources/embed">Getty Image’s Embed page</a>. Using this search bar will automatically ensure that the image can be used.</p>
+<p>Once you select the image you want to use, click on the image in the search results to open the image up. Just below the image you’ll find a set of four buttons with the leftmost saying “Embed”. Click this button. A popup window will appear titled “Embed an image or slideshow” with a field showing code below. Make sure that the field is set to “Standard code” and then copy <strong>all</strong> of the code text. You should end up with something like the following:</p>
+<p><code>&lt;a id='rK3nO0ArRmNenhcm-f1w8Q' class='gie-single' href='http://www.gettyimages.com/detail/1165647019' target='_blank' style='color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;'&gt;Embed from Getty Images&lt;/a&gt;&lt;script&gt;window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};gie(function(){gie.widgets.load({id:'rK3nO0ArRmNenhcm-f1w8Q',sig:'3eV7zRFdjS-0p2iNm4tob-3E1tRfxfCNjaXnJgiMueo=',w:'525px',h:'328px',items:'1165647019',caption: true ,tld:'com',is360: false })});&lt;/script&gt;&lt;script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async&gt;&lt;/script&gt;</code></p>
+</div>
+<div id="placing-in-your-app" class="section level3 hasAnchor" number="12.4.2">
+<h3><span class="header-section-number">12.4.2</span> Placing in Your App<a href="staticImages.html#placing-in-your-app" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once you have the embed code, you can go into your app. You will need to use the <a href="staticImages.html#figEnv">figure environment</a> with a some modifications.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="staticImages.html#cb70-1" tabindex="-1"></a><span class="co"># Getty Images Example</span></span>
+<span id="cb70-2"><a href="staticImages.html#cb70-2" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb70-3"><a href="staticImages.html#cb70-3" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">figure</span>(</span>
+<span id="cb70-4"><a href="staticImages.html#cb70-4" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;centerGettyImage&quot;</span>,</span>
+<span id="cb70-5"><a href="staticImages.html#cb70-5" tabindex="-1"></a>  <span class="fu">HTML</span>(<span class="st">&quot;&lt;a id=&#39;rK3nO0ArRmNenhcm-f1w8Q&#39; class=&#39;gie-single&#39;</span></span>
+<span id="cb70-6"><a href="staticImages.html#cb70-6" tabindex="-1"></a><span class="st">       href=&#39;http://www.gettyimages.com/detail/1165647019&#39; target=&#39;_blank&#39;</span></span>
+<span id="cb70-7"><a href="staticImages.html#cb70-7" tabindex="-1"></a><span class="st">       style=&#39;color:#a7a7a7;text-decoration:none;font-weight:normal</span></span>
+<span id="cb70-8"><a href="staticImages.html#cb70-8" tabindex="-1"></a><span class="st">       !important;border:none;display:inline-block;&#39;&gt;Embed from Getty</span></span>
+<span id="cb70-9"><a href="staticImages.html#cb70-9" tabindex="-1"></a><span class="st">       Images&lt;/a&gt;</span></span>
+<span id="cb70-10"><a href="staticImages.html#cb70-10" tabindex="-1"></a><span class="st">       &lt;script&gt;window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};</span></span>
+<span id="cb70-11"><a href="staticImages.html#cb70-11" tabindex="-1"></a><span class="st">       gie(function(){gie.widgets.load({id:&#39;rK3nO0ArRmNenhcm-f1w8Q&#39;,</span></span>
+<span id="cb70-12"><a href="staticImages.html#cb70-12" tabindex="-1"></a><span class="st">       sig:&#39;3eV7zRFdjS-0p2iNm4tob-3E1tRfxfCNjaXnJgiMueo=&#39;,w:&#39;525px&#39;,h:&#39;328px&#39;,</span></span>
+<span id="cb70-13"><a href="staticImages.html#cb70-13" tabindex="-1"></a><span class="st">       items:&#39;1165647019&#39;,caption: true ,tld:&#39;com&#39;,is360: false })});&lt;/script&gt;</span></span>
+<span id="cb70-14"><a href="staticImages.html#cb70-14" tabindex="-1"></a><span class="st">       &lt;script src=&#39;//embed-cdn.gettyimages.com/widgets.js&#39; charset=&#39;utf-8&#39; async&gt;&lt;/script&gt;&quot;</span>),</span>
+<span id="cb70-15"><a href="staticImages.html#cb70-15" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">figcaption</span>(<span class="st">&quot;Rolling Two Dice&quot;</span>)</span>
+<span id="cb70-16"><a href="staticImages.html#cb70-16" tabindex="-1"></a>)</span>
+<span id="cb70-17"><a href="staticImages.html#cb70-17" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<p>The two key modifications are:</p>
+<ul>
+<li>Use the <code>centerGettyImage</code> class instead of <code>centerFigure</code></li>
+<li>Replace the <code>tags$img</code> command with the <code>HTML</code> command.</li>
+</ul>
+<p>Within the <code>HTML</code> command you’ll need to put a set of double quotation marks and then paste the embed code you copied from Getty Images. Be sure that you have the close double quotation marks and the close parenthesis for the <code>HTML</code> command. While you’ll still need to provide a figure caption (via <code>tags$figcaption</code>), you will not need to provide an alt text argument. (Getty Images has provided alt text as part of their embedding process.)</p>
+<p>By following the process, you should end up with the Getty Image you want to use in your app, much like the example below. It is important to keep in mind that when you embed an image in your app, it will take a few moments for your app to load the image. Thus, try to see if there are other freely available images that we can use instead.</p>
+<style type="text/css">
+.centerGettyImage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.centerGettyImage a{
+  color: #000000 !important;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Symbol";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem; 
+}
+
+</style>
+<figure class="centerGettyImage">
+<a id='rK3nO0ArRmNenhcm-f1w8Q' class='gie-single' href='http://www.gettyimages.com/detail/1165647019' target='_blank' style='color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;'>Embed from Getty Images</a>
+<script>window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};gie(function(){gie.widgets.load({id:'rK3nO0ArRmNenhcm-f1w8Q',sig:'3eV7zRFdjS-0p2iNm4tob-3E1tRfxfCNjaXnJgiMueo=',w:'525px',h:'328px',items:'1165647019',caption: true ,tld:'com',is360: false })});</script>
+<script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async></script>
+<figcaption>
+Rolling Two Dice
+</figcaption>
+</figure>
+
+</div>
 </div>
 </div>
             </section>
