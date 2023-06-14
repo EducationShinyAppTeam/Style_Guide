@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2023-05-17" />
+<meta name="date" content="2023-06-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -429,11 +429,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>12.1</b> Adding an Image</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
+<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figEnv"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
 <li class="chapter" data-level="12.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>12.1.2</b> In Line Images</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#imageSize"><i class="fa fa-check"></i><b>12.2</b> Sizing Your Image</a></li>
 <li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>12.3</b> Adding Alt Text to Static Images</a></li>
+<li class="chapter" data-level="12.4" data-path="staticImages.html"><a href="staticImages.html#getty-images"><i class="fa fa-check"></i><b>12.4</b> Getty Images</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="staticImages.html"><a href="staticImages.html#finding-the-image"><i class="fa fa-check"></i><b>12.4.1</b> Finding the Image</a></li>
+<li class="chapter" data-level="12.4.2" data-path="staticImages.html"><a href="staticImages.html#placing-in-your-app"><i class="fa fa-check"></i><b>12.4.2</b> Placing in Your App</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
 <ul>
@@ -546,13 +551,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you enclose text that gives instructions or other information to your App’s users in <code>p()</code> or <code>li()</code> (the later should be wrapped in either <code>tags$ol()</code> or <code>tags$ul()</code>), your App will understand how to style that text correctly. The central CSS file contains controls that set the base font size much larger than Shiny does natively as well as making text sizing dynamic. (This is important for making our apps mobile device friendly.) Again, using <code>boastApp</code> makes this process easier.</p>
 <p>If you want to make a certain word or phrase italic, you will need to wrap that text in <code>tags$em()</code>. Similarly, if you want do the same with boldface, you’ll use <code>tags$strong()</code>.</p>
 <p>For example, this code:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="simpleDesign.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(</span>
-<span id="cb65-2"><a href="simpleDesign.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
-<span id="cb65-3"><a href="simpleDesign.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;t&quot;</span>),</span>
-<span id="cb65-4"><a href="simpleDesign.html#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
-<span id="cb65-5"><a href="simpleDesign.html#cb65-5" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
-<span id="cb65-6"><a href="simpleDesign.html#cb65-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
-<span id="cb65-7"><a href="simpleDesign.html#cb65-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="simpleDesign.html#cb65-1" tabindex="-1"></a><span class="fu">p</span>(</span>
+<span id="cb65-2"><a href="simpleDesign.html#cb65-2" tabindex="-1"></a>  <span class="st">&quot;When dealing with the &quot;</span>,</span>
+<span id="cb65-3"><a href="simpleDesign.html#cb65-3" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;t&quot;</span>),</span>
+<span id="cb65-4"><a href="simpleDesign.html#cb65-4" tabindex="-1"></a>  <span class="st">&quot;-distribution, we only have one parameter, the &quot;</span>,</span>
+<span id="cb65-5"><a href="simpleDesign.html#cb65-5" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;degrees of freedom&quot;</span>),</span>
+<span id="cb65-6"><a href="simpleDesign.html#cb65-6" tabindex="-1"></a>  <span class="st">&quot;that we need to input.&quot;</span></span>
+<span id="cb65-7"><a href="simpleDesign.html#cb65-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>Becomes:</p>
 <blockquote>
 <p>When dealing with the <em>t</em>-distribution, we only have one parameter, the <strong>degrees of freedom</strong> that we need to input.</p>
@@ -585,15 +590,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">11.3.7</span> Text in <code>R</code> Plots<a href="simpleDesign.html#text-in-r-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Unfortunately, any text in <code>R</code> plots does not get controlled by CSS. This means that you’ll have to play around with the settings. Using the <code>ggplot2</code> package to make your plots (or other packages based upon the <code>grid</code> framework like <code>lattice</code>) will allow you to use the <code>theme</code> aspect to control text in your App.</p>
 <p>Here is an example for how to do this:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="simpleDesign.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a ggplot2 object</span></span>
-<span id="cb66-2"><a href="simpleDesign.html#cb66-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>grp)) </span>
-<span id="cb66-3"><a href="simpleDesign.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your layers, for example</span></span>
-<span id="cb66-4"><a href="simpleDesign.html#cb66-4" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_point</span>()</span>
-<span id="cb66-5"><a href="simpleDesign.html#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use theme to control text size</span></span>
-<span id="cb66-6"><a href="simpleDesign.html#cb66-6" aria-hidden="true" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
-<span id="cb66-7"><a href="simpleDesign.html#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
-<span id="cb66-8"><a href="simpleDesign.html#cb66-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>)</span>
-<span id="cb66-9"><a href="simpleDesign.html#cb66-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="simpleDesign.html#cb66-1" tabindex="-1"></a><span class="co"># Create a ggplot2 object</span></span>
+<span id="cb66-2"><a href="simpleDesign.html#cb66-2" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>grp)) </span>
+<span id="cb66-3"><a href="simpleDesign.html#cb66-3" tabindex="-1"></a><span class="co"># Add your layers, for example</span></span>
+<span id="cb66-4"><a href="simpleDesign.html#cb66-4" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">geom_point</span>()</span>
+<span id="cb66-5"><a href="simpleDesign.html#cb66-5" tabindex="-1"></a><span class="co"># Use theme to control text size</span></span>
+<span id="cb66-6"><a href="simpleDesign.html#cb66-6" tabindex="-1"></a>g1 <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb66-7"><a href="simpleDesign.html#cb66-7" tabindex="-1"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb66-8"><a href="simpleDesign.html#cb66-8" tabindex="-1"></a>  <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>)</span>
+<span id="cb66-9"><a href="simpleDesign.html#cb66-9" tabindex="-1"></a>  )</span></code></pre></div>
 <p>You will need to play around with the settings to find the appropriate value; text size 18 appears to work out well in many cases.</p>
 <p><strong>Note:</strong> The text in your plot might not behave well for dynamic re-sizing on different mobile devices.</p>
 </div>

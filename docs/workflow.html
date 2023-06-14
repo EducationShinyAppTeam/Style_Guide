@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2023-05-17" />
+<meta name="date" content="2023-06-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -429,11 +429,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="staticImages.html"><a href="staticImages.html#adding-an-image"><i class="fa fa-check"></i><b>12.1</b> Adding an Image</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figure-environment"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
+<li class="chapter" data-level="12.1.1" data-path="staticImages.html"><a href="staticImages.html#figEnv"><i class="fa fa-check"></i><b>12.1.1</b> Figure Environment</a></li>
 <li class="chapter" data-level="12.1.2" data-path="staticImages.html"><a href="staticImages.html#in-line-images"><i class="fa fa-check"></i><b>12.1.2</b> In Line Images</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="staticImages.html"><a href="staticImages.html#imageSize"><i class="fa fa-check"></i><b>12.2</b> Sizing Your Image</a></li>
 <li class="chapter" data-level="12.3" data-path="staticImages.html"><a href="staticImages.html#altStatic"><i class="fa fa-check"></i><b>12.3</b> Adding Alt Text to Static Images</a></li>
+<li class="chapter" data-level="12.4" data-path="staticImages.html"><a href="staticImages.html#getty-images"><i class="fa fa-check"></i><b>12.4</b> Getty Images</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="staticImages.html"><a href="staticImages.html#finding-the-image"><i class="fa fa-check"></i><b>12.4.1</b> Finding the Image</a></li>
+<li class="chapter" data-level="12.4.2" data-path="staticImages.html"><a href="staticImages.html#placing-in-your-app"><i class="fa fa-check"></i><b>12.4.2</b> Placing in Your App</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="graphics.html"><a href="graphics.html"><i class="fa fa-check"></i><b>13</b> Graphics</a>
 <ul>
@@ -645,8 +650,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="downgrade-the-httpuv-package." class="section level5 hasAnchor" number="1.3.3.2.1">
 <h5><span class="header-section-number">1.3.3.2.1</span> Downgrade the <code>httpuv</code> package.<a href="workflow.html#downgrade-the-httpuv-package." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>First thing that you’ll need to do is downgrade the <code>httpuv</code> package. You can use the following code to achieve this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="workflow.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Downgrade httpuv</span></span>
-<span id="cb1-2"><a href="workflow.html#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_version</span>(<span class="st">&quot;httpuv&quot;</span>, <span class="at">version =</span> <span class="st">&quot;1.6.1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="workflow.html#cb1-1" tabindex="-1"></a><span class="co"># Downgrade httpuv</span></span>
+<span id="cb1-2"><a href="workflow.html#cb1-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_version</span>(<span class="st">&quot;httpuv&quot;</span>, <span class="at">version =</span> <span class="st">&quot;1.6.1&quot;</span>)</span></code></pre></div>
 <p>Once this code has finished running, be sure to restart R for the change to take effect.</p>
 <p>You will need to follow these directions.</p>
 </div>

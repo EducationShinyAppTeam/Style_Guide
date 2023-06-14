@@ -285,10 +285,13 @@ text-in-r-plots
 text-case
 staticImages
 adding-an-image
-figure-environment
+figEnv
 in-line-images
 imageSize
 altStatic
+getty-images
+finding-the-image
+placing-in-your-app
 graphics
 graphLab
 font-sizes
