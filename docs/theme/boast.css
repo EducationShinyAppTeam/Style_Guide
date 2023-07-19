@@ -1059,7 +1059,7 @@ caption {
 /*Body links*/
 .bodylinks {
     text-decoration: underline;
-    text-weight: 700;
+    font-weight: 700;
 }
 
 .skin-blue .bodylinks {
