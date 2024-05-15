@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 14 Wording | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 14 Wording | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2023-07-10" />
+<meta name="date" content="2024-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -591,28 +591,28 @@ conciseness/brevity.</strong> While we don’t necessarily want a wall of text, 
 <h3><span class="header-section-number">14.3.3</span> Option 1: Hover Text<a href="wording.html#hovertext" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The more immediate solution to differing vocabularies is for us to make use of hover text. This approach is appealing in that the user doesn’t have to leave your App (like going to a dictionary/thesaurus) and the content of these tips is not critical to using your App. That is to say, the information is available for those who might need a quick reminder but does not take up permanent screen space.</p>
 <p>To use this tool you’ll need to make sure that you install and load the <code>tippy</code> package.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="wording.html#cb87-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="wording.html#cb91-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tippy&quot;</span>)</span></code></pre></div>
 <p>Suppose that we want to add the hover text to the the word “positive” in the following sentence:</p>
 <blockquote>
 <p>A positively skewed histogram will hoave potential outliers that are larger than the main modal clump(s).</p>
 </blockquote>
 <p>We would need to do the following in our <code>app.R</code> (or <code>ui.R</code>) file:</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="wording.html#cb88-1" tabindex="-1"></a><span class="co"># Required Library</span></span>
-<span id="cb88-2"><a href="wording.html#cb88-2" tabindex="-1"></a><span class="fu">library</span>(tippy)</span>
-<span id="cb88-3"><a href="wording.html#cb88-3" tabindex="-1"></a><span class="co"># In UI Section</span></span>
-<span id="cb88-4"><a href="wording.html#cb88-4" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb88-5"><a href="wording.html#cb88-5" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
-<span id="cb88-6"><a href="wording.html#cb88-6" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb88-7"><a href="wording.html#cb88-7" tabindex="-1"></a>  <span class="fu">tabItem</span>(</span>
-<span id="cb88-8"><a href="wording.html#cb88-8" tabindex="-1"></a>    <span class="at">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
-<span id="cb88-9"><a href="wording.html#cb88-9" tabindex="-1"></a>    <span class="fu">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
-<span id="cb88-10"><a href="wording.html#cb88-10" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;A &quot;</span>,</span>
-<span id="cb88-11"><a href="wording.html#cb88-11" tabindex="-1"></a>      tippy<span class="sc">::</span><span class="fu">tippy</span>(<span class="at">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
-<span id="cb88-12"><a href="wording.html#cb88-12" tabindex="-1"></a>                   <span class="at">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
-<span id="cb88-13"><a href="wording.html#cb88-13" tabindex="-1"></a>                   <span class="at">arrow =</span> <span class="cn">TRUE</span>, <span class="at">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
-<span id="cb88-14"><a href="wording.html#cb88-14" tabindex="-1"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
-<span id="cb88-15"><a href="wording.html#cb88-15" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
-<span id="cb88-16"><a href="wording.html#cb88-16" tabindex="-1"></a>)) </span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="wording.html#cb92-1" tabindex="-1"></a><span class="co"># Required Library</span></span>
+<span id="cb92-2"><a href="wording.html#cb92-2" tabindex="-1"></a><span class="fu">library</span>(tippy)</span>
+<span id="cb92-3"><a href="wording.html#cb92-3" tabindex="-1"></a><span class="co"># In UI Section</span></span>
+<span id="cb92-4"><a href="wording.html#cb92-4" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb92-5"><a href="wording.html#cb92-5" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
+<span id="cb92-6"><a href="wording.html#cb92-6" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb92-7"><a href="wording.html#cb92-7" tabindex="-1"></a>  <span class="fu">tabItem</span>(</span>
+<span id="cb92-8"><a href="wording.html#cb92-8" tabindex="-1"></a>    <span class="at">tabName =</span> <span class="st">&quot;Overview&quot;</span>,</span>
+<span id="cb92-9"><a href="wording.html#cb92-9" tabindex="-1"></a>    <span class="fu">h1</span>(<span class="st">&quot;Exploring Skewness&quot;</span>),</span>
+<span id="cb92-10"><a href="wording.html#cb92-10" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;A &quot;</span>,</span>
+<span id="cb92-11"><a href="wording.html#cb92-11" tabindex="-1"></a>      tippy<span class="sc">::</span><span class="fu">tippy</span>(<span class="at">text =</span> <span class="st">&quot;positively skewed&quot;</span>,</span>
+<span id="cb92-12"><a href="wording.html#cb92-12" tabindex="-1"></a>                   <span class="at">tooltip =</span> <span class="st">&quot;Sometimes called &#39;long right tail&#39; or &#39;right skewed&#39;&quot;</span>,</span>
+<span id="cb92-13"><a href="wording.html#cb92-13" tabindex="-1"></a>                   <span class="at">arrow =</span> <span class="cn">TRUE</span>, <span class="at">placement =</span> <span class="st">&quot;auto&quot;</span>),</span>
+<span id="cb92-14"><a href="wording.html#cb92-14" tabindex="-1"></a>      <span class="st">&quot; histogram will have potential outliers that are larger than the main modal clump(s).&quot;</span>),</span>
+<span id="cb92-15"><a href="wording.html#cb92-15" tabindex="-1"></a>  <span class="co">#[code omitted]</span></span>
+<span id="cb92-16"><a href="wording.html#cb92-16" tabindex="-1"></a>)) </span></code></pre></div>
 <p>There are several things to notice in the example:</p>
 <ol style="list-style-type: decimal">
 <li>The <code>tippy</code> call is part of the paragraph environment. If the text is going to be part of a list, then the <code>tippy</code> call should be part of a list item.</li>

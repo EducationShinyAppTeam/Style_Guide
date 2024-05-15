@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 15 Documentation | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 15 Documentation | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2023-07-10" />
+<meta name="date" content="2024-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -532,17 +532,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>All apps will need a References Tab. This is where you’ll place all references for your App, including R packages, borrowed code, data sources, images, etc. This in addition to the Acknowledgments.</p>
 <p><strong>NOTE:</strong> listing something in the Acknowledgments DOES NOT waive this requirement.</p>
 <p>We will make use of the <a href="https://amstat.tfjournals.com/asa-style-guide/">American Statistical Association’s</a> reference style. Please check with Neil, Matt, and Dennis for getting assistance. You can see this style in action, with the <a href="#refTab">Reference Tab</a> example of <a href="layout.html#layout">Chapter <a href="layout.html#layout"><strong>??</strong></a></a>. Here is a starting code block for you to use:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="documentation.html#cb89-1" tabindex="-1"></a><span class="co">#[omitted code]</span></span>
-<span id="cb89-2"><a href="documentation.html#cb89-2" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb89-3"><a href="documentation.html#cb89-3" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
-<span id="cb89-4"><a href="documentation.html#cb89-4" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
-<span id="cb89-5"><a href="documentation.html#cb89-5" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb89-6"><a href="documentation.html#cb89-6" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb89-7"><a href="documentation.html#cb89-7" tabindex="-1"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
-<span id="cb89-8"><a href="documentation.html#cb89-8" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb89-9"><a href="documentation.html#cb89-9" tabindex="-1"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
-<span id="cb89-10"><a href="documentation.html#cb89-10" tabindex="-1"></a>  <span class="co"># Repeat as needed</span></span>
-<span id="cb89-11"><a href="documentation.html#cb89-11" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="documentation.html#cb93-1" tabindex="-1"></a><span class="co">#[omitted code]</span></span>
+<span id="cb93-2"><a href="documentation.html#cb93-2" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb93-3"><a href="documentation.html#cb93-3" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;refs&quot;</span>,</span>
+<span id="cb93-4"><a href="documentation.html#cb93-4" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
+<span id="cb93-5"><a href="documentation.html#cb93-5" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
+<span id="cb93-6"><a href="documentation.html#cb93-6" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb93-7"><a href="documentation.html#cb93-7" tabindex="-1"></a>    <span class="st">&quot;reference 1-alphabetically&quot;</span>),</span>
+<span id="cb93-8"><a href="documentation.html#cb93-8" tabindex="-1"></a>  <span class="fu">p</span>(<span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb93-9"><a href="documentation.html#cb93-9" tabindex="-1"></a>    <span class="st">&quot;reference 2-alphabetically&quot;</span>),</span>
+<span id="cb93-10"><a href="documentation.html#cb93-10" tabindex="-1"></a>  <span class="co"># Repeat as needed</span></span>
+<span id="cb93-11"><a href="documentation.html#cb93-11" tabindex="-1"></a>)</span></code></pre></div>
 <p>Notice the use of <code>class = "hangingindent"</code>. You must include this with each reference as this will ensure the proper styling of your references.</p>
 <p>If you need assistance with this section, please talk to Neil.</p>
 </div>
@@ -569,17 +569,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="in-code" class="section level3 hasAnchor" number="15.2.2">
 <h3><span class="header-section-number">15.2.2</span> In Code<a href="documentation.html#in-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use the following format in your code to cite where you got the code from.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="documentation.html#cb90-1" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb90-2"><a href="documentation.html#cb90-2" tabindex="-1"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
-<span id="cb90-3"><a href="documentation.html#cb90-3" tabindex="-1"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
-<span id="cb90-4"><a href="documentation.html#cb90-4" tabindex="-1"></a><span class="co">#  Date: &lt;date&gt;</span></span>
-<span id="cb90-5"><a href="documentation.html#cb90-5" tabindex="-1"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
-<span id="cb90-6"><a href="documentation.html#cb90-6" tabindex="-1"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
-<span id="cb90-7"><a href="documentation.html#cb90-7" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
-<span id="cb90-8"><a href="documentation.html#cb90-8" tabindex="-1"></a><span class="co"># [borrowed code then follows]</span></span>
-<span id="cb90-9"><a href="documentation.html#cb90-9" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb90-10"><a href="documentation.html#cb90-10" tabindex="-1"></a><span class="co"># [last line of borrowed code]      </span></span>
-<span id="cb90-11"><a href="documentation.html#cb90-11" tabindex="-1"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="documentation.html#cb94-1" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb94-2"><a href="documentation.html#cb94-2" tabindex="-1"></a><span class="co">#  Title: &lt;title of program/source code&gt;</span></span>
+<span id="cb94-3"><a href="documentation.html#cb94-3" tabindex="-1"></a><span class="co">#  Author: &lt;author(s) names&gt;</span></span>
+<span id="cb94-4"><a href="documentation.html#cb94-4" tabindex="-1"></a><span class="co">#  Date: &lt;date&gt;</span></span>
+<span id="cb94-5"><a href="documentation.html#cb94-5" tabindex="-1"></a><span class="co">#  Code version: &lt;code version&gt;</span></span>
+<span id="cb94-6"><a href="documentation.html#cb94-6" tabindex="-1"></a><span class="co">#  Availability: &lt;where it&#39;s located&gt;</span></span>
+<span id="cb94-7"><a href="documentation.html#cb94-7" tabindex="-1"></a><span class="co">#-------------------------------------------------------------------------------</span></span>
+<span id="cb94-8"><a href="documentation.html#cb94-8" tabindex="-1"></a><span class="co"># [borrowed code then follows]</span></span>
+<span id="cb94-9"><a href="documentation.html#cb94-9" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb94-10"><a href="documentation.html#cb94-10" tabindex="-1"></a><span class="co"># [last line of borrowed code]      </span></span>
+<span id="cb94-11"><a href="documentation.html#cb94-11" tabindex="-1"></a><span class="co">#End of &lt;author&gt;&#39;s code----------------------------------------------------------</span></span></code></pre></div>
 </div>
 </div>
 <div id="r-packages" class="section level2 hasAnchor" number="15.3">

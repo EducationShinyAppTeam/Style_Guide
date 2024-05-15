@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Workflow | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Workflow | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2023-07-10" />
+<meta name="date" content="2024-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -644,9 +644,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Upon successful deployment (publishing), you should see your browser open up a new tab showing your running app. Copy the URL from the address bar so that you can share this with your testers. You can also get the URL for your app from your shinyapps.io account’s dashboard.</p>
 </div>
 </div>
-<div id="tlts-rstudio-connect" class="section level4 hasAnchor" number="1.3.3.2">
-<h4><span class="header-section-number">1.3.3.2</span> TLT’s RStudio Connect<a href="workflow.html#tlts-rstudio-connect" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We can also make use of TLT’s RStudio Connect platform to do non-local testing. There are multiple steps to follow for this method. The TLT platform is out of date, which means that not all apps may be testable through this method. Work with Neil on this.</p>
+<div id="tlts-rstudio-connect-not-recommended" class="section level4 hasAnchor" number="1.3.3.2">
+<h4><span class="header-section-number">1.3.3.2</span> TLT’s RStudio Connect (Not Recommended)<a href="workflow.html#tlts-rstudio-connect-not-recommended" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can also make use of TLT’s RStudio Connect platform to do non-local testing. There are multiple steps to follow for this method. <strong>The TLT platform is out of date</strong>, which means that not all apps may be testable through this method. Work with Neil on this.</p>
 <div id="downgrade-the-httpuv-package." class="section level5 hasAnchor" number="1.3.3.2.1">
 <h5><span class="header-section-number">1.3.3.2.1</span> Downgrade the <code>httpuv</code> package.<a href="workflow.html#downgrade-the-httpuv-package." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>First thing that you’ll need to do is downgrade the <code>httpuv</code> package. You can use the following code to achieve this:</p>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 User Interface Structure | Building Shiny Apps the BOAST Way</title>
   <meta name="description" content="This is a manual for one approach to building Shiny Apps and serves as the official Style Guide for the Book of App for Statistics Teaching (BOAST)." />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 User Interface Structure | Building Shiny Apps the BOAST Way" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2023-07-10" />
+<meta name="date" content="2024-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -541,16 +541,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-the-dashboard" class="section level3 hasAnchor" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Creating the Dashboard<a href="uiStructure.html#creating-the-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Creating the overarching Dashboard layout in your app is straightforward:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="uiStructure.html#cb44-1" tabindex="-1"></a><span class="co"># Required package</span></span>
-<span id="cb44-2"><a href="uiStructure.html#cb44-2" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
-<span id="cb44-3"><a href="uiStructure.html#cb44-3" tabindex="-1"></a></span>
-<span id="cb44-4"><a href="uiStructure.html#cb44-4" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb44-5"><a href="uiStructure.html#cb44-5" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb44-6"><a href="uiStructure.html#cb44-6" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
-<span id="cb44-7"><a href="uiStructure.html#cb44-7" tabindex="-1"></a>    <span class="at">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb44-8"><a href="uiStructure.html#cb44-8" tabindex="-1"></a>    <span class="co"># [code omitted]</span></span>
-<span id="cb44-9"><a href="uiStructure.html#cb44-9" tabindex="-1"></a>  )</span>
-<span id="cb44-10"><a href="uiStructure.html#cb44-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="uiStructure.html#cb48-1" tabindex="-1"></a><span class="co"># Required package</span></span>
+<span id="cb48-2"><a href="uiStructure.html#cb48-2" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
+<span id="cb48-3"><a href="uiStructure.html#cb48-3" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="uiStructure.html#cb48-4" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb48-5"><a href="uiStructure.html#cb48-5" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb48-6"><a href="uiStructure.html#cb48-6" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb48-7"><a href="uiStructure.html#cb48-7" tabindex="-1"></a>    <span class="at">skin =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb48-8"><a href="uiStructure.html#cb48-8" tabindex="-1"></a>    <span class="co"># [code omitted]</span></span>
+<span id="cb48-9"><a href="uiStructure.html#cb48-9" tabindex="-1"></a>  )</span>
+<span id="cb48-10"><a href="uiStructure.html#cb48-10" tabindex="-1"></a>)</span></code></pre></div>
 <p>The <code>dashboardPage</code> function will wrap around the rest of your UI element, thereby establishing the overarching structure. Three of this function’s arguments (<code>header</code>, <code>sidebar</code>, and <code>body</code>) will be covered in following sections. We do not need to worry about the <code>title</code> argument as this will be controlled by the Dashboard Header.</p>
 <p>The one argument that you must explicitly set for the <code>dashboardPage</code> is the <code>skin</code> argument. This argument sets the overall color theme for your app. While this is something that is more an aspect of Design Style, your only opportunity to set this value is here with the Layout.</p>
 </div>
@@ -779,25 +779,25 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-the-dashboard-header" class="section level3 hasAnchor" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Creating the Dashboard Header<a href="uiStructure.html#creating-the-dashboard-header" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You will use the same structure regardless if you are using <code>app.R</code> or <code>ui.R</code>.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="uiStructure.html#cb45-1" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb45-2"><a href="uiStructure.html#cb45-2" tabindex="-1"></a><span class="fu">dashboardHeader</span>(</span>
-<span id="cb45-3"><a href="uiStructure.html#cb45-3" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;app Template&quot;</span>, <span class="co"># Use a shortened form of the title here</span></span>
-<span id="cb45-4"><a href="uiStructure.html#cb45-4" tabindex="-1"></a>      <span class="at">titleWidth =</span> <span class="dv">250</span>,</span>
-<span id="cb45-5"><a href="uiStructure.html#cb45-5" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(<span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="fu">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="fu">icon</span>(<span class="st">&quot;info&quot;</span>))), <span class="co"># Optional</span></span>
-<span id="cb45-6"><a href="uiStructure.html#cb45-6" tabindex="-1"></a>      <span class="co"># The next two are required</span></span>
-<span id="cb45-7"><a href="uiStructure.html#cb45-7" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
-<span id="cb45-8"><a href="uiStructure.html#cb45-8" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
-<span id="cb45-9"><a href="uiStructure.html#cb45-9" tabindex="-1"></a>        boastUtils<span class="sc">::</span><span class="fu">surveyLink</span>(<span class="at">name =</span> <span class="st">&quot;app_Template&quot;</span>) <span class="co"># Replace app_Template with the repo name for your app </span></span>
-<span id="cb45-10"><a href="uiStructure.html#cb45-10" tabindex="-1"></a>      ),</span>
-<span id="cb45-11"><a href="uiStructure.html#cb45-11" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
-<span id="cb45-12"><a href="uiStructure.html#cb45-12" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
-<span id="cb45-13"><a href="uiStructure.html#cb45-13" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">a</span>(<span class="at">href =</span> <span class="st">&#39;https://shinyapps.science.psu.edu/&#39;</span>,</span>
-<span id="cb45-14"><a href="uiStructure.html#cb45-14" tabindex="-1"></a>               <span class="fu">icon</span>(<span class="st">&quot;house&quot;</span>)</span>
-<span id="cb45-15"><a href="uiStructure.html#cb45-15" tabindex="-1"></a>        )</span>
-<span id="cb45-16"><a href="uiStructure.html#cb45-16" tabindex="-1"></a>      )</span>
-<span id="cb45-17"><a href="uiStructure.html#cb45-17" tabindex="-1"></a>    )</span>
-<span id="cb45-18"><a href="uiStructure.html#cb45-18" tabindex="-1"></a><span class="er">)</span></span>
-<span id="cb45-19"><a href="uiStructure.html#cb45-19" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="uiStructure.html#cb49-1" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb49-2"><a href="uiStructure.html#cb49-2" tabindex="-1"></a><span class="fu">dashboardHeader</span>(</span>
+<span id="cb49-3"><a href="uiStructure.html#cb49-3" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;app Template&quot;</span>, <span class="co"># Use a shortened form of the title here</span></span>
+<span id="cb49-4"><a href="uiStructure.html#cb49-4" tabindex="-1"></a>      <span class="at">titleWidth =</span> <span class="dv">250</span>,</span>
+<span id="cb49-5"><a href="uiStructure.html#cb49-5" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(<span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>, <span class="fu">actionLink</span>(<span class="st">&quot;info&quot;</span>, <span class="fu">icon</span>(<span class="st">&quot;info&quot;</span>))), <span class="co"># Optional</span></span>
+<span id="cb49-6"><a href="uiStructure.html#cb49-6" tabindex="-1"></a>      <span class="co"># The next two are required</span></span>
+<span id="cb49-7"><a href="uiStructure.html#cb49-7" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb49-8"><a href="uiStructure.html#cb49-8" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
+<span id="cb49-9"><a href="uiStructure.html#cb49-9" tabindex="-1"></a>        boastUtils<span class="sc">::</span><span class="fu">surveyLink</span>(<span class="at">name =</span> <span class="st">&quot;app_Template&quot;</span>) <span class="co"># Replace app_Template with the repo name for your app </span></span>
+<span id="cb49-10"><a href="uiStructure.html#cb49-10" tabindex="-1"></a>      ),</span>
+<span id="cb49-11"><a href="uiStructure.html#cb49-11" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb49-12"><a href="uiStructure.html#cb49-12" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">&quot;dropdown&quot;</span>,</span>
+<span id="cb49-13"><a href="uiStructure.html#cb49-13" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">a</span>(<span class="at">href =</span> <span class="st">&#39;https://shinyapps.science.psu.edu/&#39;</span>,</span>
+<span id="cb49-14"><a href="uiStructure.html#cb49-14" tabindex="-1"></a>               <span class="fu">icon</span>(<span class="st">&quot;house&quot;</span>)</span>
+<span id="cb49-15"><a href="uiStructure.html#cb49-15" tabindex="-1"></a>        )</span>
+<span id="cb49-16"><a href="uiStructure.html#cb49-16" tabindex="-1"></a>      )</span>
+<span id="cb49-17"><a href="uiStructure.html#cb49-17" tabindex="-1"></a>    )</span>
+<span id="cb49-18"><a href="uiStructure.html#cb49-18" tabindex="-1"></a><span class="er">)</span></span>
+<span id="cb49-19"><a href="uiStructure.html#cb49-19" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>A couple of things to notice:</p>
 <ul>
 <li>The <code>dashboardHeader</code> acts as a list environment, so it is safe to use <code>tags$li</code> here even though there isn’t a <code>tags$ol</code> or <code>tags$ul</code>.</li>
@@ -818,27 +818,27 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="whats-needed-in-the-server-definition" class="section level3 hasAnchor" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you have the basic header, then the only thing that you’ll need to be sure to add in your app’s server definition, is code for the info button. For this we use the <code>sendSweetAlert</code> function from the <code>shinyWidgets</code> package. Here’s a generic example of what could be used for the Info button.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="uiStructure.html#cb46-1" tabindex="-1"></a><span class="co"># Required Packages</span></span>
-<span id="cb46-2"><a href="uiStructure.html#cb46-2" tabindex="-1"></a><span class="fu">library</span>(shinyWidgets)</span>
-<span id="cb46-3"><a href="uiStructure.html#cb46-3" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="uiStructure.html#cb46-4" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb46-5"><a href="uiStructure.html#cb46-5" tabindex="-1"></a></span>
-<span id="cb46-6"><a href="uiStructure.html#cb46-6" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb46-7"><a href="uiStructure.html#cb46-7" tabindex="-1"></a>  <span class="do">## Set up Info button ----</span></span>
-<span id="cb46-8"><a href="uiStructure.html#cb46-8" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
-<span id="cb46-9"><a href="uiStructure.html#cb46-9" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>info,</span>
-<span id="cb46-10"><a href="uiStructure.html#cb46-10" tabindex="-1"></a>    <span class="at">handlerExpr =</span> { </span>
-<span id="cb46-11"><a href="uiStructure.html#cb46-11" tabindex="-1"></a>      <span class="fu">sendSweetAlert</span>(</span>
-<span id="cb46-12"><a href="uiStructure.html#cb46-12" tabindex="-1"></a>        <span class="at">session =</span> session, <span class="co"># This should stay as is</span></span>
-<span id="cb46-13"><a href="uiStructure.html#cb46-13" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;info&quot;</span>, <span class="co"># This option will depend upon the nature of your message</span></span>
-<span id="cb46-14"><a href="uiStructure.html#cb46-14" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;app Information&quot;</span>,</span>
-<span id="cb46-15"><a href="uiStructure.html#cb46-15" tabindex="-1"></a>        <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
-<span id="cb46-16"><a href="uiStructure.html#cb46-16" tabindex="-1"></a>                     <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
-<span id="cb46-17"><a href="uiStructure.html#cb46-17" tabindex="-1"></a>                     <span class="st">&quot;improve code reability.&quot;</span>)</span>
-<span id="cb46-18"><a href="uiStructure.html#cb46-18" tabindex="-1"></a>      )</span>
-<span id="cb46-19"><a href="uiStructure.html#cb46-19" tabindex="-1"></a>    }</span>
-<span id="cb46-20"><a href="uiStructure.html#cb46-20" tabindex="-1"></a>  )</span>
-<span id="cb46-21"><a href="uiStructure.html#cb46-21" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="uiStructure.html#cb50-1" tabindex="-1"></a><span class="co"># Required Packages</span></span>
+<span id="cb50-2"><a href="uiStructure.html#cb50-2" tabindex="-1"></a><span class="fu">library</span>(shinyWidgets)</span>
+<span id="cb50-3"><a href="uiStructure.html#cb50-3" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="uiStructure.html#cb50-4" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb50-5"><a href="uiStructure.html#cb50-5" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="uiStructure.html#cb50-6" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb50-7"><a href="uiStructure.html#cb50-7" tabindex="-1"></a>  <span class="do">## Set up Info button ----</span></span>
+<span id="cb50-8"><a href="uiStructure.html#cb50-8" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
+<span id="cb50-9"><a href="uiStructure.html#cb50-9" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>info,</span>
+<span id="cb50-10"><a href="uiStructure.html#cb50-10" tabindex="-1"></a>    <span class="at">handlerExpr =</span> { </span>
+<span id="cb50-11"><a href="uiStructure.html#cb50-11" tabindex="-1"></a>      <span class="fu">sendSweetAlert</span>(</span>
+<span id="cb50-12"><a href="uiStructure.html#cb50-12" tabindex="-1"></a>        <span class="at">session =</span> session, <span class="co"># This should stay as is</span></span>
+<span id="cb50-13"><a href="uiStructure.html#cb50-13" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;info&quot;</span>, <span class="co"># This option will depend upon the nature of your message</span></span>
+<span id="cb50-14"><a href="uiStructure.html#cb50-14" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;app Information&quot;</span>,</span>
+<span id="cb50-15"><a href="uiStructure.html#cb50-15" tabindex="-1"></a>        <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">&quot;[Message you want to give to the student]&quot;</span>,</span>
+<span id="cb50-16"><a href="uiStructure.html#cb50-16" tabindex="-1"></a>                     <span class="st">&quot;Use paste with multiple lines to&quot;</span>,</span>
+<span id="cb50-17"><a href="uiStructure.html#cb50-17" tabindex="-1"></a>                     <span class="st">&quot;improve code reability.&quot;</span>)</span>
+<span id="cb50-18"><a href="uiStructure.html#cb50-18" tabindex="-1"></a>      )</span>
+<span id="cb50-19"><a href="uiStructure.html#cb50-19" tabindex="-1"></a>    }</span>
+<span id="cb50-20"><a href="uiStructure.html#cb50-20" tabindex="-1"></a>  )</span>
+<span id="cb50-21"><a href="uiStructure.html#cb50-21" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>type</code> argument will take one of several options. use the one that best aligns with your purposes.</p>
 <ul>
 <li><code>info</code>: If you are just conveying some general information to your user, you’ll use this value. This is the value that we will use in the vast majority of cases.</li>
@@ -858,32 +858,32 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-the-dashboard-sidebar" class="section level3 hasAnchor" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Creating the Dashboard Sidebar<a href="uiStructure.html#creating-the-dashboard-sidebar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You’ll need to use the following code as a template for creating the Sidebar. You will need to customize this to match your app’s goals and design.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="uiStructure.html#cb47-1" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb47-2"><a href="uiStructure.html#cb47-2" tabindex="-1"></a><span class="fu">dashboardSidebar</span>(</span>
-<span id="cb47-3"><a href="uiStructure.html#cb47-3" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">250</span>,</span>
-<span id="cb47-4"><a href="uiStructure.html#cb47-4" tabindex="-1"></a>  <span class="fu">sidebarMenu</span>(</span>
-<span id="cb47-5"><a href="uiStructure.html#cb47-5" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># Use &quot;pages&quot; to name the menu</span></span>
-<span id="cb47-6"><a href="uiStructure.html#cb47-6" tabindex="-1"></a>    <span class="co"># Overview is REQUIRED</span></span>
-<span id="cb47-7"><a href="uiStructure.html#cb47-7" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gauge-high&quot;</span>)),</span>
-<span id="cb47-8"><a href="uiStructure.html#cb47-8" tabindex="-1"></a>    <span class="co"># A prerequisites page is standard</span></span>
-<span id="cb47-9"><a href="uiStructure.html#cb47-9" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Prerequisites&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book&quot;</span>)),</span>
-<span id="cb47-10"><a href="uiStructure.html#cb47-10" tabindex="-1"></a>    <span class="co"># An Example page is optional but should always be accompanied by another page</span></span>
-<span id="cb47-11"><a href="uiStructure.html#cb47-11" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Example&quot;</span>, <span class="at">tabname =</span> <span class="st">&quot;example&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book-open-reader&quot;</span>)),</span>
-<span id="cb47-12"><a href="uiStructure.html#cb47-12" tabindex="-1"></a>    <span class="co"># At least one of the next four is REQUIRED</span></span>
-<span id="cb47-13"><a href="uiStructure.html#cb47-13" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;explore&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
-<span id="cb47-14"><a href="uiStructure.html#cb47-14" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;challenge&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
-<span id="cb47-15"><a href="uiStructure.html#cb47-15" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;game&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
-<span id="cb47-16"><a href="uiStructure.html#cb47-16" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Wizard&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;hat-wizard&quot;</span>)),</span>
-<span id="cb47-17"><a href="uiStructure.html#cb47-17" tabindex="-1"></a>    <span class="co"># References is REQUIRED</span></span>
-<span id="cb47-18"><a href="uiStructure.html#cb47-18" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
-<span id="cb47-19"><a href="uiStructure.html#cb47-19" tabindex="-1"></a>  ),</span>
-<span id="cb47-20"><a href="uiStructure.html#cb47-20" tabindex="-1"></a>  <span class="co"># The sidebar must end with the following code, exactly</span></span>
-<span id="cb47-21"><a href="uiStructure.html#cb47-21" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">div</span>(</span>
-<span id="cb47-22"><a href="uiStructure.html#cb47-22" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
-<span id="cb47-23"><a href="uiStructure.html#cb47-23" tabindex="-1"></a>    boastUtils<span class="sc">::</span><span class="fu">sidebarFooter</span>()</span>
-<span id="cb47-24"><a href="uiStructure.html#cb47-24" tabindex="-1"></a>  )</span>
-<span id="cb47-25"><a href="uiStructure.html#cb47-25" tabindex="-1"></a>)</span>
-<span id="cb47-26"><a href="uiStructure.html#cb47-26" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="uiStructure.html#cb51-1" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb51-2"><a href="uiStructure.html#cb51-2" tabindex="-1"></a><span class="fu">dashboardSidebar</span>(</span>
+<span id="cb51-3"><a href="uiStructure.html#cb51-3" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">250</span>,</span>
+<span id="cb51-4"><a href="uiStructure.html#cb51-4" tabindex="-1"></a>  <span class="fu">sidebarMenu</span>(</span>
+<span id="cb51-5"><a href="uiStructure.html#cb51-5" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># Use &quot;pages&quot; to name the menu</span></span>
+<span id="cb51-6"><a href="uiStructure.html#cb51-6" tabindex="-1"></a>    <span class="co"># Overview is REQUIRED</span></span>
+<span id="cb51-7"><a href="uiStructure.html#cb51-7" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Overview&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gauge-high&quot;</span>)),</span>
+<span id="cb51-8"><a href="uiStructure.html#cb51-8" tabindex="-1"></a>    <span class="co"># A prerequisites page is standard</span></span>
+<span id="cb51-9"><a href="uiStructure.html#cb51-9" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Prerequisites&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book&quot;</span>)),</span>
+<span id="cb51-10"><a href="uiStructure.html#cb51-10" tabindex="-1"></a>    <span class="co"># An Example page is optional but should always be accompanied by another page</span></span>
+<span id="cb51-11"><a href="uiStructure.html#cb51-11" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Example&quot;</span>, <span class="at">tabname =</span> <span class="st">&quot;example&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;book-open-reader&quot;</span>)),</span>
+<span id="cb51-12"><a href="uiStructure.html#cb51-12" tabindex="-1"></a>    <span class="co"># At least one of the next four is REQUIRED</span></span>
+<span id="cb51-13"><a href="uiStructure.html#cb51-13" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Explore&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;explore&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;wpexplorer&quot;</span>)),</span>
+<span id="cb51-14"><a href="uiStructure.html#cb51-14" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Challenge&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;challenge&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gears&quot;</span>)),</span>
+<span id="cb51-15"><a href="uiStructure.html#cb51-15" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Game&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;game&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;gamepad&quot;</span>)),</span>
+<span id="cb51-16"><a href="uiStructure.html#cb51-16" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;Wizard&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;hat-wizard&quot;</span>)),</span>
+<span id="cb51-17"><a href="uiStructure.html#cb51-17" tabindex="-1"></a>    <span class="co"># References is REQUIRED</span></span>
+<span id="cb51-18"><a href="uiStructure.html#cb51-18" tabindex="-1"></a>    <span class="fu">menuItem</span>(<span class="st">&quot;References&quot;</span>, <span class="at">tabName =</span> <span class="st">&quot;References&quot;</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;leanpub&quot;</span>))</span>
+<span id="cb51-19"><a href="uiStructure.html#cb51-19" tabindex="-1"></a>  ),</span>
+<span id="cb51-20"><a href="uiStructure.html#cb51-20" tabindex="-1"></a>  <span class="co"># The sidebar must end with the following code, exactly</span></span>
+<span id="cb51-21"><a href="uiStructure.html#cb51-21" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">div</span>(</span>
+<span id="cb51-22"><a href="uiStructure.html#cb51-22" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;sidebar-logo&quot;</span>,</span>
+<span id="cb51-23"><a href="uiStructure.html#cb51-23" tabindex="-1"></a>    boastUtils<span class="sc">::</span><span class="fu">sidebarFooter</span>()</span>
+<span id="cb51-24"><a href="uiStructure.html#cb51-24" tabindex="-1"></a>  )</span>
+<span id="cb51-25"><a href="uiStructure.html#cb51-25" tabindex="-1"></a>)</span>
+<span id="cb51-26"><a href="uiStructure.html#cb51-26" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 <p>Notice that after setting the <code>width</code> of the Sidebar, you will need to call the <code>sidebarMenu</code> function. This will create the appropriate structure for your Sidebar.</p>
 </div>
 <div id="sidebar-order" class="section level3 hasAnchor" number="9.3.2">
@@ -1010,23 +1010,23 @@ Figure 9.24: Sliders Using the Red Palette
 <p>Once you have set the value for <code>tabName</code>, you can choose to include the command <code>withMathJax()</code>. This line of code is needed if you plan to include any mathematical formulas. You can omit this line if you have no mathematics to display. We will note that a safe default is to go ahead and include this line of code. We must stress that you have to include <code>withMathJax()</code> on each page of your app.</p>
 <p>What comes after these two lines will be all of the code necessary to bring the page of your app to life. However, the most important thing to remember while you’re coding in this section are <strong><em>commas</em></strong>. After you finish each bit of code and before you move on to the next item on the page, you must place a comma and then return to a new line.</p>
 <p>The following code can serve as an example to help you get started:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="uiStructure.html#cb48-1" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb48-2"><a href="uiStructure.html#cb48-2" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
-<span id="cb48-3"><a href="uiStructure.html#cb48-3" tabindex="-1"></a>  <span class="fu">tabItems</span>(</span>
-<span id="cb48-4"><a href="uiStructure.html#cb48-4" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
-<span id="cb48-5"><a href="uiStructure.html#cb48-5" tabindex="-1"></a>      <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="co"># needs to match the name you used in the Sidebar</span></span>
-<span id="cb48-6"><a href="uiStructure.html#cb48-6" tabindex="-1"></a>      <span class="fu">withMathJax</span>(), <span class="co"># if you need to display mathematics, include this line</span></span>
-<span id="cb48-7"><a href="uiStructure.html#cb48-7" tabindex="-1"></a>      <span class="fu">h1</span>(<span class="st">&quot;Sample application for BOAST apps&quot;</span>), </span>
-<span id="cb48-8"><a href="uiStructure.html#cb48-8" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
-<span id="cb48-9"><a href="uiStructure.html#cb48-9" tabindex="-1"></a>      <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
-<span id="cb48-10"><a href="uiStructure.html#cb48-10" tabindex="-1"></a>      <span class="co"># [code for the page continues]</span></span>
-<span id="cb48-11"><a href="uiStructure.html#cb48-11" tabindex="-1"></a>    ),</span>
-<span id="cb48-12"><a href="uiStructure.html#cb48-12" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
-<span id="cb48-13"><a href="uiStructure.html#cb48-13" tabindex="-1"></a>      <span class="co"># repeat tabItem chunk for each subsequent page</span></span>
-<span id="cb48-14"><a href="uiStructure.html#cb48-14" tabindex="-1"></a>    )</span>
-<span id="cb48-15"><a href="uiStructure.html#cb48-15" tabindex="-1"></a>  )</span>
-<span id="cb48-16"><a href="uiStructure.html#cb48-16" tabindex="-1"></a>)</span>
-<span id="cb48-17"><a href="uiStructure.html#cb48-17" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="uiStructure.html#cb52-1" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb52-2"><a href="uiStructure.html#cb52-2" tabindex="-1"></a><span class="fu">dashboardBody</span>(</span>
+<span id="cb52-3"><a href="uiStructure.html#cb52-3" tabindex="-1"></a>  <span class="fu">tabItems</span>(</span>
+<span id="cb52-4"><a href="uiStructure.html#cb52-4" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
+<span id="cb52-5"><a href="uiStructure.html#cb52-5" tabindex="-1"></a>      <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>, <span class="co"># needs to match the name you used in the Sidebar</span></span>
+<span id="cb52-6"><a href="uiStructure.html#cb52-6" tabindex="-1"></a>      <span class="fu">withMathJax</span>(), <span class="co"># if you need to display mathematics, include this line</span></span>
+<span id="cb52-7"><a href="uiStructure.html#cb52-7" tabindex="-1"></a>      <span class="fu">h1</span>(<span class="st">&quot;Sample application for BOAST apps&quot;</span>), </span>
+<span id="cb52-8"><a href="uiStructure.html#cb52-8" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
+<span id="cb52-9"><a href="uiStructure.html#cb52-9" tabindex="-1"></a>      <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
+<span id="cb52-10"><a href="uiStructure.html#cb52-10" tabindex="-1"></a>      <span class="co"># [code for the page continues]</span></span>
+<span id="cb52-11"><a href="uiStructure.html#cb52-11" tabindex="-1"></a>    ),</span>
+<span id="cb52-12"><a href="uiStructure.html#cb52-12" tabindex="-1"></a>    <span class="fu">tabItem</span>(</span>
+<span id="cb52-13"><a href="uiStructure.html#cb52-13" tabindex="-1"></a>      <span class="co"># repeat tabItem chunk for each subsequent page</span></span>
+<span id="cb52-14"><a href="uiStructure.html#cb52-14" tabindex="-1"></a>    )</span>
+<span id="cb52-15"><a href="uiStructure.html#cb52-15" tabindex="-1"></a>  )</span>
+<span id="cb52-16"><a href="uiStructure.html#cb52-16" tabindex="-1"></a>)</span>
+<span id="cb52-17"><a href="uiStructure.html#cb52-17" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>The following subsections explain the purposes of each type of Page.</p>
 <div id="the-overview-page" class="section level3 hasAnchor" number="9.4.1">
 <h3><span class="header-section-number">9.4.1</span> The Overview Page<a href="uiStructure.html#the-overview-page" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1047,52 +1047,52 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-the-overview-page" class="section level4 hasAnchor" number="9.4.1.1">
 <h4><span class="header-section-number">9.4.1.1</span> Creating the Overview Page<a href="uiStructure.html#creating-the-overview-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here’s an example of making an Overview Page:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="uiStructure.html#cb49-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb49-2"><a href="uiStructure.html#cb49-2" tabindex="-1"></a><span class="co"># Inside the Dashboard Body</span></span>
-<span id="cb49-3"><a href="uiStructure.html#cb49-3" tabindex="-1"></a><span class="do">#### Set up the Overview Page ----</span></span>
-<span id="cb49-4"><a href="uiStructure.html#cb49-4" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb49-5"><a href="uiStructure.html#cb49-5" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
-<span id="cb49-6"><a href="uiStructure.html#cb49-6" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
-<span id="cb49-7"><a href="uiStructure.html#cb49-7" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">&quot;Sample application for BOAST apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
-<span id="cb49-8"><a href="uiStructure.html#cb49-8" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
-<span id="cb49-9"><a href="uiStructure.html#cb49-9" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
-<span id="cb49-10"><a href="uiStructure.html#cb49-10" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This information will change depending on what you want to do.&quot;</span>),</span>
-<span id="cb49-11"><a href="uiStructure.html#cb49-11" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ol</span>(</span>
-<span id="cb49-12"><a href="uiStructure.html#cb49-12" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review any prerequiste ideas using the Prerequistes tab.&quot;</span>),</span>
-<span id="cb49-13"><a href="uiStructure.html#cb49-13" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Explore the Exploration Tab.&quot;</span>),</span>
-<span id="cb49-14"><a href="uiStructure.html#cb49-14" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Challenge yourself.&quot;</span>),</span>
-<span id="cb49-15"><a href="uiStructure.html#cb49-15" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Play the game to test how far you&#39;ve come.&quot;</span>)</span>
-<span id="cb49-16"><a href="uiStructure.html#cb49-16" tabindex="-1"></a>  ),</span>
-<span id="cb49-17"><a href="uiStructure.html#cb49-17" tabindex="-1"></a>  <span class="do">##### Go Button--location will depend on your goals ----</span></span>
-<span id="cb49-18"><a href="uiStructure.html#cb49-18" tabindex="-1"></a>  <span class="fu">div</span>(</span>
-<span id="cb49-19"><a href="uiStructure.html#cb49-19" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;text-align: center;&quot;</span>,</span>
-<span id="cb49-20"><a href="uiStructure.html#cb49-20" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
-<span id="cb49-21"><a href="uiStructure.html#cb49-21" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;go1&quot;</span>,</span>
-<span id="cb49-22"><a href="uiStructure.html#cb49-22" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;GO!&quot;</span>,</span>
-<span id="cb49-23"><a href="uiStructure.html#cb49-23" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
-<span id="cb49-24"><a href="uiStructure.html#cb49-24" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
-<span id="cb49-25"><a href="uiStructure.html#cb49-25" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;default&quot;</span></span>
-<span id="cb49-26"><a href="uiStructure.html#cb49-26" tabindex="-1"></a>    )</span>
-<span id="cb49-27"><a href="uiStructure.html#cb49-27" tabindex="-1"></a>  ),</span>
-<span id="cb49-28"><a href="uiStructure.html#cb49-28" tabindex="-1"></a>  <span class="do">##### Create two lines of space ----</span></span>
-<span id="cb49-29"><a href="uiStructure.html#cb49-29" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb49-30"><a href="uiStructure.html#cb49-30" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb49-31"><a href="uiStructure.html#cb49-31" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Acknowledgements&quot;</span>),</span>
-<span id="cb49-32"><a href="uiStructure.html#cb49-32" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb49-33"><a href="uiStructure.html#cb49-33" tabindex="-1"></a>    <span class="st">&quot;This version of the app was developed and coded by Neil J. Hatfield</span></span>
-<span id="cb49-34"><a href="uiStructure.html#cb49-34" tabindex="-1"></a><span class="st">    and Robert P. Carey, III.&quot;</span>,</span>
-<span id="cb49-35"><a href="uiStructure.html#cb49-35" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-36"><a href="uiStructure.html#cb49-36" tabindex="-1"></a>    <span class="st">&quot;We would like to extend a special thanks to the Shiny Program Students.&quot;</span>,</span>
-<span id="cb49-37"><a href="uiStructure.html#cb49-37" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-38"><a href="uiStructure.html#cb49-38" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-39"><a href="uiStructure.html#cb49-39" tabindex="-1"></a>    <span class="st">&quot;Cite this app as:&quot;</span>,</span>
-<span id="cb49-40"><a href="uiStructure.html#cb49-40" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-41"><a href="uiStructure.html#cb49-41" tabindex="-1"></a>    <span class="fu">citeApp</span>(),</span>
-<span id="cb49-42"><a href="uiStructure.html#cb49-42" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-43"><a href="uiStructure.html#cb49-43" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
-<span id="cb49-44"><a href="uiStructure.html#cb49-44" tabindex="-1"></a>    <span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/16/2023 by NJH.&quot;</span>)</span>
-<span id="cb49-45"><a href="uiStructure.html#cb49-45" tabindex="-1"></a>  )</span>
-<span id="cb49-46"><a href="uiStructure.html#cb49-46" tabindex="-1"></a>),</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="uiStructure.html#cb53-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb53-2"><a href="uiStructure.html#cb53-2" tabindex="-1"></a><span class="co"># Inside the Dashboard Body</span></span>
+<span id="cb53-3"><a href="uiStructure.html#cb53-3" tabindex="-1"></a><span class="do">#### Set up the Overview Page ----</span></span>
+<span id="cb53-4"><a href="uiStructure.html#cb53-4" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb53-5"><a href="uiStructure.html#cb53-5" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb53-6"><a href="uiStructure.html#cb53-6" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
+<span id="cb53-7"><a href="uiStructure.html#cb53-7" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">&quot;Sample application for BOAST apps&quot;</span>), <span class="co"># This should be the full name.</span></span>
+<span id="cb53-8"><a href="uiStructure.html#cb53-8" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This is a sample Shiny application for BOAST.&quot;</span>),</span>
+<span id="cb53-9"><a href="uiStructure.html#cb53-9" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Instructions&quot;</span>),</span>
+<span id="cb53-10"><a href="uiStructure.html#cb53-10" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;This information will change depending on what you want to do.&quot;</span>),</span>
+<span id="cb53-11"><a href="uiStructure.html#cb53-11" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ol</span>(</span>
+<span id="cb53-12"><a href="uiStructure.html#cb53-12" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review any prerequiste ideas using the Prerequistes tab.&quot;</span>),</span>
+<span id="cb53-13"><a href="uiStructure.html#cb53-13" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Explore the Exploration Tab.&quot;</span>),</span>
+<span id="cb53-14"><a href="uiStructure.html#cb53-14" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Challenge yourself.&quot;</span>),</span>
+<span id="cb53-15"><a href="uiStructure.html#cb53-15" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Play the game to test how far you&#39;ve come.&quot;</span>)</span>
+<span id="cb53-16"><a href="uiStructure.html#cb53-16" tabindex="-1"></a>  ),</span>
+<span id="cb53-17"><a href="uiStructure.html#cb53-17" tabindex="-1"></a>  <span class="do">##### Go Button--location will depend on your goals ----</span></span>
+<span id="cb53-18"><a href="uiStructure.html#cb53-18" tabindex="-1"></a>  <span class="fu">div</span>(</span>
+<span id="cb53-19"><a href="uiStructure.html#cb53-19" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;text-align: center;&quot;</span>,</span>
+<span id="cb53-20"><a href="uiStructure.html#cb53-20" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb53-21"><a href="uiStructure.html#cb53-21" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;go1&quot;</span>,</span>
+<span id="cb53-22"><a href="uiStructure.html#cb53-22" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;GO!&quot;</span>,</span>
+<span id="cb53-23"><a href="uiStructure.html#cb53-23" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb53-24"><a href="uiStructure.html#cb53-24" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
+<span id="cb53-25"><a href="uiStructure.html#cb53-25" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;default&quot;</span></span>
+<span id="cb53-26"><a href="uiStructure.html#cb53-26" tabindex="-1"></a>    )</span>
+<span id="cb53-27"><a href="uiStructure.html#cb53-27" tabindex="-1"></a>  ),</span>
+<span id="cb53-28"><a href="uiStructure.html#cb53-28" tabindex="-1"></a>  <span class="do">##### Create two lines of space ----</span></span>
+<span id="cb53-29"><a href="uiStructure.html#cb53-29" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb53-30"><a href="uiStructure.html#cb53-30" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb53-31"><a href="uiStructure.html#cb53-31" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Acknowledgements&quot;</span>),</span>
+<span id="cb53-32"><a href="uiStructure.html#cb53-32" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb53-33"><a href="uiStructure.html#cb53-33" tabindex="-1"></a>    <span class="st">&quot;This version of the app was developed and coded by Neil J. Hatfield</span></span>
+<span id="cb53-34"><a href="uiStructure.html#cb53-34" tabindex="-1"></a><span class="st">    and Robert P. Carey, III.&quot;</span>,</span>
+<span id="cb53-35"><a href="uiStructure.html#cb53-35" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb53-36"><a href="uiStructure.html#cb53-36" tabindex="-1"></a>    <span class="st">&quot;We would like to extend a special thanks to the Shiny Program Students.&quot;</span>,</span>
+<span id="cb53-37"><a href="uiStructure.html#cb53-37" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb53-38"><a href="uiStructure.html#cb53-38" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb53-39"><a href="uiStructure.html#cb53-39" tabindex="-1"></a>    <span class="st">&quot;Cite this app as:&quot;</span>,</span>
+<span id="cb53-40"><a href="uiStructure.html#cb53-40" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb53-41"><a href="uiStructure.html#cb53-41" tabindex="-1"></a>    <span class="fu">citeApp</span>(),</span>
+<span id="cb53-42"><a href="uiStructure.html#cb53-42" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb53-43"><a href="uiStructure.html#cb53-43" tabindex="-1"></a>    <span class="fu">br</span>(),</span>
+<span id="cb53-44"><a href="uiStructure.html#cb53-44" tabindex="-1"></a>    <span class="fu">div</span>(<span class="at">class =</span> <span class="st">&quot;updated&quot;</span>, <span class="st">&quot;Last Update: 5/16/2023 by NJH.&quot;</span>)</span>
+<span id="cb53-45"><a href="uiStructure.html#cb53-45" tabindex="-1"></a>  )</span>
+<span id="cb53-46"><a href="uiStructure.html#cb53-46" tabindex="-1"></a>),</span></code></pre></div>
 <p>A few things to notice:</p>
 <ul>
 <li>If you need a new line but not a new paragraph, you use the <code>br()</code> tag.</li>
@@ -1106,17 +1106,17 @@ Figure 9.24: Sliders Using the Red Palette
 <h4><span class="header-section-number">9.4.1.2</span> What’s Needed in the Server Defintion<a href="uiStructure.html#whats-needed-in-the-server-defintion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>At bare minimum you will need to have one element in your server definition: the action for your button. If you have multiple buttons, you might need to have several more code chunks.</p>
 <p>Here is a generic example for the button on the Overview Page that moves the user to the appropriate next page:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="uiStructure.html#cb50-1" tabindex="-1"></a><span class="co"># In your server section</span></span>
-<span id="cb50-2"><a href="uiStructure.html#cb50-2" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb50-3"><a href="uiStructure.html#cb50-3" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
-<span id="cb50-4"><a href="uiStructure.html#cb50-4" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>go1, <span class="co">#append the button&#39;s inputId to input$ as the event expression</span></span>
-<span id="cb50-5"><a href="uiStructure.html#cb50-5" tabindex="-1"></a>  <span class="at">handlerExpr =</span> { <span class="co"># This is the action portion of your button and must be in { }</span></span>
-<span id="cb50-6"><a href="uiStructure.html#cb50-6" tabindex="-1"></a>    <span class="fu">updateTabItems</span>(</span>
-<span id="cb50-7"><a href="uiStructure.html#cb50-7" tabindex="-1"></a>      <span class="at">session =</span> session, <span class="co"># This allows the user to move pages</span></span>
-<span id="cb50-8"><a href="uiStructure.html#cb50-8" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># the id of your Sidebar</span></span>
-<span id="cb50-9"><a href="uiStructure.html#cb50-9" tabindex="-1"></a>      <span class="at">selected =</span> <span class="st">&quot;explore&quot;</span> <span class="co"># Name of page to go to</span></span>
-<span id="cb50-10"><a href="uiStructure.html#cb50-10" tabindex="-1"></a>    ) </span>
-<span id="cb50-11"><a href="uiStructure.html#cb50-11" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="uiStructure.html#cb54-1" tabindex="-1"></a><span class="co"># In your server section</span></span>
+<span id="cb54-2"><a href="uiStructure.html#cb54-2" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb54-3"><a href="uiStructure.html#cb54-3" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
+<span id="cb54-4"><a href="uiStructure.html#cb54-4" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>go1, <span class="co">#append the button&#39;s inputId to input$ as the event expression</span></span>
+<span id="cb54-5"><a href="uiStructure.html#cb54-5" tabindex="-1"></a>  <span class="at">handlerExpr =</span> { <span class="co"># This is the action portion of your button and must be in { }</span></span>
+<span id="cb54-6"><a href="uiStructure.html#cb54-6" tabindex="-1"></a>    <span class="fu">updateTabItems</span>(</span>
+<span id="cb54-7"><a href="uiStructure.html#cb54-7" tabindex="-1"></a>      <span class="at">session =</span> session, <span class="co"># This allows the user to move pages</span></span>
+<span id="cb54-8"><a href="uiStructure.html#cb54-8" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;pages&quot;</span>, <span class="co"># the id of your Sidebar</span></span>
+<span id="cb54-9"><a href="uiStructure.html#cb54-9" tabindex="-1"></a>      <span class="at">selected =</span> <span class="st">&quot;explore&quot;</span> <span class="co"># Name of page to go to</span></span>
+<span id="cb54-10"><a href="uiStructure.html#cb54-10" tabindex="-1"></a>    ) </span>
+<span id="cb54-11"><a href="uiStructure.html#cb54-11" tabindex="-1"></a>})</span></code></pre></div>
 <p>In the rare case where you have other things happening on the Overview page, you’ll need to include the appropriate calls in your server section to carry out those actions for you.</p>
 </div>
 </div>
@@ -1141,87 +1141,87 @@ Figure 9.24: Sliders Using the Red Palette
 <p>*Note: not all requests for anchors may be fulfilled and not all course notes have anchors.</p>
 <p>The styling of the link will be managed by the BOAST CSS file. See the following examples as well as <a href="htmlCSS.html#bodyLinks">HTML-Links</a> section.</p>
 <p>Here’s are two examples of how you would code a text link:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="uiStructure.html#cb51-1" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
-<span id="cb51-2"><a href="uiStructure.html#cb51-2" tabindex="-1"></a><span class="co"># Working in the UI section</span></span>
-<span id="cb51-3"><a href="uiStructure.html#cb51-3" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="uiStructure.html#cb51-4" tabindex="-1"></a><span class="co"># Example 1: in a paragraph</span></span>
-<span id="cb51-5"><a href="uiStructure.html#cb51-5" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some</span></span>
-<span id="cb51-6"><a href="uiStructure.html#cb51-6" tabindex="-1"></a><span class="st">  of the basic shapes of graphs in statistics. A good resource for this would</span></span>
-<span id="cb51-7"><a href="uiStructure.html#cb51-7" tabindex="-1"></a><span class="st">  be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb51-8"><a href="uiStructure.html#cb51-8" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="cb51-9"><a href="uiStructure.html#cb51-9" tabindex="-1"></a>    <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb51-10"><a href="uiStructure.html#cb51-10" tabindex="-1"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
-<span id="cb51-11"><a href="uiStructure.html#cb51-11" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
-<span id="cb51-12"><a href="uiStructure.html#cb51-12" tabindex="-1"></a>  ),</span>
-<span id="cb51-13"><a href="uiStructure.html#cb51-13" tabindex="-1"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
-<span id="cb51-14"><a href="uiStructure.html#cb51-14" tabindex="-1"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
-<span id="cb51-15"><a href="uiStructure.html#cb51-15" tabindex="-1"></a>)</span>
-<span id="cb51-16"><a href="uiStructure.html#cb51-16" tabindex="-1"></a></span>
-<span id="cb51-17"><a href="uiStructure.html#cb51-17" tabindex="-1"></a><span class="co"># Example 2: in a list item</span></span>
-<span id="cb51-18"><a href="uiStructure.html#cb51-18" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
-<span id="cb51-19"><a href="uiStructure.html#cb51-19" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
-<span id="cb51-20"><a href="uiStructure.html#cb51-20" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="cb51-21"><a href="uiStructure.html#cb51-21" tabindex="-1"></a>      <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
-<span id="cb51-22"><a href="uiStructure.html#cb51-22" tabindex="-1"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
-<span id="cb51-23"><a href="uiStructure.html#cb51-23" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
-<span id="cb51-24"><a href="uiStructure.html#cb51-24" tabindex="-1"></a>    )</span>
-<span id="cb51-25"><a href="uiStructure.html#cb51-25" tabindex="-1"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
-<span id="cb51-26"><a href="uiStructure.html#cb51-26" tabindex="-1"></a>    <span class="co"># Be consistent about punctuation--either all items do or none.</span></span>
-<span id="cb51-27"><a href="uiStructure.html#cb51-27" tabindex="-1"></a>  ) </span>
-<span id="cb51-28"><a href="uiStructure.html#cb51-28" tabindex="-1"></a>)</span>
-<span id="cb51-29"><a href="uiStructure.html#cb51-29" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="uiStructure.html#cb55-1" tabindex="-1"></a><span class="co"># [omitted code]</span></span>
+<span id="cb55-2"><a href="uiStructure.html#cb55-2" tabindex="-1"></a><span class="co"># Working in the UI section</span></span>
+<span id="cb55-3"><a href="uiStructure.html#cb55-3" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="uiStructure.html#cb55-4" tabindex="-1"></a><span class="co"># Example 1: in a paragraph</span></span>
+<span id="cb55-5"><a href="uiStructure.html#cb55-5" tabindex="-1"></a><span class="fu">p</span>(<span class="st">&quot;While not critical, you might wish to refresh your understanding on some</span></span>
+<span id="cb55-6"><a href="uiStructure.html#cb55-6" tabindex="-1"></a><span class="st">  of the basic shapes of graphs in statistics. A good resource for this would</span></span>
+<span id="cb55-7"><a href="uiStructure.html#cb55-7" tabindex="-1"></a><span class="st">  be the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb55-8"><a href="uiStructure.html#cb55-8" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="cb55-9"><a href="uiStructure.html#cb55-9" tabindex="-1"></a>    <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb55-10"><a href="uiStructure.html#cb55-10" tabindex="-1"></a>    <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
+<span id="cb55-11"><a href="uiStructure.html#cb55-11" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
+<span id="cb55-12"><a href="uiStructure.html#cb55-12" tabindex="-1"></a>  ),</span>
+<span id="cb55-13"><a href="uiStructure.html#cb55-13" tabindex="-1"></a>  <span class="st">&quot;. Feel free to check that resource out.&quot;</span> </span>
+<span id="cb55-14"><a href="uiStructure.html#cb55-14" tabindex="-1"></a>  <span class="co"># Notice the ending punctuation for the prior sentence is not part of the link.</span></span>
+<span id="cb55-15"><a href="uiStructure.html#cb55-15" tabindex="-1"></a>)</span>
+<span id="cb55-16"><a href="uiStructure.html#cb55-16" tabindex="-1"></a></span>
+<span id="cb55-17"><a href="uiStructure.html#cb55-17" tabindex="-1"></a><span class="co"># Example 2: in a list item</span></span>
+<span id="cb55-18"><a href="uiStructure.html#cb55-18" tabindex="-1"></a>tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb55-19"><a href="uiStructure.html#cb55-19" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Review the &quot;</span>, <span class="co"># Notice the ending space</span></span>
+<span id="cb55-20"><a href="uiStructure.html#cb55-20" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="cb55-21"><a href="uiStructure.html#cb55-21" tabindex="-1"></a>      <span class="at">herf =</span> <span class="st">&quot;https://online.stat.psu.edu/stat100/lesson/3/3.2#graphshapes&quot;</span>, <span class="co">#the URL</span></span>
+<span id="cb55-22"><a href="uiStructure.html#cb55-22" tabindex="-1"></a>      <span class="st">&quot;STAT 100 Table of Graph Shapes&quot;</span>, <span class="co"># the descriptive text for the link</span></span>
+<span id="cb55-23"><a href="uiStructure.html#cb55-23" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">&quot;bodylinks&quot;</span></span>
+<span id="cb55-24"><a href="uiStructure.html#cb55-24" tabindex="-1"></a>    )</span>
+<span id="cb55-25"><a href="uiStructure.html#cb55-25" tabindex="-1"></a>    <span class="co"># List items don&#39;t necessarily need ending punctuation. </span></span>
+<span id="cb55-26"><a href="uiStructure.html#cb55-26" tabindex="-1"></a>    <span class="co"># Be consistent about punctuation--either all items do or none.</span></span>
+<span id="cb55-27"><a href="uiStructure.html#cb55-27" tabindex="-1"></a>  ) </span>
+<span id="cb55-28"><a href="uiStructure.html#cb55-28" tabindex="-1"></a>)</span>
+<span id="cb55-29"><a href="uiStructure.html#cb55-29" tabindex="-1"></a><span class="co"># [omitted code]</span></span></code></pre></div>
 </div>
 <div id="creating-a-prerequisites-page" class="section level4 hasAnchor" number="9.4.2.3">
 <h4><span class="header-section-number">9.4.2.3</span> Creating a Prerequisites Page<a href="uiStructure.html#creating-a-prerequisites-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here’s an example of the code needed to create the Prerequisites Page in the UI:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="uiStructure.html#cb52-1" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb52-2"><a href="uiStructure.html#cb52-2" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb52-3"><a href="uiStructure.html#cb52-3" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>,</span>
-<span id="cb52-4"><a href="uiStructure.html#cb52-4" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># this line only need if you display mathematics</span></span>
-<span id="cb52-5"><a href="uiStructure.html#cb52-5" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Prerequisites&quot;</span>),</span>
-<span id="cb52-6"><a href="uiStructure.html#cb52-6" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;In order to get the most out of this app, please review the following:&quot;</span>),</span>
-<span id="cb52-7"><a href="uiStructure.html#cb52-7" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ul</span>(</span>
-<span id="cb52-8"><a href="uiStructure.html#cb52-8" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 1&quot;</span>),</span>
-<span id="cb52-9"><a href="uiStructure.html#cb52-9" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 2&quot;</span>),</span>
-<span id="cb52-10"><a href="uiStructure.html#cb52-10" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 3&quot;</span>),</span>
-<span id="cb52-11"><a href="uiStructure.html#cb52-11" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 4&quot;</span>)</span>
-<span id="cb52-12"><a href="uiStructure.html#cb52-12" tabindex="-1"></a>    ),</span>
-<span id="cb52-13"><a href="uiStructure.html#cb52-13" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list</span></span>
-<span id="cb52-14"><a href="uiStructure.html#cb52-14" tabindex="-1"></a><span class="st">      any way they wish.&quot;</span>),</span>
-<span id="cb52-15"><a href="uiStructure.html#cb52-15" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
-<span id="cb52-16"><a href="uiStructure.html#cb52-16" tabindex="-1"></a>  <span class="fu">box</span>(</span>
-<span id="cb52-17"><a href="uiStructure.html#cb52-17" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
-<span id="cb52-18"><a href="uiStructure.html#cb52-18" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb52-19"><a href="uiStructure.html#cb52-19" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-20"><a href="uiStructure.html#cb52-20" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-21"><a href="uiStructure.html#cb52-21" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb52-22"><a href="uiStructure.html#cb52-22" tabindex="-1"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance</span></span>
-<span id="cb52-23"><a href="uiStructure.html#cb52-23" tabindex="-1"></a><span class="st">    tests serve as a critical tool to confirm that a particular theoretical</span></span>
-<span id="cb52-24"><a href="uiStructure.html#cb52-24" tabindex="-1"></a><span class="st">    model describes our data and to make a generalization from our sample to</span></span>
-<span id="cb52-25"><a href="uiStructure.html#cb52-25" tabindex="-1"></a><span class="st">    the broader population (i.e., make an inference). The null hypothesis</span></span>
-<span id="cb52-26"><a href="uiStructure.html#cb52-26" tabindex="-1"></a><span class="st">    often reflects the simpler of two models (e.g., &#39;no statistical</span></span>
-<span id="cb52-27"><a href="uiStructure.html#cb52-27" tabindex="-1"></a><span class="st">    difference&#39;, &#39;there is an additive difference of 1&#39;, etc.) that we will</span></span>
-<span id="cb52-28"><a href="uiStructure.html#cb52-28" tabindex="-1"></a><span class="st">    use to build a sampling distribution for our chosen estimator. These</span></span>
-<span id="cb52-29"><a href="uiStructure.html#cb52-29" tabindex="-1"></a><span class="st">    methods let us test whether our sample data are consistent with this</span></span>
-<span id="cb52-30"><a href="uiStructure.html#cb52-30" tabindex="-1"></a><span class="st">    simple model (null hypothesis).&quot;</span></span>
-<span id="cb52-31"><a href="uiStructure.html#cb52-31" tabindex="-1"></a>  ),</span>
-<span id="cb52-32"><a href="uiStructure.html#cb52-32" tabindex="-1"></a>  <span class="fu">box</span>(</span>
-<span id="cb52-33"><a href="uiStructure.html#cb52-33" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
-<span id="cb52-34"><a href="uiStructure.html#cb52-34" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb52-35"><a href="uiStructure.html#cb52-35" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-36"><a href="uiStructure.html#cb52-36" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb52-37"><a href="uiStructure.html#cb52-37" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
-<span id="cb52-38"><a href="uiStructure.html#cb52-38" tabindex="-1"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as</span></span>
-<span id="cb52-39"><a href="uiStructure.html#cb52-39" tabindex="-1"></a><span class="st">    extreme as what we observed given our null hypothesis. If we were to</span></span>
-<span id="cb52-40"><a href="uiStructure.html#cb52-40" tabindex="-1"></a><span class="st">    carry out our study infinitely many times and the null hypothesis</span></span>
-<span id="cb52-41"><a href="uiStructure.html#cb52-41" tabindex="-1"></a><span class="st">    accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
-<span id="cb52-42"><a href="uiStructure.html#cb52-42" tabindex="-1"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen</span></span>
-<span id="cb52-43"><a href="uiStructure.html#cb52-43" tabindex="-1"></a><span class="st">    100*(p-value)% of the time. The larger the p-value, the more often we</span></span>
-<span id="cb52-44"><a href="uiStructure.html#cb52-44" tabindex="-1"></a><span class="st">    would expect our estimator to take on a value at least as extreme as what</span></span>
-<span id="cb52-45"><a href="uiStructure.html#cb52-45" tabindex="-1"></a><span class="st">    we&#39;ve seen; the smaller, the less often.&quot;</span></span>
-<span id="cb52-46"><a href="uiStructure.html#cb52-46" tabindex="-1"></a>  )</span>
-<span id="cb52-47"><a href="uiStructure.html#cb52-47" tabindex="-1"></a>),</span>
-<span id="cb52-48"><a href="uiStructure.html#cb52-48" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="uiStructure.html#cb56-1" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb56-2"><a href="uiStructure.html#cb56-2" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb56-3"><a href="uiStructure.html#cb56-3" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;prerequisites&quot;</span>,</span>
+<span id="cb56-4"><a href="uiStructure.html#cb56-4" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># this line only need if you display mathematics</span></span>
+<span id="cb56-5"><a href="uiStructure.html#cb56-5" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Prerequisites&quot;</span>),</span>
+<span id="cb56-6"><a href="uiStructure.html#cb56-6" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;In order to get the most out of this app, please review the following:&quot;</span>),</span>
+<span id="cb56-7"><a href="uiStructure.html#cb56-7" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">ul</span>(</span>
+<span id="cb56-8"><a href="uiStructure.html#cb56-8" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 1&quot;</span>),</span>
+<span id="cb56-9"><a href="uiStructure.html#cb56-9" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 2&quot;</span>),</span>
+<span id="cb56-10"><a href="uiStructure.html#cb56-10" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 3&quot;</span>),</span>
+<span id="cb56-11"><a href="uiStructure.html#cb56-11" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">li</span>(<span class="st">&quot;Pre-req 4&quot;</span>)</span>
+<span id="cb56-12"><a href="uiStructure.html#cb56-12" tabindex="-1"></a>    ),</span>
+<span id="cb56-13"><a href="uiStructure.html#cb56-13" tabindex="-1"></a>    <span class="fu">p</span>(<span class="st">&quot;Notice the use of an unordered list; users can move through the list</span></span>
+<span id="cb56-14"><a href="uiStructure.html#cb56-14" tabindex="-1"></a><span class="st">      any way they wish.&quot;</span>),</span>
+<span id="cb56-15"><a href="uiStructure.html#cb56-15" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;A second style of doing prerequisites is with collapsible boxes:&quot;</span>),</span>
+<span id="cb56-16"><a href="uiStructure.html#cb56-16" tabindex="-1"></a>  <span class="fu">box</span>(</span>
+<span id="cb56-17"><a href="uiStructure.html#cb56-17" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Null Hypothesis Significance Tests (NHSTs)&quot;</span>),</span>
+<span id="cb56-18"><a href="uiStructure.html#cb56-18" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb56-19"><a href="uiStructure.html#cb56-19" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb56-20"><a href="uiStructure.html#cb56-20" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb56-21"><a href="uiStructure.html#cb56-21" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb56-22"><a href="uiStructure.html#cb56-22" tabindex="-1"></a>    <span class="st">&quot;In the Confirmatory Data Analysis tradition, null hypothesis significance</span></span>
+<span id="cb56-23"><a href="uiStructure.html#cb56-23" tabindex="-1"></a><span class="st">    tests serve as a critical tool to confirm that a particular theoretical</span></span>
+<span id="cb56-24"><a href="uiStructure.html#cb56-24" tabindex="-1"></a><span class="st">    model describes our data and to make a generalization from our sample to</span></span>
+<span id="cb56-25"><a href="uiStructure.html#cb56-25" tabindex="-1"></a><span class="st">    the broader population (i.e., make an inference). The null hypothesis</span></span>
+<span id="cb56-26"><a href="uiStructure.html#cb56-26" tabindex="-1"></a><span class="st">    often reflects the simpler of two models (e.g., &#39;no statistical</span></span>
+<span id="cb56-27"><a href="uiStructure.html#cb56-27" tabindex="-1"></a><span class="st">    difference&#39;, &#39;there is an additive difference of 1&#39;, etc.) that we will</span></span>
+<span id="cb56-28"><a href="uiStructure.html#cb56-28" tabindex="-1"></a><span class="st">    use to build a sampling distribution for our chosen estimator. These</span></span>
+<span id="cb56-29"><a href="uiStructure.html#cb56-29" tabindex="-1"></a><span class="st">    methods let us test whether our sample data are consistent with this</span></span>
+<span id="cb56-30"><a href="uiStructure.html#cb56-30" tabindex="-1"></a><span class="st">    simple model (null hypothesis).&quot;</span></span>
+<span id="cb56-31"><a href="uiStructure.html#cb56-31" tabindex="-1"></a>  ),</span>
+<span id="cb56-32"><a href="uiStructure.html#cb56-32" tabindex="-1"></a>  <span class="fu">box</span>(</span>
+<span id="cb56-33"><a href="uiStructure.html#cb56-33" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">strong</span>(tags<span class="sc">$</span><span class="fu">em</span>(<span class="st">&quot;p&quot;</span>), <span class="st">&quot;-values&quot;</span>),</span>
+<span id="cb56-34"><a href="uiStructure.html#cb56-34" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb56-35"><a href="uiStructure.html#cb56-35" tabindex="-1"></a>    <span class="at">collapsible =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb56-36"><a href="uiStructure.html#cb56-36" tabindex="-1"></a>    <span class="at">collapsed =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb56-37"><a href="uiStructure.html#cb56-37" tabindex="-1"></a>    <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>,</span>
+<span id="cb56-38"><a href="uiStructure.html#cb56-38" tabindex="-1"></a>    <span class="st">&quot;The probability that our selected estimator takes on a value at least as</span></span>
+<span id="cb56-39"><a href="uiStructure.html#cb56-39" tabindex="-1"></a><span class="st">    extreme as what we observed given our null hypothesis. If we were to</span></span>
+<span id="cb56-40"><a href="uiStructure.html#cb56-40" tabindex="-1"></a><span class="st">    carry out our study infinitely many times and the null hypothesis</span></span>
+<span id="cb56-41"><a href="uiStructure.html#cb56-41" tabindex="-1"></a><span class="st">    accurately modeled what we&#39;re studying, then we would anticipate our</span></span>
+<span id="cb56-42"><a href="uiStructure.html#cb56-42" tabindex="-1"></a><span class="st">    estimator to produce a value at least as extreme as what we have seen</span></span>
+<span id="cb56-43"><a href="uiStructure.html#cb56-43" tabindex="-1"></a><span class="st">    100*(p-value)% of the time. The larger the p-value, the more often we</span></span>
+<span id="cb56-44"><a href="uiStructure.html#cb56-44" tabindex="-1"></a><span class="st">    would expect our estimator to take on a value at least as extreme as what</span></span>
+<span id="cb56-45"><a href="uiStructure.html#cb56-45" tabindex="-1"></a><span class="st">    we&#39;ve seen; the smaller, the less often.&quot;</span></span>
+<span id="cb56-46"><a href="uiStructure.html#cb56-46" tabindex="-1"></a>  )</span>
+<span id="cb56-47"><a href="uiStructure.html#cb56-47" tabindex="-1"></a>),</span>
+<span id="cb56-48"><a href="uiStructure.html#cb56-48" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>For more information on collapsible boxes, see <a href="commonElements.html#collapsible">Section <a href="commonElements.html#collapsible">10.3</a></a>.</p>
 </div>
 <div id="whats-needed-in-the-server-definition-2" class="section level4 hasAnchor" number="9.4.2.4">
@@ -1291,54 +1291,54 @@ Figure 9.24: Sliders Using the Red Palette
 <div id="creating-a-references-page" class="section level4 hasAnchor" number="9.4.4.1">
 <h4><span class="header-section-number">9.4.4.1</span> Creating a References Page<a href="uiStructure.html#creating-a-references-page" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Creating a References Page mimics both the Overview and Prerequisites Pages’ structure and is done in the UI section:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="uiStructure.html#cb53-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb53-2"><a href="uiStructure.html#cb53-2" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb53-3"><a href="uiStructure.html#cb53-3" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb53-4"><a href="uiStructure.html#cb53-4" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;references&quot;</span>,</span>
-<span id="cb53-5"><a href="uiStructure.html#cb53-5" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># Rarely, if ever, will you need MathJax in the references</span></span>
-<span id="cb53-6"><a href="uiStructure.html#cb53-6" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
-<span id="cb53-7"><a href="uiStructure.html#cb53-7" tabindex="-1"></a>  <span class="fu">p</span>( <span class="co"># Each reference is in its own paragraph</span></span>
-<span id="cb53-8"><a href="uiStructure.html#cb53-8" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>, <span class="co"># you must set this class argument</span></span>
-<span id="cb53-9"><a href="uiStructure.html#cb53-9" tabindex="-1"></a>    <span class="st">&quot;Bailey, E. (2022). shinyBS: Twitter bootstrap components for shiny.</span></span>
-<span id="cb53-10"><a href="uiStructure.html#cb53-10" tabindex="-1"></a><span class="st">    (v0.61.1). [R package]. Available from</span></span>
-<span id="cb53-11"><a href="uiStructure.html#cb53-11" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
-<span id="cb53-12"><a href="uiStructure.html#cb53-12" tabindex="-1"></a>    ),</span>
-<span id="cb53-13"><a href="uiStructure.html#cb53-13" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-14"><a href="uiStructure.html#cb53-14" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-15"><a href="uiStructure.html#cb53-15" tabindex="-1"></a>    <span class="st">&quot;Carey, R. and Hatfield., N. J. (2023). boastUtils: BOAST utilities. </span></span>
-<span id="cb53-16"><a href="uiStructure.html#cb53-16" tabindex="-1"></a><span class="st">    (v0.1.11.2). [R Package]. Available from</span></span>
-<span id="cb53-17"><a href="uiStructure.html#cb53-17" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyappTeam/boastUtils&quot;</span></span>
-<span id="cb53-18"><a href="uiStructure.html#cb53-18" tabindex="-1"></a>    ),</span>
-<span id="cb53-19"><a href="uiStructure.html#cb53-19" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-20"><a href="uiStructure.html#cb53-20" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-21"><a href="uiStructure.html#cb53-21" tabindex="-1"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2021). shinydashboard: Create dashboards</span></span>
-<span id="cb53-22"><a href="uiStructure.html#cb53-22" tabindex="-1"></a><span class="st">    with &#39;Shiny&#39;. (v0.7.2). [R Package]. Available from</span></span>
-<span id="cb53-23"><a href="uiStructure.html#cb53-23" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
-<span id="cb53-24"><a href="uiStructure.html#cb53-24" tabindex="-1"></a>    ),</span>
-<span id="cb53-25"><a href="uiStructure.html#cb53-25" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-26"><a href="uiStructure.html#cb53-26" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-27"><a href="uiStructure.html#cb53-27" tabindex="-1"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J.J., Sievert, C., Schloerke, B., Xie, Y.,</span></span>
-<span id="cb53-28"><a href="uiStructure.html#cb53-28" tabindex="-1"></a><span class="st">    Allen, J., McPherson, J., Dipert, A., and Borges, B. (2022).  shiny: Web </span></span>
-<span id="cb53-29"><a href="uiStructure.html#cb53-29" tabindex="-1"></a><span class="st">    application framework for R. (v1.7.4). [R Package]. Available from </span></span>
-<span id="cb53-30"><a href="uiStructure.html#cb53-30" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
-<span id="cb53-31"><a href="uiStructure.html#cb53-31" tabindex="-1"></a>  ),</span>
-<span id="cb53-32"><a href="uiStructure.html#cb53-32" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-33"><a href="uiStructure.html#cb53-33" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-34"><a href="uiStructure.html#cb53-34" tabindex="-1"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web app. Available from</span></span>
-<span id="cb53-35"><a href="uiStructure.html#cb53-35" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyappTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
-<span id="cb53-36"><a href="uiStructure.html#cb53-36" tabindex="-1"></a>  ),</span>
-<span id="cb53-37"><a href="uiStructure.html#cb53-37" tabindex="-1"></a>  <span class="fu">p</span>(</span>
-<span id="cb53-38"><a href="uiStructure.html#cb53-38" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
-<span id="cb53-39"><a href="uiStructure.html#cb53-39" tabindex="-1"></a>    <span class="st">&quot;Wickham, H. (2016). ggplot2: Elegant graphics for data analysis. </span></span>
-<span id="cb53-40"><a href="uiStructure.html#cb53-40" tabindex="-1"></a><span class="st">    (v3.4.2). [R Package]. New York:Springer-Verlag. Available from</span></span>
-<span id="cb53-41"><a href="uiStructure.html#cb53-41" tabindex="-1"></a><span class="st">    https://ggplot2.tidyverse.org&quot;</span></span>
-<span id="cb53-42"><a href="uiStructure.html#cb53-42" tabindex="-1"></a>  ),</span>
-<span id="cb53-43"><a href="uiStructure.html#cb53-43" tabindex="-1"></a>  <span class="fu">br</span>(), <span class="co"># Three blank spaces</span></span>
-<span id="cb53-44"><a href="uiStructure.html#cb53-44" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb53-45"><a href="uiStructure.html#cb53-45" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
-<span id="cb53-46"><a href="uiStructure.html#cb53-46" tabindex="-1"></a>  boastUtils<span class="sc">::</span><span class="fu">copyrightInfo</span>()</span>
-<span id="cb53-47"><a href="uiStructure.html#cb53-47" tabindex="-1"></a>)</span>
-<span id="cb53-48"><a href="uiStructure.html#cb53-48" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="uiStructure.html#cb57-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb57-2"><a href="uiStructure.html#cb57-2" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb57-3"><a href="uiStructure.html#cb57-3" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb57-4"><a href="uiStructure.html#cb57-4" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;references&quot;</span>,</span>
+<span id="cb57-5"><a href="uiStructure.html#cb57-5" tabindex="-1"></a>  <span class="fu">withMathJax</span>(), <span class="co"># Rarely, if ever, will you need MathJax in the references</span></span>
+<span id="cb57-6"><a href="uiStructure.html#cb57-6" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;References&quot;</span>),</span>
+<span id="cb57-7"><a href="uiStructure.html#cb57-7" tabindex="-1"></a>  <span class="fu">p</span>( <span class="co"># Each reference is in its own paragraph</span></span>
+<span id="cb57-8"><a href="uiStructure.html#cb57-8" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>, <span class="co"># you must set this class argument</span></span>
+<span id="cb57-9"><a href="uiStructure.html#cb57-9" tabindex="-1"></a>    <span class="st">&quot;Bailey, E. (2022). shinyBS: Twitter bootstrap components for shiny.</span></span>
+<span id="cb57-10"><a href="uiStructure.html#cb57-10" tabindex="-1"></a><span class="st">    (v0.61.1). [R package]. Available from</span></span>
+<span id="cb57-11"><a href="uiStructure.html#cb57-11" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shinyBS&quot;</span></span>
+<span id="cb57-12"><a href="uiStructure.html#cb57-12" tabindex="-1"></a>    ),</span>
+<span id="cb57-13"><a href="uiStructure.html#cb57-13" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb57-14"><a href="uiStructure.html#cb57-14" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb57-15"><a href="uiStructure.html#cb57-15" tabindex="-1"></a>    <span class="st">&quot;Carey, R. and Hatfield., N. J. (2023). boastUtils: BOAST utilities. </span></span>
+<span id="cb57-16"><a href="uiStructure.html#cb57-16" tabindex="-1"></a><span class="st">    (v0.1.11.2). [R Package]. Available from</span></span>
+<span id="cb57-17"><a href="uiStructure.html#cb57-17" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyappTeam/boastUtils&quot;</span></span>
+<span id="cb57-18"><a href="uiStructure.html#cb57-18" tabindex="-1"></a>    ),</span>
+<span id="cb57-19"><a href="uiStructure.html#cb57-19" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb57-20"><a href="uiStructure.html#cb57-20" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb57-21"><a href="uiStructure.html#cb57-21" tabindex="-1"></a>    <span class="st">&quot;Chang, W. and Borges Ribeio, B. (2021). shinydashboard: Create dashboards</span></span>
+<span id="cb57-22"><a href="uiStructure.html#cb57-22" tabindex="-1"></a><span class="st">    with &#39;Shiny&#39;. (v0.7.2). [R Package]. Available from</span></span>
+<span id="cb57-23"><a href="uiStructure.html#cb57-23" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shinydashboard&quot;</span></span>
+<span id="cb57-24"><a href="uiStructure.html#cb57-24" tabindex="-1"></a>    ),</span>
+<span id="cb57-25"><a href="uiStructure.html#cb57-25" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb57-26"><a href="uiStructure.html#cb57-26" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb57-27"><a href="uiStructure.html#cb57-27" tabindex="-1"></a>    <span class="st">&quot;Chang, W., Cheng, J., Allaire, J.J., Sievert, C., Schloerke, B., Xie, Y.,</span></span>
+<span id="cb57-28"><a href="uiStructure.html#cb57-28" tabindex="-1"></a><span class="st">    Allen, J., McPherson, J., Dipert, A., and Borges, B. (2022).  shiny: Web </span></span>
+<span id="cb57-29"><a href="uiStructure.html#cb57-29" tabindex="-1"></a><span class="st">    application framework for R. (v1.7.4). [R Package]. Available from </span></span>
+<span id="cb57-30"><a href="uiStructure.html#cb57-30" tabindex="-1"></a><span class="st">    https://CRAN.R-project.org/package=shiny&quot;</span></span>
+<span id="cb57-31"><a href="uiStructure.html#cb57-31" tabindex="-1"></a>  ),</span>
+<span id="cb57-32"><a href="uiStructure.html#cb57-32" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb57-33"><a href="uiStructure.html#cb57-33" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb57-34"><a href="uiStructure.html#cb57-34" tabindex="-1"></a>    <span class="st">&quot;Hatfield, N. J. (2019), Caveats of NHST, Shiny Web app. Available from</span></span>
+<span id="cb57-35"><a href="uiStructure.html#cb57-35" tabindex="-1"></a><span class="st">    https://github.com/EducationShinyappTeam/Significance_Testing_Caveats/tree/PedagogicalUpdate1&quot;</span></span>
+<span id="cb57-36"><a href="uiStructure.html#cb57-36" tabindex="-1"></a>  ),</span>
+<span id="cb57-37"><a href="uiStructure.html#cb57-37" tabindex="-1"></a>  <span class="fu">p</span>(</span>
+<span id="cb57-38"><a href="uiStructure.html#cb57-38" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">&quot;hangingindent&quot;</span>,</span>
+<span id="cb57-39"><a href="uiStructure.html#cb57-39" tabindex="-1"></a>    <span class="st">&quot;Wickham, H. (2016). ggplot2: Elegant graphics for data analysis. </span></span>
+<span id="cb57-40"><a href="uiStructure.html#cb57-40" tabindex="-1"></a><span class="st">    (v3.4.2). [R Package]. New York:Springer-Verlag. Available from</span></span>
+<span id="cb57-41"><a href="uiStructure.html#cb57-41" tabindex="-1"></a><span class="st">    https://ggplot2.tidyverse.org&quot;</span></span>
+<span id="cb57-42"><a href="uiStructure.html#cb57-42" tabindex="-1"></a>  ),</span>
+<span id="cb57-43"><a href="uiStructure.html#cb57-43" tabindex="-1"></a>  <span class="fu">br</span>(), <span class="co"># Three blank spaces</span></span>
+<span id="cb57-44"><a href="uiStructure.html#cb57-44" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb57-45"><a href="uiStructure.html#cb57-45" tabindex="-1"></a>  <span class="fu">br</span>(),</span>
+<span id="cb57-46"><a href="uiStructure.html#cb57-46" tabindex="-1"></a>  boastUtils<span class="sc">::</span><span class="fu">copyrightInfo</span>()</span>
+<span id="cb57-47"><a href="uiStructure.html#cb57-47" tabindex="-1"></a>)</span>
+<span id="cb57-48"><a href="uiStructure.html#cb57-48" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 </div>
 <div id="whats-needed-in-the-server-definition-3" class="section level4 hasAnchor" number="9.4.4.2">
 <h4><span class="header-section-number">9.4.4.2</span> What’s Needed in the Server Definition<a href="uiStructure.html#whats-needed-in-the-server-definition-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1476,25 +1476,25 @@ Figure 9.30: Escape Room Activity Page Layout
 <h3><span class="header-section-number">9.6.1</span> Create the Tab Set<a href="uiStructure.html#create-the-tab-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once you’ve decided to create a set of tabs on a page of your app, you’ll need to start coding the page as you would any other (see <a href="uiStructure.html#body">Dashboard Body</a> for more information) page. However, once you get to the point of wanting to create the tab set, you’ll need to use the <code>tabsetPanel</code> function and set the value of two arguments and potentially a third.</p>
 <p>Here is the code that creates the tab set panel in the Hasse Diagram app:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="uiStructure.html#cb54-1" tabindex="-1"></a><span class="co"># We&#39;re in the Dashboard Body of the UI</span></span>
-<span id="cb54-2"><a href="uiStructure.html#cb54-2" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
-<span id="cb54-3"><a href="uiStructure.html#cb54-3" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>,</span>
-<span id="cb54-4"><a href="uiStructure.html#cb54-4" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
-<span id="cb54-5"><a href="uiStructure.html#cb54-5" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Hasse Diagram Wizard&quot;</span>),</span>
-<span id="cb54-6"><a href="uiStructure.html#cb54-6" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;Follow the prompts to create a Hasse Diagram.&quot;</span>),</span>
-<span id="cb54-7"><a href="uiStructure.html#cb54-7" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
-<span id="cb54-8"><a href="uiStructure.html#cb54-8" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;diagramWiz&quot;</span>,</span>
-<span id="cb54-9"><a href="uiStructure.html#cb54-9" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;hidden&quot;</span>,</span>
-<span id="cb54-10"><a href="uiStructure.html#cb54-10" tabindex="-1"></a>    <span class="do">##### Step 1-Action and Measurement Units ----</span></span>
-<span id="cb54-11"><a href="uiStructure.html#cb54-11" tabindex="-1"></a>    <span class="fu">tabPanel</span>(</span>
-<span id="cb54-12"><a href="uiStructure.html#cb54-12" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;First Step&quot;</span>,</span>
-<span id="cb54-13"><a href="uiStructure.html#cb54-13" tabindex="-1"></a>      <span class="at">value =</span> <span class="st">&quot;S1&quot;</span>,</span>
-<span id="cb54-14"><a href="uiStructure.html#cb54-14" tabindex="-1"></a>      <span class="fu">h3</span>(<span class="st">&quot;Response&quot;</span>),</span>
-<span id="cb54-15"><a href="uiStructure.html#cb54-15" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;Please provide/describe the the primary/surogate response for your study.&quot;</span>),</span>
-<span id="cb54-16"><a href="uiStructure.html#cb54-16" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb54-17"><a href="uiStructure.html#cb54-17" tabindex="-1"></a>    )</span>
-<span id="cb54-18"><a href="uiStructure.html#cb54-18" tabindex="-1"></a>  )</span>
-<span id="cb54-19"><a href="uiStructure.html#cb54-19" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="uiStructure.html#cb58-1" tabindex="-1"></a><span class="co"># We&#39;re in the Dashboard Body of the UI</span></span>
+<span id="cb58-2"><a href="uiStructure.html#cb58-2" tabindex="-1"></a><span class="fu">tabItem</span>(</span>
+<span id="cb58-3"><a href="uiStructure.html#cb58-3" tabindex="-1"></a>  <span class="at">tabName =</span> <span class="st">&quot;wizard&quot;</span>,</span>
+<span id="cb58-4"><a href="uiStructure.html#cb58-4" tabindex="-1"></a>  <span class="fu">withMathJax</span>(),</span>
+<span id="cb58-5"><a href="uiStructure.html#cb58-5" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">&quot;Hasse Diagram Wizard&quot;</span>),</span>
+<span id="cb58-6"><a href="uiStructure.html#cb58-6" tabindex="-1"></a>  <span class="fu">p</span>(<span class="st">&quot;Follow the prompts to create a Hasse Diagram.&quot;</span>),</span>
+<span id="cb58-7"><a href="uiStructure.html#cb58-7" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb58-8"><a href="uiStructure.html#cb58-8" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">&quot;diagramWiz&quot;</span>,</span>
+<span id="cb58-9"><a href="uiStructure.html#cb58-9" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;hidden&quot;</span>,</span>
+<span id="cb58-10"><a href="uiStructure.html#cb58-10" tabindex="-1"></a>    <span class="do">##### Step 1-Action and Measurement Units ----</span></span>
+<span id="cb58-11"><a href="uiStructure.html#cb58-11" tabindex="-1"></a>    <span class="fu">tabPanel</span>(</span>
+<span id="cb58-12"><a href="uiStructure.html#cb58-12" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;First Step&quot;</span>,</span>
+<span id="cb58-13"><a href="uiStructure.html#cb58-13" tabindex="-1"></a>      <span class="at">value =</span> <span class="st">&quot;S1&quot;</span>,</span>
+<span id="cb58-14"><a href="uiStructure.html#cb58-14" tabindex="-1"></a>      <span class="fu">h3</span>(<span class="st">&quot;Response&quot;</span>),</span>
+<span id="cb58-15"><a href="uiStructure.html#cb58-15" tabindex="-1"></a>      <span class="fu">p</span>(<span class="st">&quot;Please provide/describe the the primary/surogate response for your study.&quot;</span>),</span>
+<span id="cb58-16"><a href="uiStructure.html#cb58-16" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb58-17"><a href="uiStructure.html#cb58-17" tabindex="-1"></a>    )</span>
+<span id="cb58-18"><a href="uiStructure.html#cb58-18" tabindex="-1"></a>  )</span>
+<span id="cb58-19"><a href="uiStructure.html#cb58-19" tabindex="-1"></a>)</span></code></pre></div>
 <p>The two arguments of <code>tabsetPanel</code> you need to provide are the <code>id</code> and <code>type</code>. The <code>id</code> allows for you to reference the tab set from anywhere in the app, which is useful for navigation. Make sure you use a meaningful and unique name here. The <code>type</code> argument will take one of two values: <code>tabs</code> or <code>hidden</code>. (At this time we do not allow for any other choices in BOAST.) The choice will come from Question 4 in the decision tree above.</p>
 <p>The optional third argument you can set is the <code>selected</code> argument (e.g., <code>selected = "S1"</code>). This will let you set the initial tab displayed be something specific. However, our recommendation is that you should put the tabs into an order that makes the most natural progression. The first tab displayed should be the first tab you create within the set. Thus, you don’t really need to set the <code>selected</code> argument here.</p>
 </div>
@@ -1507,14 +1507,14 @@ Figure 9.30: Escape Room Activity Page Layout
 <h3><span class="header-section-number">9.6.3</span> Moving Between Tabs<a href="uiStructure.html#moving-between-tabs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can create navigation buttons to move between the various tabs in a tab set. This is especially important if you are using Hidden Tabs.</p>
 <p>Within the <code>handlerExpr</code> of your button’s <code>observeEvent</code> call, you’ll need to include code similar to the following:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="uiStructure.html#cb55-1" tabindex="-1"></a><span class="co"># In the server definition</span></span>
-<span id="cb55-2"><a href="uiStructure.html#cb55-2" tabindex="-1"></a><span class="do">## In the observeEvent for a particular button</span></span>
-<span id="cb55-3"><a href="uiStructure.html#cb55-3" tabindex="-1"></a><span class="do">### In the handlerExpr for that button</span></span>
-<span id="cb55-4"><a href="uiStructure.html#cb55-4" tabindex="-1"></a><span class="fu">updateTabsetPanel</span>(</span>
-<span id="cb55-5"><a href="uiStructure.html#cb55-5" tabindex="-1"></a>  <span class="at">session =</span> session,</span>
-<span id="cb55-6"><a href="uiStructure.html#cb55-6" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;diagramWiz&quot;</span>, <span class="co"># From the tabsetPanel</span></span>
-<span id="cb55-7"><a href="uiStructure.html#cb55-7" tabindex="-1"></a>  <span class="at">selected =</span> <span class="st">&quot;S2&quot;</span> <span class="co"># from the tabPanel</span></span>
-<span id="cb55-8"><a href="uiStructure.html#cb55-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="uiStructure.html#cb59-1" tabindex="-1"></a><span class="co"># In the server definition</span></span>
+<span id="cb59-2"><a href="uiStructure.html#cb59-2" tabindex="-1"></a><span class="do">## In the observeEvent for a particular button</span></span>
+<span id="cb59-3"><a href="uiStructure.html#cb59-3" tabindex="-1"></a><span class="do">### In the handlerExpr for that button</span></span>
+<span id="cb59-4"><a href="uiStructure.html#cb59-4" tabindex="-1"></a><span class="fu">updateTabsetPanel</span>(</span>
+<span id="cb59-5"><a href="uiStructure.html#cb59-5" tabindex="-1"></a>  <span class="at">session =</span> session,</span>
+<span id="cb59-6"><a href="uiStructure.html#cb59-6" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;diagramWiz&quot;</span>, <span class="co"># From the tabsetPanel</span></span>
+<span id="cb59-7"><a href="uiStructure.html#cb59-7" tabindex="-1"></a>  <span class="at">selected =</span> <span class="st">&quot;S2&quot;</span> <span class="co"># from the tabPanel</span></span>
+<span id="cb59-8"><a href="uiStructure.html#cb59-8" tabindex="-1"></a>)</span></code></pre></div>
 <p>You’ll need to use the <code>updateTabsetPanel</code> function to tell R that you’re wanting to move the user to a new tab. The <code>inputId</code> argument will need to be set to the <code>id</code> value of the <code>tabsetPanel</code> you created and want to be working with. The <code>selected</code> argument will need to be the <code>value</code> from the <code>tabPanel</code> that you want to send the user to.</p>
 
 </div>
