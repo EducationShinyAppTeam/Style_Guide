@@ -64,7 +64,7 @@ using-shinyapps.io
 make-an-account
 connect-rstudio-to-shinyapps.io
 deploy-your-app
-tlts-rstudio-connect
+tlts-rstudio-connect-not-recommended
 downgrade-the-httpuv-package.
 set-uplogin-to-the-vpn
 connecting-your-rstudio-to-tlts-rstudio-connect

@@ -118,9 +118,9 @@ To deploy your app, you'll need to click on the Publish icon, `r knitr::include_
 
 Upon successful deployment (publishing), you should see your browser open up a new tab showing your running app. Copy the URL from the address bar so that you can share this with your testers. You can also get the URL for your app from your shinyapps.io account's dashboard.
 
-#### TLT's RStudio Connect
+#### TLT's RStudio Connect (Not Recommended)
 
-We can also make use of TLT's RStudio Connect platform to do non-local testing. There are multiple steps to follow for this method. The TLT platform is out of date, which means that not all apps may be testable through this method. Work with Neil on this.
+We can also make use of TLT's RStudio Connect platform to do non-local testing. There are multiple steps to follow for this method. __The TLT platform is out of date__, which means that not all apps may be testable through this method. Work with Neil on this.
 
 ##### Downgrade the `httpuv` package.
 

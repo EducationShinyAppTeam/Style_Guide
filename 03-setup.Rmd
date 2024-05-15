@@ -9,18 +9,18 @@ Before we go any further, let's take a moment and ensure that you have the follo
 1. Ensure that you have all of necessary accounts and if not, contact Neil ([njh5464](mailto:njh5464@psu.edu)).  
     a. [GitHub](https://github.com/)  
     b. [EducationShinyAppTeam](https://github.com/EducationShinyAppTeam) 
-    c. [BOAST:SU23-Discussions Channel](https://teams.microsoft.com/l/channel/19%3aa4d06b7dceab41d6a219c43b192f9ce6%40thread.skype/SU23-Discussions?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e) in Microsoft Teams (tied to your PSU AccessID)
+    c. [BOAST:SU24-Discussions Channel](https://teams.microsoft.com/l/channel/19%3Aea6c2cee3a2740b6bdb14495051db786%40thread.skype/SU24-Discussions?groupId=a83c9d1b-6bcc-46f4-aa25-82b2fad862ec&tenantId=7cf48d45-3ddb-4389-a9c1-c115526eb52e) in Microsoft Teams (tied to your PSU AccessID)
 2. Ensure that you have all of the required software  
-    a. [`R` (version 4.3.0 minimum)](https://cran.r-project.org/) 
+    a. [`R` (version 4.4.0 minimum)](https://cran.r-project.org/) 
         - You can check your current version by starting `R` and seeing what version is listed at the start or by typing `version` into the console
-    b. [RStudio Desktop (version 2023.03.0 Build 386 or higher; most current version preferred)](https://posit.co/download/rstudio-desktop/)
+    b. [RStudio Desktop (version 2034.04.1 Build 748 or higher; most current version preferred)](https://posit.co/download/rstudio-desktop/)
     c. [GitHub Desktop](https://desktop.github.com/)
 3. `R` Packages from CRAN--here are some basic packages that everyone will need; be sure to install their dependencies. You may copy the following code into your R console to install the packages.
 
 ```{r packageInstall, echo = TRUE, eval = FALSE}
 install.packages(
     pkgs = c("devtools", "shiny", "shinydashboard", "shinyBS", 
-              "shinyWidgets", "devtools", "ggplot2", "tidyverse")
+              "shinyWidgets", "ggplot2", "tidyverse")
 )
 ```
 
