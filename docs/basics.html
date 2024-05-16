@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2024-05-15" />
+<meta name="date" content="2024-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -548,10 +548,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol></li>
 <li><code>R</code> Packages from CRAN–here are some basic packages that everyone will need; be sure to install their dependencies. You may copy the following code into your R console to install the packages.</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="basics.html#cb6-1" tabindex="-1"></a><span class="fu">install.packages</span>(</span>
-<span id="cb6-2"><a href="basics.html#cb6-2" tabindex="-1"></a>    <span class="at">pkgs =</span> <span class="fu">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;shiny&quot;</span>, <span class="st">&quot;shinydashboard&quot;</span>, <span class="st">&quot;shinyBS&quot;</span>, </span>
-<span id="cb6-3"><a href="basics.html#cb6-3" tabindex="-1"></a>              <span class="st">&quot;shinyWidgets&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb6-4"><a href="basics.html#cb6-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="basics.html#cb2-1" tabindex="-1"></a><span class="fu">install.packages</span>(</span>
+<span id="cb2-2"><a href="basics.html#cb2-2" tabindex="-1"></a>    <span class="at">pkgs =</span> <span class="fu">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;shiny&quot;</span>, <span class="st">&quot;shinydashboard&quot;</span>, <span class="st">&quot;shinyBS&quot;</span>, </span>
+<span id="cb2-3"><a href="basics.html#cb2-3" tabindex="-1"></a>              <span class="st">&quot;shinyWidgets&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb2-4"><a href="basics.html#cb2-4" tabindex="-1"></a>)</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>The <code>boastUtils</code> Package (<a href="basics.html#boastUtils">see below</a>)</li>
 <li>The BOAST App Template (<a href="basics.html#templateApp">see below</a>)</li>
@@ -562,8 +562,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Bob created the <a href="https://github.com/EducationShinyAppTeam/boastUtils">boastUtils</a> package to automate much of the design and development process. This will not only reduce the amount of work you’ll need to do, it’ll also make apps more consistent. Additionally, we routinely add tools to this package that are indispensable for creating and maintaining BOAST apps.</p>
 <p><strong>Since Summer 2020, we require all apps to make use of this package.</strong></p>
 <p>Please check out the <a href="https://github.com/EducationShinyAppTeam/boastUtils">package’s GitHub page</a> for instructions on installing and usage. You may also copy the following code into your R console to install the <code>boastUtils</code> package.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="basics.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb7-2"><a href="basics.html#cb7-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/boastUtils&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="basics.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb3-2"><a href="basics.html#cb3-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;EducationShinyAppTeam/boastUtils&quot;</span>)</span></code></pre></div>
 </div>
 <div id="a-quick-note-on-packages-and-r" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> A Quick Note on Packages (and R)<a href="basics.html#a-quick-note-on-packages-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -607,7 +607,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="command-line" class="section level3 hasAnchor" number="3.4.3">
 <h3><span class="header-section-number">3.4.3</span> Command Line<a href="basics.html#command-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Enter the following command in your terminal:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="basics.html#cb8-1" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/App_Template.git</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="basics.html#cb4-1" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:EducationShinyAppTeam/App_Template.git</span></code></pre></div>
 <p><strong>See also:</strong></p>
 <ul>
 <li><a href="https://guides.github.com/introduction/git-handbook/">Git Handbook</a></li>

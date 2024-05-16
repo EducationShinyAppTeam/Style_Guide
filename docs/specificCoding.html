@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2024-05-15" />
+<meta name="date" content="2024-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -593,55 +593,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="reactiveval" class="section level3 hasAnchor" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> <code>reactiveVal</code><a href="specificCoding.html#reactiveval" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <code>reactiveVal</code> function allows you to create a single value (much like a variable in R) which will have <code>reactive</code> properties. One key usage of <code>reactiveVal</code> is that it allows you store values which you might want to update while someone uses the app, but not be an input. For example, suppose you want to keep track of a player’s score while they are playing a game. This is a great place to use <code>reactiveVal</code>. We would code this in the following way:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="specificCoding.html#cb23-1" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
-<span id="cb23-2"><a href="specificCoding.html#cb23-2" tabindex="-1"></a>  score <span class="ot">&lt;-</span> <span class="fu">reactiveVal</span>(<span class="dv">0</span>)</span>
-<span id="cb23-3"><a href="specificCoding.html#cb23-3" tabindex="-1"></a>  </span>
-<span id="cb23-4"><a href="specificCoding.html#cb23-4" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
-<span id="cb23-5"><a href="specificCoding.html#cb23-5" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>submit,</span>
-<span id="cb23-6"><a href="specificCoding.html#cb23-6" tabindex="-1"></a>    <span class="at">handlerExpr =</span> {</span>
-<span id="cb23-7"><a href="specificCoding.html#cb23-7" tabindex="-1"></a>      <span class="cf">if</span> (correct){</span>
-<span id="cb23-8"><a href="specificCoding.html#cb23-8" tabindex="-1"></a>        <span class="fu">score</span>(<span class="fu">score</span>() <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb23-9"><a href="specificCoding.html#cb23-9" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
-<span id="cb23-10"><a href="specificCoding.html#cb23-10" tabindex="-1"></a>        <span class="fu">score</span>(<span class="fu">score</span>() <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb23-11"><a href="specificCoding.html#cb23-11" tabindex="-1"></a>      }</span>
-<span id="cb23-12"><a href="specificCoding.html#cb23-12" tabindex="-1"></a>      output<span class="sc">$</span>scoreDisplay <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
-<span id="cb23-13"><a href="specificCoding.html#cb23-13" tabindex="-1"></a>        <span class="fu">paste</span>(<span class="st">&quot;Your current score is&quot;</span>, <span class="fu">score</span>())</span>
-<span id="cb23-14"><a href="specificCoding.html#cb23-14" tabindex="-1"></a>      })</span>
-<span id="cb23-15"><a href="specificCoding.html#cb23-15" tabindex="-1"></a>    }</span>
-<span id="cb23-16"><a href="specificCoding.html#cb23-16" tabindex="-1"></a>  )</span>
-<span id="cb23-17"><a href="specificCoding.html#cb23-17" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="specificCoding.html#cb19-1" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb19-2"><a href="specificCoding.html#cb19-2" tabindex="-1"></a>  score <span class="ot">&lt;-</span> <span class="fu">reactiveVal</span>(<span class="dv">0</span>)</span>
+<span id="cb19-3"><a href="specificCoding.html#cb19-3" tabindex="-1"></a>  </span>
+<span id="cb19-4"><a href="specificCoding.html#cb19-4" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
+<span id="cb19-5"><a href="specificCoding.html#cb19-5" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>submit,</span>
+<span id="cb19-6"><a href="specificCoding.html#cb19-6" tabindex="-1"></a>    <span class="at">handlerExpr =</span> {</span>
+<span id="cb19-7"><a href="specificCoding.html#cb19-7" tabindex="-1"></a>      <span class="cf">if</span> (correct){</span>
+<span id="cb19-8"><a href="specificCoding.html#cb19-8" tabindex="-1"></a>        <span class="fu">score</span>(<span class="fu">score</span>() <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb19-9"><a href="specificCoding.html#cb19-9" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb19-10"><a href="specificCoding.html#cb19-10" tabindex="-1"></a>        <span class="fu">score</span>(<span class="fu">score</span>() <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb19-11"><a href="specificCoding.html#cb19-11" tabindex="-1"></a>      }</span>
+<span id="cb19-12"><a href="specificCoding.html#cb19-12" tabindex="-1"></a>      output<span class="sc">$</span>scoreDisplay <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
+<span id="cb19-13"><a href="specificCoding.html#cb19-13" tabindex="-1"></a>        <span class="fu">paste</span>(<span class="st">&quot;Your current score is&quot;</span>, <span class="fu">score</span>())</span>
+<span id="cb19-14"><a href="specificCoding.html#cb19-14" tabindex="-1"></a>      })</span>
+<span id="cb19-15"><a href="specificCoding.html#cb19-15" tabindex="-1"></a>    }</span>
+<span id="cb19-16"><a href="specificCoding.html#cb19-16" tabindex="-1"></a>  )</span>
+<span id="cb19-17"><a href="specificCoding.html#cb19-17" tabindex="-1"></a>}</span></code></pre></div>
 <p>In the above code, we’ve created <code>score</code> as a reactive element that starts with the initial value of 0. To call <code>score</code> and get its current value we need to use <code>score()</code>. To update <code>score</code>’s value we put the new value (or an expression) as an argument (e.g., <code>score() + 1</code>). Thus, the code <code>score(score() + 1)</code> says “take the current value of <code>score</code>, add 1, and then save as the new value of <code>score</code>”.</p>
 <p>Unlike <code>inputs</code>, app users don’t directly change the values of a <code>reactiveVal</code>. Rather there’s an intermediate step. Further, <code>reactiveVal</code> may be called outside fo <code>eventReactive</code> and <code>observeEvent</code>…provided that you are acting on global objects or constants. That is to say, you can’t write <code>submitCounter &lt;- reactiveVal(input$submit)</code> without getting the above error message. In order to use <code>input$fieldName</code> inside of <code>reactiveVal</code>, you must be inside of an <code>eventReactive</code> or <code>observeEvent</code> chunk. However, you can write <code>submitCounter &lt;- reactiveVal(0)</code> and <code>submitCounter(1)</code> anywhere.</p>
 </div>
 <div id="reactivevalues" class="section level3 hasAnchor" number="6.3.3">
 <h3><span class="header-section-number">6.3.3</span> <code>reactiveValues</code><a href="specificCoding.html#reactivevalues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One limitation of <code>reactiveVal</code> is that it is only a single object (one value, one vector, one data frame). This works fine if you just want that. However, let’s say you want to keep track of multiple related values; for example, not only the user’s score, but their number of attempts and how many times they used a hint. You could define three separate <code>reactiveVal</code> objects or you could use a single <code>reactiveValues</code> call. In essence, <code>reactiveValues</code> creates a list of <code>reactiveVals</code> for you.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="specificCoding.html#cb24-1" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
-<span id="cb24-2"><a href="specificCoding.html#cb24-2" tabindex="-1"></a>  playerStats <span class="ot">&lt;-</span> <span class="fu">reactiveValues</span>(</span>
-<span id="cb24-3"><a href="specificCoding.html#cb24-3" tabindex="-1"></a>    <span class="at">score =</span> <span class="dv">0</span>,</span>
-<span id="cb24-4"><a href="specificCoding.html#cb24-4" tabindex="-1"></a>    <span class="at">attempts =</span> <span class="dv">0</span>,</span>
-<span id="cb24-5"><a href="specificCoding.html#cb24-5" tabindex="-1"></a>    <span class="at">hints =</span> <span class="dv">0</span></span>
-<span id="cb24-6"><a href="specificCoding.html#cb24-6" tabindex="-1"></a>  )</span>
-<span id="cb24-7"><a href="specificCoding.html#cb24-7" tabindex="-1"></a>  </span>
-<span id="cb24-8"><a href="specificCoding.html#cb24-8" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
-<span id="cb24-9"><a href="specificCoding.html#cb24-9" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>submit,</span>
-<span id="cb24-10"><a href="specificCoding.html#cb24-10" tabindex="-1"></a>    <span class="at">handlerExpr =</span> {</span>
-<span id="cb24-11"><a href="specificCoding.html#cb24-11" tabindex="-1"></a>      playerStats<span class="sc">$</span>attempts <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>attempts <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb24-12"><a href="specificCoding.html#cb24-12" tabindex="-1"></a>      <span class="cf">if</span> (correct) {</span>
-<span id="cb24-13"><a href="specificCoding.html#cb24-13" tabindex="-1"></a>        playerStats<span class="sc">$</span>score <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>score <span class="sc">+</span> <span class="dv">1</span>,</span>
-<span id="cb24-14"><a href="specificCoding.html#cb24-14" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
-<span id="cb24-15"><a href="specificCoding.html#cb24-15" tabindex="-1"></a>        playerStats<span class="sc">$</span>score <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>score <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb24-16"><a href="specificCoding.html#cb24-16" tabindex="-1"></a>      }</span>
-<span id="cb24-17"><a href="specificCoding.html#cb24-17" tabindex="-1"></a>    }</span>
-<span id="cb24-18"><a href="specificCoding.html#cb24-18" tabindex="-1"></a>  )</span>
-<span id="cb24-19"><a href="specificCoding.html#cb24-19" tabindex="-1"></a>  </span>
-<span id="cb24-20"><a href="specificCoding.html#cb24-20" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
-<span id="cb24-21"><a href="specificCoding.html#cb24-21" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>hint,</span>
-<span id="cb24-22"><a href="specificCoding.html#cb24-22" tabindex="-1"></a>    <span class="at">handlerExpr =</span> {</span>
-<span id="cb24-23"><a href="specificCoding.html#cb24-23" tabindex="-1"></a>      playerStats<span class="sc">$</span>hints <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>hints <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb24-24"><a href="specificCoding.html#cb24-24" tabindex="-1"></a>    }</span>
-<span id="cb24-25"><a href="specificCoding.html#cb24-25" tabindex="-1"></a>  )</span>
-<span id="cb24-26"><a href="specificCoding.html#cb24-26" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="specificCoding.html#cb20-1" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb20-2"><a href="specificCoding.html#cb20-2" tabindex="-1"></a>  playerStats <span class="ot">&lt;-</span> <span class="fu">reactiveValues</span>(</span>
+<span id="cb20-3"><a href="specificCoding.html#cb20-3" tabindex="-1"></a>    <span class="at">score =</span> <span class="dv">0</span>,</span>
+<span id="cb20-4"><a href="specificCoding.html#cb20-4" tabindex="-1"></a>    <span class="at">attempts =</span> <span class="dv">0</span>,</span>
+<span id="cb20-5"><a href="specificCoding.html#cb20-5" tabindex="-1"></a>    <span class="at">hints =</span> <span class="dv">0</span></span>
+<span id="cb20-6"><a href="specificCoding.html#cb20-6" tabindex="-1"></a>  )</span>
+<span id="cb20-7"><a href="specificCoding.html#cb20-7" tabindex="-1"></a>  </span>
+<span id="cb20-8"><a href="specificCoding.html#cb20-8" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
+<span id="cb20-9"><a href="specificCoding.html#cb20-9" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>submit,</span>
+<span id="cb20-10"><a href="specificCoding.html#cb20-10" tabindex="-1"></a>    <span class="at">handlerExpr =</span> {</span>
+<span id="cb20-11"><a href="specificCoding.html#cb20-11" tabindex="-1"></a>      playerStats<span class="sc">$</span>attempts <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>attempts <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb20-12"><a href="specificCoding.html#cb20-12" tabindex="-1"></a>      <span class="cf">if</span> (correct) {</span>
+<span id="cb20-13"><a href="specificCoding.html#cb20-13" tabindex="-1"></a>        playerStats<span class="sc">$</span>score <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>score <span class="sc">+</span> <span class="dv">1</span>,</span>
+<span id="cb20-14"><a href="specificCoding.html#cb20-14" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb20-15"><a href="specificCoding.html#cb20-15" tabindex="-1"></a>        playerStats<span class="sc">$</span>score <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>score <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb20-16"><a href="specificCoding.html#cb20-16" tabindex="-1"></a>      }</span>
+<span id="cb20-17"><a href="specificCoding.html#cb20-17" tabindex="-1"></a>    }</span>
+<span id="cb20-18"><a href="specificCoding.html#cb20-18" tabindex="-1"></a>  )</span>
+<span id="cb20-19"><a href="specificCoding.html#cb20-19" tabindex="-1"></a>  </span>
+<span id="cb20-20"><a href="specificCoding.html#cb20-20" tabindex="-1"></a>  <span class="fu">observeEvent</span>(</span>
+<span id="cb20-21"><a href="specificCoding.html#cb20-21" tabindex="-1"></a>    <span class="at">eventExpr =</span> input<span class="sc">$</span>hint,</span>
+<span id="cb20-22"><a href="specificCoding.html#cb20-22" tabindex="-1"></a>    <span class="at">handlerExpr =</span> {</span>
+<span id="cb20-23"><a href="specificCoding.html#cb20-23" tabindex="-1"></a>      playerStats<span class="sc">$</span>hints <span class="ot">&lt;-</span> playerStats<span class="sc">$</span>hints <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb20-24"><a href="specificCoding.html#cb20-24" tabindex="-1"></a>    }</span>
+<span id="cb20-25"><a href="specificCoding.html#cb20-25" tabindex="-1"></a>  )</span>
+<span id="cb20-26"><a href="specificCoding.html#cb20-26" tabindex="-1"></a>}</span></code></pre></div>
 <p>A couple things to notice is that unlike <code>reactiveVal</code> you don’t need to append <code>()</code> to the name to get the value and you don’t need to place the new value as an argument. Rather you can use the assignment operator, <code>&lt;-</code>, just as you would in regular R. By using <code>reactiveValues</code> to create a list, <code>playerStats</code>, we can create a clear conceptual link between <code>score</code>, <code>attempts</code>, and <code>hints</code> as well as have them travel together throughout the app. Outside of their nature of being a list of values, <code>reactiveValues</code> still acts like <code>reactiveVal</code>.</p>
 </div>
 </div>
@@ -651,50 +651,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="eventreactive" class="section level3 hasAnchor" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> <code>eventReactive</code><a href="specificCoding.html#eventreactive" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One way to think about <code>eventReactive</code> is that it takes <code>reactiveVal</code>/<code>reactiveValues</code> and goes beyond in a couple of ways. First, you can store more complicated objects such as incorporating logic controls. Second, you define a specific trigger to cause an update (i.e., the <code>eventExpr</code>). Here is an example <code>eventReactive</code> that will switch between various data sets, depending upon the user’s choice (via <code>input$selectedData</code>):</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="specificCoding.html#cb25-1" tabindex="-1"></a>dataSet <span class="ot">&lt;-</span> <span class="fu">eventReactive</span>(</span>
-<span id="cb25-2"><a href="specificCoding.html#cb25-2" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>selectedData,</span>
-<span id="cb25-3"><a href="specificCoding.html#cb25-3" tabindex="-1"></a>  <span class="at">valueExpr =</span> {</span>
-<span id="cb25-4"><a href="specificCoding.html#cb25-4" tabindex="-1"></a>    <span class="cf">switch</span>(</span>
-<span id="cb25-5"><a href="specificCoding.html#cb25-5" tabindex="-1"></a>      <span class="at">EXPR =</span> input<span class="sc">$</span>selectedData,</span>
-<span id="cb25-6"><a href="specificCoding.html#cb25-6" tabindex="-1"></a>      <span class="st">&quot;Iris&quot;</span> <span class="ot">=</span> iris,</span>
-<span id="cb25-7"><a href="specificCoding.html#cb25-7" tabindex="-1"></a>      <span class="st">&quot;Cars&quot;</span> <span class="ot">=</span> mtcars,</span>
-<span id="cb25-8"><a href="specificCoding.html#cb25-8" tabindex="-1"></a>      <span class="st">&quot;Penguins&quot;</span> <span class="ot">=</span> palmerpenguins<span class="sc">::</span>penguins</span>
-<span id="cb25-9"><a href="specificCoding.html#cb25-9" tabindex="-1"></a>    )</span>
-<span id="cb25-10"><a href="specificCoding.html#cb25-10" tabindex="-1"></a>  },</span>
-<span id="cb25-11"><a href="specificCoding.html#cb25-11" tabindex="-1"></a>  <span class="at">ignoreNULL =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb25-12"><a href="specificCoding.html#cb25-12" tabindex="-1"></a>  <span class="at">ignoreInit =</span> <span class="cn">FALSE</span></span>
-<span id="cb25-13"><a href="specificCoding.html#cb25-13" tabindex="-1"></a>)</span>
-<span id="cb25-14"><a href="specificCoding.html#cb25-14" tabindex="-1"></a></span>
-<span id="cb25-15"><a href="specificCoding.html#cb25-15" tabindex="-1"></a>output<span class="sc">$</span>dataTable <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>(</span>
-<span id="cb25-16"><a href="specificCoding.html#cb25-16" tabindex="-1"></a>  <span class="at">expr =</span> <span class="fu">dataSet</span>()</span>
-<span id="cb25-17"><a href="specificCoding.html#cb25-17" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="specificCoding.html#cb21-1" tabindex="-1"></a>dataSet <span class="ot">&lt;-</span> <span class="fu">eventReactive</span>(</span>
+<span id="cb21-2"><a href="specificCoding.html#cb21-2" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>selectedData,</span>
+<span id="cb21-3"><a href="specificCoding.html#cb21-3" tabindex="-1"></a>  <span class="at">valueExpr =</span> {</span>
+<span id="cb21-4"><a href="specificCoding.html#cb21-4" tabindex="-1"></a>    <span class="cf">switch</span>(</span>
+<span id="cb21-5"><a href="specificCoding.html#cb21-5" tabindex="-1"></a>      <span class="at">EXPR =</span> input<span class="sc">$</span>selectedData,</span>
+<span id="cb21-6"><a href="specificCoding.html#cb21-6" tabindex="-1"></a>      <span class="st">&quot;Iris&quot;</span> <span class="ot">=</span> iris,</span>
+<span id="cb21-7"><a href="specificCoding.html#cb21-7" tabindex="-1"></a>      <span class="st">&quot;Cars&quot;</span> <span class="ot">=</span> mtcars,</span>
+<span id="cb21-8"><a href="specificCoding.html#cb21-8" tabindex="-1"></a>      <span class="st">&quot;Penguins&quot;</span> <span class="ot">=</span> palmerpenguins<span class="sc">::</span>penguins</span>
+<span id="cb21-9"><a href="specificCoding.html#cb21-9" tabindex="-1"></a>    )</span>
+<span id="cb21-10"><a href="specificCoding.html#cb21-10" tabindex="-1"></a>  },</span>
+<span id="cb21-11"><a href="specificCoding.html#cb21-11" tabindex="-1"></a>  <span class="at">ignoreNULL =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb21-12"><a href="specificCoding.html#cb21-12" tabindex="-1"></a>  <span class="at">ignoreInit =</span> <span class="cn">FALSE</span></span>
+<span id="cb21-13"><a href="specificCoding.html#cb21-13" tabindex="-1"></a>)</span>
+<span id="cb21-14"><a href="specificCoding.html#cb21-14" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="specificCoding.html#cb21-15" tabindex="-1"></a>output<span class="sc">$</span>dataTable <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>(</span>
+<span id="cb21-16"><a href="specificCoding.html#cb21-16" tabindex="-1"></a>  <span class="at">expr =</span> <span class="fu">dataSet</span>()</span>
+<span id="cb21-17"><a href="specificCoding.html#cb21-17" tabindex="-1"></a>)</span></code></pre></div>
 <p>In this example, any time the user changes the input field called “selectedData” (i.e., they change which data set they want to look at a.k.a. the “event”), the <code>dataSet</code> object will update. We can then use <code>dataSet()</code> to call the current data set and display that for the user in the output <code>dataTable</code>. Notice by using the <code>eventReactive</code> in this way, we don’t have to write multiple instances of the <code>output$dataTable</code> to handle which data set is currently selected. Thus, <code>eventReactive</code> is a great way to keep our code DRY.</p>
 </div>
 <div id="observeevent" class="section level3 hasAnchor" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> <code>observeEvent</code><a href="specificCoding.html#observeevent" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As a contrast, <code>observeEvent</code> allows you to make use of <code>reactive</code> elements and cause things to happen BUT you can’t save/store those things to be used elsewhere. We would use <code>observeEvent</code> if we want to update a plot, text, or other aspect of the UI for the user. As an example suppose that we want to create a box plot based upon the sample size and mean a user sets:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="specificCoding.html#cb26-1" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
-<span id="cb26-2"><a href="specificCoding.html#cb26-2" tabindex="-1"></a>  <span class="at">eventExpr =</span> <span class="fu">c</span>(input<span class="sc">$</span>sampleSize, input<span class="sc">$</span>mean),</span>
-<span id="cb26-3"><a href="specificCoding.html#cb26-3" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
-<span id="cb26-4"><a href="specificCoding.html#cb26-4" tabindex="-1"></a>    localData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb26-5"><a href="specificCoding.html#cb26-5" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">rnorm</span>(</span>
-<span id="cb26-6"><a href="specificCoding.html#cb26-6" tabindex="-1"></a>        <span class="at">n =</span> input<span class="sc">$</span>sampleSize,</span>
-<span id="cb26-7"><a href="specificCoding.html#cb26-7" tabindex="-1"></a>        <span class="at">mean =</span> input<span class="sc">$</span>mean,</span>
-<span id="cb26-8"><a href="specificCoding.html#cb26-8" tabindex="-1"></a>        <span class="at">sd =</span> <span class="dv">1</span></span>
-<span id="cb26-9"><a href="specificCoding.html#cb26-9" tabindex="-1"></a>      )</span>
-<span id="cb26-10"><a href="specificCoding.html#cb26-10" tabindex="-1"></a>    )</span>
-<span id="cb26-11"><a href="specificCoding.html#cb26-11" tabindex="-1"></a>    output<span class="sc">$</span>dataPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>(</span>
-<span id="cb26-12"><a href="specificCoding.html#cb26-12" tabindex="-1"></a>      normBox <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb26-13"><a href="specificCoding.html#cb26-13" tabindex="-1"></a>        <span class="at">data =</span> localData,</span>
-<span id="cb26-14"><a href="specificCoding.html#cb26-14" tabindex="-1"></a>        <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x)</span>
-<span id="cb26-15"><a href="specificCoding.html#cb26-15" tabindex="-1"></a>      ) <span class="sc">+</span></span>
-<span id="cb26-16"><a href="specificCoding.html#cb26-16" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span>
-<span id="cb26-17"><a href="specificCoding.html#cb26-17" tabindex="-1"></a>      normBox</span>
-<span id="cb26-18"><a href="specificCoding.html#cb26-18" tabindex="-1"></a>    )</span>
-<span id="cb26-19"><a href="specificCoding.html#cb26-19" tabindex="-1"></a>  },</span>
-<span id="cb26-20"><a href="specificCoding.html#cb26-20" tabindex="-1"></a>  <span class="at">ignoreNULL =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb26-21"><a href="specificCoding.html#cb26-21" tabindex="-1"></a>  <span class="at">ignoreInit =</span> <span class="cn">FALSE</span></span>
-<span id="cb26-22"><a href="specificCoding.html#cb26-22" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="specificCoding.html#cb22-1" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
+<span id="cb22-2"><a href="specificCoding.html#cb22-2" tabindex="-1"></a>  <span class="at">eventExpr =</span> <span class="fu">c</span>(input<span class="sc">$</span>sampleSize, input<span class="sc">$</span>mean),</span>
+<span id="cb22-3"><a href="specificCoding.html#cb22-3" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
+<span id="cb22-4"><a href="specificCoding.html#cb22-4" tabindex="-1"></a>    localData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb22-5"><a href="specificCoding.html#cb22-5" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">rnorm</span>(</span>
+<span id="cb22-6"><a href="specificCoding.html#cb22-6" tabindex="-1"></a>        <span class="at">n =</span> input<span class="sc">$</span>sampleSize,</span>
+<span id="cb22-7"><a href="specificCoding.html#cb22-7" tabindex="-1"></a>        <span class="at">mean =</span> input<span class="sc">$</span>mean,</span>
+<span id="cb22-8"><a href="specificCoding.html#cb22-8" tabindex="-1"></a>        <span class="at">sd =</span> <span class="dv">1</span></span>
+<span id="cb22-9"><a href="specificCoding.html#cb22-9" tabindex="-1"></a>      )</span>
+<span id="cb22-10"><a href="specificCoding.html#cb22-10" tabindex="-1"></a>    )</span>
+<span id="cb22-11"><a href="specificCoding.html#cb22-11" tabindex="-1"></a>    output<span class="sc">$</span>dataPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>(</span>
+<span id="cb22-12"><a href="specificCoding.html#cb22-12" tabindex="-1"></a>      normBox <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb22-13"><a href="specificCoding.html#cb22-13" tabindex="-1"></a>        <span class="at">data =</span> localData,</span>
+<span id="cb22-14"><a href="specificCoding.html#cb22-14" tabindex="-1"></a>        <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x)</span>
+<span id="cb22-15"><a href="specificCoding.html#cb22-15" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb22-16"><a href="specificCoding.html#cb22-16" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span>
+<span id="cb22-17"><a href="specificCoding.html#cb22-17" tabindex="-1"></a>      normBox</span>
+<span id="cb22-18"><a href="specificCoding.html#cb22-18" tabindex="-1"></a>    )</span>
+<span id="cb22-19"><a href="specificCoding.html#cb22-19" tabindex="-1"></a>  },</span>
+<span id="cb22-20"><a href="specificCoding.html#cb22-20" tabindex="-1"></a>  <span class="at">ignoreNULL =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb22-21"><a href="specificCoding.html#cb22-21" tabindex="-1"></a>  <span class="at">ignoreInit =</span> <span class="cn">FALSE</span></span>
+<span id="cb22-22"><a href="specificCoding.html#cb22-22" tabindex="-1"></a>)</span></code></pre></div>
 <p>Just as in <code>eventReactive</code>, we have the <code>eventExpr</code> argument. This is the trigger(s) that the code looks for changes to. In this case, we’ve tied the observer to two triggers–the sample size and the mean input fields. If the user changes either one of these, the app will immediately run the code that is in the <code>handlerExpr</code> (notice the use of curly braces, <code>{}</code>, to form a code block/chunk). Notice that we create <code>localData</code> and <code>normBox</code> as part of the <code>handlerExpr</code>. Both of these objects only exist inside this particular <code>observeEvent</code>. We cannot access them anywhere else given our current coding. Remember, <code>observeEvent</code> (and other <code>observe</code> elements) do not create stored and accessible objects like <code>reactive</code> elements.</p>
 </div>
 <div id="ignorenull-and-ignoreinit" class="section level3 hasAnchor" number="6.4.3">
@@ -744,22 +744,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.5</span> Validation<a href="specificCoding.html#validation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In addition to <code>ignoreNULL</code> and <code>ignoreInit</code>, the <code>shiny</code> package provides an additional tool that you can use in any of <code>render*</code> functions (e.g., <code>renderPlot</code>, <code>renderText</code>, <code>DT::renderDataTable</code>, etc.): validation. Validation will check that any needed inputs are available AND are valid.</p>
 <p>The are two components that you’ll need to set up validation are the <code>validate</code> call and at least one <code>need</code> call. You only need one instance of <code>validate</code> inside of each <code>render*</code> function. You will use as many <code>need</code> calls as is necessary to fully set up all of the validation checks you want in place. This will be the first thing that you write inside the <code>expr</code> argument of the <code>render*</code> function. For example, the following code ensure that the sample size set by the user is at least two before generating/displaying the scatter plot.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="specificCoding.html#cb27-1" tabindex="-1"></a>output<span class="sc">$</span>scatterPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>(</span>
-<span id="cb27-2"><a href="specificCoding.html#cb27-2" tabindex="-1"></a>  <span class="at">expr =</span> {</span>
-<span id="cb27-3"><a href="specificCoding.html#cb27-3" tabindex="-1"></a>    <span class="fu">validate</span>(</span>
-<span id="cb27-4"><a href="specificCoding.html#cb27-4" tabindex="-1"></a>      <span class="at">errorClass =</span> <span class="st">&quot;leftParagraphError&quot;</span>,</span>
-<span id="cb27-5"><a href="specificCoding.html#cb27-5" tabindex="-1"></a>      <span class="fu">need</span>(</span>
-<span id="cb27-6"><a href="specificCoding.html#cb27-6" tabindex="-1"></a>        <span class="at">expr =</span> input<span class="sc">$</span>sampleSize <span class="sc">&gt;=</span> <span class="dv">2</span>,</span>
-<span id="cb27-7"><a href="specificCoding.html#cb27-7" tabindex="-1"></a>        <span class="at">message =</span> <span class="st">&quot;Sample size must be greater than 2.&quot;</span></span>
-<span id="cb27-8"><a href="specificCoding.html#cb27-8" tabindex="-1"></a>      )</span>
-<span id="cb27-9"><a href="specificCoding.html#cb27-9" tabindex="-1"></a>    )</span>
-<span id="cb27-10"><a href="specificCoding.html#cb27-10" tabindex="-1"></a>    <span class="fu">ggplot</span>(</span>
-<span id="cb27-11"><a href="specificCoding.html#cb27-11" tabindex="-1"></a>      <span class="at">data =</span> <span class="fu">data.frame</span>(</span>
-<span id="cb27-12"><a href="specificCoding.html#cb27-12" tabindex="-1"></a>        <span class="co"># Rest of code omitted</span></span>
-<span id="cb27-13"><a href="specificCoding.html#cb27-13" tabindex="-1"></a>      )</span>
-<span id="cb27-14"><a href="specificCoding.html#cb27-14" tabindex="-1"></a>    )</span>
-<span id="cb27-15"><a href="specificCoding.html#cb27-15" tabindex="-1"></a>  }</span>
-<span id="cb27-16"><a href="specificCoding.html#cb27-16" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="specificCoding.html#cb23-1" tabindex="-1"></a>output<span class="sc">$</span>scatterPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>(</span>
+<span id="cb23-2"><a href="specificCoding.html#cb23-2" tabindex="-1"></a>  <span class="at">expr =</span> {</span>
+<span id="cb23-3"><a href="specificCoding.html#cb23-3" tabindex="-1"></a>    <span class="fu">validate</span>(</span>
+<span id="cb23-4"><a href="specificCoding.html#cb23-4" tabindex="-1"></a>      <span class="at">errorClass =</span> <span class="st">&quot;leftParagraphError&quot;</span>,</span>
+<span id="cb23-5"><a href="specificCoding.html#cb23-5" tabindex="-1"></a>      <span class="fu">need</span>(</span>
+<span id="cb23-6"><a href="specificCoding.html#cb23-6" tabindex="-1"></a>        <span class="at">expr =</span> input<span class="sc">$</span>sampleSize <span class="sc">&gt;=</span> <span class="dv">2</span>,</span>
+<span id="cb23-7"><a href="specificCoding.html#cb23-7" tabindex="-1"></a>        <span class="at">message =</span> <span class="st">&quot;Sample size must be greater than 2.&quot;</span></span>
+<span id="cb23-8"><a href="specificCoding.html#cb23-8" tabindex="-1"></a>      )</span>
+<span id="cb23-9"><a href="specificCoding.html#cb23-9" tabindex="-1"></a>    )</span>
+<span id="cb23-10"><a href="specificCoding.html#cb23-10" tabindex="-1"></a>    <span class="fu">ggplot</span>(</span>
+<span id="cb23-11"><a href="specificCoding.html#cb23-11" tabindex="-1"></a>      <span class="at">data =</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-12"><a href="specificCoding.html#cb23-12" tabindex="-1"></a>        <span class="co"># Rest of code omitted</span></span>
+<span id="cb23-13"><a href="specificCoding.html#cb23-13" tabindex="-1"></a>      )</span>
+<span id="cb23-14"><a href="specificCoding.html#cb23-14" tabindex="-1"></a>    )</span>
+<span id="cb23-15"><a href="specificCoding.html#cb23-15" tabindex="-1"></a>  }</span>
+<span id="cb23-16"><a href="specificCoding.html#cb23-16" tabindex="-1"></a>)</span></code></pre></div>
 <p>There is one named argument for <code>validate</code> and that is <code>errorClass</code>. This would be where you put extra text to fully specify which CSS class this error message should belong to. For more details on this, see the section on <a href="htmlCSS.html#css">CSS</a>. In most cases, you can omit this argument thereby just using the default.</p>
 <p>Within the <code>need</code> function, you must specify two arguments: <code>expr</code> which is where you will define each validation check and <code>message</code> which is the text you want displayed for the user. For the <code>message</code> you should put something that will help the user fix the error.</p>
 </div>
@@ -773,36 +773,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>While accessing inputs from the UI is straightforward when you’re in a reactive environment (e.g., <code>input$nameOfInput</code>), working the other direction (i.e., accessing the outputs) takes a bit more work. This is where the <code>render*</code> functions come into play. These functions will take whatever you place in them and prepare those objects so that they be placed into your UI.</p>
 <p>In your UI you’ll need to create a placeholder object in your code. For example, you’ll need to have a line of code such as <code>plotOutput("fliperLengthHist")</code>. This creates the space in your app for the <code>render*</code> functions to send the output. For each <code>render*</code> function there is a companion <code>*Output</code> function. Here is an example for displaying a histogram:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="specificCoding.html#cb28-1" tabindex="-1"></a>freedmanDiaconis <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="fu">ifelse</span>(<span class="fu">IQR</span>(x) <span class="sc">==</span> <span class="dv">0</span>, <span class="fl">0.1</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fu">IQR</span>(x) <span class="sc">/</span> (<span class="fu">length</span>(x)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>)))}</span>
-<span id="cb28-2"><a href="specificCoding.html#cb28-2" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="specificCoding.html#cb28-3" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb28-4"><a href="specificCoding.html#cb28-4" tabindex="-1"></a>  <span class="co">#..code omitted..</span></span>
-<span id="cb28-5"><a href="specificCoding.html#cb28-5" tabindex="-1"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;fliperLengthHist&quot;</span>)</span>
-<span id="cb28-6"><a href="specificCoding.html#cb28-6" tabindex="-1"></a>)</span>
-<span id="cb28-7"><a href="specificCoding.html#cb28-7" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="specificCoding.html#cb28-8" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb28-9"><a href="specificCoding.html#cb28-9" tabindex="-1"></a>  <span class="co">#..code omitted..</span></span>
-<span id="cb28-10"><a href="specificCoding.html#cb28-10" tabindex="-1"></a>  output<span class="sc">$</span>fliperLengthHist <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>(</span>
-<span id="cb28-11"><a href="specificCoding.html#cb28-11" tabindex="-1"></a>    <span class="at">expr =</span> {</span>
-<span id="cb28-12"><a href="specificCoding.html#cb28-12" tabindex="-1"></a>      <span class="fu">ggplot</span>(</span>
-<span id="cb28-13"><a href="specificCoding.html#cb28-13" tabindex="-1"></a>        <span class="at">data =</span> penguins,</span>
-<span id="cb28-14"><a href="specificCoding.html#cb28-14" tabindex="-1"></a>        <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm)</span>
-<span id="cb28-15"><a href="specificCoding.html#cb28-15" tabindex="-1"></a>      ) <span class="sc">+</span></span>
-<span id="cb28-16"><a href="specificCoding.html#cb28-16" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(</span>
-<span id="cb28-17"><a href="specificCoding.html#cb28-17" tabindex="-1"></a>          <span class="at">binwidth =</span> freedmanDiaconis,</span>
-<span id="cb28-18"><a href="specificCoding.html#cb28-18" tabindex="-1"></a>          <span class="at">closed =</span> <span class="st">&quot;left&quot;</span>,</span>
-<span id="cb28-19"><a href="specificCoding.html#cb28-19" tabindex="-1"></a>          <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb28-20"><a href="specificCoding.html#cb28-20" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb28-21"><a href="specificCoding.html#cb28-21" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">&quot;black&quot;</span></span>
-<span id="cb28-22"><a href="specificCoding.html#cb28-22" tabindex="-1"></a>        ) <span class="sc">+</span></span>
-<span id="cb28-23"><a href="specificCoding.html#cb28-23" tabindex="-1"></a>        <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb28-24"><a href="specificCoding.html#cb28-24" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;Flipper length (mm)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb28-25"><a href="specificCoding.html#cb28-25" tabindex="-1"></a>        <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">add =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>)))</span>
-<span id="cb28-26"><a href="specificCoding.html#cb28-26" tabindex="-1"></a>    },</span>
-<span id="cb28-27"><a href="specificCoding.html#cb28-27" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Penguin flipper lengths appear bimodal with one group centered</span></span>
-<span id="cb28-28"><a href="specificCoding.html#cb28-28" tabindex="-1"></a><span class="st">    around 190 mm and the second centered around 215 mm&quot;</span></span>
-<span id="cb28-29"><a href="specificCoding.html#cb28-29" tabindex="-1"></a>  )</span>
-<span id="cb28-30"><a href="specificCoding.html#cb28-30" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="specificCoding.html#cb24-1" tabindex="-1"></a>freedmanDiaconis <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="fu">ifelse</span>(<span class="fu">IQR</span>(x) <span class="sc">==</span> <span class="dv">0</span>, <span class="fl">0.1</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fu">IQR</span>(x) <span class="sc">/</span> (<span class="fu">length</span>(x)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>)))}</span>
+<span id="cb24-2"><a href="specificCoding.html#cb24-2" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="specificCoding.html#cb24-3" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb24-4"><a href="specificCoding.html#cb24-4" tabindex="-1"></a>  <span class="co">#..code omitted..</span></span>
+<span id="cb24-5"><a href="specificCoding.html#cb24-5" tabindex="-1"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">&quot;fliperLengthHist&quot;</span>)</span>
+<span id="cb24-6"><a href="specificCoding.html#cb24-6" tabindex="-1"></a>)</span>
+<span id="cb24-7"><a href="specificCoding.html#cb24-7" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="specificCoding.html#cb24-8" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb24-9"><a href="specificCoding.html#cb24-9" tabindex="-1"></a>  <span class="co">#..code omitted..</span></span>
+<span id="cb24-10"><a href="specificCoding.html#cb24-10" tabindex="-1"></a>  output<span class="sc">$</span>fliperLengthHist <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>(</span>
+<span id="cb24-11"><a href="specificCoding.html#cb24-11" tabindex="-1"></a>    <span class="at">expr =</span> {</span>
+<span id="cb24-12"><a href="specificCoding.html#cb24-12" tabindex="-1"></a>      <span class="fu">ggplot</span>(</span>
+<span id="cb24-13"><a href="specificCoding.html#cb24-13" tabindex="-1"></a>        <span class="at">data =</span> penguins,</span>
+<span id="cb24-14"><a href="specificCoding.html#cb24-14" tabindex="-1"></a>        <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm)</span>
+<span id="cb24-15"><a href="specificCoding.html#cb24-15" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb24-16"><a href="specificCoding.html#cb24-16" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(</span>
+<span id="cb24-17"><a href="specificCoding.html#cb24-17" tabindex="-1"></a>          <span class="at">binwidth =</span> freedmanDiaconis,</span>
+<span id="cb24-18"><a href="specificCoding.html#cb24-18" tabindex="-1"></a>          <span class="at">closed =</span> <span class="st">&quot;left&quot;</span>,</span>
+<span id="cb24-19"><a href="specificCoding.html#cb24-19" tabindex="-1"></a>          <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb24-20"><a href="specificCoding.html#cb24-20" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb24-21"><a href="specificCoding.html#cb24-21" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb24-22"><a href="specificCoding.html#cb24-22" tabindex="-1"></a>        ) <span class="sc">+</span></span>
+<span id="cb24-23"><a href="specificCoding.html#cb24-23" tabindex="-1"></a>        <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb24-24"><a href="specificCoding.html#cb24-24" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;Flipper length (mm)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb24-25"><a href="specificCoding.html#cb24-25" tabindex="-1"></a>        <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">add =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>)))</span>
+<span id="cb24-26"><a href="specificCoding.html#cb24-26" tabindex="-1"></a>    },</span>
+<span id="cb24-27"><a href="specificCoding.html#cb24-27" tabindex="-1"></a>    <span class="at">alt =</span> <span class="st">&quot;Penguin flipper lengths appear bimodal with one group centered</span></span>
+<span id="cb24-28"><a href="specificCoding.html#cb24-28" tabindex="-1"></a><span class="st">    around 190 mm and the second centered around 215 mm&quot;</span></span>
+<span id="cb24-29"><a href="specificCoding.html#cb24-29" tabindex="-1"></a>  )</span>
+<span id="cb24-30"><a href="specificCoding.html#cb24-30" tabindex="-1"></a>}</span></code></pre></div>
 <p>There are a few things to notice in this code example:</p>
 <ul>
 <li>We needed to include <code>plotOutput</code> in the UI so that R/Shiny knows where to send the histogram.</li>

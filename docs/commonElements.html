@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2024-05-15" />
+<meta name="date" content="2024-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -536,27 +536,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Using <code>fluidRow</code> is fairly straightforward. Simply call the function and list all of the elements that you want in the same row as separate (unnamed) arguments. The elements will get listed in the order you code them, left to right, in the displayed row. For example, <code>fluidRow(objectA, objectB, objectC)</code>.</p>
 <p>Our practice is to be a bit more precise with how we want to divide up the space in a <code>fluidRow</code> call. This is where the <code>column</code> function comes into play. Each <code>fluidRow</code> is internally divided into twelve (12) columns. The <code>column</code> function allows us to say how many of those columns to give to a particular element (the <code>width</code> argument) as well as how many empty columns we want to put between the left edge or the previous filled column (the <code>offset</code> argument).</p>
 <p>For example, say that we want to make a row that has two buttons: one at the left edge and one at the right edge. We can use <code>fluidRow</code> and <code>column</code> calls to achieve this:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="commonElements.html#cb60-1" tabindex="-1"></a><span class="co"># In the page layout portion of UI code</span></span>
-<span id="cb60-2"><a href="commonElements.html#cb60-2" tabindex="-1"></a><span class="fu">fluidRow</span>(</span>
-<span id="cb60-3"><a href="commonElements.html#cb60-3" tabindex="-1"></a>  <span class="fu">column</span>(</span>
-<span id="cb60-4"><a href="commonElements.html#cb60-4" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">2</span>,</span>
-<span id="cb60-5"><a href="commonElements.html#cb60-5" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>,</span>
-<span id="cb60-6"><a href="commonElements.html#cb60-6" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
-<span id="cb60-7"><a href="commonElements.html#cb60-7" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;button1&quot;</span>,</span>
-<span id="cb60-8"><a href="commonElements.html#cb60-8" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;Left button&quot;</span>,</span>
-<span id="cb60-9"><a href="commonElements.html#cb60-9" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb60-10"><a href="commonElements.html#cb60-10" tabindex="-1"></a>    )</span>
-<span id="cb60-11"><a href="commonElements.html#cb60-11" tabindex="-1"></a>  ),</span>
-<span id="cb60-12"><a href="commonElements.html#cb60-12" tabindex="-1"></a>  <span class="fu">column</span>(</span>
-<span id="cb60-13"><a href="commonElements.html#cb60-13" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">2</span>,</span>
-<span id="cb60-14"><a href="commonElements.html#cb60-14" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">8</span>,</span>
-<span id="cb60-15"><a href="commonElements.html#cb60-15" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
-<span id="cb60-16"><a href="commonElements.html#cb60-16" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;button2&quot;</span>,</span>
-<span id="cb60-17"><a href="commonElements.html#cb60-17" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;Right button&quot;</span>,</span>
-<span id="cb60-18"><a href="commonElements.html#cb60-18" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb60-19"><a href="commonElements.html#cb60-19" tabindex="-1"></a>    )</span>
-<span id="cb60-20"><a href="commonElements.html#cb60-20" tabindex="-1"></a>  )</span>
-<span id="cb60-21"><a href="commonElements.html#cb60-21" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="commonElements.html#cb56-1" tabindex="-1"></a><span class="co"># In the page layout portion of UI code</span></span>
+<span id="cb56-2"><a href="commonElements.html#cb56-2" tabindex="-1"></a><span class="fu">fluidRow</span>(</span>
+<span id="cb56-3"><a href="commonElements.html#cb56-3" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb56-4"><a href="commonElements.html#cb56-4" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb56-5"><a href="commonElements.html#cb56-5" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>,</span>
+<span id="cb56-6"><a href="commonElements.html#cb56-6" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb56-7"><a href="commonElements.html#cb56-7" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;button1&quot;</span>,</span>
+<span id="cb56-8"><a href="commonElements.html#cb56-8" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;Left button&quot;</span>,</span>
+<span id="cb56-9"><a href="commonElements.html#cb56-9" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb56-10"><a href="commonElements.html#cb56-10" tabindex="-1"></a>    )</span>
+<span id="cb56-11"><a href="commonElements.html#cb56-11" tabindex="-1"></a>  ),</span>
+<span id="cb56-12"><a href="commonElements.html#cb56-12" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb56-13"><a href="commonElements.html#cb56-13" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb56-14"><a href="commonElements.html#cb56-14" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">8</span>,</span>
+<span id="cb56-15"><a href="commonElements.html#cb56-15" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb56-16"><a href="commonElements.html#cb56-16" tabindex="-1"></a>      <span class="at">inputId =</span> <span class="st">&quot;button2&quot;</span>,</span>
+<span id="cb56-17"><a href="commonElements.html#cb56-17" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">&quot;Right button&quot;</span>,</span>
+<span id="cb56-18"><a href="commonElements.html#cb56-18" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb56-19"><a href="commonElements.html#cb56-19" tabindex="-1"></a>    )</span>
+<span id="cb56-20"><a href="commonElements.html#cb56-20" tabindex="-1"></a>  )</span>
+<span id="cb56-21"><a href="commonElements.html#cb56-21" tabindex="-1"></a>)</span></code></pre></div>
 <p>By using <code>offset = 8</code> in the second <code>column</code> call, we placed 8 empty columns between the first button and the second button. Further, each button gets to take up two columns of space (i.e., 2/12ths of the row) to appear (<code>width = 2</code>).</p>
 <p>The most common coding problems to arise with <code>fluidRow</code> and <code>column</code> are:</p>
 <ul>
@@ -575,49 +575,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Well panels are visual styling that we use to help offset user controls (i.e., inputs) from both context and graphs (i.e., outputs).</p>
 <p>To place something inside of a well panel, all you need to do is wrap that object in the <code>wellPanel</code> function. However, the placement of the <code>wellPanel</code> call matters.</p>
 <p>If you wrap each individual element in <code>wellPanel</code> you’ll get a separate well panel for each call. If you place <code>wellPanel</code> too high up in your code, you’ll end up putting everything into the well panel.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="commonElements.html#cb61-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb61-2"><a href="commonElements.html#cb61-2" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb61-3"><a href="commonElements.html#cb61-3" tabindex="-1"></a><span class="co"># Inside a tabItem</span></span>
-<span id="cb61-4"><a href="commonElements.html#cb61-4" tabindex="-1"></a><span class="fu">fluidRow</span>(</span>
-<span id="cb61-5"><a href="commonElements.html#cb61-5" tabindex="-1"></a>  <span class="fu">column</span>(</span>
-<span id="cb61-6"><a href="commonElements.html#cb61-6" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">4</span>, </span>
-<span id="cb61-7"><a href="commonElements.html#cb61-7" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>, </span>
-<span id="cb61-8"><a href="commonElements.html#cb61-8" tabindex="-1"></a>    <span class="fu">wellPanel</span>( <span class="co"># Placing the wellPanel call here will wrap around all controls</span></span>
-<span id="cb61-9"><a href="commonElements.html#cb61-9" tabindex="-1"></a>      <span class="fu">h3</span>(<span class="st">&quot;Controls&quot;</span>),</span>
-<span id="cb61-10"><a href="commonElements.html#cb61-10" tabindex="-1"></a>      <span class="fu">sliderInput</span>(</span>
-<span id="cb61-11"><a href="commonElements.html#cb61-11" tabindex="-1"></a>        <span class="at">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
-<span id="cb61-12"><a href="commonElements.html#cb61-12" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">alpha_{UT}</span><span class="sc">\\</span><span class="st">):&quot;</span>,</span>
-<span id="cb61-13"><a href="commonElements.html#cb61-13" tabindex="-1"></a>        <span class="at">min =</span> <span class="fl">0.01</span>,</span>
-<span id="cb61-14"><a href="commonElements.html#cb61-14" tabindex="-1"></a>        <span class="at">max =</span> <span class="fl">0.25</span>,</span>
-<span id="cb61-15"><a href="commonElements.html#cb61-15" tabindex="-1"></a>        <span class="at">value =</span> <span class="fl">0.1</span>,</span>
-<span id="cb61-16"><a href="commonElements.html#cb61-16" tabindex="-1"></a>        <span class="at">step =</span> <span class="fl">0.01</span>,</span>
-<span id="cb61-17"><a href="commonElements.html#cb61-17" tabindex="-1"></a>        <span class="at">animate =</span> <span class="fu">animationOptions</span>(<span class="at">interval =</span> <span class="dv">1000</span>, <span class="at">loop =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb61-18"><a href="commonElements.html#cb61-18" tabindex="-1"></a>        ),</span>
-<span id="cb61-19"><a href="commonElements.html#cb61-19" tabindex="-1"></a>      <span class="fu">br</span>(), <span class="co"># creating vertical space between sliders</span></span>
-<span id="cb61-20"><a href="commonElements.html#cb61-20" tabindex="-1"></a>      <span class="fu">sliderInput</span>(</span>
-<span id="cb61-21"><a href="commonElements.html#cb61-21" tabindex="-1"></a>        <span class="at">inputId =</span> <span class="st">&quot;mtcTests&quot;</span>,</span>
-<span id="cb61-22"><a href="commonElements.html#cb61-22" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">&quot;Set the number of hypothesis tests conducted:&quot;</span>,</span>
-<span id="cb61-23"><a href="commonElements.html#cb61-23" tabindex="-1"></a>        <span class="at">min =</span> <span class="dv">0</span>,</span>
-<span id="cb61-24"><a href="commonElements.html#cb61-24" tabindex="-1"></a>        <span class="at">max =</span> <span class="dv">500</span>,</span>
-<span id="cb61-25"><a href="commonElements.html#cb61-25" tabindex="-1"></a>        <span class="at">value =</span> <span class="dv">5</span>,</span>
-<span id="cb61-26"><a href="commonElements.html#cb61-26" tabindex="-1"></a>        <span class="at">step =</span> <span class="dv">5</span></span>
-<span id="cb61-27"><a href="commonElements.html#cb61-27" tabindex="-1"></a>        )</span>
-<span id="cb61-28"><a href="commonElements.html#cb61-28" tabindex="-1"></a>      ) <span class="co"># this closes the wellPanel</span></span>
-<span id="cb61-29"><a href="commonElements.html#cb61-29" tabindex="-1"></a>    ), <span class="co"># this closes the first column</span></span>
-<span id="cb61-30"><a href="commonElements.html#cb61-30" tabindex="-1"></a>  <span class="fu">column</span>(</span>
-<span id="cb61-31"><a href="commonElements.html#cb61-31" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">8</span>,</span>
-<span id="cb61-32"><a href="commonElements.html#cb61-32" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>,</span>
-<span id="cb61-33"><a href="commonElements.html#cb61-33" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">&quot;Plot&quot;</span>),</span>
-<span id="cb61-34"><a href="commonElements.html#cb61-34" tabindex="-1"></a>    <span class="fu">plotOutput</span>(<span class="st">&quot;pplotMTC&quot;</span>),</span>
-<span id="cb61-35"><a href="commonElements.html#cb61-35" tabindex="-1"></a>    <span class="fu">bsPopover</span>(</span>
-<span id="cb61-36"><a href="commonElements.html#cb61-36" tabindex="-1"></a>      <span class="at">id =</span> <span class="st">&quot;pplotMTC&quot;</span>,</span>
-<span id="cb61-37"><a href="commonElements.html#cb61-37" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Investigate!&quot;</span>,</span>
-<span id="cb61-38"><a href="commonElements.html#cb61-38" tabindex="-1"></a>      <span class="at">content =</span> <span class="st">&quot;What happens to the number of statistically significant tests when you</span></span>
-<span id="cb61-39"><a href="commonElements.html#cb61-39" tabindex="-1"></a><span class="st">      increase the number of tests?&quot;</span>,</span>
-<span id="cb61-40"><a href="commonElements.html#cb61-40" tabindex="-1"></a>      <span class="at">placement =</span> <span class="st">&quot;top&quot;</span></span>
-<span id="cb61-41"><a href="commonElements.html#cb61-41" tabindex="-1"></a>      )</span>
-<span id="cb61-42"><a href="commonElements.html#cb61-42" tabindex="-1"></a>    ) <span class="co"># closes second column</span></span>
-<span id="cb61-43"><a href="commonElements.html#cb61-43" tabindex="-1"></a>  ), <span class="co">#closes the fluid row</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="commonElements.html#cb57-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb57-2"><a href="commonElements.html#cb57-2" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb57-3"><a href="commonElements.html#cb57-3" tabindex="-1"></a><span class="co"># Inside a tabItem</span></span>
+<span id="cb57-4"><a href="commonElements.html#cb57-4" tabindex="-1"></a><span class="fu">fluidRow</span>(</span>
+<span id="cb57-5"><a href="commonElements.html#cb57-5" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb57-6"><a href="commonElements.html#cb57-6" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">4</span>, </span>
+<span id="cb57-7"><a href="commonElements.html#cb57-7" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>, </span>
+<span id="cb57-8"><a href="commonElements.html#cb57-8" tabindex="-1"></a>    <span class="fu">wellPanel</span>( <span class="co"># Placing the wellPanel call here will wrap around all controls</span></span>
+<span id="cb57-9"><a href="commonElements.html#cb57-9" tabindex="-1"></a>      <span class="fu">h3</span>(<span class="st">&quot;Controls&quot;</span>),</span>
+<span id="cb57-10"><a href="commonElements.html#cb57-10" tabindex="-1"></a>      <span class="fu">sliderInput</span>(</span>
+<span id="cb57-11"><a href="commonElements.html#cb57-11" tabindex="-1"></a>        <span class="at">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
+<span id="cb57-12"><a href="commonElements.html#cb57-12" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">alpha_{UT}</span><span class="sc">\\</span><span class="st">):&quot;</span>,</span>
+<span id="cb57-13"><a href="commonElements.html#cb57-13" tabindex="-1"></a>        <span class="at">min =</span> <span class="fl">0.01</span>,</span>
+<span id="cb57-14"><a href="commonElements.html#cb57-14" tabindex="-1"></a>        <span class="at">max =</span> <span class="fl">0.25</span>,</span>
+<span id="cb57-15"><a href="commonElements.html#cb57-15" tabindex="-1"></a>        <span class="at">value =</span> <span class="fl">0.1</span>,</span>
+<span id="cb57-16"><a href="commonElements.html#cb57-16" tabindex="-1"></a>        <span class="at">step =</span> <span class="fl">0.01</span>,</span>
+<span id="cb57-17"><a href="commonElements.html#cb57-17" tabindex="-1"></a>        <span class="at">animate =</span> <span class="fu">animationOptions</span>(<span class="at">interval =</span> <span class="dv">1000</span>, <span class="at">loop =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb57-18"><a href="commonElements.html#cb57-18" tabindex="-1"></a>        ),</span>
+<span id="cb57-19"><a href="commonElements.html#cb57-19" tabindex="-1"></a>      <span class="fu">br</span>(), <span class="co"># creating vertical space between sliders</span></span>
+<span id="cb57-20"><a href="commonElements.html#cb57-20" tabindex="-1"></a>      <span class="fu">sliderInput</span>(</span>
+<span id="cb57-21"><a href="commonElements.html#cb57-21" tabindex="-1"></a>        <span class="at">inputId =</span> <span class="st">&quot;mtcTests&quot;</span>,</span>
+<span id="cb57-22"><a href="commonElements.html#cb57-22" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">&quot;Set the number of hypothesis tests conducted:&quot;</span>,</span>
+<span id="cb57-23"><a href="commonElements.html#cb57-23" tabindex="-1"></a>        <span class="at">min =</span> <span class="dv">0</span>,</span>
+<span id="cb57-24"><a href="commonElements.html#cb57-24" tabindex="-1"></a>        <span class="at">max =</span> <span class="dv">500</span>,</span>
+<span id="cb57-25"><a href="commonElements.html#cb57-25" tabindex="-1"></a>        <span class="at">value =</span> <span class="dv">5</span>,</span>
+<span id="cb57-26"><a href="commonElements.html#cb57-26" tabindex="-1"></a>        <span class="at">step =</span> <span class="dv">5</span></span>
+<span id="cb57-27"><a href="commonElements.html#cb57-27" tabindex="-1"></a>        )</span>
+<span id="cb57-28"><a href="commonElements.html#cb57-28" tabindex="-1"></a>      ) <span class="co"># this closes the wellPanel</span></span>
+<span id="cb57-29"><a href="commonElements.html#cb57-29" tabindex="-1"></a>    ), <span class="co"># this closes the first column</span></span>
+<span id="cb57-30"><a href="commonElements.html#cb57-30" tabindex="-1"></a>  <span class="fu">column</span>(</span>
+<span id="cb57-31"><a href="commonElements.html#cb57-31" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">8</span>,</span>
+<span id="cb57-32"><a href="commonElements.html#cb57-32" tabindex="-1"></a>    <span class="at">offset =</span> <span class="dv">0</span>,</span>
+<span id="cb57-33"><a href="commonElements.html#cb57-33" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">&quot;Plot&quot;</span>),</span>
+<span id="cb57-34"><a href="commonElements.html#cb57-34" tabindex="-1"></a>    <span class="fu">plotOutput</span>(<span class="st">&quot;pplotMTC&quot;</span>),</span>
+<span id="cb57-35"><a href="commonElements.html#cb57-35" tabindex="-1"></a>    <span class="fu">bsPopover</span>(</span>
+<span id="cb57-36"><a href="commonElements.html#cb57-36" tabindex="-1"></a>      <span class="at">id =</span> <span class="st">&quot;pplotMTC&quot;</span>,</span>
+<span id="cb57-37"><a href="commonElements.html#cb57-37" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Investigate!&quot;</span>,</span>
+<span id="cb57-38"><a href="commonElements.html#cb57-38" tabindex="-1"></a>      <span class="at">content =</span> <span class="st">&quot;What happens to the number of statistically significant tests when you</span></span>
+<span id="cb57-39"><a href="commonElements.html#cb57-39" tabindex="-1"></a><span class="st">      increase the number of tests?&quot;</span>,</span>
+<span id="cb57-40"><a href="commonElements.html#cb57-40" tabindex="-1"></a>      <span class="at">placement =</span> <span class="st">&quot;top&quot;</span></span>
+<span id="cb57-41"><a href="commonElements.html#cb57-41" tabindex="-1"></a>      )</span>
+<span id="cb57-42"><a href="commonElements.html#cb57-42" tabindex="-1"></a>    ) <span class="co"># closes second column</span></span>
+<span id="cb57-43"><a href="commonElements.html#cb57-43" tabindex="-1"></a>  ), <span class="co">#closes the fluid row</span></span></code></pre></div>
 <p>The above code highlights using the <code>wellPanel</code> to place all of the controls into a well panel as well as placing that well panel into the first column of a fluid row.</p>
 </div>
 <div id="collapsible" class="section level2 hasAnchor" number="10.3">
@@ -628,19 +628,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-collapsible-boxes" class="section level3 hasAnchor" number="10.3.1">
 <h3><span class="header-section-number">10.3.1</span> Creating Collapsible Boxes<a href="commonElements.html#creating-collapsible-boxes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To create a Collapsible Box, you’ll need to work in th UI section of your code:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="commonElements.html#cb62-1" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
-<span id="cb62-2"><a href="commonElements.html#cb62-2" tabindex="-1"></a><span class="fu">box</span>(</span>
-<span id="cb62-3"><a href="commonElements.html#cb62-3" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Title for the Box&quot;</span>), <span class="co"># Use the strong tag</span></span>
-<span id="cb62-4"><a href="commonElements.html#cb62-4" tabindex="-1"></a>  <span class="co"># Give either the title of the review concept or &quot;Context&quot;</span></span>
-<span id="cb62-5"><a href="commonElements.html#cb62-5" tabindex="-1"></a>  <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>, <span class="co"># Leave as primary</span></span>
-<span id="cb62-6"><a href="commonElements.html#cb62-6" tabindex="-1"></a>  <span class="at">collapsible =</span> <span class="cn">TRUE</span>, <span class="co"># This allows collapsing</span></span>
-<span id="cb62-7"><a href="commonElements.html#cb62-7" tabindex="-1"></a>  <span class="at">collapsed =</span> <span class="cn">FALSE</span>, <span class="co"># Initial value</span></span>
-<span id="cb62-8"><a href="commonElements.html#cb62-8" tabindex="-1"></a>  <span class="co"># If the only collapsible item, use FALSE</span></span>
-<span id="cb62-9"><a href="commonElements.html#cb62-9" tabindex="-1"></a>  <span class="co"># If there are multiple, the first one is FALSE, others can be set to TRUE.</span></span>
-<span id="cb62-10"><a href="commonElements.html#cb62-10" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>, <span class="co"># use this setting</span></span>
-<span id="cb62-11"><a href="commonElements.html#cb62-11" tabindex="-1"></a>  <span class="st">&quot;The text that will &#39;disappear&#39; goes here.&quot;</span></span>
-<span id="cb62-12"><a href="commonElements.html#cb62-12" tabindex="-1"></a>),</span>
-<span id="cb62-13"><a href="commonElements.html#cb62-13" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="commonElements.html#cb58-1" tabindex="-1"></a><span class="co"># [code omitted]</span></span>
+<span id="cb58-2"><a href="commonElements.html#cb58-2" tabindex="-1"></a><span class="fu">box</span>(</span>
+<span id="cb58-3"><a href="commonElements.html#cb58-3" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">strong</span>(<span class="st">&quot;Title for the Box&quot;</span>), <span class="co"># Use the strong tag</span></span>
+<span id="cb58-4"><a href="commonElements.html#cb58-4" tabindex="-1"></a>  <span class="co"># Give either the title of the review concept or &quot;Context&quot;</span></span>
+<span id="cb58-5"><a href="commonElements.html#cb58-5" tabindex="-1"></a>  <span class="at">status =</span> <span class="st">&quot;primary&quot;</span>, <span class="co"># Leave as primary</span></span>
+<span id="cb58-6"><a href="commonElements.html#cb58-6" tabindex="-1"></a>  <span class="at">collapsible =</span> <span class="cn">TRUE</span>, <span class="co"># This allows collapsing</span></span>
+<span id="cb58-7"><a href="commonElements.html#cb58-7" tabindex="-1"></a>  <span class="at">collapsed =</span> <span class="cn">FALSE</span>, <span class="co"># Initial value</span></span>
+<span id="cb58-8"><a href="commonElements.html#cb58-8" tabindex="-1"></a>  <span class="co"># If the only collapsible item, use FALSE</span></span>
+<span id="cb58-9"><a href="commonElements.html#cb58-9" tabindex="-1"></a>  <span class="co"># If there are multiple, the first one is FALSE, others can be set to TRUE.</span></span>
+<span id="cb58-10"><a href="commonElements.html#cb58-10" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&#39;100%&#39;</span>, <span class="co"># use this setting</span></span>
+<span id="cb58-11"><a href="commonElements.html#cb58-11" tabindex="-1"></a>  <span class="st">&quot;The text that will &#39;disappear&#39; goes here.&quot;</span></span>
+<span id="cb58-12"><a href="commonElements.html#cb58-12" tabindex="-1"></a>),</span>
+<span id="cb58-13"><a href="commonElements.html#cb58-13" tabindex="-1"></a><span class="co"># [code omitted]</span></span></code></pre></div>
 <p>Given the static nature of the information in a collapsible box, you should not need to add anything to the server definition.</p>
 <p>The styling of Collapsible Boxes is controlled by the central CSS file. If you use the above code as your template, the coloring will automatically match your App’s assigned color theme.</p>
 </div>
@@ -651,15 +651,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="main-type-of-button" class="section level3 hasAnchor" number="10.4.1">
 <h3><span class="header-section-number">10.4.1</span> Main Type of Button<a href="commonElements.html#main-type-of-button" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s talk about the particulars of the <code>bsButton</code> function which is the call you should use to create buttons.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="commonElements.html#cb63-1" tabindex="-1"></a><span class="co"># You must have library(shinyBS) loaded in your app</span></span>
-<span id="cb63-2"><a href="commonElements.html#cb63-2" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
-<span id="cb63-3"><a href="commonElements.html#cb63-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;meaningfulName&quot;</span>,</span>
-<span id="cb63-4"><a href="commonElements.html#cb63-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Words to display on button&quot;</span>,</span>
-<span id="cb63-5"><a href="commonElements.html#cb63-5" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>), <span class="co"># Optional</span></span>
-<span id="cb63-6"><a href="commonElements.html#cb63-6" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;default&quot;</span>,</span>
-<span id="cb63-7"><a href="commonElements.html#cb63-7" tabindex="-1"></a>  <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
-<span id="cb63-8"><a href="commonElements.html#cb63-8" tabindex="-1"></a>  <span class="at">disabled =</span> <span class="cn">FALSE</span></span>
-<span id="cb63-9"><a href="commonElements.html#cb63-9" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="commonElements.html#cb59-1" tabindex="-1"></a><span class="co"># You must have library(shinyBS) loaded in your app</span></span>
+<span id="cb59-2"><a href="commonElements.html#cb59-2" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
+<span id="cb59-3"><a href="commonElements.html#cb59-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;meaningfulName&quot;</span>,</span>
+<span id="cb59-4"><a href="commonElements.html#cb59-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Words to display on button&quot;</span>,</span>
+<span id="cb59-5"><a href="commonElements.html#cb59-5" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>), <span class="co"># Optional</span></span>
+<span id="cb59-6"><a href="commonElements.html#cb59-6" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;default&quot;</span>,</span>
+<span id="cb59-7"><a href="commonElements.html#cb59-7" tabindex="-1"></a>  <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb59-8"><a href="commonElements.html#cb59-8" tabindex="-1"></a>  <span class="at">disabled =</span> <span class="cn">FALSE</span></span>
+<span id="cb59-9"><a href="commonElements.html#cb59-9" tabindex="-1"></a>)</span></code></pre></div>
 <p>Of the listed arguments only three are absolutely required: <code>inputId</code> (you must give each button a unique, meaningful name so that you can reference the button in your server definition), <code>label</code> (you must put text on the button so your user knows what to click and what the button does), and <code>size</code> (we will use “large” in all but the rarest of cases).</p>
 </div>
 <div id="labels" class="section level3 hasAnchor" number="10.4.2">
@@ -734,16 +734,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="updating-buttons" class="section level3 hasAnchor" number="10.4.6">
 <h3><span class="header-section-number">10.4.6</span> Updating Buttons<a href="commonElements.html#updating-buttons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One of the things that you can do while the app is running, is to change aspects of buttons based upon certain user actions. This would include changing the label, the icon, the style, and even whether the button is disabled. To update a button you’ll need to use the <code>updateButton</code> function:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="commonElements.html#cb64-1" tabindex="-1"></a><span class="co"># In your Server Code,</span></span>
-<span id="cb64-2"><a href="commonElements.html#cb64-2" tabindex="-1"></a><span class="do">## Inside the handlerExpr of some observeEvent</span></span>
-<span id="cb64-3"><a href="commonElements.html#cb64-3" tabindex="-1"></a><span class="fu">updateButton</span>(</span>
-<span id="cb64-4"><a href="commonElements.html#cb64-4" tabindex="-1"></a>  <span class="at">session =</span> session,</span>
-<span id="cb64-5"><a href="commonElements.html#cb64-5" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;buttonName&quot;</span>,</span>
-<span id="cb64-6"><a href="commonElements.html#cb64-6" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;newValue&quot;</span>,</span>
-<span id="cb64-7"><a href="commonElements.html#cb64-7" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;newIcon&quot;</span>),</span>
-<span id="cb64-8"><a href="commonElements.html#cb64-8" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;newStyle&quot;</span>,</span>
-<span id="cb64-9"><a href="commonElements.html#cb64-9" tabindex="-1"></a>  <span class="at">disabled =</span> <span class="cn">TRUE</span> <span class="co"># or FALSE</span></span>
-<span id="cb64-10"><a href="commonElements.html#cb64-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="commonElements.html#cb60-1" tabindex="-1"></a><span class="co"># In your Server Code,</span></span>
+<span id="cb60-2"><a href="commonElements.html#cb60-2" tabindex="-1"></a><span class="do">## Inside the handlerExpr of some observeEvent</span></span>
+<span id="cb60-3"><a href="commonElements.html#cb60-3" tabindex="-1"></a><span class="fu">updateButton</span>(</span>
+<span id="cb60-4"><a href="commonElements.html#cb60-4" tabindex="-1"></a>  <span class="at">session =</span> session,</span>
+<span id="cb60-5"><a href="commonElements.html#cb60-5" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;buttonName&quot;</span>,</span>
+<span id="cb60-6"><a href="commonElements.html#cb60-6" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;newValue&quot;</span>,</span>
+<span id="cb60-7"><a href="commonElements.html#cb60-7" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;newIcon&quot;</span>),</span>
+<span id="cb60-8"><a href="commonElements.html#cb60-8" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;newStyle&quot;</span>,</span>
+<span id="cb60-9"><a href="commonElements.html#cb60-9" tabindex="-1"></a>  <span class="at">disabled =</span> <span class="cn">TRUE</span> <span class="co"># or FALSE</span></span>
+<span id="cb60-10"><a href="commonElements.html#cb60-10" tabindex="-1"></a>)</span></code></pre></div>
 <p>The first two arguments (<code>session</code> and <code>inputId</code>) are required. However, the rest are the ones that you might want to change. IMPORTANT: only list the arguments you actually want to change here. Thus, if you only wanted to disable a button, you would ONLY list <code>session</code>, <code>inputId</code>, and <code>disabled = TRUE</code>. If you were to list any of the others, you would also change them.</p>
 <p>The <code>updateButton</code> function is especially important if you are using the <code>disabeled</code> argument of <code>bsButton</code>. You need to allow your users to click on buttons, when conditions are met. That is to say, if you have a button that is permanently disabled, then you should get rid of the button.</p>
 </div>
@@ -767,13 +767,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="linking-out" class="section level4 hasAnchor" number="10.4.7.3">
 <h4><span class="header-section-number">10.4.7.3</span> Linking Out<a href="commonElements.html#linking-out" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Occasionally, you might need a button to do something that would be external to the app. For example, download an activity file that is not part of the app or open a new browser tab to a particular place. In these cases, you won’t code any actions in your server definition for button. Rather, you’ll make use the <code>actionbutton</code> instead of the <code>bsButton</code>.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="commonElements.html#cb65-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
-<span id="cb65-2"><a href="commonElements.html#cb65-2" tabindex="-1"></a><span class="fu">actionButton</span>(</span>
-<span id="cb65-3"><a href="commonElements.html#cb65-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;ap1&quot;</span>,</span>
-<span id="cb65-4"><a href="commonElements.html#cb65-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Activity Packet&quot;</span>,</span>
-<span id="cb65-5"><a href="commonElements.html#cb65-5" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;cloud-download&quot;</span>),</span>
-<span id="cb65-6"><a href="commonElements.html#cb65-6" tabindex="-1"></a>  <span class="at">onclick =</span> <span class="st">&quot;window.open(&#39;../../ActivityPackets/Caveats/&#39;)&quot;</span></span>
-<span id="cb65-7"><a href="commonElements.html#cb65-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="commonElements.html#cb61-1" tabindex="-1"></a><span class="co"># In the UI Section</span></span>
+<span id="cb61-2"><a href="commonElements.html#cb61-2" tabindex="-1"></a><span class="fu">actionButton</span>(</span>
+<span id="cb61-3"><a href="commonElements.html#cb61-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;ap1&quot;</span>,</span>
+<span id="cb61-4"><a href="commonElements.html#cb61-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Activity Packet&quot;</span>,</span>
+<span id="cb61-5"><a href="commonElements.html#cb61-5" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;cloud-download&quot;</span>),</span>
+<span id="cb61-6"><a href="commonElements.html#cb61-6" tabindex="-1"></a>  <span class="at">onclick =</span> <span class="st">&quot;window.open(&#39;../../ActivityPackets/Caveats/&#39;)&quot;</span></span>
+<span id="cb61-7"><a href="commonElements.html#cb61-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>Notice that the <code>onclick</code> argument is what creates the action for button and references a relative path to a particular file. In this case a R Markdown file that lives the in directory called. (The actual file name isn’t listed to ensure that the processed/rendered version of the RMD is what the users see.)</p>
 <p>These cases are extremely rare. Consult with Neil and Bob before you use this type of method.</p>
 </div>
@@ -818,17 +818,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">10.5.2</span> Animation of Sliders<a href="commonElements.html#animation-of-sliders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One feature of slider inputs is the option to include a Play/Pause button that allows the user to create an animation of your plot. Enabling this option can be quite useful if allowing the user to move through the whole set of slider values is desirable.</p>
 <p>To enable this, you’ll need to make use of the <code>animate</code> argument:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="commonElements.html#cb66-1" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
-<span id="cb66-2"><a href="commonElements.html#cb66-2" tabindex="-1"></a><span class="fu">sliderInput</span>(</span>
-<span id="cb66-3"><a href="commonElements.html#cb66-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
-<span id="cb66-4"><a href="commonElements.html#cb66-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">alpha_{UT}</span><span class="sc">\\</span><span class="st">):&quot;</span>,</span>
-<span id="cb66-5"><a href="commonElements.html#cb66-5" tabindex="-1"></a>  <span class="at">min =</span> <span class="fl">0.01</span>,</span>
-<span id="cb66-6"><a href="commonElements.html#cb66-6" tabindex="-1"></a>  <span class="at">max =</span> <span class="fl">0.25</span>,</span>
-<span id="cb66-7"><a href="commonElements.html#cb66-7" tabindex="-1"></a>  <span class="at">value =</span> <span class="fl">0.1</span>,</span>
-<span id="cb66-8"><a href="commonElements.html#cb66-8" tabindex="-1"></a>  <span class="at">step =</span> <span class="fl">0.01</span>,</span>
-<span id="cb66-9"><a href="commonElements.html#cb66-9" tabindex="-1"></a>  <span class="at">animate =</span> <span class="fu">animationOptions</span>(</span>
-<span id="cb66-10"><a href="commonElements.html#cb66-10" tabindex="-1"></a>    <span class="at">interval =</span> <span class="dv">1000</span>, <span class="at">loop =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb66-11"><a href="commonElements.html#cb66-11" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="commonElements.html#cb62-1" tabindex="-1"></a><span class="co">#[code omitted]</span></span>
+<span id="cb62-2"><a href="commonElements.html#cb62-2" tabindex="-1"></a><span class="fu">sliderInput</span>(</span>
+<span id="cb62-3"><a href="commonElements.html#cb62-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;mtcAlpha&quot;</span>,</span>
+<span id="cb62-4"><a href="commonElements.html#cb62-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Set your threshold level, </span><span class="sc">\\</span><span class="st">(</span><span class="sc">\\</span><span class="st">alpha_{UT}</span><span class="sc">\\</span><span class="st">):&quot;</span>,</span>
+<span id="cb62-5"><a href="commonElements.html#cb62-5" tabindex="-1"></a>  <span class="at">min =</span> <span class="fl">0.01</span>,</span>
+<span id="cb62-6"><a href="commonElements.html#cb62-6" tabindex="-1"></a>  <span class="at">max =</span> <span class="fl">0.25</span>,</span>
+<span id="cb62-7"><a href="commonElements.html#cb62-7" tabindex="-1"></a>  <span class="at">value =</span> <span class="fl">0.1</span>,</span>
+<span id="cb62-8"><a href="commonElements.html#cb62-8" tabindex="-1"></a>  <span class="at">step =</span> <span class="fl">0.01</span>,</span>
+<span id="cb62-9"><a href="commonElements.html#cb62-9" tabindex="-1"></a>  <span class="at">animate =</span> <span class="fu">animationOptions</span>(</span>
+<span id="cb62-10"><a href="commonElements.html#cb62-10" tabindex="-1"></a>    <span class="at">interval =</span> <span class="dv">1000</span>, <span class="at">loop =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb62-11"><a href="commonElements.html#cb62-11" tabindex="-1"></a><span class="co">#[code omitted]</span></span></code></pre></div>
 <p>You can set <code>animate=TRUE</code>, <code>animate=FALSE</code> or invoke the <code>animationOptions</code> function as we’ve done in the example and recommend. This will force you to make some important decisions: namely, how long the slider should wait between each movement (<code>interval</code>, in milliseconds) and should the animation start over once the slider reaches the maximum (<code>loop</code>).</p>
 <p>The <code>interval</code> is going to the most challenging value to figure out. This timer <em><strong>ignores</strong></em> everything else; that is, it doesn’t wait to see whether your plot has updated. Remember, the more complicated the process that generates your plot is, the longer your App will need to render the plot. Thus, you can quickly get into a case where the slider has advanced several times while your App is still trying to render the first update. While <code>renderCachePlot</code> can help speed things up, keep in mind that you still might need to play around with the <code>interval</code> value to ensure smooth functionality.</p>
 <p>Make sure when you’re testing an animated slider to vary all of the parameters involved in the graph. This will help ensure that you test adequately.</p>
@@ -890,18 +890,18 @@ Figure 10.1: Correct, Partially Correct, and Incorrect Marks
 <p>A universal rule to keep in mind when building Apps is that users will do things that you did not intend for them to do. This can cause your App to crash. While we can’t anticipate every possible way a user might inadvertently break your App, we can program ways to handle some of those actions. This is where sending alerts comes into play.</p>
 <p>The most common type of message revolves around the inclusion of an Information button (the <svg aria-hidden="true" role="img" viewBox="0 0 192 512" style="height:25px;width:9.38px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z"/></svg> button in the Dashboard Header). This Information button provides a quick reminder of general instructions for the app.</p>
 <p>For both alerts and messages, we will turn to the <code>sendSweetAlert</code> function from the <code>shinyWidgets</code> package.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="commonElements.html#cb67-1" tabindex="-1"></a><span class="co"># In your server definition</span></span>
-<span id="cb67-2"><a href="commonElements.html#cb67-2" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
-<span id="cb67-3"><a href="commonElements.html#cb67-3" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>exampleTrigger,</span>
-<span id="cb67-4"><a href="commonElements.html#cb67-4" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
-<span id="cb67-5"><a href="commonElements.html#cb67-5" tabindex="-1"></a>    <span class="fu">sendSweetAlert</span>(</span>
-<span id="cb67-6"><a href="commonElements.html#cb67-6" tabindex="-1"></a>      <span class="at">session =</span> session,</span>
-<span id="cb67-7"><a href="commonElements.html#cb67-7" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;info&quot;</span>,</span>
-<span id="cb67-8"><a href="commonElements.html#cb67-8" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Title of Message&quot;</span>,</span>
-<span id="cb67-9"><a href="commonElements.html#cb67-9" tabindex="-1"></a>      <span class="at">text =</span> <span class="st">&quot;message to user&quot;</span></span>
-<span id="cb67-10"><a href="commonElements.html#cb67-10" tabindex="-1"></a>    )</span>
-<span id="cb67-11"><a href="commonElements.html#cb67-11" tabindex="-1"></a>  }</span>
-<span id="cb67-12"><a href="commonElements.html#cb67-12" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="commonElements.html#cb63-1" tabindex="-1"></a><span class="co"># In your server definition</span></span>
+<span id="cb63-2"><a href="commonElements.html#cb63-2" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
+<span id="cb63-3"><a href="commonElements.html#cb63-3" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>exampleTrigger,</span>
+<span id="cb63-4"><a href="commonElements.html#cb63-4" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
+<span id="cb63-5"><a href="commonElements.html#cb63-5" tabindex="-1"></a>    <span class="fu">sendSweetAlert</span>(</span>
+<span id="cb63-6"><a href="commonElements.html#cb63-6" tabindex="-1"></a>      <span class="at">session =</span> session,</span>
+<span id="cb63-7"><a href="commonElements.html#cb63-7" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;info&quot;</span>,</span>
+<span id="cb63-8"><a href="commonElements.html#cb63-8" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Title of Message&quot;</span>,</span>
+<span id="cb63-9"><a href="commonElements.html#cb63-9" tabindex="-1"></a>      <span class="at">text =</span> <span class="st">&quot;message to user&quot;</span></span>
+<span id="cb63-10"><a href="commonElements.html#cb63-10" tabindex="-1"></a>    )</span>
+<span id="cb63-11"><a href="commonElements.html#cb63-11" tabindex="-1"></a>  }</span>
+<span id="cb63-12"><a href="commonElements.html#cb63-12" tabindex="-1"></a>)</span></code></pre></div>
 <p>Notice that we need to place the <code>sendSweetAlert</code> function inside of an <code>observeEvent</code>. The four arguments we’ve listed are the four basic aspects you must program any time you want to send an alert or a message to your users.</p>
 <p>The <code>session = session</code> argument does not need to change and ensures that the correct user gets the message.</p>
 <div id="alert-types" class="section level3 hasAnchor" number="10.7.1">
@@ -922,33 +922,33 @@ Figure 10.1: Correct, Partially Correct, and Incorrect Marks
 <p>While you could do something similar for both <code>warning</code> and <code>error</code> types, you might want to consider including a bit more information. For example, rather than using <code>title = "Error!"</code>, you might want to use <code>title = "Error: Invalid Sample Size"</code> instead. Notice that the title helps direct the user to what they need to fix.</p>
 <p>You can’t put everything into the alert’s <code>title</code> argument. This is where the <code>text</code> argument comes into play. Give more details <strong>AND</strong> ways in which the user can fix the error with the <code>text</code> value.</p>
 <p>Your message can be rather simple text (the previous example), or you can use HTML tags to make the message more structured:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="commonElements.html#cb68-1" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
-<span id="cb68-2"><a href="commonElements.html#cb68-2" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>info,</span>
-<span id="cb68-3"><a href="commonElements.html#cb68-3" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
-<span id="cb68-4"><a href="commonElements.html#cb68-4" tabindex="-1"></a>    <span class="fu">sendSweetAlert</span>(</span>
-<span id="cb68-5"><a href="commonElements.html#cb68-5" tabindex="-1"></a>      <span class="at">session =</span> session,</span>
-<span id="cb68-6"><a href="commonElements.html#cb68-6" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;info&quot;</span>,</span>
-<span id="cb68-7"><a href="commonElements.html#cb68-7" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Information&quot;</span>,</span>
-<span id="cb68-8"><a href="commonElements.html#cb68-8" tabindex="-1"></a>      <span class="at">text =</span> tags<span class="sc">$</span><span class="fu">div</span>(</span>
-<span id="cb68-9"><a href="commonElements.html#cb68-9" tabindex="-1"></a>        <span class="st">&quot;Use the app in two ways:&quot;</span>,</span>
-<span id="cb68-10"><a href="commonElements.html#cb68-10" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">ol</span>(</span>
-<span id="cb68-11"><a href="commonElements.html#cb68-11" tabindex="-1"></a>          tags<span class="sc">$</span><span class="fu">li</span>(</span>
-<span id="cb68-12"><a href="commonElements.html#cb68-12" tabindex="-1"></a>            <span class="st">&quot;Click on the &quot;</span>, tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Explore&quot;</span>), <span class="st">&quot; page to explore how to</span></span>
-<span id="cb68-13"><a href="commonElements.html#cb68-13" tabindex="-1"></a><span class="st">              read Hasse Diagrams and how to use them to figure out the proper</span></span>
-<span id="cb68-14"><a href="commonElements.html#cb68-14" tabindex="-1"></a><span class="st">              denominator to use to test a give node/term.&quot;</span></span>
-<span id="cb68-15"><a href="commonElements.html#cb68-15" tabindex="-1"></a>          ),</span>
-<span id="cb68-16"><a href="commonElements.html#cb68-16" tabindex="-1"></a>          tags<span class="sc">$</span><span class="fu">li</span>(</span>
-<span id="cb68-17"><a href="commonElements.html#cb68-17" tabindex="-1"></a>            <span class="st">&quot;Click on the &quot;</span>, tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Diagram Wizard&quot;</span>), <span class="st">&quot; page to use the</span></span>
-<span id="cb68-18"><a href="commonElements.html#cb68-18" tabindex="-1"></a><span class="st">              app to build your own Hasse diagram. The wizard will walk you through</span></span>
-<span id="cb68-19"><a href="commonElements.html#cb68-19" tabindex="-1"></a><span class="st">              the necessary steps and then produce a diagram you can save as well</span></span>
-<span id="cb68-20"><a href="commonElements.html#cb68-20" tabindex="-1"></a><span class="st">              as the R code to re-create the diagram.&quot;</span></span>
-<span id="cb68-21"><a href="commonElements.html#cb68-21" tabindex="-1"></a>          )</span>
-<span id="cb68-22"><a href="commonElements.html#cb68-22" tabindex="-1"></a>        )</span>
-<span id="cb68-23"><a href="commonElements.html#cb68-23" tabindex="-1"></a>      ),</span>
-<span id="cb68-24"><a href="commonElements.html#cb68-24" tabindex="-1"></a>      <span class="at">html =</span> <span class="cn">TRUE</span> <span class="co"># you must include this new argument</span></span>
-<span id="cb68-25"><a href="commonElements.html#cb68-25" tabindex="-1"></a>    )</span>
-<span id="cb68-26"><a href="commonElements.html#cb68-26" tabindex="-1"></a>  }</span>
-<span id="cb68-27"><a href="commonElements.html#cb68-27" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="commonElements.html#cb64-1" tabindex="-1"></a><span class="fu">observeEvent</span>(</span>
+<span id="cb64-2"><a href="commonElements.html#cb64-2" tabindex="-1"></a>  <span class="at">eventExpr =</span> input<span class="sc">$</span>info,</span>
+<span id="cb64-3"><a href="commonElements.html#cb64-3" tabindex="-1"></a>  <span class="at">handlerExpr =</span> {</span>
+<span id="cb64-4"><a href="commonElements.html#cb64-4" tabindex="-1"></a>    <span class="fu">sendSweetAlert</span>(</span>
+<span id="cb64-5"><a href="commonElements.html#cb64-5" tabindex="-1"></a>      <span class="at">session =</span> session,</span>
+<span id="cb64-6"><a href="commonElements.html#cb64-6" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;info&quot;</span>,</span>
+<span id="cb64-7"><a href="commonElements.html#cb64-7" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">&quot;Information&quot;</span>,</span>
+<span id="cb64-8"><a href="commonElements.html#cb64-8" tabindex="-1"></a>      <span class="at">text =</span> tags<span class="sc">$</span><span class="fu">div</span>(</span>
+<span id="cb64-9"><a href="commonElements.html#cb64-9" tabindex="-1"></a>        <span class="st">&quot;Use the app in two ways:&quot;</span>,</span>
+<span id="cb64-10"><a href="commonElements.html#cb64-10" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">ol</span>(</span>
+<span id="cb64-11"><a href="commonElements.html#cb64-11" tabindex="-1"></a>          tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb64-12"><a href="commonElements.html#cb64-12" tabindex="-1"></a>            <span class="st">&quot;Click on the &quot;</span>, tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Explore&quot;</span>), <span class="st">&quot; page to explore how to</span></span>
+<span id="cb64-13"><a href="commonElements.html#cb64-13" tabindex="-1"></a><span class="st">              read Hasse Diagrams and how to use them to figure out the proper</span></span>
+<span id="cb64-14"><a href="commonElements.html#cb64-14" tabindex="-1"></a><span class="st">              denominator to use to test a give node/term.&quot;</span></span>
+<span id="cb64-15"><a href="commonElements.html#cb64-15" tabindex="-1"></a>          ),</span>
+<span id="cb64-16"><a href="commonElements.html#cb64-16" tabindex="-1"></a>          tags<span class="sc">$</span><span class="fu">li</span>(</span>
+<span id="cb64-17"><a href="commonElements.html#cb64-17" tabindex="-1"></a>            <span class="st">&quot;Click on the &quot;</span>, tags<span class="sc">$</span><span class="fu">strong</span>(<span class="st">&quot;Diagram Wizard&quot;</span>), <span class="st">&quot; page to use the</span></span>
+<span id="cb64-18"><a href="commonElements.html#cb64-18" tabindex="-1"></a><span class="st">              app to build your own Hasse diagram. The wizard will walk you through</span></span>
+<span id="cb64-19"><a href="commonElements.html#cb64-19" tabindex="-1"></a><span class="st">              the necessary steps and then produce a diagram you can save as well</span></span>
+<span id="cb64-20"><a href="commonElements.html#cb64-20" tabindex="-1"></a><span class="st">              as the R code to re-create the diagram.&quot;</span></span>
+<span id="cb64-21"><a href="commonElements.html#cb64-21" tabindex="-1"></a>          )</span>
+<span id="cb64-22"><a href="commonElements.html#cb64-22" tabindex="-1"></a>        )</span>
+<span id="cb64-23"><a href="commonElements.html#cb64-23" tabindex="-1"></a>      ),</span>
+<span id="cb64-24"><a href="commonElements.html#cb64-24" tabindex="-1"></a>      <span class="at">html =</span> <span class="cn">TRUE</span> <span class="co"># you must include this new argument</span></span>
+<span id="cb64-25"><a href="commonElements.html#cb64-25" tabindex="-1"></a>    )</span>
+<span id="cb64-26"><a href="commonElements.html#cb64-26" tabindex="-1"></a>  }</span>
+<span id="cb64-27"><a href="commonElements.html#cb64-27" tabindex="-1"></a>)</span></code></pre></div>
 <p>Notice that we had to include the <code>html = TRUE</code> argument to <code>sendSweetAlert</code>. You will need to do this any time you include HTML tags in the <code>text</code> argument.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sweetAlert3"></span>
 <img src="images/sweetAlert1.png" alt="Example of HTML Tagged Message" width="436" />

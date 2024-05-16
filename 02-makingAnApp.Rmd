@@ -87,7 +87,7 @@ In both workflows of [Chapter \@ref(workflow)](#workflow), there was the phrase 
 
 To assist you, use the following layout by copying into a Word program (you can fit four on a landscape oriented page) and printing OR by sketching your version on paper:
 
-```{r blankSketchLayout, fig.cap="Blank layout for sketching your ideas", echo=FALSE, fig.align='center'}
+```{r blankSketchLayout, fig.cap="Blank layout for sketching your ideas", echo=FALSE, fig.align='center', warning=FALSE}
 library(ggplot2)
 library(emojifont)
 ggplot(data = data.frame(x = rep(0, 50))) +

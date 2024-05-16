@@ -23,7 +23,7 @@
 <meta name="author" content="Neil Hatfield (njh5464@psu.edu) and Robert Carey (rpc5102@psu.edu)" />
 
 
-<meta name="date" content="2024-05-15" />
+<meta name="date" content="2024-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -543,20 +543,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="readable" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Make Your Code Readable<a href="coding.html#readable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Code is <strong>readable</strong> when a person looks at the code and forms a mental image of what the code aims to accomplish that is consistent with what happens when they run the code. Thus, through readable code one programmer communicates their goals and intent to another programmer. This second programmer may be someone entirely different than the first programmer or might be the the same programmer several weeks/months later. As an example, consider the following example bit of code:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="coding.html#cb9-1" tabindex="-1"></a><span class="co"># Bad Code Example</span></span>
-<span id="cb9-2"><a href="coding.html#cb9-2" tabindex="-1"></a><span class="fu">selectInput</span>(<span class="st">&quot;input1&quot;</span>,<span class="st">&quot;pick&quot;</span>,listA,<span class="cn">NULL</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="st">&quot;80%&quot;</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="coding.html#cb5-1" tabindex="-1"></a><span class="co"># Bad Code Example</span></span>
+<span id="cb5-2"><a href="coding.html#cb5-2" tabindex="-1"></a><span class="fu">selectInput</span>(<span class="st">&quot;input1&quot;</span>,<span class="st">&quot;pick&quot;</span>,listA,<span class="cn">NULL</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="st">&quot;80%&quot;</span>,<span class="dv">2</span>)</span></code></pre></div>
 <p>If you were to guess what this line of code <em>achieves</em> (i.e., what the code creates and for what purpose), you might have a hard time. This Bad Code Example highlights problematic implementations of three aspects of readable code: 1) formatting and spacing, 2) naming, and 3) being explicit. Let’s now examine a more readable version would look like.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="coding.html#cb10-1" tabindex="-1"></a><span class="co"># Good Code Example</span></span>
-<span id="cb10-2"><a href="coding.html#cb10-2" tabindex="-1"></a><span class="fu">selectInput</span>(</span>
-<span id="cb10-3"><a href="coding.html#cb10-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;selectedPeople&quot;</span>,</span>
-<span id="cb10-4"><a href="coding.html#cb10-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Select who to contact&quot;</span>,</span>
-<span id="cb10-5"><a href="coding.html#cb10-5" tabindex="-1"></a>  <span class="at">choices =</span> nameList,</span>
-<span id="cb10-6"><a href="coding.html#cb10-6" tabindex="-1"></a>  <span class="at">selected =</span> <span class="cn">NULL</span>,</span>
-<span id="cb10-7"><a href="coding.html#cb10-7" tabindex="-1"></a>  <span class="at">multiple =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-8"><a href="coding.html#cb10-8" tabindex="-1"></a>  <span class="at">selectize =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb10-9"><a href="coding.html#cb10-9" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&quot;80%&quot;</span>,</span>
-<span id="cb10-10"><a href="coding.html#cb10-10" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">2</span></span>
-<span id="cb10-11"><a href="coding.html#cb10-11" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="coding.html#cb6-1" tabindex="-1"></a><span class="co"># Good Code Example</span></span>
+<span id="cb6-2"><a href="coding.html#cb6-2" tabindex="-1"></a><span class="fu">selectInput</span>(</span>
+<span id="cb6-3"><a href="coding.html#cb6-3" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;selectedPeople&quot;</span>,</span>
+<span id="cb6-4"><a href="coding.html#cb6-4" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Select who to contact&quot;</span>,</span>
+<span id="cb6-5"><a href="coding.html#cb6-5" tabindex="-1"></a>  <span class="at">choices =</span> nameList,</span>
+<span id="cb6-6"><a href="coding.html#cb6-6" tabindex="-1"></a>  <span class="at">selected =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-7"><a href="coding.html#cb6-7" tabindex="-1"></a>  <span class="at">multiple =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-8"><a href="coding.html#cb6-8" tabindex="-1"></a>  <span class="at">selectize =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-9"><a href="coding.html#cb6-9" tabindex="-1"></a>  <span class="at">width =</span> <span class="st">&quot;80%&quot;</span>,</span>
+<span id="cb6-10"><a href="coding.html#cb6-10" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">2</span></span>
+<span id="cb6-11"><a href="coding.html#cb6-11" tabindex="-1"></a>)</span></code></pre></div>
 <p>While the Good Code Example uses many more lines than the Bad Code Example, the Good Code Example is infinitely more readable. The intent behind each example was to create a drop-down or “select” menu for the user to identify which individual(s) (i.e., one or more) from a list should be contacted. In the Bad Code Example, all of the arguments are put into one line; which value is for which argument depends on whether the reader has memorized the order of arguments for the <code>selectInput</code> function. Further, this assumes that the original programmer put the arguments into the correct order. In the Good Code Example, each argument is listed out by name (e.g., <code>inputId</code> and <code>multiple</code>). While you might not know what each argument controls (yet), you can at least see what values are being passed to each one. Further, you know that the choices are stored in the <code>nameList</code>, which is a much clearer name than <code>listA</code>.</p>
 <p>The Good Code Example highlights all three elements of readable code. This is what we want each of you to strive for. Let’s unpack these elements in a bit more depth.</p>
 <div id="formatSpace" class="section level3 hasAnchor" number="5.2.1">
@@ -579,25 +579,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">5.2.1.2</span> Indentation<a href="coding.html#indentation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Indenting your code is a great way to help with readability. RStudio will automatically do this for you. In the Good Code Example above, each of the arguments was indented 2 spaces; this helps convey that they are nested inside the object that was less indented.</p>
 <p>You can (and will) have nested indentation, for example:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1" tabindex="-1"></a><span class="co"># Example of Indentation</span></span>
-<span id="cb11-2"><a href="coding.html#cb11-2" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb11-3"><a href="coding.html#cb11-3" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
-<span id="cb11-4"><a href="coding.html#cb11-4" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
-<span id="cb11-5"><a href="coding.html#cb11-5" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb11-6"><a href="coding.html#cb11-6" tabindex="-1"></a>    ),</span>
-<span id="cb11-7"><a href="coding.html#cb11-7" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
-<span id="cb11-8"><a href="coding.html#cb11-8" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb11-9"><a href="coding.html#cb11-9" tabindex="-1"></a>    ),</span>
-<span id="cb11-10"><a href="coding.html#cb11-10" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
-<span id="cb11-11"><a href="coding.html#cb11-11" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
-<span id="cb11-12"><a href="coding.html#cb11-12" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
-<span id="cb11-13"><a href="coding.html#cb11-13" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
-<span id="cb11-14"><a href="coding.html#cb11-14" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
-<span id="cb11-15"><a href="coding.html#cb11-15" tabindex="-1"></a>        )</span>
-<span id="cb11-16"><a href="coding.html#cb11-16" tabindex="-1"></a>      )</span>
-<span id="cb11-17"><a href="coding.html#cb11-17" tabindex="-1"></a>    )</span>
-<span id="cb11-18"><a href="coding.html#cb11-18" tabindex="-1"></a>  )</span>
-<span id="cb11-19"><a href="coding.html#cb11-19" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="coding.html#cb7-1" tabindex="-1"></a><span class="co"># Example of Indentation</span></span>
+<span id="cb7-2"><a href="coding.html#cb7-2" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb7-3"><a href="coding.html#cb7-3" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb7-4"><a href="coding.html#cb7-4" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
+<span id="cb7-5"><a href="coding.html#cb7-5" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb7-6"><a href="coding.html#cb7-6" tabindex="-1"></a>    ),</span>
+<span id="cb7-7"><a href="coding.html#cb7-7" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb7-8"><a href="coding.html#cb7-8" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb7-9"><a href="coding.html#cb7-9" tabindex="-1"></a>    ),</span>
+<span id="cb7-10"><a href="coding.html#cb7-10" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb7-11"><a href="coding.html#cb7-11" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb7-12"><a href="coding.html#cb7-12" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
+<span id="cb7-13"><a href="coding.html#cb7-13" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb7-14"><a href="coding.html#cb7-14" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
+<span id="cb7-15"><a href="coding.html#cb7-15" tabindex="-1"></a>        )</span>
+<span id="cb7-16"><a href="coding.html#cb7-16" tabindex="-1"></a>      )</span>
+<span id="cb7-17"><a href="coding.html#cb7-17" tabindex="-1"></a>    )</span>
+<span id="cb7-18"><a href="coding.html#cb7-18" tabindex="-1"></a>  )</span>
+<span id="cb7-19"><a href="coding.html#cb7-19" tabindex="-1"></a>)</span></code></pre></div>
 <p>We have several layers of indentation but by looking at the formatting, we can see which things are at which level and their relative ranks. For example, the Header, Sidebar, and Body are all at the same level (i.e., they are all aligned at the same indentation), while they are all subordinate to the Page and the user interface (“ui”). The tab called “overview” is part of the Body based on the indentation.</p>
 <p>One benefit of proper formatting through indentation is that you can get a quick visual check of proper close parentheses with the nice cascade of close/right parentheses. When parentheses are directly on top of one another or have gaps between them, that is a good sign that you have not properly closed a section and could either encounter a fatal error (app crash) or display errors. RStudio 1.4+ brings Rainbow Parentheses to help you visually match up grouping symbols (parentheses, square brackets, curly braces, etc.)</p>
 <p>RStudio should automatically indent code for you as you write and press the return/enter key. In the event that a line gets off, or you want to double check indentation, there is a keyboard shortcut that allows you to re-indent the line your cursor is in given the line just above: for Macs press <code>Command + i</code>; for Windows press <code>Control + i</code>. Keep in mind that this shortcut works only on one line at a time and always references the line just above the one you’re in.</p>
@@ -610,20 +610,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you can fit all of the arguments on that line without going beyond 80 characters, then you can do so. For example, <code>renderIcon(icon = "correct")</code>.</li>
 <li>In all other cases, press the return/enter key to move to a new line which should automatically indent. Enter each argument name and value followed by a comma on their own line. After you’ve typed the last argument’s value, omit the comma, return to a new line and put the close/right parenthesis. For example,</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1" tabindex="-1"></a><span class="co"># renderIcon has three arguments: icon, width, and html</span></span>
-<span id="cb12-2"><a href="coding.html#cb12-2" tabindex="-1"></a>output<span class="sc">$</span>markProb1 <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(</span>
-<span id="cb12-3"><a href="coding.html#cb12-3" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">ifelse</span>( <span class="co"># Check to see if the user entered the correct value</span></span>
-<span id="cb12-4"><a href="coding.html#cb12-4" tabindex="-1"></a>    <span class="at">test =</span> input<span class="sc">$</span>probVal1 <span class="sc">==</span> answer1,</span>
-<span id="cb12-5"><a href="coding.html#cb12-5" tabindex="-1"></a>    <span class="at">yes =</span> <span class="st">&quot;correct&quot;</span></span>
-<span id="cb12-6"><a href="coding.html#cb12-6" tabindex="-1"></a>    <span class="at">no =</span> <span class="fu">ifelse</span>( <span class="co"># Check to see if the user was almost correct</span></span>
-<span id="cb12-7"><a href="coding.html#cb12-7" tabindex="-1"></a>      <span class="at">test =</span> <span class="fu">abs</span>(input<span class="sc">$</span>probVal1 <span class="sc">-</span> answer1) <span class="sc">&lt;=</span> <span class="fl">0.05</span>,</span>
-<span id="cb12-8"><a href="coding.html#cb12-8" tabindex="-1"></a>      <span class="at">yes =</span> <span class="st">&quot;partial&quot;</span>,</span>
-<span id="cb12-9"><a href="coding.html#cb12-9" tabindex="-1"></a>      <span class="at">no =</span> <span class="st">&quot;incorrect&quot;</span></span>
-<span id="cb12-10"><a href="coding.html#cb12-10" tabindex="-1"></a>    )</span>
-<span id="cb12-11"><a href="coding.html#cb12-11" tabindex="-1"></a>  ),</span>
-<span id="cb12-12"><a href="coding.html#cb12-12" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">60</span>,</span>
-<span id="cb12-13"><a href="coding.html#cb12-13" tabindex="-1"></a>  <span class="at">html =</span> <span class="cn">TRUE</span></span>
-<span id="cb12-14"><a href="coding.html#cb12-14" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="coding.html#cb8-1" tabindex="-1"></a><span class="co"># renderIcon has three arguments: icon, width, and html</span></span>
+<span id="cb8-2"><a href="coding.html#cb8-2" tabindex="-1"></a>output<span class="sc">$</span>markProb1 <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(</span>
+<span id="cb8-3"><a href="coding.html#cb8-3" tabindex="-1"></a>  <span class="at">icon =</span> <span class="fu">ifelse</span>( <span class="co"># Check to see if the user entered the correct value</span></span>
+<span id="cb8-4"><a href="coding.html#cb8-4" tabindex="-1"></a>    <span class="at">test =</span> input<span class="sc">$</span>probVal1 <span class="sc">==</span> answer1,</span>
+<span id="cb8-5"><a href="coding.html#cb8-5" tabindex="-1"></a>    <span class="at">yes =</span> <span class="st">&quot;correct&quot;</span></span>
+<span id="cb8-6"><a href="coding.html#cb8-6" tabindex="-1"></a>    <span class="at">no =</span> <span class="fu">ifelse</span>( <span class="co"># Check to see if the user was almost correct</span></span>
+<span id="cb8-7"><a href="coding.html#cb8-7" tabindex="-1"></a>      <span class="at">test =</span> <span class="fu">abs</span>(input<span class="sc">$</span>probVal1 <span class="sc">-</span> answer1) <span class="sc">&lt;=</span> <span class="fl">0.05</span>,</span>
+<span id="cb8-8"><a href="coding.html#cb8-8" tabindex="-1"></a>      <span class="at">yes =</span> <span class="st">&quot;partial&quot;</span>,</span>
+<span id="cb8-9"><a href="coding.html#cb8-9" tabindex="-1"></a>      <span class="at">no =</span> <span class="st">&quot;incorrect&quot;</span></span>
+<span id="cb8-10"><a href="coding.html#cb8-10" tabindex="-1"></a>    )</span>
+<span id="cb8-11"><a href="coding.html#cb8-11" tabindex="-1"></a>  ),</span>
+<span id="cb8-12"><a href="coding.html#cb8-12" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">60</span>,</span>
+<span id="cb8-13"><a href="coding.html#cb8-13" tabindex="-1"></a>  <span class="at">html =</span> <span class="cn">TRUE</span></span>
+<span id="cb8-14"><a href="coding.html#cb8-14" tabindex="-1"></a>)</span></code></pre></div>
 <p>If you’ve set up RStudio to automatically create pairs of grouping symbols, the close/right parentheses should automatically format themselves when you return to new lines.</p>
 </div>
 <div id="assignment-operator" class="section level4 hasAnchor" number="5.2.1.4">
@@ -666,28 +666,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">5.2.3.1</span> Function Arguments<a href="coding.html#function-arguments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>R</code> is a functional programming language that follows the model of mathematical functions. Something that many individuals don’t realize about functions, is that the order of arguments is actually a matter of choice (i.e., convention). For example, we might define a function <em>f</em> as <span class="math inline">\(f(x,y)=x^2+3y\)</span>. If we follow the order set up in the definition, we’d find that <span class="math inline">\(f(1,2)=7\)</span>. However, we could also call <span class="math inline">\(f(y=2, x=1)\)</span> and still get the result of 7. This flexibility in arguments granted to us by being explicit in the second case. All functions in <code>R</code> have this flexibility.</p>
 <p>Therefore, when you pass values to the arguments of a function in <code>R</code>, <strong>you should be explicit and include the argument name in your code</strong>. For example,</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="coding.html#cb13-1" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
-<span id="cb13-2"><a href="coding.html#cb13-2" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;submit&quot;</span>,</span>
-<span id="cb13-3"><a href="coding.html#cb13-3" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Submit&quot;</span>,</span>
-<span id="cb13-4"><a href="coding.html#cb13-4" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
-<span id="cb13-5"><a href="coding.html#cb13-5" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
-<span id="cb13-6"><a href="coding.html#cb13-6" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;btn-ttt&quot;</span></span>
-<span id="cb13-7"><a href="coding.html#cb13-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="coding.html#cb9-1" tabindex="-1"></a><span class="fu">bsButton</span>(</span>
+<span id="cb9-2"><a href="coding.html#cb9-2" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">&quot;submit&quot;</span>,</span>
+<span id="cb9-3"><a href="coding.html#cb9-3" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;Submit&quot;</span>,</span>
+<span id="cb9-4"><a href="coding.html#cb9-4" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;primary&quot;</span>,</span>
+<span id="cb9-5"><a href="coding.html#cb9-5" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;bordered&quot;</span>,</span>
+<span id="cb9-6"><a href="coding.html#cb9-6" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;btn-ttt&quot;</span></span>
+<span id="cb9-7"><a href="coding.html#cb9-7" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="function-definitions" class="section level4 hasAnchor" number="5.2.3.2">
 <h4><span class="header-section-number">5.2.3.2</span> Function Definitions<a href="coding.html#function-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you are defining your own function, it is always a good idea to explicitly state what the function spits out (i.e., the output). This is particularly important if your function uses any type of control logic. To denote what the function passes as the output, you use <code>return</code> as shown below:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="coding.html#cb14-1" tabindex="-1"></a>collatz <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">c =</span> <span class="dv">0</span>){</span>
-<span id="cb14-2"><a href="coding.html#cb14-2" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> x <span class="sc">!=</span> <span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">0</span>)) {</span>
-<span id="cb14-3"><a href="coding.html#cb14-3" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&quot;Error: x must be a positive integer.&quot;</span>)</span>
-<span id="cb14-4"><a href="coding.html#cb14-4" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb14-5"><a href="coding.html#cb14-5" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">&quot;You&#39;re at 1 in&quot;</span>, c, <span class="st">&quot;steps.&quot;</span>))</span>
-<span id="cb14-6"><a href="coding.html#cb14-6" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb14-7"><a href="coding.html#cb14-7" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> x <span class="sc">/</span> <span class="dv">2</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
-<span id="cb14-8"><a href="coding.html#cb14-8" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb14-9"><a href="coding.html#cb14-9" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> <span class="dv">3</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">1</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
-<span id="cb14-10"><a href="coding.html#cb14-10" tabindex="-1"></a>  }</span>
-<span id="cb14-11"><a href="coding.html#cb14-11" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="coding.html#cb10-1" tabindex="-1"></a>collatz <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">c =</span> <span class="dv">0</span>){</span>
+<span id="cb10-2"><a href="coding.html#cb10-2" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> x <span class="sc">!=</span> <span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">0</span>)) {</span>
+<span id="cb10-3"><a href="coding.html#cb10-3" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&quot;Error: x must be a positive integer.&quot;</span>)</span>
+<span id="cb10-4"><a href="coding.html#cb10-4" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb10-5"><a href="coding.html#cb10-5" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">&quot;You&#39;re at 1 in&quot;</span>, c, <span class="st">&quot;steps.&quot;</span>))</span>
+<span id="cb10-6"><a href="coding.html#cb10-6" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb10-7"><a href="coding.html#cb10-7" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> x <span class="sc">/</span> <span class="dv">2</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb10-8"><a href="coding.html#cb10-8" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb10-9"><a href="coding.html#cb10-9" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">collatz</span>(<span class="at">x =</span> <span class="dv">3</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">1</span>, <span class="at">c =</span> c <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb10-10"><a href="coding.html#cb10-10" tabindex="-1"></a>  }</span>
+<span id="cb10-11"><a href="coding.html#cb10-11" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>collatz</code> function above allows us to see the Collatz Conjecture in action (i.e., that starting with any positive integer, the sequence formed by taking half of an even value or 3 times an odd value plus 1 will always go to 1). The control logic is the series of <code>if, else if, else</code> statements.</p>
 <p>Even if you store the outputs in an internal variable (see the <code>gradeProb</code> function in the <a href="coding.html#dryGrading">DRY Grading Example</a>), you should still end your function definition with an explicit <code>return</code> call.</p>
 </div>
@@ -723,92 +723,92 @@ I would have written a shorter letter, but I did not have the time.
 <div id="dryGrading" class="section level4 hasAnchor" number="5.3.1.2">
 <h4><span class="header-section-number">5.3.1.2</span> Grading User Responses<a href="coding.html#dryGrading" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Rather than retyping the grading logic several times, you can define a single function and then call that function. For example,</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="coding.html#cb15-1" tabindex="-1"></a>gradeProb <span class="ot">&lt;-</span> <span class="cf">function</span>(user, answer, <span class="at">tolerance =</span> <span class="fl">0.001</span>, <span class="at">partial =</span> <span class="fl">0.01</span>){</span>
-<span id="cb15-2"><a href="coding.html#cb15-2" tabindex="-1"></a>  outcome <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb15-3"><a href="coding.html#cb15-3" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> tolerance) {</span>
-<span id="cb15-4"><a href="coding.html#cb15-4" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are correct.&quot;</span></span>
-<span id="cb15-5"><a href="coding.html#cb15-5" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;correct&quot;</span></span>
-<span id="cb15-6"><a href="coding.html#cb15-6" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> partial) {</span>
-<span id="cb15-7"><a href="coding.html#cb15-7" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are almost correct.&quot;</span></span>
-<span id="cb15-8"><a href="coding.html#cb15-8" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;partial&quot;</span></span>
-<span id="cb15-9"><a href="coding.html#cb15-9" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb15-10"><a href="coding.html#cb15-10" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;Please try again.&quot;</span></span>
-<span id="cb15-11"><a href="coding.html#cb15-11" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;incorrect&quot;</span></span>
-<span id="cb15-12"><a href="coding.html#cb15-12" tabindex="-1"></a>  }</span>
-<span id="cb15-13"><a href="coding.html#cb15-13" tabindex="-1"></a>  <span class="fu">return</span>(outcome)</span>
-<span id="cb15-14"><a href="coding.html#cb15-14" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="coding.html#cb11-1" tabindex="-1"></a>gradeProb <span class="ot">&lt;-</span> <span class="cf">function</span>(user, answer, <span class="at">tolerance =</span> <span class="fl">0.001</span>, <span class="at">partial =</span> <span class="fl">0.01</span>){</span>
+<span id="cb11-2"><a href="coding.html#cb11-2" tabindex="-1"></a>  outcome <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb11-3"><a href="coding.html#cb11-3" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> tolerance) {</span>
+<span id="cb11-4"><a href="coding.html#cb11-4" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are correct.&quot;</span></span>
+<span id="cb11-5"><a href="coding.html#cb11-5" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;correct&quot;</span></span>
+<span id="cb11-6"><a href="coding.html#cb11-6" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">abs</span>(user <span class="sc">-</span> answer) <span class="sc">&lt;=</span> partial) {</span>
+<span id="cb11-7"><a href="coding.html#cb11-7" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;You are almost correct.&quot;</span></span>
+<span id="cb11-8"><a href="coding.html#cb11-8" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;partial&quot;</span></span>
+<span id="cb11-9"><a href="coding.html#cb11-9" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb11-10"><a href="coding.html#cb11-10" tabindex="-1"></a>    outcome<span class="sc">$</span>feedback <span class="ot">&lt;-</span> <span class="st">&quot;Please try again.&quot;</span></span>
+<span id="cb11-11"><a href="coding.html#cb11-11" tabindex="-1"></a>    outcome<span class="sc">$</span>mark <span class="ot">&lt;-</span> <span class="st">&quot;incorrect&quot;</span></span>
+<span id="cb11-12"><a href="coding.html#cb11-12" tabindex="-1"></a>  }</span>
+<span id="cb11-13"><a href="coding.html#cb11-13" tabindex="-1"></a>  <span class="fu">return</span>(outcome)</span>
+<span id="cb11-14"><a href="coding.html#cb11-14" tabindex="-1"></a>}</span></code></pre></div>
 <p>The <code>gradeProb</code> function defined above will grade a user’s [probability] value (i.e., <code>user</code>) against the answer key (<code>answer</code>) and return a list of two items: a feedback statement and the scoring mark to pass along to <code>renderIcon</code>. The following code shows us using the <code>gradeProb</code> function to generate the necessary outputs.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="coding.html#cb16-1" tabindex="-1"></a><span class="co"># Call the gradeProb function</span></span>
-<span id="cb16-2"><a href="coding.html#cb16-2" tabindex="-1"></a>prob1 <span class="ot">&lt;-</span> <span class="fu">gradeProb</span>(</span>
-<span id="cb16-3"><a href="coding.html#cb16-3" tabindex="-1"></a>  <span class="at">user =</span> input<span class="sc">$</span>problem1,</span>
-<span id="cb16-4"><a href="coding.html#cb16-4" tabindex="-1"></a>  <span class="at">answer =</span> answerKey[<span class="dv">1</span>]</span>
-<span id="cb16-5"><a href="coding.html#cb16-5" tabindex="-1"></a>  <span class="do">## Omitting the remaining two arguments will use the default values</span></span>
-<span id="cb16-6"><a href="coding.html#cb16-6" tabindex="-1"></a>)</span>
-<span id="cb16-7"><a href="coding.html#cb16-7" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="coding.html#cb16-8" tabindex="-1"></a><span class="co"># Display the feedback on the problem</span></span>
-<span id="cb16-9"><a href="coding.html#cb16-9" tabindex="-1"></a>output<span class="sc">$</span>problem1Feedback <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
-<span id="cb16-10"><a href="coding.html#cb16-10" tabindex="-1"></a>  prob1<span class="sc">$</span>feedback</span>
-<span id="cb16-11"><a href="coding.html#cb16-11" tabindex="-1"></a>})</span>
-<span id="cb16-12"><a href="coding.html#cb16-12" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="coding.html#cb16-13" tabindex="-1"></a><span class="co"># Set the feedback icon</span></span>
-<span id="cb16-14"><a href="coding.html#cb16-14" tabindex="-1"></a>output<span class="sc">$</span>problem1Mark <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(<span class="at">icon =</span> prob1<span class="sc">$</span>mark)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="coding.html#cb12-1" tabindex="-1"></a><span class="co"># Call the gradeProb function</span></span>
+<span id="cb12-2"><a href="coding.html#cb12-2" tabindex="-1"></a>prob1 <span class="ot">&lt;-</span> <span class="fu">gradeProb</span>(</span>
+<span id="cb12-3"><a href="coding.html#cb12-3" tabindex="-1"></a>  <span class="at">user =</span> input<span class="sc">$</span>problem1,</span>
+<span id="cb12-4"><a href="coding.html#cb12-4" tabindex="-1"></a>  <span class="at">answer =</span> answerKey[<span class="dv">1</span>]</span>
+<span id="cb12-5"><a href="coding.html#cb12-5" tabindex="-1"></a>  <span class="do">## Omitting the remaining two arguments will use the default values</span></span>
+<span id="cb12-6"><a href="coding.html#cb12-6" tabindex="-1"></a>)</span>
+<span id="cb12-7"><a href="coding.html#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="coding.html#cb12-8" tabindex="-1"></a><span class="co"># Display the feedback on the problem</span></span>
+<span id="cb12-9"><a href="coding.html#cb12-9" tabindex="-1"></a>output<span class="sc">$</span>problem1Feedback <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
+<span id="cb12-10"><a href="coding.html#cb12-10" tabindex="-1"></a>  prob1<span class="sc">$</span>feedback</span>
+<span id="cb12-11"><a href="coding.html#cb12-11" tabindex="-1"></a>})</span>
+<span id="cb12-12"><a href="coding.html#cb12-12" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="coding.html#cb12-13" tabindex="-1"></a><span class="co"># Set the feedback icon</span></span>
+<span id="cb12-14"><a href="coding.html#cb12-14" tabindex="-1"></a>output<span class="sc">$</span>problem1Mark <span class="ot">&lt;-</span> <span class="fu">renderIcon</span>(<span class="at">icon =</span> prob1<span class="sc">$</span>mark)</span></code></pre></div>
 </div>
 <div id="graphs" class="section level4 hasAnchor" number="5.3.1.3">
 <h4><span class="header-section-number">5.3.1.3</span> Graphs<a href="coding.html#graphs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you are building multiple graphs which have the same basic graph or are going to be updating the same basic graph by adding layers, then storing a base graph as an object is a good idea. For example,</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="coding.html#cb17-1" tabindex="-1"></a>  <span class="co"># Create a basic data frame that will cover the majority of your cases</span></span>
-<span id="cb17-2"><a href="coding.html#cb17-2" tabindex="-1"></a>  baseGraph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb17-3"><a href="coding.html#cb17-3" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(</span>
-<span id="cb17-4"><a href="coding.html#cb17-4" tabindex="-1"></a>      <span class="at">x =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb17-5"><a href="coding.html#cb17-5" tabindex="-1"></a>      <span class="at">y =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb17-6"><a href="coding.html#cb17-6" tabindex="-1"></a>    )</span>
-<span id="cb17-7"><a href="coding.html#cb17-7" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-8"><a href="coding.html#cb17-8" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb17-9"><a href="coding.html#cb17-9" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb17-10"><a href="coding.html#cb17-10" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb17-11"><a href="coding.html#cb17-11" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb17-12"><a href="coding.html#cb17-12" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
-<span id="cb17-13"><a href="coding.html#cb17-13" tabindex="-1"></a>      <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
-<span id="cb17-14"><a href="coding.html#cb17-14" tabindex="-1"></a>    )</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="coding.html#cb13-1" tabindex="-1"></a>  <span class="co"># Create a basic data frame that will cover the majority of your cases</span></span>
+<span id="cb13-2"><a href="coding.html#cb13-2" tabindex="-1"></a>  baseGraph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb13-3"><a href="coding.html#cb13-3" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-4"><a href="coding.html#cb13-4" tabindex="-1"></a>      <span class="at">x =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb13-5"><a href="coding.html#cb13-5" tabindex="-1"></a>      <span class="at">y =</span> <span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb13-6"><a href="coding.html#cb13-6" tabindex="-1"></a>    )</span>
+<span id="cb13-7"><a href="coding.html#cb13-7" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="coding.html#cb13-8" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="coding.html#cb13-9" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>, <span class="at">add =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="coding.html#cb13-10" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-11"><a href="coding.html#cb13-11" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb13-12"><a href="coding.html#cb13-12" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb13-13"><a href="coding.html#cb13-13" tabindex="-1"></a>      <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb13-14"><a href="coding.html#cb13-14" tabindex="-1"></a>    )</span></code></pre></div>
 <p>When we get to plotting our actual graphs, or updating the existing graph, we can call <code>baseGraph</code> and then add the elements we want, such as a scatter plot:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="coding.html#cb18-1" tabindex="-1"></a><span class="co"># Plot Specific data</span></span>
-<span id="cb18-2"><a href="coding.html#cb18-2" tabindex="-1"></a>plotData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb18-3"><a href="coding.html#cb18-3" tabindex="-1"></a>  <span class="at">heights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="fl">3.5</span>),</span>
-<span id="cb18-4"><a href="coding.html#cb18-4" tabindex="-1"></a>  <span class="at">weights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">8</span>),</span>
-<span id="cb18-5"><a href="coding.html#cb18-5" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;I&quot;</span>), <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-6"><a href="coding.html#cb18-6" tabindex="-1"></a>)</span>
-<span id="cb18-7"><a href="coding.html#cb18-7" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="coding.html#cb18-8" tabindex="-1"></a><span class="co"># Build the new plot as layers on your base plot</span></span>
-<span id="cb18-9"><a href="coding.html#cb18-9" tabindex="-1"></a>baseGraph <span class="sc">+</span></span>
-<span id="cb18-10"><a href="coding.html#cb18-10" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb18-11"><a href="coding.html#cb18-11" tabindex="-1"></a>    <span class="at">data =</span> plotData,</span>
-<span id="cb18-12"><a href="coding.html#cb18-12" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> heights, <span class="at">y =</span> weights, <span class="at">color =</span> sex, <span class="at">shape =</span> sex),</span>
-<span id="cb18-13"><a href="coding.html#cb18-13" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span></span>
-<span id="cb18-14"><a href="coding.html#cb18-14" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-15"><a href="coding.html#cb18-15" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb18-16"><a href="coding.html#cb18-16" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span></span>
-<span id="cb18-17"><a href="coding.html#cb18-17" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-18"><a href="coding.html#cb18-18" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Height (in)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb18-19"><a href="coding.html#cb18-19" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Weight (kg)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb18-20"><a href="coding.html#cb18-20" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
-<span id="cb18-21"><a href="coding.html#cb18-21" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb18-22"><a href="coding.html#cb18-22" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb18-23"><a href="coding.html#cb18-23" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
-<span id="cb18-24"><a href="coding.html#cb18-24" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
-<span id="cb18-25"><a href="coding.html#cb18-25" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
-<span id="cb18-26"><a href="coding.html#cb18-26" tabindex="-1"></a>    )</span>
-<span id="cb18-27"><a href="coding.html#cb18-27" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-28"><a href="coding.html#cb18-28" tabindex="-1"></a>  <span class="fu">scale_shape_discrete</span>(</span>
-<span id="cb18-29"><a href="coding.html#cb18-29" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb18-30"><a href="coding.html#cb18-30" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb18-31"><a href="coding.html#cb18-31" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
-<span id="cb18-32"><a href="coding.html#cb18-32" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
-<span id="cb18-33"><a href="coding.html#cb18-33" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
-<span id="cb18-34"><a href="coding.html#cb18-34" tabindex="-1"></a>    )</span>
-<span id="cb18-35"><a href="coding.html#cb18-35" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-36"><a href="coding.html#cb18-36" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb18-37"><a href="coding.html#cb18-37" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Height and Weight by Sex&quot;</span></span>
-<span id="cb18-38"><a href="coding.html#cb18-38" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="coding.html#cb14-1" tabindex="-1"></a><span class="co"># Plot Specific data</span></span>
+<span id="cb14-2"><a href="coding.html#cb14-2" tabindex="-1"></a>plotData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-3"><a href="coding.html#cb14-3" tabindex="-1"></a>  <span class="at">heights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="fl">3.5</span>),</span>
+<span id="cb14-4"><a href="coding.html#cb14-4" tabindex="-1"></a>  <span class="at">weights =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">8</span>),</span>
+<span id="cb14-5"><a href="coding.html#cb14-5" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;I&quot;</span>), <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-6"><a href="coding.html#cb14-6" tabindex="-1"></a>)</span>
+<span id="cb14-7"><a href="coding.html#cb14-7" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="coding.html#cb14-8" tabindex="-1"></a><span class="co"># Build the new plot as layers on your base plot</span></span>
+<span id="cb14-9"><a href="coding.html#cb14-9" tabindex="-1"></a>baseGraph <span class="sc">+</span></span>
+<span id="cb14-10"><a href="coding.html#cb14-10" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb14-11"><a href="coding.html#cb14-11" tabindex="-1"></a>    <span class="at">data =</span> plotData,</span>
+<span id="cb14-12"><a href="coding.html#cb14-12" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> heights, <span class="at">y =</span> weights, <span class="at">color =</span> sex, <span class="at">shape =</span> sex),</span>
+<span id="cb14-13"><a href="coding.html#cb14-13" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span></span>
+<span id="cb14-14"><a href="coding.html#cb14-14" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-15"><a href="coding.html#cb14-15" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-16"><a href="coding.html#cb14-16" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span></span>
+<span id="cb14-17"><a href="coding.html#cb14-17" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-18"><a href="coding.html#cb14-18" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Height (in)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-19"><a href="coding.html#cb14-19" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Weight (kg)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-20"><a href="coding.html#cb14-20" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
+<span id="cb14-21"><a href="coding.html#cb14-21" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb14-22"><a href="coding.html#cb14-22" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb14-23"><a href="coding.html#cb14-23" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
+<span id="cb14-24"><a href="coding.html#cb14-24" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
+<span id="cb14-25"><a href="coding.html#cb14-25" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
+<span id="cb14-26"><a href="coding.html#cb14-26" tabindex="-1"></a>    )</span>
+<span id="cb14-27"><a href="coding.html#cb14-27" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-28"><a href="coding.html#cb14-28" tabindex="-1"></a>  <span class="fu">scale_shape_discrete</span>(</span>
+<span id="cb14-29"><a href="coding.html#cb14-29" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb14-30"><a href="coding.html#cb14-30" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb14-31"><a href="coding.html#cb14-31" tabindex="-1"></a>      <span class="st">&quot;M&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>,</span>
+<span id="cb14-32"><a href="coding.html#cb14-32" tabindex="-1"></a>      <span class="st">&quot;F&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>,</span>
+<span id="cb14-33"><a href="coding.html#cb14-33" tabindex="-1"></a>      <span class="st">&quot;I&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intersex/Other&quot;</span></span>
+<span id="cb14-34"><a href="coding.html#cb14-34" tabindex="-1"></a>    )</span>
+<span id="cb14-35"><a href="coding.html#cb14-35" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-36"><a href="coding.html#cb14-36" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-37"><a href="coding.html#cb14-37" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Height and Weight by Sex&quot;</span></span>
+<span id="cb14-38"><a href="coding.html#cb14-38" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Notice that we continue building on our base plot, including passing new data into the plot, adding new theme elements, and labels as necessary.</p>
 <p>Another important feature of the above code is a <strong>key accessibility feature</strong>: combining color AND shape. Do not rely on just color alone as individuals who are color blind will struggle; always pair color usage with an additional aesthetic such as shape.</p>
 </div>
@@ -820,17 +820,17 @@ I would have written a shorter letter, but I did not have the time.
 <h4><span class="header-section-number">5.3.1.5</span> Over DRY-ing Code<a href="coding.html#over-dry-ing-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you are building an app, there will be a certain amount of repetition in what you’re doing. For example, you’ll have to call the <code>bsButton</code> function each time you want to create a button. This is expected and appropriate for you to do. After all, the purpose of the <code>bsButton</code> function is to create a button.</p>
 <p>However, you can over do the DRY principle. For example, you don’t need to define a function for something that you’re only going to call once. Further, it isn’t necessary to define a new function that just changes a default value of an existing function. Here is a case where the user has over DRY-ed:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="coding.html#cb19-1" tabindex="-1"></a>customButton <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId, label){</span>
-<span id="cb19-2"><a href="coding.html#cb19-2" tabindex="-1"></a>  <span class="fu">return</span>(</span>
-<span id="cb19-3"><a href="coding.html#cb19-3" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
-<span id="cb19-4"><a href="coding.html#cb19-4" tabindex="-1"></a>      <span class="at">inputId =</span> inputId,</span>
-<span id="cb19-5"><a href="coding.html#cb19-5" tabindex="-1"></a>      <span class="at">label =</span> label,</span>
-<span id="cb19-6"><a href="coding.html#cb19-6" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
-<span id="cb19-7"><a href="coding.html#cb19-7" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
-<span id="cb19-8"><a href="coding.html#cb19-8" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;success&quot;</span></span>
-<span id="cb19-9"><a href="coding.html#cb19-9" tabindex="-1"></a>    )</span>
-<span id="cb19-10"><a href="coding.html#cb19-10" tabindex="-1"></a>  )</span>
-<span id="cb19-11"><a href="coding.html#cb19-11" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="coding.html#cb15-1" tabindex="-1"></a>customButton <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId, label){</span>
+<span id="cb15-2"><a href="coding.html#cb15-2" tabindex="-1"></a>  <span class="fu">return</span>(</span>
+<span id="cb15-3"><a href="coding.html#cb15-3" tabindex="-1"></a>    <span class="fu">bsButton</span>(</span>
+<span id="cb15-4"><a href="coding.html#cb15-4" tabindex="-1"></a>      <span class="at">inputId =</span> inputId,</span>
+<span id="cb15-5"><a href="coding.html#cb15-5" tabindex="-1"></a>      <span class="at">label =</span> label,</span>
+<span id="cb15-6"><a href="coding.html#cb15-6" tabindex="-1"></a>      <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">&quot;bolt&quot;</span>),</span>
+<span id="cb15-7"><a href="coding.html#cb15-7" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb15-8"><a href="coding.html#cb15-8" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">&quot;success&quot;</span></span>
+<span id="cb15-9"><a href="coding.html#cb15-9" tabindex="-1"></a>    )</span>
+<span id="cb15-10"><a href="coding.html#cb15-10" tabindex="-1"></a>  )</span>
+<span id="cb15-11"><a href="coding.html#cb15-11" tabindex="-1"></a>}</span></code></pre></div>
 <p>Rather than simply calling the <code>bsButton</code> function in their code and passing the appropriate arguments, this user has defined a brand new function that does the same thing but sets the values for <code>icon</code>, <code>size</code>, and <code>style</code> to new defaults. This type of programming should be avoided.</p>
 </div>
 </div>
@@ -843,20 +843,20 @@ I would have written a shorter letter, but I did not have the time.
 </ol>
 <p>Each package you load in your app adds to the app’s overhead. When we deploy (publish) each app, every called package (and their dependencies) has to get uploaded/built on the server in the app’s dedicated space. Thus, make sure that you absolutely have to use each package you’ve listed. If possible, check to see if what you’re trying to do can be done in a package you’re already using or in base R.</p>
 <p>A previous student loaded the <code>scales</code> package to use the <code>percent</code> function to convert a decimal into a percentage. This was problematic for a couple reasons: the <code>percent</code> function has been depreciated (i.e., the package developers do not wish people to use it any more and plan to get rid of it) and it is unnecessary. What the student could have done is write the following bit of code: <code>paste0(0.1 * 100, "%")</code>. If needed in several places, they could have written their own function:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="coding.html#cb20-1" tabindex="-1"></a>makePercent <span class="ot">&lt;-</span> <span class="cf">function</span>(proportion){</span>
-<span id="cb20-2"><a href="coding.html#cb20-2" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">paste0</span>(proportion <span class="sc">*</span> <span class="dv">100</span>, <span class="st">&quot;%&quot;</span>))</span>
-<span id="cb20-3"><a href="coding.html#cb20-3" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="coding.html#cb16-1" tabindex="-1"></a>makePercent <span class="ot">&lt;-</span> <span class="cf">function</span>(proportion){</span>
+<span id="cb16-2"><a href="coding.html#cb16-2" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">paste0</span>(proportion <span class="sc">*</span> <span class="dv">100</span>, <span class="st">&quot;%&quot;</span>))</span>
+<span id="cb16-3"><a href="coding.html#cb16-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>This is not to say that you can’t make use of a new package. This guideline’s purpose is to streamline the various packages that get used in BOAST and to use the most of the packages that we are using. However, there are times when we just need to use a new package. Please try to use packages that are housed on CRAN and are preferably under active development. Searching GitHub for the package name can help you decide whether the package is active.</p>
 <p>To help you avoid name masking (i.e., <a href="coding.html#explicit">Section <a href="coding.html#explicit">5.2.3</a></a>), ensure that you are actually using a package, and to help future readers follow your code, explicitly call packages with their functions. For example, use <code>dplyr::select([arguments])</code> instead of just <code>select([arguments])</code>. If you are using a common package and have no risk of name masking, you can dispense with this. For example, you can use <code>ggplot([arguments])</code> rather than <code>ggplot2::ggplot([arguments])</code>.</p>
 <p>You can also run a <code>funchir::stale_package_check</code> on your <code>app.R</code> file to see which packages you’re loading but might not actually use in your code. These stale packages may then be deleted out from your library call.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="coding.html#cb21-1" tabindex="-1"></a><span class="co"># Check working directory</span></span>
-<span id="cb21-2"><a href="coding.html#cb21-2" tabindex="-1"></a><span class="fu">getwd</span>()</span>
-<span id="cb21-3"><a href="coding.html#cb21-3" tabindex="-1"></a><span class="co"># Does the output match the folder path to where you app lives?</span></span>
-<span id="cb21-4"><a href="coding.html#cb21-4" tabindex="-1"></a><span class="co"># If not, then you need to set that. For example,</span></span>
-<span id="cb21-5"><a href="coding.html#cb21-5" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/GitHub/shiny-apps/Sample_App&quot;</span>)</span>
-<span id="cb21-6"><a href="coding.html#cb21-6" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="coding.html#cb21-7" tabindex="-1"></a><span class="co"># Run a stale package check on app.R, ui.R, and server.R</span></span>
-<span id="cb21-8"><a href="coding.html#cb21-8" tabindex="-1"></a>funchir<span class="sc">::</span><span class="fu">stale_package_check</span>(<span class="st">&quot;app.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="coding.html#cb17-1" tabindex="-1"></a><span class="co"># Check working directory</span></span>
+<span id="cb17-2"><a href="coding.html#cb17-2" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb17-3"><a href="coding.html#cb17-3" tabindex="-1"></a><span class="co"># Does the output match the folder path to where you app lives?</span></span>
+<span id="cb17-4"><a href="coding.html#cb17-4" tabindex="-1"></a><span class="co"># If not, then you need to set that. For example,</span></span>
+<span id="cb17-5"><a href="coding.html#cb17-5" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/GitHub/shiny-apps/Sample_App&quot;</span>)</span>
+<span id="cb17-6"><a href="coding.html#cb17-6" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="coding.html#cb17-7" tabindex="-1"></a><span class="co"># Run a stale package check on app.R, ui.R, and server.R</span></span>
+<span id="cb17-8"><a href="coding.html#cb17-8" tabindex="-1"></a>funchir<span class="sc">::</span><span class="fu">stale_package_check</span>(<span class="st">&quot;app.R&quot;</span>)</span></code></pre></div>
 <p>Be aware that while <code>stale_package_check</code> is useful, it doesn’t always catch everything. For example, when we ran it on the sample app, we were told that there were no exported functions from <code>ggplot2</code> or <code>tippy</code>. However, we know that there are functions from both of those. If you have a giant list of libraries to check, there might be more misses.</p>
 <p>Once you’re sure that a package isn’t being used, remove the <code>library</code> call for that package from your code.</p>
 </div>
@@ -874,45 +874,45 @@ I would have written a shorter letter, but I did not have the time.
 <h3><span class="header-section-number">5.4.2</span> Code Section Titles/Jump Points<a href="coding.html#code-section-titlesjump-points" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another way to be kind to future coders is to title sections of your code and create points which allow for them to jump to different sections of your code without having to scroll through each and every line. Remember, you also count as a future coder, so titling sections of code will help you navigate your code.</p>
 <p>To title a section of code and make a jump point, start by making a comment in R. Then type a word/phrase that explains what the section is. Finally, type (at least) four dashes, <code>-</code>, (alternatively, you could use four equal signs, <code>=</code>, or four hashtags/pound signs, <code>#</code>) without spaces. This will create a title/jump point which people can use through the Code-Jump To… menu. You can vary the number of hashtags/pound signs at the start of comment to reflect where in the hierarchy of your app you are. Here’s an example.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="coding.html#cb22-1" tabindex="-1"></a><span class="co"># Load Packages ----</span></span>
-<span id="cb22-2"><a href="coding.html#cb22-2" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb22-3"><a href="coding.html#cb22-3" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="coding.html#cb22-4" tabindex="-1"></a><span class="co"># Define gloabl constants, functions, data ----</span></span>
-<span id="cb22-5"><a href="coding.html#cb22-5" tabindex="-1"></a><span class="do">## None for this example</span></span>
-<span id="cb22-6"><a href="coding.html#cb22-6" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="coding.html#cb22-7" tabindex="-1"></a><span class="co"># Define the UI ----</span></span>
-<span id="cb22-8"><a href="coding.html#cb22-8" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb22-9"><a href="coding.html#cb22-9" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
-<span id="cb22-10"><a href="coding.html#cb22-10" tabindex="-1"></a>    <span class="do">## Header ----</span></span>
-<span id="cb22-11"><a href="coding.html#cb22-11" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
-<span id="cb22-12"><a href="coding.html#cb22-12" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb22-13"><a href="coding.html#cb22-13" tabindex="-1"></a>    ),</span>
-<span id="cb22-14"><a href="coding.html#cb22-14" tabindex="-1"></a>    <span class="do">## Sidebar ----</span></span>
-<span id="cb22-15"><a href="coding.html#cb22-15" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
-<span id="cb22-16"><a href="coding.html#cb22-16" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
-<span id="cb22-17"><a href="coding.html#cb22-17" tabindex="-1"></a>    ),</span>
-<span id="cb22-18"><a href="coding.html#cb22-18" tabindex="-1"></a>    <span class="do">## Body ----</span></span>
-<span id="cb22-19"><a href="coding.html#cb22-19" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
-<span id="cb22-20"><a href="coding.html#cb22-20" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
-<span id="cb22-21"><a href="coding.html#cb22-21" tabindex="-1"></a>        <span class="do">### Overview ----</span></span>
-<span id="cb22-22"><a href="coding.html#cb22-22" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
-<span id="cb22-23"><a href="coding.html#cb22-23" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
-<span id="cb22-24"><a href="coding.html#cb22-24" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
-<span id="cb22-25"><a href="coding.html#cb22-25" tabindex="-1"></a>        ),</span>
-<span id="cb22-26"><a href="coding.html#cb22-26" tabindex="-1"></a>        <span class="co"># code omitted</span></span>
-<span id="cb22-27"><a href="coding.html#cb22-27" tabindex="-1"></a>      )</span>
-<span id="cb22-28"><a href="coding.html#cb22-28" tabindex="-1"></a>    )</span>
-<span id="cb22-29"><a href="coding.html#cb22-29" tabindex="-1"></a>  )</span>
-<span id="cb22-30"><a href="coding.html#cb22-30" tabindex="-1"></a>)</span>
-<span id="cb22-31"><a href="coding.html#cb22-31" tabindex="-1"></a></span>
-<span id="cb22-32"><a href="coding.html#cb22-32" tabindex="-1"></a><span class="co"># Define the server ----</span></span>
-<span id="cb22-33"><a href="coding.html#cb22-33" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
-<span id="cb22-34"><a href="coding.html#cb22-34" tabindex="-1"></a>  <span class="do">## Info button ----</span></span>
-<span id="cb22-35"><a href="coding.html#cb22-35" tabindex="-1"></a>  <span class="co"># code omitted</span></span>
-<span id="cb22-36"><a href="coding.html#cb22-36" tabindex="-1"></a>}</span>
-<span id="cb22-37"><a href="coding.html#cb22-37" tabindex="-1"></a></span>
-<span id="cb22-38"><a href="coding.html#cb22-38" tabindex="-1"></a><span class="co"># boastApp Call ----</span></span>
-<span id="cb22-39"><a href="coding.html#cb22-39" tabindex="-1"></a>boastUtils<span class="sc">::</span><span class="fu">boastApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="coding.html#cb18-1" tabindex="-1"></a><span class="co"># Load Packages ----</span></span>
+<span id="cb18-2"><a href="coding.html#cb18-2" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb18-3"><a href="coding.html#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="coding.html#cb18-4" tabindex="-1"></a><span class="co"># Define gloabl constants, functions, data ----</span></span>
+<span id="cb18-5"><a href="coding.html#cb18-5" tabindex="-1"></a><span class="do">## None for this example</span></span>
+<span id="cb18-6"><a href="coding.html#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="coding.html#cb18-7" tabindex="-1"></a><span class="co"># Define the UI ----</span></span>
+<span id="cb18-8"><a href="coding.html#cb18-8" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb18-9"><a href="coding.html#cb18-9" tabindex="-1"></a>  <span class="fu">dashboardPage</span>(</span>
+<span id="cb18-10"><a href="coding.html#cb18-10" tabindex="-1"></a>    <span class="do">## Header ----</span></span>
+<span id="cb18-11"><a href="coding.html#cb18-11" tabindex="-1"></a>    <span class="fu">dashboardHeader</span>(</span>
+<span id="cb18-12"><a href="coding.html#cb18-12" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb18-13"><a href="coding.html#cb18-13" tabindex="-1"></a>    ),</span>
+<span id="cb18-14"><a href="coding.html#cb18-14" tabindex="-1"></a>    <span class="do">## Sidebar ----</span></span>
+<span id="cb18-15"><a href="coding.html#cb18-15" tabindex="-1"></a>    <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb18-16"><a href="coding.html#cb18-16" tabindex="-1"></a>      <span class="co"># code omitted</span></span>
+<span id="cb18-17"><a href="coding.html#cb18-17" tabindex="-1"></a>    ),</span>
+<span id="cb18-18"><a href="coding.html#cb18-18" tabindex="-1"></a>    <span class="do">## Body ----</span></span>
+<span id="cb18-19"><a href="coding.html#cb18-19" tabindex="-1"></a>    <span class="fu">dashboardBody</span>(</span>
+<span id="cb18-20"><a href="coding.html#cb18-20" tabindex="-1"></a>      <span class="fu">tabItems</span>(</span>
+<span id="cb18-21"><a href="coding.html#cb18-21" tabindex="-1"></a>        <span class="do">### Overview ----</span></span>
+<span id="cb18-22"><a href="coding.html#cb18-22" tabindex="-1"></a>        <span class="fu">tabItem</span>(</span>
+<span id="cb18-23"><a href="coding.html#cb18-23" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">&quot;overview&quot;</span>,</span>
+<span id="cb18-24"><a href="coding.html#cb18-24" tabindex="-1"></a>          <span class="co"># code omitted</span></span>
+<span id="cb18-25"><a href="coding.html#cb18-25" tabindex="-1"></a>        ),</span>
+<span id="cb18-26"><a href="coding.html#cb18-26" tabindex="-1"></a>        <span class="co"># code omitted</span></span>
+<span id="cb18-27"><a href="coding.html#cb18-27" tabindex="-1"></a>      )</span>
+<span id="cb18-28"><a href="coding.html#cb18-28" tabindex="-1"></a>    )</span>
+<span id="cb18-29"><a href="coding.html#cb18-29" tabindex="-1"></a>  )</span>
+<span id="cb18-30"><a href="coding.html#cb18-30" tabindex="-1"></a>)</span>
+<span id="cb18-31"><a href="coding.html#cb18-31" tabindex="-1"></a></span>
+<span id="cb18-32"><a href="coding.html#cb18-32" tabindex="-1"></a><span class="co"># Define the server ----</span></span>
+<span id="cb18-33"><a href="coding.html#cb18-33" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb18-34"><a href="coding.html#cb18-34" tabindex="-1"></a>  <span class="do">## Info button ----</span></span>
+<span id="cb18-35"><a href="coding.html#cb18-35" tabindex="-1"></a>  <span class="co"># code omitted</span></span>
+<span id="cb18-36"><a href="coding.html#cb18-36" tabindex="-1"></a>}</span>
+<span id="cb18-37"><a href="coding.html#cb18-37" tabindex="-1"></a></span>
+<span id="cb18-38"><a href="coding.html#cb18-38" tabindex="-1"></a><span class="co"># boastApp Call ----</span></span>
+<span id="cb18-39"><a href="coding.html#cb18-39" tabindex="-1"></a>boastUtils<span class="sc">::</span><span class="fu">boastApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div>
 <p>This example has 11 jump points; can you list them all?</p>
 <p>Any time you define a custom function, a jump point to that function definition will automatically be created. Hence the line <code>server &lt;- function(input, output, session){</code> becomes the 11th jump point.</p>
 
