@@ -87,7 +87,7 @@ In both workflows of [Chapter \@ref(workflow)](#workflow), there was the phrase 
 
 To assist you, use the following layout by copying into a Word program (you can fit four on a landscape oriented page) and printing OR by sketching your version on paper:
 
-```{r blankSketchLayout, fig.cap="Blank layout for sketching your ideas", echo=FALSE, fig.align='center', warning=FALSE}
+```{r blankSketchLayout, fig.cap="Blank layout for sketching your ideas", echo=FALSE, fig.align='center'}
 library(ggplot2)
 library(emojifont)
 ggplot(data = data.frame(x = rep(0, 50))) +
@@ -95,10 +95,47 @@ ggplot(data = data.frame(x = rep(0, 50))) +
   geom_vline(mapping = aes(xintercept = 50), color = "black") +
   scale_y_continuous(limits = c(0,100), expand = expansion(mult = 0, add = 0)) +
   scale_x_continuous(limits = c(0, 300), expand = expansion(mult = 0, add = 0)) +
-  geom_text(mapping = aes(x = 56, y = 95, label = fontawesome("fa-bars")), family = "fontawesome-webfont", color = "black", size = 5) +
-  geom_text(mapping = aes(x = 270, y = 95, label = fontawesome("fa-info")), family = "fontawesome-webfont", color = "black", size = 6) +
-  geom_text(mapping = aes(x = 280, y = 95, label = fontawesome("fa-comments")), family = "fontawesome-webfont", color = "black", size = 6) +
-  geom_text(mapping = aes(x = 292, y = 95, label = fontawesome("fa-home")), family = "fontawesome-webfont", color = "black", size = 6) +
+  annotate(
+    geom = "text",
+    x = 56, y = 95, label = fontawesome("fa-bars"),
+    family = "fontawesome-webfont",
+    color = "black",
+    size = 5
+  ) +
+  annotate(
+    geom = "text",
+    x = 270, y = 95, label = fontawesome("fa-info"),
+    family = "fontawesome-webfont",
+    color = "black",
+    size = 6
+  ) +
+  annotate(
+    geom = "text",
+    x = 280, y = 95, label = fontawesome("fa-comments"),
+    family = "fontawesome-webfont",
+    color = "black",
+    size = 6
+  ) +
+  annotate(
+    geom = "text",
+    x = 292, y = 95, label = fontawesome("fa-home"),
+    family = "fontawesome-webfont",
+    color = "black",
+    size = 6
+  ) +
+  annotate(
+    geom = "text",
+    x = 10, y = 5, label = fontawesome("fa-shield"),
+    family = "fontawesome-webfont",
+    color = "black",
+    size = 6
+  ) +
+  annotate(
+    geom = "text",
+    x = 30, y = 5, label = "PSU Shield \n Footer",
+    color = "black",
+    size = 2.5
+  ) +
   theme_void() +
   theme(
     panel.border = element_rect(color = "black", fill = NA, linewidth = 2)
