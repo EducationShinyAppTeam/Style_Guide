@@ -95,10 +95,6 @@ h6,
     font-size: 1.2rem;
 }
 
-.largerFont {
-	font-size: 1.2rem;
-}
-
 hr {
     border-top: 1px solid black;
     margin-top: 20px;
@@ -1268,4 +1264,41 @@ th, td {
 
 .align-self-center{
   align-self: center !important;
+}
+
+/*Progress Bar Font Size*/
+.progress-bar {
+  font-size: 1.25rem;
+}
+
+/*Progress Bar Primary Class Color Overrides*/
+/*Primary Class Override */
+.skin-blue .progress-bar-primary {
+  background-color: var(--beaver-blue);
+  color: white;
+}
+
+.skin-green .progress-bar-primary {
+  background-color: var(--green-opportunity);
+  color: white;
+}
+
+.skin-purple .progress-bar-primary {
+  background-color: var(--perpetual-wonder);
+  color: white;
+}
+
+.skin-yellow .progress-bar-primary {
+  background-color: var(--invent-orange);
+  color: black;
+}
+
+.skin-black .progress-bar-primary {
+  background-color: var(--creek);
+  color: black;
+}
+
+.skin-red .progress-bar-primary {
+  background-color: var(--original-1887);
+  color: white;
 }
