@@ -1302,7 +1302,7 @@ th, td {
   background-color: var(--original-1887);
   color: white;
 
-/*Adjust Summary in Details Tag */
+/* Adjust Summary in Details Tag */
 .details > .summary {
   display: revert !important;
 }
