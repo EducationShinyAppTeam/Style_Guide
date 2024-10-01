@@ -1303,6 +1303,6 @@ th, td {
   color: white;
 
 /*Adjust Summary in Details Tag */
-details > summary {
+.details > .summary {
   display: revert !important;
 }
